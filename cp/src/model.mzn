@@ -77,8 +77,10 @@ constraint forall(k in COURIERS) (
 );
 
 
-
-solve minimize(max(obj_dist));
+solve :: int_search(assignments, first_fail, indomain_min)
+      minimize(max(obj_dist));
+      
+%solve minimize(max(obj_dist));
 
 output [show(obj_dist) ++ "\n"];
 output [ show(assignments[k,i,j]) ++ if j = (items +1) then "\n" else "" endif ++ if j = (items +1) /\ i = (items +1) then "\n" else "" endif
