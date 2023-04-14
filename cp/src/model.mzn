@@ -53,7 +53,7 @@ constraint forall(i in ITEMS)(
               
 );
 
-% Continuity constraint, if a columnj (arrive point) has a one
+% Continuity constraint, if a column j (arrive point) has a one
 % then the row j must also contain it. --> Circuit
 constraint forall(k in COURIERS) (
       forall(j in 1..items+1) (
@@ -62,11 +62,19 @@ constraint forall(k in COURIERS) (
       endif
       )
 );
+% Avoiding internal loops in the path
+constraint forall(k in COURIERS) (
+      forall(i in 1..items)(
+      forall(j in 1..items)(
+      assignments[k, i, j] + assignments[k, j, i] <= 1
+      ))
+);
+
 
 
 % Constraint to respect the weight limit of each couriers
 constraint forall(k in COURIERS)(
-              sum([assignments[k,i,j] * item_size[j]| i in NODES, j in ITEMS]) <= courier_size[k]   
+              sum([assignments[k,i,j] * item_size[j]| i in NODES, j in ITEMS]) <= courier_size[k]
 );
 
 
@@ -79,10 +87,9 @@ constraint forall(k in COURIERS) (
 
 solve :: int_search(assignments, first_fail, indomain_min)
       minimize(max(obj_dist));
-      
+
 %solve minimize(max(obj_dist));
 
 output [show(obj_dist) ++ "\n"];
 output [ show(assignments[k,i,j]) ++ if j = (items +1) then "\n" else "" endif ++ if j = (items +1) /\ i = (items +1) then "\n" else "" endif
    |k in COURIERS,i in 1..items + 1, j in 1..items + 1];
-

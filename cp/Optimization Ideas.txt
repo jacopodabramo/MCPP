@@ -1,7 +1,0 @@
-1. predicate exactly(int: n,
-                  array [$X] of var set of int: x,
-                  set of int: v) 
-(problem : it deals with set of int instead of array)
-
-2. Symmetry breaking: we could order the matrices for each courier
-  (swaopping couriers does not change the solution)
