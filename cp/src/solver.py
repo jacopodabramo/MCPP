@@ -26,6 +26,7 @@ class CPsolver:
         if self.solver_path == "./cp/src/models/model.mzn":
             result = self.model3D_solve(model, solver)
         else:
+            print("Entro")
             result = self.graph_model_solve(model, solver)
 
         return result
@@ -43,9 +44,9 @@ class CPsolver:
                 if result.status is Status.OPTIMAL_SOLUTION:
                     assignments = result["assignments"]
                     obj_dist = result["obj_dist"]
-                    print("Assignments = \n",assignments)
+                    #print("Assignments = \n",assignments)
                     print("Obj distance = ",obj_dist)
-                    print(result.statistics['time'].total_seconds())
+                    print("Time = ",result.statistics['time'].total_seconds())
                     solutions.append(obj_dist)
             except:
                 pass
@@ -58,21 +59,25 @@ class CPsolver:
         i = 0
         solutions = []
         for d in self.data:
+            print("Sono nel for")
             if i % 5 == 0:
                 print("Solving instances ", i)
             try:
                 instance = Instance(solver, model)
                 result = self.graph_model_solve_instance(d, instance)
-
+                
                 if result.status is Status.OPTIMAL_SOLUTION:
                     ns = result["ns"]
                     es = result["es"]
                     path_dist = result["path_dist"]
-                    print_graph(ns,es,instance["starting_nd"],instance["ending_nd"],path_dist)
-                    print(result.statistics['time'].total_seconds())
+                    #print_graph(ns,es,instance["starting_nd"],instance["ending_nd"],path_dist)
+                    print("NS = ",ns)
+                    print("Path distances =",path_dist)
+                    print("Time = ",result.statistics['time'].total_seconds())
                     solutions.append(ns)
 
-            except:
+            except Exception as e:
+                print("CIAOOO ", e)
                 pass
             
             i += 1
@@ -91,14 +96,16 @@ class CPsolver:
     
 
     def graph_model_solve_instance(self, d, instance):
-        n_couriers, n_items, couriers_size, objects_size, starting_nd, ending_nd, weigths = d
+        
+        n_couriers, n_items, couriers_size, objects_size, starting_nd, ending_nd, weights, n_edges = d
         instance["courier"] = n_couriers
         instance["items"] = n_items
         instance["courier_size"] = couriers_size
         instance["item_size"] = objects_size
         instance["starting_nd"] = starting_nd
         instance["ending_nd"] = ending_nd
-        instance["weigths"] = weigths
+        instance["weights"] = weights
+        instance["n_edges"] = n_edges
         return instance.solve(timeout=datetime.timedelta(seconds=self.timeout), processes=10, random_seed=42,
                               free_search=True)
     
