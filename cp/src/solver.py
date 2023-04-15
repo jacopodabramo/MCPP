@@ -19,18 +19,13 @@ class CPsolver:
         i = 0
         for d in self.data:
             if i % 5 == 0:
-                print("Solving instances ",i)
+                print("Solving instances ", i)
             try:
-
-                courier, item, courier_size, item_size, distances = d
                 instance = Instance(solver, model)
-                instance["courier"] = courier
-                instance["items"] = item
-                instance["courier_size"] = courier_size
-                instance["item_size"] = item_size
-                instance["distances"] = distances
-                result = instance.solve(timeout=datetime.timedelta(seconds=self.timeout), processes=10, random_seed=42,
-                                        free_search=True)
+                if self.solver_path == "./cp/src/model.mzn":
+                    result = self.model3D_solve(self, d, instance)
+                else:
+                    result = self.graph_model_solve(self, d, instance)
 
                 if result.status is Status.OPTIMAL_SOLUTION:
                     # assignments = result["assignments"]
@@ -48,3 +43,25 @@ class CPsolver:
             i = i + 1
 
         return solutions
+
+    def model3D_solve(self, d, instance):
+        courier, item, courier_size, item_size, distances = d
+        instance["courier"] = courier
+        instance["items"] = item
+        instance["courier_size"] = courier_size
+        instance["item_size"] = item_size
+        instance["distances"] = distances
+        return instance.solve(timeout=datetime.timedelta(seconds=self.timeout), processes=10, random_seed=42,
+                              free_search=True)
+
+    def graph_model_solve(self, d, instance):
+        n_couriers, n_items, couriers_size, objects_size, starting_nd, ending_nd, weigths = d
+        instance["courier"] = n_couriers
+        instance["items"] = n_items
+        instance["courier_size"] = couriers_size
+        instance["item_size"] = objects_size
+        instance["starting_nd"] = starting_nd
+        instance["ending_nd"] = ending_nd
+        instance["weigths"] = weigths
+        return instance.solve(timeout=datetime.timedelta(seconds=self.timeout), processes=10, random_seed=42,
+                              free_search=True)
