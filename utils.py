@@ -35,6 +35,7 @@ def load_data(path, instance):
             data.append(read_instance(path + "/" + file))
     else:
         i = 1
+        print(files)
         for file in files:
             if i == instance:
                 return [read_instance(path + "/" + file)]
@@ -77,7 +78,16 @@ def print_graph(ns,es,starting_nd,ending_nd,path_dist):
         print("Corriere = ",i, " = ", ns[i])
         for j in range(len(es[i])):
             if es[i][j] == True:
-                print("Starting Nodes:", starting_nd[j]," Ending Nodes ", ending_nd[j])
+                if starting_nd[j] == 1 or starting_nd[j] == len(ns[i]):
+                    start = "O"
+                else:
+                    start = starting_nd[j] - 1
+
+                if ending_nd[j] == 1 or ending_nd[j] == len(ns[i]):
+                    end = "O"
+                else:
+                    end = ending_nd[j] - 1
+                print("Starting Nodes:", start," Ending Nodes ", end)
 
     print("Path Distance = ", path_dist)   
 

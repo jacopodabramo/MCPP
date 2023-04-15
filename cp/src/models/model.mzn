@@ -86,7 +86,7 @@ constraint forall(k in COURIERS) (
 
 
 solve :: int_search(assignments, first_fail, indomain_min)
-      minimize(max(obj_dist));
+     minimize(max(obj_dist));
 
 %solve minimize(max(obj_dist));
 

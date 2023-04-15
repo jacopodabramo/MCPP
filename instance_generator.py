@@ -3,8 +3,8 @@ import numpy as np
 import random
 import argparse
 
-N_INSTANCES = 10
-couriers_items = [(3,5),(5,8),(8,12)] # list of generation
+N_INSTANCES = 1
+couriers_items = [(10,18)] # list of generation
 
 
 def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=30, max_distance=10):
@@ -17,7 +17,7 @@ def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=3
     np.random.seed(seed)
 
     # Couriers size list
-    couriers_size = [random.randint(1, max_courier_load) for _ in range(n_couriers)]
+    couriers_size = [random.randint(max_courier_load-5, max_courier_load) for _ in range(n_couriers)]
 
     # Max item size for the instance
     total_size = sum(couriers_size)

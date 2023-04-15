@@ -22,6 +22,7 @@ def main():
 
     print("Loading instances")
     data = load_data(args.input_dir, args.num_instance)
+    print("Corrieri sono = ",data[0][0])
     # print(data)
     if args.solver == "cp":
         solver = CPsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), model = args.model)

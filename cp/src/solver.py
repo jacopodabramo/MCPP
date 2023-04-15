@@ -26,7 +26,6 @@ class CPsolver:
         if self.solver_path == "./cp/src/models/model.mzn":
             result = self.model3D_solve(model, solver)
         else:
-            print("Entro")
             result = self.graph_model_solve(model, solver)
 
         return result
@@ -46,9 +45,10 @@ class CPsolver:
                     obj_dist = result["obj_dist"]
                     #print("Assignments = \n",assignments)
                     print("Obj distance = ",obj_dist)
-                    print("Time = ",result.statistics['time'].total_seconds())
+                    print("Statics for the ",i," instance time ",result.statistics['time'].total_seconds())
                     solutions.append(obj_dist)
             except:
+                print("Exception:", e)
                 pass
             
             i += 1
@@ -58,29 +58,36 @@ class CPsolver:
     def graph_model_solve(self, model, solver):
         i = 0
         solutions = []
+        time = []
         for d in self.data:
-            print("Sono nel for")
             if i % 5 == 0:
                 print("Solving instances ", i)
             try:
                 instance = Instance(solver, model)
                 result = self.graph_model_solve_instance(d, instance)
-                
+
+                #print('SOLUZIONE NON OTTIMALE')
+                #print_graph(result["ns"], result["es"], instance['starting_nd'], instance['ending_nd'], result["path_dist"])
+                #print("Statics for the ", i, " instance time ", result.statistics['time'].total_seconds())
+                #time.append((i, result.statistics['time'].total_seconds()))
+
                 if result.status is Status.OPTIMAL_SOLUTION:
+                    print('SOLUZIONE OTTIMALE')
                     ns = result["ns"]
                     es = result["es"]
                     path_dist = result["path_dist"]
                     #print_graph(ns,es,instance["starting_nd"],instance["ending_nd"],path_dist)
-                    print("NS = ",ns)
-                    print("Path distances =",path_dist)
-                    print("Time = ",result.statistics['time'].total_seconds())
+                    print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], path_dist)
+                    print("Statics for the ", i, " instance time ", result.statistics['time'].total_seconds())
                     solutions.append(ns)
+                    time.append((i, result.statistics['time'].total_seconds()))
 
             except Exception as e:
-                print("CIAOOO ", e)
+                print("Exception:", e)
                 pass
             
             i += 1
+        print(time)
         return solutions
     
     
