@@ -7,7 +7,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("-s", "--solver", help="Select a solver between cp sat, smt and lp", default="cp", type=str)
-    parser.add_argument("-m", "--model", help="Select a model for the solver choosen, from 0 to n", default=0, type=int)
+    parser.add_argument("-m", "--model", help="Select a model for the solver choosen, look for additional information in the cp folder ", default=1, type=int)
     parser.add_argument("-n", "--num_instance",
                         help="Select the number of the instance you want to solve, default = 0 solve all",
                         default=0, type=int)
@@ -22,7 +22,6 @@ def main():
 
     print("Loading instances")
     data = load_data(args.input_dir, args.num_instance)
-    print("Corrieri sono = ",data[0][0])
     # print(data)
     if args.solver == "cp":
         solver = CPsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), model = args.model)

@@ -3,8 +3,8 @@ import numpy as np
 import random
 import argparse
 
-N_INSTANCES = 1
-couriers_items = [(10,18)] # list of generation
+N_INSTANCES = 4
+couriers_items = [(5,16)] # list of generation
 
 
 def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=30, max_distance=10):
