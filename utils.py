@@ -91,6 +91,13 @@ def print_graph(ns,es,starting_nd,ending_nd,path_dist):
 
     print("Path Distance = ", path_dist)   
 
+def print_sat(ass):
+    for k in range(len(ass)):
+        print("Courier = ", k)
+        for i in range(len(ass[k])):
+            print(ass[k][i])
+
+
 """
 import datetime
 from minizinc import Model, Solver, Status, Instance
