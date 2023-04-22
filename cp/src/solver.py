@@ -25,13 +25,13 @@ class CPsolver:
         solver = Solver.lookup("chuffed")
 
         if self.solver_path == "./cp/src/models/model.mzn":
-            result = self.model3D_solve(model, solver)
+            result = self.model_solve(model, solver)
         else:
             result = self.graph_model_solve(model, solver)
 
         return result
 
-    def model3D_solve(self, model, solver):
+    def model_solve(self, model, solver):
         i = 1
         solutions = []
         for d in self.data:
@@ -39,11 +39,11 @@ class CPsolver:
                 print("Solving instance n = ", i)
             try:
                 instance = Instance(solver, model)
-                result = self.model3D_solve_instance(d, instance)
+                result = self.model_solve_instance(d, instance)
                 if result.status is Status.OPTIMAL_SOLUTION:
-                    assignments = result["assignments"]
+                    assignments = result["asg"]
                     obj_dist = result["obj_dist"]
-                    # print("Assignments = \n",assignments)
+                    print_model(assignments,instance["distances"])
                     print("Obj distance = ", obj_dist)
                     print("Statistics for the instance n = ", i, " time =", result.statistics['time'].total_seconds())
                     solutions.append(obj_dist)
@@ -89,7 +89,7 @@ class CPsolver:
         print(time)
         return solutions
 
-    def model3D_solve_instance(self, d, instance):
+    def model_solve_instance(self, d, instance):
         courier, item, courier_size, item_size, distances = d
         instance["courier"] = courier
         instance["items"] = item

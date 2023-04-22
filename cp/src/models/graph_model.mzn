@@ -60,6 +60,7 @@ constraint forall(k in COURIERS)(
 
 % Constraint to avoid any courier to return in an already visited node:
 % this may ensure that meaningless part of the tree are not visited
+/*
 constraint forall(i in GRAPH_NODES)(
     if count([es[k,i]|k in COURIERS], true, 1) /\
               starting_nd[i] != 1 /\
@@ -69,11 +70,12 @@ constraint forall(i in GRAPH_NODES)(
                  count([es[k, ((items+1)*(ending_nd[i]-2)+(starting_nd[i]-2)+1)]|k in COURIERS], true, 0)
               endif
 );
-
+*/
 
 solve ::  int_search(ns, first_fail, indomain_min)
-     minimize(max(path_dist));
+  minimize(max(path_dist));
 
 %solve minimize(max(path_dist));
 
-output[show(ns)++"\n"++show(es)++"\n"++show(path_dist)]
+%output[show(ns)++"\n"++show(es)++"\n"++show(path_dist)]
+output[show(path_dist)];

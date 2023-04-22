@@ -73,9 +73,10 @@ def load_preprocessing(data):
     return clean_data
 
 
+
 def print_graph(ns,es,starting_nd,ending_nd,path_dist):
     for i in range(len(ns)):
-        print("Corriere = ",i, " = ", ns[i])
+        print("Courier = ",i, " = ", ns[i])
         for j in range(len(es[i])):
             if es[i][j] == True:
                 if starting_nd[j] == 1 or starting_nd[j] == len(ns[i]):
@@ -87,15 +88,24 @@ def print_graph(ns,es,starting_nd,ending_nd,path_dist):
                     end = "O"
                 else:
                     end = ending_nd[j] - 1
-                print("Starting Nodes:", start," Ending Nodes ", end)
+
+                print("Starting Node: {start} Ending Node: {end}".format(start,end))
 
     print("Path Distance = ", path_dist)   
 
-def print_sat(ass):
-    for k in range(len(ass)):
+def print_sat(asg):
+    for k in range(len(asg)):
         print("Courier = ", k)
-        for i in range(len(ass[k])):
-            print(ass[k][i])
+        for i in range(len(asg[k])):
+            print(asg[k][i])
+
+def print_model(asg,matrix):
+    for k in range(len(asg)):
+        print("Courier = ",k)
+        for i in range(len(asg[k])):
+            if asg[k][i] != i+1:
+                print("Starting Node: {} Ending Node: {} Distance: {}".format(i + 1,asg[k][i],matrix[i][asg[k][i] -1]))
+
 
 
 """

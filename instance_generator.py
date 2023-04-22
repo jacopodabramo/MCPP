@@ -2,9 +2,10 @@
 import numpy as np
 import random
 import argparse
+from utils import *
 
 N_INSTANCES = 4
-couriers_items = [(5,16)] # list of generation
+couriers_items = [(5,20)] # list of generation
 
 
 def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=30, max_distance=10):
@@ -48,6 +49,19 @@ def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=3
         f.write(','.join(str(e) for e in line) + '\n')
     f.close()
 
+def generate_graph_instace(filename, data):
+    f = open(filename + ".dzn", 'w')
+    n_couriers, n_items, couriers_size, objects_size, starting_nd, ending_nd, weights, n_edges = data
+    f.write("courier = " + str(n_couriers) + ';\n')
+    f.write("items = " + str(n_items) + ';\n')
+    f.write("courier_size = " + str(couriers_size) + ';\n')
+    f.write("item_size = " + str(objects_size) + ';\n')
+    f.write("starting_nd = " + str(starting_nd) + ';\n')
+    f.write("ending_nd = " + str(ending_nd) + ';\n')
+    f.write("weights = " + str(weights) + ';\n')
+    f.write("n_edges = " + str(n_edges) + ';\n')
+    f.close()
+
 
 def generator(path, pair_dimension):
     """
@@ -74,3 +88,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+    #generator("./input/instance2.txt",couriers_items)
+    """"
+    data = read_instance("./input/instance1.txt")
+    data = preprocessing(data)
+    generate_graph_instace("./input/Gecode_instance",data)
+    """
