@@ -4,12 +4,10 @@ from minizinc import Model, Solver, Status, Instance
 from utils import *
 
 
-# load_preprocessing,print_graph
-
 
 class CPsolver:
 
-    def __init__(self, data, output_dir="./cp/out/", timeout=300, model=1):
+    def __init__(self, data, output_dir, timeout=300, model=1):
 
         self.output_dir = output_dir
         self.timeout = timeout
@@ -32,61 +30,68 @@ class CPsolver:
         return result
 
     def model_solve(self, model, solver):
-        i = 1
         solutions = []
-        for d in self.data:
-            if i % 5 == 0:
-                print("Solving instance n = ", i)
+        for key,value in self.data.items():
+            print("File = ", key)
+            path = self.output_dir + "/cp_model_0/"
+            filename = "output" + key
             try:
                 instance = Instance(solver, model)
-                result = self.model_solve_instance(d, instance)
+                result = self.model_solve_instance(value, instance)
                 if result.status is Status.OPTIMAL_SOLUTION:
                     assignments = result["asg"]
                     obj_dist = result["obj_dist"]
-                    print_model(assignments,instance["distances"])
-                    print("Obj distance = ", obj_dist)
-                    print("Statistics for the instance n = ", i, " time =", result.statistics['time'].total_seconds())
+                    print_model(assignments,instance["distances"],obj_dist,result.statistics['time'].total_seconds())
                     solutions.append(obj_dist)
+                    saving_file(obj_dist, path, filename)
+
+                elif result.status is Status.UNSATISFIABLE:
+                    print("Unsat")
+                    saving_file("Unsat", path, filename)
+                else:
+                    print("Time error")
+                    saving_file("TimeError", path, filename)
             except Exception as e:
                 print("Exception:", e)
                 pass
 
-            i += 1
         return solutions
 
     def graph_model_solve(self, model, solver):
         i = 1
         solutions = []
-        time = []
-        for d in self.data:
-            if i % 5 == 0:
-                print("Solving instance n = ", i)
+        for key,value in self.data.items():
+            print("INSTANCE = ", i)
+            path = self.output_dir + "/cp_graph_model/"
+            filename = "output" + key
             try:
                 instance = Instance(solver, model)
-                result = self.graph_model_solve_instance(d, instance)
-
-                # print('Not optimal solution found')
-                # print_graph(result["ns"], result["es"], instance['starting_nd'], instance['ending_nd'], result["path_dist"])
-                # print("Statics for the ", i, " instance time ", result.statistics['time'].total_seconds())
-                # time.append((i, result.statistics['time'].total_seconds()))
+                result = self.graph_model_solve_instance(value, instance)
 
                 if result.status is Status.OPTIMAL_SOLUTION:
-                    print('Optimal solution')
                     ns = result["ns"]
                     es = result["es"]
                     path_dist = result["path_dist"]
-                    # print_graph(ns,es,instance["starting_nd"],instance["ending_nd"],path_dist)
-                    print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], path_dist)
-                    print("Statistics for the instance n = ", i, " time =", result.statistics['time'].total_seconds())
-                    solutions.append(ns)
-                    time.append((i, result.statistics['time'].total_seconds()))
+                    print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], path_dist, result.statistics['time'].total_seconds())
+                    # salvattogio su file
+                    saving_file(path_dist, path, filename)
+
+                elif result.status is Status.UNSATISFIABLE:
+                    print("Unsat")
+                    saving_file("Unsat", path, filename)
+                    #
+                else:
+                    print("Time error")
+                    saving_file("Unsat", path, filename)
+
+
+                print("--------------------------------------------------")
 
             except Exception as e:
                 print("Exception:", e)
                 pass
 
             i += 1
-        print(time)
         return solutions
 
     def model_solve_instance(self, d, instance):

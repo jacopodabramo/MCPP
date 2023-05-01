@@ -16,7 +16,7 @@ def main():
                         help="Directory where the instance txt files can be found",
                         default="./input", type=str)
     parser.add_argument("-o", "--output_dir",
-                        help="Directory where the output will be saved", default="")
+                        help="Directory where the output will be saved", default="./output")
     parser.add_argument("-t", "--timeout", help="Timeout in seconds", default=300)
     args = parser.parse_args()
     print(args)
@@ -33,13 +33,13 @@ def main():
         raise argparse.ArgumentError(None, "Please select a solver between cp, sat, smt and lp.")
 
     print("Solving with", args.solver)
-    solutions = solver.solve()
-
+    solver.solve()
+    '''
     # only to show results during debugging
     if args.solver == "sat":
         print_sat(solutions[0][0])
         print(solutions[0][1:])
-
+    '''
 
 if __name__ == '__main__':
     main()
