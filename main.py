@@ -1,6 +1,7 @@
 import argparse
 from cp.src.solver import CPsolver
-from utils import load_data
+from sat.src.solver import SATsolver
+from utils import load_data,print_sat
 
 
 def main():
@@ -15,7 +16,7 @@ def main():
                         help="Directory where the instance txt files can be found",
                         default="./input", type=str)
     parser.add_argument("-o", "--output_dir",
-                        help="Directory where the output will be saved", default="")
+                        help="Directory where the output will be saved", default="./output")
     parser.add_argument("-t", "--timeout", help="Timeout in seconds", default=300)
     args = parser.parse_args()
     print(args)
@@ -25,15 +26,20 @@ def main():
     # print(data)
     if args.solver == "cp":
         solver = CPsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), model = args.model)
-        
+    elif args.solver == "sat":
+        solver = SATsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout))
     # the others solver will be implemented
     else:
         raise argparse.ArgumentError(None, "Please select a solver between cp, sat, smt and lp.")
 
     print("Solving with", args.solver)
-    solutions = solver.solve()
-    #print(solutions)
-
+    solver.solve()
+    '''
+    # only to show results during debugging
+    if args.solver == "sat":
+        print_sat(solutions[0][0])
+        print(solutions[0][1:])
+    '''
 
 if __name__ == '__main__':
     main()

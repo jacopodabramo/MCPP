@@ -1,4 +1,5 @@
 import os
+import glob
 
 
 def read_instance(path):
@@ -28,11 +29,12 @@ def load_data(path, instance):
     """
     The function for each file in the path, it produces the instance
     """
-    data = []
-    files = os.listdir(path)
+    data = {}
+    files = sorted(os.listdir(path))
+
     if instance == 0:
         for file in files:
-            data.append(read_instance(path + "/" + file))
+            data[file] = (read_instance(path + "/" + file))
     else:
         i = 1
         print(files)
@@ -57,25 +59,38 @@ def preprocessing(data):
             if i != j and i < len(distances[0]):
                 starting_nd.append(i + 1)
                 ending_nd.append(j + 1)
-                weigths.append(distances[i-1][j-1])
+                weigths.append(distances[i - 1][j - 1])
             elif i != j:
                 starting_nd.append(1)
                 ending_nd.append(j + 1)
-                weigths.append(distances[i-1][j-1])            
+                weigths.append(distances[i - 1][j - 1])
 
     return n_couriers, n_items, couriers_size, objects_size, starting_nd, ending_nd, weigths, len(starting_nd)
 
 
 def load_preprocessing(data):
-    clean_data = []
-    for d in data:
-        clean_data.append(preprocessing(d))
-    return clean_data
+    for d in data.keys():
+        data[d] = preprocessing(data[d])
+    return data
 
 
-def print_graph(ns,es,starting_nd,ending_nd,path_dist):
+def saving_file(val, path, filename):
+    if not os.path.exists(path):
+        os.mkdir(path)
+
+    f = open(path+filename, 'w')
+    if val == "Unsat":
+        f.write("Unsat")
+    elif val == "TimeError":
+        f.write("TimeError")
+    else:
+        f.write("Distance = "+str(val))
+    f.close()
+
+
+def print_graph(ns, es, starting_nd, ending_nd, path_dist, seconds):
     for i in range(len(ns)):
-        print("Corriere = ",i, " = ", ns[i])
+        print("Courier = ", i)
         for j in range(len(es[i])):
             if es[i][j] == True:
                 if starting_nd[j] == 1 or starting_nd[j] == len(ns[i]):
@@ -87,9 +102,32 @@ def print_graph(ns,es,starting_nd,ending_nd,path_dist):
                     end = "O"
                 else:
                     end = ending_nd[j] - 1
-                print("Starting Nodes:", start," Ending Nodes ", end)
+                print(f"Starting Node: {start} Ending Node: {end}")
 
-    print("Path Distance = ", path_dist)   
+    print("Total distances = ", path_dist)
+    print("TIME =", seconds)
+
+
+def print_sat(asg):
+    for k in range(len(asg)):
+        print("Courier = ", k)
+        for i in range(len(asg[k])):
+            print(asg[k][i])
+
+
+def print_model(asg, matrix, obj_dist, seconds):
+    for k in range(len(asg)):
+        print("Courier = ", k)
+        for i in range(len(asg[k])):
+            if asg[k][i] != i + 1:
+                print("Starting Node: {} Ending Node: {} ({} km)".format(i + 1, asg[k][i], matrix[i][asg[k][i] - 1]))
+    print("Total distances = ", obj_dist)
+    print("TIME =", seconds)
+    print("---------------------------------------------")
+
+
+# def save_to_file(distance,path):
+
 
 """
 import datetime
@@ -110,7 +148,7 @@ def main():
     instance["ending_nd"] = ending_nd
     instance["weights"] = weights
     instance["n_edges"] = n_edges
-    result = instance.solve(timeout=datetime.timedelta(seconds=300), processes=10, random_seed=42,
+    result = instance.solve(timeout=datetime.timedelta(seconl  ds=300), processes=10, random_seed=42,
                           free_search=True)
     
     print("Ns = vale")
