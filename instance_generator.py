@@ -4,11 +4,14 @@ import random
 import argparse
 from utils import *
 
+# Minizinc library classes to create the distances matrix 
+from minizinc import Model, Solver, Instance
+
 N_INSTANCES = 4
 couriers_items = [(4,8)] # list of generation
+SYMMETRIC = True
 
-
-def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=30, max_distance=10):
+def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=30):
     """
     This function takes in input the number of couriers and the number of items,
     it generates and saves the instance
@@ -28,16 +31,8 @@ def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=3
     objects_size = [random.randint(1, max_item_size) for _ in range(n_items)]
     
     # Generate the distances matrix
-    distances = []
-    for i in range(n_items + 1):
-        row = []
-        for j in range(n_items + 1):
-            if i == j:
-                row.append(0)
-            else:
-                row.append(random.randint(1, max_distance))
-        distances.append(row)
-    
+    distances = get_distances(n_items, seed)
+
 
     # Create the instance file
     f = open(filename + ".txt", 'w')
@@ -48,6 +43,31 @@ def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=3
     for line in distances:
         f.write(','.join(str(e) for e in line) + '\n')
     f.close()
+
+
+def get_distances(n_items, seed):
+    '''
+    Calls a minizinc model to generate the distances matrix
+    in such a way that it respects the triangular inequality
+    
+    :param n_items: number of items (shapes the matrix)
+    :param seed: seed for the random generator of the miniZinc model
+    :return: the distances matrix
+    '''
+    # Create the model
+    model = Model("./instance_generator.mzn")
+    solver = Solver.lookup("org.gecode.gist", refresh = True)
+    instance = Instance(solver, model)
+
+    # Set the model parameters
+    #instance["symmetric"] = SYMMETRIC
+    #instance["n"] = n_items
+    result = instance.solve()
+
+    distance = result["matrix"]
+
+    return distance
+
 
 def generate_graph_instace(filename, data):
     f = open(filename + ".dzn", 'w')
