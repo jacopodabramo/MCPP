@@ -27,7 +27,7 @@ def main():
     if args.solver == "cp":
         solver = CPsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), model = args.model)
     elif args.solver == "sat":
-        solver = SATsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout))
+        solver = SATsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout),search = args.model)
     # the others solver will be implemented
     else:
         raise argparse.ArgumentError(None, "Please select a solver between cp, sat, smt and lp.")

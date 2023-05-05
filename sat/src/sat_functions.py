@@ -154,27 +154,26 @@ def convert_from_binary_to_int(val):
     return number
 
 
-def converter_boolean2(item, LENBITS):
+def converter_boolean2(item, lenbits):
     # Analyzing item checking whether it is itemSize,courier_size or distances
-    bin_number = toBinary(item, LENBITS)
+    bin_number = toBinary(item, lenbits)
     return [False if el == '0' else True for el in bin_number]
 
 
 def model_input(instance):
     couriers, items, courier_size, item_size, distances = instance
 
-    LOAD_CORUIERS_BITS = max(math.ceil(math.log2(sum(item_size))), math.ceil(math.log2(max(courier_size))))
-    DISTANCES_BIT = math.ceil(math.log2(sum([sum(distances[i]) for i in range(len(distances))])))
+    load_couriers_bit = max(math.ceil(math.log2(sum(item_size))), math.ceil(math.log2(max(courier_size))))
+    distances_bit = math.ceil(math.log2(sum([sum(distances[i]) for i in range(len(distances))])))
 
-    courier_size_conv = converter_sat(courier_size, 0, LOAD_CORUIERS_BITS)
-    item_size_conv = converter_sat(item_size, 0, LOAD_CORUIERS_BITS)
-    distances_conv = converter_sat(distances, 1, DISTANCES_BIT)
-
-    return (couriers, items, courier_size_conv, item_size_conv, distances_conv, LOAD_CORUIERS_BITS, DISTANCES_BIT)
+    courier_size_conv = converter_sat(courier_size, 0, load_couriers_bit)
+    item_size_conv = converter_sat(item_size, 0, load_couriers_bit)
+    distances_conv = converter_sat(distances, 1, distances_bit)
+    return couriers, items, courier_size_conv, item_size_conv, distances_conv, load_couriers_bit, distances_bit
 
 
 def print_solution(solution, seconds):
-    start, end, loads, distances, max_val, couriers, items = solution
+    start, end, loads, distances, couriers, items = solution
     obj_distances = []
     for k in range(couriers):
         print("Courier = ", k)
@@ -183,14 +182,14 @@ def print_solution(solution, seconds):
             first_pos = -1
             second_pos = -1
             for j in range(items + 1):
-                if start[k][i][j] == True:
+                if start[k][i][j]:
                     first_pos = j + 1
                     if first_pos == items + 1:
                         first_pos = "ORIGIN"
-                if end[k][i][j] == True:
+                if end[k][i][j]:
                     second_pos = j + 1
                     if second_pos == items + 1:
-                        second_pos = ""
+                        second_pos = "ORIGIN"
 
             print("Starting node: ", first_pos, "Ending: ", second_pos)
 
@@ -200,7 +199,33 @@ def print_solution(solution, seconds):
 
 
 def calculate_distance(distances, couriers):
-    distance= []
+    distance = []
     for k in range(couriers):
         distance.append(convert_from_binary_to_int(distances[k][-1]))
     return distance
+
+
+def evaluate(model, results):
+    start, end, couriers_load, couriers_distance = results
+
+    couriers = len(start)
+    # calculating bits
+    load_couriers_bit = len(couriers_load[0][0])
+    distances_bit = len(couriers_distance[0][0])
+
+    items = len(couriers_load[0]) - 1
+
+    # model = self.solver.model()
+    start_sol = [[[model.evaluate(start[k][j][i]) for i in range(items + 1)] for j in range(items + 2 - couriers)]
+                 for k in range(couriers)]
+
+    end_sol = [[[model.evaluate(end[k][j][i]) for i in range(items + 1)] for j in range(items + 2 - couriers)]
+               for k in range(couriers)]
+
+    loads_sol = [[[model.evaluate(couriers_load[k][i][j]) for j in range(load_couriers_bit)] for i in range(items + 1)]
+                 for k in range(couriers)]
+
+    distances_sol = [[[model.evaluate(couriers_distance[k][i][j]) for j in range(distances_bit)]
+                      for i in range((items + 1) ** 2 + 1)] for k in range(couriers)]
+
+    return start_sol, end_sol, loads_sol, distances_sol, couriers, items
