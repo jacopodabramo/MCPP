@@ -194,49 +194,49 @@ class SATsolver:
                 exactly_one_bw([end[k][i][j] for k in range(couriers) for i in range(0, items + 2 - couriers)], f"H{j}")
             )
 
-            # Ensure the correct mapping of the 3th dimension
-            for k in range(couriers):
-                for j in range(items + 2 - couriers):
-                    self.solver.add(at_most_one_bw(start[k][j], f"E{k}{j}"))
-                    self.solver.add(at_most_one_bw(end[k][j], f"F{k}{j}"))
+        # Ensure the correct mapping of the 3th dimension
+        for k in range(couriers):
+            for j in range(items + 2 - couriers):
+                self.solver.add(at_most_one_bw(start[k][j], f"E{k}{j}"))
+                self.solver.add(at_most_one_bw(end[k][j], f"F{k}{j}"))
 
-            # Sum of items
-            t = 1
-            for k in range(couriers):
-                self.solver.add(Not(Or(couriers_load[k][0])))  # All values are false in index 0
-                for i in range(0, items):
+        # Sum of items
+        t = 1
+        for k in range(couriers):
+            self.solver.add(Not(Or(couriers_load[k][0])))  # All values are false in index 0
+            for i in range(0, items):
+                self.solver.add(If(
+                    Not(Or([start[k][j][i] for j in range(1, items + 2 - couriers)])),
+                    And([couriers_load[k][i][j] == couriers_load[k][i + 1][j] for j in range(load_couriers)]),
+                    binary_sum(couriers_load[k][i], item_size[i], couriers_load[k][i + 1], "B" + str(t))
+                ))
+                t += 1
+
+        # bin packing constriant
+        for k in range(couriers):
+            self.solver.add(
+                greater(
+                      courier_size[k], couriers_load[k][items], str(k)
+                )
+            )
+
+        # Sum of distances
+        t = 1
+        for k in range(couriers):
+            self.solver.add(Not(Or(couriers_distance[k][0])))
+            x = 0
+            for j in range(items + 1):
+                for l in range(items + 1):
                     self.solver.add(If(
-                        Not(Or([start[k][j][i] for j in range(1, items + 2 - couriers)])),
-                        And([couriers_load[k][i][j] == couriers_load[k][i + 1][j] for j in range(load_couriers)]),
-                        binary_sum(couriers_load[k][i], item_size[i], couriers_load[k][i + 1], "B" + str(t))
-                    ))
+                        Or([And(start[k][i][j], end[k][i][l]) for i in range(items + 2 - couriers)]),
+                        binary_sum(couriers_distance[k][x], distances[j][l], couriers_distance[k][x + 1],
+                                    "C" + str(t)),
+                        And([couriers_distance[k][x][m] == couriers_distance[k][x + 1][m] for m in
+                            range(distances_bit)])
+                    )
+                    )
+                    x += 1
                     t += 1
 
-            # bin packing constriant
-            for k in range(couriers):
-                self.solver.add(
-                    greater(
-                        courier_size[k], couriers_load[k][items], str(k)
-                    )
-                )
-
-            # Sum of distances
-            t = 1
-            for k in range(couriers):
-                self.solver.add(Not(Or(couriers_distance[k][0])))
-                x = 0
-                for j in range(items + 1):
-                    for l in range(items + 1):
-                        self.solver.add(If(
-                            Or([And(start[k][i][j], end[k][i][l]) for i in range(items + 2 - couriers)]),
-                            binary_sum(couriers_distance[k][x], distances[j][l], couriers_distance[k][x + 1],
-                                       "C" + str(t)),
-                            And([couriers_distance[k][x][m] == couriers_distance[k][x + 1][m] for m in
-                                 range(distances_bit)])
-                        )
-                        )
-                        x += 1
-                        t += 1
-
-            return start, end, couriers_load, couriers_distance
+        return start, end, couriers_load, couriers_distance
 
