@@ -1,14 +1,19 @@
 # Instance generation for the moultiple couriers problem
+import os.path
+
 import numpy as np
 import random
 import argparse
 from utils import *
 
-N_INSTANCES = 4
-couriers_items = [(4,8)] # list of generation
+# Minizinc library classes to create the distances matrix 
+from minizinc import Model, Solver, Instance
 
+N_INSTANCES = 5
+couriers_items = [(3,15)] # list of generation
+SYMMETRIC = False
 
-def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=30, max_distance=10):
+def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=30):
     """
     This function takes in input the number of couriers and the number of items,
     it generates and saves the instance
@@ -28,16 +33,8 @@ def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=3
     objects_size = [random.randint(1, max_item_size) for _ in range(n_items)]
     
     # Generate the distances matrix
-    distances = []
-    for i in range(n_items + 1):
-        row = []
-        for j in range(n_items + 1):
-            if i == j:
-                row.append(0)
-            else:
-                row.append(random.randint(1, max_distance))
-        distances.append(row)
-    
+    distances = get_distances(n_items, seed)
+
 
     # Create the instance file
     f = open(filename + ".txt", 'w')
@@ -48,6 +45,30 @@ def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=3
     for line in distances:
         f.write(','.join(str(e) for e in line) + '\n')
     f.close()
+
+
+def get_distances(n_items, seed):
+    '''
+    Calls a minizinc model to generate the distances matrix
+    in such a way that it respects the triangular inequality
+    
+    :param n_items: number of items (shapes the matrix)
+    :param seed: seed for the random generator of the miniZinc model
+    :return: the distances matrix
+    '''
+    # Create the model
+    model = Model("./instance_generator.mzn")
+    solver = Solver.lookup("gecode")
+    instance = Instance(solver, model)
+
+    # Set the model parameters
+    instance["symmetric"] = SYMMETRIC
+    instance["n"] = n_items
+    result = instance.solve(random_seed = seed)
+
+    distance = result["matrix"]
+    return distance
+
 
 def generate_graph_instace(filename, data):
     f = open(filename + ".dzn", 'w')
@@ -69,11 +90,14 @@ def generator(path, pair_dimension):
     which is a list of couple (number_couriers, number_items) in order to generate different instances for
     a different dimension for items and couriers
     """
+    if not os.path.exists(path):
+        os.makedirs(path)
+
     for el in pair_dimension:
         for i in range(N_INSTANCES):
             courier = el[0]
             item = el[1]
-            generate_instance(courier,item, path + "instance_" + str(courier) + "_" + str(item) + "_" + str(i), seed=i)
+            generate_instance(courier,item, path + "instance_" + str(courier) + "_" + str(item) + "_" + str(i), seed=i+1)
 
 
 
@@ -88,9 +112,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    #generator("./input/instance2.txt",couriers_items)
-    """"
-    data = read_instance("./input/instance1.txt")
-    data = preprocessing(data)
-    generate_graph_instace("./input/Gecode_instance",data)
-    """

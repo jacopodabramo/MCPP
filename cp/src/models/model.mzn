@@ -30,7 +30,8 @@ array[ITEMS] of var COURIERS: loads;
 
 % ensure that each courier starts and ends in origin point
 constraint forall(k in COURIERS) (
-      asg[k, items+1] != items+1 /\ count([asg[k, i] | i in ITEMS], items+1, 1)
+      if asg[k, items+1] != items+1 then count([asg[k, i] | i in ITEMS], items+1, 1) 
+      else forall(i in NODES) (asg[k, i] == i)  endif
 );
 
 % each item must be assigned only to one courier
@@ -54,10 +55,8 @@ constraint bin_packing_capa(
 
 % Circuit
 constraint forall(k in COURIERS) (
-      subcircuit([asg[k, i] |i in NODES])
+      subcircuit([asg[k, i] |i in NODES]) 
 );
-
-
 
 % distance computation
 constraint forall(k in COURIERS) (
