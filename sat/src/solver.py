@@ -143,13 +143,20 @@ class SATsolver:
             [[Bool(f"dist_{k}_{i}_{j}") for j in range(distances_bit)] for i in range((items + 1) ** 2 + 1)]
             for k in range(couriers)]
 
-        # Each courier must start from origin
-        self.solver.add(And([start[k][0][items] for k in range(couriers)]))
-
-        # Each courier arrival must exist and must be different from origin
+        # If a courier star then it must return but 
+        # the last arrival must not be the origin
         for k in range(couriers):
-            self.solver.add(Or(end[k][0]))
-            self.solver.add(Not(end[k][0][items]))
+            self.solver.add(
+                If(
+                    start[k][0][items],
+                    And(
+                        Or(end[k][0]), 
+                        Not(end[k][0][items]),
+                        exactly_one_bw([end[k][i][items] for i in range(items + 2 - couriers)], f"A{k}")
+                    ),
+                    Not(Or(start[k][0]))
+                )
+            )
 
         # If we start we must arrive to a point
         for k in range(couriers):
@@ -167,12 +174,6 @@ class SATsolver:
                                         )
                                 )
 
-        # Circuit Constraints
-
-        # Each courier must returnn to the origin at some point
-        for k in range(couriers):
-            self.solver.add(exactly_one_bw([end[k][i][items] for i in range(items + 2 - couriers)], f"A{k}"))
-
         # Each arrival point must be the next starting one if different from the origin
         for k in range(couriers):
             for j in range(items - couriers + 1):
@@ -188,7 +189,8 @@ class SATsolver:
                 exactly_one_bw([start[k][i][j] for k in range(couriers) for i in range(1, items + 2 - couriers)],
                                f"G{j}")
             )
-
+        
+        # Each item must be assigned exactly once
         for j in range(items):
             self.solver.add(
                 exactly_one_bw([end[k][i][j] for k in range(couriers) for i in range(0, items + 2 - couriers)], f"H{j}")

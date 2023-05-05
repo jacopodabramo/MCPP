@@ -1,3 +1,4 @@
+
 /*
  * Graph model
  * Start with those data stuctures:
@@ -38,18 +39,20 @@ array[COURIERS, NODES] of var bool :ns;
 array[COURIERS, GRAPH_EDGES] of var bool :es;
 array[COURIERS] of var int: path_dist;
 
+% Variable to apply bin packing
 array[ITEMS] of var COURIERS: loads;
 
+% Symmetry breaking variables
+array[NODES, COURIERS] of var bool: symmetry;
+array[COURIERS] of var int: couriers_loads;
 
 % force the pair ns es to be a sub graph of the original one for each courier, it also
 % computes the total cost of the path (cycle) obtained (see  https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#index-125)
 constraint forall(k in COURIERS)(
-    if count([ns[k, i] | i in NODES], 0, items+2) then path_dist[k] = 0 /\ count(es[k], 0, 1..n_edges) else
     bounded_dpath(
             items+2, n_edges, 
             starting_nd, ending_nd, weights, 
             1, items+2, [ns[k,i] | i in NODES], [es[k,i] | i in GRAPH_EDGES], path_dist[k])
-    endif
 );
 
 % Ensure that each item is taken care of by a single courier
@@ -73,6 +76,21 @@ constraint bin_packing_capa(
                            loads,
                            item_size);
 
+
+% Symmetry breaking
+constraint forall(k in COURIERS)(
+    couriers_loads[k] = sum(
+            [item_size[i] | i in ITEMS where loads[i]=k]
+    )
+);
+
+
+% Assign to the symmetry matrix either asg (if lex can be applied) or all zeros
+constraint if forall(k in 1..courier-1) (courier_size[courier] >= couriers_loads[k]) then 
+            forall(k in COURIERS) (forall(i in NODES) (symmetry[i,k] <-> ns[k, i]))
+           else forall(k in COURIERS) (forall(i in NODES) (symmetry[i,k] <-> false)) endif;
+
+constraint lex_chain(symmetry);
 
 % Constraint to avoid any courier to return in an already visited node:
 % this may ensure that meaningless part of the tree are not visited

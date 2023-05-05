@@ -1,10 +1,9 @@
 /*
  * Description of the model :
- * we use a 2D array to handle the assignment of object to each
- * courier. The matrix dimension is Courier x Item + 1, each courier has an associated
+ * we use a 2D array to handle the assignment of object to each courier. 
+ * The matrix dimension is Courier x Item + 1, each courier has an associated
  * array where for each element of the array can be assigned a value from 1 to items + 1.
  * This means that each courier goes from i (position of array) to j (value assigned to cell).
- *  
  */
 include "alldifferent.mzn";
 include "globals.mzn";
@@ -26,7 +25,12 @@ array[NODES, NODES] of int: distances;
 array[COURIERS] of var int: obj_dist;
 array[COURIERS, NODES] of var NODES: asg;
 
-array[ITEMS] of var COURIERS: loads;
+array[NODES, COURIERS] of var int: symmetry;
+
+array[ITEMS] of var int: loads;
+
+array[COURIERS] of var int: couriers_loads;
+
 
 % ensure that each courier starts and ends in origin point
 constraint forall(k in COURIERS) (
@@ -38,6 +42,7 @@ constraint forall(k in COURIERS) (
 constraint forall(i in ITEMS)(
       count([asg[k, i]| k in COURIERS], i, courier-1)
 );
+
 
 % setting the loads to verify the load_size for each courier
 constraint forall(k in COURIERS) (
@@ -60,9 +65,22 @@ constraint forall(k in COURIERS) (
 
 % distance computation
 constraint forall(k in COURIERS) (
-      obj_dist[k] = sum([distances[i, asg[k, i]]| i in NODES where asg[k,i] != i])
+      obj_dist[k] = sum([distances[i, asg[k, i]]| i in NODES where asg[k, i] != i])
 );
 
+
+% Symmetry breaking constraint
+constraint forall(k in COURIERS)(
+    couriers_loads[k] = sum(
+            [item_size[i] | i in ITEMS where loads[i]=k]
+    )
+);
+
+constraint if forall(k in 1..courier-1) (courier_size[courier] >= couriers_loads[k]) then 
+            forall(k in COURIERS) (forall(i in NODES) (symmetry[i,k] = asg[k, i]))
+           else forall(k in COURIERS) (forall(i in NODES) (symmetry[i,k] = 0)) endif;
+
+constraint lex_chain(symmetry);
 
 solve :: seq_search([
                 int_search(loads, first_fail, indomain_min),
@@ -72,4 +90,5 @@ solve :: seq_search([
 %solve minimize(max(obj_dist));
 
 output [show(obj_dist) ++ "\n"];
-%output [show(asg[1,i]) ++ " "| i in NODES]
+
+%output [show(symmetry[i, 1]) ++ " "| i in NODES]

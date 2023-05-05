@@ -20,7 +20,7 @@ class CPsolver:
 
     def solve(self):
         model = Model(self.solver_path)
-        solver = Solver.lookup("gecode")
+        solver = Solver.lookup("chuffed")
 
         if self.solver_path == "./cp/src/models/model.mzn":
             result = self.model_solve(model, solver)
@@ -98,18 +98,19 @@ class CPsolver:
         courier, item, courier_size, item_size, distances = d
         instance["courier"] = courier
         instance["items"] = item
-        instance["courier_size"] = courier_size
+        instance["courier_size"] = courier_size.sort(reverse=True)
         instance["item_size"] = item_size
         instance["distances"] = distances
         return instance.solve(timeout=datetime.timedelta(seconds=self.timeout), processes=10, random_seed=42,
                               free_search=True)
 
     def graph_model_solve_instance(self, d, instance):
-
+        
         n_couriers, n_items, couriers_size, objects_size, starting_nd, ending_nd, weights, n_edges = d
+        
         instance["courier"] = n_couriers
         instance["items"] = n_items
-        instance["courier_size"] = couriers_size
+        instance["courier_size"] = couriers_size.sort(reverse=True)
         instance["item_size"] = objects_size
         instance["starting_nd"] = starting_nd
         instance["ending_nd"] = ending_nd

@@ -64,7 +64,11 @@ def preprocessing(data):
                 starting_nd.append(1)
                 ending_nd.append(j + 1)
                 weigths.append(distances[i - 1][j - 1])
-
+            elif i == j and i == len(distances[0]):
+                # Add the no travel node
+                starting_nd.append(1)
+                ending_nd.append(len(distances[0]) + 1)
+                weigths.append(0)
     return n_couriers, n_items, couriers_size, objects_size, starting_nd, ending_nd, weigths, len(starting_nd)
 
 
