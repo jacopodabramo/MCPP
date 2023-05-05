@@ -1,7 +1,7 @@
 % Use this editor as a MiniZinc scratch book 
-int: symmetric=0;
+int: symmetric;
 
-int: n=4;
+int: n;
 
 array [1..n+1, 1..n+1] of var 0..9: matrix;
 
@@ -16,5 +16,5 @@ constraint forall(i, j in 1..n+1)(
 
 constraint if symmetric = 1 then forall(i, j in 1..n+1)(matrix[i,j] = matrix[j,i]) endif;
 
-solve satisfy %:: int_search(matrix, first_fail, indomain_random) satisfy;
+solve :: int_search(matrix, first_fail, indomain_random) satisfy;
 

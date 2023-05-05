@@ -20,7 +20,7 @@ class CPsolver:
 
     def solve(self):
         model = Model(self.solver_path)
-        solver = Solver.lookup("chuffed")
+        solver = Solver.lookup("gecode")
 
         if self.solver_path == "./cp/src/models/model.mzn":
             result = self.model_solve(model, solver)

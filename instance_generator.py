@@ -1,4 +1,6 @@
 # Instance generation for the moultiple couriers problem
+import os.path
+
 import numpy as np
 import random
 import argparse
@@ -7,9 +9,9 @@ from utils import *
 # Minizinc library classes to create the distances matrix 
 from minizinc import Model, Solver, Instance
 
-N_INSTANCES = 4
-couriers_items = [(4,8)] # list of generation
-SYMMETRIC = True
+N_INSTANCES = 5
+couriers_items = [(3,15)] # list of generation
+SYMMETRIC = False
 
 def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=30):
     """
@@ -56,16 +58,15 @@ def get_distances(n_items, seed):
     '''
     # Create the model
     model = Model("./instance_generator.mzn")
-    solver = Solver.lookup("org.gecode.gist", refresh = True)
+    solver = Solver.lookup("gecode")
     instance = Instance(solver, model)
 
     # Set the model parameters
-    #instance["symmetric"] = SYMMETRIC
-    #instance["n"] = n_items
-    result = instance.solve()
+    instance["symmetric"] = SYMMETRIC
+    instance["n"] = n_items
+    result = instance.solve(random_seed = seed)
 
     distance = result["matrix"]
-
     return distance
 
 
@@ -89,11 +90,14 @@ def generator(path, pair_dimension):
     which is a list of couple (number_couriers, number_items) in order to generate different instances for
     a different dimension for items and couriers
     """
+    if not os.path.exists(path):
+        os.makedirs(path)
+
     for el in pair_dimension:
         for i in range(N_INSTANCES):
             courier = el[0]
             item = el[1]
-            generate_instance(courier,item, path + "instance_" + str(courier) + "_" + str(item) + "_" + str(i), seed=i)
+            generate_instance(courier,item, path + "instance_" + str(courier) + "_" + str(item) + "_" + str(i), seed=i+1)
 
 
 
@@ -108,9 +112,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    #generator("./input/instance2.txt",couriers_items)
-    """"
-    data = read_instance("./input/instance1.txt")
-    data = preprocessing(data)
-    generate_graph_instace("./input/Gecode_instance",data)
-    """

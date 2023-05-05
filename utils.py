@@ -76,7 +76,7 @@ def load_preprocessing(data):
 
 def saving_file(val, path, filename):
     if not os.path.exists(path):
-        os.mkdir(path)
+        os.makedirs(path)
 
     f = open(path+filename, 'w')
     if val == "Unsat":
