@@ -1,6 +1,7 @@
 import argparse
 from cp.src.solver import CPsolver
 from sat.src.solver import SATsolver
+from smt.src.solver import SMTsolver
 from utils import load_data,print_sat
 
 
@@ -25,10 +26,11 @@ def main():
     data = load_data(args.input_dir, args.num_instance)
     # print(data)
     if args.solver == "cp":
-        solver = CPsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), model = args.model)
+        solver = CPsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), model=args.model)
     elif args.solver == "sat":
-        solver = SATsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout),search = args.model)
-    # the others solver will be implemented
+        solver = SATsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), search=args.model)
+    elif args.solver == "smt":
+        solver = SMTsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), model=args.model)
     else:
         raise argparse.ArgumentError(None, "Please select a solver between cp, sat, smt and lp.")
 

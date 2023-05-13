@@ -1,5 +1,5 @@
 import datetime
-
+import numpy as np
 from minizinc import Model, Solver, Status, Instance
 from utils import *
 
@@ -41,8 +41,10 @@ class CPsolver:
                 if result.status is Status.OPTIMAL_SOLUTION:
                     assignments = result["asg"]
                     obj_dist = result["obj_dist"]
-                    print_model(assignments,instance["distances"],obj_dist,result.statistics['time'].total_seconds())
+                    print_model(assignments, instance["distances"], obj_dist, result.statistics['solveTime'])
                     solutions.append(obj_dist)
+
+                    # saving on file
                     saving_file(obj_dist, path, filename)
 
                 elif result.status is Status.UNSATISFIABLE:
@@ -72,8 +74,9 @@ class CPsolver:
                     ns = result["ns"]
                     es = result["es"]
                     path_dist = result["path_dist"]
-                    print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], path_dist, result.statistics['time'].total_seconds())
-                    # salvattogio su file
+                    print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], path_dist, result.statistics['solveTime'])
+
+                    # saving on file
                     saving_file(path_dist, path, filename)
 
                 elif result.status is Status.UNSATISFIABLE:
@@ -83,7 +86,6 @@ class CPsolver:
                 else:
                     print("Time error")
                     saving_file("Unsat", path, filename)
-
 
                 print("--------------------------------------------------")
 
@@ -98,7 +100,7 @@ class CPsolver:
         courier, item, courier_size, item_size, distances = d
         instance["courier"] = courier
         instance["items"] = item
-        instance["courier_size"] = courier_size.sort(reverse=True)
+        instance["courier_size"] = np.sort(courier_size)[::-1]
         instance["item_size"] = item_size
         instance["distances"] = distances
         return instance.solve(timeout=datetime.timedelta(seconds=self.timeout), processes=10, random_seed=42,
@@ -110,7 +112,7 @@ class CPsolver:
         
         instance["courier"] = n_couriers
         instance["items"] = n_items
-        instance["courier_size"] = couriers_size.sort(reverse=True)
+        instance["courier_size"] = np.sort(couriers_size, ascending=True)
         instance["item_size"] = objects_size
         instance["starting_nd"] = starting_nd
         instance["ending_nd"] = ending_nd

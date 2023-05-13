@@ -1,6 +1,4 @@
-import math
 import time
-from z3 import And, Or, Implies, Int, Bool, If, Not, Sum, sat, Solver, unsat
 from sat.src.sat_functions import *
 from utils import saving_file
 
@@ -12,6 +10,7 @@ class SATsolver:
         self.output_dir = output_dir
         self.timeout = timeout
         self.search = search
+        self.solver = Solver()
 
     # Solving part
     def solve(self):
@@ -20,15 +19,25 @@ class SATsolver:
             path = self.output_dir + "/sat/"
             filename = "output" + key
             try:
-                self.solver = Solver()
                 solution = self.optimizer(value)
                 saving_file(solution, path, filename)
+
+                # Create a new solver for the next instance
+                self.set_solver()
             except TimeoutError:
                 print("TimeoutError")
                 saving_file("TimeError", path, filename)
             except Exception:
                 print("Unsatisfiable")
                 saving_file("Unsat", path, filename)
+
+    def optimizer(self, instance):
+        if self.search == 1:  # Linear Search
+            return self.linear_search(instance)
+        return self.binary_search(instance)
+
+    def set_solver(self):
+        self.solver = Solver()
 
     def linear_search(self, instance):
         start_time = time.time()
@@ -121,10 +130,6 @@ class SATsolver:
         dist = calculate_distance(distances, couriers)
         return dist
 
-    def optimizer(self, instance):
-        if self.search == 1:  # Linear Searchh
-            return self.linear_search(instance)
-        return self.binary_search(instance)
 
     def set_constraints(self, data):
         couriers, items, courier_size, item_size, distances, load_couriers, distances_bit = data

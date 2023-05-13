@@ -10,8 +10,9 @@ from utils import *
 from minizinc import Model, Solver, Instance
 
 N_INSTANCES = 5
-couriers_items = [(3,15)] # list of generation
+couriers_items = [(3, 15)] # list of generation
 SYMMETRIC = False
+
 
 def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=30):
     """
@@ -30,7 +31,7 @@ def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=3
     max_item_size = total_size // n_items
 
     # Objects size list
-    objects_size = [random.randint(1, max_item_size) for _ in range(n_items)]
+    objects_size = [random.randint(max_item_size-3, max_item_size + 1) for _ in range(n_items)]
     
     # Generate the distances matrix
     distances = get_distances(n_items, seed)

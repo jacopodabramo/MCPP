@@ -3,7 +3,7 @@ int: symmetric;
 
 int: n;
 
-array [1..n+1, 1..n+1] of var 0..9: matrix;
+array [1..n+1, 1..n+1] of var 0..100: matrix;
 
 constraint forall(i in 1..n+1) ( 
       forall(j,k in 1..n+1) (
