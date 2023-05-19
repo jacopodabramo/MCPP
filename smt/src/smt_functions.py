@@ -50,3 +50,13 @@ def is_circuit_element(i, search_value, recursion_idx, vector, items):
                     )
                 )
             )
+
+def toSMT2Benchmark(f, status="unknown", name="", logic="QF_UFLIA"):
+  v = (Ast * 0)()
+  if isinstance(f, Solver):
+    a = f.assertions()
+    if len(a) == 0:
+      f = BoolVal(True)
+    else:
+      f = And(*a)
+  return Z3_benchmark_to_smtlib_string(f.ctx_ref(), name, logic, status, "", 0, v, f.as_ast())

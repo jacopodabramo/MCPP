@@ -1,6 +1,7 @@
 import argparse
 from cp.src.solver import CPsolver
 from sat.src.solver import SATsolver
+from smt.src.solve_smtlib import SMTLIBsolver
 from smt.src.solver import SMTsolver
 from utils import load_data,print_sat
 
@@ -8,7 +9,8 @@ from utils import load_data,print_sat
 def main():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-s", "--solver", help="Select a solver between cp sat, smt and lp", default="cp", type=str)
+    parser.add_argument("-s", "--solver",
+                        help="Select a solver between cp sat, smt, smtlib, and mip", default="cp", type=str)
     parser.add_argument("-m", "--model", help="Select a model for the solver choosen, look for additional information in the cp folder ", default=1, type=int)
     parser.add_argument("-n", "--num_instance",
                         help="Select the number of the instance you want to solve, default = 0 solve all",
@@ -31,6 +33,8 @@ def main():
         solver = SATsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), search=args.model)
     elif args.solver == "smt":
         solver = SMTsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), model=args.model)
+    elif args.solver == "smtlib":
+        solver = SMTLIBsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), model=args.model)
     else:
         raise argparse.ArgumentError(None, "Please select a solver between cp, sat, smt and lp.")
 

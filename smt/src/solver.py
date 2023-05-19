@@ -4,7 +4,6 @@ from utils import saving_file
 
 
 class SMTsolver:
-
     def __init__(self, data, output_dir, timeout=300, model=0):
         self.data = data
         self.output_dir = output_dir
