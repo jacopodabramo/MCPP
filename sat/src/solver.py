@@ -5,31 +5,31 @@ from utils import saving_file
 
 class SATsolver:
 
-    def __init__(self, data, output_dir, timeout=300, search=0):
+    def __init__(self, data, output_dir, timeout=300, search=0, solver_name = 'z3'):
         self.data = data
         self.output_dir = output_dir
         self.timeout = timeout
         self.search = search
         self.solver = Solver()
+        self.solver_name = solver_name # Need some decision on the looping over the solvers
 
     # Solving part
     def solve(self):
         for key, value in self.data.items():
             print('File =', key)
             path = self.output_dir + "/sat/"
-            filename = "output" + key
+            filename = "output" + key.split('.')[0] + '.json'
             try:
                 solution = self.optimizer(value)
                 saving_file(solution, path, filename)
-
                 # Create a new solver for the next instance
                 self.set_solver()
-            except TimeoutError:
-                print("TimeoutError")
-                saving_file("TimeError", path, filename)
+
             except Exception:
                 print("Unsatisfiable")
-                saving_file("Unsat", path, filename)
+                saving_file({'satisfiable':False}, path, filename)
+
+        return solution
 
     def optimizer(self, instance):
         if self.search == 1:  # Linear Search
@@ -58,7 +58,12 @@ class SATsolver:
             try_timeout = time.time() - start_time
 
             if (self.timeout - try_timeout) < 0:
-                raise TimeoutError
+                optimal = False
+                evaluation = evaluate(model, results)
+                output_dict = format_output_sat(self.solver_name, evaluation, optimal, self.timeout)
+
+                return output_dict
+
             if self.solver.check() == unsat:
                 if i == 0:
                     raise Exception
@@ -69,48 +74,67 @@ class SATsolver:
                 max_val_binary = [model.evaluate(max_val[-1][j]) for j in range(distance_bits)]
                 upper_bound = convert_from_binary_to_int(max_val_binary)
                 upper_bound = upper_bound - 1
-
+        
+        optimal = True
         evaluation = evaluate(model, results)
         print_solution(evaluation, round(try_timeout, 3))
-        distances = evaluation[3]
-        dist = calculate_distance(distances, couriers)
-        return dist
+
+        output_dict = format_output_sat(self.solver_name, evaluation, optimal, try_timeout)
+
+        return output_dict
 
     def binary_search(self, instance):
+        '''
+        It takes the input instance and perform the optimization
+        using a binary search approach.
+        '''
         start_time = time.time()
+
+        # Retrive the data inputs
         input_data = model_input(instance)
         couriers = input_data[0]
         distance_bits = input_data[6]
+
+        # Set bounds
         upper_bound = (2 ** distance_bits) - 1
         lower_bound = 0
         middle = upper_bound // 2
         bound_distance = (upper_bound - lower_bound) // 2
+
         satisfiable = True
         previous = True
+
+        # Find a solution
         results = self.set_constraints(input_data)
         i = 0
         while satisfiable:
             conv_middle_bound = converter_boolean2(middle, distance_bits)  # converting
 
+            # Check time
+            try_timeout = time.time() - start_time
+            if (self.timeout - try_timeout) < 0:
+                # Return the last non optimal solution
+                optimal = False
+                evaluation = evaluate(model, results)
+                output_dict = format_output_sat(self.solver_name, evaluation, optimal, self.timeout)
+
+                return output_dict
+
             if previous:
                 self.solver.push()
                 previous = False
-            # Max
+            
             max_val = [[Bool(f"max_{j}{i}") for i in range(distance_bits)] for j in range(couriers)]
             self.solver.add(max_of_bin_int([results[3][k][-1] for k in range(couriers)], max_val))
             self.solver.add(greater(conv_middle_bound, max_val[-1], "bound" + str(i)))
 
-            try_timeout = time.time() - start_time
-            if (self.timeout - try_timeout) < 0:
-                raise TimeoutError
-
-            if bound_distance == 1:
+            if bound_distance == 1: # Search completed
                 satisfiable = False
 
-            elif self.solver.check() == unsat:
+            elif self.solver.check() == unsat: # Found unsat in the lower region
                 if i == 0:
                     raise Exception
-                lower_bound = middle
+                lower_bound = middle # Move the search in the upper one
                 previous = True
                 self.solver.pop()
 
@@ -125,10 +149,12 @@ class SATsolver:
             i += 1
 
         evaluation = evaluate(model, results)
+        optimal = True
         print_solution(evaluation, round(try_timeout, 3))
-        distances = evaluation[3]
-        dist = calculate_distance(distances, couriers)
-        return dist
+
+        output_dict = format_output_sat(self.solver_name, evaluation, optimal, try_timeout)
+
+        return output_dict
 
 
     def set_constraints(self, data):

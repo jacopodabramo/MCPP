@@ -173,7 +173,7 @@ def model_input(instance):
 
 
 def print_solution(solution, seconds):
-    start, end, loads, distances, couriers, items = solution
+    start, end, _, distances, couriers, items = solution
     obj_distances = []
     for k in range(couriers):
         print("Courier = ", k)
@@ -197,6 +197,32 @@ def print_solution(solution, seconds):
     print("TIME = ", seconds)
     print("--------------------------------------------------")
 
+
+def format_output_sat(solver, solution, optimal, seconds):
+    seconds = int(seconds).__floor__()
+
+    start, _, _, distances, couriers, items = solution
+
+    obj_distances = []
+    res = []
+    for k in range(couriers):
+        asg = []
+        obj_distances.append(convert_from_binary_to_int(distances[k][-1]))
+        for i in range(items + 2 - couriers):
+            for j in range(items + 1):
+                if start[k][i][j] and j+1 != items+1:
+                    asg.append(j+1)
+        res.append(asg)
+
+    obj = max(obj_distances)
+    return {
+        solver: {
+            'time' : seconds,
+            'optimal' : optimal,
+            'obj' : obj,
+            'sol' : res
+        }
+    }
 
 def calculate_distance(distances, couriers):
     distance = []

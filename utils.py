@@ -1,7 +1,5 @@
 import os
-import glob
-
-
+import json
 def read_instance(path):
     """
     The function takes in input a txt files and return a tuple of the problem's instance
@@ -78,18 +76,14 @@ def load_preprocessing(data):
     return data
 
 
-def saving_file(val, path, filename):
+def saving_file(json_dict, path, filename):
     if not os.path.exists(path):
         os.makedirs(path)
 
-    f = open(path+filename, 'w')
-    if val == "Unsat":
-        f.write("Unsat")
-    elif val == "TimeError":
-        f.write("TimeError")
-    else:
-        f.write("Distance = "+str(val))
-    f.close()
+    with open(path+filename, 'w') as file:
+        json.dump(json_dict, file)
+
+    
 
 
 def print_graph(ns, es, starting_nd, ending_nd, path_dist, seconds):
@@ -130,43 +124,57 @@ def print_model(asg, matrix, obj_dist, seconds):
     print("---------------------------------------------")
 
 
-# def save_to_file(distance,path):
+def format_output_cp_model(solver, seconds, optimal, obj_dist, assignments):
+    '''
+    Create the the dictionary to save in the output folder, it needs to 
+    convert the assignment format in a list containing only the correct 
+    assignments.
+    '''
+    seconds = seconds.__floor__()
+    obj = max(obj_dist)
 
+    items = len(assignments[0])
 
-"""
-import datetime
-from minizinc import Model, Solver, Status, Instance
-
-def main():
-    model = Model("./cp/src/graph_model.mzn")
-    solver = Solver.lookup("chuffed")
-    instance = Instance(solver, model)
-    n_couriers, n_items, couriers_size, objects_size, starting_nd, ending_nd, weights, n_edges = preprocessing("./input/data2.txt")
-    # print(starting_nd,'\n', ending_nd,'\n', weights)
-
-    instance["courier"] = n_couriers
-    instance["items"] = n_items
-    instance["courier_size"] = couriers_size
-    instance["item_size"] = objects_size
-    instance["starting_nd"] = starting_nd
-    instance["ending_nd"] = ending_nd
-    instance["weights"] = weights
-    instance["n_edges"] = n_edges
-    result = instance.solve(timeout=datetime.timedelta(seconl  ds=300), processes=10, random_seed=42,
-                          free_search=True)
+    res = []
+    for k in range(len(assignments)):
+        asg = []
+        for i in range(items):
+            if assignments[k][i] != i+1 and assignments[k][i] < items:
+                asg.append(assignments[k][i])
+        res.append(asg)
     
-    print("Ns = vale")
-    ns = result["ns"]
-    es = result["es"]
-    path_dist = result["path_dist"]
-    for i in range(len(ns)):
-        print("Corriere = ",i, " = ", ns[i])
-        for j in range(len(es[i])):
-            if es[i][j] == True:
-                print("Starting Nodes:", starting_nd[j]," Ending Nodes ", ending_nd[j])
-    #print(es)
-    print(path_dist)
-    
-if __name__ == '__main__':
-    main()
-"""
+    return {
+        solver: {
+            'time' : seconds,
+            'optimal' : optimal,
+            'obj' : obj,
+            'sol' : res
+        }
+    }
+                       
+def format_output_graph_model(solver, seconds, optimal, ns, starting_nd, obj_dist):
+    '''
+    Create the the dictionary to save in the output folder, it needs to 
+    convert the assignment format in a list containing only the correct 
+    assignments.
+    '''
+    seconds = seconds.__floor__()
+    obj = max(obj_dist)
+
+    nodes = len(ns[0]) # items + 1 
+    res = []
+    for k in range(len(ns)):
+        asg = []
+        for i in range(1, nodes-1):
+            if ns[k][i] and starting_nd[i] != nodes and starting_nd[i] != 1:
+                asg.append(i)
+        res.append(asg)
+
+    return {
+        solver: {
+            'time' : seconds,
+            'optimal' : optimal,
+            'obj' : obj,
+            'sol' : res
+        }
+    }
