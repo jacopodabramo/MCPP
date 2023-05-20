@@ -24,7 +24,9 @@ class SATsolver:
                 saving_file(solution, path, filename)
                 # Create a new solver for the next instance
                 self.set_solver()
-
+            except TimeoutError:
+                print("No solution found in the time given")
+                saving_file({'unknown_solution':True})
             except Exception:
                 print("Unsatisfiable")
                 saving_file({'satisfiable':False}, path, filename)
@@ -59,10 +61,14 @@ class SATsolver:
 
             if (self.timeout - try_timeout) < 0:
                 optimal = False
-                evaluation = evaluate(model, results)
-                output_dict = format_output_sat(self.solver_name, evaluation, optimal, self.timeout)
+                # Check whether there's at least a solution
+                if i == 0:
+                    raise TimeoutError
+                else:
+                    evaluation = evaluate(model, results)
+                    output_dict = format_output_sat(self.solver_name, evaluation, optimal, self.timeout)
 
-                return output_dict
+                    return output_dict
 
             if self.solver.check() == unsat:
                 if i == 0:

@@ -1,5 +1,6 @@
 from itertools import combinations
 from z3 import *
+from utils import *
 
 
 def at_least_one_bw(bool_vars):
@@ -215,14 +216,7 @@ def format_output_sat(solver, solution, optimal, seconds):
         res.append(asg)
 
     obj = max(obj_distances)
-    return {
-        solver: {
-            'time' : seconds,
-            'optimal' : optimal,
-            'obj' : obj,
-            'sol' : res
-        }
-    }
+    return get_dict(solver, seconds, optimal, obj, res)
 
 def calculate_distance(distances, couriers):
     distance = []

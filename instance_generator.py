@@ -41,10 +41,10 @@ def generate_instance(n_couriers, n_items, filename, seed=42, max_courier_load=3
     f = open(filename + ".txt", 'w')
     f.write(str(n_couriers) + '\n')
     f.write(str(n_items) + '\n')
-    f.write(','.join(str(e) for e in couriers_size) + '\n')
-    f.write(','.join(str(e) for e in objects_size) + '\n')
+    f.write(' '.join(str(e) for e in couriers_size) + '\n')
+    f.write(' '.join(str(e) for e in objects_size) + '\n')
     for line in distances:
-        f.write(','.join(str(e) for e in line) + '\n')
+        f.write(' '.join(str(e) for e in line) + '\n')
     f.close()
 
 

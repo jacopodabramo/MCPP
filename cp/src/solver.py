@@ -8,11 +8,11 @@ import json
 
 class CPsolver:
 
-    def __init__(self, data, output_dir, timeout=300, model=1, solver='chuffed'):
+    def __init__(self, data, output_dir, timeout=300, model=1):
 
         self.output_dir = output_dir
         self.timeout = timeout
-        self.solver = solver
+        self.solver = 'chuffed'
         if model == 0:
             self.data = data
             self.solver_path = "./cp/src/models/model.mzn"
@@ -22,7 +22,7 @@ class CPsolver:
 
     def solve(self):
         model = Model(self.solver_path)
-        solver = Solver.lookup(self.solver)
+        solver = Solver.lookup('chuffed')
 
         if self.solver_path == "./cp/src/models/model.mzn":
             result = self.model_solve(model, solver)
@@ -41,29 +41,40 @@ class CPsolver:
                 instance = Instance(solver, model)
                 result = self.model_solve_instance(value, instance)
                 
+                # Unsat 
                 if result.status is Status.UNSATISFIABLE:
                     output_dict = {
                         'unsatisifable': True
                     }
+                
+                # No solution found in the time given
+                elif result.status is Status.UNKNOWN:
+                    output_dict = {
+                        'unknwon solution':True
+                    }
+
+                # At least a solution
                 else:
                     assignments = result["asg"]
                     obj_dist = result["obj_dist"]
 
                     if result.status is Status.OPTIMAL_SOLUTION:
                         optimal = True 
-                        time = result.statistics['solveTime']
+                        time = result.statistics['solveTime'].seconds
                     else:
                         optimal = False
                         time = self.timeout   
 
                     print_model(assignments, instance["distances"], obj_dist, result.statistics['solveTime']) 
-                    output_dict = format_output_cp_model(self.solver, time.seconds, optimal, obj_dist, assignments)
-                       
+                    output_dict = format_output_cp_model(self.solver, time, optimal, obj_dist, assignments)
+
+                # This function should be carried out from here and put in a place where
+                # All the solvers are ran toghether, so that the dict contains 
                 saving_file(output_dict, path, filename)
-                # Loop on the solvers ???           
+                          
             except Exception as e:
                 print("Exception:", e)
-                pass
+                
 
         return output_dict
 
@@ -78,28 +89,36 @@ class CPsolver:
                 instance = Instance(solver, model)
                 result = self.graph_model_solve_instance(value, instance)
                 
+                # Unsat
                 if result.status is Status.UNSATISFIABLE:
                     output_dict = {
                         'unsatisifable': True
                     }
-
+                
+                # No solution in the time given
+                elif result.status is Status.UNKNOWN:
+                    output_dict = {
+                        'unknwon solution':True
+                    }
+                
+                # At least a solution
                 else :
                     ns = result["ns"]
                     es = result["es"]
                     obj_dist = result["path_dist"]
                     
-                if result.status is Status.OPTIMAL_SOLUTION:
-                    optimal = True
-                    time = result.statistics['solveTime']
-                else:
-                    optimal = False
-                    time = self.timeout
+                    # Optimal solution
+                    if result.status is Status.OPTIMAL_SOLUTION:
+                        optimal = True
+                        time = result.statistics['solveTime'].seconds
+                    else:
+                        optimal = False
+                        time = self.timeout
                 
-                print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], obj_dist, result.statistics['solveTime'])
-                
-                output_dict = format_output_graph_model(self.solver, time.seconds, optimal, ns, instance['starting_nd'], obj_dist)
-                    # saving on file
-                saving_file(output_dict, path, filename)
+                    print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], obj_dist, time)
+                    output_dict = format_output_graph_model(self.solver, time, optimal, ns, instance['starting_nd'], obj_dist)
+                        # saving on file
+                    saving_file(output_dict, path, filename)
 
 
 

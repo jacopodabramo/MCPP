@@ -14,11 +14,11 @@ def read_instance(path):
         elif i == 1:
             n_items = int(line)
         elif i == 2:
-            couriers_size = [int(e) for e in line.split(',')]
+            couriers_size = [int(e) for e in line.split(' ') if e != '\n' and e != '']
         elif i == 3:
-            objects_size = [int(e) for e in line.split(',')]
+            objects_size = [int(e) for e in line.split(' ') if e != '\n' and e != '']
         else:
-            distances.append([int(e) for e in line.split(',')])
+            distances.append([int(e) for e in line.split(' ') if e != '\n' and e != ''])
     f.close()
     return n_couriers, n_items, couriers_size, objects_size, distances
 
@@ -143,14 +143,7 @@ def format_output_cp_model(solver, seconds, optimal, obj_dist, assignments):
                 asg.append(assignments[k][i])
         res.append(asg)
     
-    return {
-        solver: {
-            'time' : seconds,
-            'optimal' : optimal,
-            'obj' : obj,
-            'sol' : res
-        }
-    }
+    return get_dict(solver, seconds, optimal, obj, res)
                        
 def format_output_graph_model(solver, seconds, optimal, ns, starting_nd, obj_dist):
     '''
@@ -169,7 +162,10 @@ def format_output_graph_model(solver, seconds, optimal, ns, starting_nd, obj_dis
             if ns[k][i] and starting_nd[i] != nodes and starting_nd[i] != 1:
                 asg.append(i)
         res.append(asg)
+    return get_dict(solver, seconds, optimal, obj, res)
+    
 
+def get_dict(solver, seconds, optimal, obj, res):
     return {
         solver: {
             'time' : seconds,
