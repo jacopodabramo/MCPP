@@ -1,7 +1,7 @@
 from time import time
 
 from mip.mip_functions import print_solution_model1, print_solution_model0
-from utils import saving_file
+from utils import saving_file, format_output_mip_model1, format_output_mip_model0  # , format_output_mip_model0
 from pulp import *
 import numpy as np
 class MIPsolver:
@@ -17,15 +17,31 @@ class MIPsolver:
             path = self.output_dir + "/mip/"
             filename = "output" + key.split('.')[0] + '.json'
             try:
-                self.solve_instance(value)
-                #saving_file(solution, path, filename)
-
+                result = self.solve_instance(value)
+                if self.mip_model == 1:
+                    json_dict = format_output_mip_model1('PULP_CBC_CMD',result)
+                    path = path + "model1/"
+                    saving_file(json_dict, path, filename)
+                else:
+                    json_dict = format_output_mip_model0('PULP_CBC_CMD',result)
+                    path = path + "model0/"
+                    saving_file(json_dict,path,filename)
             except TimeoutError:
                 print("No solution found in the time given")
-                saving_file({'unknown_solution': True})
-            except Exception:
-                print("Unsatisfiable")
-                saving_file({'satisfiable': False}, path, filename)
+                if self.mip_model == 1:
+                    path = path + "model1/"
+                    saving_file({'unknown_solution': True}, path, filename)
+                else:
+                    path = path + "model0/"
+                    saving_file({'unknown_solution': True},path,filename)
+            except Exception as e:
+                print("Unsatisfiable",e)
+                if self.mip_model == 1:
+                    path = path + "model1/"
+                    saving_file({'satisfiable': False}, path, filename)
+                else:
+                    path = path + "model0/"
+                    saving_file({'satisfiable': False},path,filename)
 
     def solve_instance(self, instance):
         self.model = LpProblem('MCPP', LpMinimize)
@@ -34,8 +50,7 @@ class MIPsolver:
         else:
             result = self.set_constraints_model0(instance)
 
-        self.model.solve(PULP_CBC_CMD(msg=False, timeLimit=self.timeout))
-
+        self.model.solve(PULP_CBC_CMD(msg=True, timeLimit=self.timeout))
         if self.model.status == -1:
             raise Exception
         elif self.model.status == 0:
@@ -45,7 +60,7 @@ class MIPsolver:
                 print_solution_model1(result,self.model.solutionTime)
             else:
                 print_solution_model0(result,self.model.solutionTime)
-
+        return result,self.model.solutionTime
     def linear_prod(self,binary_var, countinuos_var, ub, name):
         res = LpVariable(cat=LpInteger, name=name)
         self.model += ub * binary_var >= res

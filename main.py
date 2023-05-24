@@ -1,8 +1,10 @@
 import argparse
+
 from cp.src.solver import CPsolver
 from sat.src.solver import SATsolver
 from smt.src.solver import SMTsolver
-from utils import load_data,print_sat
+from mip.__init__ import MIPsolver
+from utils import load_data
 
 
 def main():
@@ -40,8 +42,10 @@ def main():
             timeout=int(args.timeout), 
             search=args.model
         )
-    elif args.apprach == "smt":
+    elif args.approach == "smt":
         solver = SMTsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), model=args.model)
+    elif args.approach == "mip":
+        solver = MIPsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout),model=args.model)
     else:
         raise argparse.ArgumentError(None, "Please select a solver between cp, sat, smt and lp.")
 

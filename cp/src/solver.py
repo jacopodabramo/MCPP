@@ -8,8 +8,7 @@ import json
 
 class CPsolver:
 
-    def __init__(self, data, output_dir, timeout=300, model=1):
-
+    def __init__(self, data, output_dir, timeout=300, model=0):
         self.output_dir = output_dir
         self.timeout = timeout
         self.solver = 'chuffed'
@@ -21,6 +20,7 @@ class CPsolver:
             self.solver_path = "./cp/src/models/graph_model.mzn"
 
     def solve(self):
+        print('entro')
         model = Model(self.solver_path)
         solver = Solver.lookup('chuffed')
 
@@ -60,7 +60,7 @@ class CPsolver:
 
                     if result.status is Status.OPTIMAL_SOLUTION:
                         optimal = True 
-                        time = result.statistics['solveTime'].seconds
+                        time = result.statistics['solveTime']
                     else:
                         optimal = False
                         time = self.timeout   
@@ -110,7 +110,7 @@ class CPsolver:
                     # Optimal solution
                     if result.status is Status.OPTIMAL_SOLUTION:
                         optimal = True
-                        time = result.statistics['solveTime'].seconds
+                        time = result.statistics['solveTime'].microseconds/1000000
                     else:
                         optimal = False
                         time = self.timeout

@@ -1,6 +1,6 @@
 import time
 from smt.src.smt_functions import *
-from utils import saving_file
+from utils import saving_file, format_output_smt_model0, format_output_smt_model1
 
 
 class SMTsolver:
@@ -19,15 +19,34 @@ class SMTsolver:
             filename = "output" + key
             try:
                 solution = self.solve_instance(value)
-                distances = solution[1]
-                saving_file(distances, path, filename)
+                opt = True
+                if solution[1] == self.timeout:
+                    opt = False
+                if self.model == 0:
+                    json_dict = format_output_smt_model0(solution,opt)
+                    path = path + "smt_model0/"
+                    saving_file(json_dict, path, filename)
+                else:
+                    json_dict = format_output_smt_model1(solution,opt)
+                    path = path + "smt_model1/"
+                    saving_file(json_dict, path, filename)
                 self.set_optimizer()
             except TimeoutError:
                 print("TimeoutError")
-                saving_file("TimeError", path, filename)
-            #except Exception:
-            #    print("Unsatisfiable")
-            #    saving_file("Unsat", path, filename)
+                if self.model == 0:
+                    path = path + "smt_model0/"
+                    saving_file({'unknown_solution': True}, path, filename)
+                else:
+                    path = path + "smt_model1/"
+                    saving_file({'unknown_solution': True}, path, filename)
+            except Exception as e:
+                print("Unsatisfiable",e)
+                if self.model == 0:
+                    path = path + "smt_model0/"
+                    saving_file({'satisfiable': False}, path, filename)
+                else:
+                    path = path + "smt_model1/"
+                    saving_file({'satisfiable': False}, path, filename)
 
     def set_optimizer(self):
         self.optimizer = Optimize()
@@ -45,40 +64,25 @@ class SMTsolver:
             elif self.optimizer.check() == unsat:
                 raise Exception
             else:
-                raise TimeoutError
+                total_time = self.timeout
+                results = self.evaluate(model_variables)
+                self.print_solutions(results, total_time)
+
         else:
             objective, model_variables = self.set_model_one(data)
-            #self.optimizer.minimize(objective)
-            #if self.optimizer.check() == sat:
-            #    total_time = time.time() - start_time
-            #    results = self.evaluate(model_variables)
-            #    self.print_solutions(results, total_time)
-            #elif self.optimizer.check() == unsat:
-            #raise Exception
-            #else:
-            #    raise TimeoutError
             self.optimizer.minimize(objective)
-            print(self.optimizer.check())
-            total_time = time.time() - start_time
-            model = self.optimizer.model()
-            starting_point, ending_point, couriers_loads, final_distances, items, couriers = model_variables
-            start = [[model.evaluate(starting_point[k][j]) for j in range(items + 2 - couriers)]
-                     for k in range(couriers)]
-            ending = [[model.evaluate(ending_point[k][j]) for j in range(items + 2 - couriers)]
-                      for k in range(couriers)]
+            if self.optimizer.check() == sat:
+                total_time = time.time() - start_time
+                results = self.evaluate_model1(model_variables)
+                self.print_solutions_model1(results, total_time)
+            elif self.optimizer.check() == unsat:
+                raise Exception
+            else:
+                total_time = self.timeout
+                results = self.evaluate_model1(model_variables)
+                self.print_solutions_model1(results, total_time)
 
-            load = [model.evaluate(couriers_loads[k]) for k in range(couriers)]
-            d = [model.evaluate(final_distances[k]) for k in range(couriers)]
-
-            for k in range(couriers):
-                print("Courier = ", k)
-                print("Starting = ", start[k])
-                print("Ending = ", ending[k])
-                print("Load = ", load[k])
-                print("Final = ", d[k])
-            results = items, final_distances
-            print(total_time)
-        return results
+        return results,total_time
 
     def set_model_zero(self, data):
         couriers, items, courier_size, item_size, distances = data
@@ -246,6 +250,21 @@ class SMTsolver:
 
         return assignments, distances, loads, couriers, items
 
+    def evaluate_model1(self,result):
+        starting_point, ending_point, couriers_loads, final_distances, items, couriers = result
+
+        model = self.optimizer.model()
+
+        start = [[model.evaluate(starting_point[k][j]) for j in range(items + 2 - couriers)]
+                 for k in range(couriers)]
+        ending = [[model.evaluate(ending_point[k][j]) for j in range(items + 2 - couriers)]
+                  for k in range(couriers)]
+
+        load = [model.evaluate(couriers_loads[k]) for k in range(couriers)]
+        d = [model.evaluate(final_distances[k]) for k in range(couriers)]
+
+        return start, ending, load, d, items, couriers
+
     def print_solutions(self, solution, seconds):
         asg, distances, loads, couriers, items = solution
         for k in range(couriers):
@@ -268,3 +287,14 @@ class SMTsolver:
         print("TIME = ", seconds)
         print("--------------------------------------------------")
 
+    def print_solutions_model1(self,solutions,seconds):
+        start, ending, load, d, items, couriers = solutions
+
+        for k in range(couriers):
+            print("Courier = ", k)
+            print("Starting = ", start[k])
+            print("Ending = ", ending[k])
+            print("Load = ", load[k])
+            print("Final = ", d[k])
+
+        print('total time',seconds)

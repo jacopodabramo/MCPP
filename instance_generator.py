@@ -9,8 +9,8 @@ from utils import *
 # Minizinc library classes to create the distances matrix 
 from minizinc import Model, Solver, Instance
 
-N_INSTANCES = 5
-couriers_items = [(3, 15)] # list of generation
+N_INSTANCES = 1
+couriers_items = [(3, 10)] # list of generation
 SYMMETRIC = False
 
 
