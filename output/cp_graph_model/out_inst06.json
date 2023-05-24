@@ -1,1 +1,1 @@
-{"chuffed": {"time": 3, "optimal": true, "obj": 322, "sol": [[], [], [4, 7, 8], [3], [2, 6], [1, 5]]}}
+{"chuffed": {"time": 2, "optimal": true, "obj": 322, "sol": [[], [], [5], [3, 4, 6, 7], [2], [1, 8]]}}
