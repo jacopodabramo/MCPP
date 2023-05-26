@@ -204,37 +204,26 @@ def get_dict(solver, seconds, optimal, obj, res):
 
 
 def format_output_smt_model0(result, opt):
-    asg, distances, loads, couriers, items = result[0]
-    time = result[1].__floor__()
-    optimal = opt
-    all_dist = []
-    distances = [distances[k].as_long() for k in range(len(distances))]
-    obj = max(distances)
-    for k in range(couriers):
-        dist = []
-        for i in range(items + 1):
-            if asg[k][i].as_long() != -1:
-                if asg[k][i].as_long() == items + 1:
-                    first_pos = i + 1
-                    second_pos = 'ORIGIN'
-                elif i == items + 1:
-                    first_pos = 'ORIGIN'
-                    second_pos = asg[k][i].as_long() + 1
-                else:
-                    first_pos = i + 1
-                    second_pos = asg[k][i].as_long() + 1
-                if first_pos != items + 1:
-                    dist.append(first_pos)
-                if second_pos != items + 1:
-                    dist.append(second_pos)
-        dist = list(dict.fromkeys(dist))
+    asg, distances, _, couriers, items = result[0] # unpack the tuple
+    time = result[1].__floor__() # get time 
+    optimal = opt # get status
 
-        all_dist.append(dist)
-    return get_dict('z3_solver', time, optimal, obj, all_dist)
+    obj = max([distances[k].as_long() for k in range(len(distances))]) # get objective value
+    
+    all_itineraries = [] # initialize distances array
+    for k in range(couriers):
+        k_itinerary = [] # Initialize courier assigments
+        temp_idx = items
+        for _ in range(items + 1):  # At most a courier takes all packages
+            if asg[k][temp_idx].as_long() != items and asg[k][temp_idx].as_long() != -1:
+                k_itinerary.append(asg[k][temp_idx].as_long() + 1)
+                temp_idx = asg[k][temp_idx].as_long() # next alement of the circuit
+        all_itineraries.append(k_itinerary)
+    return get_dict('z3_solver', time, optimal, obj, all_itineraries)
 
 
 def format_output_smt_model1(result, opt):
-    start, ending, load, d, items, couriers = result[0]
+    start, _, _, d, items, couriers = result[0]
     time = result[1].__floor__()
     d = [d[k].as_long() for k in range(len(d))]
     # Adding one because the solutions goes from o to items +1
