@@ -67,7 +67,7 @@ class CPsolver:
                         time_computed = self.timeout
 
                     print_model(assignments, instance["distances"], obj_dist, time_computed,corresponding_dict)
-                    output_dict = format_output_cp_model(self.solver, time_computed, optimal, obj_dist, assignments)
+                    output_dict = format_output_cp_model(self.solver, time_computed, optimal, obj_dist, assignments,corresponding_dict)
 
                 # This function should be carried out from here and put in a place where
                 # All the solvers are ran toghether, so that the dict contains 

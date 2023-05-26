@@ -15,8 +15,8 @@ class SMTsolver:
     def solve(self):
         for key, value in self.data.items():
             print('File =', key)
-            path = self.output_dir + "/smt/"
-            filename = "output" + key
+            path = self.output_dir
+            filename = "out_" + key.split('.')[0] + '.json'
             try:
                 solution = self.solve_instance(value)
                 opt = True
@@ -24,11 +24,11 @@ class SMTsolver:
                     opt = False
                 if self.model == 0:
                     json_dict = format_output_smt_model0(solution,opt)
-                    path = path + "smt_model0/"
+                    path = path + "/smt_model0/"
                     saving_file(json_dict, path, filename)
                 else:
                     json_dict = format_output_smt_model1(solution,opt)
-                    path = path + "smt_model1/"
+                    path = path + "/smt_model1/"
                     saving_file(json_dict, path, filename)
                 self.set_optimizer()
             except TimeoutError:
@@ -42,10 +42,10 @@ class SMTsolver:
             except Exception as e:
                 print("Unsatisfiable",e)
                 if self.model == 0:
-                    path = path + "smt_model0/"
+                    path = path + "/smt_model0/"
                     saving_file({'satisfiable': False}, path, filename)
                 else:
-                    path = path + "smt_model1/"
+                    path = path + "/smt_model1/"
                     saving_file({'satisfiable': False}, path, filename)
 
     def set_optimizer(self):
@@ -60,6 +60,7 @@ class SMTsolver:
             if self.optimizer.check() == sat:
                 total_time = time.time() - start_time
                 results = self.evaluate(model_variables)
+
                 self.print_solutions(results, total_time)
             elif self.optimizer.check() == unsat:
                 raise Exception
@@ -116,12 +117,12 @@ class SMTsolver:
                 self.optimizer.add(asg[k][i] >= -1)
                 self.optimizer.add(asg[k][i] <= items)
         
-        # Circuits for all valuea
-        self.optimizer.add(
-            Implies(asg[k][i] != -1, asg[k][asg[k][i]] != -1)
-                )
-
-
+        # Circuits for all values
+        for k in range(couriers):
+            for i in range(items+1):
+                self.optimizer.add(
+                    Implies(asg[k][i] != -1, asg[k][asg[k][i]] != -1)
+                    )
         # In each row we have no repetitions of distirbution center
         # Origin incuded (-1 is excuded because we need potentially
         # more than one in some rows)
@@ -130,11 +131,13 @@ class SMTsolver:
                 self.optimizer.add(at_most_one_bw([asg[k][i] == j for i in range(items + 1)], f"A{j}{k}"))
 
 
-        # for k in range(couriers):
-        #     self.optimizer.add(
-        #         Or([asg[k][i] == items for i in range(items + 1)])
-        #     )
-
+        for k in range(couriers):
+             self.optimizer.add(
+                 Or(
+                    Or([asg[k][i] == items for i in range(items + 1)]),
+                    Or(Sum([asg[k][i] for i in range(items+1)]) == -(items+1))
+                 )
+             )
         # Each item must be carried
         for i in range(items):
             self.optimizer.add(exactly_one_bw(
@@ -277,6 +280,7 @@ class SMTsolver:
         asg, distances, _, couriers, items = solution
         for k in range(couriers):
             print("Courier = ", k)
+            print(asg[k])
             for i in range(items + 1):
                 if asg[k][i].as_long() != -1:
                     if asg[k][i].as_long() == items + 1:

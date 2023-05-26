@@ -109,6 +109,15 @@ def print_graph(ns, es, starting_nd, ending_nd, path_dist, seconds,corresponding
     print("Total distances = ", path_dist)
     print("TIME =", seconds)
 
+def search_graph_path(ns,starting_nd,ending_nd,es,courier):
+    true_path = []
+    for j in range(len(es[courier])):
+        if es[courier][j] == True:
+            start = starting_nd[j] - 1
+            end = ending_nd[j] - 1
+            true_path.append((start,end))
+    return true_path
+
 
 def print_sat(asg):
     for k in range(len(asg)):
@@ -118,7 +127,6 @@ def print_sat(asg):
 
 
 def print_model(asg, matrix, obj_dist, seconds,corresponding_dict):
-    print("Dict vale = ",corresponding_dict)
     for k in range(len(asg)):
         print("Courier = ", corresponding_dict[k])
         for i in range(len(asg[k])):
@@ -130,7 +138,7 @@ def print_model(asg, matrix, obj_dist, seconds,corresponding_dict):
     print("---------------------------------------------")
 
 
-def format_output_cp_model(solver, seconds, optimal, obj_dist, assignments):
+def format_output_cp_model(solver, seconds, optimal, obj_dist, assignments,corresponding_dict):
     '''
     Create the the dictionary to save in the output folder, it needs to 
     convert the assignment format in a list containing only the correct 
@@ -144,34 +152,45 @@ def format_output_cp_model(solver, seconds, optimal, obj_dist, assignments):
     res = []
     for k in range(len(assignments)):
         asg = []
-        for i in range(items):
-            if assignments[k][i] != i + 1 and assignments[k][i] < items:
-                asg.append(assignments[k][i])
+        start = items-1
+        second = assignments[k][start]
+        while second != items:
+            asg.append(second)
+            start = second - 1
+            second = assignments[k][start]
         res.append(asg)
+    final_res = [[] for _ in range(len(assignments))]
 
-    return get_dict(solver, seconds, optimal, obj, res)
+    # Assigned the corrispondences with the dictionary
+    for i in range(len(assignments)):
+        courier = corresponding_dict[i]
+        final_res[courier] = res[i]
+
+    return get_dict(solver, seconds, optimal, obj, final_res)
 
 
 def format_output_graph_model(solver, seconds, optimal, ns, starting_nd, obj_dist,corresponding_dict):
+    pass
+    # Da finire 
     '''
     Create the the dictionary to save in the output folder, it needs to 
     convert the assignment format in a list containing only the correct 
     assignments.
-    '''
+    
     seconds = seconds.__floor__()
     obj = max(obj_dist)
-
-    nodes = len(ns[corresponding_dict[0]])  # items + 1
-    res = []
     for k in range(len(ns)):
-        courier = corresponding_dict[k]
-        asg = []
-        for i in range(1, nodes - 1):
-            if ns[courier][i] and starting_nd[i] != nodes and starting_nd[i] != 1:
-                asg.append(i)
-        res.append(asg)
+        true_path = search_graph_path(ns, starting_nd, ending_nd, es, courier)
+        pos = items +1
+        values = -1
+        i = 0
+        while value != items +1 and i < len(true_path):
+            if true_path[i][0] == or true_path[i][0] == items + 1:
+                
+    
+    res.append(asg)
     return get_dict(solver, seconds, optimal, obj, res)
-
+    '''
 
 def get_dict(solver, seconds, optimal, obj, res):
     return {
@@ -218,7 +237,8 @@ def format_output_smt_model1(result, opt):
     start, ending, load, d, items, couriers = result[0]
     time = result[1].__floor__()
     d = [d[k].as_long() for k in range(len(d))]
-    start = [[start[k][j].as_long() for j in range(items + 2 - couriers) if
+    # Adding one because the solutions goes from o to items +1
+    start = [[start[k][j].as_long() + 1 for j in range(items + 2 - couriers) if
               start[k][j].as_long() != -1 and start[k][j].as_long() != items] for k in range(couriers)]
     obj = max(d)
     optimal = opt

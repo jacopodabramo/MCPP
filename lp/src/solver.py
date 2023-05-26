@@ -17,7 +17,7 @@ class MIPsolver:
         for key, value in self.data.items():
             print('File =', key)
             path = self.output_dir + "/mip/"
-            filename = "output" + key.split('.')[0] + '.json'
+            filename = "out_" + key.split('.')[0] + '.json'
             try:
                 result = self.solve_instance(value)
                 if self.mip_model == 1:

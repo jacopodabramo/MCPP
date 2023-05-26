@@ -15,10 +15,16 @@ class SATsolver:
 
     # Solving part
     def solve(self):
+        type_search = "" # to select the correct folder
+        if self.search == 0:
+            type_search += "linear_search"
+        else:
+            type_search += "binary_search"
+
         for key, value in self.data.items():
             print('File =', key)
-            path = self.output_dir + "/sat/"
-            filename = "output" + key.split('.')[0] + '.json'
+            path = self.output_dir + "/sat_" + type_search + "/"
+            filename = "out_" + key.split('.')[0] + '.json'
             try:
                 solution = self.optimizer(value)
                 saving_file(solution, path, filename)
