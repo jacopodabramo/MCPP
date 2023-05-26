@@ -1,9 +1,11 @@
 from time import time
 
-from mip.mip_functions import print_solution_model1, print_solution_model0
+from lp.src.mip_functions import *
 from utils import saving_file, format_output_mip_model1, format_output_mip_model0  # , format_output_mip_model0
 from pulp import *
 import numpy as np
+
+
 class MIPsolver:
     def __init__(self, data, output_dir, timeout=300, model=1):
         self.data = data
@@ -61,6 +63,7 @@ class MIPsolver:
             else:
                 print_solution_model0(result,self.model.solutionTime)
         return result,self.model.solutionTime
+    
     def linear_prod(self,binary_var, countinuos_var, ub, name):
         res = LpVariable(cat=LpInteger, name=name)
         self.model += ub * binary_var >= res
@@ -70,10 +73,10 @@ class MIPsolver:
         return res
 
     def set_constraints_model1(self, data):
+        # Instance retrieval
         couriers, items, courier_size, item_size, distances = data
 
-
-
+        # General variables
         asg = [[[LpVariable(name=f'asg_{k}{i}{j}', cat=LpBinary) for i in range(items)] for j in range(items)] for k in
                range(couriers)]
 
@@ -102,8 +105,8 @@ class MIPsolver:
 
         self.model += maximum
 
-        for k in range(couriers - 1):
-            self.model += weigths[k] >= weigths[k + 1]
+        # for k in range(couriers - 1):
+        #     self.model += weigths[k] >= weigths[k + 1]
 
         for el in obj_dist:
             self.model += maximum >= el

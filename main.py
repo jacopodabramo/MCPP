@@ -3,7 +3,7 @@ import argparse
 from cp.src.solver import CPsolver
 from sat.src.solver import SATsolver
 from smt.src.solver import SMTsolver
-from mip.__init__ import MIPsolver
+from lp.src.solver import MIPsolver
 from utils import load_data
 
 
