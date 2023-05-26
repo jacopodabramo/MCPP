@@ -179,7 +179,7 @@ def print_solution(solution, seconds):
     for k in range(couriers):
         print("Courier = ", k)
         obj_distances.append(convert_from_binary_to_int(distances[k][-1]))
-        for i in range(items + 2 - couriers):
+        for i in range(items + 1):
             first_pos = -1
             second_pos = -1
             for j in range(items + 1):
@@ -209,7 +209,7 @@ def format_output_sat(solver, solution, optimal, seconds):
     for k in range(couriers):
         asg = []
         obj_distances.append(convert_from_binary_to_int(distances[k][-1]))
-        for i in range(items + 2 - couriers):
+        for i in range(items + 1):
             for j in range(items + 1):
                 if start[k][i][j] and j+1 != items+1:
                     asg.append(j+1)
@@ -234,18 +234,17 @@ def evaluate(model, results):
     distances_bit = len(couriers_distance[0][0])
 
     items = len(couriers_load[0]) - 1
-
     # model = self.solver.model()
-    start_sol = [[[model.evaluate(start[k][j][i]) for i in range(items + 1)] for j in range(items + 2 - couriers)]
+    start_sol = [[[model.evaluate(start[k][j][i]) for i in range(items + 1)] for j in range(items+1)]
                  for k in range(couriers)]
-
-    end_sol = [[[model.evaluate(end[k][j][i]) for i in range(items + 1)] for j in range(items + 2 - couriers)]
+    
+    end_sol = [[[model.evaluate(end[k][j][i]) for i in range(items + 1)] for j in range(items+1)]
                for k in range(couriers)]
-
+  
     loads_sol = [[[model.evaluate(couriers_load[k][i][j]) for j in range(load_couriers_bit)] for i in range(items + 1)]
                  for k in range(couriers)]
-
+  
     distances_sol = [[[model.evaluate(couriers_distance[k][i][j]) for j in range(distances_bit)]
                       for i in range((items + 1) ** 2 + 1)] for k in range(couriers)]
-
+    
     return start_sol, end_sol, loads_sol, distances_sol, couriers, items

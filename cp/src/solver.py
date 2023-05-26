@@ -2,7 +2,7 @@ import datetime
 import numpy as np
 from minizinc import Model, Solver, Status, Instance
 from utils import *
-import json
+
 
 
 
@@ -20,7 +20,6 @@ class CPsolver:
             self.solver_path = "./cp/src/models/graph_model.mzn"
 
     def solve(self):
-        print('entro')
         model = Model(self.solver_path)
         solver = Solver.lookup('chuffed')
 
@@ -34,12 +33,14 @@ class CPsolver:
     def model_solve(self, model, solver):
         
         for key, value in self.data.items():
+            values = list(value) # casting for modify the value of couriers (mutable object)
             print("File = ", key)
             path = self.output_dir + "/cp_model/"
             filename = "out_"+ key.split('.')[0] + '.json'
+            corresponding_dict = sorting_couriers(values) # Passing by reference
             try:
                 instance = Instance(solver, model)
-                result = self.model_solve_instance(value, instance)
+                result = self.model_solve_instance(values, instance)
                 
                 # Unsat 
                 if result.status is Status.UNSATISFIABLE:
@@ -60,13 +61,13 @@ class CPsolver:
 
                     if result.status is Status.OPTIMAL_SOLUTION:
                         optimal = True 
-                        time = result.statistics['solveTime']
+                        time_computed = result.statistics['solveTime'].total_seconds()
                     else:
                         optimal = False
-                        time = self.timeout   
+                        time_computed = self.timeout
 
-                    print_model(assignments, instance["distances"], obj_dist, result.statistics['solveTime']) 
-                    output_dict = format_output_cp_model(self.solver, time, optimal, obj_dist, assignments)
+                    print_model(assignments, instance["distances"], obj_dist, time_computed,corresponding_dict)
+                    output_dict = format_output_cp_model(self.solver, time_computed, optimal, obj_dist, assignments)
 
                 # This function should be carried out from here and put in a place where
                 # All the solvers are ran toghether, so that the dict contains 
@@ -82,12 +83,14 @@ class CPsolver:
         i = 1
         solutions = []
         for key,value in self.data.items():
+            values = list(value) # casting for modify the value of couriers (mutable object)
             print("File = ", key)
             path = self.output_dir + "/cp_graph_model/"
             filename = "out_"+ key.split('.')[0] + '.json'
+            corresponding_dict = sorting_couriers(values)  # Passing by reference
             try:
                 instance = Instance(solver, model)
-                result = self.graph_model_solve_instance(value, instance)
+                result = self.graph_model_solve_instance(values, instance)
                 
                 # Unsat
                 if result.status is Status.UNSATISFIABLE:
@@ -110,13 +113,13 @@ class CPsolver:
                     # Optimal solution
                     if result.status is Status.OPTIMAL_SOLUTION:
                         optimal = True
-                        time = result.statistics['solveTime'].microseconds/1000000
+                        time_computed = result.statistics['solveTime'].total_seconds()
                     else:
                         optimal = False
-                        time = self.timeout
+                        time_computed = self.timeout
                 
-                    print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], obj_dist, time)
-                    output_dict = format_output_graph_model(self.solver, time, optimal, ns, instance['starting_nd'], obj_dist)
+                    print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], obj_dist, time_computed,corresponding_dict)
+                    output_dict = format_output_graph_model(self.solver, time_computed, optimal, ns, instance['starting_nd'], obj_dist,corresponding_dict)
                         # saving on file
                     saving_file(output_dict, path, filename)
 

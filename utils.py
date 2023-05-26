@@ -2,6 +2,8 @@ import os
 import json
 import numpy as np
 from pulp import *
+
+
 def read_instance(path):
     """
     The function takes in input a txt files and return a tuple of the problem's instance
@@ -22,6 +24,7 @@ def read_instance(path):
         else:
             distances.append([int(e) for e in line.split(' ') if e != '\n' and e != ''])
     f.close()
+
     return n_couriers, n_items, couriers_size, objects_size, distances
 
 
@@ -77,24 +80,27 @@ def load_preprocessing(data):
         data[d] = preprocessing(data[d])
     return data
 
+
 def saving_file(json_dict, path, filename):
     if not os.path.exists(path):
         os.makedirs(path)
 
-    with open(path+filename, 'w') as file:
+    with open(path + filename, 'w') as file:
         json.dump(json_dict, file)
 
-def print_graph(ns, es, starting_nd, ending_nd, path_dist, seconds):
+
+def print_graph(ns, es, starting_nd, ending_nd, path_dist, seconds,corresponding_dict):
     for i in range(len(ns)):
-        print("Courier = ", i)
-        for j in range(len(es[i])):
-            if es[i][j] == True:
-                if starting_nd[j] == 1 or starting_nd[j] == len(ns[i]):
+        old_pos = corresponding_dict[i]
+        print("Courier = ", old_pos)
+        for j in range(len(es[old_pos])):
+            if es[old_pos][j] == True:
+                if starting_nd[j] == 1 or starting_nd[j] == len(ns[old_pos]):
                     start = "O"
                 else:
                     start = starting_nd[j] - 1
 
-                if ending_nd[j] == 1 or ending_nd[j] == len(ns[i]):
+                if ending_nd[j] == 1 or ending_nd[j] == len(ns[old_pos]):
                     end = "O"
                 else:
                     end = ending_nd[j] - 1
@@ -103,21 +109,26 @@ def print_graph(ns, es, starting_nd, ending_nd, path_dist, seconds):
     print("Total distances = ", path_dist)
     print("TIME =", seconds)
 
+
 def print_sat(asg):
     for k in range(len(asg)):
         print("Courier = ", k)
         for i in range(len(asg[k])):
             print(asg[k][i])
 
-def print_model(asg, matrix, obj_dist, seconds):
+
+def print_model(asg, matrix, obj_dist, seconds,corresponding_dict):
+    print("Dict vale = ",corresponding_dict)
     for k in range(len(asg)):
-        print("Courier = ", k)
+        print("Courier = ", corresponding_dict[k])
         for i in range(len(asg[k])):
             if asg[k][i] != i + 1:
-                print("Starting Node: {} Ending Node: {} ({} km)".format(i + 1, asg[k][i], matrix[i][asg[k][i] - 1]))
+                print("Starting Node: {} Ending Node: {} ({} km)".format(i + 1, asg[corresponding_dict[k]][i],
+                                                                         matrix[i][asg[corresponding_dict[k]][i] - 1]))
     print("Total distances = ", obj_dist)
     print("TIME =", seconds)
     print("---------------------------------------------")
+
 
 def format_output_cp_model(solver, seconds, optimal, obj_dist, assignments):
     '''
@@ -134,13 +145,14 @@ def format_output_cp_model(solver, seconds, optimal, obj_dist, assignments):
     for k in range(len(assignments)):
         asg = []
         for i in range(items):
-            if assignments[k][i] != i+1 and assignments[k][i] < items:
+            if assignments[k][i] != i + 1 and assignments[k][i] < items:
                 asg.append(assignments[k][i])
         res.append(asg)
-    
+
     return get_dict(solver, seconds, optimal, obj, res)
-                       
-def format_output_graph_model(solver, seconds, optimal, ns, starting_nd, obj_dist):
+
+
+def format_output_graph_model(solver, seconds, optimal, ns, starting_nd, obj_dist,corresponding_dict):
     '''
     Create the the dictionary to save in the output folder, it needs to 
     convert the assignment format in a list containing only the correct 
@@ -149,32 +161,35 @@ def format_output_graph_model(solver, seconds, optimal, ns, starting_nd, obj_dis
     seconds = seconds.__floor__()
     obj = max(obj_dist)
 
-    nodes = len(ns[0]) # items + 1 
+    nodes = len(ns[corresponding_dict[0]])  # items + 1
     res = []
     for k in range(len(ns)):
+        courier = corresponding_dict[k]
         asg = []
-        for i in range(1, nodes-1):
-            if ns[k][i] and starting_nd[i] != nodes and starting_nd[i] != 1:
+        for i in range(1, nodes - 1):
+            if ns[courier][i] and starting_nd[i] != nodes and starting_nd[i] != 1:
                 asg.append(i)
         res.append(asg)
     return get_dict(solver, seconds, optimal, obj, res)
 
+
 def get_dict(solver, seconds, optimal, obj, res):
     return {
         solver: {
-            'time' : seconds,
-            'optimal' : optimal,
-            'obj' : obj,
-            'sol' : res
+            'time': seconds,
+            'optimal': optimal,
+            'obj': obj,
+            'sol': res
         }
     }
 
-def format_output_smt_model0(result,opt):
+
+def format_output_smt_model0(result, opt):
     asg, distances, loads, couriers, items = result[0]
     time = result[1].__floor__()
     optimal = opt
     all_dist = []
-    distances= [distances[k].as_long() for k in range(len(distances))]
+    distances = [distances[k].as_long() for k in range(len(distances))]
     obj = max(distances)
     for k in range(couriers):
         dist = []
@@ -189,30 +204,32 @@ def format_output_smt_model0(result,opt):
                 else:
                     first_pos = i + 1
                     second_pos = asg[k][i].as_long() + 1
-                if first_pos != items+1:
+                if first_pos != items + 1:
                     dist.append(first_pos)
-                if second_pos != items+1:
+                if second_pos != items + 1:
                     dist.append(second_pos)
-        dist = list( dict.fromkeys(dist) )
+        dist = list(dict.fromkeys(dist))
 
         all_dist.append(dist)
-    return get_dict('z3_solver', time, optimal,obj, all_dist)
-
-def format_output_smt_model1(result,opt):
-     start, ending, load, d, items, couriers= result[0]
-     time = result[1].__floor__()
-     d = [d[k].as_long() for k in range(len(d))]
-     start = [[start[k][j].as_long() for j in range(items + 2 - couriers) if start[k][j].as_long() != -1 and  start[k][j].as_long()!= items]for k in range(couriers)]
-     obj = max(d)
-     optimal = opt
-     all_dist = []
-     for k in range(couriers):
-         all_dist.append(start[k])
-
-     return get_dict('z3_solver', time, optimal, obj, all_dist)
+    return get_dict('z3_solver', time, optimal, obj, all_dist)
 
 
-def format_output_mip_model1(solver,result):
+def format_output_smt_model1(result, opt):
+    start, ending, load, d, items, couriers = result[0]
+    time = result[1].__floor__()
+    d = [d[k].as_long() for k in range(len(d))]
+    start = [[start[k][j].as_long() for j in range(items + 2 - couriers) if
+              start[k][j].as_long() != -1 and start[k][j].as_long() != items] for k in range(couriers)]
+    obj = max(d)
+    optimal = opt
+    all_dist = []
+    for k in range(couriers):
+        all_dist.append(start[k])
+
+    return get_dict('z3_solver', time, optimal, obj, all_dist)
+
+
+def format_output_mip_model1(solver, result):
     asg, weigths, obj_dist, couriers, items, distances = result[0]
     seconds = result[1].__floor__()
     optimal = True
@@ -223,12 +240,13 @@ def format_output_mip_model1(solver,result):
         for i in range(items):
             for j in range(items):
                 if asg[k][i][j].value() == 1:
-                        dist.append(j)
+                    dist.append(j)
         all_dist.append(dist)
     return get_dict(solver, seconds, optimal, obj, all_dist)
 
-def format_output_mip_model0(solver,result):
-    couriers,items,starting_point,ending_point,distances_array, distances = result[0]
+
+def format_output_mip_model0(solver, result):
+    couriers, items, starting_point, ending_point, distances_array, distances = result[0]
     seconds = result[1].__floor__()
     optimal = True
     total_distance = []
@@ -242,7 +260,7 @@ def format_output_mip_model0(solver,result):
             for k in range(items + 1):
                 if value(starting_point[i][j][k]):
                     start = k
-                    if start!= items:
+                    if start != items:
                         dist.append(start)
                 if value(ending_point[i][j][k]):
                     end = k
@@ -253,5 +271,28 @@ def format_output_mip_model0(solver,result):
     obj = max(total_distance)
 
     return get_dict(solver, seconds, optimal, obj, all_dist)
+
+
+def sorting_couriers(value):
+    """
+    The function takes in input the courier_size list and return the courier_size sorting
+    in descending order and the corresponding_dict where the key is the position in sorting list
+    and the value is the old position, the position that we read from the inst.dat
+    """
+    courier_size = value[2]
+    size_pos = {}
+    # Initialization
+    for i in range(len(courier_size)):
+        size_pos[courier_size[i]] = []
+
+    for i in range(len(courier_size)):
+        size_pos[courier_size[i]].append(i)
+
+    courier_size.sort(reverse=True)
+    corresponding_dict = {}
+    for i in range(len(courier_size)):
+        corresponding_dict[i] = size_pos[courier_size[i]][0]
+        size_pos[courier_size[i]].pop(0)
+    return corresponding_dict
 
 

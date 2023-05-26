@@ -2,6 +2,9 @@ from z3 import *
 
 
 def toBinary(num, length = None):
+    '''
+    Convert a number num in a binary string  
+    '''
     num_bin = bin(num).split("b")[-1]
     if length:
         return "0"*(length - len(num_bin)) + num_bin
@@ -31,22 +34,36 @@ def exactly_one_bw(bool_vars, name):
     return And(at_least_one_bw(bool_vars), at_most_one_bw(bool_vars, name))
 
 
-def my_max(vs):
-    m = vs[0]
-    for v in vs[1:]:
-        m = If(v > m, v, m)
-    return m
+def my_max(l):
+    '''
+    Find the maximum of a list of z3 integers
+    '''
+    temp_max = l[0]
+    for v in l[1:]:
+        temp_max = If(v > temp_max, v, temp_max)
+    return temp_max
 
 
 def is_circuit_element(i, search_value, recursion_idx, vector, items):
+    '''
+    Determine whether search_value is a part of the circuit which starts from the 
+    origin.
+    i is current index to check: At the beginning will be the origin.
+    search_value is the value we are looking for in the circuit.
+    recursion_idx is the count of recursion step, needed to get out if all the list is ended
+                  and search_value was not fuond in the circuit.
+    vector is the vector of assignments containing the results.
+    items represent the total number of items. 
+    '''
     if recursion_idx == items:
-        return False
+        return False # Base case, stops after items steps
     return And(
                 And(
-                    Not(vector[i] == items),
+                    Not(vector[i] == items), # Represent the end of the circuit
                     Or(
-                        vector[i] == search_value,
-                        is_circuit_element(vector[i], search_value, recursion_idx+1, vector, items)
+                        vector[i] == search_value, # Value found
+                        is_circuit_element(vector[i], search_value, recursion_idx+1, vector, items) 
+                        
                     )
                 )
             )
