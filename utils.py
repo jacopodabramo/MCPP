@@ -254,7 +254,7 @@ def format_output_mip_model1(solver, result):
         for i in range(items):
             for j in range(items):
                 if asg[k][i][j].value() == 1:
-                    dist.append(j)
+                    dist.append(j+1)
         all_dist.append(dist)
     return get_dict(solver, seconds, optimal, obj, all_dist)
 
@@ -275,7 +275,7 @@ def format_output_mip_model0(solver, result):
                 if value(starting_point[i][j][k]):
                     start = k
                     if start != items:
-                        dist.append(start)
+                        dist.append(start+1)
                 if value(ending_point[i][j][k]):
                     end = k
             if start != -1:
