@@ -119,7 +119,7 @@ class CPsolver:
                         time_computed = self.timeout
                 
                     print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], obj_dist, time_computed,corresponding_dict)
-                    output_dict = format_output_graph_model(self.solver, time_computed, optimal, ns, instance['starting_nd'], obj_dist,corresponding_dict)
+                    output_dict = format_output_graph_model(self.solver, time_computed, optimal, ns,es, instance['starting_nd'],instance['ending_nd'], obj_dist,corresponding_dict)
                         # saving on file
                     saving_file(output_dict, path, filename)
 

@@ -109,13 +109,13 @@ def print_graph(ns, es, starting_nd, ending_nd, path_dist, seconds,corresponding
     print("Total distances = ", path_dist)
     print("TIME =", seconds)
 
-def search_graph_path(ns,starting_nd,ending_nd,es,courier):
-    true_path = []
+def search_graph_path(starting_nd,ending_nd,es,courier):
+    true_path = {}
     for j in range(len(es[courier])):
-        if es[courier][j] == True:
-            start = starting_nd[j] - 1
-            end = ending_nd[j] - 1
-            true_path.append((start,end))
+        if es[courier][j]:
+            start_pos = starting_nd[j] - 1
+            end_pos = ending_nd[j] - 1
+            true_path[start_pos] = end_pos
     return true_path
 
 
@@ -137,6 +137,14 @@ def print_model(asg, matrix, obj_dist, seconds,corresponding_dict):
     print("TIME =", seconds)
     print("---------------------------------------------")
 
+def cp_correspondence(res,corresponding_dict):
+    final_res = [[] for _ in range(len(res))]
+
+    # Assigned the corrispondences with the dictionary
+    for i in range(len(res)):
+        courier = corresponding_dict[i]
+        final_res[courier] = res[i]
+    return final_res
 
 def format_output_cp_model(solver, seconds, optimal, obj_dist, assignments,corresponding_dict):
     '''
@@ -159,38 +167,35 @@ def format_output_cp_model(solver, seconds, optimal, obj_dist, assignments,corre
             start = second - 1
             second = assignments[k][start]
         res.append(asg)
-    final_res = [[] for _ in range(len(assignments))]
-
-    # Assigned the corrispondences with the dictionary
-    for i in range(len(assignments)):
-        courier = corresponding_dict[i]
-        final_res[courier] = res[i]
+    final_res = cp_correspondence(res,corresponding_dict)
 
     return get_dict(solver, seconds, optimal, obj, final_res)
 
 
-def format_output_graph_model(solver, seconds, optimal, ns, starting_nd, obj_dist,corresponding_dict):
-    pass
-    # Da finire 
+def format_output_graph_model(solver, seconds, optimal, ns, es, starting_nd,ending_nd, obj_dist,corresponding_dict):
     '''
     Create the the dictionary to save in the output folder, it needs to 
     convert the assignment format in a list containing only the correct 
     assignments.
-    
+    '''
     seconds = seconds.__floor__()
     obj = max(obj_dist)
+    res = []
     for k in range(len(ns)):
-        true_path = search_graph_path(ns, starting_nd, ending_nd, es, courier)
-        pos = items +1
-        values = -1
-        i = 0
-        while value != items +1 and i < len(true_path):
-            if true_path[i][0] == or true_path[i][0] == items + 1:
-                
-    
-    res.append(asg)
-    return get_dict(solver, seconds, optimal, obj, res)
-    '''
+        path = search_graph_path(starting_nd, ending_nd, es, k)
+        start_pos = 0
+        asg = []
+        while len(path) != 1:
+            asg.append(path[start_pos])
+            tmp = path[start_pos]
+            path.pop(start_pos)
+            start_pos = tmp
+        res.append(asg)
+
+    final_res = cp_correspondence(res, corresponding_dict)
+
+    return get_dict(solver, seconds, optimal, obj, final_res)
+
 
 def get_dict(solver, seconds, optimal, obj, res):
     return {
