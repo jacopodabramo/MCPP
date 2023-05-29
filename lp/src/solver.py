@@ -23,12 +23,15 @@ class MIPsolver:
             filename = "out_" + key.split('.')[0] + '.json'
             try:
                 result = self.solve_instance(value)
+                opt = True
+                if result[1] == self.timeout:
+                    opt = False
                 if self.mip_model == 1:
-                    json_dict = format_output_mip_model1('PULP_CBC_CMD', result)
+                    json_dict = format_output_mip_model1('PULP_CBC_CMD', result,opt)
                     path = path + "/mip_model1/"
                     saving_file(json_dict, path, filename)
                 else:
-                    json_dict = format_output_mip_model0('PULP_CBC_CMD', result)
+                    json_dict = format_output_mip_model0('PULP_CBC_CMD', result,opt)
                     path = path + "/mip_model0/"
                     saving_file(json_dict, path, filename)
             except TimeoutError:
@@ -54,19 +57,27 @@ class MIPsolver:
             result = self.set_constraints_model1(instance)
         else:
             result = self.set_constraints_model0(instance)
-        solver = PULP_CBC_CMD(msg=True, timeLimit=self.timeout)
+        solver = PULP_CBC_CMD(msg=False, timeLimit=self.timeout)
         self.model.solve(solver)
-        print("Status:", LpSolution[self.model.status])
-        if self.model.status == 1:
+        #optimal case
+        if self.model.sol_status == 1:
             if self.mip_model == 1:
                 print_solution_model1(result, self.model.solutionTime)
             else:
                 print_solution_model0(result, self.model.solutionTime)
-        elif self.model.status == 0:
+        #stopped with sub-optimal solution
+        elif self.model.sol_status == 2:
+            self.model.solutionTime = self.timeout
+            if self.mip_model == 1:
+                print_solution_model1(result, self.model.solutionTime)
+            else:
+                print_solution_model0(result, self.model.solutionTime)
+        # stopped without finding a solution
+        elif self.model.sol_status == 0:
             raise TimeoutError
+        # unsat
         else:
             raise Exception
-
         return result, self.model.solutionTime
 
     def linear_prod(self, binary_var, countinuos_var, ub, name):

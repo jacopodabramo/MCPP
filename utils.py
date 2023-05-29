@@ -243,11 +243,11 @@ def format_output_smt_model1(result, opt):
     return get_dict('z3_solver', time, optimal, obj, all_dist)
 
 
-def format_output_mip_model1(solver, result):
+def format_output_mip_model1(solver, result, opt):
     asg, weigths, obj_dist, couriers, items, distances = result[0]
     seconds = result[1].__floor__()
-    optimal = True
-    obj = max([obj_dist[k].value() for k in range(len(obj_dist))])
+    optimal = opt
+    obj = int(max([obj_dist[k].value() for k in range(len(obj_dist))]))
     all_dist = []
     for k in range(couriers):
         dist = []
@@ -259,10 +259,10 @@ def format_output_mip_model1(solver, result):
     return get_dict(solver, seconds, optimal, obj, all_dist)
 
 
-def format_output_mip_model0(solver, result):
+def format_output_mip_model0(solver, result, opt):
     couriers, items, starting_point, ending_point, distances_array, distances = result[0]
     seconds = result[1].__floor__()
-    optimal = True
+    optimal = opt
     total_distance = []
     all_dist = []
     for i in range(couriers):
@@ -282,7 +282,7 @@ def format_output_mip_model0(solver, result):
                 dist_comp += distances[start][end]
         all_dist.append(dist)
         total_distance.append(dist_comp)
-    obj = max(total_distance)
+    obj = int(max(total_distance))
 
     return get_dict(solver, seconds, optimal, obj, all_dist)
 

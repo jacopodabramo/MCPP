@@ -21,7 +21,6 @@ def checking(input, output):
             dist += distances[first][n_items]
             obj.append(dist)
             if sum_item > couriers_size[k]:
-                #print("IL CORRIERE CHE SBAGLIA è ",k)
                 return -1
         find = False
         i = 0
@@ -62,7 +61,7 @@ def main():
                 else:
                     print(f"The {output_path} HAS AN ERROR IN OBJECT DISTANCE")
             except Exception:
-                print("I cannot check unsat solution")
+                print(f"I cannot check unsat/unknow solution for {output_path}")
 
 if __name__ == '__main__':
     main()

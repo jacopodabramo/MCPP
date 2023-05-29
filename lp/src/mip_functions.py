@@ -30,10 +30,7 @@ def print_solution_model1(result, time):
         depot = True
         print(f'courier {k}')
         for i in range(items):
-            st = ''
             for j in range(items):
-                st += str(value(asg[k][i][j])) + ' '
-                '''
                 if asg[k][i][j].value() == 1:
                     if depot:
                         print('starting: ORIGIN ending:', j)
@@ -42,9 +39,6 @@ def print_solution_model1(result, time):
                     else:
                         print('starting:', prec, 'ending:', j)
                         prec = j
-                '''
-            print(st)
-
     print('Total distance:')
     for k in range(couriers):
         print('courier ', k, ' = ', obj_dist[k].value())
