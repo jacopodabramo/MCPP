@@ -33,20 +33,17 @@ def print_solution_model1(result, time):
             for j in range(items):
                 if asg[k][i][j].value() == 1:
                     if depot:
-                        print('starting: ORIGIN ending:', j)
+                        print('star: ORIGIN end:', j)
                         depot = False
                         prec = j
                     else:
-                        print('starting:', prec, 'ending:', j)
+                        print('start:', prec, 'end:', j)
                         prec = j
-    print('Total distance:')
+    total_distance = []
     for k in range(couriers):
-        print('courier ', k, ' = ', obj_dist[k].value())
-    print('weights')
-    for k in range(couriers):
-        print('courier ', k, ' = ', weights[k].value())
-    print('Total time:', round(time, 2))
-    print('--------------------------------------------------')
+        total_distance.append(obj_dist[k].value())
+    print(f"Total distance = {total_distance}")
+    print(f"Total time = {round(time, 2)}")
 
 
 def print_solution_model0(result, time):
@@ -70,4 +67,3 @@ def print_solution_model0(result, time):
         total_distance.append(dist_comp)
     print(f"Total distance = {total_distance}")
     print(f"Total time = {round(time, 2)}")
-    print("--------------------------------------------------")

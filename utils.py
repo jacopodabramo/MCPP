@@ -268,7 +268,7 @@ def format_output_mip_model0(solver, result, opt):
     for i in range(couriers):
         dist_comp = 0
         dist = []
-        for j in range(items + 2 - couriers):
+        for j in range(items + 1):
             start = -1
             end = -1
             for k in range(items + 1):

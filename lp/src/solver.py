@@ -8,64 +8,57 @@ import traceback
 import time
 import timeit
 
-
 class MIPsolver:
-    def __init__(self, data, output_dir, timeout=300, model=1):
+    def __init__(self, data, output_dir, timeout=300, model=1,solver = 0):
         self.data = data
         self.output_dir = output_dir
         self.timeout = timeout
         self.mip_model = model
+        self.solver = solver
+        if self.solver == 0:
+            self.solver_name = '_PULP_CBC_CMD'
+        else:
+            self.solver_name = '_GLPK_CMD'
 
     def solve(self):
         for key, value in self.data.items():
             print('File =', key)
-            path = self.output_dir
+            if self.mip_model == 1:
+                path = self.output_dir + "/mip_model1" + self.solver_name+ "/"
+            else:
+                path = self.output_dir + "/mip_model0" + self.solver_name + "/"
             filename = "out_" + key.split('.')[0] + '.json'
             try:
                 result = self.solve_instance(value)
                 opt = True
-                if result[1] == self.timeout:
+                if result[1] >= self.timeout:
                     opt = False
+
                 if self.mip_model == 1:
-                    json_dict = format_output_mip_model1('PULP_CBC_CMD', result,opt)
-                    path = path + "/mip_model1/"
-                    saving_file(json_dict, path, filename)
+                    json_dict = format_output_mip_model1(self.solver_name, result,opt)
                 else:
-                    json_dict = format_output_mip_model0('PULP_CBC_CMD', result,opt)
-                    path = path + "/mip_model0/"
-                    saving_file(json_dict, path, filename)
+                    json_dict = format_output_mip_model0(self.solver_name, result,opt)
+                saving_file(json_dict, path, filename)
+
             except TimeoutError:
                 print("No solution found in the time given")
-                if self.mip_model == 1:
-                    path = path + "/mip_model1/"
-                    saving_file({'unknown_solution': True}, path, filename)
-                else:
-                    path = path + "/mip_model0/"
-                    saving_file({'unknown_solution': True}, path, filename)
+                saving_file({'unknown_solution': True}, path, filename)
             except Exception as e:
-                print("Unsatisfiable", e)
-                if self.mip_model == 1:
-                    path = path + "/mip_model1/"
-                    saving_file({'satisfiable': False}, path, filename)
-                else:
-                    path = path + "/mip_model0/"
-                    saving_file({'satisfiable': False}, path, filename)
+                print("Unsatisfiable")
+                saving_file({'satisfiable': False}, path, filename)
 
-    def solve_instance(self, instance):
-        self.model = LpProblem('MCPP', LpMinimize)
-        if self.mip_model == 1:
-            result = self.set_constraints_model1(instance)
-        else:
-            result = self.set_constraints_model0(instance)
-        solver = PULP_CBC_CMD(msg=False, timeLimit=self.timeout)
-        self.model.solve(solver)
-        #optimal case
+            print('-------------------------------------------------------------')
+
+
+    def check_solution_CBC(self,result):
+        # optimal case
         if self.model.sol_status == 1:
             if self.mip_model == 1:
                 print_solution_model1(result, self.model.solutionTime)
             else:
                 print_solution_model0(result, self.model.solutionTime)
-        #stopped with sub-optimal solution
+
+        # stopped with sub-optimal solution
         elif self.model.sol_status == 2:
             self.model.solutionTime = self.timeout
             if self.mip_model == 1:
@@ -79,6 +72,47 @@ class MIPsolver:
         else:
             raise Exception
         return result, self.model.solutionTime
+
+    def check_solution_GLPK(self,result):
+        # optimal case and not optimal case
+        if self.model.status == 1:
+            if self.mip_model == 1:
+                print_solution_model1(result, self.model.solutionTime)
+            else:
+                print_solution_model0(result, self.model.solutionTime)
+
+        # stopped without finding a solution
+        elif self.model.status == -3:
+            raise TimeoutError
+        # unsat
+        else:
+            raise Exception
+        return result, self.model.solutionTime
+
+    def solve_instance(self, instance):
+
+        self.model = LpProblem('MCPP', LpMinimize)
+
+        if self.mip_model == 1:
+            result = self.set_constraints_model1(instance)
+        else:
+            result = self.set_constraints_model0(instance)
+
+        if self.solver == 0:
+            solver = PULP_CBC_CMD(msg=False, timeLimit=self.timeout)
+        else:
+            solver = GLPK_CMD(path = 'C:\\Users\\jacop\\Downloads\\winglpk-4.65\\glpk-4.65\\w64\\glpsol.exe',msg=False, timeLimit=self.timeout)
+
+        self.model.solve(solver)
+
+        print('status', self.model.status)
+        print('sol status', self.model.sol_status)
+
+        if self.solver == 0:
+            return self.check_solution_CBC(result)
+        else:
+            return self.check_solution_GLPK(result)
+
 
     def linear_prod(self, binary_var, countinuos_var, ub, name):
         res = LpVariable(cat=LpInteger, name=name)
@@ -119,7 +153,7 @@ class MIPsolver:
             LpVariable(name=f'obj_dist{i}', cat=LpInteger, lowBound=np.min(distances), upBound=np.sum(distances)) for i
             in range(couriers)]
 
-        maximum = LpVariable(name=f'maximum', lowBound=np.min(np.min(distances)), upBound=np.sum(distances),
+        maximum = LpVariable(name=f'_maximum', lowBound=np.min(np.min(distances)), upBound=np.sum(distances),
                              cat=LpInteger)
 
         self.model += maximum
@@ -215,7 +249,7 @@ class MIPsolver:
             LpVariable(cat=LpInteger, name=f'dist_array{k}') for k in range(couriers)]
 
         # Objective function
-        maximum = LpVariable('maximum', cat=LpInteger)
+        maximum = LpVariable('_maximum', cat=LpInteger)
 
         # Set the objective
         self.model += maximum, 'The maximum distance traversed by the couriers'

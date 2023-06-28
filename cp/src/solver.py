@@ -8,11 +8,11 @@ from utils import *
 
 class CPsolver:
 
-    def __init__(self, data, output_dir, timeout=300, model=0):
+    def __init__(self, data, output_dir, timeout=300, model=1):
         self.output_dir = output_dir
         self.timeout = timeout
         self.solver = 'chuffed'
-        if model == 0:
+        if model == 1:
             self.data = data
             self.solver_path = "./cp/src/models/model.mzn"
         else:

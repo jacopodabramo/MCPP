@@ -45,7 +45,7 @@ def main():
     elif args.approach == "smt":
         solver = SMTsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), model=args.model)
     elif args.approach == "mip":
-        solver = MIPsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout),model=args.model)
+        solver = MIPsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout),model=args.model,solver = args.solver)
     else:
         raise argparse.ArgumentError(None, "Please select a solver between cp, sat, smt and lp.")
 
