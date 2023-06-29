@@ -84,7 +84,7 @@ def load_preprocessing(data):
 def saving_file(json_dict, path, filename):
     if not os.path.exists(path):
         os.makedirs(path)
-
+        
     with open(path + filename, 'w') as file:
         json.dump(json_dict, file)
 
@@ -242,6 +242,35 @@ def format_output_smt_model1(result, opt):
 
     return get_dict('z3_solver', time, optimal, obj, all_dist)
 
+
+def creating_path(instance,num_items):
+    """
+    Function use to create the list of items for each courier which will be used by the json dict,
+    In particular taken the dict {start:end} in return the list in the correct order.
+    Ex input {1:5,4:6,5:4,6:1} where 6 in num_items, the function will return a list
+    [1,5,4], this list will used to write it in the json dict
+    """
+    elem = instance[num_items]
+    items_for_courier = [elem + 1]
+    while elem != num_items:
+        elem = instance[elem]
+        items_for_courier.append(elem + 1)
+    return items_for_courier[:-1]
+    
+
+def format_output_smtlib(result,num_items,time,opt,solver):
+    obj = int(result[0])
+    time = int(time)
+    all_dist = []
+    for i in range(1, len(result)):
+        all_dist.append(creating_path(result[i],num_items))
+        
+    if solver == "z3":
+        solver_dict = 'z3_solver'
+    elif solver == "cvc4":
+        solver_dict = 'cvc4_solver'
+        
+    return get_dict(solver_dict, time, opt, obj, all_dist)
 
 def format_output_mip_model1(solver, result, opt):
     asg, weigths, obj_dist, couriers, items, distances = result[0]
