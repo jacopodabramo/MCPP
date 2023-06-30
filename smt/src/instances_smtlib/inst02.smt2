@@ -1,264 +1,320 @@
 (set-logic ALL)
-(declare-fun x00 () Int)
-(declare-fun x01 () Int)
-(declare-fun x02 () Int)
-(declare-fun x03 () Int)
-(declare-fun x04 () Int)
-(declare-fun x05 () Int)
-(declare-fun x06 () Int)
-(declare-fun x07 () Int)
-(declare-fun x08 () Int)
-(declare-fun x09 () Int)
-(declare-fun y00 () Int)
-(declare-fun y01 () Int)
-(declare-fun y02 () Int)
-(declare-fun y03 () Int)
-(declare-fun y04 () Int)
-(declare-fun y05 () Int)
-(declare-fun y06 () Int)
-(declare-fun y07 () Int)
-(declare-fun y08 () Int)
-(declare-fun y09 () Int)
-(declare-fun x10 () Int)
-(declare-fun x11 () Int)
-(declare-fun x12 () Int)
-(declare-fun x13 () Int)
-(declare-fun x14 () Int)
-(declare-fun x15 () Int)
-(declare-fun x16 () Int)
-(declare-fun x17 () Int)
-(declare-fun x18 () Int)
-(declare-fun x19 () Int)
-(declare-fun y10 () Int)
-(declare-fun y11 () Int)
-(declare-fun y12 () Int)
-(declare-fun y13 () Int)
-(declare-fun y14 () Int)
-(declare-fun y15 () Int)
-(declare-fun y16 () Int)
-(declare-fun y17 () Int)
-(declare-fun y18 () Int)
-(declare-fun y19 () Int)
-(declare-fun x20 () Int)
-(declare-fun x21 () Int)
-(declare-fun x22 () Int)
-(declare-fun x23 () Int)
-(declare-fun x24 () Int)
-(declare-fun x25 () Int)
-(declare-fun x26 () Int)
-(declare-fun x27 () Int)
-(declare-fun x28 () Int)
-(declare-fun x29 () Int)
-(declare-fun y20 () Int)
-(declare-fun y21 () Int)
-(declare-fun y22 () Int)
-(declare-fun y23 () Int)
-(declare-fun y24 () Int)
-(declare-fun y25 () Int)
-(declare-fun y26 () Int)
-(declare-fun y27 () Int)
-(declare-fun y28 () Int)
-(declare-fun y29 () Int)
-(declare-fun x30 () Int)
-(declare-fun x31 () Int)
-(declare-fun x32 () Int)
-(declare-fun x33 () Int)
-(declare-fun x34 () Int)
-(declare-fun x35 () Int)
-(declare-fun x36 () Int)
-(declare-fun x37 () Int)
-(declare-fun x38 () Int)
-(declare-fun x39 () Int)
-(declare-fun y30 () Int)
-(declare-fun y31 () Int)
-(declare-fun y32 () Int)
-(declare-fun y33 () Int)
-(declare-fun y34 () Int)
-(declare-fun y35 () Int)
-(declare-fun y36 () Int)
-(declare-fun y37 () Int)
-(declare-fun y38 () Int)
-(declare-fun y39 () Int)
-(declare-fun x40 () Int)
-(declare-fun x41 () Int)
-(declare-fun x42 () Int)
-(declare-fun x43 () Int)
-(declare-fun x44 () Int)
-(declare-fun x45 () Int)
-(declare-fun x46 () Int)
-(declare-fun x47 () Int)
-(declare-fun x48 () Int)
-(declare-fun x49 () Int)
-(declare-fun y40 () Int)
-(declare-fun y41 () Int)
-(declare-fun y42 () Int)
-(declare-fun y43 () Int)
-(declare-fun y44 () Int)
-(declare-fun y45 () Int)
-(declare-fun y46 () Int)
-(declare-fun y47 () Int)
-(declare-fun y48 () Int)
-(declare-fun y49 () Int)
-(declare-fun x50 () Int)
-(declare-fun x51 () Int)
-(declare-fun x52 () Int)
-(declare-fun x53 () Int)
-(declare-fun x54 () Int)
-(declare-fun x55 () Int)
-(declare-fun x56 () Int)
-(declare-fun x57 () Int)
-(declare-fun x58 () Int)
-(declare-fun x59 () Int)
-(declare-fun y50 () Int)
-(declare-fun y51 () Int)
-(declare-fun y52 () Int)
-(declare-fun y53 () Int)
-(declare-fun y54 () Int)
-(declare-fun y55 () Int)
-(declare-fun y56 () Int)
-(declare-fun y57 () Int)
-(declare-fun y58 () Int)
-(declare-fun y59 () Int)
-(declare-fun r_A0_3 () Bool)
-(declare-fun r_A0_2 () Bool)
-(declare-fun r_A0_1 () Bool)
-(declare-fun r_A0_0 () Bool)
-(declare-fun r_A1_3 () Bool)
-(declare-fun r_A1_2 () Bool)
-(declare-fun r_A1_1 () Bool)
-(declare-fun r_A1_0 () Bool)
-(declare-fun r_A2_3 () Bool)
-(declare-fun r_A2_2 () Bool)
-(declare-fun r_A2_1 () Bool)
-(declare-fun r_A2_0 () Bool)
-(declare-fun r_A3_3 () Bool)
-(declare-fun r_A3_2 () Bool)
-(declare-fun r_A3_1 () Bool)
-(declare-fun r_A3_0 () Bool)
-(declare-fun r_A4_3 () Bool)
-(declare-fun r_A4_2 () Bool)
-(declare-fun r_A4_1 () Bool)
-(declare-fun r_A4_0 () Bool)
-(declare-fun r_A5_3 () Bool)
-(declare-fun r_A5_2 () Bool)
-(declare-fun r_A5_1 () Bool)
-(declare-fun r_A5_0 () Bool)
-(declare-fun r_B509_5 () Bool)
-(declare-fun r_B509_4 () Bool)
-(declare-fun r_B509_3 () Bool)
-(declare-fun r_B509_2 () Bool)
-(declare-fun r_B509_1 () Bool)
-(declare-fun r_B509_0 () Bool)
-(declare-fun r_C509_5 () Bool)
-(declare-fun r_C509_4 () Bool)
-(declare-fun r_C509_3 () Bool)
-(declare-fun r_C509_2 () Bool)
-(declare-fun r_C509_1 () Bool)
-(declare-fun r_C509_0 () Bool)
-(declare-fun r_B519_5 () Bool)
-(declare-fun r_B519_4 () Bool)
-(declare-fun r_B519_3 () Bool)
-(declare-fun r_B519_2 () Bool)
-(declare-fun r_B519_1 () Bool)
-(declare-fun r_B519_0 () Bool)
-(declare-fun r_C519_5 () Bool)
-(declare-fun r_C519_4 () Bool)
-(declare-fun r_C519_3 () Bool)
-(declare-fun r_C519_2 () Bool)
-(declare-fun r_C519_1 () Bool)
-(declare-fun r_C519_0 () Bool)
-(declare-fun r_B529_5 () Bool)
-(declare-fun r_B529_4 () Bool)
-(declare-fun r_B529_3 () Bool)
-(declare-fun r_B529_2 () Bool)
-(declare-fun r_B529_1 () Bool)
-(declare-fun r_B529_0 () Bool)
-(declare-fun r_C529_5 () Bool)
-(declare-fun r_C529_4 () Bool)
-(declare-fun r_C529_3 () Bool)
-(declare-fun r_C529_2 () Bool)
-(declare-fun r_C529_1 () Bool)
-(declare-fun r_C529_0 () Bool)
-(declare-fun r_B539_5 () Bool)
-(declare-fun r_B539_4 () Bool)
-(declare-fun r_B539_3 () Bool)
-(declare-fun r_B539_2 () Bool)
-(declare-fun r_B539_1 () Bool)
-(declare-fun r_B539_0 () Bool)
-(declare-fun r_C539_5 () Bool)
-(declare-fun r_C539_4 () Bool)
-(declare-fun r_C539_3 () Bool)
-(declare-fun r_C539_2 () Bool)
-(declare-fun r_C539_1 () Bool)
-(declare-fun r_C539_0 () Bool)
-(declare-fun r_B549_5 () Bool)
-(declare-fun r_B549_4 () Bool)
-(declare-fun r_B549_3 () Bool)
-(declare-fun r_B549_2 () Bool)
-(declare-fun r_B549_1 () Bool)
-(declare-fun r_B549_0 () Bool)
-(declare-fun r_C549_5 () Bool)
-(declare-fun r_C549_4 () Bool)
-(declare-fun r_C549_3 () Bool)
-(declare-fun r_C549_2 () Bool)
-(declare-fun r_C549_1 () Bool)
-(declare-fun r_C549_0 () Bool)
-(declare-fun r_B559_5 () Bool)
-(declare-fun r_B559_4 () Bool)
-(declare-fun r_B559_3 () Bool)
-(declare-fun r_B559_2 () Bool)
-(declare-fun r_B559_1 () Bool)
-(declare-fun r_B559_0 () Bool)
-(declare-fun r_C559_5 () Bool)
-(declare-fun r_C559_4 () Bool)
-(declare-fun r_C559_3 () Bool)
-(declare-fun r_C559_2 () Bool)
-(declare-fun r_C559_1 () Bool)
-(declare-fun r_C559_0 () Bool)
-(declare-fun r_B569_5 () Bool)
-(declare-fun r_B569_4 () Bool)
-(declare-fun r_B569_3 () Bool)
-(declare-fun r_B569_2 () Bool)
-(declare-fun r_B569_1 () Bool)
-(declare-fun r_B569_0 () Bool)
-(declare-fun r_C569_5 () Bool)
-(declare-fun r_C569_4 () Bool)
-(declare-fun r_C569_3 () Bool)
-(declare-fun r_C569_2 () Bool)
-(declare-fun r_C569_1 () Bool)
-(declare-fun r_C569_0 () Bool)
-(declare-fun r_B579_5 () Bool)
-(declare-fun r_B579_4 () Bool)
-(declare-fun r_B579_3 () Bool)
-(declare-fun r_B579_2 () Bool)
-(declare-fun r_B579_1 () Bool)
-(declare-fun r_B579_0 () Bool)
-(declare-fun r_C579_5 () Bool)
-(declare-fun r_C579_4 () Bool)
-(declare-fun r_C579_3 () Bool)
-(declare-fun r_C579_2 () Bool)
-(declare-fun r_C579_1 () Bool)
-(declare-fun r_C579_0 () Bool)
-(declare-fun r_B589_5 () Bool)
-(declare-fun r_B589_4 () Bool)
-(declare-fun r_B589_3 () Bool)
-(declare-fun r_B589_2 () Bool)
-(declare-fun r_B589_1 () Bool)
-(declare-fun r_B589_0 () Bool)
-(declare-fun r_C589_5 () Bool)
-(declare-fun r_C589_4 () Bool)
-(declare-fun r_C589_3 () Bool)
-(declare-fun r_C589_2 () Bool)
-(declare-fun r_C589_1 () Bool)
-(declare-fun r_C589_0 () Bool)
-(declare-fun item_size () (Array Int Int))
+(declare-fun distances0 () (Array Int Int))
+(declare-fun distances1 () (Array Int Int))
+(declare-fun distances2 () (Array Int Int))
+(declare-fun distances3 () (Array Int Int))
+(declare-fun distances4 () (Array Int Int))
+(declare-fun distances5 () (Array Int Int))
+(declare-fun distances6 () (Array Int Int))
+(declare-fun distances7 () (Array Int Int))
+(declare-fun distances8 () (Array Int Int))
+(declare-fun distances9 () (Array Int Int))
+(declare-fun asg0 () (Array Int Int))
+(declare-fun asg1 () (Array Int Int))
+(declare-fun asg2 () (Array Int Int))
+(declare-fun asg3 () (Array Int Int))
+(declare-fun asg4 () (Array Int Int))
+(declare-fun asg5 () (Array Int Int))
+(declare-fun r_A00_3 () Bool)
+(declare-fun r_A00_2 () Bool)
+(declare-fun r_A00_1 () Bool)
+(declare-fun r_A00_0 () Bool)
+(declare-fun r_A10_3 () Bool)
+(declare-fun r_A10_2 () Bool)
+(declare-fun r_A10_1 () Bool)
+(declare-fun r_A10_0 () Bool)
+(declare-fun r_A20_3 () Bool)
+(declare-fun r_A20_2 () Bool)
+(declare-fun r_A20_1 () Bool)
+(declare-fun r_A20_0 () Bool)
+(declare-fun r_A30_3 () Bool)
+(declare-fun r_A30_2 () Bool)
+(declare-fun r_A30_1 () Bool)
+(declare-fun r_A30_0 () Bool)
+(declare-fun r_A40_3 () Bool)
+(declare-fun r_A40_2 () Bool)
+(declare-fun r_A40_1 () Bool)
+(declare-fun r_A40_0 () Bool)
+(declare-fun r_A50_3 () Bool)
+(declare-fun r_A50_2 () Bool)
+(declare-fun r_A50_1 () Bool)
+(declare-fun r_A50_0 () Bool)
+(declare-fun r_A60_3 () Bool)
+(declare-fun r_A60_2 () Bool)
+(declare-fun r_A60_1 () Bool)
+(declare-fun r_A60_0 () Bool)
+(declare-fun r_A70_3 () Bool)
+(declare-fun r_A70_2 () Bool)
+(declare-fun r_A70_1 () Bool)
+(declare-fun r_A70_0 () Bool)
+(declare-fun r_A80_3 () Bool)
+(declare-fun r_A80_2 () Bool)
+(declare-fun r_A80_1 () Bool)
+(declare-fun r_A80_0 () Bool)
+(declare-fun r_A90_3 () Bool)
+(declare-fun r_A90_2 () Bool)
+(declare-fun r_A90_1 () Bool)
+(declare-fun r_A90_0 () Bool)
+(declare-fun r_A01_3 () Bool)
+(declare-fun r_A01_2 () Bool)
+(declare-fun r_A01_1 () Bool)
+(declare-fun r_A01_0 () Bool)
+(declare-fun r_A11_3 () Bool)
+(declare-fun r_A11_2 () Bool)
+(declare-fun r_A11_1 () Bool)
+(declare-fun r_A11_0 () Bool)
+(declare-fun r_A21_3 () Bool)
+(declare-fun r_A21_2 () Bool)
+(declare-fun r_A21_1 () Bool)
+(declare-fun r_A21_0 () Bool)
+(declare-fun r_A31_3 () Bool)
+(declare-fun r_A31_2 () Bool)
+(declare-fun r_A31_1 () Bool)
+(declare-fun r_A31_0 () Bool)
+(declare-fun r_A41_3 () Bool)
+(declare-fun r_A41_2 () Bool)
+(declare-fun r_A41_1 () Bool)
+(declare-fun r_A41_0 () Bool)
+(declare-fun r_A51_3 () Bool)
+(declare-fun r_A51_2 () Bool)
+(declare-fun r_A51_1 () Bool)
+(declare-fun r_A51_0 () Bool)
+(declare-fun r_A61_3 () Bool)
+(declare-fun r_A61_2 () Bool)
+(declare-fun r_A61_1 () Bool)
+(declare-fun r_A61_0 () Bool)
+(declare-fun r_A71_3 () Bool)
+(declare-fun r_A71_2 () Bool)
+(declare-fun r_A71_1 () Bool)
+(declare-fun r_A71_0 () Bool)
+(declare-fun r_A81_3 () Bool)
+(declare-fun r_A81_2 () Bool)
+(declare-fun r_A81_1 () Bool)
+(declare-fun r_A81_0 () Bool)
+(declare-fun r_A91_3 () Bool)
+(declare-fun r_A91_2 () Bool)
+(declare-fun r_A91_1 () Bool)
+(declare-fun r_A91_0 () Bool)
+(declare-fun r_A02_3 () Bool)
+(declare-fun r_A02_2 () Bool)
+(declare-fun r_A02_1 () Bool)
+(declare-fun r_A02_0 () Bool)
+(declare-fun r_A12_3 () Bool)
+(declare-fun r_A12_2 () Bool)
+(declare-fun r_A12_1 () Bool)
+(declare-fun r_A12_0 () Bool)
+(declare-fun r_A22_3 () Bool)
+(declare-fun r_A22_2 () Bool)
+(declare-fun r_A22_1 () Bool)
+(declare-fun r_A22_0 () Bool)
+(declare-fun r_A32_3 () Bool)
+(declare-fun r_A32_2 () Bool)
+(declare-fun r_A32_1 () Bool)
+(declare-fun r_A32_0 () Bool)
+(declare-fun r_A42_3 () Bool)
+(declare-fun r_A42_2 () Bool)
+(declare-fun r_A42_1 () Bool)
+(declare-fun r_A42_0 () Bool)
+(declare-fun r_A52_3 () Bool)
+(declare-fun r_A52_2 () Bool)
+(declare-fun r_A52_1 () Bool)
+(declare-fun r_A52_0 () Bool)
+(declare-fun r_A62_3 () Bool)
+(declare-fun r_A62_2 () Bool)
+(declare-fun r_A62_1 () Bool)
+(declare-fun r_A62_0 () Bool)
+(declare-fun r_A72_3 () Bool)
+(declare-fun r_A72_2 () Bool)
+(declare-fun r_A72_1 () Bool)
+(declare-fun r_A72_0 () Bool)
+(declare-fun r_A82_3 () Bool)
+(declare-fun r_A82_2 () Bool)
+(declare-fun r_A82_1 () Bool)
+(declare-fun r_A82_0 () Bool)
+(declare-fun r_A92_3 () Bool)
+(declare-fun r_A92_2 () Bool)
+(declare-fun r_A92_1 () Bool)
+(declare-fun r_A92_0 () Bool)
+(declare-fun r_A03_3 () Bool)
+(declare-fun r_A03_2 () Bool)
+(declare-fun r_A03_1 () Bool)
+(declare-fun r_A03_0 () Bool)
+(declare-fun r_A13_3 () Bool)
+(declare-fun r_A13_2 () Bool)
+(declare-fun r_A13_1 () Bool)
+(declare-fun r_A13_0 () Bool)
+(declare-fun r_A23_3 () Bool)
+(declare-fun r_A23_2 () Bool)
+(declare-fun r_A23_1 () Bool)
+(declare-fun r_A23_0 () Bool)
+(declare-fun r_A33_3 () Bool)
+(declare-fun r_A33_2 () Bool)
+(declare-fun r_A33_1 () Bool)
+(declare-fun r_A33_0 () Bool)
+(declare-fun r_A43_3 () Bool)
+(declare-fun r_A43_2 () Bool)
+(declare-fun r_A43_1 () Bool)
+(declare-fun r_A43_0 () Bool)
+(declare-fun r_A53_3 () Bool)
+(declare-fun r_A53_2 () Bool)
+(declare-fun r_A53_1 () Bool)
+(declare-fun r_A53_0 () Bool)
+(declare-fun r_A63_3 () Bool)
+(declare-fun r_A63_2 () Bool)
+(declare-fun r_A63_1 () Bool)
+(declare-fun r_A63_0 () Bool)
+(declare-fun r_A73_3 () Bool)
+(declare-fun r_A73_2 () Bool)
+(declare-fun r_A73_1 () Bool)
+(declare-fun r_A73_0 () Bool)
+(declare-fun r_A83_3 () Bool)
+(declare-fun r_A83_2 () Bool)
+(declare-fun r_A83_1 () Bool)
+(declare-fun r_A83_0 () Bool)
+(declare-fun r_A93_3 () Bool)
+(declare-fun r_A93_2 () Bool)
+(declare-fun r_A93_1 () Bool)
+(declare-fun r_A93_0 () Bool)
+(declare-fun r_A04_3 () Bool)
+(declare-fun r_A04_2 () Bool)
+(declare-fun r_A04_1 () Bool)
+(declare-fun r_A04_0 () Bool)
+(declare-fun r_A14_3 () Bool)
+(declare-fun r_A14_2 () Bool)
+(declare-fun r_A14_1 () Bool)
+(declare-fun r_A14_0 () Bool)
+(declare-fun r_A24_3 () Bool)
+(declare-fun r_A24_2 () Bool)
+(declare-fun r_A24_1 () Bool)
+(declare-fun r_A24_0 () Bool)
+(declare-fun r_A34_3 () Bool)
+(declare-fun r_A34_2 () Bool)
+(declare-fun r_A34_1 () Bool)
+(declare-fun r_A34_0 () Bool)
+(declare-fun r_A44_3 () Bool)
+(declare-fun r_A44_2 () Bool)
+(declare-fun r_A44_1 () Bool)
+(declare-fun r_A44_0 () Bool)
+(declare-fun r_A54_3 () Bool)
+(declare-fun r_A54_2 () Bool)
+(declare-fun r_A54_1 () Bool)
+(declare-fun r_A54_0 () Bool)
+(declare-fun r_A64_3 () Bool)
+(declare-fun r_A64_2 () Bool)
+(declare-fun r_A64_1 () Bool)
+(declare-fun r_A64_0 () Bool)
+(declare-fun r_A74_3 () Bool)
+(declare-fun r_A74_2 () Bool)
+(declare-fun r_A74_1 () Bool)
+(declare-fun r_A74_0 () Bool)
+(declare-fun r_A84_3 () Bool)
+(declare-fun r_A84_2 () Bool)
+(declare-fun r_A84_1 () Bool)
+(declare-fun r_A84_0 () Bool)
+(declare-fun r_A94_3 () Bool)
+(declare-fun r_A94_2 () Bool)
+(declare-fun r_A94_1 () Bool)
+(declare-fun r_A94_0 () Bool)
+(declare-fun r_A05_3 () Bool)
+(declare-fun r_A05_2 () Bool)
+(declare-fun r_A05_1 () Bool)
+(declare-fun r_A05_0 () Bool)
+(declare-fun r_A15_3 () Bool)
+(declare-fun r_A15_2 () Bool)
+(declare-fun r_A15_1 () Bool)
+(declare-fun r_A15_0 () Bool)
+(declare-fun r_A25_3 () Bool)
+(declare-fun r_A25_2 () Bool)
+(declare-fun r_A25_1 () Bool)
+(declare-fun r_A25_0 () Bool)
+(declare-fun r_A35_3 () Bool)
+(declare-fun r_A35_2 () Bool)
+(declare-fun r_A35_1 () Bool)
+(declare-fun r_A35_0 () Bool)
+(declare-fun r_A45_3 () Bool)
+(declare-fun r_A45_2 () Bool)
+(declare-fun r_A45_1 () Bool)
+(declare-fun r_A45_0 () Bool)
+(declare-fun r_A55_3 () Bool)
+(declare-fun r_A55_2 () Bool)
+(declare-fun r_A55_1 () Bool)
+(declare-fun r_A55_0 () Bool)
+(declare-fun r_A65_3 () Bool)
+(declare-fun r_A65_2 () Bool)
+(declare-fun r_A65_1 () Bool)
+(declare-fun r_A65_0 () Bool)
+(declare-fun r_A75_3 () Bool)
+(declare-fun r_A75_2 () Bool)
+(declare-fun r_A75_1 () Bool)
+(declare-fun r_A75_0 () Bool)
+(declare-fun r_A85_3 () Bool)
+(declare-fun r_A85_2 () Bool)
+(declare-fun r_A85_1 () Bool)
+(declare-fun r_A85_0 () Bool)
+(declare-fun r_A95_3 () Bool)
+(declare-fun r_A95_2 () Bool)
+(declare-fun r_A95_1 () Bool)
+(declare-fun r_A95_0 () Bool)
+(declare-fun r_0_5 () Bool)
+(declare-fun r_0_4 () Bool)
+(declare-fun r_0_3 () Bool)
+(declare-fun r_0_2 () Bool)
+(declare-fun r_0_1 () Bool)
+(declare-fun r_0_0 () Bool)
+(declare-fun r_1_5 () Bool)
+(declare-fun r_1_4 () Bool)
+(declare-fun r_1_3 () Bool)
+(declare-fun r_1_2 () Bool)
+(declare-fun r_1_1 () Bool)
+(declare-fun r_1_0 () Bool)
+(declare-fun r_2_5 () Bool)
+(declare-fun r_2_4 () Bool)
+(declare-fun r_2_3 () Bool)
+(declare-fun r_2_2 () Bool)
+(declare-fun r_2_1 () Bool)
+(declare-fun r_2_0 () Bool)
+(declare-fun r_3_5 () Bool)
+(declare-fun r_3_4 () Bool)
+(declare-fun r_3_3 () Bool)
+(declare-fun r_3_2 () Bool)
+(declare-fun r_3_1 () Bool)
+(declare-fun r_3_0 () Bool)
+(declare-fun r_4_5 () Bool)
+(declare-fun r_4_4 () Bool)
+(declare-fun r_4_3 () Bool)
+(declare-fun r_4_2 () Bool)
+(declare-fun r_4_1 () Bool)
+(declare-fun r_4_0 () Bool)
+(declare-fun r_5_5 () Bool)
+(declare-fun r_5_4 () Bool)
+(declare-fun r_5_3 () Bool)
+(declare-fun r_5_2 () Bool)
+(declare-fun r_5_1 () Bool)
+(declare-fun r_5_0 () Bool)
+(declare-fun r_6_5 () Bool)
+(declare-fun r_6_4 () Bool)
+(declare-fun r_6_3 () Bool)
+(declare-fun r_6_2 () Bool)
+(declare-fun r_6_1 () Bool)
+(declare-fun r_6_0 () Bool)
+(declare-fun r_7_5 () Bool)
+(declare-fun r_7_4 () Bool)
+(declare-fun r_7_3 () Bool)
+(declare-fun r_7_2 () Bool)
+(declare-fun r_7_1 () Bool)
+(declare-fun r_7_0 () Bool)
+(declare-fun r_8_5 () Bool)
+(declare-fun r_8_4 () Bool)
+(declare-fun r_8_3 () Bool)
+(declare-fun r_8_2 () Bool)
+(declare-fun r_8_1 () Bool)
+(declare-fun r_8_0 () Bool)
 (declare-fun loads0 () Int)
 (declare-fun loads1 () Int)
 (declare-fun loads2 () Int)
 (declare-fun loads3 () Int)
 (declare-fun loads4 () Int)
 (declare-fun loads5 () Int)
-(declare-fun distances () (Array Int Int))
 (declare-fun dist0 () Int)
 (declare-fun dist1 () Int)
 (declare-fun dist2 () Int)
@@ -266,8527 +322,13924 @@
 (declare-fun dist4 () Int)
 (declare-fun dist5 () Int)
 (declare-fun max () Int)
-(assert (> x00 (- 2)))
-(assert (> x01 (- 2)))
-(assert (> x02 (- 2)))
-(assert (> x03 (- 2)))
-(assert (> x04 (- 2)))
-(assert (> x05 (- 2)))
-(assert (> x06 (- 2)))
-(assert (> x07 (- 2)))
-(assert (> x08 (- 2)))
-(assert (> x09 (- 2)))
-(assert (< x00 10))
-(assert (< x01 10))
-(assert (< x02 10))
-(assert (< x03 10))
-(assert (< x04 10))
-(assert (< x05 10))
-(assert (< x06 10))
-(assert (< x07 10))
-(assert (< x08 10))
-(assert (< x09 10))
-(assert (> y00 (- 2)))
-(assert (> y01 (- 2)))
-(assert (> y02 (- 2)))
-(assert (> y03 (- 2)))
-(assert (> y04 (- 2)))
-(assert (> y05 (- 2)))
-(assert (> y06 (- 2)))
-(assert (> y07 (- 2)))
-(assert (> y08 (- 2)))
-(assert (> y09 (- 2)))
-(assert (< y00 10))
-(assert (< y01 10))
-(assert (< y02 10))
-(assert (< y03 10))
-(assert (< y04 10))
-(assert (< y05 10))
-(assert (< y06 10))
-(assert (< y07 10))
-(assert (< y08 10))
-(assert (< y09 10))
-(assert (> x10 (- 2)))
-(assert (> x11 (- 2)))
-(assert (> x12 (- 2)))
-(assert (> x13 (- 2)))
-(assert (> x14 (- 2)))
-(assert (> x15 (- 2)))
-(assert (> x16 (- 2)))
-(assert (> x17 (- 2)))
-(assert (> x18 (- 2)))
-(assert (> x19 (- 2)))
-(assert (< x10 10))
-(assert (< x11 10))
-(assert (< x12 10))
-(assert (< x13 10))
-(assert (< x14 10))
-(assert (< x15 10))
-(assert (< x16 10))
-(assert (< x17 10))
-(assert (< x18 10))
-(assert (< x19 10))
-(assert (> y10 (- 2)))
-(assert (> y11 (- 2)))
-(assert (> y12 (- 2)))
-(assert (> y13 (- 2)))
-(assert (> y14 (- 2)))
-(assert (> y15 (- 2)))
-(assert (> y16 (- 2)))
-(assert (> y17 (- 2)))
-(assert (> y18 (- 2)))
-(assert (> y19 (- 2)))
-(assert (< y10 10))
-(assert (< y11 10))
-(assert (< y12 10))
-(assert (< y13 10))
-(assert (< y14 10))
-(assert (< y15 10))
-(assert (< y16 10))
-(assert (< y17 10))
-(assert (< y18 10))
-(assert (< y19 10))
-(assert (> x20 (- 2)))
-(assert (> x21 (- 2)))
-(assert (> x22 (- 2)))
-(assert (> x23 (- 2)))
-(assert (> x24 (- 2)))
-(assert (> x25 (- 2)))
-(assert (> x26 (- 2)))
-(assert (> x27 (- 2)))
-(assert (> x28 (- 2)))
-(assert (> x29 (- 2)))
-(assert (< x20 10))
-(assert (< x21 10))
-(assert (< x22 10))
-(assert (< x23 10))
-(assert (< x24 10))
-(assert (< x25 10))
-(assert (< x26 10))
-(assert (< x27 10))
-(assert (< x28 10))
-(assert (< x29 10))
-(assert (> y20 (- 2)))
-(assert (> y21 (- 2)))
-(assert (> y22 (- 2)))
-(assert (> y23 (- 2)))
-(assert (> y24 (- 2)))
-(assert (> y25 (- 2)))
-(assert (> y26 (- 2)))
-(assert (> y27 (- 2)))
-(assert (> y28 (- 2)))
-(assert (> y29 (- 2)))
-(assert (< y20 10))
-(assert (< y21 10))
-(assert (< y22 10))
-(assert (< y23 10))
-(assert (< y24 10))
-(assert (< y25 10))
-(assert (< y26 10))
-(assert (< y27 10))
-(assert (< y28 10))
-(assert (< y29 10))
-(assert (> x30 (- 2)))
-(assert (> x31 (- 2)))
-(assert (> x32 (- 2)))
-(assert (> x33 (- 2)))
-(assert (> x34 (- 2)))
-(assert (> x35 (- 2)))
-(assert (> x36 (- 2)))
-(assert (> x37 (- 2)))
-(assert (> x38 (- 2)))
-(assert (> x39 (- 2)))
-(assert (< x30 10))
-(assert (< x31 10))
-(assert (< x32 10))
-(assert (< x33 10))
-(assert (< x34 10))
-(assert (< x35 10))
-(assert (< x36 10))
-(assert (< x37 10))
-(assert (< x38 10))
-(assert (< x39 10))
-(assert (> y30 (- 2)))
-(assert (> y31 (- 2)))
-(assert (> y32 (- 2)))
-(assert (> y33 (- 2)))
-(assert (> y34 (- 2)))
-(assert (> y35 (- 2)))
-(assert (> y36 (- 2)))
-(assert (> y37 (- 2)))
-(assert (> y38 (- 2)))
-(assert (> y39 (- 2)))
-(assert (< y30 10))
-(assert (< y31 10))
-(assert (< y32 10))
-(assert (< y33 10))
-(assert (< y34 10))
-(assert (< y35 10))
-(assert (< y36 10))
-(assert (< y37 10))
-(assert (< y38 10))
-(assert (< y39 10))
-(assert (> x40 (- 2)))
-(assert (> x41 (- 2)))
-(assert (> x42 (- 2)))
-(assert (> x43 (- 2)))
-(assert (> x44 (- 2)))
-(assert (> x45 (- 2)))
-(assert (> x46 (- 2)))
-(assert (> x47 (- 2)))
-(assert (> x48 (- 2)))
-(assert (> x49 (- 2)))
-(assert (< x40 10))
-(assert (< x41 10))
-(assert (< x42 10))
-(assert (< x43 10))
-(assert (< x44 10))
-(assert (< x45 10))
-(assert (< x46 10))
-(assert (< x47 10))
-(assert (< x48 10))
-(assert (< x49 10))
-(assert (> y40 (- 2)))
-(assert (> y41 (- 2)))
-(assert (> y42 (- 2)))
-(assert (> y43 (- 2)))
-(assert (> y44 (- 2)))
-(assert (> y45 (- 2)))
-(assert (> y46 (- 2)))
-(assert (> y47 (- 2)))
-(assert (> y48 (- 2)))
-(assert (> y49 (- 2)))
-(assert (< y40 10))
-(assert (< y41 10))
-(assert (< y42 10))
-(assert (< y43 10))
-(assert (< y44 10))
-(assert (< y45 10))
-(assert (< y46 10))
-(assert (< y47 10))
-(assert (< y48 10))
-(assert (< y49 10))
-(assert (> x50 (- 2)))
-(assert (> x51 (- 2)))
-(assert (> x52 (- 2)))
-(assert (> x53 (- 2)))
-(assert (> x54 (- 2)))
-(assert (> x55 (- 2)))
-(assert (> x56 (- 2)))
-(assert (> x57 (- 2)))
-(assert (> x58 (- 2)))
-(assert (> x59 (- 2)))
-(assert (< x50 10))
-(assert (< x51 10))
-(assert (< x52 10))
-(assert (< x53 10))
-(assert (< x54 10))
-(assert (< x55 10))
-(assert (< x56 10))
-(assert (< x57 10))
-(assert (< x58 10))
-(assert (< x59 10))
-(assert (> y50 (- 2)))
-(assert (> y51 (- 2)))
-(assert (> y52 (- 2)))
-(assert (> y53 (- 2)))
-(assert (> y54 (- 2)))
-(assert (> y55 (- 2)))
-(assert (> y56 (- 2)))
-(assert (> y57 (- 2)))
-(assert (> y58 (- 2)))
-(assert (> y59 (- 2)))
-(assert (< y50 10))
-(assert (< y51 10))
-(assert (< y52 10))
-(assert (< y53 10))
-(assert (< y54 10))
-(assert (< y55 10))
-(assert (< y56 10))
-(assert (< y57 10))
-(assert (< y58 10))
-(assert (< y59 10))
-(assert (or (= x00 9) (= x00 (- 1))))
-(assert (let ((a!1 (and (or (= y00 9)
-                    (= y01 9)
-                    (= y02 9)
-                    (= y03 9)
-                    (= y04 9)
-                    (= y05 9)
-                    (= y06 9)
-                    (= y07 9)
-                    (= y08 9)
-                    (= y09 9))
-                (or (not (= y00 9)) (not r_A0_0))
-                (or (not (= y00 9)) (not r_A0_1))
-                (or (not (= y00 9)) (not r_A0_2))
-                (or (not (= y00 9)) (not r_A0_3))
-                (or (not (= y01 9)) (not r_A0_0))
-                (or (not (= y01 9)) (not r_A0_1))
-                (or (not (= y01 9)) (not r_A0_2))
-                (or (not (= y01 9)) r_A0_3)
-                (or (not (= y02 9)) (not r_A0_0))
-                (or (not (= y02 9)) (not r_A0_1))
-                (or (not (= y02 9)) r_A0_2)
-                (or (not (= y02 9)) (not r_A0_3))
-                (or (not (= y03 9)) (not r_A0_0))
-                (or (not (= y03 9)) (not r_A0_1))
-                (or (not (= y03 9)) r_A0_2)
-                (or (not (= y03 9)) r_A0_3)
-                (or (not (= y04 9)) (not r_A0_0))
-                (or (not (= y04 9)) r_A0_1)
-                (or (not (= y04 9)) (not r_A0_2))
-                (or (not (= y04 9)) (not r_A0_3))
-                (or (not (= y05 9)) (not r_A0_0))
-                (or (not (= y05 9)) r_A0_1)
-                (or (not (= y05 9)) (not r_A0_2))
-                (or (not (= y05 9)) r_A0_3)
-                (or (not (= y06 9)) (not r_A0_0))
-                (or (not (= y06 9)) r_A0_1)
-                (or (not (= y06 9)) r_A0_2)
-                (or (not (= y06 9)) (not r_A0_3))
-                (or (not (= y07 9)) (not r_A0_0))
-                (or (not (= y07 9)) r_A0_1)
-                (or (not (= y07 9)) r_A0_2)
-                (or (not (= y07 9)) r_A0_3)
-                (or (not (= y08 9)) r_A0_0)
-                (or (not (= y08 9)) (not r_A0_1))
-                (or (not (= y08 9)) (not r_A0_2))
-                (or (not (= y08 9)) (not r_A0_3))
-                (or (not (= y09 9)) r_A0_0)
-                (or (not (= y09 9)) (not r_A0_1))
-                (or (not (= y09 9)) (not r_A0_2))
-                (or (not (= y09 9)) r_A0_3))))
-  (or a!1 (= x00 (- 1)))))
-(assert (or (= x10 9) (= x10 (- 1))))
-(assert (let ((a!1 (and (or (= y10 9)
-                    (= y11 9)
-                    (= y12 9)
-                    (= y13 9)
-                    (= y14 9)
-                    (= y15 9)
-                    (= y16 9)
-                    (= y17 9)
-                    (= y18 9)
-                    (= y19 9))
-                (or (not (= y10 9)) (not r_A1_0))
-                (or (not (= y10 9)) (not r_A1_1))
-                (or (not (= y10 9)) (not r_A1_2))
-                (or (not (= y10 9)) (not r_A1_3))
-                (or (not (= y11 9)) (not r_A1_0))
-                (or (not (= y11 9)) (not r_A1_1))
-                (or (not (= y11 9)) (not r_A1_2))
-                (or (not (= y11 9)) r_A1_3)
-                (or (not (= y12 9)) (not r_A1_0))
-                (or (not (= y12 9)) (not r_A1_1))
-                (or (not (= y12 9)) r_A1_2)
-                (or (not (= y12 9)) (not r_A1_3))
-                (or (not (= y13 9)) (not r_A1_0))
-                (or (not (= y13 9)) (not r_A1_1))
-                (or (not (= y13 9)) r_A1_2)
-                (or (not (= y13 9)) r_A1_3)
-                (or (not (= y14 9)) (not r_A1_0))
-                (or (not (= y14 9)) r_A1_1)
-                (or (not (= y14 9)) (not r_A1_2))
-                (or (not (= y14 9)) (not r_A1_3))
-                (or (not (= y15 9)) (not r_A1_0))
-                (or (not (= y15 9)) r_A1_1)
-                (or (not (= y15 9)) (not r_A1_2))
-                (or (not (= y15 9)) r_A1_3)
-                (or (not (= y16 9)) (not r_A1_0))
-                (or (not (= y16 9)) r_A1_1)
-                (or (not (= y16 9)) r_A1_2)
-                (or (not (= y16 9)) (not r_A1_3))
-                (or (not (= y17 9)) (not r_A1_0))
-                (or (not (= y17 9)) r_A1_1)
-                (or (not (= y17 9)) r_A1_2)
-                (or (not (= y17 9)) r_A1_3)
-                (or (not (= y18 9)) r_A1_0)
-                (or (not (= y18 9)) (not r_A1_1))
-                (or (not (= y18 9)) (not r_A1_2))
-                (or (not (= y18 9)) (not r_A1_3))
-                (or (not (= y19 9)) r_A1_0)
-                (or (not (= y19 9)) (not r_A1_1))
-                (or (not (= y19 9)) (not r_A1_2))
-                (or (not (= y19 9)) r_A1_3))))
-  (or a!1 (= x10 (- 1)))))
-(assert (or (= x20 9) (= x20 (- 1))))
-(assert (let ((a!1 (and (or (= y20 9)
-                    (= y21 9)
-                    (= y22 9)
-                    (= y23 9)
-                    (= y24 9)
-                    (= y25 9)
-                    (= y26 9)
-                    (= y27 9)
-                    (= y28 9)
-                    (= y29 9))
-                (or (not (= y20 9)) (not r_A2_0))
-                (or (not (= y20 9)) (not r_A2_1))
-                (or (not (= y20 9)) (not r_A2_2))
-                (or (not (= y20 9)) (not r_A2_3))
-                (or (not (= y21 9)) (not r_A2_0))
-                (or (not (= y21 9)) (not r_A2_1))
-                (or (not (= y21 9)) (not r_A2_2))
-                (or (not (= y21 9)) r_A2_3)
-                (or (not (= y22 9)) (not r_A2_0))
-                (or (not (= y22 9)) (not r_A2_1))
-                (or (not (= y22 9)) r_A2_2)
-                (or (not (= y22 9)) (not r_A2_3))
-                (or (not (= y23 9)) (not r_A2_0))
-                (or (not (= y23 9)) (not r_A2_1))
-                (or (not (= y23 9)) r_A2_2)
-                (or (not (= y23 9)) r_A2_3)
-                (or (not (= y24 9)) (not r_A2_0))
-                (or (not (= y24 9)) r_A2_1)
-                (or (not (= y24 9)) (not r_A2_2))
-                (or (not (= y24 9)) (not r_A2_3))
-                (or (not (= y25 9)) (not r_A2_0))
-                (or (not (= y25 9)) r_A2_1)
-                (or (not (= y25 9)) (not r_A2_2))
-                (or (not (= y25 9)) r_A2_3)
-                (or (not (= y26 9)) (not r_A2_0))
-                (or (not (= y26 9)) r_A2_1)
-                (or (not (= y26 9)) r_A2_2)
-                (or (not (= y26 9)) (not r_A2_3))
-                (or (not (= y27 9)) (not r_A2_0))
-                (or (not (= y27 9)) r_A2_1)
-                (or (not (= y27 9)) r_A2_2)
-                (or (not (= y27 9)) r_A2_3)
-                (or (not (= y28 9)) r_A2_0)
-                (or (not (= y28 9)) (not r_A2_1))
-                (or (not (= y28 9)) (not r_A2_2))
-                (or (not (= y28 9)) (not r_A2_3))
-                (or (not (= y29 9)) r_A2_0)
-                (or (not (= y29 9)) (not r_A2_1))
-                (or (not (= y29 9)) (not r_A2_2))
-                (or (not (= y29 9)) r_A2_3))))
-  (or a!1 (= x20 (- 1)))))
-(assert (or (= x30 9) (= x30 (- 1))))
-(assert (let ((a!1 (and (or (= y30 9)
-                    (= y31 9)
-                    (= y32 9)
-                    (= y33 9)
-                    (= y34 9)
-                    (= y35 9)
-                    (= y36 9)
-                    (= y37 9)
-                    (= y38 9)
-                    (= y39 9))
-                (or (not (= y30 9)) (not r_A3_0))
-                (or (not (= y30 9)) (not r_A3_1))
-                (or (not (= y30 9)) (not r_A3_2))
-                (or (not (= y30 9)) (not r_A3_3))
-                (or (not (= y31 9)) (not r_A3_0))
-                (or (not (= y31 9)) (not r_A3_1))
-                (or (not (= y31 9)) (not r_A3_2))
-                (or (not (= y31 9)) r_A3_3)
-                (or (not (= y32 9)) (not r_A3_0))
-                (or (not (= y32 9)) (not r_A3_1))
-                (or (not (= y32 9)) r_A3_2)
-                (or (not (= y32 9)) (not r_A3_3))
-                (or (not (= y33 9)) (not r_A3_0))
-                (or (not (= y33 9)) (not r_A3_1))
-                (or (not (= y33 9)) r_A3_2)
-                (or (not (= y33 9)) r_A3_3)
-                (or (not (= y34 9)) (not r_A3_0))
-                (or (not (= y34 9)) r_A3_1)
-                (or (not (= y34 9)) (not r_A3_2))
-                (or (not (= y34 9)) (not r_A3_3))
-                (or (not (= y35 9)) (not r_A3_0))
-                (or (not (= y35 9)) r_A3_1)
-                (or (not (= y35 9)) (not r_A3_2))
-                (or (not (= y35 9)) r_A3_3)
-                (or (not (= y36 9)) (not r_A3_0))
-                (or (not (= y36 9)) r_A3_1)
-                (or (not (= y36 9)) r_A3_2)
-                (or (not (= y36 9)) (not r_A3_3))
-                (or (not (= y37 9)) (not r_A3_0))
-                (or (not (= y37 9)) r_A3_1)
-                (or (not (= y37 9)) r_A3_2)
-                (or (not (= y37 9)) r_A3_3)
-                (or (not (= y38 9)) r_A3_0)
-                (or (not (= y38 9)) (not r_A3_1))
-                (or (not (= y38 9)) (not r_A3_2))
-                (or (not (= y38 9)) (not r_A3_3))
-                (or (not (= y39 9)) r_A3_0)
-                (or (not (= y39 9)) (not r_A3_1))
-                (or (not (= y39 9)) (not r_A3_2))
-                (or (not (= y39 9)) r_A3_3))))
-  (or a!1 (= x30 (- 1)))))
-(assert (or (= x40 9) (= x40 (- 1))))
-(assert (let ((a!1 (and (or (= y40 9)
-                    (= y41 9)
-                    (= y42 9)
-                    (= y43 9)
-                    (= y44 9)
-                    (= y45 9)
-                    (= y46 9)
-                    (= y47 9)
-                    (= y48 9)
-                    (= y49 9))
-                (or (not (= y40 9)) (not r_A4_0))
-                (or (not (= y40 9)) (not r_A4_1))
-                (or (not (= y40 9)) (not r_A4_2))
-                (or (not (= y40 9)) (not r_A4_3))
-                (or (not (= y41 9)) (not r_A4_0))
-                (or (not (= y41 9)) (not r_A4_1))
-                (or (not (= y41 9)) (not r_A4_2))
-                (or (not (= y41 9)) r_A4_3)
-                (or (not (= y42 9)) (not r_A4_0))
-                (or (not (= y42 9)) (not r_A4_1))
-                (or (not (= y42 9)) r_A4_2)
-                (or (not (= y42 9)) (not r_A4_3))
-                (or (not (= y43 9)) (not r_A4_0))
-                (or (not (= y43 9)) (not r_A4_1))
-                (or (not (= y43 9)) r_A4_2)
-                (or (not (= y43 9)) r_A4_3)
-                (or (not (= y44 9)) (not r_A4_0))
-                (or (not (= y44 9)) r_A4_1)
-                (or (not (= y44 9)) (not r_A4_2))
-                (or (not (= y44 9)) (not r_A4_3))
-                (or (not (= y45 9)) (not r_A4_0))
-                (or (not (= y45 9)) r_A4_1)
-                (or (not (= y45 9)) (not r_A4_2))
-                (or (not (= y45 9)) r_A4_3)
-                (or (not (= y46 9)) (not r_A4_0))
-                (or (not (= y46 9)) r_A4_1)
-                (or (not (= y46 9)) r_A4_2)
-                (or (not (= y46 9)) (not r_A4_3))
-                (or (not (= y47 9)) (not r_A4_0))
-                (or (not (= y47 9)) r_A4_1)
-                (or (not (= y47 9)) r_A4_2)
-                (or (not (= y47 9)) r_A4_3)
-                (or (not (= y48 9)) r_A4_0)
-                (or (not (= y48 9)) (not r_A4_1))
-                (or (not (= y48 9)) (not r_A4_2))
-                (or (not (= y48 9)) (not r_A4_3))
-                (or (not (= y49 9)) r_A4_0)
-                (or (not (= y49 9)) (not r_A4_1))
-                (or (not (= y49 9)) (not r_A4_2))
-                (or (not (= y49 9)) r_A4_3))))
-  (or a!1 (= x40 (- 1)))))
-(assert (or (= x50 9) (= x50 (- 1))))
-(assert (let ((a!1 (and (or (= y50 9)
-                    (= y51 9)
-                    (= y52 9)
-                    (= y53 9)
-                    (= y54 9)
-                    (= y55 9)
-                    (= y56 9)
-                    (= y57 9)
-                    (= y58 9)
-                    (= y59 9))
-                (or (not (= y50 9)) (not r_A5_0))
-                (or (not (= y50 9)) (not r_A5_1))
-                (or (not (= y50 9)) (not r_A5_2))
-                (or (not (= y50 9)) (not r_A5_3))
-                (or (not (= y51 9)) (not r_A5_0))
-                (or (not (= y51 9)) (not r_A5_1))
-                (or (not (= y51 9)) (not r_A5_2))
-                (or (not (= y51 9)) r_A5_3)
-                (or (not (= y52 9)) (not r_A5_0))
-                (or (not (= y52 9)) (not r_A5_1))
-                (or (not (= y52 9)) r_A5_2)
-                (or (not (= y52 9)) (not r_A5_3))
-                (or (not (= y53 9)) (not r_A5_0))
-                (or (not (= y53 9)) (not r_A5_1))
-                (or (not (= y53 9)) r_A5_2)
-                (or (not (= y53 9)) r_A5_3)
-                (or (not (= y54 9)) (not r_A5_0))
-                (or (not (= y54 9)) r_A5_1)
-                (or (not (= y54 9)) (not r_A5_2))
-                (or (not (= y54 9)) (not r_A5_3))
-                (or (not (= y55 9)) (not r_A5_0))
-                (or (not (= y55 9)) r_A5_1)
-                (or (not (= y55 9)) (not r_A5_2))
-                (or (not (= y55 9)) r_A5_3)
-                (or (not (= y56 9)) (not r_A5_0))
-                (or (not (= y56 9)) r_A5_1)
-                (or (not (= y56 9)) r_A5_2)
-                (or (not (= y56 9)) (not r_A5_3))
-                (or (not (= y57 9)) (not r_A5_0))
-                (or (not (= y57 9)) r_A5_1)
-                (or (not (= y57 9)) r_A5_2)
-                (or (not (= y57 9)) r_A5_3)
-                (or (not (= y58 9)) r_A5_0)
-                (or (not (= y58 9)) (not r_A5_1))
-                (or (not (= y58 9)) (not r_A5_2))
-                (or (not (= y58 9)) (not r_A5_3))
-                (or (not (= y59 9)) r_A5_0)
-                (or (not (= y59 9)) (not r_A5_1))
-                (or (not (= y59 9)) (not r_A5_2))
-                (or (not (= y59 9)) r_A5_3))))
-  (or a!1 (= x50 (- 1)))))
-(assert (=> (distinct y00 9) (= x01 y00)))
-(assert (=> (= y00 9) (= x01 (- 1))))
-(assert (=> (distinct y01 9) (= x02 y01)))
-(assert (=> (= y01 9) (= x02 (- 1))))
-(assert (=> (distinct y02 9) (= x03 y02)))
-(assert (=> (= y02 9) (= x03 (- 1))))
-(assert (=> (distinct y03 9) (= x04 y03)))
-(assert (=> (= y03 9) (= x04 (- 1))))
-(assert (=> (distinct y04 9) (= x05 y04)))
-(assert (=> (= y04 9) (= x05 (- 1))))
-(assert (=> (distinct y05 9) (= x06 y05)))
-(assert (=> (= y05 9) (= x06 (- 1))))
-(assert (=> (distinct y06 9) (= x07 y06)))
-(assert (=> (= y06 9) (= x07 (- 1))))
-(assert (=> (distinct y07 9) (= x08 y07)))
-(assert (=> (= y07 9) (= x08 (- 1))))
-(assert (=> (distinct y08 9) (= x09 y08)))
-(assert (=> (= y08 9) (= x09 (- 1))))
-(assert (=> (distinct y10 9) (= x11 y10)))
-(assert (=> (= y10 9) (= x11 (- 1))))
-(assert (=> (distinct y11 9) (= x12 y11)))
-(assert (=> (= y11 9) (= x12 (- 1))))
-(assert (=> (distinct y12 9) (= x13 y12)))
-(assert (=> (= y12 9) (= x13 (- 1))))
-(assert (=> (distinct y13 9) (= x14 y13)))
-(assert (=> (= y13 9) (= x14 (- 1))))
-(assert (=> (distinct y14 9) (= x15 y14)))
-(assert (=> (= y14 9) (= x15 (- 1))))
-(assert (=> (distinct y15 9) (= x16 y15)))
-(assert (=> (= y15 9) (= x16 (- 1))))
-(assert (=> (distinct y16 9) (= x17 y16)))
-(assert (=> (= y16 9) (= x17 (- 1))))
-(assert (=> (distinct y17 9) (= x18 y17)))
-(assert (=> (= y17 9) (= x18 (- 1))))
-(assert (=> (distinct y18 9) (= x19 y18)))
-(assert (=> (= y18 9) (= x19 (- 1))))
-(assert (=> (distinct y20 9) (= x21 y20)))
-(assert (=> (= y20 9) (= x21 (- 1))))
-(assert (=> (distinct y21 9) (= x22 y21)))
-(assert (=> (= y21 9) (= x22 (- 1))))
-(assert (=> (distinct y22 9) (= x23 y22)))
-(assert (=> (= y22 9) (= x23 (- 1))))
-(assert (=> (distinct y23 9) (= x24 y23)))
-(assert (=> (= y23 9) (= x24 (- 1))))
-(assert (=> (distinct y24 9) (= x25 y24)))
-(assert (=> (= y24 9) (= x25 (- 1))))
-(assert (=> (distinct y25 9) (= x26 y25)))
-(assert (=> (= y25 9) (= x26 (- 1))))
-(assert (=> (distinct y26 9) (= x27 y26)))
-(assert (=> (= y26 9) (= x27 (- 1))))
-(assert (=> (distinct y27 9) (= x28 y27)))
-(assert (=> (= y27 9) (= x28 (- 1))))
-(assert (=> (distinct y28 9) (= x29 y28)))
-(assert (=> (= y28 9) (= x29 (- 1))))
-(assert (=> (distinct y30 9) (= x31 y30)))
-(assert (=> (= y30 9) (= x31 (- 1))))
-(assert (=> (distinct y31 9) (= x32 y31)))
-(assert (=> (= y31 9) (= x32 (- 1))))
-(assert (=> (distinct y32 9) (= x33 y32)))
-(assert (=> (= y32 9) (= x33 (- 1))))
-(assert (=> (distinct y33 9) (= x34 y33)))
-(assert (=> (= y33 9) (= x34 (- 1))))
-(assert (=> (distinct y34 9) (= x35 y34)))
-(assert (=> (= y34 9) (= x35 (- 1))))
-(assert (=> (distinct y35 9) (= x36 y35)))
-(assert (=> (= y35 9) (= x36 (- 1))))
-(assert (=> (distinct y36 9) (= x37 y36)))
-(assert (=> (= y36 9) (= x37 (- 1))))
-(assert (=> (distinct y37 9) (= x38 y37)))
-(assert (=> (= y37 9) (= x38 (- 1))))
-(assert (=> (distinct y38 9) (= x39 y38)))
-(assert (=> (= y38 9) (= x39 (- 1))))
-(assert (=> (distinct y40 9) (= x41 y40)))
-(assert (=> (= y40 9) (= x41 (- 1))))
-(assert (=> (distinct y41 9) (= x42 y41)))
-(assert (=> (= y41 9) (= x42 (- 1))))
-(assert (=> (distinct y42 9) (= x43 y42)))
-(assert (=> (= y42 9) (= x43 (- 1))))
-(assert (=> (distinct y43 9) (= x44 y43)))
-(assert (=> (= y43 9) (= x44 (- 1))))
-(assert (=> (distinct y44 9) (= x45 y44)))
-(assert (=> (= y44 9) (= x45 (- 1))))
-(assert (=> (distinct y45 9) (= x46 y45)))
-(assert (=> (= y45 9) (= x46 (- 1))))
-(assert (=> (distinct y46 9) (= x47 y46)))
-(assert (=> (= y46 9) (= x47 (- 1))))
-(assert (=> (distinct y47 9) (= x48 y47)))
-(assert (=> (= y47 9) (= x48 (- 1))))
-(assert (=> (distinct y48 9) (= x49 y48)))
-(assert (=> (= y48 9) (= x49 (- 1))))
-(assert (=> (distinct y50 9) (= x51 y50)))
-(assert (=> (= y50 9) (= x51 (- 1))))
-(assert (=> (distinct y51 9) (= x52 y51)))
-(assert (=> (= y51 9) (= x52 (- 1))))
-(assert (=> (distinct y52 9) (= x53 y52)))
-(assert (=> (= y52 9) (= x53 (- 1))))
-(assert (=> (distinct y53 9) (= x54 y53)))
-(assert (=> (= y53 9) (= x54 (- 1))))
-(assert (=> (distinct y54 9) (= x55 y54)))
-(assert (=> (= y54 9) (= x55 (- 1))))
-(assert (=> (distinct y55 9) (= x56 y55)))
-(assert (=> (= y55 9) (= x56 (- 1))))
-(assert (=> (distinct y56 9) (= x57 y56)))
-(assert (=> (= y56 9) (= x57 (- 1))))
-(assert (=> (distinct y57 9) (= x58 y57)))
-(assert (=> (= y57 9) (= x58 (- 1))))
-(assert (=> (distinct y58 9) (= x59 y58)))
-(assert (=> (= y58 9) (= x59 (- 1))))
-(assert (=> (= x00 (- 1)) (= y00 (- 1))))
-(assert (=> (= x01 (- 1)) (= y01 (- 1))))
-(assert (=> (= x02 (- 1)) (= y02 (- 1))))
-(assert (=> (= x03 (- 1)) (= y03 (- 1))))
-(assert (=> (= x04 (- 1)) (= y04 (- 1))))
-(assert (=> (= x05 (- 1)) (= y05 (- 1))))
-(assert (=> (= x06 (- 1)) (= y06 (- 1))))
-(assert (=> (= x07 (- 1)) (= y07 (- 1))))
-(assert (=> (= x08 (- 1)) (= y08 (- 1))))
-(assert (=> (= x09 (- 1)) (= y09 (- 1))))
-(assert (=> (= x10 (- 1)) (= y10 (- 1))))
-(assert (=> (= x11 (- 1)) (= y11 (- 1))))
-(assert (=> (= x12 (- 1)) (= y12 (- 1))))
-(assert (=> (= x13 (- 1)) (= y13 (- 1))))
-(assert (=> (= x14 (- 1)) (= y14 (- 1))))
-(assert (=> (= x15 (- 1)) (= y15 (- 1))))
-(assert (=> (= x16 (- 1)) (= y16 (- 1))))
-(assert (=> (= x17 (- 1)) (= y17 (- 1))))
-(assert (=> (= x18 (- 1)) (= y18 (- 1))))
-(assert (=> (= x19 (- 1)) (= y19 (- 1))))
-(assert (=> (= x20 (- 1)) (= y20 (- 1))))
-(assert (=> (= x21 (- 1)) (= y21 (- 1))))
-(assert (=> (= x22 (- 1)) (= y22 (- 1))))
-(assert (=> (= x23 (- 1)) (= y23 (- 1))))
-(assert (=> (= x24 (- 1)) (= y24 (- 1))))
-(assert (=> (= x25 (- 1)) (= y25 (- 1))))
-(assert (=> (= x26 (- 1)) (= y26 (- 1))))
-(assert (=> (= x27 (- 1)) (= y27 (- 1))))
-(assert (=> (= x28 (- 1)) (= y28 (- 1))))
-(assert (=> (= x29 (- 1)) (= y29 (- 1))))
-(assert (=> (= x30 (- 1)) (= y30 (- 1))))
-(assert (=> (= x31 (- 1)) (= y31 (- 1))))
-(assert (=> (= x32 (- 1)) (= y32 (- 1))))
-(assert (=> (= x33 (- 1)) (= y33 (- 1))))
-(assert (=> (= x34 (- 1)) (= y34 (- 1))))
-(assert (=> (= x35 (- 1)) (= y35 (- 1))))
-(assert (=> (= x36 (- 1)) (= y36 (- 1))))
-(assert (=> (= x37 (- 1)) (= y37 (- 1))))
-(assert (=> (= x38 (- 1)) (= y38 (- 1))))
-(assert (=> (= x39 (- 1)) (= y39 (- 1))))
-(assert (=> (= x40 (- 1)) (= y40 (- 1))))
-(assert (=> (= x41 (- 1)) (= y41 (- 1))))
-(assert (=> (= x42 (- 1)) (= y42 (- 1))))
-(assert (=> (= x43 (- 1)) (= y43 (- 1))))
-(assert (=> (= x44 (- 1)) (= y44 (- 1))))
-(assert (=> (= x45 (- 1)) (= y45 (- 1))))
-(assert (=> (= x46 (- 1)) (= y46 (- 1))))
-(assert (=> (= x47 (- 1)) (= y47 (- 1))))
-(assert (=> (= x48 (- 1)) (= y48 (- 1))))
-(assert (=> (= x49 (- 1)) (= y49 (- 1))))
-(assert (=> (= x50 (- 1)) (= y50 (- 1))))
-(assert (=> (= x51 (- 1)) (= y51 (- 1))))
-(assert (=> (= x52 (- 1)) (= y52 (- 1))))
-(assert (=> (= x53 (- 1)) (= y53 (- 1))))
-(assert (=> (= x54 (- 1)) (= y54 (- 1))))
-(assert (=> (= x55 (- 1)) (= y55 (- 1))))
-(assert (=> (= x56 (- 1)) (= y56 (- 1))))
-(assert (=> (= x57 (- 1)) (= y57 (- 1))))
-(assert (=> (= x58 (- 1)) (= y58 (- 1))))
-(assert (=> (= x59 (- 1)) (= y59 (- 1))))
-(assert (and (or (= x00 0)
-         (= x10 0)
-         (= x20 0)
-         (= x30 0)
-         (= x40 0)
-         (= x50 0)
-         (= x01 0)
-         (= x11 0)
-         (= x21 0)
-         (= x31 0)
-         (= x41 0)
-         (= x51 0)
-         (= x02 0)
-         (= x12 0)
-         (= x22 0)
-         (= x32 0)
-         (= x42 0)
-         (= x52 0)
-         (= x03 0)
-         (= x13 0)
-         (= x23 0)
-         (= x33 0)
-         (= x43 0)
-         (= x53 0)
-         (= x04 0)
-         (= x14 0)
-         (= x24 0)
-         (= x34 0)
-         (= x44 0)
-         (= x54 0)
-         (= x05 0)
-         (= x15 0)
-         (= x25 0)
-         (= x35 0)
-         (= x45 0)
-         (= x55 0)
-         (= x06 0)
-         (= x16 0)
-         (= x26 0)
-         (= x36 0)
-         (= x46 0)
-         (= x56 0)
-         (= x07 0)
-         (= x17 0)
-         (= x27 0)
-         (= x37 0)
-         (= x47 0)
-         (= x57 0)
-         (= x08 0)
-         (= x18 0)
-         (= x28 0)
-         (= x38 0)
-         (= x48 0)
-         (= x58 0)
-         (= x09 0)
-         (= x19 0)
-         (= x29 0)
-         (= x39 0)
-         (= x49 0)
-         (= x59 0))
-     (or (not (= x00 0)) (not r_B509_0))
-     (or (not (= x00 0)) (not r_B509_1))
-     (or (not (= x00 0)) (not r_B509_2))
-     (or (not (= x00 0)) (not r_B509_3))
-     (or (not (= x00 0)) (not r_B509_4))
-     (or (not (= x00 0)) (not r_B509_5))
-     (or (not (= x10 0)) (not r_B509_0))
-     (or (not (= x10 0)) (not r_B509_1))
-     (or (not (= x10 0)) (not r_B509_2))
-     (or (not (= x10 0)) (not r_B509_3))
-     (or (not (= x10 0)) (not r_B509_4))
-     (or (not (= x10 0)) r_B509_5)
-     (or (not (= x20 0)) (not r_B509_0))
-     (or (not (= x20 0)) (not r_B509_1))
-     (or (not (= x20 0)) (not r_B509_2))
-     (or (not (= x20 0)) (not r_B509_3))
-     (or (not (= x20 0)) r_B509_4)
-     (or (not (= x20 0)) (not r_B509_5))
-     (or (not (= x30 0)) (not r_B509_0))
-     (or (not (= x30 0)) (not r_B509_1))
-     (or (not (= x30 0)) (not r_B509_2))
-     (or (not (= x30 0)) (not r_B509_3))
-     (or (not (= x30 0)) r_B509_4)
-     (or (not (= x30 0)) r_B509_5)
-     (or (not (= x40 0)) (not r_B509_0))
-     (or (not (= x40 0)) (not r_B509_1))
-     (or (not (= x40 0)) (not r_B509_2))
-     (or (not (= x40 0)) r_B509_3)
-     (or (not (= x40 0)) (not r_B509_4))
-     (or (not (= x40 0)) (not r_B509_5))
-     (or (not (= x50 0)) (not r_B509_0))
-     (or (not (= x50 0)) (not r_B509_1))
-     (or (not (= x50 0)) (not r_B509_2))
-     (or (not (= x50 0)) r_B509_3)
-     (or (not (= x50 0)) (not r_B509_4))
-     (or (not (= x50 0)) r_B509_5)
-     (or (not (= x01 0)) (not r_B509_0))
-     (or (not (= x01 0)) (not r_B509_1))
-     (or (not (= x01 0)) (not r_B509_2))
-     (or (not (= x01 0)) r_B509_3)
-     (or (not (= x01 0)) r_B509_4)
-     (or (not (= x01 0)) (not r_B509_5))
-     (or (not (= x11 0)) (not r_B509_0))
-     (or (not (= x11 0)) (not r_B509_1))
-     (or (not (= x11 0)) (not r_B509_2))
-     (or (not (= x11 0)) r_B509_3)
-     (or (not (= x11 0)) r_B509_4)
-     (or (not (= x11 0)) r_B509_5)
-     (or (not (= x21 0)) (not r_B509_0))
-     (or (not (= x21 0)) (not r_B509_1))
-     (or (not (= x21 0)) r_B509_2)
-     (or (not (= x21 0)) (not r_B509_3))
-     (or (not (= x21 0)) (not r_B509_4))
-     (or (not (= x21 0)) (not r_B509_5))
-     (or (not (= x31 0)) (not r_B509_0))
-     (or (not (= x31 0)) (not r_B509_1))
-     (or (not (= x31 0)) r_B509_2)
-     (or (not (= x31 0)) (not r_B509_3))
-     (or (not (= x31 0)) (not r_B509_4))
-     (or (not (= x31 0)) r_B509_5)
-     (or (not (= x41 0)) (not r_B509_0))
-     (or (not (= x41 0)) (not r_B509_1))
-     (or (not (= x41 0)) r_B509_2)
-     (or (not (= x41 0)) (not r_B509_3))
-     (or (not (= x41 0)) r_B509_4)
-     (or (not (= x41 0)) (not r_B509_5))
-     (or (not (= x51 0)) (not r_B509_0))
-     (or (not (= x51 0)) (not r_B509_1))
-     (or (not (= x51 0)) r_B509_2)
-     (or (not (= x51 0)) (not r_B509_3))
-     (or (not (= x51 0)) r_B509_4)
-     (or (not (= x51 0)) r_B509_5)
-     (or (not (= x02 0)) (not r_B509_0))
-     (or (not (= x02 0)) (not r_B509_1))
-     (or (not (= x02 0)) r_B509_2)
-     (or (not (= x02 0)) r_B509_3)
-     (or (not (= x02 0)) (not r_B509_4))
-     (or (not (= x02 0)) (not r_B509_5))
-     (or (not (= x12 0)) (not r_B509_0))
-     (or (not (= x12 0)) (not r_B509_1))
-     (or (not (= x12 0)) r_B509_2)
-     (or (not (= x12 0)) r_B509_3)
-     (or (not (= x12 0)) (not r_B509_4))
-     (or (not (= x12 0)) r_B509_5)
-     (or (not (= x22 0)) (not r_B509_0))
-     (or (not (= x22 0)) (not r_B509_1))
-     (or (not (= x22 0)) r_B509_2)
-     (or (not (= x22 0)) r_B509_3)
-     (or (not (= x22 0)) r_B509_4)
-     (or (not (= x22 0)) (not r_B509_5))
-     (or (not (= x32 0)) (not r_B509_0))
-     (or (not (= x32 0)) (not r_B509_1))
-     (or (not (= x32 0)) r_B509_2)
-     (or (not (= x32 0)) r_B509_3)
-     (or (not (= x32 0)) r_B509_4)
-     (or (not (= x32 0)) r_B509_5)
-     (or (not (= x42 0)) (not r_B509_0))
-     (or (not (= x42 0)) r_B509_1)
-     (or (not (= x42 0)) (not r_B509_2))
-     (or (not (= x42 0)) (not r_B509_3))
-     (or (not (= x42 0)) (not r_B509_4))
-     (or (not (= x42 0)) (not r_B509_5))
-     (or (not (= x52 0)) (not r_B509_0))
-     (or (not (= x52 0)) r_B509_1)
-     (or (not (= x52 0)) (not r_B509_2))
-     (or (not (= x52 0)) (not r_B509_3))
-     (or (not (= x52 0)) (not r_B509_4))
-     (or (not (= x52 0)) r_B509_5)
-     (or (not (= x03 0)) (not r_B509_0))
-     (or (not (= x03 0)) r_B509_1)
-     (or (not (= x03 0)) (not r_B509_2))
-     (or (not (= x03 0)) (not r_B509_3))
-     (or (not (= x03 0)) r_B509_4)
-     (or (not (= x03 0)) (not r_B509_5))
-     (or (not (= x13 0)) (not r_B509_0))
-     (or (not (= x13 0)) r_B509_1)
-     (or (not (= x13 0)) (not r_B509_2))
-     (or (not (= x13 0)) (not r_B509_3))
-     (or (not (= x13 0)) r_B509_4)
-     (or (not (= x13 0)) r_B509_5)
-     (or (not (= x23 0)) (not r_B509_0))
-     (or (not (= x23 0)) r_B509_1)
-     (or (not (= x23 0)) (not r_B509_2))
-     (or (not (= x23 0)) r_B509_3)
-     (or (not (= x23 0)) (not r_B509_4))
-     (or (not (= x23 0)) (not r_B509_5))
-     (or (not (= x33 0)) (not r_B509_0))
-     (or (not (= x33 0)) r_B509_1)
-     (or (not (= x33 0)) (not r_B509_2))
-     (or (not (= x33 0)) r_B509_3)
-     (or (not (= x33 0)) (not r_B509_4))
-     (or (not (= x33 0)) r_B509_5)
-     (or (not (= x43 0)) (not r_B509_0))
-     (or (not (= x43 0)) r_B509_1)
-     (or (not (= x43 0)) (not r_B509_2))
-     (or (not (= x43 0)) r_B509_3)
-     (or (not (= x43 0)) r_B509_4)
-     (or (not (= x43 0)) (not r_B509_5))
-     (or (not (= x53 0)) (not r_B509_0))
-     (or (not (= x53 0)) r_B509_1)
-     (or (not (= x53 0)) (not r_B509_2))
-     (or (not (= x53 0)) r_B509_3)
-     (or (not (= x53 0)) r_B509_4)
-     (or (not (= x53 0)) r_B509_5)
-     (or (not (= x04 0)) (not r_B509_0))
-     (or (not (= x04 0)) r_B509_1)
-     (or (not (= x04 0)) r_B509_2)
-     (or (not (= x04 0)) (not r_B509_3))
-     (or (not (= x04 0)) (not r_B509_4))
-     (or (not (= x04 0)) (not r_B509_5))
-     (or (not (= x14 0)) (not r_B509_0))
-     (or (not (= x14 0)) r_B509_1)
-     (or (not (= x14 0)) r_B509_2)
-     (or (not (= x14 0)) (not r_B509_3))
-     (or (not (= x14 0)) (not r_B509_4))
-     (or (not (= x14 0)) r_B509_5)
-     (or (not (= x24 0)) (not r_B509_0))
-     (or (not (= x24 0)) r_B509_1)
-     (or (not (= x24 0)) r_B509_2)
-     (or (not (= x24 0)) (not r_B509_3))
-     (or (not (= x24 0)) r_B509_4)
-     (or (not (= x24 0)) (not r_B509_5))
-     (or (not (= x34 0)) (not r_B509_0))
-     (or (not (= x34 0)) r_B509_1)
-     (or (not (= x34 0)) r_B509_2)
-     (or (not (= x34 0)) (not r_B509_3))
-     (or (not (= x34 0)) r_B509_4)
-     (or (not (= x34 0)) r_B509_5)
-     (or (not (= x44 0)) (not r_B509_0))
-     (or (not (= x44 0)) r_B509_1)
-     (or (not (= x44 0)) r_B509_2)
-     (or (not (= x44 0)) r_B509_3)
-     (or (not (= x44 0)) (not r_B509_4))
-     (or (not (= x44 0)) (not r_B509_5))
-     (or (not (= x54 0)) (not r_B509_0))
-     (or (not (= x54 0)) r_B509_1)
-     (or (not (= x54 0)) r_B509_2)
-     (or (not (= x54 0)) r_B509_3)
-     (or (not (= x54 0)) (not r_B509_4))
-     (or (not (= x54 0)) r_B509_5)
-     (or (not (= x05 0)) (not r_B509_0))
-     (or (not (= x05 0)) r_B509_1)
-     (or (not (= x05 0)) r_B509_2)
-     (or (not (= x05 0)) r_B509_3)
-     (or (not (= x05 0)) r_B509_4)
-     (or (not (= x05 0)) (not r_B509_5))
-     (or (not (= x15 0)) (not r_B509_0))
-     (or (not (= x15 0)) r_B509_1)
-     (or (not (= x15 0)) r_B509_2)
-     (or (not (= x15 0)) r_B509_3)
-     (or (not (= x15 0)) r_B509_4)
-     (or (not (= x15 0)) r_B509_5)
-     (or (not (= x25 0)) r_B509_0)
-     (or (not (= x25 0)) (not r_B509_1))
-     (or (not (= x25 0)) (not r_B509_2))
-     (or (not (= x25 0)) (not r_B509_3))
-     (or (not (= x25 0)) (not r_B509_4))
-     (or (not (= x25 0)) (not r_B509_5))
-     (or (not (= x35 0)) r_B509_0)
-     (or (not (= x35 0)) (not r_B509_1))
-     (or (not (= x35 0)) (not r_B509_2))
-     (or (not (= x35 0)) (not r_B509_3))
-     (or (not (= x35 0)) (not r_B509_4))
-     (or (not (= x35 0)) r_B509_5)
-     (or (not (= x45 0)) r_B509_0)
-     (or (not (= x45 0)) (not r_B509_1))
-     (or (not (= x45 0)) (not r_B509_2))
-     (or (not (= x45 0)) (not r_B509_3))
-     (or (not (= x45 0)) r_B509_4)
-     (or (not (= x45 0)) (not r_B509_5))
-     (or (not (= x55 0)) r_B509_0)
-     (or (not (= x55 0)) (not r_B509_1))
-     (or (not (= x55 0)) (not r_B509_2))
-     (or (not (= x55 0)) (not r_B509_3))
-     (or (not (= x55 0)) r_B509_4)
-     (or (not (= x55 0)) r_B509_5)
-     (or (not (= x06 0)) r_B509_0)
-     (or (not (= x06 0)) (not r_B509_1))
-     (or (not (= x06 0)) (not r_B509_2))
-     (or (not (= x06 0)) r_B509_3)
-     (or (not (= x06 0)) (not r_B509_4))
-     (or (not (= x06 0)) (not r_B509_5))
-     (or (not (= x16 0)) r_B509_0)
-     (or (not (= x16 0)) (not r_B509_1))
-     (or (not (= x16 0)) (not r_B509_2))
-     (or (not (= x16 0)) r_B509_3)
-     (or (not (= x16 0)) (not r_B509_4))
-     (or (not (= x16 0)) r_B509_5)
-     (or (not (= x26 0)) r_B509_0)
-     (or (not (= x26 0)) (not r_B509_1))
-     (or (not (= x26 0)) (not r_B509_2))
-     (or (not (= x26 0)) r_B509_3)
-     (or (not (= x26 0)) r_B509_4)
-     (or (not (= x26 0)) (not r_B509_5))
-     (or (not (= x36 0)) r_B509_0)
-     (or (not (= x36 0)) (not r_B509_1))
-     (or (not (= x36 0)) (not r_B509_2))
-     (or (not (= x36 0)) r_B509_3)
-     (or (not (= x36 0)) r_B509_4)
-     (or (not (= x36 0)) r_B509_5)
-     (or (not (= x46 0)) r_B509_0)
-     (or (not (= x46 0)) (not r_B509_1))
-     (or (not (= x46 0)) r_B509_2)
-     (or (not (= x46 0)) (not r_B509_3))
-     (or (not (= x46 0)) (not r_B509_4))
-     (or (not (= x46 0)) (not r_B509_5))
-     (or (not (= x56 0)) r_B509_0)
-     (or (not (= x56 0)) (not r_B509_1))
-     (or (not (= x56 0)) r_B509_2)
-     (or (not (= x56 0)) (not r_B509_3))
-     (or (not (= x56 0)) (not r_B509_4))
-     (or (not (= x56 0)) r_B509_5)
-     (or (not (= x07 0)) r_B509_0)
-     (or (not (= x07 0)) (not r_B509_1))
-     (or (not (= x07 0)) r_B509_2)
-     (or (not (= x07 0)) (not r_B509_3))
-     (or (not (= x07 0)) r_B509_4)
-     (or (not (= x07 0)) (not r_B509_5))
-     (or (not (= x17 0)) r_B509_0)
-     (or (not (= x17 0)) (not r_B509_1))
-     (or (not (= x17 0)) r_B509_2)
-     (or (not (= x17 0)) (not r_B509_3))
-     (or (not (= x17 0)) r_B509_4)
-     (or (not (= x17 0)) r_B509_5)
-     (or (not (= x27 0)) r_B509_0)
-     (or (not (= x27 0)) (not r_B509_1))
-     (or (not (= x27 0)) r_B509_2)
-     (or (not (= x27 0)) r_B509_3)
-     (or (not (= x27 0)) (not r_B509_4))
-     (or (not (= x27 0)) (not r_B509_5))
-     (or (not (= x37 0)) r_B509_0)
-     (or (not (= x37 0)) (not r_B509_1))
-     (or (not (= x37 0)) r_B509_2)
-     (or (not (= x37 0)) r_B509_3)
-     (or (not (= x37 0)) (not r_B509_4))
-     (or (not (= x37 0)) r_B509_5)
-     (or (not (= x47 0)) r_B509_0)
-     (or (not (= x47 0)) (not r_B509_1))
-     (or (not (= x47 0)) r_B509_2)
-     (or (not (= x47 0)) r_B509_3)
-     (or (not (= x47 0)) r_B509_4)
-     (or (not (= x47 0)) (not r_B509_5))
-     (or (not (= x57 0)) r_B509_0)
-     (or (not (= x57 0)) (not r_B509_1))
-     (or (not (= x57 0)) r_B509_2)
-     (or (not (= x57 0)) r_B509_3)
-     (or (not (= x57 0)) r_B509_4)
-     (or (not (= x57 0)) r_B509_5)
-     (or (not (= x08 0)) r_B509_0)
-     (or (not (= x08 0)) r_B509_1)
-     (or (not (= x08 0)) (not r_B509_2))
-     (or (not (= x08 0)) (not r_B509_3))
-     (or (not (= x08 0)) (not r_B509_4))
-     (or (not (= x08 0)) (not r_B509_5))
-     (or (not (= x18 0)) r_B509_0)
-     (or (not (= x18 0)) r_B509_1)
-     (or (not (= x18 0)) (not r_B509_2))
-     (or (not (= x18 0)) (not r_B509_3))
-     (or (not (= x18 0)) (not r_B509_4))
-     (or (not (= x18 0)) r_B509_5)
-     (or (not (= x28 0)) r_B509_0)
-     (or (not (= x28 0)) r_B509_1)
-     (or (not (= x28 0)) (not r_B509_2))
-     (or (not (= x28 0)) (not r_B509_3))
-     (or (not (= x28 0)) r_B509_4)
-     (or (not (= x28 0)) (not r_B509_5))
-     (or (not (= x38 0)) r_B509_0)
-     (or (not (= x38 0)) r_B509_1)
-     (or (not (= x38 0)) (not r_B509_2))
-     (or (not (= x38 0)) (not r_B509_3))
-     (or (not (= x38 0)) r_B509_4)
-     (or (not (= x38 0)) r_B509_5)
-     (or (not (= x48 0)) r_B509_0)
-     (or (not (= x48 0)) r_B509_1)
-     (or (not (= x48 0)) (not r_B509_2))
-     (or (not (= x48 0)) r_B509_3)
-     (or (not (= x48 0)) (not r_B509_4))
-     (or (not (= x48 0)) (not r_B509_5))
-     (or (not (= x58 0)) r_B509_0)
-     (or (not (= x58 0)) r_B509_1)
-     (or (not (= x58 0)) (not r_B509_2))
-     (or (not (= x58 0)) r_B509_3)
-     (or (not (= x58 0)) (not r_B509_4))
-     (or (not (= x58 0)) r_B509_5)
-     (or (not (= x09 0)) r_B509_0)
-     (or (not (= x09 0)) r_B509_1)
-     (or (not (= x09 0)) (not r_B509_2))
-     (or (not (= x09 0)) r_B509_3)
-     (or (not (= x09 0)) r_B509_4)
-     (or (not (= x09 0)) (not r_B509_5))
-     (or (not (= x19 0)) r_B509_0)
-     (or (not (= x19 0)) r_B509_1)
-     (or (not (= x19 0)) (not r_B509_2))
-     (or (not (= x19 0)) r_B509_3)
-     (or (not (= x19 0)) r_B509_4)
-     (or (not (= x19 0)) r_B509_5)
-     (or (not (= x29 0)) r_B509_0)
-     (or (not (= x29 0)) r_B509_1)
-     (or (not (= x29 0)) r_B509_2)
-     (or (not (= x29 0)) (not r_B509_3))
-     (or (not (= x29 0)) (not r_B509_4))
-     (or (not (= x29 0)) (not r_B509_5))
-     (or (not (= x39 0)) r_B509_0)
-     (or (not (= x39 0)) r_B509_1)
-     (or (not (= x39 0)) r_B509_2)
-     (or (not (= x39 0)) (not r_B509_3))
-     (or (not (= x39 0)) (not r_B509_4))
-     (or (not (= x39 0)) r_B509_5)
-     (or (not (= x49 0)) r_B509_0)
-     (or (not (= x49 0)) r_B509_1)
-     (or (not (= x49 0)) r_B509_2)
-     (or (not (= x49 0)) (not r_B509_3))
-     (or (not (= x49 0)) r_B509_4)
-     (or (not (= x49 0)) (not r_B509_5))
-     (or (not (= x59 0)) r_B509_0)
-     (or (not (= x59 0)) r_B509_1)
-     (or (not (= x59 0)) r_B509_2)
-     (or (not (= x59 0)) (not r_B509_3))
-     (or (not (= x59 0)) r_B509_4)
-     (or (not (= x59 0)) r_B509_5)))
-(assert (and (or (= y00 0)
-         (= y10 0)
-         (= y20 0)
-         (= y30 0)
-         (= y40 0)
-         (= y50 0)
-         (= y01 0)
-         (= y11 0)
-         (= y21 0)
-         (= y31 0)
-         (= y41 0)
-         (= y51 0)
-         (= y02 0)
-         (= y12 0)
-         (= y22 0)
-         (= y32 0)
-         (= y42 0)
-         (= y52 0)
-         (= y03 0)
-         (= y13 0)
-         (= y23 0)
-         (= y33 0)
-         (= y43 0)
-         (= y53 0)
-         (= y04 0)
-         (= y14 0)
-         (= y24 0)
-         (= y34 0)
-         (= y44 0)
-         (= y54 0)
-         (= y05 0)
-         (= y15 0)
-         (= y25 0)
-         (= y35 0)
-         (= y45 0)
-         (= y55 0)
-         (= y06 0)
-         (= y16 0)
-         (= y26 0)
-         (= y36 0)
-         (= y46 0)
-         (= y56 0)
-         (= y07 0)
-         (= y17 0)
-         (= y27 0)
-         (= y37 0)
-         (= y47 0)
-         (= y57 0)
-         (= y08 0)
-         (= y18 0)
-         (= y28 0)
-         (= y38 0)
-         (= y48 0)
-         (= y58 0)
-         (= y09 0)
-         (= y19 0)
-         (= y29 0)
-         (= y39 0)
-         (= y49 0)
-         (= y59 0))
-     (or (not (= y00 0)) (not r_C509_0))
-     (or (not (= y00 0)) (not r_C509_1))
-     (or (not (= y00 0)) (not r_C509_2))
-     (or (not (= y00 0)) (not r_C509_3))
-     (or (not (= y00 0)) (not r_C509_4))
-     (or (not (= y00 0)) (not r_C509_5))
-     (or (not (= y10 0)) (not r_C509_0))
-     (or (not (= y10 0)) (not r_C509_1))
-     (or (not (= y10 0)) (not r_C509_2))
-     (or (not (= y10 0)) (not r_C509_3))
-     (or (not (= y10 0)) (not r_C509_4))
-     (or (not (= y10 0)) r_C509_5)
-     (or (not (= y20 0)) (not r_C509_0))
-     (or (not (= y20 0)) (not r_C509_1))
-     (or (not (= y20 0)) (not r_C509_2))
-     (or (not (= y20 0)) (not r_C509_3))
-     (or (not (= y20 0)) r_C509_4)
-     (or (not (= y20 0)) (not r_C509_5))
-     (or (not (= y30 0)) (not r_C509_0))
-     (or (not (= y30 0)) (not r_C509_1))
-     (or (not (= y30 0)) (not r_C509_2))
-     (or (not (= y30 0)) (not r_C509_3))
-     (or (not (= y30 0)) r_C509_4)
-     (or (not (= y30 0)) r_C509_5)
-     (or (not (= y40 0)) (not r_C509_0))
-     (or (not (= y40 0)) (not r_C509_1))
-     (or (not (= y40 0)) (not r_C509_2))
-     (or (not (= y40 0)) r_C509_3)
-     (or (not (= y40 0)) (not r_C509_4))
-     (or (not (= y40 0)) (not r_C509_5))
-     (or (not (= y50 0)) (not r_C509_0))
-     (or (not (= y50 0)) (not r_C509_1))
-     (or (not (= y50 0)) (not r_C509_2))
-     (or (not (= y50 0)) r_C509_3)
-     (or (not (= y50 0)) (not r_C509_4))
-     (or (not (= y50 0)) r_C509_5)
-     (or (not (= y01 0)) (not r_C509_0))
-     (or (not (= y01 0)) (not r_C509_1))
-     (or (not (= y01 0)) (not r_C509_2))
-     (or (not (= y01 0)) r_C509_3)
-     (or (not (= y01 0)) r_C509_4)
-     (or (not (= y01 0)) (not r_C509_5))
-     (or (not (= y11 0)) (not r_C509_0))
-     (or (not (= y11 0)) (not r_C509_1))
-     (or (not (= y11 0)) (not r_C509_2))
-     (or (not (= y11 0)) r_C509_3)
-     (or (not (= y11 0)) r_C509_4)
-     (or (not (= y11 0)) r_C509_5)
-     (or (not (= y21 0)) (not r_C509_0))
-     (or (not (= y21 0)) (not r_C509_1))
-     (or (not (= y21 0)) r_C509_2)
-     (or (not (= y21 0)) (not r_C509_3))
-     (or (not (= y21 0)) (not r_C509_4))
-     (or (not (= y21 0)) (not r_C509_5))
-     (or (not (= y31 0)) (not r_C509_0))
-     (or (not (= y31 0)) (not r_C509_1))
-     (or (not (= y31 0)) r_C509_2)
-     (or (not (= y31 0)) (not r_C509_3))
-     (or (not (= y31 0)) (not r_C509_4))
-     (or (not (= y31 0)) r_C509_5)
-     (or (not (= y41 0)) (not r_C509_0))
-     (or (not (= y41 0)) (not r_C509_1))
-     (or (not (= y41 0)) r_C509_2)
-     (or (not (= y41 0)) (not r_C509_3))
-     (or (not (= y41 0)) r_C509_4)
-     (or (not (= y41 0)) (not r_C509_5))
-     (or (not (= y51 0)) (not r_C509_0))
-     (or (not (= y51 0)) (not r_C509_1))
-     (or (not (= y51 0)) r_C509_2)
-     (or (not (= y51 0)) (not r_C509_3))
-     (or (not (= y51 0)) r_C509_4)
-     (or (not (= y51 0)) r_C509_5)
-     (or (not (= y02 0)) (not r_C509_0))
-     (or (not (= y02 0)) (not r_C509_1))
-     (or (not (= y02 0)) r_C509_2)
-     (or (not (= y02 0)) r_C509_3)
-     (or (not (= y02 0)) (not r_C509_4))
-     (or (not (= y02 0)) (not r_C509_5))
-     (or (not (= y12 0)) (not r_C509_0))
-     (or (not (= y12 0)) (not r_C509_1))
-     (or (not (= y12 0)) r_C509_2)
-     (or (not (= y12 0)) r_C509_3)
-     (or (not (= y12 0)) (not r_C509_4))
-     (or (not (= y12 0)) r_C509_5)
-     (or (not (= y22 0)) (not r_C509_0))
-     (or (not (= y22 0)) (not r_C509_1))
-     (or (not (= y22 0)) r_C509_2)
-     (or (not (= y22 0)) r_C509_3)
-     (or (not (= y22 0)) r_C509_4)
-     (or (not (= y22 0)) (not r_C509_5))
-     (or (not (= y32 0)) (not r_C509_0))
-     (or (not (= y32 0)) (not r_C509_1))
-     (or (not (= y32 0)) r_C509_2)
-     (or (not (= y32 0)) r_C509_3)
-     (or (not (= y32 0)) r_C509_4)
-     (or (not (= y32 0)) r_C509_5)
-     (or (not (= y42 0)) (not r_C509_0))
-     (or (not (= y42 0)) r_C509_1)
-     (or (not (= y42 0)) (not r_C509_2))
-     (or (not (= y42 0)) (not r_C509_3))
-     (or (not (= y42 0)) (not r_C509_4))
-     (or (not (= y42 0)) (not r_C509_5))
-     (or (not (= y52 0)) (not r_C509_0))
-     (or (not (= y52 0)) r_C509_1)
-     (or (not (= y52 0)) (not r_C509_2))
-     (or (not (= y52 0)) (not r_C509_3))
-     (or (not (= y52 0)) (not r_C509_4))
-     (or (not (= y52 0)) r_C509_5)
-     (or (not (= y03 0)) (not r_C509_0))
-     (or (not (= y03 0)) r_C509_1)
-     (or (not (= y03 0)) (not r_C509_2))
-     (or (not (= y03 0)) (not r_C509_3))
-     (or (not (= y03 0)) r_C509_4)
-     (or (not (= y03 0)) (not r_C509_5))
-     (or (not (= y13 0)) (not r_C509_0))
-     (or (not (= y13 0)) r_C509_1)
-     (or (not (= y13 0)) (not r_C509_2))
-     (or (not (= y13 0)) (not r_C509_3))
-     (or (not (= y13 0)) r_C509_4)
-     (or (not (= y13 0)) r_C509_5)
-     (or (not (= y23 0)) (not r_C509_0))
-     (or (not (= y23 0)) r_C509_1)
-     (or (not (= y23 0)) (not r_C509_2))
-     (or (not (= y23 0)) r_C509_3)
-     (or (not (= y23 0)) (not r_C509_4))
-     (or (not (= y23 0)) (not r_C509_5))
-     (or (not (= y33 0)) (not r_C509_0))
-     (or (not (= y33 0)) r_C509_1)
-     (or (not (= y33 0)) (not r_C509_2))
-     (or (not (= y33 0)) r_C509_3)
-     (or (not (= y33 0)) (not r_C509_4))
-     (or (not (= y33 0)) r_C509_5)
-     (or (not (= y43 0)) (not r_C509_0))
-     (or (not (= y43 0)) r_C509_1)
-     (or (not (= y43 0)) (not r_C509_2))
-     (or (not (= y43 0)) r_C509_3)
-     (or (not (= y43 0)) r_C509_4)
-     (or (not (= y43 0)) (not r_C509_5))
-     (or (not (= y53 0)) (not r_C509_0))
-     (or (not (= y53 0)) r_C509_1)
-     (or (not (= y53 0)) (not r_C509_2))
-     (or (not (= y53 0)) r_C509_3)
-     (or (not (= y53 0)) r_C509_4)
-     (or (not (= y53 0)) r_C509_5)
-     (or (not (= y04 0)) (not r_C509_0))
-     (or (not (= y04 0)) r_C509_1)
-     (or (not (= y04 0)) r_C509_2)
-     (or (not (= y04 0)) (not r_C509_3))
-     (or (not (= y04 0)) (not r_C509_4))
-     (or (not (= y04 0)) (not r_C509_5))
-     (or (not (= y14 0)) (not r_C509_0))
-     (or (not (= y14 0)) r_C509_1)
-     (or (not (= y14 0)) r_C509_2)
-     (or (not (= y14 0)) (not r_C509_3))
-     (or (not (= y14 0)) (not r_C509_4))
-     (or (not (= y14 0)) r_C509_5)
-     (or (not (= y24 0)) (not r_C509_0))
-     (or (not (= y24 0)) r_C509_1)
-     (or (not (= y24 0)) r_C509_2)
-     (or (not (= y24 0)) (not r_C509_3))
-     (or (not (= y24 0)) r_C509_4)
-     (or (not (= y24 0)) (not r_C509_5))
-     (or (not (= y34 0)) (not r_C509_0))
-     (or (not (= y34 0)) r_C509_1)
-     (or (not (= y34 0)) r_C509_2)
-     (or (not (= y34 0)) (not r_C509_3))
-     (or (not (= y34 0)) r_C509_4)
-     (or (not (= y34 0)) r_C509_5)
-     (or (not (= y44 0)) (not r_C509_0))
-     (or (not (= y44 0)) r_C509_1)
-     (or (not (= y44 0)) r_C509_2)
-     (or (not (= y44 0)) r_C509_3)
-     (or (not (= y44 0)) (not r_C509_4))
-     (or (not (= y44 0)) (not r_C509_5))
-     (or (not (= y54 0)) (not r_C509_0))
-     (or (not (= y54 0)) r_C509_1)
-     (or (not (= y54 0)) r_C509_2)
-     (or (not (= y54 0)) r_C509_3)
-     (or (not (= y54 0)) (not r_C509_4))
-     (or (not (= y54 0)) r_C509_5)
-     (or (not (= y05 0)) (not r_C509_0))
-     (or (not (= y05 0)) r_C509_1)
-     (or (not (= y05 0)) r_C509_2)
-     (or (not (= y05 0)) r_C509_3)
-     (or (not (= y05 0)) r_C509_4)
-     (or (not (= y05 0)) (not r_C509_5))
-     (or (not (= y15 0)) (not r_C509_0))
-     (or (not (= y15 0)) r_C509_1)
-     (or (not (= y15 0)) r_C509_2)
-     (or (not (= y15 0)) r_C509_3)
-     (or (not (= y15 0)) r_C509_4)
-     (or (not (= y15 0)) r_C509_5)
-     (or (not (= y25 0)) r_C509_0)
-     (or (not (= y25 0)) (not r_C509_1))
-     (or (not (= y25 0)) (not r_C509_2))
-     (or (not (= y25 0)) (not r_C509_3))
-     (or (not (= y25 0)) (not r_C509_4))
-     (or (not (= y25 0)) (not r_C509_5))
-     (or (not (= y35 0)) r_C509_0)
-     (or (not (= y35 0)) (not r_C509_1))
-     (or (not (= y35 0)) (not r_C509_2))
-     (or (not (= y35 0)) (not r_C509_3))
-     (or (not (= y35 0)) (not r_C509_4))
-     (or (not (= y35 0)) r_C509_5)
-     (or (not (= y45 0)) r_C509_0)
-     (or (not (= y45 0)) (not r_C509_1))
-     (or (not (= y45 0)) (not r_C509_2))
-     (or (not (= y45 0)) (not r_C509_3))
-     (or (not (= y45 0)) r_C509_4)
-     (or (not (= y45 0)) (not r_C509_5))
-     (or (not (= y55 0)) r_C509_0)
-     (or (not (= y55 0)) (not r_C509_1))
-     (or (not (= y55 0)) (not r_C509_2))
-     (or (not (= y55 0)) (not r_C509_3))
-     (or (not (= y55 0)) r_C509_4)
-     (or (not (= y55 0)) r_C509_5)
-     (or (not (= y06 0)) r_C509_0)
-     (or (not (= y06 0)) (not r_C509_1))
-     (or (not (= y06 0)) (not r_C509_2))
-     (or (not (= y06 0)) r_C509_3)
-     (or (not (= y06 0)) (not r_C509_4))
-     (or (not (= y06 0)) (not r_C509_5))
-     (or (not (= y16 0)) r_C509_0)
-     (or (not (= y16 0)) (not r_C509_1))
-     (or (not (= y16 0)) (not r_C509_2))
-     (or (not (= y16 0)) r_C509_3)
-     (or (not (= y16 0)) (not r_C509_4))
-     (or (not (= y16 0)) r_C509_5)
-     (or (not (= y26 0)) r_C509_0)
-     (or (not (= y26 0)) (not r_C509_1))
-     (or (not (= y26 0)) (not r_C509_2))
-     (or (not (= y26 0)) r_C509_3)
-     (or (not (= y26 0)) r_C509_4)
-     (or (not (= y26 0)) (not r_C509_5))
-     (or (not (= y36 0)) r_C509_0)
-     (or (not (= y36 0)) (not r_C509_1))
-     (or (not (= y36 0)) (not r_C509_2))
-     (or (not (= y36 0)) r_C509_3)
-     (or (not (= y36 0)) r_C509_4)
-     (or (not (= y36 0)) r_C509_5)
-     (or (not (= y46 0)) r_C509_0)
-     (or (not (= y46 0)) (not r_C509_1))
-     (or (not (= y46 0)) r_C509_2)
-     (or (not (= y46 0)) (not r_C509_3))
-     (or (not (= y46 0)) (not r_C509_4))
-     (or (not (= y46 0)) (not r_C509_5))
-     (or (not (= y56 0)) r_C509_0)
-     (or (not (= y56 0)) (not r_C509_1))
-     (or (not (= y56 0)) r_C509_2)
-     (or (not (= y56 0)) (not r_C509_3))
-     (or (not (= y56 0)) (not r_C509_4))
-     (or (not (= y56 0)) r_C509_5)
-     (or (not (= y07 0)) r_C509_0)
-     (or (not (= y07 0)) (not r_C509_1))
-     (or (not (= y07 0)) r_C509_2)
-     (or (not (= y07 0)) (not r_C509_3))
-     (or (not (= y07 0)) r_C509_4)
-     (or (not (= y07 0)) (not r_C509_5))
-     (or (not (= y17 0)) r_C509_0)
-     (or (not (= y17 0)) (not r_C509_1))
-     (or (not (= y17 0)) r_C509_2)
-     (or (not (= y17 0)) (not r_C509_3))
-     (or (not (= y17 0)) r_C509_4)
-     (or (not (= y17 0)) r_C509_5)
-     (or (not (= y27 0)) r_C509_0)
-     (or (not (= y27 0)) (not r_C509_1))
-     (or (not (= y27 0)) r_C509_2)
-     (or (not (= y27 0)) r_C509_3)
-     (or (not (= y27 0)) (not r_C509_4))
-     (or (not (= y27 0)) (not r_C509_5))
-     (or (not (= y37 0)) r_C509_0)
-     (or (not (= y37 0)) (not r_C509_1))
-     (or (not (= y37 0)) r_C509_2)
-     (or (not (= y37 0)) r_C509_3)
-     (or (not (= y37 0)) (not r_C509_4))
-     (or (not (= y37 0)) r_C509_5)
-     (or (not (= y47 0)) r_C509_0)
-     (or (not (= y47 0)) (not r_C509_1))
-     (or (not (= y47 0)) r_C509_2)
-     (or (not (= y47 0)) r_C509_3)
-     (or (not (= y47 0)) r_C509_4)
-     (or (not (= y47 0)) (not r_C509_5))
-     (or (not (= y57 0)) r_C509_0)
-     (or (not (= y57 0)) (not r_C509_1))
-     (or (not (= y57 0)) r_C509_2)
-     (or (not (= y57 0)) r_C509_3)
-     (or (not (= y57 0)) r_C509_4)
-     (or (not (= y57 0)) r_C509_5)
-     (or (not (= y08 0)) r_C509_0)
-     (or (not (= y08 0)) r_C509_1)
-     (or (not (= y08 0)) (not r_C509_2))
-     (or (not (= y08 0)) (not r_C509_3))
-     (or (not (= y08 0)) (not r_C509_4))
-     (or (not (= y08 0)) (not r_C509_5))
-     (or (not (= y18 0)) r_C509_0)
-     (or (not (= y18 0)) r_C509_1)
-     (or (not (= y18 0)) (not r_C509_2))
-     (or (not (= y18 0)) (not r_C509_3))
-     (or (not (= y18 0)) (not r_C509_4))
-     (or (not (= y18 0)) r_C509_5)
-     (or (not (= y28 0)) r_C509_0)
-     (or (not (= y28 0)) r_C509_1)
-     (or (not (= y28 0)) (not r_C509_2))
-     (or (not (= y28 0)) (not r_C509_3))
-     (or (not (= y28 0)) r_C509_4)
-     (or (not (= y28 0)) (not r_C509_5))
-     (or (not (= y38 0)) r_C509_0)
-     (or (not (= y38 0)) r_C509_1)
-     (or (not (= y38 0)) (not r_C509_2))
-     (or (not (= y38 0)) (not r_C509_3))
-     (or (not (= y38 0)) r_C509_4)
-     (or (not (= y38 0)) r_C509_5)
-     (or (not (= y48 0)) r_C509_0)
-     (or (not (= y48 0)) r_C509_1)
-     (or (not (= y48 0)) (not r_C509_2))
-     (or (not (= y48 0)) r_C509_3)
-     (or (not (= y48 0)) (not r_C509_4))
-     (or (not (= y48 0)) (not r_C509_5))
-     (or (not (= y58 0)) r_C509_0)
-     (or (not (= y58 0)) r_C509_1)
-     (or (not (= y58 0)) (not r_C509_2))
-     (or (not (= y58 0)) r_C509_3)
-     (or (not (= y58 0)) (not r_C509_4))
-     (or (not (= y58 0)) r_C509_5)
-     (or (not (= y09 0)) r_C509_0)
-     (or (not (= y09 0)) r_C509_1)
-     (or (not (= y09 0)) (not r_C509_2))
-     (or (not (= y09 0)) r_C509_3)
-     (or (not (= y09 0)) r_C509_4)
-     (or (not (= y09 0)) (not r_C509_5))
-     (or (not (= y19 0)) r_C509_0)
-     (or (not (= y19 0)) r_C509_1)
-     (or (not (= y19 0)) (not r_C509_2))
-     (or (not (= y19 0)) r_C509_3)
-     (or (not (= y19 0)) r_C509_4)
-     (or (not (= y19 0)) r_C509_5)
-     (or (not (= y29 0)) r_C509_0)
-     (or (not (= y29 0)) r_C509_1)
-     (or (not (= y29 0)) r_C509_2)
-     (or (not (= y29 0)) (not r_C509_3))
-     (or (not (= y29 0)) (not r_C509_4))
-     (or (not (= y29 0)) (not r_C509_5))
-     (or (not (= y39 0)) r_C509_0)
-     (or (not (= y39 0)) r_C509_1)
-     (or (not (= y39 0)) r_C509_2)
-     (or (not (= y39 0)) (not r_C509_3))
-     (or (not (= y39 0)) (not r_C509_4))
-     (or (not (= y39 0)) r_C509_5)
-     (or (not (= y49 0)) r_C509_0)
-     (or (not (= y49 0)) r_C509_1)
-     (or (not (= y49 0)) r_C509_2)
-     (or (not (= y49 0)) (not r_C509_3))
-     (or (not (= y49 0)) r_C509_4)
-     (or (not (= y49 0)) (not r_C509_5))
-     (or (not (= y59 0)) r_C509_0)
-     (or (not (= y59 0)) r_C509_1)
-     (or (not (= y59 0)) r_C509_2)
-     (or (not (= y59 0)) (not r_C509_3))
-     (or (not (= y59 0)) r_C509_4)
-     (or (not (= y59 0)) r_C509_5)))
-(assert (and (or (= x00 1)
-         (= x10 1)
-         (= x20 1)
-         (= x30 1)
-         (= x40 1)
-         (= x50 1)
-         (= x01 1)
-         (= x11 1)
-         (= x21 1)
-         (= x31 1)
-         (= x41 1)
-         (= x51 1)
-         (= x02 1)
-         (= x12 1)
-         (= x22 1)
-         (= x32 1)
-         (= x42 1)
-         (= x52 1)
-         (= x03 1)
-         (= x13 1)
-         (= x23 1)
-         (= x33 1)
-         (= x43 1)
-         (= x53 1)
-         (= x04 1)
-         (= x14 1)
-         (= x24 1)
-         (= x34 1)
-         (= x44 1)
-         (= x54 1)
-         (= x05 1)
-         (= x15 1)
-         (= x25 1)
-         (= x35 1)
-         (= x45 1)
-         (= x55 1)
-         (= x06 1)
-         (= x16 1)
-         (= x26 1)
-         (= x36 1)
-         (= x46 1)
-         (= x56 1)
-         (= x07 1)
-         (= x17 1)
-         (= x27 1)
-         (= x37 1)
-         (= x47 1)
-         (= x57 1)
-         (= x08 1)
-         (= x18 1)
-         (= x28 1)
-         (= x38 1)
-         (= x48 1)
-         (= x58 1)
-         (= x09 1)
-         (= x19 1)
-         (= x29 1)
-         (= x39 1)
-         (= x49 1)
-         (= x59 1))
-     (or (not (= x00 1)) (not r_B519_0))
-     (or (not (= x00 1)) (not r_B519_1))
-     (or (not (= x00 1)) (not r_B519_2))
-     (or (not (= x00 1)) (not r_B519_3))
-     (or (not (= x00 1)) (not r_B519_4))
-     (or (not (= x00 1)) (not r_B519_5))
-     (or (not (= x10 1)) (not r_B519_0))
-     (or (not (= x10 1)) (not r_B519_1))
-     (or (not (= x10 1)) (not r_B519_2))
-     (or (not (= x10 1)) (not r_B519_3))
-     (or (not (= x10 1)) (not r_B519_4))
-     (or (not (= x10 1)) r_B519_5)
-     (or (not (= x20 1)) (not r_B519_0))
-     (or (not (= x20 1)) (not r_B519_1))
-     (or (not (= x20 1)) (not r_B519_2))
-     (or (not (= x20 1)) (not r_B519_3))
-     (or (not (= x20 1)) r_B519_4)
-     (or (not (= x20 1)) (not r_B519_5))
-     (or (not (= x30 1)) (not r_B519_0))
-     (or (not (= x30 1)) (not r_B519_1))
-     (or (not (= x30 1)) (not r_B519_2))
-     (or (not (= x30 1)) (not r_B519_3))
-     (or (not (= x30 1)) r_B519_4)
-     (or (not (= x30 1)) r_B519_5)
-     (or (not (= x40 1)) (not r_B519_0))
-     (or (not (= x40 1)) (not r_B519_1))
-     (or (not (= x40 1)) (not r_B519_2))
-     (or (not (= x40 1)) r_B519_3)
-     (or (not (= x40 1)) (not r_B519_4))
-     (or (not (= x40 1)) (not r_B519_5))
-     (or (not (= x50 1)) (not r_B519_0))
-     (or (not (= x50 1)) (not r_B519_1))
-     (or (not (= x50 1)) (not r_B519_2))
-     (or (not (= x50 1)) r_B519_3)
-     (or (not (= x50 1)) (not r_B519_4))
-     (or (not (= x50 1)) r_B519_5)
-     (or (not (= x01 1)) (not r_B519_0))
-     (or (not (= x01 1)) (not r_B519_1))
-     (or (not (= x01 1)) (not r_B519_2))
-     (or (not (= x01 1)) r_B519_3)
-     (or (not (= x01 1)) r_B519_4)
-     (or (not (= x01 1)) (not r_B519_5))
-     (or (not (= x11 1)) (not r_B519_0))
-     (or (not (= x11 1)) (not r_B519_1))
-     (or (not (= x11 1)) (not r_B519_2))
-     (or (not (= x11 1)) r_B519_3)
-     (or (not (= x11 1)) r_B519_4)
-     (or (not (= x11 1)) r_B519_5)
-     (or (not (= x21 1)) (not r_B519_0))
-     (or (not (= x21 1)) (not r_B519_1))
-     (or (not (= x21 1)) r_B519_2)
-     (or (not (= x21 1)) (not r_B519_3))
-     (or (not (= x21 1)) (not r_B519_4))
-     (or (not (= x21 1)) (not r_B519_5))
-     (or (not (= x31 1)) (not r_B519_0))
-     (or (not (= x31 1)) (not r_B519_1))
-     (or (not (= x31 1)) r_B519_2)
-     (or (not (= x31 1)) (not r_B519_3))
-     (or (not (= x31 1)) (not r_B519_4))
-     (or (not (= x31 1)) r_B519_5)
-     (or (not (= x41 1)) (not r_B519_0))
-     (or (not (= x41 1)) (not r_B519_1))
-     (or (not (= x41 1)) r_B519_2)
-     (or (not (= x41 1)) (not r_B519_3))
-     (or (not (= x41 1)) r_B519_4)
-     (or (not (= x41 1)) (not r_B519_5))
-     (or (not (= x51 1)) (not r_B519_0))
-     (or (not (= x51 1)) (not r_B519_1))
-     (or (not (= x51 1)) r_B519_2)
-     (or (not (= x51 1)) (not r_B519_3))
-     (or (not (= x51 1)) r_B519_4)
-     (or (not (= x51 1)) r_B519_5)
-     (or (not (= x02 1)) (not r_B519_0))
-     (or (not (= x02 1)) (not r_B519_1))
-     (or (not (= x02 1)) r_B519_2)
-     (or (not (= x02 1)) r_B519_3)
-     (or (not (= x02 1)) (not r_B519_4))
-     (or (not (= x02 1)) (not r_B519_5))
-     (or (not (= x12 1)) (not r_B519_0))
-     (or (not (= x12 1)) (not r_B519_1))
-     (or (not (= x12 1)) r_B519_2)
-     (or (not (= x12 1)) r_B519_3)
-     (or (not (= x12 1)) (not r_B519_4))
-     (or (not (= x12 1)) r_B519_5)
-     (or (not (= x22 1)) (not r_B519_0))
-     (or (not (= x22 1)) (not r_B519_1))
-     (or (not (= x22 1)) r_B519_2)
-     (or (not (= x22 1)) r_B519_3)
-     (or (not (= x22 1)) r_B519_4)
-     (or (not (= x22 1)) (not r_B519_5))
-     (or (not (= x32 1)) (not r_B519_0))
-     (or (not (= x32 1)) (not r_B519_1))
-     (or (not (= x32 1)) r_B519_2)
-     (or (not (= x32 1)) r_B519_3)
-     (or (not (= x32 1)) r_B519_4)
-     (or (not (= x32 1)) r_B519_5)
-     (or (not (= x42 1)) (not r_B519_0))
-     (or (not (= x42 1)) r_B519_1)
-     (or (not (= x42 1)) (not r_B519_2))
-     (or (not (= x42 1)) (not r_B519_3))
-     (or (not (= x42 1)) (not r_B519_4))
-     (or (not (= x42 1)) (not r_B519_5))
-     (or (not (= x52 1)) (not r_B519_0))
-     (or (not (= x52 1)) r_B519_1)
-     (or (not (= x52 1)) (not r_B519_2))
-     (or (not (= x52 1)) (not r_B519_3))
-     (or (not (= x52 1)) (not r_B519_4))
-     (or (not (= x52 1)) r_B519_5)
-     (or (not (= x03 1)) (not r_B519_0))
-     (or (not (= x03 1)) r_B519_1)
-     (or (not (= x03 1)) (not r_B519_2))
-     (or (not (= x03 1)) (not r_B519_3))
-     (or (not (= x03 1)) r_B519_4)
-     (or (not (= x03 1)) (not r_B519_5))
-     (or (not (= x13 1)) (not r_B519_0))
-     (or (not (= x13 1)) r_B519_1)
-     (or (not (= x13 1)) (not r_B519_2))
-     (or (not (= x13 1)) (not r_B519_3))
-     (or (not (= x13 1)) r_B519_4)
-     (or (not (= x13 1)) r_B519_5)
-     (or (not (= x23 1)) (not r_B519_0))
-     (or (not (= x23 1)) r_B519_1)
-     (or (not (= x23 1)) (not r_B519_2))
-     (or (not (= x23 1)) r_B519_3)
-     (or (not (= x23 1)) (not r_B519_4))
-     (or (not (= x23 1)) (not r_B519_5))
-     (or (not (= x33 1)) (not r_B519_0))
-     (or (not (= x33 1)) r_B519_1)
-     (or (not (= x33 1)) (not r_B519_2))
-     (or (not (= x33 1)) r_B519_3)
-     (or (not (= x33 1)) (not r_B519_4))
-     (or (not (= x33 1)) r_B519_5)
-     (or (not (= x43 1)) (not r_B519_0))
-     (or (not (= x43 1)) r_B519_1)
-     (or (not (= x43 1)) (not r_B519_2))
-     (or (not (= x43 1)) r_B519_3)
-     (or (not (= x43 1)) r_B519_4)
-     (or (not (= x43 1)) (not r_B519_5))
-     (or (not (= x53 1)) (not r_B519_0))
-     (or (not (= x53 1)) r_B519_1)
-     (or (not (= x53 1)) (not r_B519_2))
-     (or (not (= x53 1)) r_B519_3)
-     (or (not (= x53 1)) r_B519_4)
-     (or (not (= x53 1)) r_B519_5)
-     (or (not (= x04 1)) (not r_B519_0))
-     (or (not (= x04 1)) r_B519_1)
-     (or (not (= x04 1)) r_B519_2)
-     (or (not (= x04 1)) (not r_B519_3))
-     (or (not (= x04 1)) (not r_B519_4))
-     (or (not (= x04 1)) (not r_B519_5))
-     (or (not (= x14 1)) (not r_B519_0))
-     (or (not (= x14 1)) r_B519_1)
-     (or (not (= x14 1)) r_B519_2)
-     (or (not (= x14 1)) (not r_B519_3))
-     (or (not (= x14 1)) (not r_B519_4))
-     (or (not (= x14 1)) r_B519_5)
-     (or (not (= x24 1)) (not r_B519_0))
-     (or (not (= x24 1)) r_B519_1)
-     (or (not (= x24 1)) r_B519_2)
-     (or (not (= x24 1)) (not r_B519_3))
-     (or (not (= x24 1)) r_B519_4)
-     (or (not (= x24 1)) (not r_B519_5))
-     (or (not (= x34 1)) (not r_B519_0))
-     (or (not (= x34 1)) r_B519_1)
-     (or (not (= x34 1)) r_B519_2)
-     (or (not (= x34 1)) (not r_B519_3))
-     (or (not (= x34 1)) r_B519_4)
-     (or (not (= x34 1)) r_B519_5)
-     (or (not (= x44 1)) (not r_B519_0))
-     (or (not (= x44 1)) r_B519_1)
-     (or (not (= x44 1)) r_B519_2)
-     (or (not (= x44 1)) r_B519_3)
-     (or (not (= x44 1)) (not r_B519_4))
-     (or (not (= x44 1)) (not r_B519_5))
-     (or (not (= x54 1)) (not r_B519_0))
-     (or (not (= x54 1)) r_B519_1)
-     (or (not (= x54 1)) r_B519_2)
-     (or (not (= x54 1)) r_B519_3)
-     (or (not (= x54 1)) (not r_B519_4))
-     (or (not (= x54 1)) r_B519_5)
-     (or (not (= x05 1)) (not r_B519_0))
-     (or (not (= x05 1)) r_B519_1)
-     (or (not (= x05 1)) r_B519_2)
-     (or (not (= x05 1)) r_B519_3)
-     (or (not (= x05 1)) r_B519_4)
-     (or (not (= x05 1)) (not r_B519_5))
-     (or (not (= x15 1)) (not r_B519_0))
-     (or (not (= x15 1)) r_B519_1)
-     (or (not (= x15 1)) r_B519_2)
-     (or (not (= x15 1)) r_B519_3)
-     (or (not (= x15 1)) r_B519_4)
-     (or (not (= x15 1)) r_B519_5)
-     (or (not (= x25 1)) r_B519_0)
-     (or (not (= x25 1)) (not r_B519_1))
-     (or (not (= x25 1)) (not r_B519_2))
-     (or (not (= x25 1)) (not r_B519_3))
-     (or (not (= x25 1)) (not r_B519_4))
-     (or (not (= x25 1)) (not r_B519_5))
-     (or (not (= x35 1)) r_B519_0)
-     (or (not (= x35 1)) (not r_B519_1))
-     (or (not (= x35 1)) (not r_B519_2))
-     (or (not (= x35 1)) (not r_B519_3))
-     (or (not (= x35 1)) (not r_B519_4))
-     (or (not (= x35 1)) r_B519_5)
-     (or (not (= x45 1)) r_B519_0)
-     (or (not (= x45 1)) (not r_B519_1))
-     (or (not (= x45 1)) (not r_B519_2))
-     (or (not (= x45 1)) (not r_B519_3))
-     (or (not (= x45 1)) r_B519_4)
-     (or (not (= x45 1)) (not r_B519_5))
-     (or (not (= x55 1)) r_B519_0)
-     (or (not (= x55 1)) (not r_B519_1))
-     (or (not (= x55 1)) (not r_B519_2))
-     (or (not (= x55 1)) (not r_B519_3))
-     (or (not (= x55 1)) r_B519_4)
-     (or (not (= x55 1)) r_B519_5)
-     (or (not (= x06 1)) r_B519_0)
-     (or (not (= x06 1)) (not r_B519_1))
-     (or (not (= x06 1)) (not r_B519_2))
-     (or (not (= x06 1)) r_B519_3)
-     (or (not (= x06 1)) (not r_B519_4))
-     (or (not (= x06 1)) (not r_B519_5))
-     (or (not (= x16 1)) r_B519_0)
-     (or (not (= x16 1)) (not r_B519_1))
-     (or (not (= x16 1)) (not r_B519_2))
-     (or (not (= x16 1)) r_B519_3)
-     (or (not (= x16 1)) (not r_B519_4))
-     (or (not (= x16 1)) r_B519_5)
-     (or (not (= x26 1)) r_B519_0)
-     (or (not (= x26 1)) (not r_B519_1))
-     (or (not (= x26 1)) (not r_B519_2))
-     (or (not (= x26 1)) r_B519_3)
-     (or (not (= x26 1)) r_B519_4)
-     (or (not (= x26 1)) (not r_B519_5))
-     (or (not (= x36 1)) r_B519_0)
-     (or (not (= x36 1)) (not r_B519_1))
-     (or (not (= x36 1)) (not r_B519_2))
-     (or (not (= x36 1)) r_B519_3)
-     (or (not (= x36 1)) r_B519_4)
-     (or (not (= x36 1)) r_B519_5)
-     (or (not (= x46 1)) r_B519_0)
-     (or (not (= x46 1)) (not r_B519_1))
-     (or (not (= x46 1)) r_B519_2)
-     (or (not (= x46 1)) (not r_B519_3))
-     (or (not (= x46 1)) (not r_B519_4))
-     (or (not (= x46 1)) (not r_B519_5))
-     (or (not (= x56 1)) r_B519_0)
-     (or (not (= x56 1)) (not r_B519_1))
-     (or (not (= x56 1)) r_B519_2)
-     (or (not (= x56 1)) (not r_B519_3))
-     (or (not (= x56 1)) (not r_B519_4))
-     (or (not (= x56 1)) r_B519_5)
-     (or (not (= x07 1)) r_B519_0)
-     (or (not (= x07 1)) (not r_B519_1))
-     (or (not (= x07 1)) r_B519_2)
-     (or (not (= x07 1)) (not r_B519_3))
-     (or (not (= x07 1)) r_B519_4)
-     (or (not (= x07 1)) (not r_B519_5))
-     (or (not (= x17 1)) r_B519_0)
-     (or (not (= x17 1)) (not r_B519_1))
-     (or (not (= x17 1)) r_B519_2)
-     (or (not (= x17 1)) (not r_B519_3))
-     (or (not (= x17 1)) r_B519_4)
-     (or (not (= x17 1)) r_B519_5)
-     (or (not (= x27 1)) r_B519_0)
-     (or (not (= x27 1)) (not r_B519_1))
-     (or (not (= x27 1)) r_B519_2)
-     (or (not (= x27 1)) r_B519_3)
-     (or (not (= x27 1)) (not r_B519_4))
-     (or (not (= x27 1)) (not r_B519_5))
-     (or (not (= x37 1)) r_B519_0)
-     (or (not (= x37 1)) (not r_B519_1))
-     (or (not (= x37 1)) r_B519_2)
-     (or (not (= x37 1)) r_B519_3)
-     (or (not (= x37 1)) (not r_B519_4))
-     (or (not (= x37 1)) r_B519_5)
-     (or (not (= x47 1)) r_B519_0)
-     (or (not (= x47 1)) (not r_B519_1))
-     (or (not (= x47 1)) r_B519_2)
-     (or (not (= x47 1)) r_B519_3)
-     (or (not (= x47 1)) r_B519_4)
-     (or (not (= x47 1)) (not r_B519_5))
-     (or (not (= x57 1)) r_B519_0)
-     (or (not (= x57 1)) (not r_B519_1))
-     (or (not (= x57 1)) r_B519_2)
-     (or (not (= x57 1)) r_B519_3)
-     (or (not (= x57 1)) r_B519_4)
-     (or (not (= x57 1)) r_B519_5)
-     (or (not (= x08 1)) r_B519_0)
-     (or (not (= x08 1)) r_B519_1)
-     (or (not (= x08 1)) (not r_B519_2))
-     (or (not (= x08 1)) (not r_B519_3))
-     (or (not (= x08 1)) (not r_B519_4))
-     (or (not (= x08 1)) (not r_B519_5))
-     (or (not (= x18 1)) r_B519_0)
-     (or (not (= x18 1)) r_B519_1)
-     (or (not (= x18 1)) (not r_B519_2))
-     (or (not (= x18 1)) (not r_B519_3))
-     (or (not (= x18 1)) (not r_B519_4))
-     (or (not (= x18 1)) r_B519_5)
-     (or (not (= x28 1)) r_B519_0)
-     (or (not (= x28 1)) r_B519_1)
-     (or (not (= x28 1)) (not r_B519_2))
-     (or (not (= x28 1)) (not r_B519_3))
-     (or (not (= x28 1)) r_B519_4)
-     (or (not (= x28 1)) (not r_B519_5))
-     (or (not (= x38 1)) r_B519_0)
-     (or (not (= x38 1)) r_B519_1)
-     (or (not (= x38 1)) (not r_B519_2))
-     (or (not (= x38 1)) (not r_B519_3))
-     (or (not (= x38 1)) r_B519_4)
-     (or (not (= x38 1)) r_B519_5)
-     (or (not (= x48 1)) r_B519_0)
-     (or (not (= x48 1)) r_B519_1)
-     (or (not (= x48 1)) (not r_B519_2))
-     (or (not (= x48 1)) r_B519_3)
-     (or (not (= x48 1)) (not r_B519_4))
-     (or (not (= x48 1)) (not r_B519_5))
-     (or (not (= x58 1)) r_B519_0)
-     (or (not (= x58 1)) r_B519_1)
-     (or (not (= x58 1)) (not r_B519_2))
-     (or (not (= x58 1)) r_B519_3)
-     (or (not (= x58 1)) (not r_B519_4))
-     (or (not (= x58 1)) r_B519_5)
-     (or (not (= x09 1)) r_B519_0)
-     (or (not (= x09 1)) r_B519_1)
-     (or (not (= x09 1)) (not r_B519_2))
-     (or (not (= x09 1)) r_B519_3)
-     (or (not (= x09 1)) r_B519_4)
-     (or (not (= x09 1)) (not r_B519_5))
-     (or (not (= x19 1)) r_B519_0)
-     (or (not (= x19 1)) r_B519_1)
-     (or (not (= x19 1)) (not r_B519_2))
-     (or (not (= x19 1)) r_B519_3)
-     (or (not (= x19 1)) r_B519_4)
-     (or (not (= x19 1)) r_B519_5)
-     (or (not (= x29 1)) r_B519_0)
-     (or (not (= x29 1)) r_B519_1)
-     (or (not (= x29 1)) r_B519_2)
-     (or (not (= x29 1)) (not r_B519_3))
-     (or (not (= x29 1)) (not r_B519_4))
-     (or (not (= x29 1)) (not r_B519_5))
-     (or (not (= x39 1)) r_B519_0)
-     (or (not (= x39 1)) r_B519_1)
-     (or (not (= x39 1)) r_B519_2)
-     (or (not (= x39 1)) (not r_B519_3))
-     (or (not (= x39 1)) (not r_B519_4))
-     (or (not (= x39 1)) r_B519_5)
-     (or (not (= x49 1)) r_B519_0)
-     (or (not (= x49 1)) r_B519_1)
-     (or (not (= x49 1)) r_B519_2)
-     (or (not (= x49 1)) (not r_B519_3))
-     (or (not (= x49 1)) r_B519_4)
-     (or (not (= x49 1)) (not r_B519_5))
-     (or (not (= x59 1)) r_B519_0)
-     (or (not (= x59 1)) r_B519_1)
-     (or (not (= x59 1)) r_B519_2)
-     (or (not (= x59 1)) (not r_B519_3))
-     (or (not (= x59 1)) r_B519_4)
-     (or (not (= x59 1)) r_B519_5)))
-(assert (and (or (= y00 1)
-         (= y10 1)
-         (= y20 1)
-         (= y30 1)
-         (= y40 1)
-         (= y50 1)
-         (= y01 1)
-         (= y11 1)
-         (= y21 1)
-         (= y31 1)
-         (= y41 1)
-         (= y51 1)
-         (= y02 1)
-         (= y12 1)
-         (= y22 1)
-         (= y32 1)
-         (= y42 1)
-         (= y52 1)
-         (= y03 1)
-         (= y13 1)
-         (= y23 1)
-         (= y33 1)
-         (= y43 1)
-         (= y53 1)
-         (= y04 1)
-         (= y14 1)
-         (= y24 1)
-         (= y34 1)
-         (= y44 1)
-         (= y54 1)
-         (= y05 1)
-         (= y15 1)
-         (= y25 1)
-         (= y35 1)
-         (= y45 1)
-         (= y55 1)
-         (= y06 1)
-         (= y16 1)
-         (= y26 1)
-         (= y36 1)
-         (= y46 1)
-         (= y56 1)
-         (= y07 1)
-         (= y17 1)
-         (= y27 1)
-         (= y37 1)
-         (= y47 1)
-         (= y57 1)
-         (= y08 1)
-         (= y18 1)
-         (= y28 1)
-         (= y38 1)
-         (= y48 1)
-         (= y58 1)
-         (= y09 1)
-         (= y19 1)
-         (= y29 1)
-         (= y39 1)
-         (= y49 1)
-         (= y59 1))
-     (or (not (= y00 1)) (not r_C519_0))
-     (or (not (= y00 1)) (not r_C519_1))
-     (or (not (= y00 1)) (not r_C519_2))
-     (or (not (= y00 1)) (not r_C519_3))
-     (or (not (= y00 1)) (not r_C519_4))
-     (or (not (= y00 1)) (not r_C519_5))
-     (or (not (= y10 1)) (not r_C519_0))
-     (or (not (= y10 1)) (not r_C519_1))
-     (or (not (= y10 1)) (not r_C519_2))
-     (or (not (= y10 1)) (not r_C519_3))
-     (or (not (= y10 1)) (not r_C519_4))
-     (or (not (= y10 1)) r_C519_5)
-     (or (not (= y20 1)) (not r_C519_0))
-     (or (not (= y20 1)) (not r_C519_1))
-     (or (not (= y20 1)) (not r_C519_2))
-     (or (not (= y20 1)) (not r_C519_3))
-     (or (not (= y20 1)) r_C519_4)
-     (or (not (= y20 1)) (not r_C519_5))
-     (or (not (= y30 1)) (not r_C519_0))
-     (or (not (= y30 1)) (not r_C519_1))
-     (or (not (= y30 1)) (not r_C519_2))
-     (or (not (= y30 1)) (not r_C519_3))
-     (or (not (= y30 1)) r_C519_4)
-     (or (not (= y30 1)) r_C519_5)
-     (or (not (= y40 1)) (not r_C519_0))
-     (or (not (= y40 1)) (not r_C519_1))
-     (or (not (= y40 1)) (not r_C519_2))
-     (or (not (= y40 1)) r_C519_3)
-     (or (not (= y40 1)) (not r_C519_4))
-     (or (not (= y40 1)) (not r_C519_5))
-     (or (not (= y50 1)) (not r_C519_0))
-     (or (not (= y50 1)) (not r_C519_1))
-     (or (not (= y50 1)) (not r_C519_2))
-     (or (not (= y50 1)) r_C519_3)
-     (or (not (= y50 1)) (not r_C519_4))
-     (or (not (= y50 1)) r_C519_5)
-     (or (not (= y01 1)) (not r_C519_0))
-     (or (not (= y01 1)) (not r_C519_1))
-     (or (not (= y01 1)) (not r_C519_2))
-     (or (not (= y01 1)) r_C519_3)
-     (or (not (= y01 1)) r_C519_4)
-     (or (not (= y01 1)) (not r_C519_5))
-     (or (not (= y11 1)) (not r_C519_0))
-     (or (not (= y11 1)) (not r_C519_1))
-     (or (not (= y11 1)) (not r_C519_2))
-     (or (not (= y11 1)) r_C519_3)
-     (or (not (= y11 1)) r_C519_4)
-     (or (not (= y11 1)) r_C519_5)
-     (or (not (= y21 1)) (not r_C519_0))
-     (or (not (= y21 1)) (not r_C519_1))
-     (or (not (= y21 1)) r_C519_2)
-     (or (not (= y21 1)) (not r_C519_3))
-     (or (not (= y21 1)) (not r_C519_4))
-     (or (not (= y21 1)) (not r_C519_5))
-     (or (not (= y31 1)) (not r_C519_0))
-     (or (not (= y31 1)) (not r_C519_1))
-     (or (not (= y31 1)) r_C519_2)
-     (or (not (= y31 1)) (not r_C519_3))
-     (or (not (= y31 1)) (not r_C519_4))
-     (or (not (= y31 1)) r_C519_5)
-     (or (not (= y41 1)) (not r_C519_0))
-     (or (not (= y41 1)) (not r_C519_1))
-     (or (not (= y41 1)) r_C519_2)
-     (or (not (= y41 1)) (not r_C519_3))
-     (or (not (= y41 1)) r_C519_4)
-     (or (not (= y41 1)) (not r_C519_5))
-     (or (not (= y51 1)) (not r_C519_0))
-     (or (not (= y51 1)) (not r_C519_1))
-     (or (not (= y51 1)) r_C519_2)
-     (or (not (= y51 1)) (not r_C519_3))
-     (or (not (= y51 1)) r_C519_4)
-     (or (not (= y51 1)) r_C519_5)
-     (or (not (= y02 1)) (not r_C519_0))
-     (or (not (= y02 1)) (not r_C519_1))
-     (or (not (= y02 1)) r_C519_2)
-     (or (not (= y02 1)) r_C519_3)
-     (or (not (= y02 1)) (not r_C519_4))
-     (or (not (= y02 1)) (not r_C519_5))
-     (or (not (= y12 1)) (not r_C519_0))
-     (or (not (= y12 1)) (not r_C519_1))
-     (or (not (= y12 1)) r_C519_2)
-     (or (not (= y12 1)) r_C519_3)
-     (or (not (= y12 1)) (not r_C519_4))
-     (or (not (= y12 1)) r_C519_5)
-     (or (not (= y22 1)) (not r_C519_0))
-     (or (not (= y22 1)) (not r_C519_1))
-     (or (not (= y22 1)) r_C519_2)
-     (or (not (= y22 1)) r_C519_3)
-     (or (not (= y22 1)) r_C519_4)
-     (or (not (= y22 1)) (not r_C519_5))
-     (or (not (= y32 1)) (not r_C519_0))
-     (or (not (= y32 1)) (not r_C519_1))
-     (or (not (= y32 1)) r_C519_2)
-     (or (not (= y32 1)) r_C519_3)
-     (or (not (= y32 1)) r_C519_4)
-     (or (not (= y32 1)) r_C519_5)
-     (or (not (= y42 1)) (not r_C519_0))
-     (or (not (= y42 1)) r_C519_1)
-     (or (not (= y42 1)) (not r_C519_2))
-     (or (not (= y42 1)) (not r_C519_3))
-     (or (not (= y42 1)) (not r_C519_4))
-     (or (not (= y42 1)) (not r_C519_5))
-     (or (not (= y52 1)) (not r_C519_0))
-     (or (not (= y52 1)) r_C519_1)
-     (or (not (= y52 1)) (not r_C519_2))
-     (or (not (= y52 1)) (not r_C519_3))
-     (or (not (= y52 1)) (not r_C519_4))
-     (or (not (= y52 1)) r_C519_5)
-     (or (not (= y03 1)) (not r_C519_0))
-     (or (not (= y03 1)) r_C519_1)
-     (or (not (= y03 1)) (not r_C519_2))
-     (or (not (= y03 1)) (not r_C519_3))
-     (or (not (= y03 1)) r_C519_4)
-     (or (not (= y03 1)) (not r_C519_5))
-     (or (not (= y13 1)) (not r_C519_0))
-     (or (not (= y13 1)) r_C519_1)
-     (or (not (= y13 1)) (not r_C519_2))
-     (or (not (= y13 1)) (not r_C519_3))
-     (or (not (= y13 1)) r_C519_4)
-     (or (not (= y13 1)) r_C519_5)
-     (or (not (= y23 1)) (not r_C519_0))
-     (or (not (= y23 1)) r_C519_1)
-     (or (not (= y23 1)) (not r_C519_2))
-     (or (not (= y23 1)) r_C519_3)
-     (or (not (= y23 1)) (not r_C519_4))
-     (or (not (= y23 1)) (not r_C519_5))
-     (or (not (= y33 1)) (not r_C519_0))
-     (or (not (= y33 1)) r_C519_1)
-     (or (not (= y33 1)) (not r_C519_2))
-     (or (not (= y33 1)) r_C519_3)
-     (or (not (= y33 1)) (not r_C519_4))
-     (or (not (= y33 1)) r_C519_5)
-     (or (not (= y43 1)) (not r_C519_0))
-     (or (not (= y43 1)) r_C519_1)
-     (or (not (= y43 1)) (not r_C519_2))
-     (or (not (= y43 1)) r_C519_3)
-     (or (not (= y43 1)) r_C519_4)
-     (or (not (= y43 1)) (not r_C519_5))
-     (or (not (= y53 1)) (not r_C519_0))
-     (or (not (= y53 1)) r_C519_1)
-     (or (not (= y53 1)) (not r_C519_2))
-     (or (not (= y53 1)) r_C519_3)
-     (or (not (= y53 1)) r_C519_4)
-     (or (not (= y53 1)) r_C519_5)
-     (or (not (= y04 1)) (not r_C519_0))
-     (or (not (= y04 1)) r_C519_1)
-     (or (not (= y04 1)) r_C519_2)
-     (or (not (= y04 1)) (not r_C519_3))
-     (or (not (= y04 1)) (not r_C519_4))
-     (or (not (= y04 1)) (not r_C519_5))
-     (or (not (= y14 1)) (not r_C519_0))
-     (or (not (= y14 1)) r_C519_1)
-     (or (not (= y14 1)) r_C519_2)
-     (or (not (= y14 1)) (not r_C519_3))
-     (or (not (= y14 1)) (not r_C519_4))
-     (or (not (= y14 1)) r_C519_5)
-     (or (not (= y24 1)) (not r_C519_0))
-     (or (not (= y24 1)) r_C519_1)
-     (or (not (= y24 1)) r_C519_2)
-     (or (not (= y24 1)) (not r_C519_3))
-     (or (not (= y24 1)) r_C519_4)
-     (or (not (= y24 1)) (not r_C519_5))
-     (or (not (= y34 1)) (not r_C519_0))
-     (or (not (= y34 1)) r_C519_1)
-     (or (not (= y34 1)) r_C519_2)
-     (or (not (= y34 1)) (not r_C519_3))
-     (or (not (= y34 1)) r_C519_4)
-     (or (not (= y34 1)) r_C519_5)
-     (or (not (= y44 1)) (not r_C519_0))
-     (or (not (= y44 1)) r_C519_1)
-     (or (not (= y44 1)) r_C519_2)
-     (or (not (= y44 1)) r_C519_3)
-     (or (not (= y44 1)) (not r_C519_4))
-     (or (not (= y44 1)) (not r_C519_5))
-     (or (not (= y54 1)) (not r_C519_0))
-     (or (not (= y54 1)) r_C519_1)
-     (or (not (= y54 1)) r_C519_2)
-     (or (not (= y54 1)) r_C519_3)
-     (or (not (= y54 1)) (not r_C519_4))
-     (or (not (= y54 1)) r_C519_5)
-     (or (not (= y05 1)) (not r_C519_0))
-     (or (not (= y05 1)) r_C519_1)
-     (or (not (= y05 1)) r_C519_2)
-     (or (not (= y05 1)) r_C519_3)
-     (or (not (= y05 1)) r_C519_4)
-     (or (not (= y05 1)) (not r_C519_5))
-     (or (not (= y15 1)) (not r_C519_0))
-     (or (not (= y15 1)) r_C519_1)
-     (or (not (= y15 1)) r_C519_2)
-     (or (not (= y15 1)) r_C519_3)
-     (or (not (= y15 1)) r_C519_4)
-     (or (not (= y15 1)) r_C519_5)
-     (or (not (= y25 1)) r_C519_0)
-     (or (not (= y25 1)) (not r_C519_1))
-     (or (not (= y25 1)) (not r_C519_2))
-     (or (not (= y25 1)) (not r_C519_3))
-     (or (not (= y25 1)) (not r_C519_4))
-     (or (not (= y25 1)) (not r_C519_5))
-     (or (not (= y35 1)) r_C519_0)
-     (or (not (= y35 1)) (not r_C519_1))
-     (or (not (= y35 1)) (not r_C519_2))
-     (or (not (= y35 1)) (not r_C519_3))
-     (or (not (= y35 1)) (not r_C519_4))
-     (or (not (= y35 1)) r_C519_5)
-     (or (not (= y45 1)) r_C519_0)
-     (or (not (= y45 1)) (not r_C519_1))
-     (or (not (= y45 1)) (not r_C519_2))
-     (or (not (= y45 1)) (not r_C519_3))
-     (or (not (= y45 1)) r_C519_4)
-     (or (not (= y45 1)) (not r_C519_5))
-     (or (not (= y55 1)) r_C519_0)
-     (or (not (= y55 1)) (not r_C519_1))
-     (or (not (= y55 1)) (not r_C519_2))
-     (or (not (= y55 1)) (not r_C519_3))
-     (or (not (= y55 1)) r_C519_4)
-     (or (not (= y55 1)) r_C519_5)
-     (or (not (= y06 1)) r_C519_0)
-     (or (not (= y06 1)) (not r_C519_1))
-     (or (not (= y06 1)) (not r_C519_2))
-     (or (not (= y06 1)) r_C519_3)
-     (or (not (= y06 1)) (not r_C519_4))
-     (or (not (= y06 1)) (not r_C519_5))
-     (or (not (= y16 1)) r_C519_0)
-     (or (not (= y16 1)) (not r_C519_1))
-     (or (not (= y16 1)) (not r_C519_2))
-     (or (not (= y16 1)) r_C519_3)
-     (or (not (= y16 1)) (not r_C519_4))
-     (or (not (= y16 1)) r_C519_5)
-     (or (not (= y26 1)) r_C519_0)
-     (or (not (= y26 1)) (not r_C519_1))
-     (or (not (= y26 1)) (not r_C519_2))
-     (or (not (= y26 1)) r_C519_3)
-     (or (not (= y26 1)) r_C519_4)
-     (or (not (= y26 1)) (not r_C519_5))
-     (or (not (= y36 1)) r_C519_0)
-     (or (not (= y36 1)) (not r_C519_1))
-     (or (not (= y36 1)) (not r_C519_2))
-     (or (not (= y36 1)) r_C519_3)
-     (or (not (= y36 1)) r_C519_4)
-     (or (not (= y36 1)) r_C519_5)
-     (or (not (= y46 1)) r_C519_0)
-     (or (not (= y46 1)) (not r_C519_1))
-     (or (not (= y46 1)) r_C519_2)
-     (or (not (= y46 1)) (not r_C519_3))
-     (or (not (= y46 1)) (not r_C519_4))
-     (or (not (= y46 1)) (not r_C519_5))
-     (or (not (= y56 1)) r_C519_0)
-     (or (not (= y56 1)) (not r_C519_1))
-     (or (not (= y56 1)) r_C519_2)
-     (or (not (= y56 1)) (not r_C519_3))
-     (or (not (= y56 1)) (not r_C519_4))
-     (or (not (= y56 1)) r_C519_5)
-     (or (not (= y07 1)) r_C519_0)
-     (or (not (= y07 1)) (not r_C519_1))
-     (or (not (= y07 1)) r_C519_2)
-     (or (not (= y07 1)) (not r_C519_3))
-     (or (not (= y07 1)) r_C519_4)
-     (or (not (= y07 1)) (not r_C519_5))
-     (or (not (= y17 1)) r_C519_0)
-     (or (not (= y17 1)) (not r_C519_1))
-     (or (not (= y17 1)) r_C519_2)
-     (or (not (= y17 1)) (not r_C519_3))
-     (or (not (= y17 1)) r_C519_4)
-     (or (not (= y17 1)) r_C519_5)
-     (or (not (= y27 1)) r_C519_0)
-     (or (not (= y27 1)) (not r_C519_1))
-     (or (not (= y27 1)) r_C519_2)
-     (or (not (= y27 1)) r_C519_3)
-     (or (not (= y27 1)) (not r_C519_4))
-     (or (not (= y27 1)) (not r_C519_5))
-     (or (not (= y37 1)) r_C519_0)
-     (or (not (= y37 1)) (not r_C519_1))
-     (or (not (= y37 1)) r_C519_2)
-     (or (not (= y37 1)) r_C519_3)
-     (or (not (= y37 1)) (not r_C519_4))
-     (or (not (= y37 1)) r_C519_5)
-     (or (not (= y47 1)) r_C519_0)
-     (or (not (= y47 1)) (not r_C519_1))
-     (or (not (= y47 1)) r_C519_2)
-     (or (not (= y47 1)) r_C519_3)
-     (or (not (= y47 1)) r_C519_4)
-     (or (not (= y47 1)) (not r_C519_5))
-     (or (not (= y57 1)) r_C519_0)
-     (or (not (= y57 1)) (not r_C519_1))
-     (or (not (= y57 1)) r_C519_2)
-     (or (not (= y57 1)) r_C519_3)
-     (or (not (= y57 1)) r_C519_4)
-     (or (not (= y57 1)) r_C519_5)
-     (or (not (= y08 1)) r_C519_0)
-     (or (not (= y08 1)) r_C519_1)
-     (or (not (= y08 1)) (not r_C519_2))
-     (or (not (= y08 1)) (not r_C519_3))
-     (or (not (= y08 1)) (not r_C519_4))
-     (or (not (= y08 1)) (not r_C519_5))
-     (or (not (= y18 1)) r_C519_0)
-     (or (not (= y18 1)) r_C519_1)
-     (or (not (= y18 1)) (not r_C519_2))
-     (or (not (= y18 1)) (not r_C519_3))
-     (or (not (= y18 1)) (not r_C519_4))
-     (or (not (= y18 1)) r_C519_5)
-     (or (not (= y28 1)) r_C519_0)
-     (or (not (= y28 1)) r_C519_1)
-     (or (not (= y28 1)) (not r_C519_2))
-     (or (not (= y28 1)) (not r_C519_3))
-     (or (not (= y28 1)) r_C519_4)
-     (or (not (= y28 1)) (not r_C519_5))
-     (or (not (= y38 1)) r_C519_0)
-     (or (not (= y38 1)) r_C519_1)
-     (or (not (= y38 1)) (not r_C519_2))
-     (or (not (= y38 1)) (not r_C519_3))
-     (or (not (= y38 1)) r_C519_4)
-     (or (not (= y38 1)) r_C519_5)
-     (or (not (= y48 1)) r_C519_0)
-     (or (not (= y48 1)) r_C519_1)
-     (or (not (= y48 1)) (not r_C519_2))
-     (or (not (= y48 1)) r_C519_3)
-     (or (not (= y48 1)) (not r_C519_4))
-     (or (not (= y48 1)) (not r_C519_5))
-     (or (not (= y58 1)) r_C519_0)
-     (or (not (= y58 1)) r_C519_1)
-     (or (not (= y58 1)) (not r_C519_2))
-     (or (not (= y58 1)) r_C519_3)
-     (or (not (= y58 1)) (not r_C519_4))
-     (or (not (= y58 1)) r_C519_5)
-     (or (not (= y09 1)) r_C519_0)
-     (or (not (= y09 1)) r_C519_1)
-     (or (not (= y09 1)) (not r_C519_2))
-     (or (not (= y09 1)) r_C519_3)
-     (or (not (= y09 1)) r_C519_4)
-     (or (not (= y09 1)) (not r_C519_5))
-     (or (not (= y19 1)) r_C519_0)
-     (or (not (= y19 1)) r_C519_1)
-     (or (not (= y19 1)) (not r_C519_2))
-     (or (not (= y19 1)) r_C519_3)
-     (or (not (= y19 1)) r_C519_4)
-     (or (not (= y19 1)) r_C519_5)
-     (or (not (= y29 1)) r_C519_0)
-     (or (not (= y29 1)) r_C519_1)
-     (or (not (= y29 1)) r_C519_2)
-     (or (not (= y29 1)) (not r_C519_3))
-     (or (not (= y29 1)) (not r_C519_4))
-     (or (not (= y29 1)) (not r_C519_5))
-     (or (not (= y39 1)) r_C519_0)
-     (or (not (= y39 1)) r_C519_1)
-     (or (not (= y39 1)) r_C519_2)
-     (or (not (= y39 1)) (not r_C519_3))
-     (or (not (= y39 1)) (not r_C519_4))
-     (or (not (= y39 1)) r_C519_5)
-     (or (not (= y49 1)) r_C519_0)
-     (or (not (= y49 1)) r_C519_1)
-     (or (not (= y49 1)) r_C519_2)
-     (or (not (= y49 1)) (not r_C519_3))
-     (or (not (= y49 1)) r_C519_4)
-     (or (not (= y49 1)) (not r_C519_5))
-     (or (not (= y59 1)) r_C519_0)
-     (or (not (= y59 1)) r_C519_1)
-     (or (not (= y59 1)) r_C519_2)
-     (or (not (= y59 1)) (not r_C519_3))
-     (or (not (= y59 1)) r_C519_4)
-     (or (not (= y59 1)) r_C519_5)))
-(assert (and (or (= x00 2)
-         (= x10 2)
-         (= x20 2)
-         (= x30 2)
-         (= x40 2)
-         (= x50 2)
-         (= x01 2)
-         (= x11 2)
-         (= x21 2)
-         (= x31 2)
-         (= x41 2)
-         (= x51 2)
-         (= x02 2)
-         (= x12 2)
-         (= x22 2)
-         (= x32 2)
-         (= x42 2)
-         (= x52 2)
-         (= x03 2)
-         (= x13 2)
-         (= x23 2)
-         (= x33 2)
-         (= x43 2)
-         (= x53 2)
-         (= x04 2)
-         (= x14 2)
-         (= x24 2)
-         (= x34 2)
-         (= x44 2)
-         (= x54 2)
-         (= x05 2)
-         (= x15 2)
-         (= x25 2)
-         (= x35 2)
-         (= x45 2)
-         (= x55 2)
-         (= x06 2)
-         (= x16 2)
-         (= x26 2)
-         (= x36 2)
-         (= x46 2)
-         (= x56 2)
-         (= x07 2)
-         (= x17 2)
-         (= x27 2)
-         (= x37 2)
-         (= x47 2)
-         (= x57 2)
-         (= x08 2)
-         (= x18 2)
-         (= x28 2)
-         (= x38 2)
-         (= x48 2)
-         (= x58 2)
-         (= x09 2)
-         (= x19 2)
-         (= x29 2)
-         (= x39 2)
-         (= x49 2)
-         (= x59 2))
-     (or (not (= x00 2)) (not r_B529_0))
-     (or (not (= x00 2)) (not r_B529_1))
-     (or (not (= x00 2)) (not r_B529_2))
-     (or (not (= x00 2)) (not r_B529_3))
-     (or (not (= x00 2)) (not r_B529_4))
-     (or (not (= x00 2)) (not r_B529_5))
-     (or (not (= x10 2)) (not r_B529_0))
-     (or (not (= x10 2)) (not r_B529_1))
-     (or (not (= x10 2)) (not r_B529_2))
-     (or (not (= x10 2)) (not r_B529_3))
-     (or (not (= x10 2)) (not r_B529_4))
-     (or (not (= x10 2)) r_B529_5)
-     (or (not (= x20 2)) (not r_B529_0))
-     (or (not (= x20 2)) (not r_B529_1))
-     (or (not (= x20 2)) (not r_B529_2))
-     (or (not (= x20 2)) (not r_B529_3))
-     (or (not (= x20 2)) r_B529_4)
-     (or (not (= x20 2)) (not r_B529_5))
-     (or (not (= x30 2)) (not r_B529_0))
-     (or (not (= x30 2)) (not r_B529_1))
-     (or (not (= x30 2)) (not r_B529_2))
-     (or (not (= x30 2)) (not r_B529_3))
-     (or (not (= x30 2)) r_B529_4)
-     (or (not (= x30 2)) r_B529_5)
-     (or (not (= x40 2)) (not r_B529_0))
-     (or (not (= x40 2)) (not r_B529_1))
-     (or (not (= x40 2)) (not r_B529_2))
-     (or (not (= x40 2)) r_B529_3)
-     (or (not (= x40 2)) (not r_B529_4))
-     (or (not (= x40 2)) (not r_B529_5))
-     (or (not (= x50 2)) (not r_B529_0))
-     (or (not (= x50 2)) (not r_B529_1))
-     (or (not (= x50 2)) (not r_B529_2))
-     (or (not (= x50 2)) r_B529_3)
-     (or (not (= x50 2)) (not r_B529_4))
-     (or (not (= x50 2)) r_B529_5)
-     (or (not (= x01 2)) (not r_B529_0))
-     (or (not (= x01 2)) (not r_B529_1))
-     (or (not (= x01 2)) (not r_B529_2))
-     (or (not (= x01 2)) r_B529_3)
-     (or (not (= x01 2)) r_B529_4)
-     (or (not (= x01 2)) (not r_B529_5))
-     (or (not (= x11 2)) (not r_B529_0))
-     (or (not (= x11 2)) (not r_B529_1))
-     (or (not (= x11 2)) (not r_B529_2))
-     (or (not (= x11 2)) r_B529_3)
-     (or (not (= x11 2)) r_B529_4)
-     (or (not (= x11 2)) r_B529_5)
-     (or (not (= x21 2)) (not r_B529_0))
-     (or (not (= x21 2)) (not r_B529_1))
-     (or (not (= x21 2)) r_B529_2)
-     (or (not (= x21 2)) (not r_B529_3))
-     (or (not (= x21 2)) (not r_B529_4))
-     (or (not (= x21 2)) (not r_B529_5))
-     (or (not (= x31 2)) (not r_B529_0))
-     (or (not (= x31 2)) (not r_B529_1))
-     (or (not (= x31 2)) r_B529_2)
-     (or (not (= x31 2)) (not r_B529_3))
-     (or (not (= x31 2)) (not r_B529_4))
-     (or (not (= x31 2)) r_B529_5)
-     (or (not (= x41 2)) (not r_B529_0))
-     (or (not (= x41 2)) (not r_B529_1))
-     (or (not (= x41 2)) r_B529_2)
-     (or (not (= x41 2)) (not r_B529_3))
-     (or (not (= x41 2)) r_B529_4)
-     (or (not (= x41 2)) (not r_B529_5))
-     (or (not (= x51 2)) (not r_B529_0))
-     (or (not (= x51 2)) (not r_B529_1))
-     (or (not (= x51 2)) r_B529_2)
-     (or (not (= x51 2)) (not r_B529_3))
-     (or (not (= x51 2)) r_B529_4)
-     (or (not (= x51 2)) r_B529_5)
-     (or (not (= x02 2)) (not r_B529_0))
-     (or (not (= x02 2)) (not r_B529_1))
-     (or (not (= x02 2)) r_B529_2)
-     (or (not (= x02 2)) r_B529_3)
-     (or (not (= x02 2)) (not r_B529_4))
-     (or (not (= x02 2)) (not r_B529_5))
-     (or (not (= x12 2)) (not r_B529_0))
-     (or (not (= x12 2)) (not r_B529_1))
-     (or (not (= x12 2)) r_B529_2)
-     (or (not (= x12 2)) r_B529_3)
-     (or (not (= x12 2)) (not r_B529_4))
-     (or (not (= x12 2)) r_B529_5)
-     (or (not (= x22 2)) (not r_B529_0))
-     (or (not (= x22 2)) (not r_B529_1))
-     (or (not (= x22 2)) r_B529_2)
-     (or (not (= x22 2)) r_B529_3)
-     (or (not (= x22 2)) r_B529_4)
-     (or (not (= x22 2)) (not r_B529_5))
-     (or (not (= x32 2)) (not r_B529_0))
-     (or (not (= x32 2)) (not r_B529_1))
-     (or (not (= x32 2)) r_B529_2)
-     (or (not (= x32 2)) r_B529_3)
-     (or (not (= x32 2)) r_B529_4)
-     (or (not (= x32 2)) r_B529_5)
-     (or (not (= x42 2)) (not r_B529_0))
-     (or (not (= x42 2)) r_B529_1)
-     (or (not (= x42 2)) (not r_B529_2))
-     (or (not (= x42 2)) (not r_B529_3))
-     (or (not (= x42 2)) (not r_B529_4))
-     (or (not (= x42 2)) (not r_B529_5))
-     (or (not (= x52 2)) (not r_B529_0))
-     (or (not (= x52 2)) r_B529_1)
-     (or (not (= x52 2)) (not r_B529_2))
-     (or (not (= x52 2)) (not r_B529_3))
-     (or (not (= x52 2)) (not r_B529_4))
-     (or (not (= x52 2)) r_B529_5)
-     (or (not (= x03 2)) (not r_B529_0))
-     (or (not (= x03 2)) r_B529_1)
-     (or (not (= x03 2)) (not r_B529_2))
-     (or (not (= x03 2)) (not r_B529_3))
-     (or (not (= x03 2)) r_B529_4)
-     (or (not (= x03 2)) (not r_B529_5))
-     (or (not (= x13 2)) (not r_B529_0))
-     (or (not (= x13 2)) r_B529_1)
-     (or (not (= x13 2)) (not r_B529_2))
-     (or (not (= x13 2)) (not r_B529_3))
-     (or (not (= x13 2)) r_B529_4)
-     (or (not (= x13 2)) r_B529_5)
-     (or (not (= x23 2)) (not r_B529_0))
-     (or (not (= x23 2)) r_B529_1)
-     (or (not (= x23 2)) (not r_B529_2))
-     (or (not (= x23 2)) r_B529_3)
-     (or (not (= x23 2)) (not r_B529_4))
-     (or (not (= x23 2)) (not r_B529_5))
-     (or (not (= x33 2)) (not r_B529_0))
-     (or (not (= x33 2)) r_B529_1)
-     (or (not (= x33 2)) (not r_B529_2))
-     (or (not (= x33 2)) r_B529_3)
-     (or (not (= x33 2)) (not r_B529_4))
-     (or (not (= x33 2)) r_B529_5)
-     (or (not (= x43 2)) (not r_B529_0))
-     (or (not (= x43 2)) r_B529_1)
-     (or (not (= x43 2)) (not r_B529_2))
-     (or (not (= x43 2)) r_B529_3)
-     (or (not (= x43 2)) r_B529_4)
-     (or (not (= x43 2)) (not r_B529_5))
-     (or (not (= x53 2)) (not r_B529_0))
-     (or (not (= x53 2)) r_B529_1)
-     (or (not (= x53 2)) (not r_B529_2))
-     (or (not (= x53 2)) r_B529_3)
-     (or (not (= x53 2)) r_B529_4)
-     (or (not (= x53 2)) r_B529_5)
-     (or (not (= x04 2)) (not r_B529_0))
-     (or (not (= x04 2)) r_B529_1)
-     (or (not (= x04 2)) r_B529_2)
-     (or (not (= x04 2)) (not r_B529_3))
-     (or (not (= x04 2)) (not r_B529_4))
-     (or (not (= x04 2)) (not r_B529_5))
-     (or (not (= x14 2)) (not r_B529_0))
-     (or (not (= x14 2)) r_B529_1)
-     (or (not (= x14 2)) r_B529_2)
-     (or (not (= x14 2)) (not r_B529_3))
-     (or (not (= x14 2)) (not r_B529_4))
-     (or (not (= x14 2)) r_B529_5)
-     (or (not (= x24 2)) (not r_B529_0))
-     (or (not (= x24 2)) r_B529_1)
-     (or (not (= x24 2)) r_B529_2)
-     (or (not (= x24 2)) (not r_B529_3))
-     (or (not (= x24 2)) r_B529_4)
-     (or (not (= x24 2)) (not r_B529_5))
-     (or (not (= x34 2)) (not r_B529_0))
-     (or (not (= x34 2)) r_B529_1)
-     (or (not (= x34 2)) r_B529_2)
-     (or (not (= x34 2)) (not r_B529_3))
-     (or (not (= x34 2)) r_B529_4)
-     (or (not (= x34 2)) r_B529_5)
-     (or (not (= x44 2)) (not r_B529_0))
-     (or (not (= x44 2)) r_B529_1)
-     (or (not (= x44 2)) r_B529_2)
-     (or (not (= x44 2)) r_B529_3)
-     (or (not (= x44 2)) (not r_B529_4))
-     (or (not (= x44 2)) (not r_B529_5))
-     (or (not (= x54 2)) (not r_B529_0))
-     (or (not (= x54 2)) r_B529_1)
-     (or (not (= x54 2)) r_B529_2)
-     (or (not (= x54 2)) r_B529_3)
-     (or (not (= x54 2)) (not r_B529_4))
-     (or (not (= x54 2)) r_B529_5)
-     (or (not (= x05 2)) (not r_B529_0))
-     (or (not (= x05 2)) r_B529_1)
-     (or (not (= x05 2)) r_B529_2)
-     (or (not (= x05 2)) r_B529_3)
-     (or (not (= x05 2)) r_B529_4)
-     (or (not (= x05 2)) (not r_B529_5))
-     (or (not (= x15 2)) (not r_B529_0))
-     (or (not (= x15 2)) r_B529_1)
-     (or (not (= x15 2)) r_B529_2)
-     (or (not (= x15 2)) r_B529_3)
-     (or (not (= x15 2)) r_B529_4)
-     (or (not (= x15 2)) r_B529_5)
-     (or (not (= x25 2)) r_B529_0)
-     (or (not (= x25 2)) (not r_B529_1))
-     (or (not (= x25 2)) (not r_B529_2))
-     (or (not (= x25 2)) (not r_B529_3))
-     (or (not (= x25 2)) (not r_B529_4))
-     (or (not (= x25 2)) (not r_B529_5))
-     (or (not (= x35 2)) r_B529_0)
-     (or (not (= x35 2)) (not r_B529_1))
-     (or (not (= x35 2)) (not r_B529_2))
-     (or (not (= x35 2)) (not r_B529_3))
-     (or (not (= x35 2)) (not r_B529_4))
-     (or (not (= x35 2)) r_B529_5)
-     (or (not (= x45 2)) r_B529_0)
-     (or (not (= x45 2)) (not r_B529_1))
-     (or (not (= x45 2)) (not r_B529_2))
-     (or (not (= x45 2)) (not r_B529_3))
-     (or (not (= x45 2)) r_B529_4)
-     (or (not (= x45 2)) (not r_B529_5))
-     (or (not (= x55 2)) r_B529_0)
-     (or (not (= x55 2)) (not r_B529_1))
-     (or (not (= x55 2)) (not r_B529_2))
-     (or (not (= x55 2)) (not r_B529_3))
-     (or (not (= x55 2)) r_B529_4)
-     (or (not (= x55 2)) r_B529_5)
-     (or (not (= x06 2)) r_B529_0)
-     (or (not (= x06 2)) (not r_B529_1))
-     (or (not (= x06 2)) (not r_B529_2))
-     (or (not (= x06 2)) r_B529_3)
-     (or (not (= x06 2)) (not r_B529_4))
-     (or (not (= x06 2)) (not r_B529_5))
-     (or (not (= x16 2)) r_B529_0)
-     (or (not (= x16 2)) (not r_B529_1))
-     (or (not (= x16 2)) (not r_B529_2))
-     (or (not (= x16 2)) r_B529_3)
-     (or (not (= x16 2)) (not r_B529_4))
-     (or (not (= x16 2)) r_B529_5)
-     (or (not (= x26 2)) r_B529_0)
-     (or (not (= x26 2)) (not r_B529_1))
-     (or (not (= x26 2)) (not r_B529_2))
-     (or (not (= x26 2)) r_B529_3)
-     (or (not (= x26 2)) r_B529_4)
-     (or (not (= x26 2)) (not r_B529_5))
-     (or (not (= x36 2)) r_B529_0)
-     (or (not (= x36 2)) (not r_B529_1))
-     (or (not (= x36 2)) (not r_B529_2))
-     (or (not (= x36 2)) r_B529_3)
-     (or (not (= x36 2)) r_B529_4)
-     (or (not (= x36 2)) r_B529_5)
-     (or (not (= x46 2)) r_B529_0)
-     (or (not (= x46 2)) (not r_B529_1))
-     (or (not (= x46 2)) r_B529_2)
-     (or (not (= x46 2)) (not r_B529_3))
-     (or (not (= x46 2)) (not r_B529_4))
-     (or (not (= x46 2)) (not r_B529_5))
-     (or (not (= x56 2)) r_B529_0)
-     (or (not (= x56 2)) (not r_B529_1))
-     (or (not (= x56 2)) r_B529_2)
-     (or (not (= x56 2)) (not r_B529_3))
-     (or (not (= x56 2)) (not r_B529_4))
-     (or (not (= x56 2)) r_B529_5)
-     (or (not (= x07 2)) r_B529_0)
-     (or (not (= x07 2)) (not r_B529_1))
-     (or (not (= x07 2)) r_B529_2)
-     (or (not (= x07 2)) (not r_B529_3))
-     (or (not (= x07 2)) r_B529_4)
-     (or (not (= x07 2)) (not r_B529_5))
-     (or (not (= x17 2)) r_B529_0)
-     (or (not (= x17 2)) (not r_B529_1))
-     (or (not (= x17 2)) r_B529_2)
-     (or (not (= x17 2)) (not r_B529_3))
-     (or (not (= x17 2)) r_B529_4)
-     (or (not (= x17 2)) r_B529_5)
-     (or (not (= x27 2)) r_B529_0)
-     (or (not (= x27 2)) (not r_B529_1))
-     (or (not (= x27 2)) r_B529_2)
-     (or (not (= x27 2)) r_B529_3)
-     (or (not (= x27 2)) (not r_B529_4))
-     (or (not (= x27 2)) (not r_B529_5))
-     (or (not (= x37 2)) r_B529_0)
-     (or (not (= x37 2)) (not r_B529_1))
-     (or (not (= x37 2)) r_B529_2)
-     (or (not (= x37 2)) r_B529_3)
-     (or (not (= x37 2)) (not r_B529_4))
-     (or (not (= x37 2)) r_B529_5)
-     (or (not (= x47 2)) r_B529_0)
-     (or (not (= x47 2)) (not r_B529_1))
-     (or (not (= x47 2)) r_B529_2)
-     (or (not (= x47 2)) r_B529_3)
-     (or (not (= x47 2)) r_B529_4)
-     (or (not (= x47 2)) (not r_B529_5))
-     (or (not (= x57 2)) r_B529_0)
-     (or (not (= x57 2)) (not r_B529_1))
-     (or (not (= x57 2)) r_B529_2)
-     (or (not (= x57 2)) r_B529_3)
-     (or (not (= x57 2)) r_B529_4)
-     (or (not (= x57 2)) r_B529_5)
-     (or (not (= x08 2)) r_B529_0)
-     (or (not (= x08 2)) r_B529_1)
-     (or (not (= x08 2)) (not r_B529_2))
-     (or (not (= x08 2)) (not r_B529_3))
-     (or (not (= x08 2)) (not r_B529_4))
-     (or (not (= x08 2)) (not r_B529_5))
-     (or (not (= x18 2)) r_B529_0)
-     (or (not (= x18 2)) r_B529_1)
-     (or (not (= x18 2)) (not r_B529_2))
-     (or (not (= x18 2)) (not r_B529_3))
-     (or (not (= x18 2)) (not r_B529_4))
-     (or (not (= x18 2)) r_B529_5)
-     (or (not (= x28 2)) r_B529_0)
-     (or (not (= x28 2)) r_B529_1)
-     (or (not (= x28 2)) (not r_B529_2))
-     (or (not (= x28 2)) (not r_B529_3))
-     (or (not (= x28 2)) r_B529_4)
-     (or (not (= x28 2)) (not r_B529_5))
-     (or (not (= x38 2)) r_B529_0)
-     (or (not (= x38 2)) r_B529_1)
-     (or (not (= x38 2)) (not r_B529_2))
-     (or (not (= x38 2)) (not r_B529_3))
-     (or (not (= x38 2)) r_B529_4)
-     (or (not (= x38 2)) r_B529_5)
-     (or (not (= x48 2)) r_B529_0)
-     (or (not (= x48 2)) r_B529_1)
-     (or (not (= x48 2)) (not r_B529_2))
-     (or (not (= x48 2)) r_B529_3)
-     (or (not (= x48 2)) (not r_B529_4))
-     (or (not (= x48 2)) (not r_B529_5))
-     (or (not (= x58 2)) r_B529_0)
-     (or (not (= x58 2)) r_B529_1)
-     (or (not (= x58 2)) (not r_B529_2))
-     (or (not (= x58 2)) r_B529_3)
-     (or (not (= x58 2)) (not r_B529_4))
-     (or (not (= x58 2)) r_B529_5)
-     (or (not (= x09 2)) r_B529_0)
-     (or (not (= x09 2)) r_B529_1)
-     (or (not (= x09 2)) (not r_B529_2))
-     (or (not (= x09 2)) r_B529_3)
-     (or (not (= x09 2)) r_B529_4)
-     (or (not (= x09 2)) (not r_B529_5))
-     (or (not (= x19 2)) r_B529_0)
-     (or (not (= x19 2)) r_B529_1)
-     (or (not (= x19 2)) (not r_B529_2))
-     (or (not (= x19 2)) r_B529_3)
-     (or (not (= x19 2)) r_B529_4)
-     (or (not (= x19 2)) r_B529_5)
-     (or (not (= x29 2)) r_B529_0)
-     (or (not (= x29 2)) r_B529_1)
-     (or (not (= x29 2)) r_B529_2)
-     (or (not (= x29 2)) (not r_B529_3))
-     (or (not (= x29 2)) (not r_B529_4))
-     (or (not (= x29 2)) (not r_B529_5))
-     (or (not (= x39 2)) r_B529_0)
-     (or (not (= x39 2)) r_B529_1)
-     (or (not (= x39 2)) r_B529_2)
-     (or (not (= x39 2)) (not r_B529_3))
-     (or (not (= x39 2)) (not r_B529_4))
-     (or (not (= x39 2)) r_B529_5)
-     (or (not (= x49 2)) r_B529_0)
-     (or (not (= x49 2)) r_B529_1)
-     (or (not (= x49 2)) r_B529_2)
-     (or (not (= x49 2)) (not r_B529_3))
-     (or (not (= x49 2)) r_B529_4)
-     (or (not (= x49 2)) (not r_B529_5))
-     (or (not (= x59 2)) r_B529_0)
-     (or (not (= x59 2)) r_B529_1)
-     (or (not (= x59 2)) r_B529_2)
-     (or (not (= x59 2)) (not r_B529_3))
-     (or (not (= x59 2)) r_B529_4)
-     (or (not (= x59 2)) r_B529_5)))
-(assert (and (or (= y00 2)
-         (= y10 2)
-         (= y20 2)
-         (= y30 2)
-         (= y40 2)
-         (= y50 2)
-         (= y01 2)
-         (= y11 2)
-         (= y21 2)
-         (= y31 2)
-         (= y41 2)
-         (= y51 2)
-         (= y02 2)
-         (= y12 2)
-         (= y22 2)
-         (= y32 2)
-         (= y42 2)
-         (= y52 2)
-         (= y03 2)
-         (= y13 2)
-         (= y23 2)
-         (= y33 2)
-         (= y43 2)
-         (= y53 2)
-         (= y04 2)
-         (= y14 2)
-         (= y24 2)
-         (= y34 2)
-         (= y44 2)
-         (= y54 2)
-         (= y05 2)
-         (= y15 2)
-         (= y25 2)
-         (= y35 2)
-         (= y45 2)
-         (= y55 2)
-         (= y06 2)
-         (= y16 2)
-         (= y26 2)
-         (= y36 2)
-         (= y46 2)
-         (= y56 2)
-         (= y07 2)
-         (= y17 2)
-         (= y27 2)
-         (= y37 2)
-         (= y47 2)
-         (= y57 2)
-         (= y08 2)
-         (= y18 2)
-         (= y28 2)
-         (= y38 2)
-         (= y48 2)
-         (= y58 2)
-         (= y09 2)
-         (= y19 2)
-         (= y29 2)
-         (= y39 2)
-         (= y49 2)
-         (= y59 2))
-     (or (not (= y00 2)) (not r_C529_0))
-     (or (not (= y00 2)) (not r_C529_1))
-     (or (not (= y00 2)) (not r_C529_2))
-     (or (not (= y00 2)) (not r_C529_3))
-     (or (not (= y00 2)) (not r_C529_4))
-     (or (not (= y00 2)) (not r_C529_5))
-     (or (not (= y10 2)) (not r_C529_0))
-     (or (not (= y10 2)) (not r_C529_1))
-     (or (not (= y10 2)) (not r_C529_2))
-     (or (not (= y10 2)) (not r_C529_3))
-     (or (not (= y10 2)) (not r_C529_4))
-     (or (not (= y10 2)) r_C529_5)
-     (or (not (= y20 2)) (not r_C529_0))
-     (or (not (= y20 2)) (not r_C529_1))
-     (or (not (= y20 2)) (not r_C529_2))
-     (or (not (= y20 2)) (not r_C529_3))
-     (or (not (= y20 2)) r_C529_4)
-     (or (not (= y20 2)) (not r_C529_5))
-     (or (not (= y30 2)) (not r_C529_0))
-     (or (not (= y30 2)) (not r_C529_1))
-     (or (not (= y30 2)) (not r_C529_2))
-     (or (not (= y30 2)) (not r_C529_3))
-     (or (not (= y30 2)) r_C529_4)
-     (or (not (= y30 2)) r_C529_5)
-     (or (not (= y40 2)) (not r_C529_0))
-     (or (not (= y40 2)) (not r_C529_1))
-     (or (not (= y40 2)) (not r_C529_2))
-     (or (not (= y40 2)) r_C529_3)
-     (or (not (= y40 2)) (not r_C529_4))
-     (or (not (= y40 2)) (not r_C529_5))
-     (or (not (= y50 2)) (not r_C529_0))
-     (or (not (= y50 2)) (not r_C529_1))
-     (or (not (= y50 2)) (not r_C529_2))
-     (or (not (= y50 2)) r_C529_3)
-     (or (not (= y50 2)) (not r_C529_4))
-     (or (not (= y50 2)) r_C529_5)
-     (or (not (= y01 2)) (not r_C529_0))
-     (or (not (= y01 2)) (not r_C529_1))
-     (or (not (= y01 2)) (not r_C529_2))
-     (or (not (= y01 2)) r_C529_3)
-     (or (not (= y01 2)) r_C529_4)
-     (or (not (= y01 2)) (not r_C529_5))
-     (or (not (= y11 2)) (not r_C529_0))
-     (or (not (= y11 2)) (not r_C529_1))
-     (or (not (= y11 2)) (not r_C529_2))
-     (or (not (= y11 2)) r_C529_3)
-     (or (not (= y11 2)) r_C529_4)
-     (or (not (= y11 2)) r_C529_5)
-     (or (not (= y21 2)) (not r_C529_0))
-     (or (not (= y21 2)) (not r_C529_1))
-     (or (not (= y21 2)) r_C529_2)
-     (or (not (= y21 2)) (not r_C529_3))
-     (or (not (= y21 2)) (not r_C529_4))
-     (or (not (= y21 2)) (not r_C529_5))
-     (or (not (= y31 2)) (not r_C529_0))
-     (or (not (= y31 2)) (not r_C529_1))
-     (or (not (= y31 2)) r_C529_2)
-     (or (not (= y31 2)) (not r_C529_3))
-     (or (not (= y31 2)) (not r_C529_4))
-     (or (not (= y31 2)) r_C529_5)
-     (or (not (= y41 2)) (not r_C529_0))
-     (or (not (= y41 2)) (not r_C529_1))
-     (or (not (= y41 2)) r_C529_2)
-     (or (not (= y41 2)) (not r_C529_3))
-     (or (not (= y41 2)) r_C529_4)
-     (or (not (= y41 2)) (not r_C529_5))
-     (or (not (= y51 2)) (not r_C529_0))
-     (or (not (= y51 2)) (not r_C529_1))
-     (or (not (= y51 2)) r_C529_2)
-     (or (not (= y51 2)) (not r_C529_3))
-     (or (not (= y51 2)) r_C529_4)
-     (or (not (= y51 2)) r_C529_5)
-     (or (not (= y02 2)) (not r_C529_0))
-     (or (not (= y02 2)) (not r_C529_1))
-     (or (not (= y02 2)) r_C529_2)
-     (or (not (= y02 2)) r_C529_3)
-     (or (not (= y02 2)) (not r_C529_4))
-     (or (not (= y02 2)) (not r_C529_5))
-     (or (not (= y12 2)) (not r_C529_0))
-     (or (not (= y12 2)) (not r_C529_1))
-     (or (not (= y12 2)) r_C529_2)
-     (or (not (= y12 2)) r_C529_3)
-     (or (not (= y12 2)) (not r_C529_4))
-     (or (not (= y12 2)) r_C529_5)
-     (or (not (= y22 2)) (not r_C529_0))
-     (or (not (= y22 2)) (not r_C529_1))
-     (or (not (= y22 2)) r_C529_2)
-     (or (not (= y22 2)) r_C529_3)
-     (or (not (= y22 2)) r_C529_4)
-     (or (not (= y22 2)) (not r_C529_5))
-     (or (not (= y32 2)) (not r_C529_0))
-     (or (not (= y32 2)) (not r_C529_1))
-     (or (not (= y32 2)) r_C529_2)
-     (or (not (= y32 2)) r_C529_3)
-     (or (not (= y32 2)) r_C529_4)
-     (or (not (= y32 2)) r_C529_5)
-     (or (not (= y42 2)) (not r_C529_0))
-     (or (not (= y42 2)) r_C529_1)
-     (or (not (= y42 2)) (not r_C529_2))
-     (or (not (= y42 2)) (not r_C529_3))
-     (or (not (= y42 2)) (not r_C529_4))
-     (or (not (= y42 2)) (not r_C529_5))
-     (or (not (= y52 2)) (not r_C529_0))
-     (or (not (= y52 2)) r_C529_1)
-     (or (not (= y52 2)) (not r_C529_2))
-     (or (not (= y52 2)) (not r_C529_3))
-     (or (not (= y52 2)) (not r_C529_4))
-     (or (not (= y52 2)) r_C529_5)
-     (or (not (= y03 2)) (not r_C529_0))
-     (or (not (= y03 2)) r_C529_1)
-     (or (not (= y03 2)) (not r_C529_2))
-     (or (not (= y03 2)) (not r_C529_3))
-     (or (not (= y03 2)) r_C529_4)
-     (or (not (= y03 2)) (not r_C529_5))
-     (or (not (= y13 2)) (not r_C529_0))
-     (or (not (= y13 2)) r_C529_1)
-     (or (not (= y13 2)) (not r_C529_2))
-     (or (not (= y13 2)) (not r_C529_3))
-     (or (not (= y13 2)) r_C529_4)
-     (or (not (= y13 2)) r_C529_5)
-     (or (not (= y23 2)) (not r_C529_0))
-     (or (not (= y23 2)) r_C529_1)
-     (or (not (= y23 2)) (not r_C529_2))
-     (or (not (= y23 2)) r_C529_3)
-     (or (not (= y23 2)) (not r_C529_4))
-     (or (not (= y23 2)) (not r_C529_5))
-     (or (not (= y33 2)) (not r_C529_0))
-     (or (not (= y33 2)) r_C529_1)
-     (or (not (= y33 2)) (not r_C529_2))
-     (or (not (= y33 2)) r_C529_3)
-     (or (not (= y33 2)) (not r_C529_4))
-     (or (not (= y33 2)) r_C529_5)
-     (or (not (= y43 2)) (not r_C529_0))
-     (or (not (= y43 2)) r_C529_1)
-     (or (not (= y43 2)) (not r_C529_2))
-     (or (not (= y43 2)) r_C529_3)
-     (or (not (= y43 2)) r_C529_4)
-     (or (not (= y43 2)) (not r_C529_5))
-     (or (not (= y53 2)) (not r_C529_0))
-     (or (not (= y53 2)) r_C529_1)
-     (or (not (= y53 2)) (not r_C529_2))
-     (or (not (= y53 2)) r_C529_3)
-     (or (not (= y53 2)) r_C529_4)
-     (or (not (= y53 2)) r_C529_5)
-     (or (not (= y04 2)) (not r_C529_0))
-     (or (not (= y04 2)) r_C529_1)
-     (or (not (= y04 2)) r_C529_2)
-     (or (not (= y04 2)) (not r_C529_3))
-     (or (not (= y04 2)) (not r_C529_4))
-     (or (not (= y04 2)) (not r_C529_5))
-     (or (not (= y14 2)) (not r_C529_0))
-     (or (not (= y14 2)) r_C529_1)
-     (or (not (= y14 2)) r_C529_2)
-     (or (not (= y14 2)) (not r_C529_3))
-     (or (not (= y14 2)) (not r_C529_4))
-     (or (not (= y14 2)) r_C529_5)
-     (or (not (= y24 2)) (not r_C529_0))
-     (or (not (= y24 2)) r_C529_1)
-     (or (not (= y24 2)) r_C529_2)
-     (or (not (= y24 2)) (not r_C529_3))
-     (or (not (= y24 2)) r_C529_4)
-     (or (not (= y24 2)) (not r_C529_5))
-     (or (not (= y34 2)) (not r_C529_0))
-     (or (not (= y34 2)) r_C529_1)
-     (or (not (= y34 2)) r_C529_2)
-     (or (not (= y34 2)) (not r_C529_3))
-     (or (not (= y34 2)) r_C529_4)
-     (or (not (= y34 2)) r_C529_5)
-     (or (not (= y44 2)) (not r_C529_0))
-     (or (not (= y44 2)) r_C529_1)
-     (or (not (= y44 2)) r_C529_2)
-     (or (not (= y44 2)) r_C529_3)
-     (or (not (= y44 2)) (not r_C529_4))
-     (or (not (= y44 2)) (not r_C529_5))
-     (or (not (= y54 2)) (not r_C529_0))
-     (or (not (= y54 2)) r_C529_1)
-     (or (not (= y54 2)) r_C529_2)
-     (or (not (= y54 2)) r_C529_3)
-     (or (not (= y54 2)) (not r_C529_4))
-     (or (not (= y54 2)) r_C529_5)
-     (or (not (= y05 2)) (not r_C529_0))
-     (or (not (= y05 2)) r_C529_1)
-     (or (not (= y05 2)) r_C529_2)
-     (or (not (= y05 2)) r_C529_3)
-     (or (not (= y05 2)) r_C529_4)
-     (or (not (= y05 2)) (not r_C529_5))
-     (or (not (= y15 2)) (not r_C529_0))
-     (or (not (= y15 2)) r_C529_1)
-     (or (not (= y15 2)) r_C529_2)
-     (or (not (= y15 2)) r_C529_3)
-     (or (not (= y15 2)) r_C529_4)
-     (or (not (= y15 2)) r_C529_5)
-     (or (not (= y25 2)) r_C529_0)
-     (or (not (= y25 2)) (not r_C529_1))
-     (or (not (= y25 2)) (not r_C529_2))
-     (or (not (= y25 2)) (not r_C529_3))
-     (or (not (= y25 2)) (not r_C529_4))
-     (or (not (= y25 2)) (not r_C529_5))
-     (or (not (= y35 2)) r_C529_0)
-     (or (not (= y35 2)) (not r_C529_1))
-     (or (not (= y35 2)) (not r_C529_2))
-     (or (not (= y35 2)) (not r_C529_3))
-     (or (not (= y35 2)) (not r_C529_4))
-     (or (not (= y35 2)) r_C529_5)
-     (or (not (= y45 2)) r_C529_0)
-     (or (not (= y45 2)) (not r_C529_1))
-     (or (not (= y45 2)) (not r_C529_2))
-     (or (not (= y45 2)) (not r_C529_3))
-     (or (not (= y45 2)) r_C529_4)
-     (or (not (= y45 2)) (not r_C529_5))
-     (or (not (= y55 2)) r_C529_0)
-     (or (not (= y55 2)) (not r_C529_1))
-     (or (not (= y55 2)) (not r_C529_2))
-     (or (not (= y55 2)) (not r_C529_3))
-     (or (not (= y55 2)) r_C529_4)
-     (or (not (= y55 2)) r_C529_5)
-     (or (not (= y06 2)) r_C529_0)
-     (or (not (= y06 2)) (not r_C529_1))
-     (or (not (= y06 2)) (not r_C529_2))
-     (or (not (= y06 2)) r_C529_3)
-     (or (not (= y06 2)) (not r_C529_4))
-     (or (not (= y06 2)) (not r_C529_5))
-     (or (not (= y16 2)) r_C529_0)
-     (or (not (= y16 2)) (not r_C529_1))
-     (or (not (= y16 2)) (not r_C529_2))
-     (or (not (= y16 2)) r_C529_3)
-     (or (not (= y16 2)) (not r_C529_4))
-     (or (not (= y16 2)) r_C529_5)
-     (or (not (= y26 2)) r_C529_0)
-     (or (not (= y26 2)) (not r_C529_1))
-     (or (not (= y26 2)) (not r_C529_2))
-     (or (not (= y26 2)) r_C529_3)
-     (or (not (= y26 2)) r_C529_4)
-     (or (not (= y26 2)) (not r_C529_5))
-     (or (not (= y36 2)) r_C529_0)
-     (or (not (= y36 2)) (not r_C529_1))
-     (or (not (= y36 2)) (not r_C529_2))
-     (or (not (= y36 2)) r_C529_3)
-     (or (not (= y36 2)) r_C529_4)
-     (or (not (= y36 2)) r_C529_5)
-     (or (not (= y46 2)) r_C529_0)
-     (or (not (= y46 2)) (not r_C529_1))
-     (or (not (= y46 2)) r_C529_2)
-     (or (not (= y46 2)) (not r_C529_3))
-     (or (not (= y46 2)) (not r_C529_4))
-     (or (not (= y46 2)) (not r_C529_5))
-     (or (not (= y56 2)) r_C529_0)
-     (or (not (= y56 2)) (not r_C529_1))
-     (or (not (= y56 2)) r_C529_2)
-     (or (not (= y56 2)) (not r_C529_3))
-     (or (not (= y56 2)) (not r_C529_4))
-     (or (not (= y56 2)) r_C529_5)
-     (or (not (= y07 2)) r_C529_0)
-     (or (not (= y07 2)) (not r_C529_1))
-     (or (not (= y07 2)) r_C529_2)
-     (or (not (= y07 2)) (not r_C529_3))
-     (or (not (= y07 2)) r_C529_4)
-     (or (not (= y07 2)) (not r_C529_5))
-     (or (not (= y17 2)) r_C529_0)
-     (or (not (= y17 2)) (not r_C529_1))
-     (or (not (= y17 2)) r_C529_2)
-     (or (not (= y17 2)) (not r_C529_3))
-     (or (not (= y17 2)) r_C529_4)
-     (or (not (= y17 2)) r_C529_5)
-     (or (not (= y27 2)) r_C529_0)
-     (or (not (= y27 2)) (not r_C529_1))
-     (or (not (= y27 2)) r_C529_2)
-     (or (not (= y27 2)) r_C529_3)
-     (or (not (= y27 2)) (not r_C529_4))
-     (or (not (= y27 2)) (not r_C529_5))
-     (or (not (= y37 2)) r_C529_0)
-     (or (not (= y37 2)) (not r_C529_1))
-     (or (not (= y37 2)) r_C529_2)
-     (or (not (= y37 2)) r_C529_3)
-     (or (not (= y37 2)) (not r_C529_4))
-     (or (not (= y37 2)) r_C529_5)
-     (or (not (= y47 2)) r_C529_0)
-     (or (not (= y47 2)) (not r_C529_1))
-     (or (not (= y47 2)) r_C529_2)
-     (or (not (= y47 2)) r_C529_3)
-     (or (not (= y47 2)) r_C529_4)
-     (or (not (= y47 2)) (not r_C529_5))
-     (or (not (= y57 2)) r_C529_0)
-     (or (not (= y57 2)) (not r_C529_1))
-     (or (not (= y57 2)) r_C529_2)
-     (or (not (= y57 2)) r_C529_3)
-     (or (not (= y57 2)) r_C529_4)
-     (or (not (= y57 2)) r_C529_5)
-     (or (not (= y08 2)) r_C529_0)
-     (or (not (= y08 2)) r_C529_1)
-     (or (not (= y08 2)) (not r_C529_2))
-     (or (not (= y08 2)) (not r_C529_3))
-     (or (not (= y08 2)) (not r_C529_4))
-     (or (not (= y08 2)) (not r_C529_5))
-     (or (not (= y18 2)) r_C529_0)
-     (or (not (= y18 2)) r_C529_1)
-     (or (not (= y18 2)) (not r_C529_2))
-     (or (not (= y18 2)) (not r_C529_3))
-     (or (not (= y18 2)) (not r_C529_4))
-     (or (not (= y18 2)) r_C529_5)
-     (or (not (= y28 2)) r_C529_0)
-     (or (not (= y28 2)) r_C529_1)
-     (or (not (= y28 2)) (not r_C529_2))
-     (or (not (= y28 2)) (not r_C529_3))
-     (or (not (= y28 2)) r_C529_4)
-     (or (not (= y28 2)) (not r_C529_5))
-     (or (not (= y38 2)) r_C529_0)
-     (or (not (= y38 2)) r_C529_1)
-     (or (not (= y38 2)) (not r_C529_2))
-     (or (not (= y38 2)) (not r_C529_3))
-     (or (not (= y38 2)) r_C529_4)
-     (or (not (= y38 2)) r_C529_5)
-     (or (not (= y48 2)) r_C529_0)
-     (or (not (= y48 2)) r_C529_1)
-     (or (not (= y48 2)) (not r_C529_2))
-     (or (not (= y48 2)) r_C529_3)
-     (or (not (= y48 2)) (not r_C529_4))
-     (or (not (= y48 2)) (not r_C529_5))
-     (or (not (= y58 2)) r_C529_0)
-     (or (not (= y58 2)) r_C529_1)
-     (or (not (= y58 2)) (not r_C529_2))
-     (or (not (= y58 2)) r_C529_3)
-     (or (not (= y58 2)) (not r_C529_4))
-     (or (not (= y58 2)) r_C529_5)
-     (or (not (= y09 2)) r_C529_0)
-     (or (not (= y09 2)) r_C529_1)
-     (or (not (= y09 2)) (not r_C529_2))
-     (or (not (= y09 2)) r_C529_3)
-     (or (not (= y09 2)) r_C529_4)
-     (or (not (= y09 2)) (not r_C529_5))
-     (or (not (= y19 2)) r_C529_0)
-     (or (not (= y19 2)) r_C529_1)
-     (or (not (= y19 2)) (not r_C529_2))
-     (or (not (= y19 2)) r_C529_3)
-     (or (not (= y19 2)) r_C529_4)
-     (or (not (= y19 2)) r_C529_5)
-     (or (not (= y29 2)) r_C529_0)
-     (or (not (= y29 2)) r_C529_1)
-     (or (not (= y29 2)) r_C529_2)
-     (or (not (= y29 2)) (not r_C529_3))
-     (or (not (= y29 2)) (not r_C529_4))
-     (or (not (= y29 2)) (not r_C529_5))
-     (or (not (= y39 2)) r_C529_0)
-     (or (not (= y39 2)) r_C529_1)
-     (or (not (= y39 2)) r_C529_2)
-     (or (not (= y39 2)) (not r_C529_3))
-     (or (not (= y39 2)) (not r_C529_4))
-     (or (not (= y39 2)) r_C529_5)
-     (or (not (= y49 2)) r_C529_0)
-     (or (not (= y49 2)) r_C529_1)
-     (or (not (= y49 2)) r_C529_2)
-     (or (not (= y49 2)) (not r_C529_3))
-     (or (not (= y49 2)) r_C529_4)
-     (or (not (= y49 2)) (not r_C529_5))
-     (or (not (= y59 2)) r_C529_0)
-     (or (not (= y59 2)) r_C529_1)
-     (or (not (= y59 2)) r_C529_2)
-     (or (not (= y59 2)) (not r_C529_3))
-     (or (not (= y59 2)) r_C529_4)
-     (or (not (= y59 2)) r_C529_5)))
-(assert (and (or (= x00 3)
-         (= x10 3)
-         (= x20 3)
-         (= x30 3)
-         (= x40 3)
-         (= x50 3)
-         (= x01 3)
-         (= x11 3)
-         (= x21 3)
-         (= x31 3)
-         (= x41 3)
-         (= x51 3)
-         (= x02 3)
-         (= x12 3)
-         (= x22 3)
-         (= x32 3)
-         (= x42 3)
-         (= x52 3)
-         (= x03 3)
-         (= x13 3)
-         (= x23 3)
-         (= x33 3)
-         (= x43 3)
-         (= x53 3)
-         (= x04 3)
-         (= x14 3)
-         (= x24 3)
-         (= x34 3)
-         (= x44 3)
-         (= x54 3)
-         (= x05 3)
-         (= x15 3)
-         (= x25 3)
-         (= x35 3)
-         (= x45 3)
-         (= x55 3)
-         (= x06 3)
-         (= x16 3)
-         (= x26 3)
-         (= x36 3)
-         (= x46 3)
-         (= x56 3)
-         (= x07 3)
-         (= x17 3)
-         (= x27 3)
-         (= x37 3)
-         (= x47 3)
-         (= x57 3)
-         (= x08 3)
-         (= x18 3)
-         (= x28 3)
-         (= x38 3)
-         (= x48 3)
-         (= x58 3)
-         (= x09 3)
-         (= x19 3)
-         (= x29 3)
-         (= x39 3)
-         (= x49 3)
-         (= x59 3))
-     (or (not (= x00 3)) (not r_B539_0))
-     (or (not (= x00 3)) (not r_B539_1))
-     (or (not (= x00 3)) (not r_B539_2))
-     (or (not (= x00 3)) (not r_B539_3))
-     (or (not (= x00 3)) (not r_B539_4))
-     (or (not (= x00 3)) (not r_B539_5))
-     (or (not (= x10 3)) (not r_B539_0))
-     (or (not (= x10 3)) (not r_B539_1))
-     (or (not (= x10 3)) (not r_B539_2))
-     (or (not (= x10 3)) (not r_B539_3))
-     (or (not (= x10 3)) (not r_B539_4))
-     (or (not (= x10 3)) r_B539_5)
-     (or (not (= x20 3)) (not r_B539_0))
-     (or (not (= x20 3)) (not r_B539_1))
-     (or (not (= x20 3)) (not r_B539_2))
-     (or (not (= x20 3)) (not r_B539_3))
-     (or (not (= x20 3)) r_B539_4)
-     (or (not (= x20 3)) (not r_B539_5))
-     (or (not (= x30 3)) (not r_B539_0))
-     (or (not (= x30 3)) (not r_B539_1))
-     (or (not (= x30 3)) (not r_B539_2))
-     (or (not (= x30 3)) (not r_B539_3))
-     (or (not (= x30 3)) r_B539_4)
-     (or (not (= x30 3)) r_B539_5)
-     (or (not (= x40 3)) (not r_B539_0))
-     (or (not (= x40 3)) (not r_B539_1))
-     (or (not (= x40 3)) (not r_B539_2))
-     (or (not (= x40 3)) r_B539_3)
-     (or (not (= x40 3)) (not r_B539_4))
-     (or (not (= x40 3)) (not r_B539_5))
-     (or (not (= x50 3)) (not r_B539_0))
-     (or (not (= x50 3)) (not r_B539_1))
-     (or (not (= x50 3)) (not r_B539_2))
-     (or (not (= x50 3)) r_B539_3)
-     (or (not (= x50 3)) (not r_B539_4))
-     (or (not (= x50 3)) r_B539_5)
-     (or (not (= x01 3)) (not r_B539_0))
-     (or (not (= x01 3)) (not r_B539_1))
-     (or (not (= x01 3)) (not r_B539_2))
-     (or (not (= x01 3)) r_B539_3)
-     (or (not (= x01 3)) r_B539_4)
-     (or (not (= x01 3)) (not r_B539_5))
-     (or (not (= x11 3)) (not r_B539_0))
-     (or (not (= x11 3)) (not r_B539_1))
-     (or (not (= x11 3)) (not r_B539_2))
-     (or (not (= x11 3)) r_B539_3)
-     (or (not (= x11 3)) r_B539_4)
-     (or (not (= x11 3)) r_B539_5)
-     (or (not (= x21 3)) (not r_B539_0))
-     (or (not (= x21 3)) (not r_B539_1))
-     (or (not (= x21 3)) r_B539_2)
-     (or (not (= x21 3)) (not r_B539_3))
-     (or (not (= x21 3)) (not r_B539_4))
-     (or (not (= x21 3)) (not r_B539_5))
-     (or (not (= x31 3)) (not r_B539_0))
-     (or (not (= x31 3)) (not r_B539_1))
-     (or (not (= x31 3)) r_B539_2)
-     (or (not (= x31 3)) (not r_B539_3))
-     (or (not (= x31 3)) (not r_B539_4))
-     (or (not (= x31 3)) r_B539_5)
-     (or (not (= x41 3)) (not r_B539_0))
-     (or (not (= x41 3)) (not r_B539_1))
-     (or (not (= x41 3)) r_B539_2)
-     (or (not (= x41 3)) (not r_B539_3))
-     (or (not (= x41 3)) r_B539_4)
-     (or (not (= x41 3)) (not r_B539_5))
-     (or (not (= x51 3)) (not r_B539_0))
-     (or (not (= x51 3)) (not r_B539_1))
-     (or (not (= x51 3)) r_B539_2)
-     (or (not (= x51 3)) (not r_B539_3))
-     (or (not (= x51 3)) r_B539_4)
-     (or (not (= x51 3)) r_B539_5)
-     (or (not (= x02 3)) (not r_B539_0))
-     (or (not (= x02 3)) (not r_B539_1))
-     (or (not (= x02 3)) r_B539_2)
-     (or (not (= x02 3)) r_B539_3)
-     (or (not (= x02 3)) (not r_B539_4))
-     (or (not (= x02 3)) (not r_B539_5))
-     (or (not (= x12 3)) (not r_B539_0))
-     (or (not (= x12 3)) (not r_B539_1))
-     (or (not (= x12 3)) r_B539_2)
-     (or (not (= x12 3)) r_B539_3)
-     (or (not (= x12 3)) (not r_B539_4))
-     (or (not (= x12 3)) r_B539_5)
-     (or (not (= x22 3)) (not r_B539_0))
-     (or (not (= x22 3)) (not r_B539_1))
-     (or (not (= x22 3)) r_B539_2)
-     (or (not (= x22 3)) r_B539_3)
-     (or (not (= x22 3)) r_B539_4)
-     (or (not (= x22 3)) (not r_B539_5))
-     (or (not (= x32 3)) (not r_B539_0))
-     (or (not (= x32 3)) (not r_B539_1))
-     (or (not (= x32 3)) r_B539_2)
-     (or (not (= x32 3)) r_B539_3)
-     (or (not (= x32 3)) r_B539_4)
-     (or (not (= x32 3)) r_B539_5)
-     (or (not (= x42 3)) (not r_B539_0))
-     (or (not (= x42 3)) r_B539_1)
-     (or (not (= x42 3)) (not r_B539_2))
-     (or (not (= x42 3)) (not r_B539_3))
-     (or (not (= x42 3)) (not r_B539_4))
-     (or (not (= x42 3)) (not r_B539_5))
-     (or (not (= x52 3)) (not r_B539_0))
-     (or (not (= x52 3)) r_B539_1)
-     (or (not (= x52 3)) (not r_B539_2))
-     (or (not (= x52 3)) (not r_B539_3))
-     (or (not (= x52 3)) (not r_B539_4))
-     (or (not (= x52 3)) r_B539_5)
-     (or (not (= x03 3)) (not r_B539_0))
-     (or (not (= x03 3)) r_B539_1)
-     (or (not (= x03 3)) (not r_B539_2))
-     (or (not (= x03 3)) (not r_B539_3))
-     (or (not (= x03 3)) r_B539_4)
-     (or (not (= x03 3)) (not r_B539_5))
-     (or (not (= x13 3)) (not r_B539_0))
-     (or (not (= x13 3)) r_B539_1)
-     (or (not (= x13 3)) (not r_B539_2))
-     (or (not (= x13 3)) (not r_B539_3))
-     (or (not (= x13 3)) r_B539_4)
-     (or (not (= x13 3)) r_B539_5)
-     (or (not (= x23 3)) (not r_B539_0))
-     (or (not (= x23 3)) r_B539_1)
-     (or (not (= x23 3)) (not r_B539_2))
-     (or (not (= x23 3)) r_B539_3)
-     (or (not (= x23 3)) (not r_B539_4))
-     (or (not (= x23 3)) (not r_B539_5))
-     (or (not (= x33 3)) (not r_B539_0))
-     (or (not (= x33 3)) r_B539_1)
-     (or (not (= x33 3)) (not r_B539_2))
-     (or (not (= x33 3)) r_B539_3)
-     (or (not (= x33 3)) (not r_B539_4))
-     (or (not (= x33 3)) r_B539_5)
-     (or (not (= x43 3)) (not r_B539_0))
-     (or (not (= x43 3)) r_B539_1)
-     (or (not (= x43 3)) (not r_B539_2))
-     (or (not (= x43 3)) r_B539_3)
-     (or (not (= x43 3)) r_B539_4)
-     (or (not (= x43 3)) (not r_B539_5))
-     (or (not (= x53 3)) (not r_B539_0))
-     (or (not (= x53 3)) r_B539_1)
-     (or (not (= x53 3)) (not r_B539_2))
-     (or (not (= x53 3)) r_B539_3)
-     (or (not (= x53 3)) r_B539_4)
-     (or (not (= x53 3)) r_B539_5)
-     (or (not (= x04 3)) (not r_B539_0))
-     (or (not (= x04 3)) r_B539_1)
-     (or (not (= x04 3)) r_B539_2)
-     (or (not (= x04 3)) (not r_B539_3))
-     (or (not (= x04 3)) (not r_B539_4))
-     (or (not (= x04 3)) (not r_B539_5))
-     (or (not (= x14 3)) (not r_B539_0))
-     (or (not (= x14 3)) r_B539_1)
-     (or (not (= x14 3)) r_B539_2)
-     (or (not (= x14 3)) (not r_B539_3))
-     (or (not (= x14 3)) (not r_B539_4))
-     (or (not (= x14 3)) r_B539_5)
-     (or (not (= x24 3)) (not r_B539_0))
-     (or (not (= x24 3)) r_B539_1)
-     (or (not (= x24 3)) r_B539_2)
-     (or (not (= x24 3)) (not r_B539_3))
-     (or (not (= x24 3)) r_B539_4)
-     (or (not (= x24 3)) (not r_B539_5))
-     (or (not (= x34 3)) (not r_B539_0))
-     (or (not (= x34 3)) r_B539_1)
-     (or (not (= x34 3)) r_B539_2)
-     (or (not (= x34 3)) (not r_B539_3))
-     (or (not (= x34 3)) r_B539_4)
-     (or (not (= x34 3)) r_B539_5)
-     (or (not (= x44 3)) (not r_B539_0))
-     (or (not (= x44 3)) r_B539_1)
-     (or (not (= x44 3)) r_B539_2)
-     (or (not (= x44 3)) r_B539_3)
-     (or (not (= x44 3)) (not r_B539_4))
-     (or (not (= x44 3)) (not r_B539_5))
-     (or (not (= x54 3)) (not r_B539_0))
-     (or (not (= x54 3)) r_B539_1)
-     (or (not (= x54 3)) r_B539_2)
-     (or (not (= x54 3)) r_B539_3)
-     (or (not (= x54 3)) (not r_B539_4))
-     (or (not (= x54 3)) r_B539_5)
-     (or (not (= x05 3)) (not r_B539_0))
-     (or (not (= x05 3)) r_B539_1)
-     (or (not (= x05 3)) r_B539_2)
-     (or (not (= x05 3)) r_B539_3)
-     (or (not (= x05 3)) r_B539_4)
-     (or (not (= x05 3)) (not r_B539_5))
-     (or (not (= x15 3)) (not r_B539_0))
-     (or (not (= x15 3)) r_B539_1)
-     (or (not (= x15 3)) r_B539_2)
-     (or (not (= x15 3)) r_B539_3)
-     (or (not (= x15 3)) r_B539_4)
-     (or (not (= x15 3)) r_B539_5)
-     (or (not (= x25 3)) r_B539_0)
-     (or (not (= x25 3)) (not r_B539_1))
-     (or (not (= x25 3)) (not r_B539_2))
-     (or (not (= x25 3)) (not r_B539_3))
-     (or (not (= x25 3)) (not r_B539_4))
-     (or (not (= x25 3)) (not r_B539_5))
-     (or (not (= x35 3)) r_B539_0)
-     (or (not (= x35 3)) (not r_B539_1))
-     (or (not (= x35 3)) (not r_B539_2))
-     (or (not (= x35 3)) (not r_B539_3))
-     (or (not (= x35 3)) (not r_B539_4))
-     (or (not (= x35 3)) r_B539_5)
-     (or (not (= x45 3)) r_B539_0)
-     (or (not (= x45 3)) (not r_B539_1))
-     (or (not (= x45 3)) (not r_B539_2))
-     (or (not (= x45 3)) (not r_B539_3))
-     (or (not (= x45 3)) r_B539_4)
-     (or (not (= x45 3)) (not r_B539_5))
-     (or (not (= x55 3)) r_B539_0)
-     (or (not (= x55 3)) (not r_B539_1))
-     (or (not (= x55 3)) (not r_B539_2))
-     (or (not (= x55 3)) (not r_B539_3))
-     (or (not (= x55 3)) r_B539_4)
-     (or (not (= x55 3)) r_B539_5)
-     (or (not (= x06 3)) r_B539_0)
-     (or (not (= x06 3)) (not r_B539_1))
-     (or (not (= x06 3)) (not r_B539_2))
-     (or (not (= x06 3)) r_B539_3)
-     (or (not (= x06 3)) (not r_B539_4))
-     (or (not (= x06 3)) (not r_B539_5))
-     (or (not (= x16 3)) r_B539_0)
-     (or (not (= x16 3)) (not r_B539_1))
-     (or (not (= x16 3)) (not r_B539_2))
-     (or (not (= x16 3)) r_B539_3)
-     (or (not (= x16 3)) (not r_B539_4))
-     (or (not (= x16 3)) r_B539_5)
-     (or (not (= x26 3)) r_B539_0)
-     (or (not (= x26 3)) (not r_B539_1))
-     (or (not (= x26 3)) (not r_B539_2))
-     (or (not (= x26 3)) r_B539_3)
-     (or (not (= x26 3)) r_B539_4)
-     (or (not (= x26 3)) (not r_B539_5))
-     (or (not (= x36 3)) r_B539_0)
-     (or (not (= x36 3)) (not r_B539_1))
-     (or (not (= x36 3)) (not r_B539_2))
-     (or (not (= x36 3)) r_B539_3)
-     (or (not (= x36 3)) r_B539_4)
-     (or (not (= x36 3)) r_B539_5)
-     (or (not (= x46 3)) r_B539_0)
-     (or (not (= x46 3)) (not r_B539_1))
-     (or (not (= x46 3)) r_B539_2)
-     (or (not (= x46 3)) (not r_B539_3))
-     (or (not (= x46 3)) (not r_B539_4))
-     (or (not (= x46 3)) (not r_B539_5))
-     (or (not (= x56 3)) r_B539_0)
-     (or (not (= x56 3)) (not r_B539_1))
-     (or (not (= x56 3)) r_B539_2)
-     (or (not (= x56 3)) (not r_B539_3))
-     (or (not (= x56 3)) (not r_B539_4))
-     (or (not (= x56 3)) r_B539_5)
-     (or (not (= x07 3)) r_B539_0)
-     (or (not (= x07 3)) (not r_B539_1))
-     (or (not (= x07 3)) r_B539_2)
-     (or (not (= x07 3)) (not r_B539_3))
-     (or (not (= x07 3)) r_B539_4)
-     (or (not (= x07 3)) (not r_B539_5))
-     (or (not (= x17 3)) r_B539_0)
-     (or (not (= x17 3)) (not r_B539_1))
-     (or (not (= x17 3)) r_B539_2)
-     (or (not (= x17 3)) (not r_B539_3))
-     (or (not (= x17 3)) r_B539_4)
-     (or (not (= x17 3)) r_B539_5)
-     (or (not (= x27 3)) r_B539_0)
-     (or (not (= x27 3)) (not r_B539_1))
-     (or (not (= x27 3)) r_B539_2)
-     (or (not (= x27 3)) r_B539_3)
-     (or (not (= x27 3)) (not r_B539_4))
-     (or (not (= x27 3)) (not r_B539_5))
-     (or (not (= x37 3)) r_B539_0)
-     (or (not (= x37 3)) (not r_B539_1))
-     (or (not (= x37 3)) r_B539_2)
-     (or (not (= x37 3)) r_B539_3)
-     (or (not (= x37 3)) (not r_B539_4))
-     (or (not (= x37 3)) r_B539_5)
-     (or (not (= x47 3)) r_B539_0)
-     (or (not (= x47 3)) (not r_B539_1))
-     (or (not (= x47 3)) r_B539_2)
-     (or (not (= x47 3)) r_B539_3)
-     (or (not (= x47 3)) r_B539_4)
-     (or (not (= x47 3)) (not r_B539_5))
-     (or (not (= x57 3)) r_B539_0)
-     (or (not (= x57 3)) (not r_B539_1))
-     (or (not (= x57 3)) r_B539_2)
-     (or (not (= x57 3)) r_B539_3)
-     (or (not (= x57 3)) r_B539_4)
-     (or (not (= x57 3)) r_B539_5)
-     (or (not (= x08 3)) r_B539_0)
-     (or (not (= x08 3)) r_B539_1)
-     (or (not (= x08 3)) (not r_B539_2))
-     (or (not (= x08 3)) (not r_B539_3))
-     (or (not (= x08 3)) (not r_B539_4))
-     (or (not (= x08 3)) (not r_B539_5))
-     (or (not (= x18 3)) r_B539_0)
-     (or (not (= x18 3)) r_B539_1)
-     (or (not (= x18 3)) (not r_B539_2))
-     (or (not (= x18 3)) (not r_B539_3))
-     (or (not (= x18 3)) (not r_B539_4))
-     (or (not (= x18 3)) r_B539_5)
-     (or (not (= x28 3)) r_B539_0)
-     (or (not (= x28 3)) r_B539_1)
-     (or (not (= x28 3)) (not r_B539_2))
-     (or (not (= x28 3)) (not r_B539_3))
-     (or (not (= x28 3)) r_B539_4)
-     (or (not (= x28 3)) (not r_B539_5))
-     (or (not (= x38 3)) r_B539_0)
-     (or (not (= x38 3)) r_B539_1)
-     (or (not (= x38 3)) (not r_B539_2))
-     (or (not (= x38 3)) (not r_B539_3))
-     (or (not (= x38 3)) r_B539_4)
-     (or (not (= x38 3)) r_B539_5)
-     (or (not (= x48 3)) r_B539_0)
-     (or (not (= x48 3)) r_B539_1)
-     (or (not (= x48 3)) (not r_B539_2))
-     (or (not (= x48 3)) r_B539_3)
-     (or (not (= x48 3)) (not r_B539_4))
-     (or (not (= x48 3)) (not r_B539_5))
-     (or (not (= x58 3)) r_B539_0)
-     (or (not (= x58 3)) r_B539_1)
-     (or (not (= x58 3)) (not r_B539_2))
-     (or (not (= x58 3)) r_B539_3)
-     (or (not (= x58 3)) (not r_B539_4))
-     (or (not (= x58 3)) r_B539_5)
-     (or (not (= x09 3)) r_B539_0)
-     (or (not (= x09 3)) r_B539_1)
-     (or (not (= x09 3)) (not r_B539_2))
-     (or (not (= x09 3)) r_B539_3)
-     (or (not (= x09 3)) r_B539_4)
-     (or (not (= x09 3)) (not r_B539_5))
-     (or (not (= x19 3)) r_B539_0)
-     (or (not (= x19 3)) r_B539_1)
-     (or (not (= x19 3)) (not r_B539_2))
-     (or (not (= x19 3)) r_B539_3)
-     (or (not (= x19 3)) r_B539_4)
-     (or (not (= x19 3)) r_B539_5)
-     (or (not (= x29 3)) r_B539_0)
-     (or (not (= x29 3)) r_B539_1)
-     (or (not (= x29 3)) r_B539_2)
-     (or (not (= x29 3)) (not r_B539_3))
-     (or (not (= x29 3)) (not r_B539_4))
-     (or (not (= x29 3)) (not r_B539_5))
-     (or (not (= x39 3)) r_B539_0)
-     (or (not (= x39 3)) r_B539_1)
-     (or (not (= x39 3)) r_B539_2)
-     (or (not (= x39 3)) (not r_B539_3))
-     (or (not (= x39 3)) (not r_B539_4))
-     (or (not (= x39 3)) r_B539_5)
-     (or (not (= x49 3)) r_B539_0)
-     (or (not (= x49 3)) r_B539_1)
-     (or (not (= x49 3)) r_B539_2)
-     (or (not (= x49 3)) (not r_B539_3))
-     (or (not (= x49 3)) r_B539_4)
-     (or (not (= x49 3)) (not r_B539_5))
-     (or (not (= x59 3)) r_B539_0)
-     (or (not (= x59 3)) r_B539_1)
-     (or (not (= x59 3)) r_B539_2)
-     (or (not (= x59 3)) (not r_B539_3))
-     (or (not (= x59 3)) r_B539_4)
-     (or (not (= x59 3)) r_B539_5)))
-(assert (and (or (= y00 3)
-         (= y10 3)
-         (= y20 3)
-         (= y30 3)
-         (= y40 3)
-         (= y50 3)
-         (= y01 3)
-         (= y11 3)
-         (= y21 3)
-         (= y31 3)
-         (= y41 3)
-         (= y51 3)
-         (= y02 3)
-         (= y12 3)
-         (= y22 3)
-         (= y32 3)
-         (= y42 3)
-         (= y52 3)
-         (= y03 3)
-         (= y13 3)
-         (= y23 3)
-         (= y33 3)
-         (= y43 3)
-         (= y53 3)
-         (= y04 3)
-         (= y14 3)
-         (= y24 3)
-         (= y34 3)
-         (= y44 3)
-         (= y54 3)
-         (= y05 3)
-         (= y15 3)
-         (= y25 3)
-         (= y35 3)
-         (= y45 3)
-         (= y55 3)
-         (= y06 3)
-         (= y16 3)
-         (= y26 3)
-         (= y36 3)
-         (= y46 3)
-         (= y56 3)
-         (= y07 3)
-         (= y17 3)
-         (= y27 3)
-         (= y37 3)
-         (= y47 3)
-         (= y57 3)
-         (= y08 3)
-         (= y18 3)
-         (= y28 3)
-         (= y38 3)
-         (= y48 3)
-         (= y58 3)
-         (= y09 3)
-         (= y19 3)
-         (= y29 3)
-         (= y39 3)
-         (= y49 3)
-         (= y59 3))
-     (or (not (= y00 3)) (not r_C539_0))
-     (or (not (= y00 3)) (not r_C539_1))
-     (or (not (= y00 3)) (not r_C539_2))
-     (or (not (= y00 3)) (not r_C539_3))
-     (or (not (= y00 3)) (not r_C539_4))
-     (or (not (= y00 3)) (not r_C539_5))
-     (or (not (= y10 3)) (not r_C539_0))
-     (or (not (= y10 3)) (not r_C539_1))
-     (or (not (= y10 3)) (not r_C539_2))
-     (or (not (= y10 3)) (not r_C539_3))
-     (or (not (= y10 3)) (not r_C539_4))
-     (or (not (= y10 3)) r_C539_5)
-     (or (not (= y20 3)) (not r_C539_0))
-     (or (not (= y20 3)) (not r_C539_1))
-     (or (not (= y20 3)) (not r_C539_2))
-     (or (not (= y20 3)) (not r_C539_3))
-     (or (not (= y20 3)) r_C539_4)
-     (or (not (= y20 3)) (not r_C539_5))
-     (or (not (= y30 3)) (not r_C539_0))
-     (or (not (= y30 3)) (not r_C539_1))
-     (or (not (= y30 3)) (not r_C539_2))
-     (or (not (= y30 3)) (not r_C539_3))
-     (or (not (= y30 3)) r_C539_4)
-     (or (not (= y30 3)) r_C539_5)
-     (or (not (= y40 3)) (not r_C539_0))
-     (or (not (= y40 3)) (not r_C539_1))
-     (or (not (= y40 3)) (not r_C539_2))
-     (or (not (= y40 3)) r_C539_3)
-     (or (not (= y40 3)) (not r_C539_4))
-     (or (not (= y40 3)) (not r_C539_5))
-     (or (not (= y50 3)) (not r_C539_0))
-     (or (not (= y50 3)) (not r_C539_1))
-     (or (not (= y50 3)) (not r_C539_2))
-     (or (not (= y50 3)) r_C539_3)
-     (or (not (= y50 3)) (not r_C539_4))
-     (or (not (= y50 3)) r_C539_5)
-     (or (not (= y01 3)) (not r_C539_0))
-     (or (not (= y01 3)) (not r_C539_1))
-     (or (not (= y01 3)) (not r_C539_2))
-     (or (not (= y01 3)) r_C539_3)
-     (or (not (= y01 3)) r_C539_4)
-     (or (not (= y01 3)) (not r_C539_5))
-     (or (not (= y11 3)) (not r_C539_0))
-     (or (not (= y11 3)) (not r_C539_1))
-     (or (not (= y11 3)) (not r_C539_2))
-     (or (not (= y11 3)) r_C539_3)
-     (or (not (= y11 3)) r_C539_4)
-     (or (not (= y11 3)) r_C539_5)
-     (or (not (= y21 3)) (not r_C539_0))
-     (or (not (= y21 3)) (not r_C539_1))
-     (or (not (= y21 3)) r_C539_2)
-     (or (not (= y21 3)) (not r_C539_3))
-     (or (not (= y21 3)) (not r_C539_4))
-     (or (not (= y21 3)) (not r_C539_5))
-     (or (not (= y31 3)) (not r_C539_0))
-     (or (not (= y31 3)) (not r_C539_1))
-     (or (not (= y31 3)) r_C539_2)
-     (or (not (= y31 3)) (not r_C539_3))
-     (or (not (= y31 3)) (not r_C539_4))
-     (or (not (= y31 3)) r_C539_5)
-     (or (not (= y41 3)) (not r_C539_0))
-     (or (not (= y41 3)) (not r_C539_1))
-     (or (not (= y41 3)) r_C539_2)
-     (or (not (= y41 3)) (not r_C539_3))
-     (or (not (= y41 3)) r_C539_4)
-     (or (not (= y41 3)) (not r_C539_5))
-     (or (not (= y51 3)) (not r_C539_0))
-     (or (not (= y51 3)) (not r_C539_1))
-     (or (not (= y51 3)) r_C539_2)
-     (or (not (= y51 3)) (not r_C539_3))
-     (or (not (= y51 3)) r_C539_4)
-     (or (not (= y51 3)) r_C539_5)
-     (or (not (= y02 3)) (not r_C539_0))
-     (or (not (= y02 3)) (not r_C539_1))
-     (or (not (= y02 3)) r_C539_2)
-     (or (not (= y02 3)) r_C539_3)
-     (or (not (= y02 3)) (not r_C539_4))
-     (or (not (= y02 3)) (not r_C539_5))
-     (or (not (= y12 3)) (not r_C539_0))
-     (or (not (= y12 3)) (not r_C539_1))
-     (or (not (= y12 3)) r_C539_2)
-     (or (not (= y12 3)) r_C539_3)
-     (or (not (= y12 3)) (not r_C539_4))
-     (or (not (= y12 3)) r_C539_5)
-     (or (not (= y22 3)) (not r_C539_0))
-     (or (not (= y22 3)) (not r_C539_1))
-     (or (not (= y22 3)) r_C539_2)
-     (or (not (= y22 3)) r_C539_3)
-     (or (not (= y22 3)) r_C539_4)
-     (or (not (= y22 3)) (not r_C539_5))
-     (or (not (= y32 3)) (not r_C539_0))
-     (or (not (= y32 3)) (not r_C539_1))
-     (or (not (= y32 3)) r_C539_2)
-     (or (not (= y32 3)) r_C539_3)
-     (or (not (= y32 3)) r_C539_4)
-     (or (not (= y32 3)) r_C539_5)
-     (or (not (= y42 3)) (not r_C539_0))
-     (or (not (= y42 3)) r_C539_1)
-     (or (not (= y42 3)) (not r_C539_2))
-     (or (not (= y42 3)) (not r_C539_3))
-     (or (not (= y42 3)) (not r_C539_4))
-     (or (not (= y42 3)) (not r_C539_5))
-     (or (not (= y52 3)) (not r_C539_0))
-     (or (not (= y52 3)) r_C539_1)
-     (or (not (= y52 3)) (not r_C539_2))
-     (or (not (= y52 3)) (not r_C539_3))
-     (or (not (= y52 3)) (not r_C539_4))
-     (or (not (= y52 3)) r_C539_5)
-     (or (not (= y03 3)) (not r_C539_0))
-     (or (not (= y03 3)) r_C539_1)
-     (or (not (= y03 3)) (not r_C539_2))
-     (or (not (= y03 3)) (not r_C539_3))
-     (or (not (= y03 3)) r_C539_4)
-     (or (not (= y03 3)) (not r_C539_5))
-     (or (not (= y13 3)) (not r_C539_0))
-     (or (not (= y13 3)) r_C539_1)
-     (or (not (= y13 3)) (not r_C539_2))
-     (or (not (= y13 3)) (not r_C539_3))
-     (or (not (= y13 3)) r_C539_4)
-     (or (not (= y13 3)) r_C539_5)
-     (or (not (= y23 3)) (not r_C539_0))
-     (or (not (= y23 3)) r_C539_1)
-     (or (not (= y23 3)) (not r_C539_2))
-     (or (not (= y23 3)) r_C539_3)
-     (or (not (= y23 3)) (not r_C539_4))
-     (or (not (= y23 3)) (not r_C539_5))
-     (or (not (= y33 3)) (not r_C539_0))
-     (or (not (= y33 3)) r_C539_1)
-     (or (not (= y33 3)) (not r_C539_2))
-     (or (not (= y33 3)) r_C539_3)
-     (or (not (= y33 3)) (not r_C539_4))
-     (or (not (= y33 3)) r_C539_5)
-     (or (not (= y43 3)) (not r_C539_0))
-     (or (not (= y43 3)) r_C539_1)
-     (or (not (= y43 3)) (not r_C539_2))
-     (or (not (= y43 3)) r_C539_3)
-     (or (not (= y43 3)) r_C539_4)
-     (or (not (= y43 3)) (not r_C539_5))
-     (or (not (= y53 3)) (not r_C539_0))
-     (or (not (= y53 3)) r_C539_1)
-     (or (not (= y53 3)) (not r_C539_2))
-     (or (not (= y53 3)) r_C539_3)
-     (or (not (= y53 3)) r_C539_4)
-     (or (not (= y53 3)) r_C539_5)
-     (or (not (= y04 3)) (not r_C539_0))
-     (or (not (= y04 3)) r_C539_1)
-     (or (not (= y04 3)) r_C539_2)
-     (or (not (= y04 3)) (not r_C539_3))
-     (or (not (= y04 3)) (not r_C539_4))
-     (or (not (= y04 3)) (not r_C539_5))
-     (or (not (= y14 3)) (not r_C539_0))
-     (or (not (= y14 3)) r_C539_1)
-     (or (not (= y14 3)) r_C539_2)
-     (or (not (= y14 3)) (not r_C539_3))
-     (or (not (= y14 3)) (not r_C539_4))
-     (or (not (= y14 3)) r_C539_5)
-     (or (not (= y24 3)) (not r_C539_0))
-     (or (not (= y24 3)) r_C539_1)
-     (or (not (= y24 3)) r_C539_2)
-     (or (not (= y24 3)) (not r_C539_3))
-     (or (not (= y24 3)) r_C539_4)
-     (or (not (= y24 3)) (not r_C539_5))
-     (or (not (= y34 3)) (not r_C539_0))
-     (or (not (= y34 3)) r_C539_1)
-     (or (not (= y34 3)) r_C539_2)
-     (or (not (= y34 3)) (not r_C539_3))
-     (or (not (= y34 3)) r_C539_4)
-     (or (not (= y34 3)) r_C539_5)
-     (or (not (= y44 3)) (not r_C539_0))
-     (or (not (= y44 3)) r_C539_1)
-     (or (not (= y44 3)) r_C539_2)
-     (or (not (= y44 3)) r_C539_3)
-     (or (not (= y44 3)) (not r_C539_4))
-     (or (not (= y44 3)) (not r_C539_5))
-     (or (not (= y54 3)) (not r_C539_0))
-     (or (not (= y54 3)) r_C539_1)
-     (or (not (= y54 3)) r_C539_2)
-     (or (not (= y54 3)) r_C539_3)
-     (or (not (= y54 3)) (not r_C539_4))
-     (or (not (= y54 3)) r_C539_5)
-     (or (not (= y05 3)) (not r_C539_0))
-     (or (not (= y05 3)) r_C539_1)
-     (or (not (= y05 3)) r_C539_2)
-     (or (not (= y05 3)) r_C539_3)
-     (or (not (= y05 3)) r_C539_4)
-     (or (not (= y05 3)) (not r_C539_5))
-     (or (not (= y15 3)) (not r_C539_0))
-     (or (not (= y15 3)) r_C539_1)
-     (or (not (= y15 3)) r_C539_2)
-     (or (not (= y15 3)) r_C539_3)
-     (or (not (= y15 3)) r_C539_4)
-     (or (not (= y15 3)) r_C539_5)
-     (or (not (= y25 3)) r_C539_0)
-     (or (not (= y25 3)) (not r_C539_1))
-     (or (not (= y25 3)) (not r_C539_2))
-     (or (not (= y25 3)) (not r_C539_3))
-     (or (not (= y25 3)) (not r_C539_4))
-     (or (not (= y25 3)) (not r_C539_5))
-     (or (not (= y35 3)) r_C539_0)
-     (or (not (= y35 3)) (not r_C539_1))
-     (or (not (= y35 3)) (not r_C539_2))
-     (or (not (= y35 3)) (not r_C539_3))
-     (or (not (= y35 3)) (not r_C539_4))
-     (or (not (= y35 3)) r_C539_5)
-     (or (not (= y45 3)) r_C539_0)
-     (or (not (= y45 3)) (not r_C539_1))
-     (or (not (= y45 3)) (not r_C539_2))
-     (or (not (= y45 3)) (not r_C539_3))
-     (or (not (= y45 3)) r_C539_4)
-     (or (not (= y45 3)) (not r_C539_5))
-     (or (not (= y55 3)) r_C539_0)
-     (or (not (= y55 3)) (not r_C539_1))
-     (or (not (= y55 3)) (not r_C539_2))
-     (or (not (= y55 3)) (not r_C539_3))
-     (or (not (= y55 3)) r_C539_4)
-     (or (not (= y55 3)) r_C539_5)
-     (or (not (= y06 3)) r_C539_0)
-     (or (not (= y06 3)) (not r_C539_1))
-     (or (not (= y06 3)) (not r_C539_2))
-     (or (not (= y06 3)) r_C539_3)
-     (or (not (= y06 3)) (not r_C539_4))
-     (or (not (= y06 3)) (not r_C539_5))
-     (or (not (= y16 3)) r_C539_0)
-     (or (not (= y16 3)) (not r_C539_1))
-     (or (not (= y16 3)) (not r_C539_2))
-     (or (not (= y16 3)) r_C539_3)
-     (or (not (= y16 3)) (not r_C539_4))
-     (or (not (= y16 3)) r_C539_5)
-     (or (not (= y26 3)) r_C539_0)
-     (or (not (= y26 3)) (not r_C539_1))
-     (or (not (= y26 3)) (not r_C539_2))
-     (or (not (= y26 3)) r_C539_3)
-     (or (not (= y26 3)) r_C539_4)
-     (or (not (= y26 3)) (not r_C539_5))
-     (or (not (= y36 3)) r_C539_0)
-     (or (not (= y36 3)) (not r_C539_1))
-     (or (not (= y36 3)) (not r_C539_2))
-     (or (not (= y36 3)) r_C539_3)
-     (or (not (= y36 3)) r_C539_4)
-     (or (not (= y36 3)) r_C539_5)
-     (or (not (= y46 3)) r_C539_0)
-     (or (not (= y46 3)) (not r_C539_1))
-     (or (not (= y46 3)) r_C539_2)
-     (or (not (= y46 3)) (not r_C539_3))
-     (or (not (= y46 3)) (not r_C539_4))
-     (or (not (= y46 3)) (not r_C539_5))
-     (or (not (= y56 3)) r_C539_0)
-     (or (not (= y56 3)) (not r_C539_1))
-     (or (not (= y56 3)) r_C539_2)
-     (or (not (= y56 3)) (not r_C539_3))
-     (or (not (= y56 3)) (not r_C539_4))
-     (or (not (= y56 3)) r_C539_5)
-     (or (not (= y07 3)) r_C539_0)
-     (or (not (= y07 3)) (not r_C539_1))
-     (or (not (= y07 3)) r_C539_2)
-     (or (not (= y07 3)) (not r_C539_3))
-     (or (not (= y07 3)) r_C539_4)
-     (or (not (= y07 3)) (not r_C539_5))
-     (or (not (= y17 3)) r_C539_0)
-     (or (not (= y17 3)) (not r_C539_1))
-     (or (not (= y17 3)) r_C539_2)
-     (or (not (= y17 3)) (not r_C539_3))
-     (or (not (= y17 3)) r_C539_4)
-     (or (not (= y17 3)) r_C539_5)
-     (or (not (= y27 3)) r_C539_0)
-     (or (not (= y27 3)) (not r_C539_1))
-     (or (not (= y27 3)) r_C539_2)
-     (or (not (= y27 3)) r_C539_3)
-     (or (not (= y27 3)) (not r_C539_4))
-     (or (not (= y27 3)) (not r_C539_5))
-     (or (not (= y37 3)) r_C539_0)
-     (or (not (= y37 3)) (not r_C539_1))
-     (or (not (= y37 3)) r_C539_2)
-     (or (not (= y37 3)) r_C539_3)
-     (or (not (= y37 3)) (not r_C539_4))
-     (or (not (= y37 3)) r_C539_5)
-     (or (not (= y47 3)) r_C539_0)
-     (or (not (= y47 3)) (not r_C539_1))
-     (or (not (= y47 3)) r_C539_2)
-     (or (not (= y47 3)) r_C539_3)
-     (or (not (= y47 3)) r_C539_4)
-     (or (not (= y47 3)) (not r_C539_5))
-     (or (not (= y57 3)) r_C539_0)
-     (or (not (= y57 3)) (not r_C539_1))
-     (or (not (= y57 3)) r_C539_2)
-     (or (not (= y57 3)) r_C539_3)
-     (or (not (= y57 3)) r_C539_4)
-     (or (not (= y57 3)) r_C539_5)
-     (or (not (= y08 3)) r_C539_0)
-     (or (not (= y08 3)) r_C539_1)
-     (or (not (= y08 3)) (not r_C539_2))
-     (or (not (= y08 3)) (not r_C539_3))
-     (or (not (= y08 3)) (not r_C539_4))
-     (or (not (= y08 3)) (not r_C539_5))
-     (or (not (= y18 3)) r_C539_0)
-     (or (not (= y18 3)) r_C539_1)
-     (or (not (= y18 3)) (not r_C539_2))
-     (or (not (= y18 3)) (not r_C539_3))
-     (or (not (= y18 3)) (not r_C539_4))
-     (or (not (= y18 3)) r_C539_5)
-     (or (not (= y28 3)) r_C539_0)
-     (or (not (= y28 3)) r_C539_1)
-     (or (not (= y28 3)) (not r_C539_2))
-     (or (not (= y28 3)) (not r_C539_3))
-     (or (not (= y28 3)) r_C539_4)
-     (or (not (= y28 3)) (not r_C539_5))
-     (or (not (= y38 3)) r_C539_0)
-     (or (not (= y38 3)) r_C539_1)
-     (or (not (= y38 3)) (not r_C539_2))
-     (or (not (= y38 3)) (not r_C539_3))
-     (or (not (= y38 3)) r_C539_4)
-     (or (not (= y38 3)) r_C539_5)
-     (or (not (= y48 3)) r_C539_0)
-     (or (not (= y48 3)) r_C539_1)
-     (or (not (= y48 3)) (not r_C539_2))
-     (or (not (= y48 3)) r_C539_3)
-     (or (not (= y48 3)) (not r_C539_4))
-     (or (not (= y48 3)) (not r_C539_5))
-     (or (not (= y58 3)) r_C539_0)
-     (or (not (= y58 3)) r_C539_1)
-     (or (not (= y58 3)) (not r_C539_2))
-     (or (not (= y58 3)) r_C539_3)
-     (or (not (= y58 3)) (not r_C539_4))
-     (or (not (= y58 3)) r_C539_5)
-     (or (not (= y09 3)) r_C539_0)
-     (or (not (= y09 3)) r_C539_1)
-     (or (not (= y09 3)) (not r_C539_2))
-     (or (not (= y09 3)) r_C539_3)
-     (or (not (= y09 3)) r_C539_4)
-     (or (not (= y09 3)) (not r_C539_5))
-     (or (not (= y19 3)) r_C539_0)
-     (or (not (= y19 3)) r_C539_1)
-     (or (not (= y19 3)) (not r_C539_2))
-     (or (not (= y19 3)) r_C539_3)
-     (or (not (= y19 3)) r_C539_4)
-     (or (not (= y19 3)) r_C539_5)
-     (or (not (= y29 3)) r_C539_0)
-     (or (not (= y29 3)) r_C539_1)
-     (or (not (= y29 3)) r_C539_2)
-     (or (not (= y29 3)) (not r_C539_3))
-     (or (not (= y29 3)) (not r_C539_4))
-     (or (not (= y29 3)) (not r_C539_5))
-     (or (not (= y39 3)) r_C539_0)
-     (or (not (= y39 3)) r_C539_1)
-     (or (not (= y39 3)) r_C539_2)
-     (or (not (= y39 3)) (not r_C539_3))
-     (or (not (= y39 3)) (not r_C539_4))
-     (or (not (= y39 3)) r_C539_5)
-     (or (not (= y49 3)) r_C539_0)
-     (or (not (= y49 3)) r_C539_1)
-     (or (not (= y49 3)) r_C539_2)
-     (or (not (= y49 3)) (not r_C539_3))
-     (or (not (= y49 3)) r_C539_4)
-     (or (not (= y49 3)) (not r_C539_5))
-     (or (not (= y59 3)) r_C539_0)
-     (or (not (= y59 3)) r_C539_1)
-     (or (not (= y59 3)) r_C539_2)
-     (or (not (= y59 3)) (not r_C539_3))
-     (or (not (= y59 3)) r_C539_4)
-     (or (not (= y59 3)) r_C539_5)))
-(assert (and (or (= x00 4)
-         (= x10 4)
-         (= x20 4)
-         (= x30 4)
-         (= x40 4)
-         (= x50 4)
-         (= x01 4)
-         (= x11 4)
-         (= x21 4)
-         (= x31 4)
-         (= x41 4)
-         (= x51 4)
-         (= x02 4)
-         (= x12 4)
-         (= x22 4)
-         (= x32 4)
-         (= x42 4)
-         (= x52 4)
-         (= x03 4)
-         (= x13 4)
-         (= x23 4)
-         (= x33 4)
-         (= x43 4)
-         (= x53 4)
-         (= x04 4)
-         (= x14 4)
-         (= x24 4)
-         (= x34 4)
-         (= x44 4)
-         (= x54 4)
-         (= x05 4)
-         (= x15 4)
-         (= x25 4)
-         (= x35 4)
-         (= x45 4)
-         (= x55 4)
-         (= x06 4)
-         (= x16 4)
-         (= x26 4)
-         (= x36 4)
-         (= x46 4)
-         (= x56 4)
-         (= x07 4)
-         (= x17 4)
-         (= x27 4)
-         (= x37 4)
-         (= x47 4)
-         (= x57 4)
-         (= x08 4)
-         (= x18 4)
-         (= x28 4)
-         (= x38 4)
-         (= x48 4)
-         (= x58 4)
-         (= x09 4)
-         (= x19 4)
-         (= x29 4)
-         (= x39 4)
-         (= x49 4)
-         (= x59 4))
-     (or (not (= x00 4)) (not r_B549_0))
-     (or (not (= x00 4)) (not r_B549_1))
-     (or (not (= x00 4)) (not r_B549_2))
-     (or (not (= x00 4)) (not r_B549_3))
-     (or (not (= x00 4)) (not r_B549_4))
-     (or (not (= x00 4)) (not r_B549_5))
-     (or (not (= x10 4)) (not r_B549_0))
-     (or (not (= x10 4)) (not r_B549_1))
-     (or (not (= x10 4)) (not r_B549_2))
-     (or (not (= x10 4)) (not r_B549_3))
-     (or (not (= x10 4)) (not r_B549_4))
-     (or (not (= x10 4)) r_B549_5)
-     (or (not (= x20 4)) (not r_B549_0))
-     (or (not (= x20 4)) (not r_B549_1))
-     (or (not (= x20 4)) (not r_B549_2))
-     (or (not (= x20 4)) (not r_B549_3))
-     (or (not (= x20 4)) r_B549_4)
-     (or (not (= x20 4)) (not r_B549_5))
-     (or (not (= x30 4)) (not r_B549_0))
-     (or (not (= x30 4)) (not r_B549_1))
-     (or (not (= x30 4)) (not r_B549_2))
-     (or (not (= x30 4)) (not r_B549_3))
-     (or (not (= x30 4)) r_B549_4)
-     (or (not (= x30 4)) r_B549_5)
-     (or (not (= x40 4)) (not r_B549_0))
-     (or (not (= x40 4)) (not r_B549_1))
-     (or (not (= x40 4)) (not r_B549_2))
-     (or (not (= x40 4)) r_B549_3)
-     (or (not (= x40 4)) (not r_B549_4))
-     (or (not (= x40 4)) (not r_B549_5))
-     (or (not (= x50 4)) (not r_B549_0))
-     (or (not (= x50 4)) (not r_B549_1))
-     (or (not (= x50 4)) (not r_B549_2))
-     (or (not (= x50 4)) r_B549_3)
-     (or (not (= x50 4)) (not r_B549_4))
-     (or (not (= x50 4)) r_B549_5)
-     (or (not (= x01 4)) (not r_B549_0))
-     (or (not (= x01 4)) (not r_B549_1))
-     (or (not (= x01 4)) (not r_B549_2))
-     (or (not (= x01 4)) r_B549_3)
-     (or (not (= x01 4)) r_B549_4)
-     (or (not (= x01 4)) (not r_B549_5))
-     (or (not (= x11 4)) (not r_B549_0))
-     (or (not (= x11 4)) (not r_B549_1))
-     (or (not (= x11 4)) (not r_B549_2))
-     (or (not (= x11 4)) r_B549_3)
-     (or (not (= x11 4)) r_B549_4)
-     (or (not (= x11 4)) r_B549_5)
-     (or (not (= x21 4)) (not r_B549_0))
-     (or (not (= x21 4)) (not r_B549_1))
-     (or (not (= x21 4)) r_B549_2)
-     (or (not (= x21 4)) (not r_B549_3))
-     (or (not (= x21 4)) (not r_B549_4))
-     (or (not (= x21 4)) (not r_B549_5))
-     (or (not (= x31 4)) (not r_B549_0))
-     (or (not (= x31 4)) (not r_B549_1))
-     (or (not (= x31 4)) r_B549_2)
-     (or (not (= x31 4)) (not r_B549_3))
-     (or (not (= x31 4)) (not r_B549_4))
-     (or (not (= x31 4)) r_B549_5)
-     (or (not (= x41 4)) (not r_B549_0))
-     (or (not (= x41 4)) (not r_B549_1))
-     (or (not (= x41 4)) r_B549_2)
-     (or (not (= x41 4)) (not r_B549_3))
-     (or (not (= x41 4)) r_B549_4)
-     (or (not (= x41 4)) (not r_B549_5))
-     (or (not (= x51 4)) (not r_B549_0))
-     (or (not (= x51 4)) (not r_B549_1))
-     (or (not (= x51 4)) r_B549_2)
-     (or (not (= x51 4)) (not r_B549_3))
-     (or (not (= x51 4)) r_B549_4)
-     (or (not (= x51 4)) r_B549_5)
-     (or (not (= x02 4)) (not r_B549_0))
-     (or (not (= x02 4)) (not r_B549_1))
-     (or (not (= x02 4)) r_B549_2)
-     (or (not (= x02 4)) r_B549_3)
-     (or (not (= x02 4)) (not r_B549_4))
-     (or (not (= x02 4)) (not r_B549_5))
-     (or (not (= x12 4)) (not r_B549_0))
-     (or (not (= x12 4)) (not r_B549_1))
-     (or (not (= x12 4)) r_B549_2)
-     (or (not (= x12 4)) r_B549_3)
-     (or (not (= x12 4)) (not r_B549_4))
-     (or (not (= x12 4)) r_B549_5)
-     (or (not (= x22 4)) (not r_B549_0))
-     (or (not (= x22 4)) (not r_B549_1))
-     (or (not (= x22 4)) r_B549_2)
-     (or (not (= x22 4)) r_B549_3)
-     (or (not (= x22 4)) r_B549_4)
-     (or (not (= x22 4)) (not r_B549_5))
-     (or (not (= x32 4)) (not r_B549_0))
-     (or (not (= x32 4)) (not r_B549_1))
-     (or (not (= x32 4)) r_B549_2)
-     (or (not (= x32 4)) r_B549_3)
-     (or (not (= x32 4)) r_B549_4)
-     (or (not (= x32 4)) r_B549_5)
-     (or (not (= x42 4)) (not r_B549_0))
-     (or (not (= x42 4)) r_B549_1)
-     (or (not (= x42 4)) (not r_B549_2))
-     (or (not (= x42 4)) (not r_B549_3))
-     (or (not (= x42 4)) (not r_B549_4))
-     (or (not (= x42 4)) (not r_B549_5))
-     (or (not (= x52 4)) (not r_B549_0))
-     (or (not (= x52 4)) r_B549_1)
-     (or (not (= x52 4)) (not r_B549_2))
-     (or (not (= x52 4)) (not r_B549_3))
-     (or (not (= x52 4)) (not r_B549_4))
-     (or (not (= x52 4)) r_B549_5)
-     (or (not (= x03 4)) (not r_B549_0))
-     (or (not (= x03 4)) r_B549_1)
-     (or (not (= x03 4)) (not r_B549_2))
-     (or (not (= x03 4)) (not r_B549_3))
-     (or (not (= x03 4)) r_B549_4)
-     (or (not (= x03 4)) (not r_B549_5))
-     (or (not (= x13 4)) (not r_B549_0))
-     (or (not (= x13 4)) r_B549_1)
-     (or (not (= x13 4)) (not r_B549_2))
-     (or (not (= x13 4)) (not r_B549_3))
-     (or (not (= x13 4)) r_B549_4)
-     (or (not (= x13 4)) r_B549_5)
-     (or (not (= x23 4)) (not r_B549_0))
-     (or (not (= x23 4)) r_B549_1)
-     (or (not (= x23 4)) (not r_B549_2))
-     (or (not (= x23 4)) r_B549_3)
-     (or (not (= x23 4)) (not r_B549_4))
-     (or (not (= x23 4)) (not r_B549_5))
-     (or (not (= x33 4)) (not r_B549_0))
-     (or (not (= x33 4)) r_B549_1)
-     (or (not (= x33 4)) (not r_B549_2))
-     (or (not (= x33 4)) r_B549_3)
-     (or (not (= x33 4)) (not r_B549_4))
-     (or (not (= x33 4)) r_B549_5)
-     (or (not (= x43 4)) (not r_B549_0))
-     (or (not (= x43 4)) r_B549_1)
-     (or (not (= x43 4)) (not r_B549_2))
-     (or (not (= x43 4)) r_B549_3)
-     (or (not (= x43 4)) r_B549_4)
-     (or (not (= x43 4)) (not r_B549_5))
-     (or (not (= x53 4)) (not r_B549_0))
-     (or (not (= x53 4)) r_B549_1)
-     (or (not (= x53 4)) (not r_B549_2))
-     (or (not (= x53 4)) r_B549_3)
-     (or (not (= x53 4)) r_B549_4)
-     (or (not (= x53 4)) r_B549_5)
-     (or (not (= x04 4)) (not r_B549_0))
-     (or (not (= x04 4)) r_B549_1)
-     (or (not (= x04 4)) r_B549_2)
-     (or (not (= x04 4)) (not r_B549_3))
-     (or (not (= x04 4)) (not r_B549_4))
-     (or (not (= x04 4)) (not r_B549_5))
-     (or (not (= x14 4)) (not r_B549_0))
-     (or (not (= x14 4)) r_B549_1)
-     (or (not (= x14 4)) r_B549_2)
-     (or (not (= x14 4)) (not r_B549_3))
-     (or (not (= x14 4)) (not r_B549_4))
-     (or (not (= x14 4)) r_B549_5)
-     (or (not (= x24 4)) (not r_B549_0))
-     (or (not (= x24 4)) r_B549_1)
-     (or (not (= x24 4)) r_B549_2)
-     (or (not (= x24 4)) (not r_B549_3))
-     (or (not (= x24 4)) r_B549_4)
-     (or (not (= x24 4)) (not r_B549_5))
-     (or (not (= x34 4)) (not r_B549_0))
-     (or (not (= x34 4)) r_B549_1)
-     (or (not (= x34 4)) r_B549_2)
-     (or (not (= x34 4)) (not r_B549_3))
-     (or (not (= x34 4)) r_B549_4)
-     (or (not (= x34 4)) r_B549_5)
-     (or (not (= x44 4)) (not r_B549_0))
-     (or (not (= x44 4)) r_B549_1)
-     (or (not (= x44 4)) r_B549_2)
-     (or (not (= x44 4)) r_B549_3)
-     (or (not (= x44 4)) (not r_B549_4))
-     (or (not (= x44 4)) (not r_B549_5))
-     (or (not (= x54 4)) (not r_B549_0))
-     (or (not (= x54 4)) r_B549_1)
-     (or (not (= x54 4)) r_B549_2)
-     (or (not (= x54 4)) r_B549_3)
-     (or (not (= x54 4)) (not r_B549_4))
-     (or (not (= x54 4)) r_B549_5)
-     (or (not (= x05 4)) (not r_B549_0))
-     (or (not (= x05 4)) r_B549_1)
-     (or (not (= x05 4)) r_B549_2)
-     (or (not (= x05 4)) r_B549_3)
-     (or (not (= x05 4)) r_B549_4)
-     (or (not (= x05 4)) (not r_B549_5))
-     (or (not (= x15 4)) (not r_B549_0))
-     (or (not (= x15 4)) r_B549_1)
-     (or (not (= x15 4)) r_B549_2)
-     (or (not (= x15 4)) r_B549_3)
-     (or (not (= x15 4)) r_B549_4)
-     (or (not (= x15 4)) r_B549_5)
-     (or (not (= x25 4)) r_B549_0)
-     (or (not (= x25 4)) (not r_B549_1))
-     (or (not (= x25 4)) (not r_B549_2))
-     (or (not (= x25 4)) (not r_B549_3))
-     (or (not (= x25 4)) (not r_B549_4))
-     (or (not (= x25 4)) (not r_B549_5))
-     (or (not (= x35 4)) r_B549_0)
-     (or (not (= x35 4)) (not r_B549_1))
-     (or (not (= x35 4)) (not r_B549_2))
-     (or (not (= x35 4)) (not r_B549_3))
-     (or (not (= x35 4)) (not r_B549_4))
-     (or (not (= x35 4)) r_B549_5)
-     (or (not (= x45 4)) r_B549_0)
-     (or (not (= x45 4)) (not r_B549_1))
-     (or (not (= x45 4)) (not r_B549_2))
-     (or (not (= x45 4)) (not r_B549_3))
-     (or (not (= x45 4)) r_B549_4)
-     (or (not (= x45 4)) (not r_B549_5))
-     (or (not (= x55 4)) r_B549_0)
-     (or (not (= x55 4)) (not r_B549_1))
-     (or (not (= x55 4)) (not r_B549_2))
-     (or (not (= x55 4)) (not r_B549_3))
-     (or (not (= x55 4)) r_B549_4)
-     (or (not (= x55 4)) r_B549_5)
-     (or (not (= x06 4)) r_B549_0)
-     (or (not (= x06 4)) (not r_B549_1))
-     (or (not (= x06 4)) (not r_B549_2))
-     (or (not (= x06 4)) r_B549_3)
-     (or (not (= x06 4)) (not r_B549_4))
-     (or (not (= x06 4)) (not r_B549_5))
-     (or (not (= x16 4)) r_B549_0)
-     (or (not (= x16 4)) (not r_B549_1))
-     (or (not (= x16 4)) (not r_B549_2))
-     (or (not (= x16 4)) r_B549_3)
-     (or (not (= x16 4)) (not r_B549_4))
-     (or (not (= x16 4)) r_B549_5)
-     (or (not (= x26 4)) r_B549_0)
-     (or (not (= x26 4)) (not r_B549_1))
-     (or (not (= x26 4)) (not r_B549_2))
-     (or (not (= x26 4)) r_B549_3)
-     (or (not (= x26 4)) r_B549_4)
-     (or (not (= x26 4)) (not r_B549_5))
-     (or (not (= x36 4)) r_B549_0)
-     (or (not (= x36 4)) (not r_B549_1))
-     (or (not (= x36 4)) (not r_B549_2))
-     (or (not (= x36 4)) r_B549_3)
-     (or (not (= x36 4)) r_B549_4)
-     (or (not (= x36 4)) r_B549_5)
-     (or (not (= x46 4)) r_B549_0)
-     (or (not (= x46 4)) (not r_B549_1))
-     (or (not (= x46 4)) r_B549_2)
-     (or (not (= x46 4)) (not r_B549_3))
-     (or (not (= x46 4)) (not r_B549_4))
-     (or (not (= x46 4)) (not r_B549_5))
-     (or (not (= x56 4)) r_B549_0)
-     (or (not (= x56 4)) (not r_B549_1))
-     (or (not (= x56 4)) r_B549_2)
-     (or (not (= x56 4)) (not r_B549_3))
-     (or (not (= x56 4)) (not r_B549_4))
-     (or (not (= x56 4)) r_B549_5)
-     (or (not (= x07 4)) r_B549_0)
-     (or (not (= x07 4)) (not r_B549_1))
-     (or (not (= x07 4)) r_B549_2)
-     (or (not (= x07 4)) (not r_B549_3))
-     (or (not (= x07 4)) r_B549_4)
-     (or (not (= x07 4)) (not r_B549_5))
-     (or (not (= x17 4)) r_B549_0)
-     (or (not (= x17 4)) (not r_B549_1))
-     (or (not (= x17 4)) r_B549_2)
-     (or (not (= x17 4)) (not r_B549_3))
-     (or (not (= x17 4)) r_B549_4)
-     (or (not (= x17 4)) r_B549_5)
-     (or (not (= x27 4)) r_B549_0)
-     (or (not (= x27 4)) (not r_B549_1))
-     (or (not (= x27 4)) r_B549_2)
-     (or (not (= x27 4)) r_B549_3)
-     (or (not (= x27 4)) (not r_B549_4))
-     (or (not (= x27 4)) (not r_B549_5))
-     (or (not (= x37 4)) r_B549_0)
-     (or (not (= x37 4)) (not r_B549_1))
-     (or (not (= x37 4)) r_B549_2)
-     (or (not (= x37 4)) r_B549_3)
-     (or (not (= x37 4)) (not r_B549_4))
-     (or (not (= x37 4)) r_B549_5)
-     (or (not (= x47 4)) r_B549_0)
-     (or (not (= x47 4)) (not r_B549_1))
-     (or (not (= x47 4)) r_B549_2)
-     (or (not (= x47 4)) r_B549_3)
-     (or (not (= x47 4)) r_B549_4)
-     (or (not (= x47 4)) (not r_B549_5))
-     (or (not (= x57 4)) r_B549_0)
-     (or (not (= x57 4)) (not r_B549_1))
-     (or (not (= x57 4)) r_B549_2)
-     (or (not (= x57 4)) r_B549_3)
-     (or (not (= x57 4)) r_B549_4)
-     (or (not (= x57 4)) r_B549_5)
-     (or (not (= x08 4)) r_B549_0)
-     (or (not (= x08 4)) r_B549_1)
-     (or (not (= x08 4)) (not r_B549_2))
-     (or (not (= x08 4)) (not r_B549_3))
-     (or (not (= x08 4)) (not r_B549_4))
-     (or (not (= x08 4)) (not r_B549_5))
-     (or (not (= x18 4)) r_B549_0)
-     (or (not (= x18 4)) r_B549_1)
-     (or (not (= x18 4)) (not r_B549_2))
-     (or (not (= x18 4)) (not r_B549_3))
-     (or (not (= x18 4)) (not r_B549_4))
-     (or (not (= x18 4)) r_B549_5)
-     (or (not (= x28 4)) r_B549_0)
-     (or (not (= x28 4)) r_B549_1)
-     (or (not (= x28 4)) (not r_B549_2))
-     (or (not (= x28 4)) (not r_B549_3))
-     (or (not (= x28 4)) r_B549_4)
-     (or (not (= x28 4)) (not r_B549_5))
-     (or (not (= x38 4)) r_B549_0)
-     (or (not (= x38 4)) r_B549_1)
-     (or (not (= x38 4)) (not r_B549_2))
-     (or (not (= x38 4)) (not r_B549_3))
-     (or (not (= x38 4)) r_B549_4)
-     (or (not (= x38 4)) r_B549_5)
-     (or (not (= x48 4)) r_B549_0)
-     (or (not (= x48 4)) r_B549_1)
-     (or (not (= x48 4)) (not r_B549_2))
-     (or (not (= x48 4)) r_B549_3)
-     (or (not (= x48 4)) (not r_B549_4))
-     (or (not (= x48 4)) (not r_B549_5))
-     (or (not (= x58 4)) r_B549_0)
-     (or (not (= x58 4)) r_B549_1)
-     (or (not (= x58 4)) (not r_B549_2))
-     (or (not (= x58 4)) r_B549_3)
-     (or (not (= x58 4)) (not r_B549_4))
-     (or (not (= x58 4)) r_B549_5)
-     (or (not (= x09 4)) r_B549_0)
-     (or (not (= x09 4)) r_B549_1)
-     (or (not (= x09 4)) (not r_B549_2))
-     (or (not (= x09 4)) r_B549_3)
-     (or (not (= x09 4)) r_B549_4)
-     (or (not (= x09 4)) (not r_B549_5))
-     (or (not (= x19 4)) r_B549_0)
-     (or (not (= x19 4)) r_B549_1)
-     (or (not (= x19 4)) (not r_B549_2))
-     (or (not (= x19 4)) r_B549_3)
-     (or (not (= x19 4)) r_B549_4)
-     (or (not (= x19 4)) r_B549_5)
-     (or (not (= x29 4)) r_B549_0)
-     (or (not (= x29 4)) r_B549_1)
-     (or (not (= x29 4)) r_B549_2)
-     (or (not (= x29 4)) (not r_B549_3))
-     (or (not (= x29 4)) (not r_B549_4))
-     (or (not (= x29 4)) (not r_B549_5))
-     (or (not (= x39 4)) r_B549_0)
-     (or (not (= x39 4)) r_B549_1)
-     (or (not (= x39 4)) r_B549_2)
-     (or (not (= x39 4)) (not r_B549_3))
-     (or (not (= x39 4)) (not r_B549_4))
-     (or (not (= x39 4)) r_B549_5)
-     (or (not (= x49 4)) r_B549_0)
-     (or (not (= x49 4)) r_B549_1)
-     (or (not (= x49 4)) r_B549_2)
-     (or (not (= x49 4)) (not r_B549_3))
-     (or (not (= x49 4)) r_B549_4)
-     (or (not (= x49 4)) (not r_B549_5))
-     (or (not (= x59 4)) r_B549_0)
-     (or (not (= x59 4)) r_B549_1)
-     (or (not (= x59 4)) r_B549_2)
-     (or (not (= x59 4)) (not r_B549_3))
-     (or (not (= x59 4)) r_B549_4)
-     (or (not (= x59 4)) r_B549_5)))
-(assert (and (or (= y00 4)
-         (= y10 4)
-         (= y20 4)
-         (= y30 4)
-         (= y40 4)
-         (= y50 4)
-         (= y01 4)
-         (= y11 4)
-         (= y21 4)
-         (= y31 4)
-         (= y41 4)
-         (= y51 4)
-         (= y02 4)
-         (= y12 4)
-         (= y22 4)
-         (= y32 4)
-         (= y42 4)
-         (= y52 4)
-         (= y03 4)
-         (= y13 4)
-         (= y23 4)
-         (= y33 4)
-         (= y43 4)
-         (= y53 4)
-         (= y04 4)
-         (= y14 4)
-         (= y24 4)
-         (= y34 4)
-         (= y44 4)
-         (= y54 4)
-         (= y05 4)
-         (= y15 4)
-         (= y25 4)
-         (= y35 4)
-         (= y45 4)
-         (= y55 4)
-         (= y06 4)
-         (= y16 4)
-         (= y26 4)
-         (= y36 4)
-         (= y46 4)
-         (= y56 4)
-         (= y07 4)
-         (= y17 4)
-         (= y27 4)
-         (= y37 4)
-         (= y47 4)
-         (= y57 4)
-         (= y08 4)
-         (= y18 4)
-         (= y28 4)
-         (= y38 4)
-         (= y48 4)
-         (= y58 4)
-         (= y09 4)
-         (= y19 4)
-         (= y29 4)
-         (= y39 4)
-         (= y49 4)
-         (= y59 4))
-     (or (not (= y00 4)) (not r_C549_0))
-     (or (not (= y00 4)) (not r_C549_1))
-     (or (not (= y00 4)) (not r_C549_2))
-     (or (not (= y00 4)) (not r_C549_3))
-     (or (not (= y00 4)) (not r_C549_4))
-     (or (not (= y00 4)) (not r_C549_5))
-     (or (not (= y10 4)) (not r_C549_0))
-     (or (not (= y10 4)) (not r_C549_1))
-     (or (not (= y10 4)) (not r_C549_2))
-     (or (not (= y10 4)) (not r_C549_3))
-     (or (not (= y10 4)) (not r_C549_4))
-     (or (not (= y10 4)) r_C549_5)
-     (or (not (= y20 4)) (not r_C549_0))
-     (or (not (= y20 4)) (not r_C549_1))
-     (or (not (= y20 4)) (not r_C549_2))
-     (or (not (= y20 4)) (not r_C549_3))
-     (or (not (= y20 4)) r_C549_4)
-     (or (not (= y20 4)) (not r_C549_5))
-     (or (not (= y30 4)) (not r_C549_0))
-     (or (not (= y30 4)) (not r_C549_1))
-     (or (not (= y30 4)) (not r_C549_2))
-     (or (not (= y30 4)) (not r_C549_3))
-     (or (not (= y30 4)) r_C549_4)
-     (or (not (= y30 4)) r_C549_5)
-     (or (not (= y40 4)) (not r_C549_0))
-     (or (not (= y40 4)) (not r_C549_1))
-     (or (not (= y40 4)) (not r_C549_2))
-     (or (not (= y40 4)) r_C549_3)
-     (or (not (= y40 4)) (not r_C549_4))
-     (or (not (= y40 4)) (not r_C549_5))
-     (or (not (= y50 4)) (not r_C549_0))
-     (or (not (= y50 4)) (not r_C549_1))
-     (or (not (= y50 4)) (not r_C549_2))
-     (or (not (= y50 4)) r_C549_3)
-     (or (not (= y50 4)) (not r_C549_4))
-     (or (not (= y50 4)) r_C549_5)
-     (or (not (= y01 4)) (not r_C549_0))
-     (or (not (= y01 4)) (not r_C549_1))
-     (or (not (= y01 4)) (not r_C549_2))
-     (or (not (= y01 4)) r_C549_3)
-     (or (not (= y01 4)) r_C549_4)
-     (or (not (= y01 4)) (not r_C549_5))
-     (or (not (= y11 4)) (not r_C549_0))
-     (or (not (= y11 4)) (not r_C549_1))
-     (or (not (= y11 4)) (not r_C549_2))
-     (or (not (= y11 4)) r_C549_3)
-     (or (not (= y11 4)) r_C549_4)
-     (or (not (= y11 4)) r_C549_5)
-     (or (not (= y21 4)) (not r_C549_0))
-     (or (not (= y21 4)) (not r_C549_1))
-     (or (not (= y21 4)) r_C549_2)
-     (or (not (= y21 4)) (not r_C549_3))
-     (or (not (= y21 4)) (not r_C549_4))
-     (or (not (= y21 4)) (not r_C549_5))
-     (or (not (= y31 4)) (not r_C549_0))
-     (or (not (= y31 4)) (not r_C549_1))
-     (or (not (= y31 4)) r_C549_2)
-     (or (not (= y31 4)) (not r_C549_3))
-     (or (not (= y31 4)) (not r_C549_4))
-     (or (not (= y31 4)) r_C549_5)
-     (or (not (= y41 4)) (not r_C549_0))
-     (or (not (= y41 4)) (not r_C549_1))
-     (or (not (= y41 4)) r_C549_2)
-     (or (not (= y41 4)) (not r_C549_3))
-     (or (not (= y41 4)) r_C549_4)
-     (or (not (= y41 4)) (not r_C549_5))
-     (or (not (= y51 4)) (not r_C549_0))
-     (or (not (= y51 4)) (not r_C549_1))
-     (or (not (= y51 4)) r_C549_2)
-     (or (not (= y51 4)) (not r_C549_3))
-     (or (not (= y51 4)) r_C549_4)
-     (or (not (= y51 4)) r_C549_5)
-     (or (not (= y02 4)) (not r_C549_0))
-     (or (not (= y02 4)) (not r_C549_1))
-     (or (not (= y02 4)) r_C549_2)
-     (or (not (= y02 4)) r_C549_3)
-     (or (not (= y02 4)) (not r_C549_4))
-     (or (not (= y02 4)) (not r_C549_5))
-     (or (not (= y12 4)) (not r_C549_0))
-     (or (not (= y12 4)) (not r_C549_1))
-     (or (not (= y12 4)) r_C549_2)
-     (or (not (= y12 4)) r_C549_3)
-     (or (not (= y12 4)) (not r_C549_4))
-     (or (not (= y12 4)) r_C549_5)
-     (or (not (= y22 4)) (not r_C549_0))
-     (or (not (= y22 4)) (not r_C549_1))
-     (or (not (= y22 4)) r_C549_2)
-     (or (not (= y22 4)) r_C549_3)
-     (or (not (= y22 4)) r_C549_4)
-     (or (not (= y22 4)) (not r_C549_5))
-     (or (not (= y32 4)) (not r_C549_0))
-     (or (not (= y32 4)) (not r_C549_1))
-     (or (not (= y32 4)) r_C549_2)
-     (or (not (= y32 4)) r_C549_3)
-     (or (not (= y32 4)) r_C549_4)
-     (or (not (= y32 4)) r_C549_5)
-     (or (not (= y42 4)) (not r_C549_0))
-     (or (not (= y42 4)) r_C549_1)
-     (or (not (= y42 4)) (not r_C549_2))
-     (or (not (= y42 4)) (not r_C549_3))
-     (or (not (= y42 4)) (not r_C549_4))
-     (or (not (= y42 4)) (not r_C549_5))
-     (or (not (= y52 4)) (not r_C549_0))
-     (or (not (= y52 4)) r_C549_1)
-     (or (not (= y52 4)) (not r_C549_2))
-     (or (not (= y52 4)) (not r_C549_3))
-     (or (not (= y52 4)) (not r_C549_4))
-     (or (not (= y52 4)) r_C549_5)
-     (or (not (= y03 4)) (not r_C549_0))
-     (or (not (= y03 4)) r_C549_1)
-     (or (not (= y03 4)) (not r_C549_2))
-     (or (not (= y03 4)) (not r_C549_3))
-     (or (not (= y03 4)) r_C549_4)
-     (or (not (= y03 4)) (not r_C549_5))
-     (or (not (= y13 4)) (not r_C549_0))
-     (or (not (= y13 4)) r_C549_1)
-     (or (not (= y13 4)) (not r_C549_2))
-     (or (not (= y13 4)) (not r_C549_3))
-     (or (not (= y13 4)) r_C549_4)
-     (or (not (= y13 4)) r_C549_5)
-     (or (not (= y23 4)) (not r_C549_0))
-     (or (not (= y23 4)) r_C549_1)
-     (or (not (= y23 4)) (not r_C549_2))
-     (or (not (= y23 4)) r_C549_3)
-     (or (not (= y23 4)) (not r_C549_4))
-     (or (not (= y23 4)) (not r_C549_5))
-     (or (not (= y33 4)) (not r_C549_0))
-     (or (not (= y33 4)) r_C549_1)
-     (or (not (= y33 4)) (not r_C549_2))
-     (or (not (= y33 4)) r_C549_3)
-     (or (not (= y33 4)) (not r_C549_4))
-     (or (not (= y33 4)) r_C549_5)
-     (or (not (= y43 4)) (not r_C549_0))
-     (or (not (= y43 4)) r_C549_1)
-     (or (not (= y43 4)) (not r_C549_2))
-     (or (not (= y43 4)) r_C549_3)
-     (or (not (= y43 4)) r_C549_4)
-     (or (not (= y43 4)) (not r_C549_5))
-     (or (not (= y53 4)) (not r_C549_0))
-     (or (not (= y53 4)) r_C549_1)
-     (or (not (= y53 4)) (not r_C549_2))
-     (or (not (= y53 4)) r_C549_3)
-     (or (not (= y53 4)) r_C549_4)
-     (or (not (= y53 4)) r_C549_5)
-     (or (not (= y04 4)) (not r_C549_0))
-     (or (not (= y04 4)) r_C549_1)
-     (or (not (= y04 4)) r_C549_2)
-     (or (not (= y04 4)) (not r_C549_3))
-     (or (not (= y04 4)) (not r_C549_4))
-     (or (not (= y04 4)) (not r_C549_5))
-     (or (not (= y14 4)) (not r_C549_0))
-     (or (not (= y14 4)) r_C549_1)
-     (or (not (= y14 4)) r_C549_2)
-     (or (not (= y14 4)) (not r_C549_3))
-     (or (not (= y14 4)) (not r_C549_4))
-     (or (not (= y14 4)) r_C549_5)
-     (or (not (= y24 4)) (not r_C549_0))
-     (or (not (= y24 4)) r_C549_1)
-     (or (not (= y24 4)) r_C549_2)
-     (or (not (= y24 4)) (not r_C549_3))
-     (or (not (= y24 4)) r_C549_4)
-     (or (not (= y24 4)) (not r_C549_5))
-     (or (not (= y34 4)) (not r_C549_0))
-     (or (not (= y34 4)) r_C549_1)
-     (or (not (= y34 4)) r_C549_2)
-     (or (not (= y34 4)) (not r_C549_3))
-     (or (not (= y34 4)) r_C549_4)
-     (or (not (= y34 4)) r_C549_5)
-     (or (not (= y44 4)) (not r_C549_0))
-     (or (not (= y44 4)) r_C549_1)
-     (or (not (= y44 4)) r_C549_2)
-     (or (not (= y44 4)) r_C549_3)
-     (or (not (= y44 4)) (not r_C549_4))
-     (or (not (= y44 4)) (not r_C549_5))
-     (or (not (= y54 4)) (not r_C549_0))
-     (or (not (= y54 4)) r_C549_1)
-     (or (not (= y54 4)) r_C549_2)
-     (or (not (= y54 4)) r_C549_3)
-     (or (not (= y54 4)) (not r_C549_4))
-     (or (not (= y54 4)) r_C549_5)
-     (or (not (= y05 4)) (not r_C549_0))
-     (or (not (= y05 4)) r_C549_1)
-     (or (not (= y05 4)) r_C549_2)
-     (or (not (= y05 4)) r_C549_3)
-     (or (not (= y05 4)) r_C549_4)
-     (or (not (= y05 4)) (not r_C549_5))
-     (or (not (= y15 4)) (not r_C549_0))
-     (or (not (= y15 4)) r_C549_1)
-     (or (not (= y15 4)) r_C549_2)
-     (or (not (= y15 4)) r_C549_3)
-     (or (not (= y15 4)) r_C549_4)
-     (or (not (= y15 4)) r_C549_5)
-     (or (not (= y25 4)) r_C549_0)
-     (or (not (= y25 4)) (not r_C549_1))
-     (or (not (= y25 4)) (not r_C549_2))
-     (or (not (= y25 4)) (not r_C549_3))
-     (or (not (= y25 4)) (not r_C549_4))
-     (or (not (= y25 4)) (not r_C549_5))
-     (or (not (= y35 4)) r_C549_0)
-     (or (not (= y35 4)) (not r_C549_1))
-     (or (not (= y35 4)) (not r_C549_2))
-     (or (not (= y35 4)) (not r_C549_3))
-     (or (not (= y35 4)) (not r_C549_4))
-     (or (not (= y35 4)) r_C549_5)
-     (or (not (= y45 4)) r_C549_0)
-     (or (not (= y45 4)) (not r_C549_1))
-     (or (not (= y45 4)) (not r_C549_2))
-     (or (not (= y45 4)) (not r_C549_3))
-     (or (not (= y45 4)) r_C549_4)
-     (or (not (= y45 4)) (not r_C549_5))
-     (or (not (= y55 4)) r_C549_0)
-     (or (not (= y55 4)) (not r_C549_1))
-     (or (not (= y55 4)) (not r_C549_2))
-     (or (not (= y55 4)) (not r_C549_3))
-     (or (not (= y55 4)) r_C549_4)
-     (or (not (= y55 4)) r_C549_5)
-     (or (not (= y06 4)) r_C549_0)
-     (or (not (= y06 4)) (not r_C549_1))
-     (or (not (= y06 4)) (not r_C549_2))
-     (or (not (= y06 4)) r_C549_3)
-     (or (not (= y06 4)) (not r_C549_4))
-     (or (not (= y06 4)) (not r_C549_5))
-     (or (not (= y16 4)) r_C549_0)
-     (or (not (= y16 4)) (not r_C549_1))
-     (or (not (= y16 4)) (not r_C549_2))
-     (or (not (= y16 4)) r_C549_3)
-     (or (not (= y16 4)) (not r_C549_4))
-     (or (not (= y16 4)) r_C549_5)
-     (or (not (= y26 4)) r_C549_0)
-     (or (not (= y26 4)) (not r_C549_1))
-     (or (not (= y26 4)) (not r_C549_2))
-     (or (not (= y26 4)) r_C549_3)
-     (or (not (= y26 4)) r_C549_4)
-     (or (not (= y26 4)) (not r_C549_5))
-     (or (not (= y36 4)) r_C549_0)
-     (or (not (= y36 4)) (not r_C549_1))
-     (or (not (= y36 4)) (not r_C549_2))
-     (or (not (= y36 4)) r_C549_3)
-     (or (not (= y36 4)) r_C549_4)
-     (or (not (= y36 4)) r_C549_5)
-     (or (not (= y46 4)) r_C549_0)
-     (or (not (= y46 4)) (not r_C549_1))
-     (or (not (= y46 4)) r_C549_2)
-     (or (not (= y46 4)) (not r_C549_3))
-     (or (not (= y46 4)) (not r_C549_4))
-     (or (not (= y46 4)) (not r_C549_5))
-     (or (not (= y56 4)) r_C549_0)
-     (or (not (= y56 4)) (not r_C549_1))
-     (or (not (= y56 4)) r_C549_2)
-     (or (not (= y56 4)) (not r_C549_3))
-     (or (not (= y56 4)) (not r_C549_4))
-     (or (not (= y56 4)) r_C549_5)
-     (or (not (= y07 4)) r_C549_0)
-     (or (not (= y07 4)) (not r_C549_1))
-     (or (not (= y07 4)) r_C549_2)
-     (or (not (= y07 4)) (not r_C549_3))
-     (or (not (= y07 4)) r_C549_4)
-     (or (not (= y07 4)) (not r_C549_5))
-     (or (not (= y17 4)) r_C549_0)
-     (or (not (= y17 4)) (not r_C549_1))
-     (or (not (= y17 4)) r_C549_2)
-     (or (not (= y17 4)) (not r_C549_3))
-     (or (not (= y17 4)) r_C549_4)
-     (or (not (= y17 4)) r_C549_5)
-     (or (not (= y27 4)) r_C549_0)
-     (or (not (= y27 4)) (not r_C549_1))
-     (or (not (= y27 4)) r_C549_2)
-     (or (not (= y27 4)) r_C549_3)
-     (or (not (= y27 4)) (not r_C549_4))
-     (or (not (= y27 4)) (not r_C549_5))
-     (or (not (= y37 4)) r_C549_0)
-     (or (not (= y37 4)) (not r_C549_1))
-     (or (not (= y37 4)) r_C549_2)
-     (or (not (= y37 4)) r_C549_3)
-     (or (not (= y37 4)) (not r_C549_4))
-     (or (not (= y37 4)) r_C549_5)
-     (or (not (= y47 4)) r_C549_0)
-     (or (not (= y47 4)) (not r_C549_1))
-     (or (not (= y47 4)) r_C549_2)
-     (or (not (= y47 4)) r_C549_3)
-     (or (not (= y47 4)) r_C549_4)
-     (or (not (= y47 4)) (not r_C549_5))
-     (or (not (= y57 4)) r_C549_0)
-     (or (not (= y57 4)) (not r_C549_1))
-     (or (not (= y57 4)) r_C549_2)
-     (or (not (= y57 4)) r_C549_3)
-     (or (not (= y57 4)) r_C549_4)
-     (or (not (= y57 4)) r_C549_5)
-     (or (not (= y08 4)) r_C549_0)
-     (or (not (= y08 4)) r_C549_1)
-     (or (not (= y08 4)) (not r_C549_2))
-     (or (not (= y08 4)) (not r_C549_3))
-     (or (not (= y08 4)) (not r_C549_4))
-     (or (not (= y08 4)) (not r_C549_5))
-     (or (not (= y18 4)) r_C549_0)
-     (or (not (= y18 4)) r_C549_1)
-     (or (not (= y18 4)) (not r_C549_2))
-     (or (not (= y18 4)) (not r_C549_3))
-     (or (not (= y18 4)) (not r_C549_4))
-     (or (not (= y18 4)) r_C549_5)
-     (or (not (= y28 4)) r_C549_0)
-     (or (not (= y28 4)) r_C549_1)
-     (or (not (= y28 4)) (not r_C549_2))
-     (or (not (= y28 4)) (not r_C549_3))
-     (or (not (= y28 4)) r_C549_4)
-     (or (not (= y28 4)) (not r_C549_5))
-     (or (not (= y38 4)) r_C549_0)
-     (or (not (= y38 4)) r_C549_1)
-     (or (not (= y38 4)) (not r_C549_2))
-     (or (not (= y38 4)) (not r_C549_3))
-     (or (not (= y38 4)) r_C549_4)
-     (or (not (= y38 4)) r_C549_5)
-     (or (not (= y48 4)) r_C549_0)
-     (or (not (= y48 4)) r_C549_1)
-     (or (not (= y48 4)) (not r_C549_2))
-     (or (not (= y48 4)) r_C549_3)
-     (or (not (= y48 4)) (not r_C549_4))
-     (or (not (= y48 4)) (not r_C549_5))
-     (or (not (= y58 4)) r_C549_0)
-     (or (not (= y58 4)) r_C549_1)
-     (or (not (= y58 4)) (not r_C549_2))
-     (or (not (= y58 4)) r_C549_3)
-     (or (not (= y58 4)) (not r_C549_4))
-     (or (not (= y58 4)) r_C549_5)
-     (or (not (= y09 4)) r_C549_0)
-     (or (not (= y09 4)) r_C549_1)
-     (or (not (= y09 4)) (not r_C549_2))
-     (or (not (= y09 4)) r_C549_3)
-     (or (not (= y09 4)) r_C549_4)
-     (or (not (= y09 4)) (not r_C549_5))
-     (or (not (= y19 4)) r_C549_0)
-     (or (not (= y19 4)) r_C549_1)
-     (or (not (= y19 4)) (not r_C549_2))
-     (or (not (= y19 4)) r_C549_3)
-     (or (not (= y19 4)) r_C549_4)
-     (or (not (= y19 4)) r_C549_5)
-     (or (not (= y29 4)) r_C549_0)
-     (or (not (= y29 4)) r_C549_1)
-     (or (not (= y29 4)) r_C549_2)
-     (or (not (= y29 4)) (not r_C549_3))
-     (or (not (= y29 4)) (not r_C549_4))
-     (or (not (= y29 4)) (not r_C549_5))
-     (or (not (= y39 4)) r_C549_0)
-     (or (not (= y39 4)) r_C549_1)
-     (or (not (= y39 4)) r_C549_2)
-     (or (not (= y39 4)) (not r_C549_3))
-     (or (not (= y39 4)) (not r_C549_4))
-     (or (not (= y39 4)) r_C549_5)
-     (or (not (= y49 4)) r_C549_0)
-     (or (not (= y49 4)) r_C549_1)
-     (or (not (= y49 4)) r_C549_2)
-     (or (not (= y49 4)) (not r_C549_3))
-     (or (not (= y49 4)) r_C549_4)
-     (or (not (= y49 4)) (not r_C549_5))
-     (or (not (= y59 4)) r_C549_0)
-     (or (not (= y59 4)) r_C549_1)
-     (or (not (= y59 4)) r_C549_2)
-     (or (not (= y59 4)) (not r_C549_3))
-     (or (not (= y59 4)) r_C549_4)
-     (or (not (= y59 4)) r_C549_5)))
-(assert (and (or (= x00 5)
-         (= x10 5)
-         (= x20 5)
-         (= x30 5)
-         (= x40 5)
-         (= x50 5)
-         (= x01 5)
-         (= x11 5)
-         (= x21 5)
-         (= x31 5)
-         (= x41 5)
-         (= x51 5)
-         (= x02 5)
-         (= x12 5)
-         (= x22 5)
-         (= x32 5)
-         (= x42 5)
-         (= x52 5)
-         (= x03 5)
-         (= x13 5)
-         (= x23 5)
-         (= x33 5)
-         (= x43 5)
-         (= x53 5)
-         (= x04 5)
-         (= x14 5)
-         (= x24 5)
-         (= x34 5)
-         (= x44 5)
-         (= x54 5)
-         (= x05 5)
-         (= x15 5)
-         (= x25 5)
-         (= x35 5)
-         (= x45 5)
-         (= x55 5)
-         (= x06 5)
-         (= x16 5)
-         (= x26 5)
-         (= x36 5)
-         (= x46 5)
-         (= x56 5)
-         (= x07 5)
-         (= x17 5)
-         (= x27 5)
-         (= x37 5)
-         (= x47 5)
-         (= x57 5)
-         (= x08 5)
-         (= x18 5)
-         (= x28 5)
-         (= x38 5)
-         (= x48 5)
-         (= x58 5)
-         (= x09 5)
-         (= x19 5)
-         (= x29 5)
-         (= x39 5)
-         (= x49 5)
-         (= x59 5))
-     (or (not (= x00 5)) (not r_B559_0))
-     (or (not (= x00 5)) (not r_B559_1))
-     (or (not (= x00 5)) (not r_B559_2))
-     (or (not (= x00 5)) (not r_B559_3))
-     (or (not (= x00 5)) (not r_B559_4))
-     (or (not (= x00 5)) (not r_B559_5))
-     (or (not (= x10 5)) (not r_B559_0))
-     (or (not (= x10 5)) (not r_B559_1))
-     (or (not (= x10 5)) (not r_B559_2))
-     (or (not (= x10 5)) (not r_B559_3))
-     (or (not (= x10 5)) (not r_B559_4))
-     (or (not (= x10 5)) r_B559_5)
-     (or (not (= x20 5)) (not r_B559_0))
-     (or (not (= x20 5)) (not r_B559_1))
-     (or (not (= x20 5)) (not r_B559_2))
-     (or (not (= x20 5)) (not r_B559_3))
-     (or (not (= x20 5)) r_B559_4)
-     (or (not (= x20 5)) (not r_B559_5))
-     (or (not (= x30 5)) (not r_B559_0))
-     (or (not (= x30 5)) (not r_B559_1))
-     (or (not (= x30 5)) (not r_B559_2))
-     (or (not (= x30 5)) (not r_B559_3))
-     (or (not (= x30 5)) r_B559_4)
-     (or (not (= x30 5)) r_B559_5)
-     (or (not (= x40 5)) (not r_B559_0))
-     (or (not (= x40 5)) (not r_B559_1))
-     (or (not (= x40 5)) (not r_B559_2))
-     (or (not (= x40 5)) r_B559_3)
-     (or (not (= x40 5)) (not r_B559_4))
-     (or (not (= x40 5)) (not r_B559_5))
-     (or (not (= x50 5)) (not r_B559_0))
-     (or (not (= x50 5)) (not r_B559_1))
-     (or (not (= x50 5)) (not r_B559_2))
-     (or (not (= x50 5)) r_B559_3)
-     (or (not (= x50 5)) (not r_B559_4))
-     (or (not (= x50 5)) r_B559_5)
-     (or (not (= x01 5)) (not r_B559_0))
-     (or (not (= x01 5)) (not r_B559_1))
-     (or (not (= x01 5)) (not r_B559_2))
-     (or (not (= x01 5)) r_B559_3)
-     (or (not (= x01 5)) r_B559_4)
-     (or (not (= x01 5)) (not r_B559_5))
-     (or (not (= x11 5)) (not r_B559_0))
-     (or (not (= x11 5)) (not r_B559_1))
-     (or (not (= x11 5)) (not r_B559_2))
-     (or (not (= x11 5)) r_B559_3)
-     (or (not (= x11 5)) r_B559_4)
-     (or (not (= x11 5)) r_B559_5)
-     (or (not (= x21 5)) (not r_B559_0))
-     (or (not (= x21 5)) (not r_B559_1))
-     (or (not (= x21 5)) r_B559_2)
-     (or (not (= x21 5)) (not r_B559_3))
-     (or (not (= x21 5)) (not r_B559_4))
-     (or (not (= x21 5)) (not r_B559_5))
-     (or (not (= x31 5)) (not r_B559_0))
-     (or (not (= x31 5)) (not r_B559_1))
-     (or (not (= x31 5)) r_B559_2)
-     (or (not (= x31 5)) (not r_B559_3))
-     (or (not (= x31 5)) (not r_B559_4))
-     (or (not (= x31 5)) r_B559_5)
-     (or (not (= x41 5)) (not r_B559_0))
-     (or (not (= x41 5)) (not r_B559_1))
-     (or (not (= x41 5)) r_B559_2)
-     (or (not (= x41 5)) (not r_B559_3))
-     (or (not (= x41 5)) r_B559_4)
-     (or (not (= x41 5)) (not r_B559_5))
-     (or (not (= x51 5)) (not r_B559_0))
-     (or (not (= x51 5)) (not r_B559_1))
-     (or (not (= x51 5)) r_B559_2)
-     (or (not (= x51 5)) (not r_B559_3))
-     (or (not (= x51 5)) r_B559_4)
-     (or (not (= x51 5)) r_B559_5)
-     (or (not (= x02 5)) (not r_B559_0))
-     (or (not (= x02 5)) (not r_B559_1))
-     (or (not (= x02 5)) r_B559_2)
-     (or (not (= x02 5)) r_B559_3)
-     (or (not (= x02 5)) (not r_B559_4))
-     (or (not (= x02 5)) (not r_B559_5))
-     (or (not (= x12 5)) (not r_B559_0))
-     (or (not (= x12 5)) (not r_B559_1))
-     (or (not (= x12 5)) r_B559_2)
-     (or (not (= x12 5)) r_B559_3)
-     (or (not (= x12 5)) (not r_B559_4))
-     (or (not (= x12 5)) r_B559_5)
-     (or (not (= x22 5)) (not r_B559_0))
-     (or (not (= x22 5)) (not r_B559_1))
-     (or (not (= x22 5)) r_B559_2)
-     (or (not (= x22 5)) r_B559_3)
-     (or (not (= x22 5)) r_B559_4)
-     (or (not (= x22 5)) (not r_B559_5))
-     (or (not (= x32 5)) (not r_B559_0))
-     (or (not (= x32 5)) (not r_B559_1))
-     (or (not (= x32 5)) r_B559_2)
-     (or (not (= x32 5)) r_B559_3)
-     (or (not (= x32 5)) r_B559_4)
-     (or (not (= x32 5)) r_B559_5)
-     (or (not (= x42 5)) (not r_B559_0))
-     (or (not (= x42 5)) r_B559_1)
-     (or (not (= x42 5)) (not r_B559_2))
-     (or (not (= x42 5)) (not r_B559_3))
-     (or (not (= x42 5)) (not r_B559_4))
-     (or (not (= x42 5)) (not r_B559_5))
-     (or (not (= x52 5)) (not r_B559_0))
-     (or (not (= x52 5)) r_B559_1)
-     (or (not (= x52 5)) (not r_B559_2))
-     (or (not (= x52 5)) (not r_B559_3))
-     (or (not (= x52 5)) (not r_B559_4))
-     (or (not (= x52 5)) r_B559_5)
-     (or (not (= x03 5)) (not r_B559_0))
-     (or (not (= x03 5)) r_B559_1)
-     (or (not (= x03 5)) (not r_B559_2))
-     (or (not (= x03 5)) (not r_B559_3))
-     (or (not (= x03 5)) r_B559_4)
-     (or (not (= x03 5)) (not r_B559_5))
-     (or (not (= x13 5)) (not r_B559_0))
-     (or (not (= x13 5)) r_B559_1)
-     (or (not (= x13 5)) (not r_B559_2))
-     (or (not (= x13 5)) (not r_B559_3))
-     (or (not (= x13 5)) r_B559_4)
-     (or (not (= x13 5)) r_B559_5)
-     (or (not (= x23 5)) (not r_B559_0))
-     (or (not (= x23 5)) r_B559_1)
-     (or (not (= x23 5)) (not r_B559_2))
-     (or (not (= x23 5)) r_B559_3)
-     (or (not (= x23 5)) (not r_B559_4))
-     (or (not (= x23 5)) (not r_B559_5))
-     (or (not (= x33 5)) (not r_B559_0))
-     (or (not (= x33 5)) r_B559_1)
-     (or (not (= x33 5)) (not r_B559_2))
-     (or (not (= x33 5)) r_B559_3)
-     (or (not (= x33 5)) (not r_B559_4))
-     (or (not (= x33 5)) r_B559_5)
-     (or (not (= x43 5)) (not r_B559_0))
-     (or (not (= x43 5)) r_B559_1)
-     (or (not (= x43 5)) (not r_B559_2))
-     (or (not (= x43 5)) r_B559_3)
-     (or (not (= x43 5)) r_B559_4)
-     (or (not (= x43 5)) (not r_B559_5))
-     (or (not (= x53 5)) (not r_B559_0))
-     (or (not (= x53 5)) r_B559_1)
-     (or (not (= x53 5)) (not r_B559_2))
-     (or (not (= x53 5)) r_B559_3)
-     (or (not (= x53 5)) r_B559_4)
-     (or (not (= x53 5)) r_B559_5)
-     (or (not (= x04 5)) (not r_B559_0))
-     (or (not (= x04 5)) r_B559_1)
-     (or (not (= x04 5)) r_B559_2)
-     (or (not (= x04 5)) (not r_B559_3))
-     (or (not (= x04 5)) (not r_B559_4))
-     (or (not (= x04 5)) (not r_B559_5))
-     (or (not (= x14 5)) (not r_B559_0))
-     (or (not (= x14 5)) r_B559_1)
-     (or (not (= x14 5)) r_B559_2)
-     (or (not (= x14 5)) (not r_B559_3))
-     (or (not (= x14 5)) (not r_B559_4))
-     (or (not (= x14 5)) r_B559_5)
-     (or (not (= x24 5)) (not r_B559_0))
-     (or (not (= x24 5)) r_B559_1)
-     (or (not (= x24 5)) r_B559_2)
-     (or (not (= x24 5)) (not r_B559_3))
-     (or (not (= x24 5)) r_B559_4)
-     (or (not (= x24 5)) (not r_B559_5))
-     (or (not (= x34 5)) (not r_B559_0))
-     (or (not (= x34 5)) r_B559_1)
-     (or (not (= x34 5)) r_B559_2)
-     (or (not (= x34 5)) (not r_B559_3))
-     (or (not (= x34 5)) r_B559_4)
-     (or (not (= x34 5)) r_B559_5)
-     (or (not (= x44 5)) (not r_B559_0))
-     (or (not (= x44 5)) r_B559_1)
-     (or (not (= x44 5)) r_B559_2)
-     (or (not (= x44 5)) r_B559_3)
-     (or (not (= x44 5)) (not r_B559_4))
-     (or (not (= x44 5)) (not r_B559_5))
-     (or (not (= x54 5)) (not r_B559_0))
-     (or (not (= x54 5)) r_B559_1)
-     (or (not (= x54 5)) r_B559_2)
-     (or (not (= x54 5)) r_B559_3)
-     (or (not (= x54 5)) (not r_B559_4))
-     (or (not (= x54 5)) r_B559_5)
-     (or (not (= x05 5)) (not r_B559_0))
-     (or (not (= x05 5)) r_B559_1)
-     (or (not (= x05 5)) r_B559_2)
-     (or (not (= x05 5)) r_B559_3)
-     (or (not (= x05 5)) r_B559_4)
-     (or (not (= x05 5)) (not r_B559_5))
-     (or (not (= x15 5)) (not r_B559_0))
-     (or (not (= x15 5)) r_B559_1)
-     (or (not (= x15 5)) r_B559_2)
-     (or (not (= x15 5)) r_B559_3)
-     (or (not (= x15 5)) r_B559_4)
-     (or (not (= x15 5)) r_B559_5)
-     (or (not (= x25 5)) r_B559_0)
-     (or (not (= x25 5)) (not r_B559_1))
-     (or (not (= x25 5)) (not r_B559_2))
-     (or (not (= x25 5)) (not r_B559_3))
-     (or (not (= x25 5)) (not r_B559_4))
-     (or (not (= x25 5)) (not r_B559_5))
-     (or (not (= x35 5)) r_B559_0)
-     (or (not (= x35 5)) (not r_B559_1))
-     (or (not (= x35 5)) (not r_B559_2))
-     (or (not (= x35 5)) (not r_B559_3))
-     (or (not (= x35 5)) (not r_B559_4))
-     (or (not (= x35 5)) r_B559_5)
-     (or (not (= x45 5)) r_B559_0)
-     (or (not (= x45 5)) (not r_B559_1))
-     (or (not (= x45 5)) (not r_B559_2))
-     (or (not (= x45 5)) (not r_B559_3))
-     (or (not (= x45 5)) r_B559_4)
-     (or (not (= x45 5)) (not r_B559_5))
-     (or (not (= x55 5)) r_B559_0)
-     (or (not (= x55 5)) (not r_B559_1))
-     (or (not (= x55 5)) (not r_B559_2))
-     (or (not (= x55 5)) (not r_B559_3))
-     (or (not (= x55 5)) r_B559_4)
-     (or (not (= x55 5)) r_B559_5)
-     (or (not (= x06 5)) r_B559_0)
-     (or (not (= x06 5)) (not r_B559_1))
-     (or (not (= x06 5)) (not r_B559_2))
-     (or (not (= x06 5)) r_B559_3)
-     (or (not (= x06 5)) (not r_B559_4))
-     (or (not (= x06 5)) (not r_B559_5))
-     (or (not (= x16 5)) r_B559_0)
-     (or (not (= x16 5)) (not r_B559_1))
-     (or (not (= x16 5)) (not r_B559_2))
-     (or (not (= x16 5)) r_B559_3)
-     (or (not (= x16 5)) (not r_B559_4))
-     (or (not (= x16 5)) r_B559_5)
-     (or (not (= x26 5)) r_B559_0)
-     (or (not (= x26 5)) (not r_B559_1))
-     (or (not (= x26 5)) (not r_B559_2))
-     (or (not (= x26 5)) r_B559_3)
-     (or (not (= x26 5)) r_B559_4)
-     (or (not (= x26 5)) (not r_B559_5))
-     (or (not (= x36 5)) r_B559_0)
-     (or (not (= x36 5)) (not r_B559_1))
-     (or (not (= x36 5)) (not r_B559_2))
-     (or (not (= x36 5)) r_B559_3)
-     (or (not (= x36 5)) r_B559_4)
-     (or (not (= x36 5)) r_B559_5)
-     (or (not (= x46 5)) r_B559_0)
-     (or (not (= x46 5)) (not r_B559_1))
-     (or (not (= x46 5)) r_B559_2)
-     (or (not (= x46 5)) (not r_B559_3))
-     (or (not (= x46 5)) (not r_B559_4))
-     (or (not (= x46 5)) (not r_B559_5))
-     (or (not (= x56 5)) r_B559_0)
-     (or (not (= x56 5)) (not r_B559_1))
-     (or (not (= x56 5)) r_B559_2)
-     (or (not (= x56 5)) (not r_B559_3))
-     (or (not (= x56 5)) (not r_B559_4))
-     (or (not (= x56 5)) r_B559_5)
-     (or (not (= x07 5)) r_B559_0)
-     (or (not (= x07 5)) (not r_B559_1))
-     (or (not (= x07 5)) r_B559_2)
-     (or (not (= x07 5)) (not r_B559_3))
-     (or (not (= x07 5)) r_B559_4)
-     (or (not (= x07 5)) (not r_B559_5))
-     (or (not (= x17 5)) r_B559_0)
-     (or (not (= x17 5)) (not r_B559_1))
-     (or (not (= x17 5)) r_B559_2)
-     (or (not (= x17 5)) (not r_B559_3))
-     (or (not (= x17 5)) r_B559_4)
-     (or (not (= x17 5)) r_B559_5)
-     (or (not (= x27 5)) r_B559_0)
-     (or (not (= x27 5)) (not r_B559_1))
-     (or (not (= x27 5)) r_B559_2)
-     (or (not (= x27 5)) r_B559_3)
-     (or (not (= x27 5)) (not r_B559_4))
-     (or (not (= x27 5)) (not r_B559_5))
-     (or (not (= x37 5)) r_B559_0)
-     (or (not (= x37 5)) (not r_B559_1))
-     (or (not (= x37 5)) r_B559_2)
-     (or (not (= x37 5)) r_B559_3)
-     (or (not (= x37 5)) (not r_B559_4))
-     (or (not (= x37 5)) r_B559_5)
-     (or (not (= x47 5)) r_B559_0)
-     (or (not (= x47 5)) (not r_B559_1))
-     (or (not (= x47 5)) r_B559_2)
-     (or (not (= x47 5)) r_B559_3)
-     (or (not (= x47 5)) r_B559_4)
-     (or (not (= x47 5)) (not r_B559_5))
-     (or (not (= x57 5)) r_B559_0)
-     (or (not (= x57 5)) (not r_B559_1))
-     (or (not (= x57 5)) r_B559_2)
-     (or (not (= x57 5)) r_B559_3)
-     (or (not (= x57 5)) r_B559_4)
-     (or (not (= x57 5)) r_B559_5)
-     (or (not (= x08 5)) r_B559_0)
-     (or (not (= x08 5)) r_B559_1)
-     (or (not (= x08 5)) (not r_B559_2))
-     (or (not (= x08 5)) (not r_B559_3))
-     (or (not (= x08 5)) (not r_B559_4))
-     (or (not (= x08 5)) (not r_B559_5))
-     (or (not (= x18 5)) r_B559_0)
-     (or (not (= x18 5)) r_B559_1)
-     (or (not (= x18 5)) (not r_B559_2))
-     (or (not (= x18 5)) (not r_B559_3))
-     (or (not (= x18 5)) (not r_B559_4))
-     (or (not (= x18 5)) r_B559_5)
-     (or (not (= x28 5)) r_B559_0)
-     (or (not (= x28 5)) r_B559_1)
-     (or (not (= x28 5)) (not r_B559_2))
-     (or (not (= x28 5)) (not r_B559_3))
-     (or (not (= x28 5)) r_B559_4)
-     (or (not (= x28 5)) (not r_B559_5))
-     (or (not (= x38 5)) r_B559_0)
-     (or (not (= x38 5)) r_B559_1)
-     (or (not (= x38 5)) (not r_B559_2))
-     (or (not (= x38 5)) (not r_B559_3))
-     (or (not (= x38 5)) r_B559_4)
-     (or (not (= x38 5)) r_B559_5)
-     (or (not (= x48 5)) r_B559_0)
-     (or (not (= x48 5)) r_B559_1)
-     (or (not (= x48 5)) (not r_B559_2))
-     (or (not (= x48 5)) r_B559_3)
-     (or (not (= x48 5)) (not r_B559_4))
-     (or (not (= x48 5)) (not r_B559_5))
-     (or (not (= x58 5)) r_B559_0)
-     (or (not (= x58 5)) r_B559_1)
-     (or (not (= x58 5)) (not r_B559_2))
-     (or (not (= x58 5)) r_B559_3)
-     (or (not (= x58 5)) (not r_B559_4))
-     (or (not (= x58 5)) r_B559_5)
-     (or (not (= x09 5)) r_B559_0)
-     (or (not (= x09 5)) r_B559_1)
-     (or (not (= x09 5)) (not r_B559_2))
-     (or (not (= x09 5)) r_B559_3)
-     (or (not (= x09 5)) r_B559_4)
-     (or (not (= x09 5)) (not r_B559_5))
-     (or (not (= x19 5)) r_B559_0)
-     (or (not (= x19 5)) r_B559_1)
-     (or (not (= x19 5)) (not r_B559_2))
-     (or (not (= x19 5)) r_B559_3)
-     (or (not (= x19 5)) r_B559_4)
-     (or (not (= x19 5)) r_B559_5)
-     (or (not (= x29 5)) r_B559_0)
-     (or (not (= x29 5)) r_B559_1)
-     (or (not (= x29 5)) r_B559_2)
-     (or (not (= x29 5)) (not r_B559_3))
-     (or (not (= x29 5)) (not r_B559_4))
-     (or (not (= x29 5)) (not r_B559_5))
-     (or (not (= x39 5)) r_B559_0)
-     (or (not (= x39 5)) r_B559_1)
-     (or (not (= x39 5)) r_B559_2)
-     (or (not (= x39 5)) (not r_B559_3))
-     (or (not (= x39 5)) (not r_B559_4))
-     (or (not (= x39 5)) r_B559_5)
-     (or (not (= x49 5)) r_B559_0)
-     (or (not (= x49 5)) r_B559_1)
-     (or (not (= x49 5)) r_B559_2)
-     (or (not (= x49 5)) (not r_B559_3))
-     (or (not (= x49 5)) r_B559_4)
-     (or (not (= x49 5)) (not r_B559_5))
-     (or (not (= x59 5)) r_B559_0)
-     (or (not (= x59 5)) r_B559_1)
-     (or (not (= x59 5)) r_B559_2)
-     (or (not (= x59 5)) (not r_B559_3))
-     (or (not (= x59 5)) r_B559_4)
-     (or (not (= x59 5)) r_B559_5)))
-(assert (and (or (= y00 5)
-         (= y10 5)
-         (= y20 5)
-         (= y30 5)
-         (= y40 5)
-         (= y50 5)
-         (= y01 5)
-         (= y11 5)
-         (= y21 5)
-         (= y31 5)
-         (= y41 5)
-         (= y51 5)
-         (= y02 5)
-         (= y12 5)
-         (= y22 5)
-         (= y32 5)
-         (= y42 5)
-         (= y52 5)
-         (= y03 5)
-         (= y13 5)
-         (= y23 5)
-         (= y33 5)
-         (= y43 5)
-         (= y53 5)
-         (= y04 5)
-         (= y14 5)
-         (= y24 5)
-         (= y34 5)
-         (= y44 5)
-         (= y54 5)
-         (= y05 5)
-         (= y15 5)
-         (= y25 5)
-         (= y35 5)
-         (= y45 5)
-         (= y55 5)
-         (= y06 5)
-         (= y16 5)
-         (= y26 5)
-         (= y36 5)
-         (= y46 5)
-         (= y56 5)
-         (= y07 5)
-         (= y17 5)
-         (= y27 5)
-         (= y37 5)
-         (= y47 5)
-         (= y57 5)
-         (= y08 5)
-         (= y18 5)
-         (= y28 5)
-         (= y38 5)
-         (= y48 5)
-         (= y58 5)
-         (= y09 5)
-         (= y19 5)
-         (= y29 5)
-         (= y39 5)
-         (= y49 5)
-         (= y59 5))
-     (or (not (= y00 5)) (not r_C559_0))
-     (or (not (= y00 5)) (not r_C559_1))
-     (or (not (= y00 5)) (not r_C559_2))
-     (or (not (= y00 5)) (not r_C559_3))
-     (or (not (= y00 5)) (not r_C559_4))
-     (or (not (= y00 5)) (not r_C559_5))
-     (or (not (= y10 5)) (not r_C559_0))
-     (or (not (= y10 5)) (not r_C559_1))
-     (or (not (= y10 5)) (not r_C559_2))
-     (or (not (= y10 5)) (not r_C559_3))
-     (or (not (= y10 5)) (not r_C559_4))
-     (or (not (= y10 5)) r_C559_5)
-     (or (not (= y20 5)) (not r_C559_0))
-     (or (not (= y20 5)) (not r_C559_1))
-     (or (not (= y20 5)) (not r_C559_2))
-     (or (not (= y20 5)) (not r_C559_3))
-     (or (not (= y20 5)) r_C559_4)
-     (or (not (= y20 5)) (not r_C559_5))
-     (or (not (= y30 5)) (not r_C559_0))
-     (or (not (= y30 5)) (not r_C559_1))
-     (or (not (= y30 5)) (not r_C559_2))
-     (or (not (= y30 5)) (not r_C559_3))
-     (or (not (= y30 5)) r_C559_4)
-     (or (not (= y30 5)) r_C559_5)
-     (or (not (= y40 5)) (not r_C559_0))
-     (or (not (= y40 5)) (not r_C559_1))
-     (or (not (= y40 5)) (not r_C559_2))
-     (or (not (= y40 5)) r_C559_3)
-     (or (not (= y40 5)) (not r_C559_4))
-     (or (not (= y40 5)) (not r_C559_5))
-     (or (not (= y50 5)) (not r_C559_0))
-     (or (not (= y50 5)) (not r_C559_1))
-     (or (not (= y50 5)) (not r_C559_2))
-     (or (not (= y50 5)) r_C559_3)
-     (or (not (= y50 5)) (not r_C559_4))
-     (or (not (= y50 5)) r_C559_5)
-     (or (not (= y01 5)) (not r_C559_0))
-     (or (not (= y01 5)) (not r_C559_1))
-     (or (not (= y01 5)) (not r_C559_2))
-     (or (not (= y01 5)) r_C559_3)
-     (or (not (= y01 5)) r_C559_4)
-     (or (not (= y01 5)) (not r_C559_5))
-     (or (not (= y11 5)) (not r_C559_0))
-     (or (not (= y11 5)) (not r_C559_1))
-     (or (not (= y11 5)) (not r_C559_2))
-     (or (not (= y11 5)) r_C559_3)
-     (or (not (= y11 5)) r_C559_4)
-     (or (not (= y11 5)) r_C559_5)
-     (or (not (= y21 5)) (not r_C559_0))
-     (or (not (= y21 5)) (not r_C559_1))
-     (or (not (= y21 5)) r_C559_2)
-     (or (not (= y21 5)) (not r_C559_3))
-     (or (not (= y21 5)) (not r_C559_4))
-     (or (not (= y21 5)) (not r_C559_5))
-     (or (not (= y31 5)) (not r_C559_0))
-     (or (not (= y31 5)) (not r_C559_1))
-     (or (not (= y31 5)) r_C559_2)
-     (or (not (= y31 5)) (not r_C559_3))
-     (or (not (= y31 5)) (not r_C559_4))
-     (or (not (= y31 5)) r_C559_5)
-     (or (not (= y41 5)) (not r_C559_0))
-     (or (not (= y41 5)) (not r_C559_1))
-     (or (not (= y41 5)) r_C559_2)
-     (or (not (= y41 5)) (not r_C559_3))
-     (or (not (= y41 5)) r_C559_4)
-     (or (not (= y41 5)) (not r_C559_5))
-     (or (not (= y51 5)) (not r_C559_0))
-     (or (not (= y51 5)) (not r_C559_1))
-     (or (not (= y51 5)) r_C559_2)
-     (or (not (= y51 5)) (not r_C559_3))
-     (or (not (= y51 5)) r_C559_4)
-     (or (not (= y51 5)) r_C559_5)
-     (or (not (= y02 5)) (not r_C559_0))
-     (or (not (= y02 5)) (not r_C559_1))
-     (or (not (= y02 5)) r_C559_2)
-     (or (not (= y02 5)) r_C559_3)
-     (or (not (= y02 5)) (not r_C559_4))
-     (or (not (= y02 5)) (not r_C559_5))
-     (or (not (= y12 5)) (not r_C559_0))
-     (or (not (= y12 5)) (not r_C559_1))
-     (or (not (= y12 5)) r_C559_2)
-     (or (not (= y12 5)) r_C559_3)
-     (or (not (= y12 5)) (not r_C559_4))
-     (or (not (= y12 5)) r_C559_5)
-     (or (not (= y22 5)) (not r_C559_0))
-     (or (not (= y22 5)) (not r_C559_1))
-     (or (not (= y22 5)) r_C559_2)
-     (or (not (= y22 5)) r_C559_3)
-     (or (not (= y22 5)) r_C559_4)
-     (or (not (= y22 5)) (not r_C559_5))
-     (or (not (= y32 5)) (not r_C559_0))
-     (or (not (= y32 5)) (not r_C559_1))
-     (or (not (= y32 5)) r_C559_2)
-     (or (not (= y32 5)) r_C559_3)
-     (or (not (= y32 5)) r_C559_4)
-     (or (not (= y32 5)) r_C559_5)
-     (or (not (= y42 5)) (not r_C559_0))
-     (or (not (= y42 5)) r_C559_1)
-     (or (not (= y42 5)) (not r_C559_2))
-     (or (not (= y42 5)) (not r_C559_3))
-     (or (not (= y42 5)) (not r_C559_4))
-     (or (not (= y42 5)) (not r_C559_5))
-     (or (not (= y52 5)) (not r_C559_0))
-     (or (not (= y52 5)) r_C559_1)
-     (or (not (= y52 5)) (not r_C559_2))
-     (or (not (= y52 5)) (not r_C559_3))
-     (or (not (= y52 5)) (not r_C559_4))
-     (or (not (= y52 5)) r_C559_5)
-     (or (not (= y03 5)) (not r_C559_0))
-     (or (not (= y03 5)) r_C559_1)
-     (or (not (= y03 5)) (not r_C559_2))
-     (or (not (= y03 5)) (not r_C559_3))
-     (or (not (= y03 5)) r_C559_4)
-     (or (not (= y03 5)) (not r_C559_5))
-     (or (not (= y13 5)) (not r_C559_0))
-     (or (not (= y13 5)) r_C559_1)
-     (or (not (= y13 5)) (not r_C559_2))
-     (or (not (= y13 5)) (not r_C559_3))
-     (or (not (= y13 5)) r_C559_4)
-     (or (not (= y13 5)) r_C559_5)
-     (or (not (= y23 5)) (not r_C559_0))
-     (or (not (= y23 5)) r_C559_1)
-     (or (not (= y23 5)) (not r_C559_2))
-     (or (not (= y23 5)) r_C559_3)
-     (or (not (= y23 5)) (not r_C559_4))
-     (or (not (= y23 5)) (not r_C559_5))
-     (or (not (= y33 5)) (not r_C559_0))
-     (or (not (= y33 5)) r_C559_1)
-     (or (not (= y33 5)) (not r_C559_2))
-     (or (not (= y33 5)) r_C559_3)
-     (or (not (= y33 5)) (not r_C559_4))
-     (or (not (= y33 5)) r_C559_5)
-     (or (not (= y43 5)) (not r_C559_0))
-     (or (not (= y43 5)) r_C559_1)
-     (or (not (= y43 5)) (not r_C559_2))
-     (or (not (= y43 5)) r_C559_3)
-     (or (not (= y43 5)) r_C559_4)
-     (or (not (= y43 5)) (not r_C559_5))
-     (or (not (= y53 5)) (not r_C559_0))
-     (or (not (= y53 5)) r_C559_1)
-     (or (not (= y53 5)) (not r_C559_2))
-     (or (not (= y53 5)) r_C559_3)
-     (or (not (= y53 5)) r_C559_4)
-     (or (not (= y53 5)) r_C559_5)
-     (or (not (= y04 5)) (not r_C559_0))
-     (or (not (= y04 5)) r_C559_1)
-     (or (not (= y04 5)) r_C559_2)
-     (or (not (= y04 5)) (not r_C559_3))
-     (or (not (= y04 5)) (not r_C559_4))
-     (or (not (= y04 5)) (not r_C559_5))
-     (or (not (= y14 5)) (not r_C559_0))
-     (or (not (= y14 5)) r_C559_1)
-     (or (not (= y14 5)) r_C559_2)
-     (or (not (= y14 5)) (not r_C559_3))
-     (or (not (= y14 5)) (not r_C559_4))
-     (or (not (= y14 5)) r_C559_5)
-     (or (not (= y24 5)) (not r_C559_0))
-     (or (not (= y24 5)) r_C559_1)
-     (or (not (= y24 5)) r_C559_2)
-     (or (not (= y24 5)) (not r_C559_3))
-     (or (not (= y24 5)) r_C559_4)
-     (or (not (= y24 5)) (not r_C559_5))
-     (or (not (= y34 5)) (not r_C559_0))
-     (or (not (= y34 5)) r_C559_1)
-     (or (not (= y34 5)) r_C559_2)
-     (or (not (= y34 5)) (not r_C559_3))
-     (or (not (= y34 5)) r_C559_4)
-     (or (not (= y34 5)) r_C559_5)
-     (or (not (= y44 5)) (not r_C559_0))
-     (or (not (= y44 5)) r_C559_1)
-     (or (not (= y44 5)) r_C559_2)
-     (or (not (= y44 5)) r_C559_3)
-     (or (not (= y44 5)) (not r_C559_4))
-     (or (not (= y44 5)) (not r_C559_5))
-     (or (not (= y54 5)) (not r_C559_0))
-     (or (not (= y54 5)) r_C559_1)
-     (or (not (= y54 5)) r_C559_2)
-     (or (not (= y54 5)) r_C559_3)
-     (or (not (= y54 5)) (not r_C559_4))
-     (or (not (= y54 5)) r_C559_5)
-     (or (not (= y05 5)) (not r_C559_0))
-     (or (not (= y05 5)) r_C559_1)
-     (or (not (= y05 5)) r_C559_2)
-     (or (not (= y05 5)) r_C559_3)
-     (or (not (= y05 5)) r_C559_4)
-     (or (not (= y05 5)) (not r_C559_5))
-     (or (not (= y15 5)) (not r_C559_0))
-     (or (not (= y15 5)) r_C559_1)
-     (or (not (= y15 5)) r_C559_2)
-     (or (not (= y15 5)) r_C559_3)
-     (or (not (= y15 5)) r_C559_4)
-     (or (not (= y15 5)) r_C559_5)
-     (or (not (= y25 5)) r_C559_0)
-     (or (not (= y25 5)) (not r_C559_1))
-     (or (not (= y25 5)) (not r_C559_2))
-     (or (not (= y25 5)) (not r_C559_3))
-     (or (not (= y25 5)) (not r_C559_4))
-     (or (not (= y25 5)) (not r_C559_5))
-     (or (not (= y35 5)) r_C559_0)
-     (or (not (= y35 5)) (not r_C559_1))
-     (or (not (= y35 5)) (not r_C559_2))
-     (or (not (= y35 5)) (not r_C559_3))
-     (or (not (= y35 5)) (not r_C559_4))
-     (or (not (= y35 5)) r_C559_5)
-     (or (not (= y45 5)) r_C559_0)
-     (or (not (= y45 5)) (not r_C559_1))
-     (or (not (= y45 5)) (not r_C559_2))
-     (or (not (= y45 5)) (not r_C559_3))
-     (or (not (= y45 5)) r_C559_4)
-     (or (not (= y45 5)) (not r_C559_5))
-     (or (not (= y55 5)) r_C559_0)
-     (or (not (= y55 5)) (not r_C559_1))
-     (or (not (= y55 5)) (not r_C559_2))
-     (or (not (= y55 5)) (not r_C559_3))
-     (or (not (= y55 5)) r_C559_4)
-     (or (not (= y55 5)) r_C559_5)
-     (or (not (= y06 5)) r_C559_0)
-     (or (not (= y06 5)) (not r_C559_1))
-     (or (not (= y06 5)) (not r_C559_2))
-     (or (not (= y06 5)) r_C559_3)
-     (or (not (= y06 5)) (not r_C559_4))
-     (or (not (= y06 5)) (not r_C559_5))
-     (or (not (= y16 5)) r_C559_0)
-     (or (not (= y16 5)) (not r_C559_1))
-     (or (not (= y16 5)) (not r_C559_2))
-     (or (not (= y16 5)) r_C559_3)
-     (or (not (= y16 5)) (not r_C559_4))
-     (or (not (= y16 5)) r_C559_5)
-     (or (not (= y26 5)) r_C559_0)
-     (or (not (= y26 5)) (not r_C559_1))
-     (or (not (= y26 5)) (not r_C559_2))
-     (or (not (= y26 5)) r_C559_3)
-     (or (not (= y26 5)) r_C559_4)
-     (or (not (= y26 5)) (not r_C559_5))
-     (or (not (= y36 5)) r_C559_0)
-     (or (not (= y36 5)) (not r_C559_1))
-     (or (not (= y36 5)) (not r_C559_2))
-     (or (not (= y36 5)) r_C559_3)
-     (or (not (= y36 5)) r_C559_4)
-     (or (not (= y36 5)) r_C559_5)
-     (or (not (= y46 5)) r_C559_0)
-     (or (not (= y46 5)) (not r_C559_1))
-     (or (not (= y46 5)) r_C559_2)
-     (or (not (= y46 5)) (not r_C559_3))
-     (or (not (= y46 5)) (not r_C559_4))
-     (or (not (= y46 5)) (not r_C559_5))
-     (or (not (= y56 5)) r_C559_0)
-     (or (not (= y56 5)) (not r_C559_1))
-     (or (not (= y56 5)) r_C559_2)
-     (or (not (= y56 5)) (not r_C559_3))
-     (or (not (= y56 5)) (not r_C559_4))
-     (or (not (= y56 5)) r_C559_5)
-     (or (not (= y07 5)) r_C559_0)
-     (or (not (= y07 5)) (not r_C559_1))
-     (or (not (= y07 5)) r_C559_2)
-     (or (not (= y07 5)) (not r_C559_3))
-     (or (not (= y07 5)) r_C559_4)
-     (or (not (= y07 5)) (not r_C559_5))
-     (or (not (= y17 5)) r_C559_0)
-     (or (not (= y17 5)) (not r_C559_1))
-     (or (not (= y17 5)) r_C559_2)
-     (or (not (= y17 5)) (not r_C559_3))
-     (or (not (= y17 5)) r_C559_4)
-     (or (not (= y17 5)) r_C559_5)
-     (or (not (= y27 5)) r_C559_0)
-     (or (not (= y27 5)) (not r_C559_1))
-     (or (not (= y27 5)) r_C559_2)
-     (or (not (= y27 5)) r_C559_3)
-     (or (not (= y27 5)) (not r_C559_4))
-     (or (not (= y27 5)) (not r_C559_5))
-     (or (not (= y37 5)) r_C559_0)
-     (or (not (= y37 5)) (not r_C559_1))
-     (or (not (= y37 5)) r_C559_2)
-     (or (not (= y37 5)) r_C559_3)
-     (or (not (= y37 5)) (not r_C559_4))
-     (or (not (= y37 5)) r_C559_5)
-     (or (not (= y47 5)) r_C559_0)
-     (or (not (= y47 5)) (not r_C559_1))
-     (or (not (= y47 5)) r_C559_2)
-     (or (not (= y47 5)) r_C559_3)
-     (or (not (= y47 5)) r_C559_4)
-     (or (not (= y47 5)) (not r_C559_5))
-     (or (not (= y57 5)) r_C559_0)
-     (or (not (= y57 5)) (not r_C559_1))
-     (or (not (= y57 5)) r_C559_2)
-     (or (not (= y57 5)) r_C559_3)
-     (or (not (= y57 5)) r_C559_4)
-     (or (not (= y57 5)) r_C559_5)
-     (or (not (= y08 5)) r_C559_0)
-     (or (not (= y08 5)) r_C559_1)
-     (or (not (= y08 5)) (not r_C559_2))
-     (or (not (= y08 5)) (not r_C559_3))
-     (or (not (= y08 5)) (not r_C559_4))
-     (or (not (= y08 5)) (not r_C559_5))
-     (or (not (= y18 5)) r_C559_0)
-     (or (not (= y18 5)) r_C559_1)
-     (or (not (= y18 5)) (not r_C559_2))
-     (or (not (= y18 5)) (not r_C559_3))
-     (or (not (= y18 5)) (not r_C559_4))
-     (or (not (= y18 5)) r_C559_5)
-     (or (not (= y28 5)) r_C559_0)
-     (or (not (= y28 5)) r_C559_1)
-     (or (not (= y28 5)) (not r_C559_2))
-     (or (not (= y28 5)) (not r_C559_3))
-     (or (not (= y28 5)) r_C559_4)
-     (or (not (= y28 5)) (not r_C559_5))
-     (or (not (= y38 5)) r_C559_0)
-     (or (not (= y38 5)) r_C559_1)
-     (or (not (= y38 5)) (not r_C559_2))
-     (or (not (= y38 5)) (not r_C559_3))
-     (or (not (= y38 5)) r_C559_4)
-     (or (not (= y38 5)) r_C559_5)
-     (or (not (= y48 5)) r_C559_0)
-     (or (not (= y48 5)) r_C559_1)
-     (or (not (= y48 5)) (not r_C559_2))
-     (or (not (= y48 5)) r_C559_3)
-     (or (not (= y48 5)) (not r_C559_4))
-     (or (not (= y48 5)) (not r_C559_5))
-     (or (not (= y58 5)) r_C559_0)
-     (or (not (= y58 5)) r_C559_1)
-     (or (not (= y58 5)) (not r_C559_2))
-     (or (not (= y58 5)) r_C559_3)
-     (or (not (= y58 5)) (not r_C559_4))
-     (or (not (= y58 5)) r_C559_5)
-     (or (not (= y09 5)) r_C559_0)
-     (or (not (= y09 5)) r_C559_1)
-     (or (not (= y09 5)) (not r_C559_2))
-     (or (not (= y09 5)) r_C559_3)
-     (or (not (= y09 5)) r_C559_4)
-     (or (not (= y09 5)) (not r_C559_5))
-     (or (not (= y19 5)) r_C559_0)
-     (or (not (= y19 5)) r_C559_1)
-     (or (not (= y19 5)) (not r_C559_2))
-     (or (not (= y19 5)) r_C559_3)
-     (or (not (= y19 5)) r_C559_4)
-     (or (not (= y19 5)) r_C559_5)
-     (or (not (= y29 5)) r_C559_0)
-     (or (not (= y29 5)) r_C559_1)
-     (or (not (= y29 5)) r_C559_2)
-     (or (not (= y29 5)) (not r_C559_3))
-     (or (not (= y29 5)) (not r_C559_4))
-     (or (not (= y29 5)) (not r_C559_5))
-     (or (not (= y39 5)) r_C559_0)
-     (or (not (= y39 5)) r_C559_1)
-     (or (not (= y39 5)) r_C559_2)
-     (or (not (= y39 5)) (not r_C559_3))
-     (or (not (= y39 5)) (not r_C559_4))
-     (or (not (= y39 5)) r_C559_5)
-     (or (not (= y49 5)) r_C559_0)
-     (or (not (= y49 5)) r_C559_1)
-     (or (not (= y49 5)) r_C559_2)
-     (or (not (= y49 5)) (not r_C559_3))
-     (or (not (= y49 5)) r_C559_4)
-     (or (not (= y49 5)) (not r_C559_5))
-     (or (not (= y59 5)) r_C559_0)
-     (or (not (= y59 5)) r_C559_1)
-     (or (not (= y59 5)) r_C559_2)
-     (or (not (= y59 5)) (not r_C559_3))
-     (or (not (= y59 5)) r_C559_4)
-     (or (not (= y59 5)) r_C559_5)))
-(assert (and (or (= x00 6)
-         (= x10 6)
-         (= x20 6)
-         (= x30 6)
-         (= x40 6)
-         (= x50 6)
-         (= x01 6)
-         (= x11 6)
-         (= x21 6)
-         (= x31 6)
-         (= x41 6)
-         (= x51 6)
-         (= x02 6)
-         (= x12 6)
-         (= x22 6)
-         (= x32 6)
-         (= x42 6)
-         (= x52 6)
-         (= x03 6)
-         (= x13 6)
-         (= x23 6)
-         (= x33 6)
-         (= x43 6)
-         (= x53 6)
-         (= x04 6)
-         (= x14 6)
-         (= x24 6)
-         (= x34 6)
-         (= x44 6)
-         (= x54 6)
-         (= x05 6)
-         (= x15 6)
-         (= x25 6)
-         (= x35 6)
-         (= x45 6)
-         (= x55 6)
-         (= x06 6)
-         (= x16 6)
-         (= x26 6)
-         (= x36 6)
-         (= x46 6)
-         (= x56 6)
-         (= x07 6)
-         (= x17 6)
-         (= x27 6)
-         (= x37 6)
-         (= x47 6)
-         (= x57 6)
-         (= x08 6)
-         (= x18 6)
-         (= x28 6)
-         (= x38 6)
-         (= x48 6)
-         (= x58 6)
-         (= x09 6)
-         (= x19 6)
-         (= x29 6)
-         (= x39 6)
-         (= x49 6)
-         (= x59 6))
-     (or (not (= x00 6)) (not r_B569_0))
-     (or (not (= x00 6)) (not r_B569_1))
-     (or (not (= x00 6)) (not r_B569_2))
-     (or (not (= x00 6)) (not r_B569_3))
-     (or (not (= x00 6)) (not r_B569_4))
-     (or (not (= x00 6)) (not r_B569_5))
-     (or (not (= x10 6)) (not r_B569_0))
-     (or (not (= x10 6)) (not r_B569_1))
-     (or (not (= x10 6)) (not r_B569_2))
-     (or (not (= x10 6)) (not r_B569_3))
-     (or (not (= x10 6)) (not r_B569_4))
-     (or (not (= x10 6)) r_B569_5)
-     (or (not (= x20 6)) (not r_B569_0))
-     (or (not (= x20 6)) (not r_B569_1))
-     (or (not (= x20 6)) (not r_B569_2))
-     (or (not (= x20 6)) (not r_B569_3))
-     (or (not (= x20 6)) r_B569_4)
-     (or (not (= x20 6)) (not r_B569_5))
-     (or (not (= x30 6)) (not r_B569_0))
-     (or (not (= x30 6)) (not r_B569_1))
-     (or (not (= x30 6)) (not r_B569_2))
-     (or (not (= x30 6)) (not r_B569_3))
-     (or (not (= x30 6)) r_B569_4)
-     (or (not (= x30 6)) r_B569_5)
-     (or (not (= x40 6)) (not r_B569_0))
-     (or (not (= x40 6)) (not r_B569_1))
-     (or (not (= x40 6)) (not r_B569_2))
-     (or (not (= x40 6)) r_B569_3)
-     (or (not (= x40 6)) (not r_B569_4))
-     (or (not (= x40 6)) (not r_B569_5))
-     (or (not (= x50 6)) (not r_B569_0))
-     (or (not (= x50 6)) (not r_B569_1))
-     (or (not (= x50 6)) (not r_B569_2))
-     (or (not (= x50 6)) r_B569_3)
-     (or (not (= x50 6)) (not r_B569_4))
-     (or (not (= x50 6)) r_B569_5)
-     (or (not (= x01 6)) (not r_B569_0))
-     (or (not (= x01 6)) (not r_B569_1))
-     (or (not (= x01 6)) (not r_B569_2))
-     (or (not (= x01 6)) r_B569_3)
-     (or (not (= x01 6)) r_B569_4)
-     (or (not (= x01 6)) (not r_B569_5))
-     (or (not (= x11 6)) (not r_B569_0))
-     (or (not (= x11 6)) (not r_B569_1))
-     (or (not (= x11 6)) (not r_B569_2))
-     (or (not (= x11 6)) r_B569_3)
-     (or (not (= x11 6)) r_B569_4)
-     (or (not (= x11 6)) r_B569_5)
-     (or (not (= x21 6)) (not r_B569_0))
-     (or (not (= x21 6)) (not r_B569_1))
-     (or (not (= x21 6)) r_B569_2)
-     (or (not (= x21 6)) (not r_B569_3))
-     (or (not (= x21 6)) (not r_B569_4))
-     (or (not (= x21 6)) (not r_B569_5))
-     (or (not (= x31 6)) (not r_B569_0))
-     (or (not (= x31 6)) (not r_B569_1))
-     (or (not (= x31 6)) r_B569_2)
-     (or (not (= x31 6)) (not r_B569_3))
-     (or (not (= x31 6)) (not r_B569_4))
-     (or (not (= x31 6)) r_B569_5)
-     (or (not (= x41 6)) (not r_B569_0))
-     (or (not (= x41 6)) (not r_B569_1))
-     (or (not (= x41 6)) r_B569_2)
-     (or (not (= x41 6)) (not r_B569_3))
-     (or (not (= x41 6)) r_B569_4)
-     (or (not (= x41 6)) (not r_B569_5))
-     (or (not (= x51 6)) (not r_B569_0))
-     (or (not (= x51 6)) (not r_B569_1))
-     (or (not (= x51 6)) r_B569_2)
-     (or (not (= x51 6)) (not r_B569_3))
-     (or (not (= x51 6)) r_B569_4)
-     (or (not (= x51 6)) r_B569_5)
-     (or (not (= x02 6)) (not r_B569_0))
-     (or (not (= x02 6)) (not r_B569_1))
-     (or (not (= x02 6)) r_B569_2)
-     (or (not (= x02 6)) r_B569_3)
-     (or (not (= x02 6)) (not r_B569_4))
-     (or (not (= x02 6)) (not r_B569_5))
-     (or (not (= x12 6)) (not r_B569_0))
-     (or (not (= x12 6)) (not r_B569_1))
-     (or (not (= x12 6)) r_B569_2)
-     (or (not (= x12 6)) r_B569_3)
-     (or (not (= x12 6)) (not r_B569_4))
-     (or (not (= x12 6)) r_B569_5)
-     (or (not (= x22 6)) (not r_B569_0))
-     (or (not (= x22 6)) (not r_B569_1))
-     (or (not (= x22 6)) r_B569_2)
-     (or (not (= x22 6)) r_B569_3)
-     (or (not (= x22 6)) r_B569_4)
-     (or (not (= x22 6)) (not r_B569_5))
-     (or (not (= x32 6)) (not r_B569_0))
-     (or (not (= x32 6)) (not r_B569_1))
-     (or (not (= x32 6)) r_B569_2)
-     (or (not (= x32 6)) r_B569_3)
-     (or (not (= x32 6)) r_B569_4)
-     (or (not (= x32 6)) r_B569_5)
-     (or (not (= x42 6)) (not r_B569_0))
-     (or (not (= x42 6)) r_B569_1)
-     (or (not (= x42 6)) (not r_B569_2))
-     (or (not (= x42 6)) (not r_B569_3))
-     (or (not (= x42 6)) (not r_B569_4))
-     (or (not (= x42 6)) (not r_B569_5))
-     (or (not (= x52 6)) (not r_B569_0))
-     (or (not (= x52 6)) r_B569_1)
-     (or (not (= x52 6)) (not r_B569_2))
-     (or (not (= x52 6)) (not r_B569_3))
-     (or (not (= x52 6)) (not r_B569_4))
-     (or (not (= x52 6)) r_B569_5)
-     (or (not (= x03 6)) (not r_B569_0))
-     (or (not (= x03 6)) r_B569_1)
-     (or (not (= x03 6)) (not r_B569_2))
-     (or (not (= x03 6)) (not r_B569_3))
-     (or (not (= x03 6)) r_B569_4)
-     (or (not (= x03 6)) (not r_B569_5))
-     (or (not (= x13 6)) (not r_B569_0))
-     (or (not (= x13 6)) r_B569_1)
-     (or (not (= x13 6)) (not r_B569_2))
-     (or (not (= x13 6)) (not r_B569_3))
-     (or (not (= x13 6)) r_B569_4)
-     (or (not (= x13 6)) r_B569_5)
-     (or (not (= x23 6)) (not r_B569_0))
-     (or (not (= x23 6)) r_B569_1)
-     (or (not (= x23 6)) (not r_B569_2))
-     (or (not (= x23 6)) r_B569_3)
-     (or (not (= x23 6)) (not r_B569_4))
-     (or (not (= x23 6)) (not r_B569_5))
-     (or (not (= x33 6)) (not r_B569_0))
-     (or (not (= x33 6)) r_B569_1)
-     (or (not (= x33 6)) (not r_B569_2))
-     (or (not (= x33 6)) r_B569_3)
-     (or (not (= x33 6)) (not r_B569_4))
-     (or (not (= x33 6)) r_B569_5)
-     (or (not (= x43 6)) (not r_B569_0))
-     (or (not (= x43 6)) r_B569_1)
-     (or (not (= x43 6)) (not r_B569_2))
-     (or (not (= x43 6)) r_B569_3)
-     (or (not (= x43 6)) r_B569_4)
-     (or (not (= x43 6)) (not r_B569_5))
-     (or (not (= x53 6)) (not r_B569_0))
-     (or (not (= x53 6)) r_B569_1)
-     (or (not (= x53 6)) (not r_B569_2))
-     (or (not (= x53 6)) r_B569_3)
-     (or (not (= x53 6)) r_B569_4)
-     (or (not (= x53 6)) r_B569_5)
-     (or (not (= x04 6)) (not r_B569_0))
-     (or (not (= x04 6)) r_B569_1)
-     (or (not (= x04 6)) r_B569_2)
-     (or (not (= x04 6)) (not r_B569_3))
-     (or (not (= x04 6)) (not r_B569_4))
-     (or (not (= x04 6)) (not r_B569_5))
-     (or (not (= x14 6)) (not r_B569_0))
-     (or (not (= x14 6)) r_B569_1)
-     (or (not (= x14 6)) r_B569_2)
-     (or (not (= x14 6)) (not r_B569_3))
-     (or (not (= x14 6)) (not r_B569_4))
-     (or (not (= x14 6)) r_B569_5)
-     (or (not (= x24 6)) (not r_B569_0))
-     (or (not (= x24 6)) r_B569_1)
-     (or (not (= x24 6)) r_B569_2)
-     (or (not (= x24 6)) (not r_B569_3))
-     (or (not (= x24 6)) r_B569_4)
-     (or (not (= x24 6)) (not r_B569_5))
-     (or (not (= x34 6)) (not r_B569_0))
-     (or (not (= x34 6)) r_B569_1)
-     (or (not (= x34 6)) r_B569_2)
-     (or (not (= x34 6)) (not r_B569_3))
-     (or (not (= x34 6)) r_B569_4)
-     (or (not (= x34 6)) r_B569_5)
-     (or (not (= x44 6)) (not r_B569_0))
-     (or (not (= x44 6)) r_B569_1)
-     (or (not (= x44 6)) r_B569_2)
-     (or (not (= x44 6)) r_B569_3)
-     (or (not (= x44 6)) (not r_B569_4))
-     (or (not (= x44 6)) (not r_B569_5))
-     (or (not (= x54 6)) (not r_B569_0))
-     (or (not (= x54 6)) r_B569_1)
-     (or (not (= x54 6)) r_B569_2)
-     (or (not (= x54 6)) r_B569_3)
-     (or (not (= x54 6)) (not r_B569_4))
-     (or (not (= x54 6)) r_B569_5)
-     (or (not (= x05 6)) (not r_B569_0))
-     (or (not (= x05 6)) r_B569_1)
-     (or (not (= x05 6)) r_B569_2)
-     (or (not (= x05 6)) r_B569_3)
-     (or (not (= x05 6)) r_B569_4)
-     (or (not (= x05 6)) (not r_B569_5))
-     (or (not (= x15 6)) (not r_B569_0))
-     (or (not (= x15 6)) r_B569_1)
-     (or (not (= x15 6)) r_B569_2)
-     (or (not (= x15 6)) r_B569_3)
-     (or (not (= x15 6)) r_B569_4)
-     (or (not (= x15 6)) r_B569_5)
-     (or (not (= x25 6)) r_B569_0)
-     (or (not (= x25 6)) (not r_B569_1))
-     (or (not (= x25 6)) (not r_B569_2))
-     (or (not (= x25 6)) (not r_B569_3))
-     (or (not (= x25 6)) (not r_B569_4))
-     (or (not (= x25 6)) (not r_B569_5))
-     (or (not (= x35 6)) r_B569_0)
-     (or (not (= x35 6)) (not r_B569_1))
-     (or (not (= x35 6)) (not r_B569_2))
-     (or (not (= x35 6)) (not r_B569_3))
-     (or (not (= x35 6)) (not r_B569_4))
-     (or (not (= x35 6)) r_B569_5)
-     (or (not (= x45 6)) r_B569_0)
-     (or (not (= x45 6)) (not r_B569_1))
-     (or (not (= x45 6)) (not r_B569_2))
-     (or (not (= x45 6)) (not r_B569_3))
-     (or (not (= x45 6)) r_B569_4)
-     (or (not (= x45 6)) (not r_B569_5))
-     (or (not (= x55 6)) r_B569_0)
-     (or (not (= x55 6)) (not r_B569_1))
-     (or (not (= x55 6)) (not r_B569_2))
-     (or (not (= x55 6)) (not r_B569_3))
-     (or (not (= x55 6)) r_B569_4)
-     (or (not (= x55 6)) r_B569_5)
-     (or (not (= x06 6)) r_B569_0)
-     (or (not (= x06 6)) (not r_B569_1))
-     (or (not (= x06 6)) (not r_B569_2))
-     (or (not (= x06 6)) r_B569_3)
-     (or (not (= x06 6)) (not r_B569_4))
-     (or (not (= x06 6)) (not r_B569_5))
-     (or (not (= x16 6)) r_B569_0)
-     (or (not (= x16 6)) (not r_B569_1))
-     (or (not (= x16 6)) (not r_B569_2))
-     (or (not (= x16 6)) r_B569_3)
-     (or (not (= x16 6)) (not r_B569_4))
-     (or (not (= x16 6)) r_B569_5)
-     (or (not (= x26 6)) r_B569_0)
-     (or (not (= x26 6)) (not r_B569_1))
-     (or (not (= x26 6)) (not r_B569_2))
-     (or (not (= x26 6)) r_B569_3)
-     (or (not (= x26 6)) r_B569_4)
-     (or (not (= x26 6)) (not r_B569_5))
-     (or (not (= x36 6)) r_B569_0)
-     (or (not (= x36 6)) (not r_B569_1))
-     (or (not (= x36 6)) (not r_B569_2))
-     (or (not (= x36 6)) r_B569_3)
-     (or (not (= x36 6)) r_B569_4)
-     (or (not (= x36 6)) r_B569_5)
-     (or (not (= x46 6)) r_B569_0)
-     (or (not (= x46 6)) (not r_B569_1))
-     (or (not (= x46 6)) r_B569_2)
-     (or (not (= x46 6)) (not r_B569_3))
-     (or (not (= x46 6)) (not r_B569_4))
-     (or (not (= x46 6)) (not r_B569_5))
-     (or (not (= x56 6)) r_B569_0)
-     (or (not (= x56 6)) (not r_B569_1))
-     (or (not (= x56 6)) r_B569_2)
-     (or (not (= x56 6)) (not r_B569_3))
-     (or (not (= x56 6)) (not r_B569_4))
-     (or (not (= x56 6)) r_B569_5)
-     (or (not (= x07 6)) r_B569_0)
-     (or (not (= x07 6)) (not r_B569_1))
-     (or (not (= x07 6)) r_B569_2)
-     (or (not (= x07 6)) (not r_B569_3))
-     (or (not (= x07 6)) r_B569_4)
-     (or (not (= x07 6)) (not r_B569_5))
-     (or (not (= x17 6)) r_B569_0)
-     (or (not (= x17 6)) (not r_B569_1))
-     (or (not (= x17 6)) r_B569_2)
-     (or (not (= x17 6)) (not r_B569_3))
-     (or (not (= x17 6)) r_B569_4)
-     (or (not (= x17 6)) r_B569_5)
-     (or (not (= x27 6)) r_B569_0)
-     (or (not (= x27 6)) (not r_B569_1))
-     (or (not (= x27 6)) r_B569_2)
-     (or (not (= x27 6)) r_B569_3)
-     (or (not (= x27 6)) (not r_B569_4))
-     (or (not (= x27 6)) (not r_B569_5))
-     (or (not (= x37 6)) r_B569_0)
-     (or (not (= x37 6)) (not r_B569_1))
-     (or (not (= x37 6)) r_B569_2)
-     (or (not (= x37 6)) r_B569_3)
-     (or (not (= x37 6)) (not r_B569_4))
-     (or (not (= x37 6)) r_B569_5)
-     (or (not (= x47 6)) r_B569_0)
-     (or (not (= x47 6)) (not r_B569_1))
-     (or (not (= x47 6)) r_B569_2)
-     (or (not (= x47 6)) r_B569_3)
-     (or (not (= x47 6)) r_B569_4)
-     (or (not (= x47 6)) (not r_B569_5))
-     (or (not (= x57 6)) r_B569_0)
-     (or (not (= x57 6)) (not r_B569_1))
-     (or (not (= x57 6)) r_B569_2)
-     (or (not (= x57 6)) r_B569_3)
-     (or (not (= x57 6)) r_B569_4)
-     (or (not (= x57 6)) r_B569_5)
-     (or (not (= x08 6)) r_B569_0)
-     (or (not (= x08 6)) r_B569_1)
-     (or (not (= x08 6)) (not r_B569_2))
-     (or (not (= x08 6)) (not r_B569_3))
-     (or (not (= x08 6)) (not r_B569_4))
-     (or (not (= x08 6)) (not r_B569_5))
-     (or (not (= x18 6)) r_B569_0)
-     (or (not (= x18 6)) r_B569_1)
-     (or (not (= x18 6)) (not r_B569_2))
-     (or (not (= x18 6)) (not r_B569_3))
-     (or (not (= x18 6)) (not r_B569_4))
-     (or (not (= x18 6)) r_B569_5)
-     (or (not (= x28 6)) r_B569_0)
-     (or (not (= x28 6)) r_B569_1)
-     (or (not (= x28 6)) (not r_B569_2))
-     (or (not (= x28 6)) (not r_B569_3))
-     (or (not (= x28 6)) r_B569_4)
-     (or (not (= x28 6)) (not r_B569_5))
-     (or (not (= x38 6)) r_B569_0)
-     (or (not (= x38 6)) r_B569_1)
-     (or (not (= x38 6)) (not r_B569_2))
-     (or (not (= x38 6)) (not r_B569_3))
-     (or (not (= x38 6)) r_B569_4)
-     (or (not (= x38 6)) r_B569_5)
-     (or (not (= x48 6)) r_B569_0)
-     (or (not (= x48 6)) r_B569_1)
-     (or (not (= x48 6)) (not r_B569_2))
-     (or (not (= x48 6)) r_B569_3)
-     (or (not (= x48 6)) (not r_B569_4))
-     (or (not (= x48 6)) (not r_B569_5))
-     (or (not (= x58 6)) r_B569_0)
-     (or (not (= x58 6)) r_B569_1)
-     (or (not (= x58 6)) (not r_B569_2))
-     (or (not (= x58 6)) r_B569_3)
-     (or (not (= x58 6)) (not r_B569_4))
-     (or (not (= x58 6)) r_B569_5)
-     (or (not (= x09 6)) r_B569_0)
-     (or (not (= x09 6)) r_B569_1)
-     (or (not (= x09 6)) (not r_B569_2))
-     (or (not (= x09 6)) r_B569_3)
-     (or (not (= x09 6)) r_B569_4)
-     (or (not (= x09 6)) (not r_B569_5))
-     (or (not (= x19 6)) r_B569_0)
-     (or (not (= x19 6)) r_B569_1)
-     (or (not (= x19 6)) (not r_B569_2))
-     (or (not (= x19 6)) r_B569_3)
-     (or (not (= x19 6)) r_B569_4)
-     (or (not (= x19 6)) r_B569_5)
-     (or (not (= x29 6)) r_B569_0)
-     (or (not (= x29 6)) r_B569_1)
-     (or (not (= x29 6)) r_B569_2)
-     (or (not (= x29 6)) (not r_B569_3))
-     (or (not (= x29 6)) (not r_B569_4))
-     (or (not (= x29 6)) (not r_B569_5))
-     (or (not (= x39 6)) r_B569_0)
-     (or (not (= x39 6)) r_B569_1)
-     (or (not (= x39 6)) r_B569_2)
-     (or (not (= x39 6)) (not r_B569_3))
-     (or (not (= x39 6)) (not r_B569_4))
-     (or (not (= x39 6)) r_B569_5)
-     (or (not (= x49 6)) r_B569_0)
-     (or (not (= x49 6)) r_B569_1)
-     (or (not (= x49 6)) r_B569_2)
-     (or (not (= x49 6)) (not r_B569_3))
-     (or (not (= x49 6)) r_B569_4)
-     (or (not (= x49 6)) (not r_B569_5))
-     (or (not (= x59 6)) r_B569_0)
-     (or (not (= x59 6)) r_B569_1)
-     (or (not (= x59 6)) r_B569_2)
-     (or (not (= x59 6)) (not r_B569_3))
-     (or (not (= x59 6)) r_B569_4)
-     (or (not (= x59 6)) r_B569_5)))
-(assert (and (or (= y00 6)
-         (= y10 6)
-         (= y20 6)
-         (= y30 6)
-         (= y40 6)
-         (= y50 6)
-         (= y01 6)
-         (= y11 6)
-         (= y21 6)
-         (= y31 6)
-         (= y41 6)
-         (= y51 6)
-         (= y02 6)
-         (= y12 6)
-         (= y22 6)
-         (= y32 6)
-         (= y42 6)
-         (= y52 6)
-         (= y03 6)
-         (= y13 6)
-         (= y23 6)
-         (= y33 6)
-         (= y43 6)
-         (= y53 6)
-         (= y04 6)
-         (= y14 6)
-         (= y24 6)
-         (= y34 6)
-         (= y44 6)
-         (= y54 6)
-         (= y05 6)
-         (= y15 6)
-         (= y25 6)
-         (= y35 6)
-         (= y45 6)
-         (= y55 6)
-         (= y06 6)
-         (= y16 6)
-         (= y26 6)
-         (= y36 6)
-         (= y46 6)
-         (= y56 6)
-         (= y07 6)
-         (= y17 6)
-         (= y27 6)
-         (= y37 6)
-         (= y47 6)
-         (= y57 6)
-         (= y08 6)
-         (= y18 6)
-         (= y28 6)
-         (= y38 6)
-         (= y48 6)
-         (= y58 6)
-         (= y09 6)
-         (= y19 6)
-         (= y29 6)
-         (= y39 6)
-         (= y49 6)
-         (= y59 6))
-     (or (not (= y00 6)) (not r_C569_0))
-     (or (not (= y00 6)) (not r_C569_1))
-     (or (not (= y00 6)) (not r_C569_2))
-     (or (not (= y00 6)) (not r_C569_3))
-     (or (not (= y00 6)) (not r_C569_4))
-     (or (not (= y00 6)) (not r_C569_5))
-     (or (not (= y10 6)) (not r_C569_0))
-     (or (not (= y10 6)) (not r_C569_1))
-     (or (not (= y10 6)) (not r_C569_2))
-     (or (not (= y10 6)) (not r_C569_3))
-     (or (not (= y10 6)) (not r_C569_4))
-     (or (not (= y10 6)) r_C569_5)
-     (or (not (= y20 6)) (not r_C569_0))
-     (or (not (= y20 6)) (not r_C569_1))
-     (or (not (= y20 6)) (not r_C569_2))
-     (or (not (= y20 6)) (not r_C569_3))
-     (or (not (= y20 6)) r_C569_4)
-     (or (not (= y20 6)) (not r_C569_5))
-     (or (not (= y30 6)) (not r_C569_0))
-     (or (not (= y30 6)) (not r_C569_1))
-     (or (not (= y30 6)) (not r_C569_2))
-     (or (not (= y30 6)) (not r_C569_3))
-     (or (not (= y30 6)) r_C569_4)
-     (or (not (= y30 6)) r_C569_5)
-     (or (not (= y40 6)) (not r_C569_0))
-     (or (not (= y40 6)) (not r_C569_1))
-     (or (not (= y40 6)) (not r_C569_2))
-     (or (not (= y40 6)) r_C569_3)
-     (or (not (= y40 6)) (not r_C569_4))
-     (or (not (= y40 6)) (not r_C569_5))
-     (or (not (= y50 6)) (not r_C569_0))
-     (or (not (= y50 6)) (not r_C569_1))
-     (or (not (= y50 6)) (not r_C569_2))
-     (or (not (= y50 6)) r_C569_3)
-     (or (not (= y50 6)) (not r_C569_4))
-     (or (not (= y50 6)) r_C569_5)
-     (or (not (= y01 6)) (not r_C569_0))
-     (or (not (= y01 6)) (not r_C569_1))
-     (or (not (= y01 6)) (not r_C569_2))
-     (or (not (= y01 6)) r_C569_3)
-     (or (not (= y01 6)) r_C569_4)
-     (or (not (= y01 6)) (not r_C569_5))
-     (or (not (= y11 6)) (not r_C569_0))
-     (or (not (= y11 6)) (not r_C569_1))
-     (or (not (= y11 6)) (not r_C569_2))
-     (or (not (= y11 6)) r_C569_3)
-     (or (not (= y11 6)) r_C569_4)
-     (or (not (= y11 6)) r_C569_5)
-     (or (not (= y21 6)) (not r_C569_0))
-     (or (not (= y21 6)) (not r_C569_1))
-     (or (not (= y21 6)) r_C569_2)
-     (or (not (= y21 6)) (not r_C569_3))
-     (or (not (= y21 6)) (not r_C569_4))
-     (or (not (= y21 6)) (not r_C569_5))
-     (or (not (= y31 6)) (not r_C569_0))
-     (or (not (= y31 6)) (not r_C569_1))
-     (or (not (= y31 6)) r_C569_2)
-     (or (not (= y31 6)) (not r_C569_3))
-     (or (not (= y31 6)) (not r_C569_4))
-     (or (not (= y31 6)) r_C569_5)
-     (or (not (= y41 6)) (not r_C569_0))
-     (or (not (= y41 6)) (not r_C569_1))
-     (or (not (= y41 6)) r_C569_2)
-     (or (not (= y41 6)) (not r_C569_3))
-     (or (not (= y41 6)) r_C569_4)
-     (or (not (= y41 6)) (not r_C569_5))
-     (or (not (= y51 6)) (not r_C569_0))
-     (or (not (= y51 6)) (not r_C569_1))
-     (or (not (= y51 6)) r_C569_2)
-     (or (not (= y51 6)) (not r_C569_3))
-     (or (not (= y51 6)) r_C569_4)
-     (or (not (= y51 6)) r_C569_5)
-     (or (not (= y02 6)) (not r_C569_0))
-     (or (not (= y02 6)) (not r_C569_1))
-     (or (not (= y02 6)) r_C569_2)
-     (or (not (= y02 6)) r_C569_3)
-     (or (not (= y02 6)) (not r_C569_4))
-     (or (not (= y02 6)) (not r_C569_5))
-     (or (not (= y12 6)) (not r_C569_0))
-     (or (not (= y12 6)) (not r_C569_1))
-     (or (not (= y12 6)) r_C569_2)
-     (or (not (= y12 6)) r_C569_3)
-     (or (not (= y12 6)) (not r_C569_4))
-     (or (not (= y12 6)) r_C569_5)
-     (or (not (= y22 6)) (not r_C569_0))
-     (or (not (= y22 6)) (not r_C569_1))
-     (or (not (= y22 6)) r_C569_2)
-     (or (not (= y22 6)) r_C569_3)
-     (or (not (= y22 6)) r_C569_4)
-     (or (not (= y22 6)) (not r_C569_5))
-     (or (not (= y32 6)) (not r_C569_0))
-     (or (not (= y32 6)) (not r_C569_1))
-     (or (not (= y32 6)) r_C569_2)
-     (or (not (= y32 6)) r_C569_3)
-     (or (not (= y32 6)) r_C569_4)
-     (or (not (= y32 6)) r_C569_5)
-     (or (not (= y42 6)) (not r_C569_0))
-     (or (not (= y42 6)) r_C569_1)
-     (or (not (= y42 6)) (not r_C569_2))
-     (or (not (= y42 6)) (not r_C569_3))
-     (or (not (= y42 6)) (not r_C569_4))
-     (or (not (= y42 6)) (not r_C569_5))
-     (or (not (= y52 6)) (not r_C569_0))
-     (or (not (= y52 6)) r_C569_1)
-     (or (not (= y52 6)) (not r_C569_2))
-     (or (not (= y52 6)) (not r_C569_3))
-     (or (not (= y52 6)) (not r_C569_4))
-     (or (not (= y52 6)) r_C569_5)
-     (or (not (= y03 6)) (not r_C569_0))
-     (or (not (= y03 6)) r_C569_1)
-     (or (not (= y03 6)) (not r_C569_2))
-     (or (not (= y03 6)) (not r_C569_3))
-     (or (not (= y03 6)) r_C569_4)
-     (or (not (= y03 6)) (not r_C569_5))
-     (or (not (= y13 6)) (not r_C569_0))
-     (or (not (= y13 6)) r_C569_1)
-     (or (not (= y13 6)) (not r_C569_2))
-     (or (not (= y13 6)) (not r_C569_3))
-     (or (not (= y13 6)) r_C569_4)
-     (or (not (= y13 6)) r_C569_5)
-     (or (not (= y23 6)) (not r_C569_0))
-     (or (not (= y23 6)) r_C569_1)
-     (or (not (= y23 6)) (not r_C569_2))
-     (or (not (= y23 6)) r_C569_3)
-     (or (not (= y23 6)) (not r_C569_4))
-     (or (not (= y23 6)) (not r_C569_5))
-     (or (not (= y33 6)) (not r_C569_0))
-     (or (not (= y33 6)) r_C569_1)
-     (or (not (= y33 6)) (not r_C569_2))
-     (or (not (= y33 6)) r_C569_3)
-     (or (not (= y33 6)) (not r_C569_4))
-     (or (not (= y33 6)) r_C569_5)
-     (or (not (= y43 6)) (not r_C569_0))
-     (or (not (= y43 6)) r_C569_1)
-     (or (not (= y43 6)) (not r_C569_2))
-     (or (not (= y43 6)) r_C569_3)
-     (or (not (= y43 6)) r_C569_4)
-     (or (not (= y43 6)) (not r_C569_5))
-     (or (not (= y53 6)) (not r_C569_0))
-     (or (not (= y53 6)) r_C569_1)
-     (or (not (= y53 6)) (not r_C569_2))
-     (or (not (= y53 6)) r_C569_3)
-     (or (not (= y53 6)) r_C569_4)
-     (or (not (= y53 6)) r_C569_5)
-     (or (not (= y04 6)) (not r_C569_0))
-     (or (not (= y04 6)) r_C569_1)
-     (or (not (= y04 6)) r_C569_2)
-     (or (not (= y04 6)) (not r_C569_3))
-     (or (not (= y04 6)) (not r_C569_4))
-     (or (not (= y04 6)) (not r_C569_5))
-     (or (not (= y14 6)) (not r_C569_0))
-     (or (not (= y14 6)) r_C569_1)
-     (or (not (= y14 6)) r_C569_2)
-     (or (not (= y14 6)) (not r_C569_3))
-     (or (not (= y14 6)) (not r_C569_4))
-     (or (not (= y14 6)) r_C569_5)
-     (or (not (= y24 6)) (not r_C569_0))
-     (or (not (= y24 6)) r_C569_1)
-     (or (not (= y24 6)) r_C569_2)
-     (or (not (= y24 6)) (not r_C569_3))
-     (or (not (= y24 6)) r_C569_4)
-     (or (not (= y24 6)) (not r_C569_5))
-     (or (not (= y34 6)) (not r_C569_0))
-     (or (not (= y34 6)) r_C569_1)
-     (or (not (= y34 6)) r_C569_2)
-     (or (not (= y34 6)) (not r_C569_3))
-     (or (not (= y34 6)) r_C569_4)
-     (or (not (= y34 6)) r_C569_5)
-     (or (not (= y44 6)) (not r_C569_0))
-     (or (not (= y44 6)) r_C569_1)
-     (or (not (= y44 6)) r_C569_2)
-     (or (not (= y44 6)) r_C569_3)
-     (or (not (= y44 6)) (not r_C569_4))
-     (or (not (= y44 6)) (not r_C569_5))
-     (or (not (= y54 6)) (not r_C569_0))
-     (or (not (= y54 6)) r_C569_1)
-     (or (not (= y54 6)) r_C569_2)
-     (or (not (= y54 6)) r_C569_3)
-     (or (not (= y54 6)) (not r_C569_4))
-     (or (not (= y54 6)) r_C569_5)
-     (or (not (= y05 6)) (not r_C569_0))
-     (or (not (= y05 6)) r_C569_1)
-     (or (not (= y05 6)) r_C569_2)
-     (or (not (= y05 6)) r_C569_3)
-     (or (not (= y05 6)) r_C569_4)
-     (or (not (= y05 6)) (not r_C569_5))
-     (or (not (= y15 6)) (not r_C569_0))
-     (or (not (= y15 6)) r_C569_1)
-     (or (not (= y15 6)) r_C569_2)
-     (or (not (= y15 6)) r_C569_3)
-     (or (not (= y15 6)) r_C569_4)
-     (or (not (= y15 6)) r_C569_5)
-     (or (not (= y25 6)) r_C569_0)
-     (or (not (= y25 6)) (not r_C569_1))
-     (or (not (= y25 6)) (not r_C569_2))
-     (or (not (= y25 6)) (not r_C569_3))
-     (or (not (= y25 6)) (not r_C569_4))
-     (or (not (= y25 6)) (not r_C569_5))
-     (or (not (= y35 6)) r_C569_0)
-     (or (not (= y35 6)) (not r_C569_1))
-     (or (not (= y35 6)) (not r_C569_2))
-     (or (not (= y35 6)) (not r_C569_3))
-     (or (not (= y35 6)) (not r_C569_4))
-     (or (not (= y35 6)) r_C569_5)
-     (or (not (= y45 6)) r_C569_0)
-     (or (not (= y45 6)) (not r_C569_1))
-     (or (not (= y45 6)) (not r_C569_2))
-     (or (not (= y45 6)) (not r_C569_3))
-     (or (not (= y45 6)) r_C569_4)
-     (or (not (= y45 6)) (not r_C569_5))
-     (or (not (= y55 6)) r_C569_0)
-     (or (not (= y55 6)) (not r_C569_1))
-     (or (not (= y55 6)) (not r_C569_2))
-     (or (not (= y55 6)) (not r_C569_3))
-     (or (not (= y55 6)) r_C569_4)
-     (or (not (= y55 6)) r_C569_5)
-     (or (not (= y06 6)) r_C569_0)
-     (or (not (= y06 6)) (not r_C569_1))
-     (or (not (= y06 6)) (not r_C569_2))
-     (or (not (= y06 6)) r_C569_3)
-     (or (not (= y06 6)) (not r_C569_4))
-     (or (not (= y06 6)) (not r_C569_5))
-     (or (not (= y16 6)) r_C569_0)
-     (or (not (= y16 6)) (not r_C569_1))
-     (or (not (= y16 6)) (not r_C569_2))
-     (or (not (= y16 6)) r_C569_3)
-     (or (not (= y16 6)) (not r_C569_4))
-     (or (not (= y16 6)) r_C569_5)
-     (or (not (= y26 6)) r_C569_0)
-     (or (not (= y26 6)) (not r_C569_1))
-     (or (not (= y26 6)) (not r_C569_2))
-     (or (not (= y26 6)) r_C569_3)
-     (or (not (= y26 6)) r_C569_4)
-     (or (not (= y26 6)) (not r_C569_5))
-     (or (not (= y36 6)) r_C569_0)
-     (or (not (= y36 6)) (not r_C569_1))
-     (or (not (= y36 6)) (not r_C569_2))
-     (or (not (= y36 6)) r_C569_3)
-     (or (not (= y36 6)) r_C569_4)
-     (or (not (= y36 6)) r_C569_5)
-     (or (not (= y46 6)) r_C569_0)
-     (or (not (= y46 6)) (not r_C569_1))
-     (or (not (= y46 6)) r_C569_2)
-     (or (not (= y46 6)) (not r_C569_3))
-     (or (not (= y46 6)) (not r_C569_4))
-     (or (not (= y46 6)) (not r_C569_5))
-     (or (not (= y56 6)) r_C569_0)
-     (or (not (= y56 6)) (not r_C569_1))
-     (or (not (= y56 6)) r_C569_2)
-     (or (not (= y56 6)) (not r_C569_3))
-     (or (not (= y56 6)) (not r_C569_4))
-     (or (not (= y56 6)) r_C569_5)
-     (or (not (= y07 6)) r_C569_0)
-     (or (not (= y07 6)) (not r_C569_1))
-     (or (not (= y07 6)) r_C569_2)
-     (or (not (= y07 6)) (not r_C569_3))
-     (or (not (= y07 6)) r_C569_4)
-     (or (not (= y07 6)) (not r_C569_5))
-     (or (not (= y17 6)) r_C569_0)
-     (or (not (= y17 6)) (not r_C569_1))
-     (or (not (= y17 6)) r_C569_2)
-     (or (not (= y17 6)) (not r_C569_3))
-     (or (not (= y17 6)) r_C569_4)
-     (or (not (= y17 6)) r_C569_5)
-     (or (not (= y27 6)) r_C569_0)
-     (or (not (= y27 6)) (not r_C569_1))
-     (or (not (= y27 6)) r_C569_2)
-     (or (not (= y27 6)) r_C569_3)
-     (or (not (= y27 6)) (not r_C569_4))
-     (or (not (= y27 6)) (not r_C569_5))
-     (or (not (= y37 6)) r_C569_0)
-     (or (not (= y37 6)) (not r_C569_1))
-     (or (not (= y37 6)) r_C569_2)
-     (or (not (= y37 6)) r_C569_3)
-     (or (not (= y37 6)) (not r_C569_4))
-     (or (not (= y37 6)) r_C569_5)
-     (or (not (= y47 6)) r_C569_0)
-     (or (not (= y47 6)) (not r_C569_1))
-     (or (not (= y47 6)) r_C569_2)
-     (or (not (= y47 6)) r_C569_3)
-     (or (not (= y47 6)) r_C569_4)
-     (or (not (= y47 6)) (not r_C569_5))
-     (or (not (= y57 6)) r_C569_0)
-     (or (not (= y57 6)) (not r_C569_1))
-     (or (not (= y57 6)) r_C569_2)
-     (or (not (= y57 6)) r_C569_3)
-     (or (not (= y57 6)) r_C569_4)
-     (or (not (= y57 6)) r_C569_5)
-     (or (not (= y08 6)) r_C569_0)
-     (or (not (= y08 6)) r_C569_1)
-     (or (not (= y08 6)) (not r_C569_2))
-     (or (not (= y08 6)) (not r_C569_3))
-     (or (not (= y08 6)) (not r_C569_4))
-     (or (not (= y08 6)) (not r_C569_5))
-     (or (not (= y18 6)) r_C569_0)
-     (or (not (= y18 6)) r_C569_1)
-     (or (not (= y18 6)) (not r_C569_2))
-     (or (not (= y18 6)) (not r_C569_3))
-     (or (not (= y18 6)) (not r_C569_4))
-     (or (not (= y18 6)) r_C569_5)
-     (or (not (= y28 6)) r_C569_0)
-     (or (not (= y28 6)) r_C569_1)
-     (or (not (= y28 6)) (not r_C569_2))
-     (or (not (= y28 6)) (not r_C569_3))
-     (or (not (= y28 6)) r_C569_4)
-     (or (not (= y28 6)) (not r_C569_5))
-     (or (not (= y38 6)) r_C569_0)
-     (or (not (= y38 6)) r_C569_1)
-     (or (not (= y38 6)) (not r_C569_2))
-     (or (not (= y38 6)) (not r_C569_3))
-     (or (not (= y38 6)) r_C569_4)
-     (or (not (= y38 6)) r_C569_5)
-     (or (not (= y48 6)) r_C569_0)
-     (or (not (= y48 6)) r_C569_1)
-     (or (not (= y48 6)) (not r_C569_2))
-     (or (not (= y48 6)) r_C569_3)
-     (or (not (= y48 6)) (not r_C569_4))
-     (or (not (= y48 6)) (not r_C569_5))
-     (or (not (= y58 6)) r_C569_0)
-     (or (not (= y58 6)) r_C569_1)
-     (or (not (= y58 6)) (not r_C569_2))
-     (or (not (= y58 6)) r_C569_3)
-     (or (not (= y58 6)) (not r_C569_4))
-     (or (not (= y58 6)) r_C569_5)
-     (or (not (= y09 6)) r_C569_0)
-     (or (not (= y09 6)) r_C569_1)
-     (or (not (= y09 6)) (not r_C569_2))
-     (or (not (= y09 6)) r_C569_3)
-     (or (not (= y09 6)) r_C569_4)
-     (or (not (= y09 6)) (not r_C569_5))
-     (or (not (= y19 6)) r_C569_0)
-     (or (not (= y19 6)) r_C569_1)
-     (or (not (= y19 6)) (not r_C569_2))
-     (or (not (= y19 6)) r_C569_3)
-     (or (not (= y19 6)) r_C569_4)
-     (or (not (= y19 6)) r_C569_5)
-     (or (not (= y29 6)) r_C569_0)
-     (or (not (= y29 6)) r_C569_1)
-     (or (not (= y29 6)) r_C569_2)
-     (or (not (= y29 6)) (not r_C569_3))
-     (or (not (= y29 6)) (not r_C569_4))
-     (or (not (= y29 6)) (not r_C569_5))
-     (or (not (= y39 6)) r_C569_0)
-     (or (not (= y39 6)) r_C569_1)
-     (or (not (= y39 6)) r_C569_2)
-     (or (not (= y39 6)) (not r_C569_3))
-     (or (not (= y39 6)) (not r_C569_4))
-     (or (not (= y39 6)) r_C569_5)
-     (or (not (= y49 6)) r_C569_0)
-     (or (not (= y49 6)) r_C569_1)
-     (or (not (= y49 6)) r_C569_2)
-     (or (not (= y49 6)) (not r_C569_3))
-     (or (not (= y49 6)) r_C569_4)
-     (or (not (= y49 6)) (not r_C569_5))
-     (or (not (= y59 6)) r_C569_0)
-     (or (not (= y59 6)) r_C569_1)
-     (or (not (= y59 6)) r_C569_2)
-     (or (not (= y59 6)) (not r_C569_3))
-     (or (not (= y59 6)) r_C569_4)
-     (or (not (= y59 6)) r_C569_5)))
-(assert (and (or (= x00 7)
-         (= x10 7)
-         (= x20 7)
-         (= x30 7)
-         (= x40 7)
-         (= x50 7)
-         (= x01 7)
-         (= x11 7)
-         (= x21 7)
-         (= x31 7)
-         (= x41 7)
-         (= x51 7)
-         (= x02 7)
-         (= x12 7)
-         (= x22 7)
-         (= x32 7)
-         (= x42 7)
-         (= x52 7)
-         (= x03 7)
-         (= x13 7)
-         (= x23 7)
-         (= x33 7)
-         (= x43 7)
-         (= x53 7)
-         (= x04 7)
-         (= x14 7)
-         (= x24 7)
-         (= x34 7)
-         (= x44 7)
-         (= x54 7)
-         (= x05 7)
-         (= x15 7)
-         (= x25 7)
-         (= x35 7)
-         (= x45 7)
-         (= x55 7)
-         (= x06 7)
-         (= x16 7)
-         (= x26 7)
-         (= x36 7)
-         (= x46 7)
-         (= x56 7)
-         (= x07 7)
-         (= x17 7)
-         (= x27 7)
-         (= x37 7)
-         (= x47 7)
-         (= x57 7)
-         (= x08 7)
-         (= x18 7)
-         (= x28 7)
-         (= x38 7)
-         (= x48 7)
-         (= x58 7)
-         (= x09 7)
-         (= x19 7)
-         (= x29 7)
-         (= x39 7)
-         (= x49 7)
-         (= x59 7))
-     (or (not (= x00 7)) (not r_B579_0))
-     (or (not (= x00 7)) (not r_B579_1))
-     (or (not (= x00 7)) (not r_B579_2))
-     (or (not (= x00 7)) (not r_B579_3))
-     (or (not (= x00 7)) (not r_B579_4))
-     (or (not (= x00 7)) (not r_B579_5))
-     (or (not (= x10 7)) (not r_B579_0))
-     (or (not (= x10 7)) (not r_B579_1))
-     (or (not (= x10 7)) (not r_B579_2))
-     (or (not (= x10 7)) (not r_B579_3))
-     (or (not (= x10 7)) (not r_B579_4))
-     (or (not (= x10 7)) r_B579_5)
-     (or (not (= x20 7)) (not r_B579_0))
-     (or (not (= x20 7)) (not r_B579_1))
-     (or (not (= x20 7)) (not r_B579_2))
-     (or (not (= x20 7)) (not r_B579_3))
-     (or (not (= x20 7)) r_B579_4)
-     (or (not (= x20 7)) (not r_B579_5))
-     (or (not (= x30 7)) (not r_B579_0))
-     (or (not (= x30 7)) (not r_B579_1))
-     (or (not (= x30 7)) (not r_B579_2))
-     (or (not (= x30 7)) (not r_B579_3))
-     (or (not (= x30 7)) r_B579_4)
-     (or (not (= x30 7)) r_B579_5)
-     (or (not (= x40 7)) (not r_B579_0))
-     (or (not (= x40 7)) (not r_B579_1))
-     (or (not (= x40 7)) (not r_B579_2))
-     (or (not (= x40 7)) r_B579_3)
-     (or (not (= x40 7)) (not r_B579_4))
-     (or (not (= x40 7)) (not r_B579_5))
-     (or (not (= x50 7)) (not r_B579_0))
-     (or (not (= x50 7)) (not r_B579_1))
-     (or (not (= x50 7)) (not r_B579_2))
-     (or (not (= x50 7)) r_B579_3)
-     (or (not (= x50 7)) (not r_B579_4))
-     (or (not (= x50 7)) r_B579_5)
-     (or (not (= x01 7)) (not r_B579_0))
-     (or (not (= x01 7)) (not r_B579_1))
-     (or (not (= x01 7)) (not r_B579_2))
-     (or (not (= x01 7)) r_B579_3)
-     (or (not (= x01 7)) r_B579_4)
-     (or (not (= x01 7)) (not r_B579_5))
-     (or (not (= x11 7)) (not r_B579_0))
-     (or (not (= x11 7)) (not r_B579_1))
-     (or (not (= x11 7)) (not r_B579_2))
-     (or (not (= x11 7)) r_B579_3)
-     (or (not (= x11 7)) r_B579_4)
-     (or (not (= x11 7)) r_B579_5)
-     (or (not (= x21 7)) (not r_B579_0))
-     (or (not (= x21 7)) (not r_B579_1))
-     (or (not (= x21 7)) r_B579_2)
-     (or (not (= x21 7)) (not r_B579_3))
-     (or (not (= x21 7)) (not r_B579_4))
-     (or (not (= x21 7)) (not r_B579_5))
-     (or (not (= x31 7)) (not r_B579_0))
-     (or (not (= x31 7)) (not r_B579_1))
-     (or (not (= x31 7)) r_B579_2)
-     (or (not (= x31 7)) (not r_B579_3))
-     (or (not (= x31 7)) (not r_B579_4))
-     (or (not (= x31 7)) r_B579_5)
-     (or (not (= x41 7)) (not r_B579_0))
-     (or (not (= x41 7)) (not r_B579_1))
-     (or (not (= x41 7)) r_B579_2)
-     (or (not (= x41 7)) (not r_B579_3))
-     (or (not (= x41 7)) r_B579_4)
-     (or (not (= x41 7)) (not r_B579_5))
-     (or (not (= x51 7)) (not r_B579_0))
-     (or (not (= x51 7)) (not r_B579_1))
-     (or (not (= x51 7)) r_B579_2)
-     (or (not (= x51 7)) (not r_B579_3))
-     (or (not (= x51 7)) r_B579_4)
-     (or (not (= x51 7)) r_B579_5)
-     (or (not (= x02 7)) (not r_B579_0))
-     (or (not (= x02 7)) (not r_B579_1))
-     (or (not (= x02 7)) r_B579_2)
-     (or (not (= x02 7)) r_B579_3)
-     (or (not (= x02 7)) (not r_B579_4))
-     (or (not (= x02 7)) (not r_B579_5))
-     (or (not (= x12 7)) (not r_B579_0))
-     (or (not (= x12 7)) (not r_B579_1))
-     (or (not (= x12 7)) r_B579_2)
-     (or (not (= x12 7)) r_B579_3)
-     (or (not (= x12 7)) (not r_B579_4))
-     (or (not (= x12 7)) r_B579_5)
-     (or (not (= x22 7)) (not r_B579_0))
-     (or (not (= x22 7)) (not r_B579_1))
-     (or (not (= x22 7)) r_B579_2)
-     (or (not (= x22 7)) r_B579_3)
-     (or (not (= x22 7)) r_B579_4)
-     (or (not (= x22 7)) (not r_B579_5))
-     (or (not (= x32 7)) (not r_B579_0))
-     (or (not (= x32 7)) (not r_B579_1))
-     (or (not (= x32 7)) r_B579_2)
-     (or (not (= x32 7)) r_B579_3)
-     (or (not (= x32 7)) r_B579_4)
-     (or (not (= x32 7)) r_B579_5)
-     (or (not (= x42 7)) (not r_B579_0))
-     (or (not (= x42 7)) r_B579_1)
-     (or (not (= x42 7)) (not r_B579_2))
-     (or (not (= x42 7)) (not r_B579_3))
-     (or (not (= x42 7)) (not r_B579_4))
-     (or (not (= x42 7)) (not r_B579_5))
-     (or (not (= x52 7)) (not r_B579_0))
-     (or (not (= x52 7)) r_B579_1)
-     (or (not (= x52 7)) (not r_B579_2))
-     (or (not (= x52 7)) (not r_B579_3))
-     (or (not (= x52 7)) (not r_B579_4))
-     (or (not (= x52 7)) r_B579_5)
-     (or (not (= x03 7)) (not r_B579_0))
-     (or (not (= x03 7)) r_B579_1)
-     (or (not (= x03 7)) (not r_B579_2))
-     (or (not (= x03 7)) (not r_B579_3))
-     (or (not (= x03 7)) r_B579_4)
-     (or (not (= x03 7)) (not r_B579_5))
-     (or (not (= x13 7)) (not r_B579_0))
-     (or (not (= x13 7)) r_B579_1)
-     (or (not (= x13 7)) (not r_B579_2))
-     (or (not (= x13 7)) (not r_B579_3))
-     (or (not (= x13 7)) r_B579_4)
-     (or (not (= x13 7)) r_B579_5)
-     (or (not (= x23 7)) (not r_B579_0))
-     (or (not (= x23 7)) r_B579_1)
-     (or (not (= x23 7)) (not r_B579_2))
-     (or (not (= x23 7)) r_B579_3)
-     (or (not (= x23 7)) (not r_B579_4))
-     (or (not (= x23 7)) (not r_B579_5))
-     (or (not (= x33 7)) (not r_B579_0))
-     (or (not (= x33 7)) r_B579_1)
-     (or (not (= x33 7)) (not r_B579_2))
-     (or (not (= x33 7)) r_B579_3)
-     (or (not (= x33 7)) (not r_B579_4))
-     (or (not (= x33 7)) r_B579_5)
-     (or (not (= x43 7)) (not r_B579_0))
-     (or (not (= x43 7)) r_B579_1)
-     (or (not (= x43 7)) (not r_B579_2))
-     (or (not (= x43 7)) r_B579_3)
-     (or (not (= x43 7)) r_B579_4)
-     (or (not (= x43 7)) (not r_B579_5))
-     (or (not (= x53 7)) (not r_B579_0))
-     (or (not (= x53 7)) r_B579_1)
-     (or (not (= x53 7)) (not r_B579_2))
-     (or (not (= x53 7)) r_B579_3)
-     (or (not (= x53 7)) r_B579_4)
-     (or (not (= x53 7)) r_B579_5)
-     (or (not (= x04 7)) (not r_B579_0))
-     (or (not (= x04 7)) r_B579_1)
-     (or (not (= x04 7)) r_B579_2)
-     (or (not (= x04 7)) (not r_B579_3))
-     (or (not (= x04 7)) (not r_B579_4))
-     (or (not (= x04 7)) (not r_B579_5))
-     (or (not (= x14 7)) (not r_B579_0))
-     (or (not (= x14 7)) r_B579_1)
-     (or (not (= x14 7)) r_B579_2)
-     (or (not (= x14 7)) (not r_B579_3))
-     (or (not (= x14 7)) (not r_B579_4))
-     (or (not (= x14 7)) r_B579_5)
-     (or (not (= x24 7)) (not r_B579_0))
-     (or (not (= x24 7)) r_B579_1)
-     (or (not (= x24 7)) r_B579_2)
-     (or (not (= x24 7)) (not r_B579_3))
-     (or (not (= x24 7)) r_B579_4)
-     (or (not (= x24 7)) (not r_B579_5))
-     (or (not (= x34 7)) (not r_B579_0))
-     (or (not (= x34 7)) r_B579_1)
-     (or (not (= x34 7)) r_B579_2)
-     (or (not (= x34 7)) (not r_B579_3))
-     (or (not (= x34 7)) r_B579_4)
-     (or (not (= x34 7)) r_B579_5)
-     (or (not (= x44 7)) (not r_B579_0))
-     (or (not (= x44 7)) r_B579_1)
-     (or (not (= x44 7)) r_B579_2)
-     (or (not (= x44 7)) r_B579_3)
-     (or (not (= x44 7)) (not r_B579_4))
-     (or (not (= x44 7)) (not r_B579_5))
-     (or (not (= x54 7)) (not r_B579_0))
-     (or (not (= x54 7)) r_B579_1)
-     (or (not (= x54 7)) r_B579_2)
-     (or (not (= x54 7)) r_B579_3)
-     (or (not (= x54 7)) (not r_B579_4))
-     (or (not (= x54 7)) r_B579_5)
-     (or (not (= x05 7)) (not r_B579_0))
-     (or (not (= x05 7)) r_B579_1)
-     (or (not (= x05 7)) r_B579_2)
-     (or (not (= x05 7)) r_B579_3)
-     (or (not (= x05 7)) r_B579_4)
-     (or (not (= x05 7)) (not r_B579_5))
-     (or (not (= x15 7)) (not r_B579_0))
-     (or (not (= x15 7)) r_B579_1)
-     (or (not (= x15 7)) r_B579_2)
-     (or (not (= x15 7)) r_B579_3)
-     (or (not (= x15 7)) r_B579_4)
-     (or (not (= x15 7)) r_B579_5)
-     (or (not (= x25 7)) r_B579_0)
-     (or (not (= x25 7)) (not r_B579_1))
-     (or (not (= x25 7)) (not r_B579_2))
-     (or (not (= x25 7)) (not r_B579_3))
-     (or (not (= x25 7)) (not r_B579_4))
-     (or (not (= x25 7)) (not r_B579_5))
-     (or (not (= x35 7)) r_B579_0)
-     (or (not (= x35 7)) (not r_B579_1))
-     (or (not (= x35 7)) (not r_B579_2))
-     (or (not (= x35 7)) (not r_B579_3))
-     (or (not (= x35 7)) (not r_B579_4))
-     (or (not (= x35 7)) r_B579_5)
-     (or (not (= x45 7)) r_B579_0)
-     (or (not (= x45 7)) (not r_B579_1))
-     (or (not (= x45 7)) (not r_B579_2))
-     (or (not (= x45 7)) (not r_B579_3))
-     (or (not (= x45 7)) r_B579_4)
-     (or (not (= x45 7)) (not r_B579_5))
-     (or (not (= x55 7)) r_B579_0)
-     (or (not (= x55 7)) (not r_B579_1))
-     (or (not (= x55 7)) (not r_B579_2))
-     (or (not (= x55 7)) (not r_B579_3))
-     (or (not (= x55 7)) r_B579_4)
-     (or (not (= x55 7)) r_B579_5)
-     (or (not (= x06 7)) r_B579_0)
-     (or (not (= x06 7)) (not r_B579_1))
-     (or (not (= x06 7)) (not r_B579_2))
-     (or (not (= x06 7)) r_B579_3)
-     (or (not (= x06 7)) (not r_B579_4))
-     (or (not (= x06 7)) (not r_B579_5))
-     (or (not (= x16 7)) r_B579_0)
-     (or (not (= x16 7)) (not r_B579_1))
-     (or (not (= x16 7)) (not r_B579_2))
-     (or (not (= x16 7)) r_B579_3)
-     (or (not (= x16 7)) (not r_B579_4))
-     (or (not (= x16 7)) r_B579_5)
-     (or (not (= x26 7)) r_B579_0)
-     (or (not (= x26 7)) (not r_B579_1))
-     (or (not (= x26 7)) (not r_B579_2))
-     (or (not (= x26 7)) r_B579_3)
-     (or (not (= x26 7)) r_B579_4)
-     (or (not (= x26 7)) (not r_B579_5))
-     (or (not (= x36 7)) r_B579_0)
-     (or (not (= x36 7)) (not r_B579_1))
-     (or (not (= x36 7)) (not r_B579_2))
-     (or (not (= x36 7)) r_B579_3)
-     (or (not (= x36 7)) r_B579_4)
-     (or (not (= x36 7)) r_B579_5)
-     (or (not (= x46 7)) r_B579_0)
-     (or (not (= x46 7)) (not r_B579_1))
-     (or (not (= x46 7)) r_B579_2)
-     (or (not (= x46 7)) (not r_B579_3))
-     (or (not (= x46 7)) (not r_B579_4))
-     (or (not (= x46 7)) (not r_B579_5))
-     (or (not (= x56 7)) r_B579_0)
-     (or (not (= x56 7)) (not r_B579_1))
-     (or (not (= x56 7)) r_B579_2)
-     (or (not (= x56 7)) (not r_B579_3))
-     (or (not (= x56 7)) (not r_B579_4))
-     (or (not (= x56 7)) r_B579_5)
-     (or (not (= x07 7)) r_B579_0)
-     (or (not (= x07 7)) (not r_B579_1))
-     (or (not (= x07 7)) r_B579_2)
-     (or (not (= x07 7)) (not r_B579_3))
-     (or (not (= x07 7)) r_B579_4)
-     (or (not (= x07 7)) (not r_B579_5))
-     (or (not (= x17 7)) r_B579_0)
-     (or (not (= x17 7)) (not r_B579_1))
-     (or (not (= x17 7)) r_B579_2)
-     (or (not (= x17 7)) (not r_B579_3))
-     (or (not (= x17 7)) r_B579_4)
-     (or (not (= x17 7)) r_B579_5)
-     (or (not (= x27 7)) r_B579_0)
-     (or (not (= x27 7)) (not r_B579_1))
-     (or (not (= x27 7)) r_B579_2)
-     (or (not (= x27 7)) r_B579_3)
-     (or (not (= x27 7)) (not r_B579_4))
-     (or (not (= x27 7)) (not r_B579_5))
-     (or (not (= x37 7)) r_B579_0)
-     (or (not (= x37 7)) (not r_B579_1))
-     (or (not (= x37 7)) r_B579_2)
-     (or (not (= x37 7)) r_B579_3)
-     (or (not (= x37 7)) (not r_B579_4))
-     (or (not (= x37 7)) r_B579_5)
-     (or (not (= x47 7)) r_B579_0)
-     (or (not (= x47 7)) (not r_B579_1))
-     (or (not (= x47 7)) r_B579_2)
-     (or (not (= x47 7)) r_B579_3)
-     (or (not (= x47 7)) r_B579_4)
-     (or (not (= x47 7)) (not r_B579_5))
-     (or (not (= x57 7)) r_B579_0)
-     (or (not (= x57 7)) (not r_B579_1))
-     (or (not (= x57 7)) r_B579_2)
-     (or (not (= x57 7)) r_B579_3)
-     (or (not (= x57 7)) r_B579_4)
-     (or (not (= x57 7)) r_B579_5)
-     (or (not (= x08 7)) r_B579_0)
-     (or (not (= x08 7)) r_B579_1)
-     (or (not (= x08 7)) (not r_B579_2))
-     (or (not (= x08 7)) (not r_B579_3))
-     (or (not (= x08 7)) (not r_B579_4))
-     (or (not (= x08 7)) (not r_B579_5))
-     (or (not (= x18 7)) r_B579_0)
-     (or (not (= x18 7)) r_B579_1)
-     (or (not (= x18 7)) (not r_B579_2))
-     (or (not (= x18 7)) (not r_B579_3))
-     (or (not (= x18 7)) (not r_B579_4))
-     (or (not (= x18 7)) r_B579_5)
-     (or (not (= x28 7)) r_B579_0)
-     (or (not (= x28 7)) r_B579_1)
-     (or (not (= x28 7)) (not r_B579_2))
-     (or (not (= x28 7)) (not r_B579_3))
-     (or (not (= x28 7)) r_B579_4)
-     (or (not (= x28 7)) (not r_B579_5))
-     (or (not (= x38 7)) r_B579_0)
-     (or (not (= x38 7)) r_B579_1)
-     (or (not (= x38 7)) (not r_B579_2))
-     (or (not (= x38 7)) (not r_B579_3))
-     (or (not (= x38 7)) r_B579_4)
-     (or (not (= x38 7)) r_B579_5)
-     (or (not (= x48 7)) r_B579_0)
-     (or (not (= x48 7)) r_B579_1)
-     (or (not (= x48 7)) (not r_B579_2))
-     (or (not (= x48 7)) r_B579_3)
-     (or (not (= x48 7)) (not r_B579_4))
-     (or (not (= x48 7)) (not r_B579_5))
-     (or (not (= x58 7)) r_B579_0)
-     (or (not (= x58 7)) r_B579_1)
-     (or (not (= x58 7)) (not r_B579_2))
-     (or (not (= x58 7)) r_B579_3)
-     (or (not (= x58 7)) (not r_B579_4))
-     (or (not (= x58 7)) r_B579_5)
-     (or (not (= x09 7)) r_B579_0)
-     (or (not (= x09 7)) r_B579_1)
-     (or (not (= x09 7)) (not r_B579_2))
-     (or (not (= x09 7)) r_B579_3)
-     (or (not (= x09 7)) r_B579_4)
-     (or (not (= x09 7)) (not r_B579_5))
-     (or (not (= x19 7)) r_B579_0)
-     (or (not (= x19 7)) r_B579_1)
-     (or (not (= x19 7)) (not r_B579_2))
-     (or (not (= x19 7)) r_B579_3)
-     (or (not (= x19 7)) r_B579_4)
-     (or (not (= x19 7)) r_B579_5)
-     (or (not (= x29 7)) r_B579_0)
-     (or (not (= x29 7)) r_B579_1)
-     (or (not (= x29 7)) r_B579_2)
-     (or (not (= x29 7)) (not r_B579_3))
-     (or (not (= x29 7)) (not r_B579_4))
-     (or (not (= x29 7)) (not r_B579_5))
-     (or (not (= x39 7)) r_B579_0)
-     (or (not (= x39 7)) r_B579_1)
-     (or (not (= x39 7)) r_B579_2)
-     (or (not (= x39 7)) (not r_B579_3))
-     (or (not (= x39 7)) (not r_B579_4))
-     (or (not (= x39 7)) r_B579_5)
-     (or (not (= x49 7)) r_B579_0)
-     (or (not (= x49 7)) r_B579_1)
-     (or (not (= x49 7)) r_B579_2)
-     (or (not (= x49 7)) (not r_B579_3))
-     (or (not (= x49 7)) r_B579_4)
-     (or (not (= x49 7)) (not r_B579_5))
-     (or (not (= x59 7)) r_B579_0)
-     (or (not (= x59 7)) r_B579_1)
-     (or (not (= x59 7)) r_B579_2)
-     (or (not (= x59 7)) (not r_B579_3))
-     (or (not (= x59 7)) r_B579_4)
-     (or (not (= x59 7)) r_B579_5)))
-(assert (and (or (= y00 7)
-         (= y10 7)
-         (= y20 7)
-         (= y30 7)
-         (= y40 7)
-         (= y50 7)
-         (= y01 7)
-         (= y11 7)
-         (= y21 7)
-         (= y31 7)
-         (= y41 7)
-         (= y51 7)
-         (= y02 7)
-         (= y12 7)
-         (= y22 7)
-         (= y32 7)
-         (= y42 7)
-         (= y52 7)
-         (= y03 7)
-         (= y13 7)
-         (= y23 7)
-         (= y33 7)
-         (= y43 7)
-         (= y53 7)
-         (= y04 7)
-         (= y14 7)
-         (= y24 7)
-         (= y34 7)
-         (= y44 7)
-         (= y54 7)
-         (= y05 7)
-         (= y15 7)
-         (= y25 7)
-         (= y35 7)
-         (= y45 7)
-         (= y55 7)
-         (= y06 7)
-         (= y16 7)
-         (= y26 7)
-         (= y36 7)
-         (= y46 7)
-         (= y56 7)
-         (= y07 7)
-         (= y17 7)
-         (= y27 7)
-         (= y37 7)
-         (= y47 7)
-         (= y57 7)
-         (= y08 7)
-         (= y18 7)
-         (= y28 7)
-         (= y38 7)
-         (= y48 7)
-         (= y58 7)
-         (= y09 7)
-         (= y19 7)
-         (= y29 7)
-         (= y39 7)
-         (= y49 7)
-         (= y59 7))
-     (or (not (= y00 7)) (not r_C579_0))
-     (or (not (= y00 7)) (not r_C579_1))
-     (or (not (= y00 7)) (not r_C579_2))
-     (or (not (= y00 7)) (not r_C579_3))
-     (or (not (= y00 7)) (not r_C579_4))
-     (or (not (= y00 7)) (not r_C579_5))
-     (or (not (= y10 7)) (not r_C579_0))
-     (or (not (= y10 7)) (not r_C579_1))
-     (or (not (= y10 7)) (not r_C579_2))
-     (or (not (= y10 7)) (not r_C579_3))
-     (or (not (= y10 7)) (not r_C579_4))
-     (or (not (= y10 7)) r_C579_5)
-     (or (not (= y20 7)) (not r_C579_0))
-     (or (not (= y20 7)) (not r_C579_1))
-     (or (not (= y20 7)) (not r_C579_2))
-     (or (not (= y20 7)) (not r_C579_3))
-     (or (not (= y20 7)) r_C579_4)
-     (or (not (= y20 7)) (not r_C579_5))
-     (or (not (= y30 7)) (not r_C579_0))
-     (or (not (= y30 7)) (not r_C579_1))
-     (or (not (= y30 7)) (not r_C579_2))
-     (or (not (= y30 7)) (not r_C579_3))
-     (or (not (= y30 7)) r_C579_4)
-     (or (not (= y30 7)) r_C579_5)
-     (or (not (= y40 7)) (not r_C579_0))
-     (or (not (= y40 7)) (not r_C579_1))
-     (or (not (= y40 7)) (not r_C579_2))
-     (or (not (= y40 7)) r_C579_3)
-     (or (not (= y40 7)) (not r_C579_4))
-     (or (not (= y40 7)) (not r_C579_5))
-     (or (not (= y50 7)) (not r_C579_0))
-     (or (not (= y50 7)) (not r_C579_1))
-     (or (not (= y50 7)) (not r_C579_2))
-     (or (not (= y50 7)) r_C579_3)
-     (or (not (= y50 7)) (not r_C579_4))
-     (or (not (= y50 7)) r_C579_5)
-     (or (not (= y01 7)) (not r_C579_0))
-     (or (not (= y01 7)) (not r_C579_1))
-     (or (not (= y01 7)) (not r_C579_2))
-     (or (not (= y01 7)) r_C579_3)
-     (or (not (= y01 7)) r_C579_4)
-     (or (not (= y01 7)) (not r_C579_5))
-     (or (not (= y11 7)) (not r_C579_0))
-     (or (not (= y11 7)) (not r_C579_1))
-     (or (not (= y11 7)) (not r_C579_2))
-     (or (not (= y11 7)) r_C579_3)
-     (or (not (= y11 7)) r_C579_4)
-     (or (not (= y11 7)) r_C579_5)
-     (or (not (= y21 7)) (not r_C579_0))
-     (or (not (= y21 7)) (not r_C579_1))
-     (or (not (= y21 7)) r_C579_2)
-     (or (not (= y21 7)) (not r_C579_3))
-     (or (not (= y21 7)) (not r_C579_4))
-     (or (not (= y21 7)) (not r_C579_5))
-     (or (not (= y31 7)) (not r_C579_0))
-     (or (not (= y31 7)) (not r_C579_1))
-     (or (not (= y31 7)) r_C579_2)
-     (or (not (= y31 7)) (not r_C579_3))
-     (or (not (= y31 7)) (not r_C579_4))
-     (or (not (= y31 7)) r_C579_5)
-     (or (not (= y41 7)) (not r_C579_0))
-     (or (not (= y41 7)) (not r_C579_1))
-     (or (not (= y41 7)) r_C579_2)
-     (or (not (= y41 7)) (not r_C579_3))
-     (or (not (= y41 7)) r_C579_4)
-     (or (not (= y41 7)) (not r_C579_5))
-     (or (not (= y51 7)) (not r_C579_0))
-     (or (not (= y51 7)) (not r_C579_1))
-     (or (not (= y51 7)) r_C579_2)
-     (or (not (= y51 7)) (not r_C579_3))
-     (or (not (= y51 7)) r_C579_4)
-     (or (not (= y51 7)) r_C579_5)
-     (or (not (= y02 7)) (not r_C579_0))
-     (or (not (= y02 7)) (not r_C579_1))
-     (or (not (= y02 7)) r_C579_2)
-     (or (not (= y02 7)) r_C579_3)
-     (or (not (= y02 7)) (not r_C579_4))
-     (or (not (= y02 7)) (not r_C579_5))
-     (or (not (= y12 7)) (not r_C579_0))
-     (or (not (= y12 7)) (not r_C579_1))
-     (or (not (= y12 7)) r_C579_2)
-     (or (not (= y12 7)) r_C579_3)
-     (or (not (= y12 7)) (not r_C579_4))
-     (or (not (= y12 7)) r_C579_5)
-     (or (not (= y22 7)) (not r_C579_0))
-     (or (not (= y22 7)) (not r_C579_1))
-     (or (not (= y22 7)) r_C579_2)
-     (or (not (= y22 7)) r_C579_3)
-     (or (not (= y22 7)) r_C579_4)
-     (or (not (= y22 7)) (not r_C579_5))
-     (or (not (= y32 7)) (not r_C579_0))
-     (or (not (= y32 7)) (not r_C579_1))
-     (or (not (= y32 7)) r_C579_2)
-     (or (not (= y32 7)) r_C579_3)
-     (or (not (= y32 7)) r_C579_4)
-     (or (not (= y32 7)) r_C579_5)
-     (or (not (= y42 7)) (not r_C579_0))
-     (or (not (= y42 7)) r_C579_1)
-     (or (not (= y42 7)) (not r_C579_2))
-     (or (not (= y42 7)) (not r_C579_3))
-     (or (not (= y42 7)) (not r_C579_4))
-     (or (not (= y42 7)) (not r_C579_5))
-     (or (not (= y52 7)) (not r_C579_0))
-     (or (not (= y52 7)) r_C579_1)
-     (or (not (= y52 7)) (not r_C579_2))
-     (or (not (= y52 7)) (not r_C579_3))
-     (or (not (= y52 7)) (not r_C579_4))
-     (or (not (= y52 7)) r_C579_5)
-     (or (not (= y03 7)) (not r_C579_0))
-     (or (not (= y03 7)) r_C579_1)
-     (or (not (= y03 7)) (not r_C579_2))
-     (or (not (= y03 7)) (not r_C579_3))
-     (or (not (= y03 7)) r_C579_4)
-     (or (not (= y03 7)) (not r_C579_5))
-     (or (not (= y13 7)) (not r_C579_0))
-     (or (not (= y13 7)) r_C579_1)
-     (or (not (= y13 7)) (not r_C579_2))
-     (or (not (= y13 7)) (not r_C579_3))
-     (or (not (= y13 7)) r_C579_4)
-     (or (not (= y13 7)) r_C579_5)
-     (or (not (= y23 7)) (not r_C579_0))
-     (or (not (= y23 7)) r_C579_1)
-     (or (not (= y23 7)) (not r_C579_2))
-     (or (not (= y23 7)) r_C579_3)
-     (or (not (= y23 7)) (not r_C579_4))
-     (or (not (= y23 7)) (not r_C579_5))
-     (or (not (= y33 7)) (not r_C579_0))
-     (or (not (= y33 7)) r_C579_1)
-     (or (not (= y33 7)) (not r_C579_2))
-     (or (not (= y33 7)) r_C579_3)
-     (or (not (= y33 7)) (not r_C579_4))
-     (or (not (= y33 7)) r_C579_5)
-     (or (not (= y43 7)) (not r_C579_0))
-     (or (not (= y43 7)) r_C579_1)
-     (or (not (= y43 7)) (not r_C579_2))
-     (or (not (= y43 7)) r_C579_3)
-     (or (not (= y43 7)) r_C579_4)
-     (or (not (= y43 7)) (not r_C579_5))
-     (or (not (= y53 7)) (not r_C579_0))
-     (or (not (= y53 7)) r_C579_1)
-     (or (not (= y53 7)) (not r_C579_2))
-     (or (not (= y53 7)) r_C579_3)
-     (or (not (= y53 7)) r_C579_4)
-     (or (not (= y53 7)) r_C579_5)
-     (or (not (= y04 7)) (not r_C579_0))
-     (or (not (= y04 7)) r_C579_1)
-     (or (not (= y04 7)) r_C579_2)
-     (or (not (= y04 7)) (not r_C579_3))
-     (or (not (= y04 7)) (not r_C579_4))
-     (or (not (= y04 7)) (not r_C579_5))
-     (or (not (= y14 7)) (not r_C579_0))
-     (or (not (= y14 7)) r_C579_1)
-     (or (not (= y14 7)) r_C579_2)
-     (or (not (= y14 7)) (not r_C579_3))
-     (or (not (= y14 7)) (not r_C579_4))
-     (or (not (= y14 7)) r_C579_5)
-     (or (not (= y24 7)) (not r_C579_0))
-     (or (not (= y24 7)) r_C579_1)
-     (or (not (= y24 7)) r_C579_2)
-     (or (not (= y24 7)) (not r_C579_3))
-     (or (not (= y24 7)) r_C579_4)
-     (or (not (= y24 7)) (not r_C579_5))
-     (or (not (= y34 7)) (not r_C579_0))
-     (or (not (= y34 7)) r_C579_1)
-     (or (not (= y34 7)) r_C579_2)
-     (or (not (= y34 7)) (not r_C579_3))
-     (or (not (= y34 7)) r_C579_4)
-     (or (not (= y34 7)) r_C579_5)
-     (or (not (= y44 7)) (not r_C579_0))
-     (or (not (= y44 7)) r_C579_1)
-     (or (not (= y44 7)) r_C579_2)
-     (or (not (= y44 7)) r_C579_3)
-     (or (not (= y44 7)) (not r_C579_4))
-     (or (not (= y44 7)) (not r_C579_5))
-     (or (not (= y54 7)) (not r_C579_0))
-     (or (not (= y54 7)) r_C579_1)
-     (or (not (= y54 7)) r_C579_2)
-     (or (not (= y54 7)) r_C579_3)
-     (or (not (= y54 7)) (not r_C579_4))
-     (or (not (= y54 7)) r_C579_5)
-     (or (not (= y05 7)) (not r_C579_0))
-     (or (not (= y05 7)) r_C579_1)
-     (or (not (= y05 7)) r_C579_2)
-     (or (not (= y05 7)) r_C579_3)
-     (or (not (= y05 7)) r_C579_4)
-     (or (not (= y05 7)) (not r_C579_5))
-     (or (not (= y15 7)) (not r_C579_0))
-     (or (not (= y15 7)) r_C579_1)
-     (or (not (= y15 7)) r_C579_2)
-     (or (not (= y15 7)) r_C579_3)
-     (or (not (= y15 7)) r_C579_4)
-     (or (not (= y15 7)) r_C579_5)
-     (or (not (= y25 7)) r_C579_0)
-     (or (not (= y25 7)) (not r_C579_1))
-     (or (not (= y25 7)) (not r_C579_2))
-     (or (not (= y25 7)) (not r_C579_3))
-     (or (not (= y25 7)) (not r_C579_4))
-     (or (not (= y25 7)) (not r_C579_5))
-     (or (not (= y35 7)) r_C579_0)
-     (or (not (= y35 7)) (not r_C579_1))
-     (or (not (= y35 7)) (not r_C579_2))
-     (or (not (= y35 7)) (not r_C579_3))
-     (or (not (= y35 7)) (not r_C579_4))
-     (or (not (= y35 7)) r_C579_5)
-     (or (not (= y45 7)) r_C579_0)
-     (or (not (= y45 7)) (not r_C579_1))
-     (or (not (= y45 7)) (not r_C579_2))
-     (or (not (= y45 7)) (not r_C579_3))
-     (or (not (= y45 7)) r_C579_4)
-     (or (not (= y45 7)) (not r_C579_5))
-     (or (not (= y55 7)) r_C579_0)
-     (or (not (= y55 7)) (not r_C579_1))
-     (or (not (= y55 7)) (not r_C579_2))
-     (or (not (= y55 7)) (not r_C579_3))
-     (or (not (= y55 7)) r_C579_4)
-     (or (not (= y55 7)) r_C579_5)
-     (or (not (= y06 7)) r_C579_0)
-     (or (not (= y06 7)) (not r_C579_1))
-     (or (not (= y06 7)) (not r_C579_2))
-     (or (not (= y06 7)) r_C579_3)
-     (or (not (= y06 7)) (not r_C579_4))
-     (or (not (= y06 7)) (not r_C579_5))
-     (or (not (= y16 7)) r_C579_0)
-     (or (not (= y16 7)) (not r_C579_1))
-     (or (not (= y16 7)) (not r_C579_2))
-     (or (not (= y16 7)) r_C579_3)
-     (or (not (= y16 7)) (not r_C579_4))
-     (or (not (= y16 7)) r_C579_5)
-     (or (not (= y26 7)) r_C579_0)
-     (or (not (= y26 7)) (not r_C579_1))
-     (or (not (= y26 7)) (not r_C579_2))
-     (or (not (= y26 7)) r_C579_3)
-     (or (not (= y26 7)) r_C579_4)
-     (or (not (= y26 7)) (not r_C579_5))
-     (or (not (= y36 7)) r_C579_0)
-     (or (not (= y36 7)) (not r_C579_1))
-     (or (not (= y36 7)) (not r_C579_2))
-     (or (not (= y36 7)) r_C579_3)
-     (or (not (= y36 7)) r_C579_4)
-     (or (not (= y36 7)) r_C579_5)
-     (or (not (= y46 7)) r_C579_0)
-     (or (not (= y46 7)) (not r_C579_1))
-     (or (not (= y46 7)) r_C579_2)
-     (or (not (= y46 7)) (not r_C579_3))
-     (or (not (= y46 7)) (not r_C579_4))
-     (or (not (= y46 7)) (not r_C579_5))
-     (or (not (= y56 7)) r_C579_0)
-     (or (not (= y56 7)) (not r_C579_1))
-     (or (not (= y56 7)) r_C579_2)
-     (or (not (= y56 7)) (not r_C579_3))
-     (or (not (= y56 7)) (not r_C579_4))
-     (or (not (= y56 7)) r_C579_5)
-     (or (not (= y07 7)) r_C579_0)
-     (or (not (= y07 7)) (not r_C579_1))
-     (or (not (= y07 7)) r_C579_2)
-     (or (not (= y07 7)) (not r_C579_3))
-     (or (not (= y07 7)) r_C579_4)
-     (or (not (= y07 7)) (not r_C579_5))
-     (or (not (= y17 7)) r_C579_0)
-     (or (not (= y17 7)) (not r_C579_1))
-     (or (not (= y17 7)) r_C579_2)
-     (or (not (= y17 7)) (not r_C579_3))
-     (or (not (= y17 7)) r_C579_4)
-     (or (not (= y17 7)) r_C579_5)
-     (or (not (= y27 7)) r_C579_0)
-     (or (not (= y27 7)) (not r_C579_1))
-     (or (not (= y27 7)) r_C579_2)
-     (or (not (= y27 7)) r_C579_3)
-     (or (not (= y27 7)) (not r_C579_4))
-     (or (not (= y27 7)) (not r_C579_5))
-     (or (not (= y37 7)) r_C579_0)
-     (or (not (= y37 7)) (not r_C579_1))
-     (or (not (= y37 7)) r_C579_2)
-     (or (not (= y37 7)) r_C579_3)
-     (or (not (= y37 7)) (not r_C579_4))
-     (or (not (= y37 7)) r_C579_5)
-     (or (not (= y47 7)) r_C579_0)
-     (or (not (= y47 7)) (not r_C579_1))
-     (or (not (= y47 7)) r_C579_2)
-     (or (not (= y47 7)) r_C579_3)
-     (or (not (= y47 7)) r_C579_4)
-     (or (not (= y47 7)) (not r_C579_5))
-     (or (not (= y57 7)) r_C579_0)
-     (or (not (= y57 7)) (not r_C579_1))
-     (or (not (= y57 7)) r_C579_2)
-     (or (not (= y57 7)) r_C579_3)
-     (or (not (= y57 7)) r_C579_4)
-     (or (not (= y57 7)) r_C579_5)
-     (or (not (= y08 7)) r_C579_0)
-     (or (not (= y08 7)) r_C579_1)
-     (or (not (= y08 7)) (not r_C579_2))
-     (or (not (= y08 7)) (not r_C579_3))
-     (or (not (= y08 7)) (not r_C579_4))
-     (or (not (= y08 7)) (not r_C579_5))
-     (or (not (= y18 7)) r_C579_0)
-     (or (not (= y18 7)) r_C579_1)
-     (or (not (= y18 7)) (not r_C579_2))
-     (or (not (= y18 7)) (not r_C579_3))
-     (or (not (= y18 7)) (not r_C579_4))
-     (or (not (= y18 7)) r_C579_5)
-     (or (not (= y28 7)) r_C579_0)
-     (or (not (= y28 7)) r_C579_1)
-     (or (not (= y28 7)) (not r_C579_2))
-     (or (not (= y28 7)) (not r_C579_3))
-     (or (not (= y28 7)) r_C579_4)
-     (or (not (= y28 7)) (not r_C579_5))
-     (or (not (= y38 7)) r_C579_0)
-     (or (not (= y38 7)) r_C579_1)
-     (or (not (= y38 7)) (not r_C579_2))
-     (or (not (= y38 7)) (not r_C579_3))
-     (or (not (= y38 7)) r_C579_4)
-     (or (not (= y38 7)) r_C579_5)
-     (or (not (= y48 7)) r_C579_0)
-     (or (not (= y48 7)) r_C579_1)
-     (or (not (= y48 7)) (not r_C579_2))
-     (or (not (= y48 7)) r_C579_3)
-     (or (not (= y48 7)) (not r_C579_4))
-     (or (not (= y48 7)) (not r_C579_5))
-     (or (not (= y58 7)) r_C579_0)
-     (or (not (= y58 7)) r_C579_1)
-     (or (not (= y58 7)) (not r_C579_2))
-     (or (not (= y58 7)) r_C579_3)
-     (or (not (= y58 7)) (not r_C579_4))
-     (or (not (= y58 7)) r_C579_5)
-     (or (not (= y09 7)) r_C579_0)
-     (or (not (= y09 7)) r_C579_1)
-     (or (not (= y09 7)) (not r_C579_2))
-     (or (not (= y09 7)) r_C579_3)
-     (or (not (= y09 7)) r_C579_4)
-     (or (not (= y09 7)) (not r_C579_5))
-     (or (not (= y19 7)) r_C579_0)
-     (or (not (= y19 7)) r_C579_1)
-     (or (not (= y19 7)) (not r_C579_2))
-     (or (not (= y19 7)) r_C579_3)
-     (or (not (= y19 7)) r_C579_4)
-     (or (not (= y19 7)) r_C579_5)
-     (or (not (= y29 7)) r_C579_0)
-     (or (not (= y29 7)) r_C579_1)
-     (or (not (= y29 7)) r_C579_2)
-     (or (not (= y29 7)) (not r_C579_3))
-     (or (not (= y29 7)) (not r_C579_4))
-     (or (not (= y29 7)) (not r_C579_5))
-     (or (not (= y39 7)) r_C579_0)
-     (or (not (= y39 7)) r_C579_1)
-     (or (not (= y39 7)) r_C579_2)
-     (or (not (= y39 7)) (not r_C579_3))
-     (or (not (= y39 7)) (not r_C579_4))
-     (or (not (= y39 7)) r_C579_5)
-     (or (not (= y49 7)) r_C579_0)
-     (or (not (= y49 7)) r_C579_1)
-     (or (not (= y49 7)) r_C579_2)
-     (or (not (= y49 7)) (not r_C579_3))
-     (or (not (= y49 7)) r_C579_4)
-     (or (not (= y49 7)) (not r_C579_5))
-     (or (not (= y59 7)) r_C579_0)
-     (or (not (= y59 7)) r_C579_1)
-     (or (not (= y59 7)) r_C579_2)
-     (or (not (= y59 7)) (not r_C579_3))
-     (or (not (= y59 7)) r_C579_4)
-     (or (not (= y59 7)) r_C579_5)))
-(assert (and (or (= x00 8)
-         (= x10 8)
-         (= x20 8)
-         (= x30 8)
-         (= x40 8)
-         (= x50 8)
-         (= x01 8)
-         (= x11 8)
-         (= x21 8)
-         (= x31 8)
-         (= x41 8)
-         (= x51 8)
-         (= x02 8)
-         (= x12 8)
-         (= x22 8)
-         (= x32 8)
-         (= x42 8)
-         (= x52 8)
-         (= x03 8)
-         (= x13 8)
-         (= x23 8)
-         (= x33 8)
-         (= x43 8)
-         (= x53 8)
-         (= x04 8)
-         (= x14 8)
-         (= x24 8)
-         (= x34 8)
-         (= x44 8)
-         (= x54 8)
-         (= x05 8)
-         (= x15 8)
-         (= x25 8)
-         (= x35 8)
-         (= x45 8)
-         (= x55 8)
-         (= x06 8)
-         (= x16 8)
-         (= x26 8)
-         (= x36 8)
-         (= x46 8)
-         (= x56 8)
-         (= x07 8)
-         (= x17 8)
-         (= x27 8)
-         (= x37 8)
-         (= x47 8)
-         (= x57 8)
-         (= x08 8)
-         (= x18 8)
-         (= x28 8)
-         (= x38 8)
-         (= x48 8)
-         (= x58 8)
-         (= x09 8)
-         (= x19 8)
-         (= x29 8)
-         (= x39 8)
-         (= x49 8)
-         (= x59 8))
-     (or (not (= x00 8)) (not r_B589_0))
-     (or (not (= x00 8)) (not r_B589_1))
-     (or (not (= x00 8)) (not r_B589_2))
-     (or (not (= x00 8)) (not r_B589_3))
-     (or (not (= x00 8)) (not r_B589_4))
-     (or (not (= x00 8)) (not r_B589_5))
-     (or (not (= x10 8)) (not r_B589_0))
-     (or (not (= x10 8)) (not r_B589_1))
-     (or (not (= x10 8)) (not r_B589_2))
-     (or (not (= x10 8)) (not r_B589_3))
-     (or (not (= x10 8)) (not r_B589_4))
-     (or (not (= x10 8)) r_B589_5)
-     (or (not (= x20 8)) (not r_B589_0))
-     (or (not (= x20 8)) (not r_B589_1))
-     (or (not (= x20 8)) (not r_B589_2))
-     (or (not (= x20 8)) (not r_B589_3))
-     (or (not (= x20 8)) r_B589_4)
-     (or (not (= x20 8)) (not r_B589_5))
-     (or (not (= x30 8)) (not r_B589_0))
-     (or (not (= x30 8)) (not r_B589_1))
-     (or (not (= x30 8)) (not r_B589_2))
-     (or (not (= x30 8)) (not r_B589_3))
-     (or (not (= x30 8)) r_B589_4)
-     (or (not (= x30 8)) r_B589_5)
-     (or (not (= x40 8)) (not r_B589_0))
-     (or (not (= x40 8)) (not r_B589_1))
-     (or (not (= x40 8)) (not r_B589_2))
-     (or (not (= x40 8)) r_B589_3)
-     (or (not (= x40 8)) (not r_B589_4))
-     (or (not (= x40 8)) (not r_B589_5))
-     (or (not (= x50 8)) (not r_B589_0))
-     (or (not (= x50 8)) (not r_B589_1))
-     (or (not (= x50 8)) (not r_B589_2))
-     (or (not (= x50 8)) r_B589_3)
-     (or (not (= x50 8)) (not r_B589_4))
-     (or (not (= x50 8)) r_B589_5)
-     (or (not (= x01 8)) (not r_B589_0))
-     (or (not (= x01 8)) (not r_B589_1))
-     (or (not (= x01 8)) (not r_B589_2))
-     (or (not (= x01 8)) r_B589_3)
-     (or (not (= x01 8)) r_B589_4)
-     (or (not (= x01 8)) (not r_B589_5))
-     (or (not (= x11 8)) (not r_B589_0))
-     (or (not (= x11 8)) (not r_B589_1))
-     (or (not (= x11 8)) (not r_B589_2))
-     (or (not (= x11 8)) r_B589_3)
-     (or (not (= x11 8)) r_B589_4)
-     (or (not (= x11 8)) r_B589_5)
-     (or (not (= x21 8)) (not r_B589_0))
-     (or (not (= x21 8)) (not r_B589_1))
-     (or (not (= x21 8)) r_B589_2)
-     (or (not (= x21 8)) (not r_B589_3))
-     (or (not (= x21 8)) (not r_B589_4))
-     (or (not (= x21 8)) (not r_B589_5))
-     (or (not (= x31 8)) (not r_B589_0))
-     (or (not (= x31 8)) (not r_B589_1))
-     (or (not (= x31 8)) r_B589_2)
-     (or (not (= x31 8)) (not r_B589_3))
-     (or (not (= x31 8)) (not r_B589_4))
-     (or (not (= x31 8)) r_B589_5)
-     (or (not (= x41 8)) (not r_B589_0))
-     (or (not (= x41 8)) (not r_B589_1))
-     (or (not (= x41 8)) r_B589_2)
-     (or (not (= x41 8)) (not r_B589_3))
-     (or (not (= x41 8)) r_B589_4)
-     (or (not (= x41 8)) (not r_B589_5))
-     (or (not (= x51 8)) (not r_B589_0))
-     (or (not (= x51 8)) (not r_B589_1))
-     (or (not (= x51 8)) r_B589_2)
-     (or (not (= x51 8)) (not r_B589_3))
-     (or (not (= x51 8)) r_B589_4)
-     (or (not (= x51 8)) r_B589_5)
-     (or (not (= x02 8)) (not r_B589_0))
-     (or (not (= x02 8)) (not r_B589_1))
-     (or (not (= x02 8)) r_B589_2)
-     (or (not (= x02 8)) r_B589_3)
-     (or (not (= x02 8)) (not r_B589_4))
-     (or (not (= x02 8)) (not r_B589_5))
-     (or (not (= x12 8)) (not r_B589_0))
-     (or (not (= x12 8)) (not r_B589_1))
-     (or (not (= x12 8)) r_B589_2)
-     (or (not (= x12 8)) r_B589_3)
-     (or (not (= x12 8)) (not r_B589_4))
-     (or (not (= x12 8)) r_B589_5)
-     (or (not (= x22 8)) (not r_B589_0))
-     (or (not (= x22 8)) (not r_B589_1))
-     (or (not (= x22 8)) r_B589_2)
-     (or (not (= x22 8)) r_B589_3)
-     (or (not (= x22 8)) r_B589_4)
-     (or (not (= x22 8)) (not r_B589_5))
-     (or (not (= x32 8)) (not r_B589_0))
-     (or (not (= x32 8)) (not r_B589_1))
-     (or (not (= x32 8)) r_B589_2)
-     (or (not (= x32 8)) r_B589_3)
-     (or (not (= x32 8)) r_B589_4)
-     (or (not (= x32 8)) r_B589_5)
-     (or (not (= x42 8)) (not r_B589_0))
-     (or (not (= x42 8)) r_B589_1)
-     (or (not (= x42 8)) (not r_B589_2))
-     (or (not (= x42 8)) (not r_B589_3))
-     (or (not (= x42 8)) (not r_B589_4))
-     (or (not (= x42 8)) (not r_B589_5))
-     (or (not (= x52 8)) (not r_B589_0))
-     (or (not (= x52 8)) r_B589_1)
-     (or (not (= x52 8)) (not r_B589_2))
-     (or (not (= x52 8)) (not r_B589_3))
-     (or (not (= x52 8)) (not r_B589_4))
-     (or (not (= x52 8)) r_B589_5)
-     (or (not (= x03 8)) (not r_B589_0))
-     (or (not (= x03 8)) r_B589_1)
-     (or (not (= x03 8)) (not r_B589_2))
-     (or (not (= x03 8)) (not r_B589_3))
-     (or (not (= x03 8)) r_B589_4)
-     (or (not (= x03 8)) (not r_B589_5))
-     (or (not (= x13 8)) (not r_B589_0))
-     (or (not (= x13 8)) r_B589_1)
-     (or (not (= x13 8)) (not r_B589_2))
-     (or (not (= x13 8)) (not r_B589_3))
-     (or (not (= x13 8)) r_B589_4)
-     (or (not (= x13 8)) r_B589_5)
-     (or (not (= x23 8)) (not r_B589_0))
-     (or (not (= x23 8)) r_B589_1)
-     (or (not (= x23 8)) (not r_B589_2))
-     (or (not (= x23 8)) r_B589_3)
-     (or (not (= x23 8)) (not r_B589_4))
-     (or (not (= x23 8)) (not r_B589_5))
-     (or (not (= x33 8)) (not r_B589_0))
-     (or (not (= x33 8)) r_B589_1)
-     (or (not (= x33 8)) (not r_B589_2))
-     (or (not (= x33 8)) r_B589_3)
-     (or (not (= x33 8)) (not r_B589_4))
-     (or (not (= x33 8)) r_B589_5)
-     (or (not (= x43 8)) (not r_B589_0))
-     (or (not (= x43 8)) r_B589_1)
-     (or (not (= x43 8)) (not r_B589_2))
-     (or (not (= x43 8)) r_B589_3)
-     (or (not (= x43 8)) r_B589_4)
-     (or (not (= x43 8)) (not r_B589_5))
-     (or (not (= x53 8)) (not r_B589_0))
-     (or (not (= x53 8)) r_B589_1)
-     (or (not (= x53 8)) (not r_B589_2))
-     (or (not (= x53 8)) r_B589_3)
-     (or (not (= x53 8)) r_B589_4)
-     (or (not (= x53 8)) r_B589_5)
-     (or (not (= x04 8)) (not r_B589_0))
-     (or (not (= x04 8)) r_B589_1)
-     (or (not (= x04 8)) r_B589_2)
-     (or (not (= x04 8)) (not r_B589_3))
-     (or (not (= x04 8)) (not r_B589_4))
-     (or (not (= x04 8)) (not r_B589_5))
-     (or (not (= x14 8)) (not r_B589_0))
-     (or (not (= x14 8)) r_B589_1)
-     (or (not (= x14 8)) r_B589_2)
-     (or (not (= x14 8)) (not r_B589_3))
-     (or (not (= x14 8)) (not r_B589_4))
-     (or (not (= x14 8)) r_B589_5)
-     (or (not (= x24 8)) (not r_B589_0))
-     (or (not (= x24 8)) r_B589_1)
-     (or (not (= x24 8)) r_B589_2)
-     (or (not (= x24 8)) (not r_B589_3))
-     (or (not (= x24 8)) r_B589_4)
-     (or (not (= x24 8)) (not r_B589_5))
-     (or (not (= x34 8)) (not r_B589_0))
-     (or (not (= x34 8)) r_B589_1)
-     (or (not (= x34 8)) r_B589_2)
-     (or (not (= x34 8)) (not r_B589_3))
-     (or (not (= x34 8)) r_B589_4)
-     (or (not (= x34 8)) r_B589_5)
-     (or (not (= x44 8)) (not r_B589_0))
-     (or (not (= x44 8)) r_B589_1)
-     (or (not (= x44 8)) r_B589_2)
-     (or (not (= x44 8)) r_B589_3)
-     (or (not (= x44 8)) (not r_B589_4))
-     (or (not (= x44 8)) (not r_B589_5))
-     (or (not (= x54 8)) (not r_B589_0))
-     (or (not (= x54 8)) r_B589_1)
-     (or (not (= x54 8)) r_B589_2)
-     (or (not (= x54 8)) r_B589_3)
-     (or (not (= x54 8)) (not r_B589_4))
-     (or (not (= x54 8)) r_B589_5)
-     (or (not (= x05 8)) (not r_B589_0))
-     (or (not (= x05 8)) r_B589_1)
-     (or (not (= x05 8)) r_B589_2)
-     (or (not (= x05 8)) r_B589_3)
-     (or (not (= x05 8)) r_B589_4)
-     (or (not (= x05 8)) (not r_B589_5))
-     (or (not (= x15 8)) (not r_B589_0))
-     (or (not (= x15 8)) r_B589_1)
-     (or (not (= x15 8)) r_B589_2)
-     (or (not (= x15 8)) r_B589_3)
-     (or (not (= x15 8)) r_B589_4)
-     (or (not (= x15 8)) r_B589_5)
-     (or (not (= x25 8)) r_B589_0)
-     (or (not (= x25 8)) (not r_B589_1))
-     (or (not (= x25 8)) (not r_B589_2))
-     (or (not (= x25 8)) (not r_B589_3))
-     (or (not (= x25 8)) (not r_B589_4))
-     (or (not (= x25 8)) (not r_B589_5))
-     (or (not (= x35 8)) r_B589_0)
-     (or (not (= x35 8)) (not r_B589_1))
-     (or (not (= x35 8)) (not r_B589_2))
-     (or (not (= x35 8)) (not r_B589_3))
-     (or (not (= x35 8)) (not r_B589_4))
-     (or (not (= x35 8)) r_B589_5)
-     (or (not (= x45 8)) r_B589_0)
-     (or (not (= x45 8)) (not r_B589_1))
-     (or (not (= x45 8)) (not r_B589_2))
-     (or (not (= x45 8)) (not r_B589_3))
-     (or (not (= x45 8)) r_B589_4)
-     (or (not (= x45 8)) (not r_B589_5))
-     (or (not (= x55 8)) r_B589_0)
-     (or (not (= x55 8)) (not r_B589_1))
-     (or (not (= x55 8)) (not r_B589_2))
-     (or (not (= x55 8)) (not r_B589_3))
-     (or (not (= x55 8)) r_B589_4)
-     (or (not (= x55 8)) r_B589_5)
-     (or (not (= x06 8)) r_B589_0)
-     (or (not (= x06 8)) (not r_B589_1))
-     (or (not (= x06 8)) (not r_B589_2))
-     (or (not (= x06 8)) r_B589_3)
-     (or (not (= x06 8)) (not r_B589_4))
-     (or (not (= x06 8)) (not r_B589_5))
-     (or (not (= x16 8)) r_B589_0)
-     (or (not (= x16 8)) (not r_B589_1))
-     (or (not (= x16 8)) (not r_B589_2))
-     (or (not (= x16 8)) r_B589_3)
-     (or (not (= x16 8)) (not r_B589_4))
-     (or (not (= x16 8)) r_B589_5)
-     (or (not (= x26 8)) r_B589_0)
-     (or (not (= x26 8)) (not r_B589_1))
-     (or (not (= x26 8)) (not r_B589_2))
-     (or (not (= x26 8)) r_B589_3)
-     (or (not (= x26 8)) r_B589_4)
-     (or (not (= x26 8)) (not r_B589_5))
-     (or (not (= x36 8)) r_B589_0)
-     (or (not (= x36 8)) (not r_B589_1))
-     (or (not (= x36 8)) (not r_B589_2))
-     (or (not (= x36 8)) r_B589_3)
-     (or (not (= x36 8)) r_B589_4)
-     (or (not (= x36 8)) r_B589_5)
-     (or (not (= x46 8)) r_B589_0)
-     (or (not (= x46 8)) (not r_B589_1))
-     (or (not (= x46 8)) r_B589_2)
-     (or (not (= x46 8)) (not r_B589_3))
-     (or (not (= x46 8)) (not r_B589_4))
-     (or (not (= x46 8)) (not r_B589_5))
-     (or (not (= x56 8)) r_B589_0)
-     (or (not (= x56 8)) (not r_B589_1))
-     (or (not (= x56 8)) r_B589_2)
-     (or (not (= x56 8)) (not r_B589_3))
-     (or (not (= x56 8)) (not r_B589_4))
-     (or (not (= x56 8)) r_B589_5)
-     (or (not (= x07 8)) r_B589_0)
-     (or (not (= x07 8)) (not r_B589_1))
-     (or (not (= x07 8)) r_B589_2)
-     (or (not (= x07 8)) (not r_B589_3))
-     (or (not (= x07 8)) r_B589_4)
-     (or (not (= x07 8)) (not r_B589_5))
-     (or (not (= x17 8)) r_B589_0)
-     (or (not (= x17 8)) (not r_B589_1))
-     (or (not (= x17 8)) r_B589_2)
-     (or (not (= x17 8)) (not r_B589_3))
-     (or (not (= x17 8)) r_B589_4)
-     (or (not (= x17 8)) r_B589_5)
-     (or (not (= x27 8)) r_B589_0)
-     (or (not (= x27 8)) (not r_B589_1))
-     (or (not (= x27 8)) r_B589_2)
-     (or (not (= x27 8)) r_B589_3)
-     (or (not (= x27 8)) (not r_B589_4))
-     (or (not (= x27 8)) (not r_B589_5))
-     (or (not (= x37 8)) r_B589_0)
-     (or (not (= x37 8)) (not r_B589_1))
-     (or (not (= x37 8)) r_B589_2)
-     (or (not (= x37 8)) r_B589_3)
-     (or (not (= x37 8)) (not r_B589_4))
-     (or (not (= x37 8)) r_B589_5)
-     (or (not (= x47 8)) r_B589_0)
-     (or (not (= x47 8)) (not r_B589_1))
-     (or (not (= x47 8)) r_B589_2)
-     (or (not (= x47 8)) r_B589_3)
-     (or (not (= x47 8)) r_B589_4)
-     (or (not (= x47 8)) (not r_B589_5))
-     (or (not (= x57 8)) r_B589_0)
-     (or (not (= x57 8)) (not r_B589_1))
-     (or (not (= x57 8)) r_B589_2)
-     (or (not (= x57 8)) r_B589_3)
-     (or (not (= x57 8)) r_B589_4)
-     (or (not (= x57 8)) r_B589_5)
-     (or (not (= x08 8)) r_B589_0)
-     (or (not (= x08 8)) r_B589_1)
-     (or (not (= x08 8)) (not r_B589_2))
-     (or (not (= x08 8)) (not r_B589_3))
-     (or (not (= x08 8)) (not r_B589_4))
-     (or (not (= x08 8)) (not r_B589_5))
-     (or (not (= x18 8)) r_B589_0)
-     (or (not (= x18 8)) r_B589_1)
-     (or (not (= x18 8)) (not r_B589_2))
-     (or (not (= x18 8)) (not r_B589_3))
-     (or (not (= x18 8)) (not r_B589_4))
-     (or (not (= x18 8)) r_B589_5)
-     (or (not (= x28 8)) r_B589_0)
-     (or (not (= x28 8)) r_B589_1)
-     (or (not (= x28 8)) (not r_B589_2))
-     (or (not (= x28 8)) (not r_B589_3))
-     (or (not (= x28 8)) r_B589_4)
-     (or (not (= x28 8)) (not r_B589_5))
-     (or (not (= x38 8)) r_B589_0)
-     (or (not (= x38 8)) r_B589_1)
-     (or (not (= x38 8)) (not r_B589_2))
-     (or (not (= x38 8)) (not r_B589_3))
-     (or (not (= x38 8)) r_B589_4)
-     (or (not (= x38 8)) r_B589_5)
-     (or (not (= x48 8)) r_B589_0)
-     (or (not (= x48 8)) r_B589_1)
-     (or (not (= x48 8)) (not r_B589_2))
-     (or (not (= x48 8)) r_B589_3)
-     (or (not (= x48 8)) (not r_B589_4))
-     (or (not (= x48 8)) (not r_B589_5))
-     (or (not (= x58 8)) r_B589_0)
-     (or (not (= x58 8)) r_B589_1)
-     (or (not (= x58 8)) (not r_B589_2))
-     (or (not (= x58 8)) r_B589_3)
-     (or (not (= x58 8)) (not r_B589_4))
-     (or (not (= x58 8)) r_B589_5)
-     (or (not (= x09 8)) r_B589_0)
-     (or (not (= x09 8)) r_B589_1)
-     (or (not (= x09 8)) (not r_B589_2))
-     (or (not (= x09 8)) r_B589_3)
-     (or (not (= x09 8)) r_B589_4)
-     (or (not (= x09 8)) (not r_B589_5))
-     (or (not (= x19 8)) r_B589_0)
-     (or (not (= x19 8)) r_B589_1)
-     (or (not (= x19 8)) (not r_B589_2))
-     (or (not (= x19 8)) r_B589_3)
-     (or (not (= x19 8)) r_B589_4)
-     (or (not (= x19 8)) r_B589_5)
-     (or (not (= x29 8)) r_B589_0)
-     (or (not (= x29 8)) r_B589_1)
-     (or (not (= x29 8)) r_B589_2)
-     (or (not (= x29 8)) (not r_B589_3))
-     (or (not (= x29 8)) (not r_B589_4))
-     (or (not (= x29 8)) (not r_B589_5))
-     (or (not (= x39 8)) r_B589_0)
-     (or (not (= x39 8)) r_B589_1)
-     (or (not (= x39 8)) r_B589_2)
-     (or (not (= x39 8)) (not r_B589_3))
-     (or (not (= x39 8)) (not r_B589_4))
-     (or (not (= x39 8)) r_B589_5)
-     (or (not (= x49 8)) r_B589_0)
-     (or (not (= x49 8)) r_B589_1)
-     (or (not (= x49 8)) r_B589_2)
-     (or (not (= x49 8)) (not r_B589_3))
-     (or (not (= x49 8)) r_B589_4)
-     (or (not (= x49 8)) (not r_B589_5))
-     (or (not (= x59 8)) r_B589_0)
-     (or (not (= x59 8)) r_B589_1)
-     (or (not (= x59 8)) r_B589_2)
-     (or (not (= x59 8)) (not r_B589_3))
-     (or (not (= x59 8)) r_B589_4)
-     (or (not (= x59 8)) r_B589_5)))
-(assert (and (or (= y00 8)
-         (= y10 8)
-         (= y20 8)
-         (= y30 8)
-         (= y40 8)
-         (= y50 8)
-         (= y01 8)
-         (= y11 8)
-         (= y21 8)
-         (= y31 8)
-         (= y41 8)
-         (= y51 8)
-         (= y02 8)
-         (= y12 8)
-         (= y22 8)
-         (= y32 8)
-         (= y42 8)
-         (= y52 8)
-         (= y03 8)
-         (= y13 8)
-         (= y23 8)
-         (= y33 8)
-         (= y43 8)
-         (= y53 8)
-         (= y04 8)
-         (= y14 8)
-         (= y24 8)
-         (= y34 8)
-         (= y44 8)
-         (= y54 8)
-         (= y05 8)
-         (= y15 8)
-         (= y25 8)
-         (= y35 8)
-         (= y45 8)
-         (= y55 8)
-         (= y06 8)
-         (= y16 8)
-         (= y26 8)
-         (= y36 8)
-         (= y46 8)
-         (= y56 8)
-         (= y07 8)
-         (= y17 8)
-         (= y27 8)
-         (= y37 8)
-         (= y47 8)
-         (= y57 8)
-         (= y08 8)
-         (= y18 8)
-         (= y28 8)
-         (= y38 8)
-         (= y48 8)
-         (= y58 8)
-         (= y09 8)
-         (= y19 8)
-         (= y29 8)
-         (= y39 8)
-         (= y49 8)
-         (= y59 8))
-     (or (not (= y00 8)) (not r_C589_0))
-     (or (not (= y00 8)) (not r_C589_1))
-     (or (not (= y00 8)) (not r_C589_2))
-     (or (not (= y00 8)) (not r_C589_3))
-     (or (not (= y00 8)) (not r_C589_4))
-     (or (not (= y00 8)) (not r_C589_5))
-     (or (not (= y10 8)) (not r_C589_0))
-     (or (not (= y10 8)) (not r_C589_1))
-     (or (not (= y10 8)) (not r_C589_2))
-     (or (not (= y10 8)) (not r_C589_3))
-     (or (not (= y10 8)) (not r_C589_4))
-     (or (not (= y10 8)) r_C589_5)
-     (or (not (= y20 8)) (not r_C589_0))
-     (or (not (= y20 8)) (not r_C589_1))
-     (or (not (= y20 8)) (not r_C589_2))
-     (or (not (= y20 8)) (not r_C589_3))
-     (or (not (= y20 8)) r_C589_4)
-     (or (not (= y20 8)) (not r_C589_5))
-     (or (not (= y30 8)) (not r_C589_0))
-     (or (not (= y30 8)) (not r_C589_1))
-     (or (not (= y30 8)) (not r_C589_2))
-     (or (not (= y30 8)) (not r_C589_3))
-     (or (not (= y30 8)) r_C589_4)
-     (or (not (= y30 8)) r_C589_5)
-     (or (not (= y40 8)) (not r_C589_0))
-     (or (not (= y40 8)) (not r_C589_1))
-     (or (not (= y40 8)) (not r_C589_2))
-     (or (not (= y40 8)) r_C589_3)
-     (or (not (= y40 8)) (not r_C589_4))
-     (or (not (= y40 8)) (not r_C589_5))
-     (or (not (= y50 8)) (not r_C589_0))
-     (or (not (= y50 8)) (not r_C589_1))
-     (or (not (= y50 8)) (not r_C589_2))
-     (or (not (= y50 8)) r_C589_3)
-     (or (not (= y50 8)) (not r_C589_4))
-     (or (not (= y50 8)) r_C589_5)
-     (or (not (= y01 8)) (not r_C589_0))
-     (or (not (= y01 8)) (not r_C589_1))
-     (or (not (= y01 8)) (not r_C589_2))
-     (or (not (= y01 8)) r_C589_3)
-     (or (not (= y01 8)) r_C589_4)
-     (or (not (= y01 8)) (not r_C589_5))
-     (or (not (= y11 8)) (not r_C589_0))
-     (or (not (= y11 8)) (not r_C589_1))
-     (or (not (= y11 8)) (not r_C589_2))
-     (or (not (= y11 8)) r_C589_3)
-     (or (not (= y11 8)) r_C589_4)
-     (or (not (= y11 8)) r_C589_5)
-     (or (not (= y21 8)) (not r_C589_0))
-     (or (not (= y21 8)) (not r_C589_1))
-     (or (not (= y21 8)) r_C589_2)
-     (or (not (= y21 8)) (not r_C589_3))
-     (or (not (= y21 8)) (not r_C589_4))
-     (or (not (= y21 8)) (not r_C589_5))
-     (or (not (= y31 8)) (not r_C589_0))
-     (or (not (= y31 8)) (not r_C589_1))
-     (or (not (= y31 8)) r_C589_2)
-     (or (not (= y31 8)) (not r_C589_3))
-     (or (not (= y31 8)) (not r_C589_4))
-     (or (not (= y31 8)) r_C589_5)
-     (or (not (= y41 8)) (not r_C589_0))
-     (or (not (= y41 8)) (not r_C589_1))
-     (or (not (= y41 8)) r_C589_2)
-     (or (not (= y41 8)) (not r_C589_3))
-     (or (not (= y41 8)) r_C589_4)
-     (or (not (= y41 8)) (not r_C589_5))
-     (or (not (= y51 8)) (not r_C589_0))
-     (or (not (= y51 8)) (not r_C589_1))
-     (or (not (= y51 8)) r_C589_2)
-     (or (not (= y51 8)) (not r_C589_3))
-     (or (not (= y51 8)) r_C589_4)
-     (or (not (= y51 8)) r_C589_5)
-     (or (not (= y02 8)) (not r_C589_0))
-     (or (not (= y02 8)) (not r_C589_1))
-     (or (not (= y02 8)) r_C589_2)
-     (or (not (= y02 8)) r_C589_3)
-     (or (not (= y02 8)) (not r_C589_4))
-     (or (not (= y02 8)) (not r_C589_5))
-     (or (not (= y12 8)) (not r_C589_0))
-     (or (not (= y12 8)) (not r_C589_1))
-     (or (not (= y12 8)) r_C589_2)
-     (or (not (= y12 8)) r_C589_3)
-     (or (not (= y12 8)) (not r_C589_4))
-     (or (not (= y12 8)) r_C589_5)
-     (or (not (= y22 8)) (not r_C589_0))
-     (or (not (= y22 8)) (not r_C589_1))
-     (or (not (= y22 8)) r_C589_2)
-     (or (not (= y22 8)) r_C589_3)
-     (or (not (= y22 8)) r_C589_4)
-     (or (not (= y22 8)) (not r_C589_5))
-     (or (not (= y32 8)) (not r_C589_0))
-     (or (not (= y32 8)) (not r_C589_1))
-     (or (not (= y32 8)) r_C589_2)
-     (or (not (= y32 8)) r_C589_3)
-     (or (not (= y32 8)) r_C589_4)
-     (or (not (= y32 8)) r_C589_5)
-     (or (not (= y42 8)) (not r_C589_0))
-     (or (not (= y42 8)) r_C589_1)
-     (or (not (= y42 8)) (not r_C589_2))
-     (or (not (= y42 8)) (not r_C589_3))
-     (or (not (= y42 8)) (not r_C589_4))
-     (or (not (= y42 8)) (not r_C589_5))
-     (or (not (= y52 8)) (not r_C589_0))
-     (or (not (= y52 8)) r_C589_1)
-     (or (not (= y52 8)) (not r_C589_2))
-     (or (not (= y52 8)) (not r_C589_3))
-     (or (not (= y52 8)) (not r_C589_4))
-     (or (not (= y52 8)) r_C589_5)
-     (or (not (= y03 8)) (not r_C589_0))
-     (or (not (= y03 8)) r_C589_1)
-     (or (not (= y03 8)) (not r_C589_2))
-     (or (not (= y03 8)) (not r_C589_3))
-     (or (not (= y03 8)) r_C589_4)
-     (or (not (= y03 8)) (not r_C589_5))
-     (or (not (= y13 8)) (not r_C589_0))
-     (or (not (= y13 8)) r_C589_1)
-     (or (not (= y13 8)) (not r_C589_2))
-     (or (not (= y13 8)) (not r_C589_3))
-     (or (not (= y13 8)) r_C589_4)
-     (or (not (= y13 8)) r_C589_5)
-     (or (not (= y23 8)) (not r_C589_0))
-     (or (not (= y23 8)) r_C589_1)
-     (or (not (= y23 8)) (not r_C589_2))
-     (or (not (= y23 8)) r_C589_3)
-     (or (not (= y23 8)) (not r_C589_4))
-     (or (not (= y23 8)) (not r_C589_5))
-     (or (not (= y33 8)) (not r_C589_0))
-     (or (not (= y33 8)) r_C589_1)
-     (or (not (= y33 8)) (not r_C589_2))
-     (or (not (= y33 8)) r_C589_3)
-     (or (not (= y33 8)) (not r_C589_4))
-     (or (not (= y33 8)) r_C589_5)
-     (or (not (= y43 8)) (not r_C589_0))
-     (or (not (= y43 8)) r_C589_1)
-     (or (not (= y43 8)) (not r_C589_2))
-     (or (not (= y43 8)) r_C589_3)
-     (or (not (= y43 8)) r_C589_4)
-     (or (not (= y43 8)) (not r_C589_5))
-     (or (not (= y53 8)) (not r_C589_0))
-     (or (not (= y53 8)) r_C589_1)
-     (or (not (= y53 8)) (not r_C589_2))
-     (or (not (= y53 8)) r_C589_3)
-     (or (not (= y53 8)) r_C589_4)
-     (or (not (= y53 8)) r_C589_5)
-     (or (not (= y04 8)) (not r_C589_0))
-     (or (not (= y04 8)) r_C589_1)
-     (or (not (= y04 8)) r_C589_2)
-     (or (not (= y04 8)) (not r_C589_3))
-     (or (not (= y04 8)) (not r_C589_4))
-     (or (not (= y04 8)) (not r_C589_5))
-     (or (not (= y14 8)) (not r_C589_0))
-     (or (not (= y14 8)) r_C589_1)
-     (or (not (= y14 8)) r_C589_2)
-     (or (not (= y14 8)) (not r_C589_3))
-     (or (not (= y14 8)) (not r_C589_4))
-     (or (not (= y14 8)) r_C589_5)
-     (or (not (= y24 8)) (not r_C589_0))
-     (or (not (= y24 8)) r_C589_1)
-     (or (not (= y24 8)) r_C589_2)
-     (or (not (= y24 8)) (not r_C589_3))
-     (or (not (= y24 8)) r_C589_4)
-     (or (not (= y24 8)) (not r_C589_5))
-     (or (not (= y34 8)) (not r_C589_0))
-     (or (not (= y34 8)) r_C589_1)
-     (or (not (= y34 8)) r_C589_2)
-     (or (not (= y34 8)) (not r_C589_3))
-     (or (not (= y34 8)) r_C589_4)
-     (or (not (= y34 8)) r_C589_5)
-     (or (not (= y44 8)) (not r_C589_0))
-     (or (not (= y44 8)) r_C589_1)
-     (or (not (= y44 8)) r_C589_2)
-     (or (not (= y44 8)) r_C589_3)
-     (or (not (= y44 8)) (not r_C589_4))
-     (or (not (= y44 8)) (not r_C589_5))
-     (or (not (= y54 8)) (not r_C589_0))
-     (or (not (= y54 8)) r_C589_1)
-     (or (not (= y54 8)) r_C589_2)
-     (or (not (= y54 8)) r_C589_3)
-     (or (not (= y54 8)) (not r_C589_4))
-     (or (not (= y54 8)) r_C589_5)
-     (or (not (= y05 8)) (not r_C589_0))
-     (or (not (= y05 8)) r_C589_1)
-     (or (not (= y05 8)) r_C589_2)
-     (or (not (= y05 8)) r_C589_3)
-     (or (not (= y05 8)) r_C589_4)
-     (or (not (= y05 8)) (not r_C589_5))
-     (or (not (= y15 8)) (not r_C589_0))
-     (or (not (= y15 8)) r_C589_1)
-     (or (not (= y15 8)) r_C589_2)
-     (or (not (= y15 8)) r_C589_3)
-     (or (not (= y15 8)) r_C589_4)
-     (or (not (= y15 8)) r_C589_5)
-     (or (not (= y25 8)) r_C589_0)
-     (or (not (= y25 8)) (not r_C589_1))
-     (or (not (= y25 8)) (not r_C589_2))
-     (or (not (= y25 8)) (not r_C589_3))
-     (or (not (= y25 8)) (not r_C589_4))
-     (or (not (= y25 8)) (not r_C589_5))
-     (or (not (= y35 8)) r_C589_0)
-     (or (not (= y35 8)) (not r_C589_1))
-     (or (not (= y35 8)) (not r_C589_2))
-     (or (not (= y35 8)) (not r_C589_3))
-     (or (not (= y35 8)) (not r_C589_4))
-     (or (not (= y35 8)) r_C589_5)
-     (or (not (= y45 8)) r_C589_0)
-     (or (not (= y45 8)) (not r_C589_1))
-     (or (not (= y45 8)) (not r_C589_2))
-     (or (not (= y45 8)) (not r_C589_3))
-     (or (not (= y45 8)) r_C589_4)
-     (or (not (= y45 8)) (not r_C589_5))
-     (or (not (= y55 8)) r_C589_0)
-     (or (not (= y55 8)) (not r_C589_1))
-     (or (not (= y55 8)) (not r_C589_2))
-     (or (not (= y55 8)) (not r_C589_3))
-     (or (not (= y55 8)) r_C589_4)
-     (or (not (= y55 8)) r_C589_5)
-     (or (not (= y06 8)) r_C589_0)
-     (or (not (= y06 8)) (not r_C589_1))
-     (or (not (= y06 8)) (not r_C589_2))
-     (or (not (= y06 8)) r_C589_3)
-     (or (not (= y06 8)) (not r_C589_4))
-     (or (not (= y06 8)) (not r_C589_5))
-     (or (not (= y16 8)) r_C589_0)
-     (or (not (= y16 8)) (not r_C589_1))
-     (or (not (= y16 8)) (not r_C589_2))
-     (or (not (= y16 8)) r_C589_3)
-     (or (not (= y16 8)) (not r_C589_4))
-     (or (not (= y16 8)) r_C589_5)
-     (or (not (= y26 8)) r_C589_0)
-     (or (not (= y26 8)) (not r_C589_1))
-     (or (not (= y26 8)) (not r_C589_2))
-     (or (not (= y26 8)) r_C589_3)
-     (or (not (= y26 8)) r_C589_4)
-     (or (not (= y26 8)) (not r_C589_5))
-     (or (not (= y36 8)) r_C589_0)
-     (or (not (= y36 8)) (not r_C589_1))
-     (or (not (= y36 8)) (not r_C589_2))
-     (or (not (= y36 8)) r_C589_3)
-     (or (not (= y36 8)) r_C589_4)
-     (or (not (= y36 8)) r_C589_5)
-     (or (not (= y46 8)) r_C589_0)
-     (or (not (= y46 8)) (not r_C589_1))
-     (or (not (= y46 8)) r_C589_2)
-     (or (not (= y46 8)) (not r_C589_3))
-     (or (not (= y46 8)) (not r_C589_4))
-     (or (not (= y46 8)) (not r_C589_5))
-     (or (not (= y56 8)) r_C589_0)
-     (or (not (= y56 8)) (not r_C589_1))
-     (or (not (= y56 8)) r_C589_2)
-     (or (not (= y56 8)) (not r_C589_3))
-     (or (not (= y56 8)) (not r_C589_4))
-     (or (not (= y56 8)) r_C589_5)
-     (or (not (= y07 8)) r_C589_0)
-     (or (not (= y07 8)) (not r_C589_1))
-     (or (not (= y07 8)) r_C589_2)
-     (or (not (= y07 8)) (not r_C589_3))
-     (or (not (= y07 8)) r_C589_4)
-     (or (not (= y07 8)) (not r_C589_5))
-     (or (not (= y17 8)) r_C589_0)
-     (or (not (= y17 8)) (not r_C589_1))
-     (or (not (= y17 8)) r_C589_2)
-     (or (not (= y17 8)) (not r_C589_3))
-     (or (not (= y17 8)) r_C589_4)
-     (or (not (= y17 8)) r_C589_5)
-     (or (not (= y27 8)) r_C589_0)
-     (or (not (= y27 8)) (not r_C589_1))
-     (or (not (= y27 8)) r_C589_2)
-     (or (not (= y27 8)) r_C589_3)
-     (or (not (= y27 8)) (not r_C589_4))
-     (or (not (= y27 8)) (not r_C589_5))
-     (or (not (= y37 8)) r_C589_0)
-     (or (not (= y37 8)) (not r_C589_1))
-     (or (not (= y37 8)) r_C589_2)
-     (or (not (= y37 8)) r_C589_3)
-     (or (not (= y37 8)) (not r_C589_4))
-     (or (not (= y37 8)) r_C589_5)
-     (or (not (= y47 8)) r_C589_0)
-     (or (not (= y47 8)) (not r_C589_1))
-     (or (not (= y47 8)) r_C589_2)
-     (or (not (= y47 8)) r_C589_3)
-     (or (not (= y47 8)) r_C589_4)
-     (or (not (= y47 8)) (not r_C589_5))
-     (or (not (= y57 8)) r_C589_0)
-     (or (not (= y57 8)) (not r_C589_1))
-     (or (not (= y57 8)) r_C589_2)
-     (or (not (= y57 8)) r_C589_3)
-     (or (not (= y57 8)) r_C589_4)
-     (or (not (= y57 8)) r_C589_5)
-     (or (not (= y08 8)) r_C589_0)
-     (or (not (= y08 8)) r_C589_1)
-     (or (not (= y08 8)) (not r_C589_2))
-     (or (not (= y08 8)) (not r_C589_3))
-     (or (not (= y08 8)) (not r_C589_4))
-     (or (not (= y08 8)) (not r_C589_5))
-     (or (not (= y18 8)) r_C589_0)
-     (or (not (= y18 8)) r_C589_1)
-     (or (not (= y18 8)) (not r_C589_2))
-     (or (not (= y18 8)) (not r_C589_3))
-     (or (not (= y18 8)) (not r_C589_4))
-     (or (not (= y18 8)) r_C589_5)
-     (or (not (= y28 8)) r_C589_0)
-     (or (not (= y28 8)) r_C589_1)
-     (or (not (= y28 8)) (not r_C589_2))
-     (or (not (= y28 8)) (not r_C589_3))
-     (or (not (= y28 8)) r_C589_4)
-     (or (not (= y28 8)) (not r_C589_5))
-     (or (not (= y38 8)) r_C589_0)
-     (or (not (= y38 8)) r_C589_1)
-     (or (not (= y38 8)) (not r_C589_2))
-     (or (not (= y38 8)) (not r_C589_3))
-     (or (not (= y38 8)) r_C589_4)
-     (or (not (= y38 8)) r_C589_5)
-     (or (not (= y48 8)) r_C589_0)
-     (or (not (= y48 8)) r_C589_1)
-     (or (not (= y48 8)) (not r_C589_2))
-     (or (not (= y48 8)) r_C589_3)
-     (or (not (= y48 8)) (not r_C589_4))
-     (or (not (= y48 8)) (not r_C589_5))
-     (or (not (= y58 8)) r_C589_0)
-     (or (not (= y58 8)) r_C589_1)
-     (or (not (= y58 8)) (not r_C589_2))
-     (or (not (= y58 8)) r_C589_3)
-     (or (not (= y58 8)) (not r_C589_4))
-     (or (not (= y58 8)) r_C589_5)
-     (or (not (= y09 8)) r_C589_0)
-     (or (not (= y09 8)) r_C589_1)
-     (or (not (= y09 8)) (not r_C589_2))
-     (or (not (= y09 8)) r_C589_3)
-     (or (not (= y09 8)) r_C589_4)
-     (or (not (= y09 8)) (not r_C589_5))
-     (or (not (= y19 8)) r_C589_0)
-     (or (not (= y19 8)) r_C589_1)
-     (or (not (= y19 8)) (not r_C589_2))
-     (or (not (= y19 8)) r_C589_3)
-     (or (not (= y19 8)) r_C589_4)
-     (or (not (= y19 8)) r_C589_5)
-     (or (not (= y29 8)) r_C589_0)
-     (or (not (= y29 8)) r_C589_1)
-     (or (not (= y29 8)) r_C589_2)
-     (or (not (= y29 8)) (not r_C589_3))
-     (or (not (= y29 8)) (not r_C589_4))
-     (or (not (= y29 8)) (not r_C589_5))
-     (or (not (= y39 8)) r_C589_0)
-     (or (not (= y39 8)) r_C589_1)
-     (or (not (= y39 8)) r_C589_2)
-     (or (not (= y39 8)) (not r_C589_3))
-     (or (not (= y39 8)) (not r_C589_4))
-     (or (not (= y39 8)) r_C589_5)
-     (or (not (= y49 8)) r_C589_0)
-     (or (not (= y49 8)) r_C589_1)
-     (or (not (= y49 8)) r_C589_2)
-     (or (not (= y49 8)) (not r_C589_3))
-     (or (not (= y49 8)) r_C589_4)
-     (or (not (= y49 8)) (not r_C589_5))
-     (or (not (= y59 8)) r_C589_0)
-     (or (not (= y59 8)) r_C589_1)
-     (or (not (= y59 8)) r_C589_2)
-     (or (not (= y59 8)) (not r_C589_3))
-     (or (not (= y59 8)) r_C589_4)
-     (or (not (= y59 8)) r_C589_5)))
-(assert (= (select item_size 0) 11))
-(assert (= (select item_size 1) 11))
-(assert (= (select item_size 2) 23))
-(assert (= (select item_size 3) 16))
-(assert (= (select item_size 4) 2))
-(assert (= (select item_size 5) 1))
-(assert (= (select item_size 6) 24))
-(assert (= (select item_size 7) 14))
-(assert (= (select item_size 8) 20))
-(assert (= loads0
-   (+ (ite (distinct x01 (- 1)) (select item_size x01) 0)
-      (ite (distinct x02 (- 1)) (select item_size x02) 0)
-      (ite (distinct x03 (- 1)) (select item_size x03) 0)
-      (ite (distinct x04 (- 1)) (select item_size x04) 0)
-      (ite (distinct x05 (- 1)) (select item_size x05) 0)
-      (ite (distinct x06 (- 1)) (select item_size x06) 0)
-      (ite (distinct x07 (- 1)) (select item_size x07) 0)
-      (ite (distinct x08 (- 1)) (select item_size x08) 0)
-      (ite (distinct x09 (- 1)) (select item_size x09) 0))))
-(assert (= loads1
-   (+ (ite (distinct x11 (- 1)) (select item_size x11) 0)
-      (ite (distinct x12 (- 1)) (select item_size x12) 0)
-      (ite (distinct x13 (- 1)) (select item_size x13) 0)
-      (ite (distinct x14 (- 1)) (select item_size x14) 0)
-      (ite (distinct x15 (- 1)) (select item_size x15) 0)
-      (ite (distinct x16 (- 1)) (select item_size x16) 0)
-      (ite (distinct x17 (- 1)) (select item_size x17) 0)
-      (ite (distinct x18 (- 1)) (select item_size x18) 0)
-      (ite (distinct x19 (- 1)) (select item_size x19) 0))))
-(assert (= loads2
-   (+ (ite (distinct x21 (- 1)) (select item_size x21) 0)
-      (ite (distinct x22 (- 1)) (select item_size x22) 0)
-      (ite (distinct x23 (- 1)) (select item_size x23) 0)
-      (ite (distinct x24 (- 1)) (select item_size x24) 0)
-      (ite (distinct x25 (- 1)) (select item_size x25) 0)
-      (ite (distinct x26 (- 1)) (select item_size x26) 0)
-      (ite (distinct x27 (- 1)) (select item_size x27) 0)
-      (ite (distinct x28 (- 1)) (select item_size x28) 0)
-      (ite (distinct x29 (- 1)) (select item_size x29) 0))))
-(assert (= loads3
-   (+ (ite (distinct x31 (- 1)) (select item_size x31) 0)
-      (ite (distinct x32 (- 1)) (select item_size x32) 0)
-      (ite (distinct x33 (- 1)) (select item_size x33) 0)
-      (ite (distinct x34 (- 1)) (select item_size x34) 0)
-      (ite (distinct x35 (- 1)) (select item_size x35) 0)
-      (ite (distinct x36 (- 1)) (select item_size x36) 0)
-      (ite (distinct x37 (- 1)) (select item_size x37) 0)
-      (ite (distinct x38 (- 1)) (select item_size x38) 0)
-      (ite (distinct x39 (- 1)) (select item_size x39) 0))))
-(assert (= loads4
-   (+ (ite (distinct x41 (- 1)) (select item_size x41) 0)
-      (ite (distinct x42 (- 1)) (select item_size x42) 0)
-      (ite (distinct x43 (- 1)) (select item_size x43) 0)
-      (ite (distinct x44 (- 1)) (select item_size x44) 0)
-      (ite (distinct x45 (- 1)) (select item_size x45) 0)
-      (ite (distinct x46 (- 1)) (select item_size x46) 0)
-      (ite (distinct x47 (- 1)) (select item_size x47) 0)
-      (ite (distinct x48 (- 1)) (select item_size x48) 0)
-      (ite (distinct x49 (- 1)) (select item_size x49) 0))))
-(assert (= loads5
-   (+ (ite (distinct x51 (- 1)) (select item_size x51) 0)
-      (ite (distinct x52 (- 1)) (select item_size x52) 0)
-      (ite (distinct x53 (- 1)) (select item_size x53) 0)
-      (ite (distinct x54 (- 1)) (select item_size x54) 0)
-      (ite (distinct x55 (- 1)) (select item_size x55) 0)
-      (ite (distinct x56 (- 1)) (select item_size x56) 0)
-      (ite (distinct x57 (- 1)) (select item_size x57) 0)
-      (ite (distinct x58 (- 1)) (select item_size x58) 0)
-      (ite (distinct x59 (- 1)) (select item_size x59) 0))))
+(assert (= (select distances0 0) 0))
+(assert (= (select distances0 1) 199))
+(assert (= (select distances0 2) 119))
+(assert (= (select distances0 3) 28))
+(assert (= (select distances0 4) 179))
+(assert (= (select distances0 5) 77))
+(assert (= (select distances0 6) 145))
+(assert (= (select distances0 7) 61))
+(assert (= (select distances0 8) 123))
+(assert (= (select distances0 9) 87))
+(assert (= (select distances1 0) 199))
+(assert (= (select distances1 1) 0))
+(assert (= (select distances1 2) 81))
+(assert (= (select distances1 3) 206))
+(assert (= (select distances1 4) 38))
+(assert (= (select distances1 5) 122))
+(assert (= (select distances1 6) 55))
+(assert (= (select distances1 7) 138))
+(assert (= (select distances1 8) 76))
+(assert (= (select distances1 9) 113))
+(assert (= (select distances2 0) 119))
+(assert (= (select distances2 1) 81))
+(assert (= (select distances2 2) 0))
+(assert (= (select distances2 3) 126))
+(assert (= (select distances2 4) 69))
+(assert (= (select distances2 5) 121))
+(assert (= (select distances2 6) 26))
+(assert (= (select distances2 7) 117))
+(assert (= (select distances2 8) 91))
+(assert (= (select distances2 9) 32))
+(assert (= (select distances3 0) 28))
+(assert (= (select distances3 1) 206))
+(assert (= (select distances3 2) 126))
+(assert (= (select distances3 3) 0))
+(assert (= (select distances3 4) 186))
+(assert (= (select distances3 5) 84))
+(assert (= (select distances3 6) 152))
+(assert (= (select distances3 7) 68))
+(assert (= (select distances3 8) 130))
+(assert (= (select distances3 9) 94))
+(assert (= (select distances4 0) 169))
+(assert (= (select distances4 1) 38))
+(assert (= (select distances4 2) 79))
+(assert (= (select distances4 3) 176))
+(assert (= (select distances4 4) 0))
+(assert (= (select distances4 5) 92))
+(assert (= (select distances4 6) 58))
+(assert (= (select distances4 7) 108))
+(assert (= (select distances4 8) 46))
+(assert (= (select distances4 9) 98))
+(assert (= (select distances5 0) 77))
+(assert (= (select distances5 1) 122))
+(assert (= (select distances5 2) 121))
+(assert (= (select distances5 3) 84))
+(assert (= (select distances5 4) 102))
+(assert (= (select distances5 5) 0))
+(assert (= (select distances5 6) 100))
+(assert (= (select distances5 7) 16))
+(assert (= (select distances5 8) 46))
+(assert (= (select distances5 9) 96))
+(assert (= (select distances6 0) 145))
+(assert (= (select distances6 1) 55))
+(assert (= (select distances6 2) 26))
+(assert (= (select distances6 3) 152))
+(assert (= (select distances6 4) 58))
+(assert (= (select distances6 5) 100))
+(assert (= (select distances6 6) 0))
+(assert (= (select distances6 7) 91))
+(assert (= (select distances6 8) 70))
+(assert (= (select distances6 9) 58))
+(assert (= (select distances7 0) 61))
+(assert (= (select distances7 1) 138))
+(assert (= (select distances7 2) 113))
+(assert (= (select distances7 3) 68))
+(assert (= (select distances7 4) 118))
+(assert (= (select distances7 5) 16))
+(assert (= (select distances7 6) 91))
+(assert (= (select distances7 7) 0))
+(assert (= (select distances7 8) 62))
+(assert (= (select distances7 9) 87))
+(assert (= (select distances8 0) 123))
+(assert (= (select distances8 1) 76))
+(assert (= (select distances8 2) 91))
+(assert (= (select distances8 3) 130))
+(assert (= (select distances8 4) 56))
+(assert (= (select distances8 5) 46))
+(assert (= (select distances8 6) 70))
+(assert (= (select distances8 7) 62))
+(assert (= (select distances8 8) 0))
+(assert (= (select distances8 9) 66))
+(assert (= (select distances9 0) 87))
+(assert (= (select distances9 1) 113))
+(assert (= (select distances9 2) 32))
+(assert (= (select distances9 3) 94))
+(assert (= (select distances9 4) 94))
+(assert (= (select distances9 5) 96))
+(assert (= (select distances9 6) 58))
+(assert (= (select distances9 7) 87))
+(assert (= (select distances9 8) 66))
+(assert (= (select distances9 9) 0))
+(assert (let ((a!1 (not (= (select asg0 (select asg0 9)) 10)))
+      (a!2 (= (select asg0 (select asg0 (select asg0 9))) 10))
+      (a!3 (= (select asg0 (select asg0 (select asg0 9))) (select asg0 0)))
+      (a!4 (select asg0 (select asg0 (select asg0 (select asg0 9))))))
+(let ((a!5 (not (= (select asg0 (select asg0 a!4)) 10)))
+      (a!6 (= (select asg0 (select asg0 (select asg0 a!4))) 10))
+      (a!7 (= (select asg0 (select asg0 (select asg0 a!4))) (select asg0 0)))
+      (a!8 (select asg0 (select asg0 (select asg0 (select asg0 a!4))))))
+(let ((a!9 (not (= (select asg0 (select asg0 a!8)) 10)))
+      (a!10 (or (= (select asg0 (select asg0 a!8)) (select asg0 0)) false)))
+(let ((a!11 (and (not (= (select asg0 a!8) 10))
+                 (or (= (select asg0 a!8) (select asg0 0)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg0 0)) a!11))))
+(let ((a!13 (or (= (select asg0 (select asg0 a!4)) (select asg0 0))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg0 a!4) 10))
+                 (or (= (select asg0 a!4) (select asg0 0)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg0 0)) a!14))))
+(let ((a!16 (or (= (select asg0 (select asg0 9)) (select asg0 0))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg0 9) 10))
+                 (or (= (select asg0 9) (select asg0 0)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg0 0) (- 1)) (distinct (select asg0 0) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg0 (select asg0 9)) 10)))
+      (a!2 (= (select asg0 (select asg0 (select asg0 9))) 10))
+      (a!3 (= (select asg0 (select asg0 (select asg0 9))) (select asg0 1)))
+      (a!4 (select asg0 (select asg0 (select asg0 (select asg0 9))))))
+(let ((a!5 (not (= (select asg0 (select asg0 a!4)) 10)))
+      (a!6 (= (select asg0 (select asg0 (select asg0 a!4))) 10))
+      (a!7 (= (select asg0 (select asg0 (select asg0 a!4))) (select asg0 1)))
+      (a!8 (select asg0 (select asg0 (select asg0 (select asg0 a!4))))))
+(let ((a!9 (not (= (select asg0 (select asg0 a!8)) 10)))
+      (a!10 (or (= (select asg0 (select asg0 a!8)) (select asg0 1)) false)))
+(let ((a!11 (and (not (= (select asg0 a!8) 10))
+                 (or (= (select asg0 a!8) (select asg0 1)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg0 1)) a!11))))
+(let ((a!13 (or (= (select asg0 (select asg0 a!4)) (select asg0 1))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg0 a!4) 10))
+                 (or (= (select asg0 a!4) (select asg0 1)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg0 1)) a!14))))
+(let ((a!16 (or (= (select asg0 (select asg0 9)) (select asg0 1))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg0 9) 10))
+                 (or (= (select asg0 9) (select asg0 1)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg0 1) (- 1)) (distinct (select asg0 1) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg0 (select asg0 9)) 10)))
+      (a!2 (= (select asg0 (select asg0 (select asg0 9))) 10))
+      (a!3 (= (select asg0 (select asg0 (select asg0 9))) (select asg0 2)))
+      (a!4 (select asg0 (select asg0 (select asg0 (select asg0 9))))))
+(let ((a!5 (not (= (select asg0 (select asg0 a!4)) 10)))
+      (a!6 (= (select asg0 (select asg0 (select asg0 a!4))) 10))
+      (a!7 (= (select asg0 (select asg0 (select asg0 a!4))) (select asg0 2)))
+      (a!8 (select asg0 (select asg0 (select asg0 (select asg0 a!4))))))
+(let ((a!9 (not (= (select asg0 (select asg0 a!8)) 10)))
+      (a!10 (or (= (select asg0 (select asg0 a!8)) (select asg0 2)) false)))
+(let ((a!11 (and (not (= (select asg0 a!8) 10))
+                 (or (= (select asg0 a!8) (select asg0 2)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg0 2)) a!11))))
+(let ((a!13 (or (= (select asg0 (select asg0 a!4)) (select asg0 2))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg0 a!4) 10))
+                 (or (= (select asg0 a!4) (select asg0 2)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg0 2)) a!14))))
+(let ((a!16 (or (= (select asg0 (select asg0 9)) (select asg0 2))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg0 9) 10))
+                 (or (= (select asg0 9) (select asg0 2)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg0 2) (- 1)) (distinct (select asg0 2) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg0 (select asg0 9)) 10)))
+      (a!2 (= (select asg0 (select asg0 (select asg0 9))) 10))
+      (a!3 (= (select asg0 (select asg0 (select asg0 9))) (select asg0 3)))
+      (a!4 (select asg0 (select asg0 (select asg0 (select asg0 9))))))
+(let ((a!5 (not (= (select asg0 (select asg0 a!4)) 10)))
+      (a!6 (= (select asg0 (select asg0 (select asg0 a!4))) 10))
+      (a!7 (= (select asg0 (select asg0 (select asg0 a!4))) (select asg0 3)))
+      (a!8 (select asg0 (select asg0 (select asg0 (select asg0 a!4))))))
+(let ((a!9 (not (= (select asg0 (select asg0 a!8)) 10)))
+      (a!10 (or (= (select asg0 (select asg0 a!8)) (select asg0 3)) false)))
+(let ((a!11 (and (not (= (select asg0 a!8) 10))
+                 (or (= (select asg0 a!8) (select asg0 3)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg0 3)) a!11))))
+(let ((a!13 (or (= (select asg0 (select asg0 a!4)) (select asg0 3))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg0 a!4) 10))
+                 (or (= (select asg0 a!4) (select asg0 3)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg0 3)) a!14))))
+(let ((a!16 (or (= (select asg0 (select asg0 9)) (select asg0 3))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg0 9) 10))
+                 (or (= (select asg0 9) (select asg0 3)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg0 3) (- 1)) (distinct (select asg0 3) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg0 (select asg0 9)) 10)))
+      (a!2 (= (select asg0 (select asg0 (select asg0 9))) 10))
+      (a!3 (= (select asg0 (select asg0 (select asg0 9))) (select asg0 4)))
+      (a!4 (select asg0 (select asg0 (select asg0 (select asg0 9))))))
+(let ((a!5 (not (= (select asg0 (select asg0 a!4)) 10)))
+      (a!6 (= (select asg0 (select asg0 (select asg0 a!4))) 10))
+      (a!7 (= (select asg0 (select asg0 (select asg0 a!4))) (select asg0 4)))
+      (a!8 (select asg0 (select asg0 (select asg0 (select asg0 a!4))))))
+(let ((a!9 (not (= (select asg0 (select asg0 a!8)) 10)))
+      (a!10 (or (= (select asg0 (select asg0 a!8)) (select asg0 4)) false)))
+(let ((a!11 (and (not (= (select asg0 a!8) 10))
+                 (or (= (select asg0 a!8) (select asg0 4)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg0 4)) a!11))))
+(let ((a!13 (or (= (select asg0 (select asg0 a!4)) (select asg0 4))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg0 a!4) 10))
+                 (or (= (select asg0 a!4) (select asg0 4)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg0 4)) a!14))))
+(let ((a!16 (or (= (select asg0 (select asg0 9)) (select asg0 4))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg0 9) 10))
+                 (or (= (select asg0 9) (select asg0 4)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg0 4) (- 1)) (distinct (select asg0 4) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg0 (select asg0 9)) 10)))
+      (a!2 (= (select asg0 (select asg0 (select asg0 9))) 10))
+      (a!3 (= (select asg0 (select asg0 (select asg0 9))) (select asg0 5)))
+      (a!4 (select asg0 (select asg0 (select asg0 (select asg0 9))))))
+(let ((a!5 (not (= (select asg0 (select asg0 a!4)) 10)))
+      (a!6 (= (select asg0 (select asg0 (select asg0 a!4))) 10))
+      (a!7 (= (select asg0 (select asg0 (select asg0 a!4))) (select asg0 5)))
+      (a!8 (select asg0 (select asg0 (select asg0 (select asg0 a!4))))))
+(let ((a!9 (not (= (select asg0 (select asg0 a!8)) 10)))
+      (a!10 (or (= (select asg0 (select asg0 a!8)) (select asg0 5)) false)))
+(let ((a!11 (and (not (= (select asg0 a!8) 10))
+                 (or (= (select asg0 a!8) (select asg0 5)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg0 5)) a!11))))
+(let ((a!13 (or (= (select asg0 (select asg0 a!4)) (select asg0 5))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg0 a!4) 10))
+                 (or (= (select asg0 a!4) (select asg0 5)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg0 5)) a!14))))
+(let ((a!16 (or (= (select asg0 (select asg0 9)) (select asg0 5))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg0 9) 10))
+                 (or (= (select asg0 9) (select asg0 5)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg0 5) (- 1)) (distinct (select asg0 5) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg0 (select asg0 9)) 10)))
+      (a!2 (= (select asg0 (select asg0 (select asg0 9))) 10))
+      (a!3 (= (select asg0 (select asg0 (select asg0 9))) (select asg0 6)))
+      (a!4 (select asg0 (select asg0 (select asg0 (select asg0 9))))))
+(let ((a!5 (not (= (select asg0 (select asg0 a!4)) 10)))
+      (a!6 (= (select asg0 (select asg0 (select asg0 a!4))) 10))
+      (a!7 (= (select asg0 (select asg0 (select asg0 a!4))) (select asg0 6)))
+      (a!8 (select asg0 (select asg0 (select asg0 (select asg0 a!4))))))
+(let ((a!9 (not (= (select asg0 (select asg0 a!8)) 10)))
+      (a!10 (or (= (select asg0 (select asg0 a!8)) (select asg0 6)) false)))
+(let ((a!11 (and (not (= (select asg0 a!8) 10))
+                 (or (= (select asg0 a!8) (select asg0 6)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg0 6)) a!11))))
+(let ((a!13 (or (= (select asg0 (select asg0 a!4)) (select asg0 6))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg0 a!4) 10))
+                 (or (= (select asg0 a!4) (select asg0 6)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg0 6)) a!14))))
+(let ((a!16 (or (= (select asg0 (select asg0 9)) (select asg0 6))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg0 9) 10))
+                 (or (= (select asg0 9) (select asg0 6)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg0 6) (- 1)) (distinct (select asg0 6) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg0 (select asg0 9)) 10)))
+      (a!2 (= (select asg0 (select asg0 (select asg0 9))) 10))
+      (a!3 (= (select asg0 (select asg0 (select asg0 9))) (select asg0 7)))
+      (a!4 (select asg0 (select asg0 (select asg0 (select asg0 9))))))
+(let ((a!5 (not (= (select asg0 (select asg0 a!4)) 10)))
+      (a!6 (= (select asg0 (select asg0 (select asg0 a!4))) 10))
+      (a!7 (= (select asg0 (select asg0 (select asg0 a!4))) (select asg0 7)))
+      (a!8 (select asg0 (select asg0 (select asg0 (select asg0 a!4))))))
+(let ((a!9 (not (= (select asg0 (select asg0 a!8)) 10)))
+      (a!10 (or (= (select asg0 (select asg0 a!8)) (select asg0 7)) false)))
+(let ((a!11 (and (not (= (select asg0 a!8) 10))
+                 (or (= (select asg0 a!8) (select asg0 7)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg0 7)) a!11))))
+(let ((a!13 (or (= (select asg0 (select asg0 a!4)) (select asg0 7))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg0 a!4) 10))
+                 (or (= (select asg0 a!4) (select asg0 7)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg0 7)) a!14))))
+(let ((a!16 (or (= (select asg0 (select asg0 9)) (select asg0 7))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg0 9) 10))
+                 (or (= (select asg0 9) (select asg0 7)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg0 7) (- 1)) (distinct (select asg0 7) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg0 (select asg0 9)) 10)))
+      (a!2 (= (select asg0 (select asg0 (select asg0 9))) 10))
+      (a!3 (= (select asg0 (select asg0 (select asg0 9))) (select asg0 8)))
+      (a!4 (select asg0 (select asg0 (select asg0 (select asg0 9))))))
+(let ((a!5 (not (= (select asg0 (select asg0 a!4)) 10)))
+      (a!6 (= (select asg0 (select asg0 (select asg0 a!4))) 10))
+      (a!7 (= (select asg0 (select asg0 (select asg0 a!4))) (select asg0 8)))
+      (a!8 (select asg0 (select asg0 (select asg0 (select asg0 a!4))))))
+(let ((a!9 (not (= (select asg0 (select asg0 a!8)) 10)))
+      (a!10 (or (= (select asg0 (select asg0 a!8)) (select asg0 8)) false)))
+(let ((a!11 (and (not (= (select asg0 a!8) 10))
+                 (or (= (select asg0 a!8) (select asg0 8)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg0 8)) a!11))))
+(let ((a!13 (or (= (select asg0 (select asg0 a!4)) (select asg0 8))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg0 a!4) 10))
+                 (or (= (select asg0 a!4) (select asg0 8)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg0 8)) a!14))))
+(let ((a!16 (or (= (select asg0 (select asg0 9)) (select asg0 8))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg0 9) 10))
+                 (or (= (select asg0 9) (select asg0 8)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg0 8) (- 1)) (distinct (select asg0 8) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg0 (select asg0 9)) 10)))
+      (a!2 (= (select asg0 (select asg0 (select asg0 9))) 10))
+      (a!3 (= (select asg0 (select asg0 (select asg0 9))) (select asg0 9)))
+      (a!4 (select asg0 (select asg0 (select asg0 (select asg0 9))))))
+(let ((a!5 (not (= (select asg0 (select asg0 a!4)) 10)))
+      (a!6 (= (select asg0 (select asg0 (select asg0 a!4))) 10))
+      (a!7 (= (select asg0 (select asg0 (select asg0 a!4))) (select asg0 9)))
+      (a!8 (select asg0 (select asg0 (select asg0 (select asg0 a!4))))))
+(let ((a!9 (not (= (select asg0 (select asg0 a!8)) 10)))
+      (a!10 (or (= (select asg0 (select asg0 a!8)) (select asg0 9)) false)))
+(let ((a!11 (and (not (= (select asg0 a!8) 10))
+                 (or (= (select asg0 a!8) (select asg0 9)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg0 9)) a!11))))
+(let ((a!13 (or (= (select asg0 (select asg0 a!4)) (select asg0 9))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg0 a!4) 10))
+                 (or (= (select asg0 a!4) (select asg0 9)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg0 9)) a!14))))
+(let ((a!16 (or (= (select asg0 (select asg0 9)) (select asg0 9))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg0 9) 10))
+                 (or (= (select asg0 9) (select asg0 9)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg0 9) (- 1)) (distinct (select asg0 9) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg1 (select asg1 9)) 10)))
+      (a!2 (= (select asg1 (select asg1 (select asg1 9))) 10))
+      (a!3 (= (select asg1 (select asg1 (select asg1 9))) (select asg1 0)))
+      (a!4 (select asg1 (select asg1 (select asg1 (select asg1 9))))))
+(let ((a!5 (not (= (select asg1 (select asg1 a!4)) 10)))
+      (a!6 (= (select asg1 (select asg1 (select asg1 a!4))) 10))
+      (a!7 (= (select asg1 (select asg1 (select asg1 a!4))) (select asg1 0)))
+      (a!8 (select asg1 (select asg1 (select asg1 (select asg1 a!4))))))
+(let ((a!9 (not (= (select asg1 (select asg1 a!8)) 10)))
+      (a!10 (or (= (select asg1 (select asg1 a!8)) (select asg1 0)) false)))
+(let ((a!11 (and (not (= (select asg1 a!8) 10))
+                 (or (= (select asg1 a!8) (select asg1 0)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg1 0)) a!11))))
+(let ((a!13 (or (= (select asg1 (select asg1 a!4)) (select asg1 0))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg1 a!4) 10))
+                 (or (= (select asg1 a!4) (select asg1 0)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg1 0)) a!14))))
+(let ((a!16 (or (= (select asg1 (select asg1 9)) (select asg1 0))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg1 9) 10))
+                 (or (= (select asg1 9) (select asg1 0)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg1 0) (- 1)) (distinct (select asg1 0) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg1 (select asg1 9)) 10)))
+      (a!2 (= (select asg1 (select asg1 (select asg1 9))) 10))
+      (a!3 (= (select asg1 (select asg1 (select asg1 9))) (select asg1 1)))
+      (a!4 (select asg1 (select asg1 (select asg1 (select asg1 9))))))
+(let ((a!5 (not (= (select asg1 (select asg1 a!4)) 10)))
+      (a!6 (= (select asg1 (select asg1 (select asg1 a!4))) 10))
+      (a!7 (= (select asg1 (select asg1 (select asg1 a!4))) (select asg1 1)))
+      (a!8 (select asg1 (select asg1 (select asg1 (select asg1 a!4))))))
+(let ((a!9 (not (= (select asg1 (select asg1 a!8)) 10)))
+      (a!10 (or (= (select asg1 (select asg1 a!8)) (select asg1 1)) false)))
+(let ((a!11 (and (not (= (select asg1 a!8) 10))
+                 (or (= (select asg1 a!8) (select asg1 1)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg1 1)) a!11))))
+(let ((a!13 (or (= (select asg1 (select asg1 a!4)) (select asg1 1))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg1 a!4) 10))
+                 (or (= (select asg1 a!4) (select asg1 1)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg1 1)) a!14))))
+(let ((a!16 (or (= (select asg1 (select asg1 9)) (select asg1 1))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg1 9) 10))
+                 (or (= (select asg1 9) (select asg1 1)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg1 1) (- 1)) (distinct (select asg1 1) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg1 (select asg1 9)) 10)))
+      (a!2 (= (select asg1 (select asg1 (select asg1 9))) 10))
+      (a!3 (= (select asg1 (select asg1 (select asg1 9))) (select asg1 2)))
+      (a!4 (select asg1 (select asg1 (select asg1 (select asg1 9))))))
+(let ((a!5 (not (= (select asg1 (select asg1 a!4)) 10)))
+      (a!6 (= (select asg1 (select asg1 (select asg1 a!4))) 10))
+      (a!7 (= (select asg1 (select asg1 (select asg1 a!4))) (select asg1 2)))
+      (a!8 (select asg1 (select asg1 (select asg1 (select asg1 a!4))))))
+(let ((a!9 (not (= (select asg1 (select asg1 a!8)) 10)))
+      (a!10 (or (= (select asg1 (select asg1 a!8)) (select asg1 2)) false)))
+(let ((a!11 (and (not (= (select asg1 a!8) 10))
+                 (or (= (select asg1 a!8) (select asg1 2)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg1 2)) a!11))))
+(let ((a!13 (or (= (select asg1 (select asg1 a!4)) (select asg1 2))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg1 a!4) 10))
+                 (or (= (select asg1 a!4) (select asg1 2)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg1 2)) a!14))))
+(let ((a!16 (or (= (select asg1 (select asg1 9)) (select asg1 2))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg1 9) 10))
+                 (or (= (select asg1 9) (select asg1 2)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg1 2) (- 1)) (distinct (select asg1 2) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg1 (select asg1 9)) 10)))
+      (a!2 (= (select asg1 (select asg1 (select asg1 9))) 10))
+      (a!3 (= (select asg1 (select asg1 (select asg1 9))) (select asg1 3)))
+      (a!4 (select asg1 (select asg1 (select asg1 (select asg1 9))))))
+(let ((a!5 (not (= (select asg1 (select asg1 a!4)) 10)))
+      (a!6 (= (select asg1 (select asg1 (select asg1 a!4))) 10))
+      (a!7 (= (select asg1 (select asg1 (select asg1 a!4))) (select asg1 3)))
+      (a!8 (select asg1 (select asg1 (select asg1 (select asg1 a!4))))))
+(let ((a!9 (not (= (select asg1 (select asg1 a!8)) 10)))
+      (a!10 (or (= (select asg1 (select asg1 a!8)) (select asg1 3)) false)))
+(let ((a!11 (and (not (= (select asg1 a!8) 10))
+                 (or (= (select asg1 a!8) (select asg1 3)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg1 3)) a!11))))
+(let ((a!13 (or (= (select asg1 (select asg1 a!4)) (select asg1 3))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg1 a!4) 10))
+                 (or (= (select asg1 a!4) (select asg1 3)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg1 3)) a!14))))
+(let ((a!16 (or (= (select asg1 (select asg1 9)) (select asg1 3))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg1 9) 10))
+                 (or (= (select asg1 9) (select asg1 3)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg1 3) (- 1)) (distinct (select asg1 3) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg1 (select asg1 9)) 10)))
+      (a!2 (= (select asg1 (select asg1 (select asg1 9))) 10))
+      (a!3 (= (select asg1 (select asg1 (select asg1 9))) (select asg1 4)))
+      (a!4 (select asg1 (select asg1 (select asg1 (select asg1 9))))))
+(let ((a!5 (not (= (select asg1 (select asg1 a!4)) 10)))
+      (a!6 (= (select asg1 (select asg1 (select asg1 a!4))) 10))
+      (a!7 (= (select asg1 (select asg1 (select asg1 a!4))) (select asg1 4)))
+      (a!8 (select asg1 (select asg1 (select asg1 (select asg1 a!4))))))
+(let ((a!9 (not (= (select asg1 (select asg1 a!8)) 10)))
+      (a!10 (or (= (select asg1 (select asg1 a!8)) (select asg1 4)) false)))
+(let ((a!11 (and (not (= (select asg1 a!8) 10))
+                 (or (= (select asg1 a!8) (select asg1 4)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg1 4)) a!11))))
+(let ((a!13 (or (= (select asg1 (select asg1 a!4)) (select asg1 4))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg1 a!4) 10))
+                 (or (= (select asg1 a!4) (select asg1 4)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg1 4)) a!14))))
+(let ((a!16 (or (= (select asg1 (select asg1 9)) (select asg1 4))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg1 9) 10))
+                 (or (= (select asg1 9) (select asg1 4)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg1 4) (- 1)) (distinct (select asg1 4) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg1 (select asg1 9)) 10)))
+      (a!2 (= (select asg1 (select asg1 (select asg1 9))) 10))
+      (a!3 (= (select asg1 (select asg1 (select asg1 9))) (select asg1 5)))
+      (a!4 (select asg1 (select asg1 (select asg1 (select asg1 9))))))
+(let ((a!5 (not (= (select asg1 (select asg1 a!4)) 10)))
+      (a!6 (= (select asg1 (select asg1 (select asg1 a!4))) 10))
+      (a!7 (= (select asg1 (select asg1 (select asg1 a!4))) (select asg1 5)))
+      (a!8 (select asg1 (select asg1 (select asg1 (select asg1 a!4))))))
+(let ((a!9 (not (= (select asg1 (select asg1 a!8)) 10)))
+      (a!10 (or (= (select asg1 (select asg1 a!8)) (select asg1 5)) false)))
+(let ((a!11 (and (not (= (select asg1 a!8) 10))
+                 (or (= (select asg1 a!8) (select asg1 5)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg1 5)) a!11))))
+(let ((a!13 (or (= (select asg1 (select asg1 a!4)) (select asg1 5))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg1 a!4) 10))
+                 (or (= (select asg1 a!4) (select asg1 5)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg1 5)) a!14))))
+(let ((a!16 (or (= (select asg1 (select asg1 9)) (select asg1 5))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg1 9) 10))
+                 (or (= (select asg1 9) (select asg1 5)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg1 5) (- 1)) (distinct (select asg1 5) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg1 (select asg1 9)) 10)))
+      (a!2 (= (select asg1 (select asg1 (select asg1 9))) 10))
+      (a!3 (= (select asg1 (select asg1 (select asg1 9))) (select asg1 6)))
+      (a!4 (select asg1 (select asg1 (select asg1 (select asg1 9))))))
+(let ((a!5 (not (= (select asg1 (select asg1 a!4)) 10)))
+      (a!6 (= (select asg1 (select asg1 (select asg1 a!4))) 10))
+      (a!7 (= (select asg1 (select asg1 (select asg1 a!4))) (select asg1 6)))
+      (a!8 (select asg1 (select asg1 (select asg1 (select asg1 a!4))))))
+(let ((a!9 (not (= (select asg1 (select asg1 a!8)) 10)))
+      (a!10 (or (= (select asg1 (select asg1 a!8)) (select asg1 6)) false)))
+(let ((a!11 (and (not (= (select asg1 a!8) 10))
+                 (or (= (select asg1 a!8) (select asg1 6)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg1 6)) a!11))))
+(let ((a!13 (or (= (select asg1 (select asg1 a!4)) (select asg1 6))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg1 a!4) 10))
+                 (or (= (select asg1 a!4) (select asg1 6)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg1 6)) a!14))))
+(let ((a!16 (or (= (select asg1 (select asg1 9)) (select asg1 6))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg1 9) 10))
+                 (or (= (select asg1 9) (select asg1 6)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg1 6) (- 1)) (distinct (select asg1 6) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg1 (select asg1 9)) 10)))
+      (a!2 (= (select asg1 (select asg1 (select asg1 9))) 10))
+      (a!3 (= (select asg1 (select asg1 (select asg1 9))) (select asg1 7)))
+      (a!4 (select asg1 (select asg1 (select asg1 (select asg1 9))))))
+(let ((a!5 (not (= (select asg1 (select asg1 a!4)) 10)))
+      (a!6 (= (select asg1 (select asg1 (select asg1 a!4))) 10))
+      (a!7 (= (select asg1 (select asg1 (select asg1 a!4))) (select asg1 7)))
+      (a!8 (select asg1 (select asg1 (select asg1 (select asg1 a!4))))))
+(let ((a!9 (not (= (select asg1 (select asg1 a!8)) 10)))
+      (a!10 (or (= (select asg1 (select asg1 a!8)) (select asg1 7)) false)))
+(let ((a!11 (and (not (= (select asg1 a!8) 10))
+                 (or (= (select asg1 a!8) (select asg1 7)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg1 7)) a!11))))
+(let ((a!13 (or (= (select asg1 (select asg1 a!4)) (select asg1 7))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg1 a!4) 10))
+                 (or (= (select asg1 a!4) (select asg1 7)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg1 7)) a!14))))
+(let ((a!16 (or (= (select asg1 (select asg1 9)) (select asg1 7))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg1 9) 10))
+                 (or (= (select asg1 9) (select asg1 7)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg1 7) (- 1)) (distinct (select asg1 7) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg1 (select asg1 9)) 10)))
+      (a!2 (= (select asg1 (select asg1 (select asg1 9))) 10))
+      (a!3 (= (select asg1 (select asg1 (select asg1 9))) (select asg1 8)))
+      (a!4 (select asg1 (select asg1 (select asg1 (select asg1 9))))))
+(let ((a!5 (not (= (select asg1 (select asg1 a!4)) 10)))
+      (a!6 (= (select asg1 (select asg1 (select asg1 a!4))) 10))
+      (a!7 (= (select asg1 (select asg1 (select asg1 a!4))) (select asg1 8)))
+      (a!8 (select asg1 (select asg1 (select asg1 (select asg1 a!4))))))
+(let ((a!9 (not (= (select asg1 (select asg1 a!8)) 10)))
+      (a!10 (or (= (select asg1 (select asg1 a!8)) (select asg1 8)) false)))
+(let ((a!11 (and (not (= (select asg1 a!8) 10))
+                 (or (= (select asg1 a!8) (select asg1 8)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg1 8)) a!11))))
+(let ((a!13 (or (= (select asg1 (select asg1 a!4)) (select asg1 8))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg1 a!4) 10))
+                 (or (= (select asg1 a!4) (select asg1 8)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg1 8)) a!14))))
+(let ((a!16 (or (= (select asg1 (select asg1 9)) (select asg1 8))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg1 9) 10))
+                 (or (= (select asg1 9) (select asg1 8)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg1 8) (- 1)) (distinct (select asg1 8) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg1 (select asg1 9)) 10)))
+      (a!2 (= (select asg1 (select asg1 (select asg1 9))) 10))
+      (a!3 (= (select asg1 (select asg1 (select asg1 9))) (select asg1 9)))
+      (a!4 (select asg1 (select asg1 (select asg1 (select asg1 9))))))
+(let ((a!5 (not (= (select asg1 (select asg1 a!4)) 10)))
+      (a!6 (= (select asg1 (select asg1 (select asg1 a!4))) 10))
+      (a!7 (= (select asg1 (select asg1 (select asg1 a!4))) (select asg1 9)))
+      (a!8 (select asg1 (select asg1 (select asg1 (select asg1 a!4))))))
+(let ((a!9 (not (= (select asg1 (select asg1 a!8)) 10)))
+      (a!10 (or (= (select asg1 (select asg1 a!8)) (select asg1 9)) false)))
+(let ((a!11 (and (not (= (select asg1 a!8) 10))
+                 (or (= (select asg1 a!8) (select asg1 9)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg1 9)) a!11))))
+(let ((a!13 (or (= (select asg1 (select asg1 a!4)) (select asg1 9))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg1 a!4) 10))
+                 (or (= (select asg1 a!4) (select asg1 9)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg1 9)) a!14))))
+(let ((a!16 (or (= (select asg1 (select asg1 9)) (select asg1 9))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg1 9) 10))
+                 (or (= (select asg1 9) (select asg1 9)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg1 9) (- 1)) (distinct (select asg1 9) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg2 (select asg2 9)) 10)))
+      (a!2 (= (select asg2 (select asg2 (select asg2 9))) 10))
+      (a!3 (= (select asg2 (select asg2 (select asg2 9))) (select asg2 0)))
+      (a!4 (select asg2 (select asg2 (select asg2 (select asg2 9))))))
+(let ((a!5 (not (= (select asg2 (select asg2 a!4)) 10)))
+      (a!6 (= (select asg2 (select asg2 (select asg2 a!4))) 10))
+      (a!7 (= (select asg2 (select asg2 (select asg2 a!4))) (select asg2 0)))
+      (a!8 (select asg2 (select asg2 (select asg2 (select asg2 a!4))))))
+(let ((a!9 (not (= (select asg2 (select asg2 a!8)) 10)))
+      (a!10 (or (= (select asg2 (select asg2 a!8)) (select asg2 0)) false)))
+(let ((a!11 (and (not (= (select asg2 a!8) 10))
+                 (or (= (select asg2 a!8) (select asg2 0)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg2 0)) a!11))))
+(let ((a!13 (or (= (select asg2 (select asg2 a!4)) (select asg2 0))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg2 a!4) 10))
+                 (or (= (select asg2 a!4) (select asg2 0)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg2 0)) a!14))))
+(let ((a!16 (or (= (select asg2 (select asg2 9)) (select asg2 0))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg2 9) 10))
+                 (or (= (select asg2 9) (select asg2 0)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg2 0) (- 1)) (distinct (select asg2 0) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg2 (select asg2 9)) 10)))
+      (a!2 (= (select asg2 (select asg2 (select asg2 9))) 10))
+      (a!3 (= (select asg2 (select asg2 (select asg2 9))) (select asg2 1)))
+      (a!4 (select asg2 (select asg2 (select asg2 (select asg2 9))))))
+(let ((a!5 (not (= (select asg2 (select asg2 a!4)) 10)))
+      (a!6 (= (select asg2 (select asg2 (select asg2 a!4))) 10))
+      (a!7 (= (select asg2 (select asg2 (select asg2 a!4))) (select asg2 1)))
+      (a!8 (select asg2 (select asg2 (select asg2 (select asg2 a!4))))))
+(let ((a!9 (not (= (select asg2 (select asg2 a!8)) 10)))
+      (a!10 (or (= (select asg2 (select asg2 a!8)) (select asg2 1)) false)))
+(let ((a!11 (and (not (= (select asg2 a!8) 10))
+                 (or (= (select asg2 a!8) (select asg2 1)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg2 1)) a!11))))
+(let ((a!13 (or (= (select asg2 (select asg2 a!4)) (select asg2 1))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg2 a!4) 10))
+                 (or (= (select asg2 a!4) (select asg2 1)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg2 1)) a!14))))
+(let ((a!16 (or (= (select asg2 (select asg2 9)) (select asg2 1))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg2 9) 10))
+                 (or (= (select asg2 9) (select asg2 1)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg2 1) (- 1)) (distinct (select asg2 1) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg2 (select asg2 9)) 10)))
+      (a!2 (= (select asg2 (select asg2 (select asg2 9))) 10))
+      (a!3 (= (select asg2 (select asg2 (select asg2 9))) (select asg2 2)))
+      (a!4 (select asg2 (select asg2 (select asg2 (select asg2 9))))))
+(let ((a!5 (not (= (select asg2 (select asg2 a!4)) 10)))
+      (a!6 (= (select asg2 (select asg2 (select asg2 a!4))) 10))
+      (a!7 (= (select asg2 (select asg2 (select asg2 a!4))) (select asg2 2)))
+      (a!8 (select asg2 (select asg2 (select asg2 (select asg2 a!4))))))
+(let ((a!9 (not (= (select asg2 (select asg2 a!8)) 10)))
+      (a!10 (or (= (select asg2 (select asg2 a!8)) (select asg2 2)) false)))
+(let ((a!11 (and (not (= (select asg2 a!8) 10))
+                 (or (= (select asg2 a!8) (select asg2 2)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg2 2)) a!11))))
+(let ((a!13 (or (= (select asg2 (select asg2 a!4)) (select asg2 2))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg2 a!4) 10))
+                 (or (= (select asg2 a!4) (select asg2 2)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg2 2)) a!14))))
+(let ((a!16 (or (= (select asg2 (select asg2 9)) (select asg2 2))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg2 9) 10))
+                 (or (= (select asg2 9) (select asg2 2)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg2 2) (- 1)) (distinct (select asg2 2) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg2 (select asg2 9)) 10)))
+      (a!2 (= (select asg2 (select asg2 (select asg2 9))) 10))
+      (a!3 (= (select asg2 (select asg2 (select asg2 9))) (select asg2 3)))
+      (a!4 (select asg2 (select asg2 (select asg2 (select asg2 9))))))
+(let ((a!5 (not (= (select asg2 (select asg2 a!4)) 10)))
+      (a!6 (= (select asg2 (select asg2 (select asg2 a!4))) 10))
+      (a!7 (= (select asg2 (select asg2 (select asg2 a!4))) (select asg2 3)))
+      (a!8 (select asg2 (select asg2 (select asg2 (select asg2 a!4))))))
+(let ((a!9 (not (= (select asg2 (select asg2 a!8)) 10)))
+      (a!10 (or (= (select asg2 (select asg2 a!8)) (select asg2 3)) false)))
+(let ((a!11 (and (not (= (select asg2 a!8) 10))
+                 (or (= (select asg2 a!8) (select asg2 3)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg2 3)) a!11))))
+(let ((a!13 (or (= (select asg2 (select asg2 a!4)) (select asg2 3))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg2 a!4) 10))
+                 (or (= (select asg2 a!4) (select asg2 3)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg2 3)) a!14))))
+(let ((a!16 (or (= (select asg2 (select asg2 9)) (select asg2 3))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg2 9) 10))
+                 (or (= (select asg2 9) (select asg2 3)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg2 3) (- 1)) (distinct (select asg2 3) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg2 (select asg2 9)) 10)))
+      (a!2 (= (select asg2 (select asg2 (select asg2 9))) 10))
+      (a!3 (= (select asg2 (select asg2 (select asg2 9))) (select asg2 4)))
+      (a!4 (select asg2 (select asg2 (select asg2 (select asg2 9))))))
+(let ((a!5 (not (= (select asg2 (select asg2 a!4)) 10)))
+      (a!6 (= (select asg2 (select asg2 (select asg2 a!4))) 10))
+      (a!7 (= (select asg2 (select asg2 (select asg2 a!4))) (select asg2 4)))
+      (a!8 (select asg2 (select asg2 (select asg2 (select asg2 a!4))))))
+(let ((a!9 (not (= (select asg2 (select asg2 a!8)) 10)))
+      (a!10 (or (= (select asg2 (select asg2 a!8)) (select asg2 4)) false)))
+(let ((a!11 (and (not (= (select asg2 a!8) 10))
+                 (or (= (select asg2 a!8) (select asg2 4)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg2 4)) a!11))))
+(let ((a!13 (or (= (select asg2 (select asg2 a!4)) (select asg2 4))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg2 a!4) 10))
+                 (or (= (select asg2 a!4) (select asg2 4)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg2 4)) a!14))))
+(let ((a!16 (or (= (select asg2 (select asg2 9)) (select asg2 4))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg2 9) 10))
+                 (or (= (select asg2 9) (select asg2 4)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg2 4) (- 1)) (distinct (select asg2 4) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg2 (select asg2 9)) 10)))
+      (a!2 (= (select asg2 (select asg2 (select asg2 9))) 10))
+      (a!3 (= (select asg2 (select asg2 (select asg2 9))) (select asg2 5)))
+      (a!4 (select asg2 (select asg2 (select asg2 (select asg2 9))))))
+(let ((a!5 (not (= (select asg2 (select asg2 a!4)) 10)))
+      (a!6 (= (select asg2 (select asg2 (select asg2 a!4))) 10))
+      (a!7 (= (select asg2 (select asg2 (select asg2 a!4))) (select asg2 5)))
+      (a!8 (select asg2 (select asg2 (select asg2 (select asg2 a!4))))))
+(let ((a!9 (not (= (select asg2 (select asg2 a!8)) 10)))
+      (a!10 (or (= (select asg2 (select asg2 a!8)) (select asg2 5)) false)))
+(let ((a!11 (and (not (= (select asg2 a!8) 10))
+                 (or (= (select asg2 a!8) (select asg2 5)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg2 5)) a!11))))
+(let ((a!13 (or (= (select asg2 (select asg2 a!4)) (select asg2 5))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg2 a!4) 10))
+                 (or (= (select asg2 a!4) (select asg2 5)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg2 5)) a!14))))
+(let ((a!16 (or (= (select asg2 (select asg2 9)) (select asg2 5))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg2 9) 10))
+                 (or (= (select asg2 9) (select asg2 5)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg2 5) (- 1)) (distinct (select asg2 5) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg2 (select asg2 9)) 10)))
+      (a!2 (= (select asg2 (select asg2 (select asg2 9))) 10))
+      (a!3 (= (select asg2 (select asg2 (select asg2 9))) (select asg2 6)))
+      (a!4 (select asg2 (select asg2 (select asg2 (select asg2 9))))))
+(let ((a!5 (not (= (select asg2 (select asg2 a!4)) 10)))
+      (a!6 (= (select asg2 (select asg2 (select asg2 a!4))) 10))
+      (a!7 (= (select asg2 (select asg2 (select asg2 a!4))) (select asg2 6)))
+      (a!8 (select asg2 (select asg2 (select asg2 (select asg2 a!4))))))
+(let ((a!9 (not (= (select asg2 (select asg2 a!8)) 10)))
+      (a!10 (or (= (select asg2 (select asg2 a!8)) (select asg2 6)) false)))
+(let ((a!11 (and (not (= (select asg2 a!8) 10))
+                 (or (= (select asg2 a!8) (select asg2 6)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg2 6)) a!11))))
+(let ((a!13 (or (= (select asg2 (select asg2 a!4)) (select asg2 6))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg2 a!4) 10))
+                 (or (= (select asg2 a!4) (select asg2 6)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg2 6)) a!14))))
+(let ((a!16 (or (= (select asg2 (select asg2 9)) (select asg2 6))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg2 9) 10))
+                 (or (= (select asg2 9) (select asg2 6)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg2 6) (- 1)) (distinct (select asg2 6) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg2 (select asg2 9)) 10)))
+      (a!2 (= (select asg2 (select asg2 (select asg2 9))) 10))
+      (a!3 (= (select asg2 (select asg2 (select asg2 9))) (select asg2 7)))
+      (a!4 (select asg2 (select asg2 (select asg2 (select asg2 9))))))
+(let ((a!5 (not (= (select asg2 (select asg2 a!4)) 10)))
+      (a!6 (= (select asg2 (select asg2 (select asg2 a!4))) 10))
+      (a!7 (= (select asg2 (select asg2 (select asg2 a!4))) (select asg2 7)))
+      (a!8 (select asg2 (select asg2 (select asg2 (select asg2 a!4))))))
+(let ((a!9 (not (= (select asg2 (select asg2 a!8)) 10)))
+      (a!10 (or (= (select asg2 (select asg2 a!8)) (select asg2 7)) false)))
+(let ((a!11 (and (not (= (select asg2 a!8) 10))
+                 (or (= (select asg2 a!8) (select asg2 7)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg2 7)) a!11))))
+(let ((a!13 (or (= (select asg2 (select asg2 a!4)) (select asg2 7))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg2 a!4) 10))
+                 (or (= (select asg2 a!4) (select asg2 7)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg2 7)) a!14))))
+(let ((a!16 (or (= (select asg2 (select asg2 9)) (select asg2 7))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg2 9) 10))
+                 (or (= (select asg2 9) (select asg2 7)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg2 7) (- 1)) (distinct (select asg2 7) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg2 (select asg2 9)) 10)))
+      (a!2 (= (select asg2 (select asg2 (select asg2 9))) 10))
+      (a!3 (= (select asg2 (select asg2 (select asg2 9))) (select asg2 8)))
+      (a!4 (select asg2 (select asg2 (select asg2 (select asg2 9))))))
+(let ((a!5 (not (= (select asg2 (select asg2 a!4)) 10)))
+      (a!6 (= (select asg2 (select asg2 (select asg2 a!4))) 10))
+      (a!7 (= (select asg2 (select asg2 (select asg2 a!4))) (select asg2 8)))
+      (a!8 (select asg2 (select asg2 (select asg2 (select asg2 a!4))))))
+(let ((a!9 (not (= (select asg2 (select asg2 a!8)) 10)))
+      (a!10 (or (= (select asg2 (select asg2 a!8)) (select asg2 8)) false)))
+(let ((a!11 (and (not (= (select asg2 a!8) 10))
+                 (or (= (select asg2 a!8) (select asg2 8)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg2 8)) a!11))))
+(let ((a!13 (or (= (select asg2 (select asg2 a!4)) (select asg2 8))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg2 a!4) 10))
+                 (or (= (select asg2 a!4) (select asg2 8)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg2 8)) a!14))))
+(let ((a!16 (or (= (select asg2 (select asg2 9)) (select asg2 8))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg2 9) 10))
+                 (or (= (select asg2 9) (select asg2 8)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg2 8) (- 1)) (distinct (select asg2 8) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg2 (select asg2 9)) 10)))
+      (a!2 (= (select asg2 (select asg2 (select asg2 9))) 10))
+      (a!3 (= (select asg2 (select asg2 (select asg2 9))) (select asg2 9)))
+      (a!4 (select asg2 (select asg2 (select asg2 (select asg2 9))))))
+(let ((a!5 (not (= (select asg2 (select asg2 a!4)) 10)))
+      (a!6 (= (select asg2 (select asg2 (select asg2 a!4))) 10))
+      (a!7 (= (select asg2 (select asg2 (select asg2 a!4))) (select asg2 9)))
+      (a!8 (select asg2 (select asg2 (select asg2 (select asg2 a!4))))))
+(let ((a!9 (not (= (select asg2 (select asg2 a!8)) 10)))
+      (a!10 (or (= (select asg2 (select asg2 a!8)) (select asg2 9)) false)))
+(let ((a!11 (and (not (= (select asg2 a!8) 10))
+                 (or (= (select asg2 a!8) (select asg2 9)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg2 9)) a!11))))
+(let ((a!13 (or (= (select asg2 (select asg2 a!4)) (select asg2 9))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg2 a!4) 10))
+                 (or (= (select asg2 a!4) (select asg2 9)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg2 9)) a!14))))
+(let ((a!16 (or (= (select asg2 (select asg2 9)) (select asg2 9))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg2 9) 10))
+                 (or (= (select asg2 9) (select asg2 9)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg2 9) (- 1)) (distinct (select asg2 9) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg3 (select asg3 9)) 10)))
+      (a!2 (= (select asg3 (select asg3 (select asg3 9))) 10))
+      (a!3 (= (select asg3 (select asg3 (select asg3 9))) (select asg3 0)))
+      (a!4 (select asg3 (select asg3 (select asg3 (select asg3 9))))))
+(let ((a!5 (not (= (select asg3 (select asg3 a!4)) 10)))
+      (a!6 (= (select asg3 (select asg3 (select asg3 a!4))) 10))
+      (a!7 (= (select asg3 (select asg3 (select asg3 a!4))) (select asg3 0)))
+      (a!8 (select asg3 (select asg3 (select asg3 (select asg3 a!4))))))
+(let ((a!9 (not (= (select asg3 (select asg3 a!8)) 10)))
+      (a!10 (or (= (select asg3 (select asg3 a!8)) (select asg3 0)) false)))
+(let ((a!11 (and (not (= (select asg3 a!8) 10))
+                 (or (= (select asg3 a!8) (select asg3 0)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg3 0)) a!11))))
+(let ((a!13 (or (= (select asg3 (select asg3 a!4)) (select asg3 0))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg3 a!4) 10))
+                 (or (= (select asg3 a!4) (select asg3 0)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg3 0)) a!14))))
+(let ((a!16 (or (= (select asg3 (select asg3 9)) (select asg3 0))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg3 9) 10))
+                 (or (= (select asg3 9) (select asg3 0)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg3 0) (- 1)) (distinct (select asg3 0) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg3 (select asg3 9)) 10)))
+      (a!2 (= (select asg3 (select asg3 (select asg3 9))) 10))
+      (a!3 (= (select asg3 (select asg3 (select asg3 9))) (select asg3 1)))
+      (a!4 (select asg3 (select asg3 (select asg3 (select asg3 9))))))
+(let ((a!5 (not (= (select asg3 (select asg3 a!4)) 10)))
+      (a!6 (= (select asg3 (select asg3 (select asg3 a!4))) 10))
+      (a!7 (= (select asg3 (select asg3 (select asg3 a!4))) (select asg3 1)))
+      (a!8 (select asg3 (select asg3 (select asg3 (select asg3 a!4))))))
+(let ((a!9 (not (= (select asg3 (select asg3 a!8)) 10)))
+      (a!10 (or (= (select asg3 (select asg3 a!8)) (select asg3 1)) false)))
+(let ((a!11 (and (not (= (select asg3 a!8) 10))
+                 (or (= (select asg3 a!8) (select asg3 1)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg3 1)) a!11))))
+(let ((a!13 (or (= (select asg3 (select asg3 a!4)) (select asg3 1))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg3 a!4) 10))
+                 (or (= (select asg3 a!4) (select asg3 1)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg3 1)) a!14))))
+(let ((a!16 (or (= (select asg3 (select asg3 9)) (select asg3 1))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg3 9) 10))
+                 (or (= (select asg3 9) (select asg3 1)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg3 1) (- 1)) (distinct (select asg3 1) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg3 (select asg3 9)) 10)))
+      (a!2 (= (select asg3 (select asg3 (select asg3 9))) 10))
+      (a!3 (= (select asg3 (select asg3 (select asg3 9))) (select asg3 2)))
+      (a!4 (select asg3 (select asg3 (select asg3 (select asg3 9))))))
+(let ((a!5 (not (= (select asg3 (select asg3 a!4)) 10)))
+      (a!6 (= (select asg3 (select asg3 (select asg3 a!4))) 10))
+      (a!7 (= (select asg3 (select asg3 (select asg3 a!4))) (select asg3 2)))
+      (a!8 (select asg3 (select asg3 (select asg3 (select asg3 a!4))))))
+(let ((a!9 (not (= (select asg3 (select asg3 a!8)) 10)))
+      (a!10 (or (= (select asg3 (select asg3 a!8)) (select asg3 2)) false)))
+(let ((a!11 (and (not (= (select asg3 a!8) 10))
+                 (or (= (select asg3 a!8) (select asg3 2)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg3 2)) a!11))))
+(let ((a!13 (or (= (select asg3 (select asg3 a!4)) (select asg3 2))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg3 a!4) 10))
+                 (or (= (select asg3 a!4) (select asg3 2)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg3 2)) a!14))))
+(let ((a!16 (or (= (select asg3 (select asg3 9)) (select asg3 2))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg3 9) 10))
+                 (or (= (select asg3 9) (select asg3 2)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg3 2) (- 1)) (distinct (select asg3 2) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg3 (select asg3 9)) 10)))
+      (a!2 (= (select asg3 (select asg3 (select asg3 9))) 10))
+      (a!3 (= (select asg3 (select asg3 (select asg3 9))) (select asg3 3)))
+      (a!4 (select asg3 (select asg3 (select asg3 (select asg3 9))))))
+(let ((a!5 (not (= (select asg3 (select asg3 a!4)) 10)))
+      (a!6 (= (select asg3 (select asg3 (select asg3 a!4))) 10))
+      (a!7 (= (select asg3 (select asg3 (select asg3 a!4))) (select asg3 3)))
+      (a!8 (select asg3 (select asg3 (select asg3 (select asg3 a!4))))))
+(let ((a!9 (not (= (select asg3 (select asg3 a!8)) 10)))
+      (a!10 (or (= (select asg3 (select asg3 a!8)) (select asg3 3)) false)))
+(let ((a!11 (and (not (= (select asg3 a!8) 10))
+                 (or (= (select asg3 a!8) (select asg3 3)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg3 3)) a!11))))
+(let ((a!13 (or (= (select asg3 (select asg3 a!4)) (select asg3 3))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg3 a!4) 10))
+                 (or (= (select asg3 a!4) (select asg3 3)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg3 3)) a!14))))
+(let ((a!16 (or (= (select asg3 (select asg3 9)) (select asg3 3))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg3 9) 10))
+                 (or (= (select asg3 9) (select asg3 3)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg3 3) (- 1)) (distinct (select asg3 3) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg3 (select asg3 9)) 10)))
+      (a!2 (= (select asg3 (select asg3 (select asg3 9))) 10))
+      (a!3 (= (select asg3 (select asg3 (select asg3 9))) (select asg3 4)))
+      (a!4 (select asg3 (select asg3 (select asg3 (select asg3 9))))))
+(let ((a!5 (not (= (select asg3 (select asg3 a!4)) 10)))
+      (a!6 (= (select asg3 (select asg3 (select asg3 a!4))) 10))
+      (a!7 (= (select asg3 (select asg3 (select asg3 a!4))) (select asg3 4)))
+      (a!8 (select asg3 (select asg3 (select asg3 (select asg3 a!4))))))
+(let ((a!9 (not (= (select asg3 (select asg3 a!8)) 10)))
+      (a!10 (or (= (select asg3 (select asg3 a!8)) (select asg3 4)) false)))
+(let ((a!11 (and (not (= (select asg3 a!8) 10))
+                 (or (= (select asg3 a!8) (select asg3 4)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg3 4)) a!11))))
+(let ((a!13 (or (= (select asg3 (select asg3 a!4)) (select asg3 4))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg3 a!4) 10))
+                 (or (= (select asg3 a!4) (select asg3 4)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg3 4)) a!14))))
+(let ((a!16 (or (= (select asg3 (select asg3 9)) (select asg3 4))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg3 9) 10))
+                 (or (= (select asg3 9) (select asg3 4)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg3 4) (- 1)) (distinct (select asg3 4) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg3 (select asg3 9)) 10)))
+      (a!2 (= (select asg3 (select asg3 (select asg3 9))) 10))
+      (a!3 (= (select asg3 (select asg3 (select asg3 9))) (select asg3 5)))
+      (a!4 (select asg3 (select asg3 (select asg3 (select asg3 9))))))
+(let ((a!5 (not (= (select asg3 (select asg3 a!4)) 10)))
+      (a!6 (= (select asg3 (select asg3 (select asg3 a!4))) 10))
+      (a!7 (= (select asg3 (select asg3 (select asg3 a!4))) (select asg3 5)))
+      (a!8 (select asg3 (select asg3 (select asg3 (select asg3 a!4))))))
+(let ((a!9 (not (= (select asg3 (select asg3 a!8)) 10)))
+      (a!10 (or (= (select asg3 (select asg3 a!8)) (select asg3 5)) false)))
+(let ((a!11 (and (not (= (select asg3 a!8) 10))
+                 (or (= (select asg3 a!8) (select asg3 5)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg3 5)) a!11))))
+(let ((a!13 (or (= (select asg3 (select asg3 a!4)) (select asg3 5))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg3 a!4) 10))
+                 (or (= (select asg3 a!4) (select asg3 5)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg3 5)) a!14))))
+(let ((a!16 (or (= (select asg3 (select asg3 9)) (select asg3 5))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg3 9) 10))
+                 (or (= (select asg3 9) (select asg3 5)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg3 5) (- 1)) (distinct (select asg3 5) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg3 (select asg3 9)) 10)))
+      (a!2 (= (select asg3 (select asg3 (select asg3 9))) 10))
+      (a!3 (= (select asg3 (select asg3 (select asg3 9))) (select asg3 6)))
+      (a!4 (select asg3 (select asg3 (select asg3 (select asg3 9))))))
+(let ((a!5 (not (= (select asg3 (select asg3 a!4)) 10)))
+      (a!6 (= (select asg3 (select asg3 (select asg3 a!4))) 10))
+      (a!7 (= (select asg3 (select asg3 (select asg3 a!4))) (select asg3 6)))
+      (a!8 (select asg3 (select asg3 (select asg3 (select asg3 a!4))))))
+(let ((a!9 (not (= (select asg3 (select asg3 a!8)) 10)))
+      (a!10 (or (= (select asg3 (select asg3 a!8)) (select asg3 6)) false)))
+(let ((a!11 (and (not (= (select asg3 a!8) 10))
+                 (or (= (select asg3 a!8) (select asg3 6)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg3 6)) a!11))))
+(let ((a!13 (or (= (select asg3 (select asg3 a!4)) (select asg3 6))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg3 a!4) 10))
+                 (or (= (select asg3 a!4) (select asg3 6)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg3 6)) a!14))))
+(let ((a!16 (or (= (select asg3 (select asg3 9)) (select asg3 6))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg3 9) 10))
+                 (or (= (select asg3 9) (select asg3 6)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg3 6) (- 1)) (distinct (select asg3 6) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg3 (select asg3 9)) 10)))
+      (a!2 (= (select asg3 (select asg3 (select asg3 9))) 10))
+      (a!3 (= (select asg3 (select asg3 (select asg3 9))) (select asg3 7)))
+      (a!4 (select asg3 (select asg3 (select asg3 (select asg3 9))))))
+(let ((a!5 (not (= (select asg3 (select asg3 a!4)) 10)))
+      (a!6 (= (select asg3 (select asg3 (select asg3 a!4))) 10))
+      (a!7 (= (select asg3 (select asg3 (select asg3 a!4))) (select asg3 7)))
+      (a!8 (select asg3 (select asg3 (select asg3 (select asg3 a!4))))))
+(let ((a!9 (not (= (select asg3 (select asg3 a!8)) 10)))
+      (a!10 (or (= (select asg3 (select asg3 a!8)) (select asg3 7)) false)))
+(let ((a!11 (and (not (= (select asg3 a!8) 10))
+                 (or (= (select asg3 a!8) (select asg3 7)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg3 7)) a!11))))
+(let ((a!13 (or (= (select asg3 (select asg3 a!4)) (select asg3 7))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg3 a!4) 10))
+                 (or (= (select asg3 a!4) (select asg3 7)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg3 7)) a!14))))
+(let ((a!16 (or (= (select asg3 (select asg3 9)) (select asg3 7))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg3 9) 10))
+                 (or (= (select asg3 9) (select asg3 7)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg3 7) (- 1)) (distinct (select asg3 7) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg3 (select asg3 9)) 10)))
+      (a!2 (= (select asg3 (select asg3 (select asg3 9))) 10))
+      (a!3 (= (select asg3 (select asg3 (select asg3 9))) (select asg3 8)))
+      (a!4 (select asg3 (select asg3 (select asg3 (select asg3 9))))))
+(let ((a!5 (not (= (select asg3 (select asg3 a!4)) 10)))
+      (a!6 (= (select asg3 (select asg3 (select asg3 a!4))) 10))
+      (a!7 (= (select asg3 (select asg3 (select asg3 a!4))) (select asg3 8)))
+      (a!8 (select asg3 (select asg3 (select asg3 (select asg3 a!4))))))
+(let ((a!9 (not (= (select asg3 (select asg3 a!8)) 10)))
+      (a!10 (or (= (select asg3 (select asg3 a!8)) (select asg3 8)) false)))
+(let ((a!11 (and (not (= (select asg3 a!8) 10))
+                 (or (= (select asg3 a!8) (select asg3 8)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg3 8)) a!11))))
+(let ((a!13 (or (= (select asg3 (select asg3 a!4)) (select asg3 8))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg3 a!4) 10))
+                 (or (= (select asg3 a!4) (select asg3 8)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg3 8)) a!14))))
+(let ((a!16 (or (= (select asg3 (select asg3 9)) (select asg3 8))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg3 9) 10))
+                 (or (= (select asg3 9) (select asg3 8)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg3 8) (- 1)) (distinct (select asg3 8) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg3 (select asg3 9)) 10)))
+      (a!2 (= (select asg3 (select asg3 (select asg3 9))) 10))
+      (a!3 (= (select asg3 (select asg3 (select asg3 9))) (select asg3 9)))
+      (a!4 (select asg3 (select asg3 (select asg3 (select asg3 9))))))
+(let ((a!5 (not (= (select asg3 (select asg3 a!4)) 10)))
+      (a!6 (= (select asg3 (select asg3 (select asg3 a!4))) 10))
+      (a!7 (= (select asg3 (select asg3 (select asg3 a!4))) (select asg3 9)))
+      (a!8 (select asg3 (select asg3 (select asg3 (select asg3 a!4))))))
+(let ((a!9 (not (= (select asg3 (select asg3 a!8)) 10)))
+      (a!10 (or (= (select asg3 (select asg3 a!8)) (select asg3 9)) false)))
+(let ((a!11 (and (not (= (select asg3 a!8) 10))
+                 (or (= (select asg3 a!8) (select asg3 9)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg3 9)) a!11))))
+(let ((a!13 (or (= (select asg3 (select asg3 a!4)) (select asg3 9))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg3 a!4) 10))
+                 (or (= (select asg3 a!4) (select asg3 9)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg3 9)) a!14))))
+(let ((a!16 (or (= (select asg3 (select asg3 9)) (select asg3 9))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg3 9) 10))
+                 (or (= (select asg3 9) (select asg3 9)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg3 9) (- 1)) (distinct (select asg3 9) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg4 (select asg4 9)) 10)))
+      (a!2 (= (select asg4 (select asg4 (select asg4 9))) 10))
+      (a!3 (= (select asg4 (select asg4 (select asg4 9))) (select asg4 0)))
+      (a!4 (select asg4 (select asg4 (select asg4 (select asg4 9))))))
+(let ((a!5 (not (= (select asg4 (select asg4 a!4)) 10)))
+      (a!6 (= (select asg4 (select asg4 (select asg4 a!4))) 10))
+      (a!7 (= (select asg4 (select asg4 (select asg4 a!4))) (select asg4 0)))
+      (a!8 (select asg4 (select asg4 (select asg4 (select asg4 a!4))))))
+(let ((a!9 (not (= (select asg4 (select asg4 a!8)) 10)))
+      (a!10 (or (= (select asg4 (select asg4 a!8)) (select asg4 0)) false)))
+(let ((a!11 (and (not (= (select asg4 a!8) 10))
+                 (or (= (select asg4 a!8) (select asg4 0)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg4 0)) a!11))))
+(let ((a!13 (or (= (select asg4 (select asg4 a!4)) (select asg4 0))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg4 a!4) 10))
+                 (or (= (select asg4 a!4) (select asg4 0)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg4 0)) a!14))))
+(let ((a!16 (or (= (select asg4 (select asg4 9)) (select asg4 0))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg4 9) 10))
+                 (or (= (select asg4 9) (select asg4 0)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg4 0) (- 1)) (distinct (select asg4 0) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg4 (select asg4 9)) 10)))
+      (a!2 (= (select asg4 (select asg4 (select asg4 9))) 10))
+      (a!3 (= (select asg4 (select asg4 (select asg4 9))) (select asg4 1)))
+      (a!4 (select asg4 (select asg4 (select asg4 (select asg4 9))))))
+(let ((a!5 (not (= (select asg4 (select asg4 a!4)) 10)))
+      (a!6 (= (select asg4 (select asg4 (select asg4 a!4))) 10))
+      (a!7 (= (select asg4 (select asg4 (select asg4 a!4))) (select asg4 1)))
+      (a!8 (select asg4 (select asg4 (select asg4 (select asg4 a!4))))))
+(let ((a!9 (not (= (select asg4 (select asg4 a!8)) 10)))
+      (a!10 (or (= (select asg4 (select asg4 a!8)) (select asg4 1)) false)))
+(let ((a!11 (and (not (= (select asg4 a!8) 10))
+                 (or (= (select asg4 a!8) (select asg4 1)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg4 1)) a!11))))
+(let ((a!13 (or (= (select asg4 (select asg4 a!4)) (select asg4 1))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg4 a!4) 10))
+                 (or (= (select asg4 a!4) (select asg4 1)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg4 1)) a!14))))
+(let ((a!16 (or (= (select asg4 (select asg4 9)) (select asg4 1))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg4 9) 10))
+                 (or (= (select asg4 9) (select asg4 1)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg4 1) (- 1)) (distinct (select asg4 1) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg4 (select asg4 9)) 10)))
+      (a!2 (= (select asg4 (select asg4 (select asg4 9))) 10))
+      (a!3 (= (select asg4 (select asg4 (select asg4 9))) (select asg4 2)))
+      (a!4 (select asg4 (select asg4 (select asg4 (select asg4 9))))))
+(let ((a!5 (not (= (select asg4 (select asg4 a!4)) 10)))
+      (a!6 (= (select asg4 (select asg4 (select asg4 a!4))) 10))
+      (a!7 (= (select asg4 (select asg4 (select asg4 a!4))) (select asg4 2)))
+      (a!8 (select asg4 (select asg4 (select asg4 (select asg4 a!4))))))
+(let ((a!9 (not (= (select asg4 (select asg4 a!8)) 10)))
+      (a!10 (or (= (select asg4 (select asg4 a!8)) (select asg4 2)) false)))
+(let ((a!11 (and (not (= (select asg4 a!8) 10))
+                 (or (= (select asg4 a!8) (select asg4 2)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg4 2)) a!11))))
+(let ((a!13 (or (= (select asg4 (select asg4 a!4)) (select asg4 2))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg4 a!4) 10))
+                 (or (= (select asg4 a!4) (select asg4 2)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg4 2)) a!14))))
+(let ((a!16 (or (= (select asg4 (select asg4 9)) (select asg4 2))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg4 9) 10))
+                 (or (= (select asg4 9) (select asg4 2)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg4 2) (- 1)) (distinct (select asg4 2) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg4 (select asg4 9)) 10)))
+      (a!2 (= (select asg4 (select asg4 (select asg4 9))) 10))
+      (a!3 (= (select asg4 (select asg4 (select asg4 9))) (select asg4 3)))
+      (a!4 (select asg4 (select asg4 (select asg4 (select asg4 9))))))
+(let ((a!5 (not (= (select asg4 (select asg4 a!4)) 10)))
+      (a!6 (= (select asg4 (select asg4 (select asg4 a!4))) 10))
+      (a!7 (= (select asg4 (select asg4 (select asg4 a!4))) (select asg4 3)))
+      (a!8 (select asg4 (select asg4 (select asg4 (select asg4 a!4))))))
+(let ((a!9 (not (= (select asg4 (select asg4 a!8)) 10)))
+      (a!10 (or (= (select asg4 (select asg4 a!8)) (select asg4 3)) false)))
+(let ((a!11 (and (not (= (select asg4 a!8) 10))
+                 (or (= (select asg4 a!8) (select asg4 3)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg4 3)) a!11))))
+(let ((a!13 (or (= (select asg4 (select asg4 a!4)) (select asg4 3))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg4 a!4) 10))
+                 (or (= (select asg4 a!4) (select asg4 3)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg4 3)) a!14))))
+(let ((a!16 (or (= (select asg4 (select asg4 9)) (select asg4 3))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg4 9) 10))
+                 (or (= (select asg4 9) (select asg4 3)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg4 3) (- 1)) (distinct (select asg4 3) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg4 (select asg4 9)) 10)))
+      (a!2 (= (select asg4 (select asg4 (select asg4 9))) 10))
+      (a!3 (= (select asg4 (select asg4 (select asg4 9))) (select asg4 4)))
+      (a!4 (select asg4 (select asg4 (select asg4 (select asg4 9))))))
+(let ((a!5 (not (= (select asg4 (select asg4 a!4)) 10)))
+      (a!6 (= (select asg4 (select asg4 (select asg4 a!4))) 10))
+      (a!7 (= (select asg4 (select asg4 (select asg4 a!4))) (select asg4 4)))
+      (a!8 (select asg4 (select asg4 (select asg4 (select asg4 a!4))))))
+(let ((a!9 (not (= (select asg4 (select asg4 a!8)) 10)))
+      (a!10 (or (= (select asg4 (select asg4 a!8)) (select asg4 4)) false)))
+(let ((a!11 (and (not (= (select asg4 a!8) 10))
+                 (or (= (select asg4 a!8) (select asg4 4)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg4 4)) a!11))))
+(let ((a!13 (or (= (select asg4 (select asg4 a!4)) (select asg4 4))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg4 a!4) 10))
+                 (or (= (select asg4 a!4) (select asg4 4)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg4 4)) a!14))))
+(let ((a!16 (or (= (select asg4 (select asg4 9)) (select asg4 4))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg4 9) 10))
+                 (or (= (select asg4 9) (select asg4 4)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg4 4) (- 1)) (distinct (select asg4 4) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg4 (select asg4 9)) 10)))
+      (a!2 (= (select asg4 (select asg4 (select asg4 9))) 10))
+      (a!3 (= (select asg4 (select asg4 (select asg4 9))) (select asg4 5)))
+      (a!4 (select asg4 (select asg4 (select asg4 (select asg4 9))))))
+(let ((a!5 (not (= (select asg4 (select asg4 a!4)) 10)))
+      (a!6 (= (select asg4 (select asg4 (select asg4 a!4))) 10))
+      (a!7 (= (select asg4 (select asg4 (select asg4 a!4))) (select asg4 5)))
+      (a!8 (select asg4 (select asg4 (select asg4 (select asg4 a!4))))))
+(let ((a!9 (not (= (select asg4 (select asg4 a!8)) 10)))
+      (a!10 (or (= (select asg4 (select asg4 a!8)) (select asg4 5)) false)))
+(let ((a!11 (and (not (= (select asg4 a!8) 10))
+                 (or (= (select asg4 a!8) (select asg4 5)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg4 5)) a!11))))
+(let ((a!13 (or (= (select asg4 (select asg4 a!4)) (select asg4 5))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg4 a!4) 10))
+                 (or (= (select asg4 a!4) (select asg4 5)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg4 5)) a!14))))
+(let ((a!16 (or (= (select asg4 (select asg4 9)) (select asg4 5))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg4 9) 10))
+                 (or (= (select asg4 9) (select asg4 5)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg4 5) (- 1)) (distinct (select asg4 5) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg4 (select asg4 9)) 10)))
+      (a!2 (= (select asg4 (select asg4 (select asg4 9))) 10))
+      (a!3 (= (select asg4 (select asg4 (select asg4 9))) (select asg4 6)))
+      (a!4 (select asg4 (select asg4 (select asg4 (select asg4 9))))))
+(let ((a!5 (not (= (select asg4 (select asg4 a!4)) 10)))
+      (a!6 (= (select asg4 (select asg4 (select asg4 a!4))) 10))
+      (a!7 (= (select asg4 (select asg4 (select asg4 a!4))) (select asg4 6)))
+      (a!8 (select asg4 (select asg4 (select asg4 (select asg4 a!4))))))
+(let ((a!9 (not (= (select asg4 (select asg4 a!8)) 10)))
+      (a!10 (or (= (select asg4 (select asg4 a!8)) (select asg4 6)) false)))
+(let ((a!11 (and (not (= (select asg4 a!8) 10))
+                 (or (= (select asg4 a!8) (select asg4 6)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg4 6)) a!11))))
+(let ((a!13 (or (= (select asg4 (select asg4 a!4)) (select asg4 6))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg4 a!4) 10))
+                 (or (= (select asg4 a!4) (select asg4 6)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg4 6)) a!14))))
+(let ((a!16 (or (= (select asg4 (select asg4 9)) (select asg4 6))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg4 9) 10))
+                 (or (= (select asg4 9) (select asg4 6)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg4 6) (- 1)) (distinct (select asg4 6) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg4 (select asg4 9)) 10)))
+      (a!2 (= (select asg4 (select asg4 (select asg4 9))) 10))
+      (a!3 (= (select asg4 (select asg4 (select asg4 9))) (select asg4 7)))
+      (a!4 (select asg4 (select asg4 (select asg4 (select asg4 9))))))
+(let ((a!5 (not (= (select asg4 (select asg4 a!4)) 10)))
+      (a!6 (= (select asg4 (select asg4 (select asg4 a!4))) 10))
+      (a!7 (= (select asg4 (select asg4 (select asg4 a!4))) (select asg4 7)))
+      (a!8 (select asg4 (select asg4 (select asg4 (select asg4 a!4))))))
+(let ((a!9 (not (= (select asg4 (select asg4 a!8)) 10)))
+      (a!10 (or (= (select asg4 (select asg4 a!8)) (select asg4 7)) false)))
+(let ((a!11 (and (not (= (select asg4 a!8) 10))
+                 (or (= (select asg4 a!8) (select asg4 7)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg4 7)) a!11))))
+(let ((a!13 (or (= (select asg4 (select asg4 a!4)) (select asg4 7))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg4 a!4) 10))
+                 (or (= (select asg4 a!4) (select asg4 7)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg4 7)) a!14))))
+(let ((a!16 (or (= (select asg4 (select asg4 9)) (select asg4 7))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg4 9) 10))
+                 (or (= (select asg4 9) (select asg4 7)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg4 7) (- 1)) (distinct (select asg4 7) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg4 (select asg4 9)) 10)))
+      (a!2 (= (select asg4 (select asg4 (select asg4 9))) 10))
+      (a!3 (= (select asg4 (select asg4 (select asg4 9))) (select asg4 8)))
+      (a!4 (select asg4 (select asg4 (select asg4 (select asg4 9))))))
+(let ((a!5 (not (= (select asg4 (select asg4 a!4)) 10)))
+      (a!6 (= (select asg4 (select asg4 (select asg4 a!4))) 10))
+      (a!7 (= (select asg4 (select asg4 (select asg4 a!4))) (select asg4 8)))
+      (a!8 (select asg4 (select asg4 (select asg4 (select asg4 a!4))))))
+(let ((a!9 (not (= (select asg4 (select asg4 a!8)) 10)))
+      (a!10 (or (= (select asg4 (select asg4 a!8)) (select asg4 8)) false)))
+(let ((a!11 (and (not (= (select asg4 a!8) 10))
+                 (or (= (select asg4 a!8) (select asg4 8)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg4 8)) a!11))))
+(let ((a!13 (or (= (select asg4 (select asg4 a!4)) (select asg4 8))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg4 a!4) 10))
+                 (or (= (select asg4 a!4) (select asg4 8)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg4 8)) a!14))))
+(let ((a!16 (or (= (select asg4 (select asg4 9)) (select asg4 8))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg4 9) 10))
+                 (or (= (select asg4 9) (select asg4 8)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg4 8) (- 1)) (distinct (select asg4 8) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg4 (select asg4 9)) 10)))
+      (a!2 (= (select asg4 (select asg4 (select asg4 9))) 10))
+      (a!3 (= (select asg4 (select asg4 (select asg4 9))) (select asg4 9)))
+      (a!4 (select asg4 (select asg4 (select asg4 (select asg4 9))))))
+(let ((a!5 (not (= (select asg4 (select asg4 a!4)) 10)))
+      (a!6 (= (select asg4 (select asg4 (select asg4 a!4))) 10))
+      (a!7 (= (select asg4 (select asg4 (select asg4 a!4))) (select asg4 9)))
+      (a!8 (select asg4 (select asg4 (select asg4 (select asg4 a!4))))))
+(let ((a!9 (not (= (select asg4 (select asg4 a!8)) 10)))
+      (a!10 (or (= (select asg4 (select asg4 a!8)) (select asg4 9)) false)))
+(let ((a!11 (and (not (= (select asg4 a!8) 10))
+                 (or (= (select asg4 a!8) (select asg4 9)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg4 9)) a!11))))
+(let ((a!13 (or (= (select asg4 (select asg4 a!4)) (select asg4 9))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg4 a!4) 10))
+                 (or (= (select asg4 a!4) (select asg4 9)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg4 9)) a!14))))
+(let ((a!16 (or (= (select asg4 (select asg4 9)) (select asg4 9))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg4 9) 10))
+                 (or (= (select asg4 9) (select asg4 9)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg4 9) (- 1)) (distinct (select asg4 9) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg5 (select asg5 9)) 10)))
+      (a!2 (= (select asg5 (select asg5 (select asg5 9))) 10))
+      (a!3 (= (select asg5 (select asg5 (select asg5 9))) (select asg5 0)))
+      (a!4 (select asg5 (select asg5 (select asg5 (select asg5 9))))))
+(let ((a!5 (not (= (select asg5 (select asg5 a!4)) 10)))
+      (a!6 (= (select asg5 (select asg5 (select asg5 a!4))) 10))
+      (a!7 (= (select asg5 (select asg5 (select asg5 a!4))) (select asg5 0)))
+      (a!8 (select asg5 (select asg5 (select asg5 (select asg5 a!4))))))
+(let ((a!9 (not (= (select asg5 (select asg5 a!8)) 10)))
+      (a!10 (or (= (select asg5 (select asg5 a!8)) (select asg5 0)) false)))
+(let ((a!11 (and (not (= (select asg5 a!8) 10))
+                 (or (= (select asg5 a!8) (select asg5 0)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg5 0)) a!11))))
+(let ((a!13 (or (= (select asg5 (select asg5 a!4)) (select asg5 0))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg5 a!4) 10))
+                 (or (= (select asg5 a!4) (select asg5 0)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg5 0)) a!14))))
+(let ((a!16 (or (= (select asg5 (select asg5 9)) (select asg5 0))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg5 9) 10))
+                 (or (= (select asg5 9) (select asg5 0)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg5 0) (- 1)) (distinct (select asg5 0) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg5 (select asg5 9)) 10)))
+      (a!2 (= (select asg5 (select asg5 (select asg5 9))) 10))
+      (a!3 (= (select asg5 (select asg5 (select asg5 9))) (select asg5 1)))
+      (a!4 (select asg5 (select asg5 (select asg5 (select asg5 9))))))
+(let ((a!5 (not (= (select asg5 (select asg5 a!4)) 10)))
+      (a!6 (= (select asg5 (select asg5 (select asg5 a!4))) 10))
+      (a!7 (= (select asg5 (select asg5 (select asg5 a!4))) (select asg5 1)))
+      (a!8 (select asg5 (select asg5 (select asg5 (select asg5 a!4))))))
+(let ((a!9 (not (= (select asg5 (select asg5 a!8)) 10)))
+      (a!10 (or (= (select asg5 (select asg5 a!8)) (select asg5 1)) false)))
+(let ((a!11 (and (not (= (select asg5 a!8) 10))
+                 (or (= (select asg5 a!8) (select asg5 1)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg5 1)) a!11))))
+(let ((a!13 (or (= (select asg5 (select asg5 a!4)) (select asg5 1))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg5 a!4) 10))
+                 (or (= (select asg5 a!4) (select asg5 1)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg5 1)) a!14))))
+(let ((a!16 (or (= (select asg5 (select asg5 9)) (select asg5 1))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg5 9) 10))
+                 (or (= (select asg5 9) (select asg5 1)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg5 1) (- 1)) (distinct (select asg5 1) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg5 (select asg5 9)) 10)))
+      (a!2 (= (select asg5 (select asg5 (select asg5 9))) 10))
+      (a!3 (= (select asg5 (select asg5 (select asg5 9))) (select asg5 2)))
+      (a!4 (select asg5 (select asg5 (select asg5 (select asg5 9))))))
+(let ((a!5 (not (= (select asg5 (select asg5 a!4)) 10)))
+      (a!6 (= (select asg5 (select asg5 (select asg5 a!4))) 10))
+      (a!7 (= (select asg5 (select asg5 (select asg5 a!4))) (select asg5 2)))
+      (a!8 (select asg5 (select asg5 (select asg5 (select asg5 a!4))))))
+(let ((a!9 (not (= (select asg5 (select asg5 a!8)) 10)))
+      (a!10 (or (= (select asg5 (select asg5 a!8)) (select asg5 2)) false)))
+(let ((a!11 (and (not (= (select asg5 a!8) 10))
+                 (or (= (select asg5 a!8) (select asg5 2)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg5 2)) a!11))))
+(let ((a!13 (or (= (select asg5 (select asg5 a!4)) (select asg5 2))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg5 a!4) 10))
+                 (or (= (select asg5 a!4) (select asg5 2)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg5 2)) a!14))))
+(let ((a!16 (or (= (select asg5 (select asg5 9)) (select asg5 2))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg5 9) 10))
+                 (or (= (select asg5 9) (select asg5 2)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg5 2) (- 1)) (distinct (select asg5 2) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg5 (select asg5 9)) 10)))
+      (a!2 (= (select asg5 (select asg5 (select asg5 9))) 10))
+      (a!3 (= (select asg5 (select asg5 (select asg5 9))) (select asg5 3)))
+      (a!4 (select asg5 (select asg5 (select asg5 (select asg5 9))))))
+(let ((a!5 (not (= (select asg5 (select asg5 a!4)) 10)))
+      (a!6 (= (select asg5 (select asg5 (select asg5 a!4))) 10))
+      (a!7 (= (select asg5 (select asg5 (select asg5 a!4))) (select asg5 3)))
+      (a!8 (select asg5 (select asg5 (select asg5 (select asg5 a!4))))))
+(let ((a!9 (not (= (select asg5 (select asg5 a!8)) 10)))
+      (a!10 (or (= (select asg5 (select asg5 a!8)) (select asg5 3)) false)))
+(let ((a!11 (and (not (= (select asg5 a!8) 10))
+                 (or (= (select asg5 a!8) (select asg5 3)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg5 3)) a!11))))
+(let ((a!13 (or (= (select asg5 (select asg5 a!4)) (select asg5 3))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg5 a!4) 10))
+                 (or (= (select asg5 a!4) (select asg5 3)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg5 3)) a!14))))
+(let ((a!16 (or (= (select asg5 (select asg5 9)) (select asg5 3))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg5 9) 10))
+                 (or (= (select asg5 9) (select asg5 3)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg5 3) (- 1)) (distinct (select asg5 3) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg5 (select asg5 9)) 10)))
+      (a!2 (= (select asg5 (select asg5 (select asg5 9))) 10))
+      (a!3 (= (select asg5 (select asg5 (select asg5 9))) (select asg5 4)))
+      (a!4 (select asg5 (select asg5 (select asg5 (select asg5 9))))))
+(let ((a!5 (not (= (select asg5 (select asg5 a!4)) 10)))
+      (a!6 (= (select asg5 (select asg5 (select asg5 a!4))) 10))
+      (a!7 (= (select asg5 (select asg5 (select asg5 a!4))) (select asg5 4)))
+      (a!8 (select asg5 (select asg5 (select asg5 (select asg5 a!4))))))
+(let ((a!9 (not (= (select asg5 (select asg5 a!8)) 10)))
+      (a!10 (or (= (select asg5 (select asg5 a!8)) (select asg5 4)) false)))
+(let ((a!11 (and (not (= (select asg5 a!8) 10))
+                 (or (= (select asg5 a!8) (select asg5 4)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg5 4)) a!11))))
+(let ((a!13 (or (= (select asg5 (select asg5 a!4)) (select asg5 4))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg5 a!4) 10))
+                 (or (= (select asg5 a!4) (select asg5 4)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg5 4)) a!14))))
+(let ((a!16 (or (= (select asg5 (select asg5 9)) (select asg5 4))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg5 9) 10))
+                 (or (= (select asg5 9) (select asg5 4)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg5 4) (- 1)) (distinct (select asg5 4) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg5 (select asg5 9)) 10)))
+      (a!2 (= (select asg5 (select asg5 (select asg5 9))) 10))
+      (a!3 (= (select asg5 (select asg5 (select asg5 9))) (select asg5 5)))
+      (a!4 (select asg5 (select asg5 (select asg5 (select asg5 9))))))
+(let ((a!5 (not (= (select asg5 (select asg5 a!4)) 10)))
+      (a!6 (= (select asg5 (select asg5 (select asg5 a!4))) 10))
+      (a!7 (= (select asg5 (select asg5 (select asg5 a!4))) (select asg5 5)))
+      (a!8 (select asg5 (select asg5 (select asg5 (select asg5 a!4))))))
+(let ((a!9 (not (= (select asg5 (select asg5 a!8)) 10)))
+      (a!10 (or (= (select asg5 (select asg5 a!8)) (select asg5 5)) false)))
+(let ((a!11 (and (not (= (select asg5 a!8) 10))
+                 (or (= (select asg5 a!8) (select asg5 5)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg5 5)) a!11))))
+(let ((a!13 (or (= (select asg5 (select asg5 a!4)) (select asg5 5))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg5 a!4) 10))
+                 (or (= (select asg5 a!4) (select asg5 5)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg5 5)) a!14))))
+(let ((a!16 (or (= (select asg5 (select asg5 9)) (select asg5 5))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg5 9) 10))
+                 (or (= (select asg5 9) (select asg5 5)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg5 5) (- 1)) (distinct (select asg5 5) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg5 (select asg5 9)) 10)))
+      (a!2 (= (select asg5 (select asg5 (select asg5 9))) 10))
+      (a!3 (= (select asg5 (select asg5 (select asg5 9))) (select asg5 6)))
+      (a!4 (select asg5 (select asg5 (select asg5 (select asg5 9))))))
+(let ((a!5 (not (= (select asg5 (select asg5 a!4)) 10)))
+      (a!6 (= (select asg5 (select asg5 (select asg5 a!4))) 10))
+      (a!7 (= (select asg5 (select asg5 (select asg5 a!4))) (select asg5 6)))
+      (a!8 (select asg5 (select asg5 (select asg5 (select asg5 a!4))))))
+(let ((a!9 (not (= (select asg5 (select asg5 a!8)) 10)))
+      (a!10 (or (= (select asg5 (select asg5 a!8)) (select asg5 6)) false)))
+(let ((a!11 (and (not (= (select asg5 a!8) 10))
+                 (or (= (select asg5 a!8) (select asg5 6)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg5 6)) a!11))))
+(let ((a!13 (or (= (select asg5 (select asg5 a!4)) (select asg5 6))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg5 a!4) 10))
+                 (or (= (select asg5 a!4) (select asg5 6)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg5 6)) a!14))))
+(let ((a!16 (or (= (select asg5 (select asg5 9)) (select asg5 6))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg5 9) 10))
+                 (or (= (select asg5 9) (select asg5 6)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg5 6) (- 1)) (distinct (select asg5 6) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg5 (select asg5 9)) 10)))
+      (a!2 (= (select asg5 (select asg5 (select asg5 9))) 10))
+      (a!3 (= (select asg5 (select asg5 (select asg5 9))) (select asg5 7)))
+      (a!4 (select asg5 (select asg5 (select asg5 (select asg5 9))))))
+(let ((a!5 (not (= (select asg5 (select asg5 a!4)) 10)))
+      (a!6 (= (select asg5 (select asg5 (select asg5 a!4))) 10))
+      (a!7 (= (select asg5 (select asg5 (select asg5 a!4))) (select asg5 7)))
+      (a!8 (select asg5 (select asg5 (select asg5 (select asg5 a!4))))))
+(let ((a!9 (not (= (select asg5 (select asg5 a!8)) 10)))
+      (a!10 (or (= (select asg5 (select asg5 a!8)) (select asg5 7)) false)))
+(let ((a!11 (and (not (= (select asg5 a!8) 10))
+                 (or (= (select asg5 a!8) (select asg5 7)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg5 7)) a!11))))
+(let ((a!13 (or (= (select asg5 (select asg5 a!4)) (select asg5 7))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg5 a!4) 10))
+                 (or (= (select asg5 a!4) (select asg5 7)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg5 7)) a!14))))
+(let ((a!16 (or (= (select asg5 (select asg5 9)) (select asg5 7))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg5 9) 10))
+                 (or (= (select asg5 9) (select asg5 7)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg5 7) (- 1)) (distinct (select asg5 7) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg5 (select asg5 9)) 10)))
+      (a!2 (= (select asg5 (select asg5 (select asg5 9))) 10))
+      (a!3 (= (select asg5 (select asg5 (select asg5 9))) (select asg5 8)))
+      (a!4 (select asg5 (select asg5 (select asg5 (select asg5 9))))))
+(let ((a!5 (not (= (select asg5 (select asg5 a!4)) 10)))
+      (a!6 (= (select asg5 (select asg5 (select asg5 a!4))) 10))
+      (a!7 (= (select asg5 (select asg5 (select asg5 a!4))) (select asg5 8)))
+      (a!8 (select asg5 (select asg5 (select asg5 (select asg5 a!4))))))
+(let ((a!9 (not (= (select asg5 (select asg5 a!8)) 10)))
+      (a!10 (or (= (select asg5 (select asg5 a!8)) (select asg5 8)) false)))
+(let ((a!11 (and (not (= (select asg5 a!8) 10))
+                 (or (= (select asg5 a!8) (select asg5 8)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg5 8)) a!11))))
+(let ((a!13 (or (= (select asg5 (select asg5 a!4)) (select asg5 8))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg5 a!4) 10))
+                 (or (= (select asg5 a!4) (select asg5 8)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg5 8)) a!14))))
+(let ((a!16 (or (= (select asg5 (select asg5 9)) (select asg5 8))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg5 9) 10))
+                 (or (= (select asg5 9) (select asg5 8)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg5 8) (- 1)) (distinct (select asg5 8) 9)) a!17))))))))))))
+(assert (let ((a!1 (not (= (select asg5 (select asg5 9)) 10)))
+      (a!2 (= (select asg5 (select asg5 (select asg5 9))) 10))
+      (a!3 (= (select asg5 (select asg5 (select asg5 9))) (select asg5 9)))
+      (a!4 (select asg5 (select asg5 (select asg5 (select asg5 9))))))
+(let ((a!5 (not (= (select asg5 (select asg5 a!4)) 10)))
+      (a!6 (= (select asg5 (select asg5 (select asg5 a!4))) 10))
+      (a!7 (= (select asg5 (select asg5 (select asg5 a!4))) (select asg5 9)))
+      (a!8 (select asg5 (select asg5 (select asg5 (select asg5 a!4))))))
+(let ((a!9 (not (= (select asg5 (select asg5 a!8)) 10)))
+      (a!10 (or (= (select asg5 (select asg5 a!8)) (select asg5 9)) false)))
+(let ((a!11 (and (not (= (select asg5 a!8) 10))
+                 (or (= (select asg5 a!8) (select asg5 9)) (and a!9 a!10)))))
+(let ((a!12 (and (not (= a!8 10)) (or (= a!8 (select asg5 9)) a!11))))
+(let ((a!13 (or (= (select asg5 (select asg5 a!4)) (select asg5 9))
+                (and (not a!6) (or a!7 a!12)))))
+(let ((a!14 (and (not (= (select asg5 a!4) 10))
+                 (or (= (select asg5 a!4) (select asg5 9)) (and a!5 a!13)))))
+(let ((a!15 (and (not (= a!4 10)) (or (= a!4 (select asg5 9)) a!14))))
+(let ((a!16 (or (= (select asg5 (select asg5 9)) (select asg5 9))
+                (and (not a!2) (or a!3 a!15)))))
+(let ((a!17 (and (not (= (select asg5 9) 10))
+                 (or (= (select asg5 9) (select asg5 9)) (and a!1 a!16)))))
+  (=> (and (distinct (select asg5 9) (- 1)) (distinct (select asg5 9) 9)) a!17))))))))))))
+(assert (>= (select asg0 0) (- 1)))
+(assert (<= (select asg0 0) 9))
+(assert (>= (select asg0 1) (- 1)))
+(assert (<= (select asg0 1) 9))
+(assert (>= (select asg0 2) (- 1)))
+(assert (<= (select asg0 2) 9))
+(assert (>= (select asg0 3) (- 1)))
+(assert (<= (select asg0 3) 9))
+(assert (>= (select asg0 4) (- 1)))
+(assert (<= (select asg0 4) 9))
+(assert (>= (select asg0 5) (- 1)))
+(assert (<= (select asg0 5) 9))
+(assert (>= (select asg0 6) (- 1)))
+(assert (<= (select asg0 6) 9))
+(assert (>= (select asg0 7) (- 1)))
+(assert (<= (select asg0 7) 9))
+(assert (>= (select asg0 8) (- 1)))
+(assert (<= (select asg0 8) 9))
+(assert (>= (select asg0 9) (- 1)))
+(assert (<= (select asg0 9) 9))
+(assert (>= (select asg1 0) (- 1)))
+(assert (<= (select asg1 0) 9))
+(assert (>= (select asg1 1) (- 1)))
+(assert (<= (select asg1 1) 9))
+(assert (>= (select asg1 2) (- 1)))
+(assert (<= (select asg1 2) 9))
+(assert (>= (select asg1 3) (- 1)))
+(assert (<= (select asg1 3) 9))
+(assert (>= (select asg1 4) (- 1)))
+(assert (<= (select asg1 4) 9))
+(assert (>= (select asg1 5) (- 1)))
+(assert (<= (select asg1 5) 9))
+(assert (>= (select asg1 6) (- 1)))
+(assert (<= (select asg1 6) 9))
+(assert (>= (select asg1 7) (- 1)))
+(assert (<= (select asg1 7) 9))
+(assert (>= (select asg1 8) (- 1)))
+(assert (<= (select asg1 8) 9))
+(assert (>= (select asg1 9) (- 1)))
+(assert (<= (select asg1 9) 9))
+(assert (>= (select asg2 0) (- 1)))
+(assert (<= (select asg2 0) 9))
+(assert (>= (select asg2 1) (- 1)))
+(assert (<= (select asg2 1) 9))
+(assert (>= (select asg2 2) (- 1)))
+(assert (<= (select asg2 2) 9))
+(assert (>= (select asg2 3) (- 1)))
+(assert (<= (select asg2 3) 9))
+(assert (>= (select asg2 4) (- 1)))
+(assert (<= (select asg2 4) 9))
+(assert (>= (select asg2 5) (- 1)))
+(assert (<= (select asg2 5) 9))
+(assert (>= (select asg2 6) (- 1)))
+(assert (<= (select asg2 6) 9))
+(assert (>= (select asg2 7) (- 1)))
+(assert (<= (select asg2 7) 9))
+(assert (>= (select asg2 8) (- 1)))
+(assert (<= (select asg2 8) 9))
+(assert (>= (select asg2 9) (- 1)))
+(assert (<= (select asg2 9) 9))
+(assert (>= (select asg3 0) (- 1)))
+(assert (<= (select asg3 0) 9))
+(assert (>= (select asg3 1) (- 1)))
+(assert (<= (select asg3 1) 9))
+(assert (>= (select asg3 2) (- 1)))
+(assert (<= (select asg3 2) 9))
+(assert (>= (select asg3 3) (- 1)))
+(assert (<= (select asg3 3) 9))
+(assert (>= (select asg3 4) (- 1)))
+(assert (<= (select asg3 4) 9))
+(assert (>= (select asg3 5) (- 1)))
+(assert (<= (select asg3 5) 9))
+(assert (>= (select asg3 6) (- 1)))
+(assert (<= (select asg3 6) 9))
+(assert (>= (select asg3 7) (- 1)))
+(assert (<= (select asg3 7) 9))
+(assert (>= (select asg3 8) (- 1)))
+(assert (<= (select asg3 8) 9))
+(assert (>= (select asg3 9) (- 1)))
+(assert (<= (select asg3 9) 9))
+(assert (>= (select asg4 0) (- 1)))
+(assert (<= (select asg4 0) 9))
+(assert (>= (select asg4 1) (- 1)))
+(assert (<= (select asg4 1) 9))
+(assert (>= (select asg4 2) (- 1)))
+(assert (<= (select asg4 2) 9))
+(assert (>= (select asg4 3) (- 1)))
+(assert (<= (select asg4 3) 9))
+(assert (>= (select asg4 4) (- 1)))
+(assert (<= (select asg4 4) 9))
+(assert (>= (select asg4 5) (- 1)))
+(assert (<= (select asg4 5) 9))
+(assert (>= (select asg4 6) (- 1)))
+(assert (<= (select asg4 6) 9))
+(assert (>= (select asg4 7) (- 1)))
+(assert (<= (select asg4 7) 9))
+(assert (>= (select asg4 8) (- 1)))
+(assert (<= (select asg4 8) 9))
+(assert (>= (select asg4 9) (- 1)))
+(assert (<= (select asg4 9) 9))
+(assert (>= (select asg5 0) (- 1)))
+(assert (<= (select asg5 0) 9))
+(assert (>= (select asg5 1) (- 1)))
+(assert (<= (select asg5 1) 9))
+(assert (>= (select asg5 2) (- 1)))
+(assert (<= (select asg5 2) 9))
+(assert (>= (select asg5 3) (- 1)))
+(assert (<= (select asg5 3) 9))
+(assert (>= (select asg5 4) (- 1)))
+(assert (<= (select asg5 4) 9))
+(assert (>= (select asg5 5) (- 1)))
+(assert (<= (select asg5 5) 9))
+(assert (>= (select asg5 6) (- 1)))
+(assert (<= (select asg5 6) 9))
+(assert (>= (select asg5 7) (- 1)))
+(assert (<= (select asg5 7) 9))
+(assert (>= (select asg5 8) (- 1)))
+(assert (<= (select asg5 8) 9))
+(assert (>= (select asg5 9) (- 1)))
+(assert (<= (select asg5 9) 9))
+(assert (=> (distinct (select asg0 0) (- 1))
+    (distinct (select asg0 (select asg0 0)) (- 1))))
+(assert (=> (distinct (select asg0 1) (- 1))
+    (distinct (select asg0 (select asg0 1)) (- 1))))
+(assert (=> (distinct (select asg0 2) (- 1))
+    (distinct (select asg0 (select asg0 2)) (- 1))))
+(assert (=> (distinct (select asg0 3) (- 1))
+    (distinct (select asg0 (select asg0 3)) (- 1))))
+(assert (=> (distinct (select asg0 4) (- 1))
+    (distinct (select asg0 (select asg0 4)) (- 1))))
+(assert (=> (distinct (select asg0 5) (- 1))
+    (distinct (select asg0 (select asg0 5)) (- 1))))
+(assert (=> (distinct (select asg0 6) (- 1))
+    (distinct (select asg0 (select asg0 6)) (- 1))))
+(assert (=> (distinct (select asg0 7) (- 1))
+    (distinct (select asg0 (select asg0 7)) (- 1))))
+(assert (=> (distinct (select asg0 8) (- 1))
+    (distinct (select asg0 (select asg0 8)) (- 1))))
+(assert (=> (distinct (select asg0 9) (- 1))
+    (distinct (select asg0 (select asg0 9)) (- 1))))
+(assert (=> (distinct (select asg1 0) (- 1))
+    (distinct (select asg1 (select asg1 0)) (- 1))))
+(assert (=> (distinct (select asg1 1) (- 1))
+    (distinct (select asg1 (select asg1 1)) (- 1))))
+(assert (=> (distinct (select asg1 2) (- 1))
+    (distinct (select asg1 (select asg1 2)) (- 1))))
+(assert (=> (distinct (select asg1 3) (- 1))
+    (distinct (select asg1 (select asg1 3)) (- 1))))
+(assert (=> (distinct (select asg1 4) (- 1))
+    (distinct (select asg1 (select asg1 4)) (- 1))))
+(assert (=> (distinct (select asg1 5) (- 1))
+    (distinct (select asg1 (select asg1 5)) (- 1))))
+(assert (=> (distinct (select asg1 6) (- 1))
+    (distinct (select asg1 (select asg1 6)) (- 1))))
+(assert (=> (distinct (select asg1 7) (- 1))
+    (distinct (select asg1 (select asg1 7)) (- 1))))
+(assert (=> (distinct (select asg1 8) (- 1))
+    (distinct (select asg1 (select asg1 8)) (- 1))))
+(assert (=> (distinct (select asg1 9) (- 1))
+    (distinct (select asg1 (select asg1 9)) (- 1))))
+(assert (=> (distinct (select asg2 0) (- 1))
+    (distinct (select asg2 (select asg2 0)) (- 1))))
+(assert (=> (distinct (select asg2 1) (- 1))
+    (distinct (select asg2 (select asg2 1)) (- 1))))
+(assert (=> (distinct (select asg2 2) (- 1))
+    (distinct (select asg2 (select asg2 2)) (- 1))))
+(assert (=> (distinct (select asg2 3) (- 1))
+    (distinct (select asg2 (select asg2 3)) (- 1))))
+(assert (=> (distinct (select asg2 4) (- 1))
+    (distinct (select asg2 (select asg2 4)) (- 1))))
+(assert (=> (distinct (select asg2 5) (- 1))
+    (distinct (select asg2 (select asg2 5)) (- 1))))
+(assert (=> (distinct (select asg2 6) (- 1))
+    (distinct (select asg2 (select asg2 6)) (- 1))))
+(assert (=> (distinct (select asg2 7) (- 1))
+    (distinct (select asg2 (select asg2 7)) (- 1))))
+(assert (=> (distinct (select asg2 8) (- 1))
+    (distinct (select asg2 (select asg2 8)) (- 1))))
+(assert (=> (distinct (select asg2 9) (- 1))
+    (distinct (select asg2 (select asg2 9)) (- 1))))
+(assert (=> (distinct (select asg3 0) (- 1))
+    (distinct (select asg3 (select asg3 0)) (- 1))))
+(assert (=> (distinct (select asg3 1) (- 1))
+    (distinct (select asg3 (select asg3 1)) (- 1))))
+(assert (=> (distinct (select asg3 2) (- 1))
+    (distinct (select asg3 (select asg3 2)) (- 1))))
+(assert (=> (distinct (select asg3 3) (- 1))
+    (distinct (select asg3 (select asg3 3)) (- 1))))
+(assert (=> (distinct (select asg3 4) (- 1))
+    (distinct (select asg3 (select asg3 4)) (- 1))))
+(assert (=> (distinct (select asg3 5) (- 1))
+    (distinct (select asg3 (select asg3 5)) (- 1))))
+(assert (=> (distinct (select asg3 6) (- 1))
+    (distinct (select asg3 (select asg3 6)) (- 1))))
+(assert (=> (distinct (select asg3 7) (- 1))
+    (distinct (select asg3 (select asg3 7)) (- 1))))
+(assert (=> (distinct (select asg3 8) (- 1))
+    (distinct (select asg3 (select asg3 8)) (- 1))))
+(assert (=> (distinct (select asg3 9) (- 1))
+    (distinct (select asg3 (select asg3 9)) (- 1))))
+(assert (=> (distinct (select asg4 0) (- 1))
+    (distinct (select asg4 (select asg4 0)) (- 1))))
+(assert (=> (distinct (select asg4 1) (- 1))
+    (distinct (select asg4 (select asg4 1)) (- 1))))
+(assert (=> (distinct (select asg4 2) (- 1))
+    (distinct (select asg4 (select asg4 2)) (- 1))))
+(assert (=> (distinct (select asg4 3) (- 1))
+    (distinct (select asg4 (select asg4 3)) (- 1))))
+(assert (=> (distinct (select asg4 4) (- 1))
+    (distinct (select asg4 (select asg4 4)) (- 1))))
+(assert (=> (distinct (select asg4 5) (- 1))
+    (distinct (select asg4 (select asg4 5)) (- 1))))
+(assert (=> (distinct (select asg4 6) (- 1))
+    (distinct (select asg4 (select asg4 6)) (- 1))))
+(assert (=> (distinct (select asg4 7) (- 1))
+    (distinct (select asg4 (select asg4 7)) (- 1))))
+(assert (=> (distinct (select asg4 8) (- 1))
+    (distinct (select asg4 (select asg4 8)) (- 1))))
+(assert (=> (distinct (select asg4 9) (- 1))
+    (distinct (select asg4 (select asg4 9)) (- 1))))
+(assert (=> (distinct (select asg5 0) (- 1))
+    (distinct (select asg5 (select asg5 0)) (- 1))))
+(assert (=> (distinct (select asg5 1) (- 1))
+    (distinct (select asg5 (select asg5 1)) (- 1))))
+(assert (=> (distinct (select asg5 2) (- 1))
+    (distinct (select asg5 (select asg5 2)) (- 1))))
+(assert (=> (distinct (select asg5 3) (- 1))
+    (distinct (select asg5 (select asg5 3)) (- 1))))
+(assert (=> (distinct (select asg5 4) (- 1))
+    (distinct (select asg5 (select asg5 4)) (- 1))))
+(assert (=> (distinct (select asg5 5) (- 1))
+    (distinct (select asg5 (select asg5 5)) (- 1))))
+(assert (=> (distinct (select asg5 6) (- 1))
+    (distinct (select asg5 (select asg5 6)) (- 1))))
+(assert (=> (distinct (select asg5 7) (- 1))
+    (distinct (select asg5 (select asg5 7)) (- 1))))
+(assert (=> (distinct (select asg5 8) (- 1))
+    (distinct (select asg5 (select asg5 8)) (- 1))))
+(assert (=> (distinct (select asg5 9) (- 1))
+    (distinct (select asg5 (select asg5 9)) (- 1))))
+(assert (let ((a!1 (or (not (= (select asg0 0) 0)) (not r_A00_0)))
+      (a!2 (or (not (= (select asg0 0) 0)) (not r_A00_1)))
+      (a!3 (or (not (= (select asg0 0) 0)) (not r_A00_2)))
+      (a!4 (or (not (= (select asg0 0) 0)) (not r_A00_3)))
+      (a!5 (or (not (= (select asg0 1) 0)) (not r_A00_0)))
+      (a!6 (or (not (= (select asg0 1) 0)) (not r_A00_1)))
+      (a!7 (or (not (= (select asg0 1) 0)) (not r_A00_2)))
+      (a!8 (or (not (= (select asg0 1) 0)) r_A00_3))
+      (a!9 (or (not (= (select asg0 2) 0)) (not r_A00_0)))
+      (a!10 (or (not (= (select asg0 2) 0)) (not r_A00_1)))
+      (a!11 (or (not (= (select asg0 2) 0)) r_A00_2))
+      (a!12 (or (not (= (select asg0 2) 0)) (not r_A00_3)))
+      (a!13 (or (not (= (select asg0 3) 0)) (not r_A00_0)))
+      (a!14 (or (not (= (select asg0 3) 0)) (not r_A00_1)))
+      (a!15 (or (not (= (select asg0 3) 0)) r_A00_2))
+      (a!16 (or (not (= (select asg0 3) 0)) r_A00_3))
+      (a!17 (or (not (= (select asg0 4) 0)) (not r_A00_0)))
+      (a!18 (or (not (= (select asg0 4) 0)) r_A00_1))
+      (a!19 (or (not (= (select asg0 4) 0)) (not r_A00_2)))
+      (a!20 (or (not (= (select asg0 4) 0)) (not r_A00_3)))
+      (a!21 (or (not (= (select asg0 5) 0)) (not r_A00_0)))
+      (a!22 (or (not (= (select asg0 5) 0)) r_A00_1))
+      (a!23 (or (not (= (select asg0 5) 0)) (not r_A00_2)))
+      (a!24 (or (not (= (select asg0 5) 0)) r_A00_3))
+      (a!25 (or (not (= (select asg0 6) 0)) (not r_A00_0)))
+      (a!26 (or (not (= (select asg0 6) 0)) r_A00_1))
+      (a!27 (or (not (= (select asg0 6) 0)) r_A00_2))
+      (a!28 (or (not (= (select asg0 6) 0)) (not r_A00_3)))
+      (a!29 (or (not (= (select asg0 7) 0)) (not r_A00_0)))
+      (a!30 (or (not (= (select asg0 7) 0)) r_A00_1))
+      (a!31 (or (not (= (select asg0 7) 0)) r_A00_2))
+      (a!32 (or (not (= (select asg0 7) 0)) r_A00_3))
+      (a!33 (or (not (= (select asg0 8) 0)) r_A00_0))
+      (a!34 (or (not (= (select asg0 8) 0)) (not r_A00_1)))
+      (a!35 (or (not (= (select asg0 8) 0)) (not r_A00_2)))
+      (a!36 (or (not (= (select asg0 8) 0)) (not r_A00_3)))
+      (a!37 (or (not (= (select asg0 9) 0)) r_A00_0))
+      (a!38 (or (not (= (select asg0 9) 0)) (not r_A00_1)))
+      (a!39 (or (not (= (select asg0 9) 0)) (not r_A00_2)))
+      (a!40 (or (not (= (select asg0 9) 0)) r_A00_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 1)) (not r_A10_0)))
+      (a!2 (or (not (= (select asg0 0) 1)) (not r_A10_1)))
+      (a!3 (or (not (= (select asg0 0) 1)) (not r_A10_2)))
+      (a!4 (or (not (= (select asg0 0) 1)) (not r_A10_3)))
+      (a!5 (or (not (= (select asg0 1) 1)) (not r_A10_0)))
+      (a!6 (or (not (= (select asg0 1) 1)) (not r_A10_1)))
+      (a!7 (or (not (= (select asg0 1) 1)) (not r_A10_2)))
+      (a!8 (or (not (= (select asg0 1) 1)) r_A10_3))
+      (a!9 (or (not (= (select asg0 2) 1)) (not r_A10_0)))
+      (a!10 (or (not (= (select asg0 2) 1)) (not r_A10_1)))
+      (a!11 (or (not (= (select asg0 2) 1)) r_A10_2))
+      (a!12 (or (not (= (select asg0 2) 1)) (not r_A10_3)))
+      (a!13 (or (not (= (select asg0 3) 1)) (not r_A10_0)))
+      (a!14 (or (not (= (select asg0 3) 1)) (not r_A10_1)))
+      (a!15 (or (not (= (select asg0 3) 1)) r_A10_2))
+      (a!16 (or (not (= (select asg0 3) 1)) r_A10_3))
+      (a!17 (or (not (= (select asg0 4) 1)) (not r_A10_0)))
+      (a!18 (or (not (= (select asg0 4) 1)) r_A10_1))
+      (a!19 (or (not (= (select asg0 4) 1)) (not r_A10_2)))
+      (a!20 (or (not (= (select asg0 4) 1)) (not r_A10_3)))
+      (a!21 (or (not (= (select asg0 5) 1)) (not r_A10_0)))
+      (a!22 (or (not (= (select asg0 5) 1)) r_A10_1))
+      (a!23 (or (not (= (select asg0 5) 1)) (not r_A10_2)))
+      (a!24 (or (not (= (select asg0 5) 1)) r_A10_3))
+      (a!25 (or (not (= (select asg0 6) 1)) (not r_A10_0)))
+      (a!26 (or (not (= (select asg0 6) 1)) r_A10_1))
+      (a!27 (or (not (= (select asg0 6) 1)) r_A10_2))
+      (a!28 (or (not (= (select asg0 6) 1)) (not r_A10_3)))
+      (a!29 (or (not (= (select asg0 7) 1)) (not r_A10_0)))
+      (a!30 (or (not (= (select asg0 7) 1)) r_A10_1))
+      (a!31 (or (not (= (select asg0 7) 1)) r_A10_2))
+      (a!32 (or (not (= (select asg0 7) 1)) r_A10_3))
+      (a!33 (or (not (= (select asg0 8) 1)) r_A10_0))
+      (a!34 (or (not (= (select asg0 8) 1)) (not r_A10_1)))
+      (a!35 (or (not (= (select asg0 8) 1)) (not r_A10_2)))
+      (a!36 (or (not (= (select asg0 8) 1)) (not r_A10_3)))
+      (a!37 (or (not (= (select asg0 9) 1)) r_A10_0))
+      (a!38 (or (not (= (select asg0 9) 1)) (not r_A10_1)))
+      (a!39 (or (not (= (select asg0 9) 1)) (not r_A10_2)))
+      (a!40 (or (not (= (select asg0 9) 1)) r_A10_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 2)) (not r_A20_0)))
+      (a!2 (or (not (= (select asg0 0) 2)) (not r_A20_1)))
+      (a!3 (or (not (= (select asg0 0) 2)) (not r_A20_2)))
+      (a!4 (or (not (= (select asg0 0) 2)) (not r_A20_3)))
+      (a!5 (or (not (= (select asg0 1) 2)) (not r_A20_0)))
+      (a!6 (or (not (= (select asg0 1) 2)) (not r_A20_1)))
+      (a!7 (or (not (= (select asg0 1) 2)) (not r_A20_2)))
+      (a!8 (or (not (= (select asg0 1) 2)) r_A20_3))
+      (a!9 (or (not (= (select asg0 2) 2)) (not r_A20_0)))
+      (a!10 (or (not (= (select asg0 2) 2)) (not r_A20_1)))
+      (a!11 (or (not (= (select asg0 2) 2)) r_A20_2))
+      (a!12 (or (not (= (select asg0 2) 2)) (not r_A20_3)))
+      (a!13 (or (not (= (select asg0 3) 2)) (not r_A20_0)))
+      (a!14 (or (not (= (select asg0 3) 2)) (not r_A20_1)))
+      (a!15 (or (not (= (select asg0 3) 2)) r_A20_2))
+      (a!16 (or (not (= (select asg0 3) 2)) r_A20_3))
+      (a!17 (or (not (= (select asg0 4) 2)) (not r_A20_0)))
+      (a!18 (or (not (= (select asg0 4) 2)) r_A20_1))
+      (a!19 (or (not (= (select asg0 4) 2)) (not r_A20_2)))
+      (a!20 (or (not (= (select asg0 4) 2)) (not r_A20_3)))
+      (a!21 (or (not (= (select asg0 5) 2)) (not r_A20_0)))
+      (a!22 (or (not (= (select asg0 5) 2)) r_A20_1))
+      (a!23 (or (not (= (select asg0 5) 2)) (not r_A20_2)))
+      (a!24 (or (not (= (select asg0 5) 2)) r_A20_3))
+      (a!25 (or (not (= (select asg0 6) 2)) (not r_A20_0)))
+      (a!26 (or (not (= (select asg0 6) 2)) r_A20_1))
+      (a!27 (or (not (= (select asg0 6) 2)) r_A20_2))
+      (a!28 (or (not (= (select asg0 6) 2)) (not r_A20_3)))
+      (a!29 (or (not (= (select asg0 7) 2)) (not r_A20_0)))
+      (a!30 (or (not (= (select asg0 7) 2)) r_A20_1))
+      (a!31 (or (not (= (select asg0 7) 2)) r_A20_2))
+      (a!32 (or (not (= (select asg0 7) 2)) r_A20_3))
+      (a!33 (or (not (= (select asg0 8) 2)) r_A20_0))
+      (a!34 (or (not (= (select asg0 8) 2)) (not r_A20_1)))
+      (a!35 (or (not (= (select asg0 8) 2)) (not r_A20_2)))
+      (a!36 (or (not (= (select asg0 8) 2)) (not r_A20_3)))
+      (a!37 (or (not (= (select asg0 9) 2)) r_A20_0))
+      (a!38 (or (not (= (select asg0 9) 2)) (not r_A20_1)))
+      (a!39 (or (not (= (select asg0 9) 2)) (not r_A20_2)))
+      (a!40 (or (not (= (select asg0 9) 2)) r_A20_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 3)) (not r_A30_0)))
+      (a!2 (or (not (= (select asg0 0) 3)) (not r_A30_1)))
+      (a!3 (or (not (= (select asg0 0) 3)) (not r_A30_2)))
+      (a!4 (or (not (= (select asg0 0) 3)) (not r_A30_3)))
+      (a!5 (or (not (= (select asg0 1) 3)) (not r_A30_0)))
+      (a!6 (or (not (= (select asg0 1) 3)) (not r_A30_1)))
+      (a!7 (or (not (= (select asg0 1) 3)) (not r_A30_2)))
+      (a!8 (or (not (= (select asg0 1) 3)) r_A30_3))
+      (a!9 (or (not (= (select asg0 2) 3)) (not r_A30_0)))
+      (a!10 (or (not (= (select asg0 2) 3)) (not r_A30_1)))
+      (a!11 (or (not (= (select asg0 2) 3)) r_A30_2))
+      (a!12 (or (not (= (select asg0 2) 3)) (not r_A30_3)))
+      (a!13 (or (not (= (select asg0 3) 3)) (not r_A30_0)))
+      (a!14 (or (not (= (select asg0 3) 3)) (not r_A30_1)))
+      (a!15 (or (not (= (select asg0 3) 3)) r_A30_2))
+      (a!16 (or (not (= (select asg0 3) 3)) r_A30_3))
+      (a!17 (or (not (= (select asg0 4) 3)) (not r_A30_0)))
+      (a!18 (or (not (= (select asg0 4) 3)) r_A30_1))
+      (a!19 (or (not (= (select asg0 4) 3)) (not r_A30_2)))
+      (a!20 (or (not (= (select asg0 4) 3)) (not r_A30_3)))
+      (a!21 (or (not (= (select asg0 5) 3)) (not r_A30_0)))
+      (a!22 (or (not (= (select asg0 5) 3)) r_A30_1))
+      (a!23 (or (not (= (select asg0 5) 3)) (not r_A30_2)))
+      (a!24 (or (not (= (select asg0 5) 3)) r_A30_3))
+      (a!25 (or (not (= (select asg0 6) 3)) (not r_A30_0)))
+      (a!26 (or (not (= (select asg0 6) 3)) r_A30_1))
+      (a!27 (or (not (= (select asg0 6) 3)) r_A30_2))
+      (a!28 (or (not (= (select asg0 6) 3)) (not r_A30_3)))
+      (a!29 (or (not (= (select asg0 7) 3)) (not r_A30_0)))
+      (a!30 (or (not (= (select asg0 7) 3)) r_A30_1))
+      (a!31 (or (not (= (select asg0 7) 3)) r_A30_2))
+      (a!32 (or (not (= (select asg0 7) 3)) r_A30_3))
+      (a!33 (or (not (= (select asg0 8) 3)) r_A30_0))
+      (a!34 (or (not (= (select asg0 8) 3)) (not r_A30_1)))
+      (a!35 (or (not (= (select asg0 8) 3)) (not r_A30_2)))
+      (a!36 (or (not (= (select asg0 8) 3)) (not r_A30_3)))
+      (a!37 (or (not (= (select asg0 9) 3)) r_A30_0))
+      (a!38 (or (not (= (select asg0 9) 3)) (not r_A30_1)))
+      (a!39 (or (not (= (select asg0 9) 3)) (not r_A30_2)))
+      (a!40 (or (not (= (select asg0 9) 3)) r_A30_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 4)) (not r_A40_0)))
+      (a!2 (or (not (= (select asg0 0) 4)) (not r_A40_1)))
+      (a!3 (or (not (= (select asg0 0) 4)) (not r_A40_2)))
+      (a!4 (or (not (= (select asg0 0) 4)) (not r_A40_3)))
+      (a!5 (or (not (= (select asg0 1) 4)) (not r_A40_0)))
+      (a!6 (or (not (= (select asg0 1) 4)) (not r_A40_1)))
+      (a!7 (or (not (= (select asg0 1) 4)) (not r_A40_2)))
+      (a!8 (or (not (= (select asg0 1) 4)) r_A40_3))
+      (a!9 (or (not (= (select asg0 2) 4)) (not r_A40_0)))
+      (a!10 (or (not (= (select asg0 2) 4)) (not r_A40_1)))
+      (a!11 (or (not (= (select asg0 2) 4)) r_A40_2))
+      (a!12 (or (not (= (select asg0 2) 4)) (not r_A40_3)))
+      (a!13 (or (not (= (select asg0 3) 4)) (not r_A40_0)))
+      (a!14 (or (not (= (select asg0 3) 4)) (not r_A40_1)))
+      (a!15 (or (not (= (select asg0 3) 4)) r_A40_2))
+      (a!16 (or (not (= (select asg0 3) 4)) r_A40_3))
+      (a!17 (or (not (= (select asg0 4) 4)) (not r_A40_0)))
+      (a!18 (or (not (= (select asg0 4) 4)) r_A40_1))
+      (a!19 (or (not (= (select asg0 4) 4)) (not r_A40_2)))
+      (a!20 (or (not (= (select asg0 4) 4)) (not r_A40_3)))
+      (a!21 (or (not (= (select asg0 5) 4)) (not r_A40_0)))
+      (a!22 (or (not (= (select asg0 5) 4)) r_A40_1))
+      (a!23 (or (not (= (select asg0 5) 4)) (not r_A40_2)))
+      (a!24 (or (not (= (select asg0 5) 4)) r_A40_3))
+      (a!25 (or (not (= (select asg0 6) 4)) (not r_A40_0)))
+      (a!26 (or (not (= (select asg0 6) 4)) r_A40_1))
+      (a!27 (or (not (= (select asg0 6) 4)) r_A40_2))
+      (a!28 (or (not (= (select asg0 6) 4)) (not r_A40_3)))
+      (a!29 (or (not (= (select asg0 7) 4)) (not r_A40_0)))
+      (a!30 (or (not (= (select asg0 7) 4)) r_A40_1))
+      (a!31 (or (not (= (select asg0 7) 4)) r_A40_2))
+      (a!32 (or (not (= (select asg0 7) 4)) r_A40_3))
+      (a!33 (or (not (= (select asg0 8) 4)) r_A40_0))
+      (a!34 (or (not (= (select asg0 8) 4)) (not r_A40_1)))
+      (a!35 (or (not (= (select asg0 8) 4)) (not r_A40_2)))
+      (a!36 (or (not (= (select asg0 8) 4)) (not r_A40_3)))
+      (a!37 (or (not (= (select asg0 9) 4)) r_A40_0))
+      (a!38 (or (not (= (select asg0 9) 4)) (not r_A40_1)))
+      (a!39 (or (not (= (select asg0 9) 4)) (not r_A40_2)))
+      (a!40 (or (not (= (select asg0 9) 4)) r_A40_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 5)) (not r_A50_0)))
+      (a!2 (or (not (= (select asg0 0) 5)) (not r_A50_1)))
+      (a!3 (or (not (= (select asg0 0) 5)) (not r_A50_2)))
+      (a!4 (or (not (= (select asg0 0) 5)) (not r_A50_3)))
+      (a!5 (or (not (= (select asg0 1) 5)) (not r_A50_0)))
+      (a!6 (or (not (= (select asg0 1) 5)) (not r_A50_1)))
+      (a!7 (or (not (= (select asg0 1) 5)) (not r_A50_2)))
+      (a!8 (or (not (= (select asg0 1) 5)) r_A50_3))
+      (a!9 (or (not (= (select asg0 2) 5)) (not r_A50_0)))
+      (a!10 (or (not (= (select asg0 2) 5)) (not r_A50_1)))
+      (a!11 (or (not (= (select asg0 2) 5)) r_A50_2))
+      (a!12 (or (not (= (select asg0 2) 5)) (not r_A50_3)))
+      (a!13 (or (not (= (select asg0 3) 5)) (not r_A50_0)))
+      (a!14 (or (not (= (select asg0 3) 5)) (not r_A50_1)))
+      (a!15 (or (not (= (select asg0 3) 5)) r_A50_2))
+      (a!16 (or (not (= (select asg0 3) 5)) r_A50_3))
+      (a!17 (or (not (= (select asg0 4) 5)) (not r_A50_0)))
+      (a!18 (or (not (= (select asg0 4) 5)) r_A50_1))
+      (a!19 (or (not (= (select asg0 4) 5)) (not r_A50_2)))
+      (a!20 (or (not (= (select asg0 4) 5)) (not r_A50_3)))
+      (a!21 (or (not (= (select asg0 5) 5)) (not r_A50_0)))
+      (a!22 (or (not (= (select asg0 5) 5)) r_A50_1))
+      (a!23 (or (not (= (select asg0 5) 5)) (not r_A50_2)))
+      (a!24 (or (not (= (select asg0 5) 5)) r_A50_3))
+      (a!25 (or (not (= (select asg0 6) 5)) (not r_A50_0)))
+      (a!26 (or (not (= (select asg0 6) 5)) r_A50_1))
+      (a!27 (or (not (= (select asg0 6) 5)) r_A50_2))
+      (a!28 (or (not (= (select asg0 6) 5)) (not r_A50_3)))
+      (a!29 (or (not (= (select asg0 7) 5)) (not r_A50_0)))
+      (a!30 (or (not (= (select asg0 7) 5)) r_A50_1))
+      (a!31 (or (not (= (select asg0 7) 5)) r_A50_2))
+      (a!32 (or (not (= (select asg0 7) 5)) r_A50_3))
+      (a!33 (or (not (= (select asg0 8) 5)) r_A50_0))
+      (a!34 (or (not (= (select asg0 8) 5)) (not r_A50_1)))
+      (a!35 (or (not (= (select asg0 8) 5)) (not r_A50_2)))
+      (a!36 (or (not (= (select asg0 8) 5)) (not r_A50_3)))
+      (a!37 (or (not (= (select asg0 9) 5)) r_A50_0))
+      (a!38 (or (not (= (select asg0 9) 5)) (not r_A50_1)))
+      (a!39 (or (not (= (select asg0 9) 5)) (not r_A50_2)))
+      (a!40 (or (not (= (select asg0 9) 5)) r_A50_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 6)) (not r_A60_0)))
+      (a!2 (or (not (= (select asg0 0) 6)) (not r_A60_1)))
+      (a!3 (or (not (= (select asg0 0) 6)) (not r_A60_2)))
+      (a!4 (or (not (= (select asg0 0) 6)) (not r_A60_3)))
+      (a!5 (or (not (= (select asg0 1) 6)) (not r_A60_0)))
+      (a!6 (or (not (= (select asg0 1) 6)) (not r_A60_1)))
+      (a!7 (or (not (= (select asg0 1) 6)) (not r_A60_2)))
+      (a!8 (or (not (= (select asg0 1) 6)) r_A60_3))
+      (a!9 (or (not (= (select asg0 2) 6)) (not r_A60_0)))
+      (a!10 (or (not (= (select asg0 2) 6)) (not r_A60_1)))
+      (a!11 (or (not (= (select asg0 2) 6)) r_A60_2))
+      (a!12 (or (not (= (select asg0 2) 6)) (not r_A60_3)))
+      (a!13 (or (not (= (select asg0 3) 6)) (not r_A60_0)))
+      (a!14 (or (not (= (select asg0 3) 6)) (not r_A60_1)))
+      (a!15 (or (not (= (select asg0 3) 6)) r_A60_2))
+      (a!16 (or (not (= (select asg0 3) 6)) r_A60_3))
+      (a!17 (or (not (= (select asg0 4) 6)) (not r_A60_0)))
+      (a!18 (or (not (= (select asg0 4) 6)) r_A60_1))
+      (a!19 (or (not (= (select asg0 4) 6)) (not r_A60_2)))
+      (a!20 (or (not (= (select asg0 4) 6)) (not r_A60_3)))
+      (a!21 (or (not (= (select asg0 5) 6)) (not r_A60_0)))
+      (a!22 (or (not (= (select asg0 5) 6)) r_A60_1))
+      (a!23 (or (not (= (select asg0 5) 6)) (not r_A60_2)))
+      (a!24 (or (not (= (select asg0 5) 6)) r_A60_3))
+      (a!25 (or (not (= (select asg0 6) 6)) (not r_A60_0)))
+      (a!26 (or (not (= (select asg0 6) 6)) r_A60_1))
+      (a!27 (or (not (= (select asg0 6) 6)) r_A60_2))
+      (a!28 (or (not (= (select asg0 6) 6)) (not r_A60_3)))
+      (a!29 (or (not (= (select asg0 7) 6)) (not r_A60_0)))
+      (a!30 (or (not (= (select asg0 7) 6)) r_A60_1))
+      (a!31 (or (not (= (select asg0 7) 6)) r_A60_2))
+      (a!32 (or (not (= (select asg0 7) 6)) r_A60_3))
+      (a!33 (or (not (= (select asg0 8) 6)) r_A60_0))
+      (a!34 (or (not (= (select asg0 8) 6)) (not r_A60_1)))
+      (a!35 (or (not (= (select asg0 8) 6)) (not r_A60_2)))
+      (a!36 (or (not (= (select asg0 8) 6)) (not r_A60_3)))
+      (a!37 (or (not (= (select asg0 9) 6)) r_A60_0))
+      (a!38 (or (not (= (select asg0 9) 6)) (not r_A60_1)))
+      (a!39 (or (not (= (select asg0 9) 6)) (not r_A60_2)))
+      (a!40 (or (not (= (select asg0 9) 6)) r_A60_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 7)) (not r_A70_0)))
+      (a!2 (or (not (= (select asg0 0) 7)) (not r_A70_1)))
+      (a!3 (or (not (= (select asg0 0) 7)) (not r_A70_2)))
+      (a!4 (or (not (= (select asg0 0) 7)) (not r_A70_3)))
+      (a!5 (or (not (= (select asg0 1) 7)) (not r_A70_0)))
+      (a!6 (or (not (= (select asg0 1) 7)) (not r_A70_1)))
+      (a!7 (or (not (= (select asg0 1) 7)) (not r_A70_2)))
+      (a!8 (or (not (= (select asg0 1) 7)) r_A70_3))
+      (a!9 (or (not (= (select asg0 2) 7)) (not r_A70_0)))
+      (a!10 (or (not (= (select asg0 2) 7)) (not r_A70_1)))
+      (a!11 (or (not (= (select asg0 2) 7)) r_A70_2))
+      (a!12 (or (not (= (select asg0 2) 7)) (not r_A70_3)))
+      (a!13 (or (not (= (select asg0 3) 7)) (not r_A70_0)))
+      (a!14 (or (not (= (select asg0 3) 7)) (not r_A70_1)))
+      (a!15 (or (not (= (select asg0 3) 7)) r_A70_2))
+      (a!16 (or (not (= (select asg0 3) 7)) r_A70_3))
+      (a!17 (or (not (= (select asg0 4) 7)) (not r_A70_0)))
+      (a!18 (or (not (= (select asg0 4) 7)) r_A70_1))
+      (a!19 (or (not (= (select asg0 4) 7)) (not r_A70_2)))
+      (a!20 (or (not (= (select asg0 4) 7)) (not r_A70_3)))
+      (a!21 (or (not (= (select asg0 5) 7)) (not r_A70_0)))
+      (a!22 (or (not (= (select asg0 5) 7)) r_A70_1))
+      (a!23 (or (not (= (select asg0 5) 7)) (not r_A70_2)))
+      (a!24 (or (not (= (select asg0 5) 7)) r_A70_3))
+      (a!25 (or (not (= (select asg0 6) 7)) (not r_A70_0)))
+      (a!26 (or (not (= (select asg0 6) 7)) r_A70_1))
+      (a!27 (or (not (= (select asg0 6) 7)) r_A70_2))
+      (a!28 (or (not (= (select asg0 6) 7)) (not r_A70_3)))
+      (a!29 (or (not (= (select asg0 7) 7)) (not r_A70_0)))
+      (a!30 (or (not (= (select asg0 7) 7)) r_A70_1))
+      (a!31 (or (not (= (select asg0 7) 7)) r_A70_2))
+      (a!32 (or (not (= (select asg0 7) 7)) r_A70_3))
+      (a!33 (or (not (= (select asg0 8) 7)) r_A70_0))
+      (a!34 (or (not (= (select asg0 8) 7)) (not r_A70_1)))
+      (a!35 (or (not (= (select asg0 8) 7)) (not r_A70_2)))
+      (a!36 (or (not (= (select asg0 8) 7)) (not r_A70_3)))
+      (a!37 (or (not (= (select asg0 9) 7)) r_A70_0))
+      (a!38 (or (not (= (select asg0 9) 7)) (not r_A70_1)))
+      (a!39 (or (not (= (select asg0 9) 7)) (not r_A70_2)))
+      (a!40 (or (not (= (select asg0 9) 7)) r_A70_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 8)) (not r_A80_0)))
+      (a!2 (or (not (= (select asg0 0) 8)) (not r_A80_1)))
+      (a!3 (or (not (= (select asg0 0) 8)) (not r_A80_2)))
+      (a!4 (or (not (= (select asg0 0) 8)) (not r_A80_3)))
+      (a!5 (or (not (= (select asg0 1) 8)) (not r_A80_0)))
+      (a!6 (or (not (= (select asg0 1) 8)) (not r_A80_1)))
+      (a!7 (or (not (= (select asg0 1) 8)) (not r_A80_2)))
+      (a!8 (or (not (= (select asg0 1) 8)) r_A80_3))
+      (a!9 (or (not (= (select asg0 2) 8)) (not r_A80_0)))
+      (a!10 (or (not (= (select asg0 2) 8)) (not r_A80_1)))
+      (a!11 (or (not (= (select asg0 2) 8)) r_A80_2))
+      (a!12 (or (not (= (select asg0 2) 8)) (not r_A80_3)))
+      (a!13 (or (not (= (select asg0 3) 8)) (not r_A80_0)))
+      (a!14 (or (not (= (select asg0 3) 8)) (not r_A80_1)))
+      (a!15 (or (not (= (select asg0 3) 8)) r_A80_2))
+      (a!16 (or (not (= (select asg0 3) 8)) r_A80_3))
+      (a!17 (or (not (= (select asg0 4) 8)) (not r_A80_0)))
+      (a!18 (or (not (= (select asg0 4) 8)) r_A80_1))
+      (a!19 (or (not (= (select asg0 4) 8)) (not r_A80_2)))
+      (a!20 (or (not (= (select asg0 4) 8)) (not r_A80_3)))
+      (a!21 (or (not (= (select asg0 5) 8)) (not r_A80_0)))
+      (a!22 (or (not (= (select asg0 5) 8)) r_A80_1))
+      (a!23 (or (not (= (select asg0 5) 8)) (not r_A80_2)))
+      (a!24 (or (not (= (select asg0 5) 8)) r_A80_3))
+      (a!25 (or (not (= (select asg0 6) 8)) (not r_A80_0)))
+      (a!26 (or (not (= (select asg0 6) 8)) r_A80_1))
+      (a!27 (or (not (= (select asg0 6) 8)) r_A80_2))
+      (a!28 (or (not (= (select asg0 6) 8)) (not r_A80_3)))
+      (a!29 (or (not (= (select asg0 7) 8)) (not r_A80_0)))
+      (a!30 (or (not (= (select asg0 7) 8)) r_A80_1))
+      (a!31 (or (not (= (select asg0 7) 8)) r_A80_2))
+      (a!32 (or (not (= (select asg0 7) 8)) r_A80_3))
+      (a!33 (or (not (= (select asg0 8) 8)) r_A80_0))
+      (a!34 (or (not (= (select asg0 8) 8)) (not r_A80_1)))
+      (a!35 (or (not (= (select asg0 8) 8)) (not r_A80_2)))
+      (a!36 (or (not (= (select asg0 8) 8)) (not r_A80_3)))
+      (a!37 (or (not (= (select asg0 9) 8)) r_A80_0))
+      (a!38 (or (not (= (select asg0 9) 8)) (not r_A80_1)))
+      (a!39 (or (not (= (select asg0 9) 8)) (not r_A80_2)))
+      (a!40 (or (not (= (select asg0 9) 8)) r_A80_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 9)) (not r_A90_0)))
+      (a!2 (or (not (= (select asg0 0) 9)) (not r_A90_1)))
+      (a!3 (or (not (= (select asg0 0) 9)) (not r_A90_2)))
+      (a!4 (or (not (= (select asg0 0) 9)) (not r_A90_3)))
+      (a!5 (or (not (= (select asg0 1) 9)) (not r_A90_0)))
+      (a!6 (or (not (= (select asg0 1) 9)) (not r_A90_1)))
+      (a!7 (or (not (= (select asg0 1) 9)) (not r_A90_2)))
+      (a!8 (or (not (= (select asg0 1) 9)) r_A90_3))
+      (a!9 (or (not (= (select asg0 2) 9)) (not r_A90_0)))
+      (a!10 (or (not (= (select asg0 2) 9)) (not r_A90_1)))
+      (a!11 (or (not (= (select asg0 2) 9)) r_A90_2))
+      (a!12 (or (not (= (select asg0 2) 9)) (not r_A90_3)))
+      (a!13 (or (not (= (select asg0 3) 9)) (not r_A90_0)))
+      (a!14 (or (not (= (select asg0 3) 9)) (not r_A90_1)))
+      (a!15 (or (not (= (select asg0 3) 9)) r_A90_2))
+      (a!16 (or (not (= (select asg0 3) 9)) r_A90_3))
+      (a!17 (or (not (= (select asg0 4) 9)) (not r_A90_0)))
+      (a!18 (or (not (= (select asg0 4) 9)) r_A90_1))
+      (a!19 (or (not (= (select asg0 4) 9)) (not r_A90_2)))
+      (a!20 (or (not (= (select asg0 4) 9)) (not r_A90_3)))
+      (a!21 (or (not (= (select asg0 5) 9)) (not r_A90_0)))
+      (a!22 (or (not (= (select asg0 5) 9)) r_A90_1))
+      (a!23 (or (not (= (select asg0 5) 9)) (not r_A90_2)))
+      (a!24 (or (not (= (select asg0 5) 9)) r_A90_3))
+      (a!25 (or (not (= (select asg0 6) 9)) (not r_A90_0)))
+      (a!26 (or (not (= (select asg0 6) 9)) r_A90_1))
+      (a!27 (or (not (= (select asg0 6) 9)) r_A90_2))
+      (a!28 (or (not (= (select asg0 6) 9)) (not r_A90_3)))
+      (a!29 (or (not (= (select asg0 7) 9)) (not r_A90_0)))
+      (a!30 (or (not (= (select asg0 7) 9)) r_A90_1))
+      (a!31 (or (not (= (select asg0 7) 9)) r_A90_2))
+      (a!32 (or (not (= (select asg0 7) 9)) r_A90_3))
+      (a!33 (or (not (= (select asg0 8) 9)) r_A90_0))
+      (a!34 (or (not (= (select asg0 8) 9)) (not r_A90_1)))
+      (a!35 (or (not (= (select asg0 8) 9)) (not r_A90_2)))
+      (a!36 (or (not (= (select asg0 8) 9)) (not r_A90_3)))
+      (a!37 (or (not (= (select asg0 9) 9)) r_A90_0))
+      (a!38 (or (not (= (select asg0 9) 9)) (not r_A90_1)))
+      (a!39 (or (not (= (select asg0 9) 9)) (not r_A90_2)))
+      (a!40 (or (not (= (select asg0 9) 9)) r_A90_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg1 0) 0)) (not r_A01_0)))
+      (a!2 (or (not (= (select asg1 0) 0)) (not r_A01_1)))
+      (a!3 (or (not (= (select asg1 0) 0)) (not r_A01_2)))
+      (a!4 (or (not (= (select asg1 0) 0)) (not r_A01_3)))
+      (a!5 (or (not (= (select asg1 1) 0)) (not r_A01_0)))
+      (a!6 (or (not (= (select asg1 1) 0)) (not r_A01_1)))
+      (a!7 (or (not (= (select asg1 1) 0)) (not r_A01_2)))
+      (a!8 (or (not (= (select asg1 1) 0)) r_A01_3))
+      (a!9 (or (not (= (select asg1 2) 0)) (not r_A01_0)))
+      (a!10 (or (not (= (select asg1 2) 0)) (not r_A01_1)))
+      (a!11 (or (not (= (select asg1 2) 0)) r_A01_2))
+      (a!12 (or (not (= (select asg1 2) 0)) (not r_A01_3)))
+      (a!13 (or (not (= (select asg1 3) 0)) (not r_A01_0)))
+      (a!14 (or (not (= (select asg1 3) 0)) (not r_A01_1)))
+      (a!15 (or (not (= (select asg1 3) 0)) r_A01_2))
+      (a!16 (or (not (= (select asg1 3) 0)) r_A01_3))
+      (a!17 (or (not (= (select asg1 4) 0)) (not r_A01_0)))
+      (a!18 (or (not (= (select asg1 4) 0)) r_A01_1))
+      (a!19 (or (not (= (select asg1 4) 0)) (not r_A01_2)))
+      (a!20 (or (not (= (select asg1 4) 0)) (not r_A01_3)))
+      (a!21 (or (not (= (select asg1 5) 0)) (not r_A01_0)))
+      (a!22 (or (not (= (select asg1 5) 0)) r_A01_1))
+      (a!23 (or (not (= (select asg1 5) 0)) (not r_A01_2)))
+      (a!24 (or (not (= (select asg1 5) 0)) r_A01_3))
+      (a!25 (or (not (= (select asg1 6) 0)) (not r_A01_0)))
+      (a!26 (or (not (= (select asg1 6) 0)) r_A01_1))
+      (a!27 (or (not (= (select asg1 6) 0)) r_A01_2))
+      (a!28 (or (not (= (select asg1 6) 0)) (not r_A01_3)))
+      (a!29 (or (not (= (select asg1 7) 0)) (not r_A01_0)))
+      (a!30 (or (not (= (select asg1 7) 0)) r_A01_1))
+      (a!31 (or (not (= (select asg1 7) 0)) r_A01_2))
+      (a!32 (or (not (= (select asg1 7) 0)) r_A01_3))
+      (a!33 (or (not (= (select asg1 8) 0)) r_A01_0))
+      (a!34 (or (not (= (select asg1 8) 0)) (not r_A01_1)))
+      (a!35 (or (not (= (select asg1 8) 0)) (not r_A01_2)))
+      (a!36 (or (not (= (select asg1 8) 0)) (not r_A01_3)))
+      (a!37 (or (not (= (select asg1 9) 0)) r_A01_0))
+      (a!38 (or (not (= (select asg1 9) 0)) (not r_A01_1)))
+      (a!39 (or (not (= (select asg1 9) 0)) (not r_A01_2)))
+      (a!40 (or (not (= (select asg1 9) 0)) r_A01_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg1 0) 1)) (not r_A11_0)))
+      (a!2 (or (not (= (select asg1 0) 1)) (not r_A11_1)))
+      (a!3 (or (not (= (select asg1 0) 1)) (not r_A11_2)))
+      (a!4 (or (not (= (select asg1 0) 1)) (not r_A11_3)))
+      (a!5 (or (not (= (select asg1 1) 1)) (not r_A11_0)))
+      (a!6 (or (not (= (select asg1 1) 1)) (not r_A11_1)))
+      (a!7 (or (not (= (select asg1 1) 1)) (not r_A11_2)))
+      (a!8 (or (not (= (select asg1 1) 1)) r_A11_3))
+      (a!9 (or (not (= (select asg1 2) 1)) (not r_A11_0)))
+      (a!10 (or (not (= (select asg1 2) 1)) (not r_A11_1)))
+      (a!11 (or (not (= (select asg1 2) 1)) r_A11_2))
+      (a!12 (or (not (= (select asg1 2) 1)) (not r_A11_3)))
+      (a!13 (or (not (= (select asg1 3) 1)) (not r_A11_0)))
+      (a!14 (or (not (= (select asg1 3) 1)) (not r_A11_1)))
+      (a!15 (or (not (= (select asg1 3) 1)) r_A11_2))
+      (a!16 (or (not (= (select asg1 3) 1)) r_A11_3))
+      (a!17 (or (not (= (select asg1 4) 1)) (not r_A11_0)))
+      (a!18 (or (not (= (select asg1 4) 1)) r_A11_1))
+      (a!19 (or (not (= (select asg1 4) 1)) (not r_A11_2)))
+      (a!20 (or (not (= (select asg1 4) 1)) (not r_A11_3)))
+      (a!21 (or (not (= (select asg1 5) 1)) (not r_A11_0)))
+      (a!22 (or (not (= (select asg1 5) 1)) r_A11_1))
+      (a!23 (or (not (= (select asg1 5) 1)) (not r_A11_2)))
+      (a!24 (or (not (= (select asg1 5) 1)) r_A11_3))
+      (a!25 (or (not (= (select asg1 6) 1)) (not r_A11_0)))
+      (a!26 (or (not (= (select asg1 6) 1)) r_A11_1))
+      (a!27 (or (not (= (select asg1 6) 1)) r_A11_2))
+      (a!28 (or (not (= (select asg1 6) 1)) (not r_A11_3)))
+      (a!29 (or (not (= (select asg1 7) 1)) (not r_A11_0)))
+      (a!30 (or (not (= (select asg1 7) 1)) r_A11_1))
+      (a!31 (or (not (= (select asg1 7) 1)) r_A11_2))
+      (a!32 (or (not (= (select asg1 7) 1)) r_A11_3))
+      (a!33 (or (not (= (select asg1 8) 1)) r_A11_0))
+      (a!34 (or (not (= (select asg1 8) 1)) (not r_A11_1)))
+      (a!35 (or (not (= (select asg1 8) 1)) (not r_A11_2)))
+      (a!36 (or (not (= (select asg1 8) 1)) (not r_A11_3)))
+      (a!37 (or (not (= (select asg1 9) 1)) r_A11_0))
+      (a!38 (or (not (= (select asg1 9) 1)) (not r_A11_1)))
+      (a!39 (or (not (= (select asg1 9) 1)) (not r_A11_2)))
+      (a!40 (or (not (= (select asg1 9) 1)) r_A11_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg1 0) 2)) (not r_A21_0)))
+      (a!2 (or (not (= (select asg1 0) 2)) (not r_A21_1)))
+      (a!3 (or (not (= (select asg1 0) 2)) (not r_A21_2)))
+      (a!4 (or (not (= (select asg1 0) 2)) (not r_A21_3)))
+      (a!5 (or (not (= (select asg1 1) 2)) (not r_A21_0)))
+      (a!6 (or (not (= (select asg1 1) 2)) (not r_A21_1)))
+      (a!7 (or (not (= (select asg1 1) 2)) (not r_A21_2)))
+      (a!8 (or (not (= (select asg1 1) 2)) r_A21_3))
+      (a!9 (or (not (= (select asg1 2) 2)) (not r_A21_0)))
+      (a!10 (or (not (= (select asg1 2) 2)) (not r_A21_1)))
+      (a!11 (or (not (= (select asg1 2) 2)) r_A21_2))
+      (a!12 (or (not (= (select asg1 2) 2)) (not r_A21_3)))
+      (a!13 (or (not (= (select asg1 3) 2)) (not r_A21_0)))
+      (a!14 (or (not (= (select asg1 3) 2)) (not r_A21_1)))
+      (a!15 (or (not (= (select asg1 3) 2)) r_A21_2))
+      (a!16 (or (not (= (select asg1 3) 2)) r_A21_3))
+      (a!17 (or (not (= (select asg1 4) 2)) (not r_A21_0)))
+      (a!18 (or (not (= (select asg1 4) 2)) r_A21_1))
+      (a!19 (or (not (= (select asg1 4) 2)) (not r_A21_2)))
+      (a!20 (or (not (= (select asg1 4) 2)) (not r_A21_3)))
+      (a!21 (or (not (= (select asg1 5) 2)) (not r_A21_0)))
+      (a!22 (or (not (= (select asg1 5) 2)) r_A21_1))
+      (a!23 (or (not (= (select asg1 5) 2)) (not r_A21_2)))
+      (a!24 (or (not (= (select asg1 5) 2)) r_A21_3))
+      (a!25 (or (not (= (select asg1 6) 2)) (not r_A21_0)))
+      (a!26 (or (not (= (select asg1 6) 2)) r_A21_1))
+      (a!27 (or (not (= (select asg1 6) 2)) r_A21_2))
+      (a!28 (or (not (= (select asg1 6) 2)) (not r_A21_3)))
+      (a!29 (or (not (= (select asg1 7) 2)) (not r_A21_0)))
+      (a!30 (or (not (= (select asg1 7) 2)) r_A21_1))
+      (a!31 (or (not (= (select asg1 7) 2)) r_A21_2))
+      (a!32 (or (not (= (select asg1 7) 2)) r_A21_3))
+      (a!33 (or (not (= (select asg1 8) 2)) r_A21_0))
+      (a!34 (or (not (= (select asg1 8) 2)) (not r_A21_1)))
+      (a!35 (or (not (= (select asg1 8) 2)) (not r_A21_2)))
+      (a!36 (or (not (= (select asg1 8) 2)) (not r_A21_3)))
+      (a!37 (or (not (= (select asg1 9) 2)) r_A21_0))
+      (a!38 (or (not (= (select asg1 9) 2)) (not r_A21_1)))
+      (a!39 (or (not (= (select asg1 9) 2)) (not r_A21_2)))
+      (a!40 (or (not (= (select asg1 9) 2)) r_A21_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg1 0) 3)) (not r_A31_0)))
+      (a!2 (or (not (= (select asg1 0) 3)) (not r_A31_1)))
+      (a!3 (or (not (= (select asg1 0) 3)) (not r_A31_2)))
+      (a!4 (or (not (= (select asg1 0) 3)) (not r_A31_3)))
+      (a!5 (or (not (= (select asg1 1) 3)) (not r_A31_0)))
+      (a!6 (or (not (= (select asg1 1) 3)) (not r_A31_1)))
+      (a!7 (or (not (= (select asg1 1) 3)) (not r_A31_2)))
+      (a!8 (or (not (= (select asg1 1) 3)) r_A31_3))
+      (a!9 (or (not (= (select asg1 2) 3)) (not r_A31_0)))
+      (a!10 (or (not (= (select asg1 2) 3)) (not r_A31_1)))
+      (a!11 (or (not (= (select asg1 2) 3)) r_A31_2))
+      (a!12 (or (not (= (select asg1 2) 3)) (not r_A31_3)))
+      (a!13 (or (not (= (select asg1 3) 3)) (not r_A31_0)))
+      (a!14 (or (not (= (select asg1 3) 3)) (not r_A31_1)))
+      (a!15 (or (not (= (select asg1 3) 3)) r_A31_2))
+      (a!16 (or (not (= (select asg1 3) 3)) r_A31_3))
+      (a!17 (or (not (= (select asg1 4) 3)) (not r_A31_0)))
+      (a!18 (or (not (= (select asg1 4) 3)) r_A31_1))
+      (a!19 (or (not (= (select asg1 4) 3)) (not r_A31_2)))
+      (a!20 (or (not (= (select asg1 4) 3)) (not r_A31_3)))
+      (a!21 (or (not (= (select asg1 5) 3)) (not r_A31_0)))
+      (a!22 (or (not (= (select asg1 5) 3)) r_A31_1))
+      (a!23 (or (not (= (select asg1 5) 3)) (not r_A31_2)))
+      (a!24 (or (not (= (select asg1 5) 3)) r_A31_3))
+      (a!25 (or (not (= (select asg1 6) 3)) (not r_A31_0)))
+      (a!26 (or (not (= (select asg1 6) 3)) r_A31_1))
+      (a!27 (or (not (= (select asg1 6) 3)) r_A31_2))
+      (a!28 (or (not (= (select asg1 6) 3)) (not r_A31_3)))
+      (a!29 (or (not (= (select asg1 7) 3)) (not r_A31_0)))
+      (a!30 (or (not (= (select asg1 7) 3)) r_A31_1))
+      (a!31 (or (not (= (select asg1 7) 3)) r_A31_2))
+      (a!32 (or (not (= (select asg1 7) 3)) r_A31_3))
+      (a!33 (or (not (= (select asg1 8) 3)) r_A31_0))
+      (a!34 (or (not (= (select asg1 8) 3)) (not r_A31_1)))
+      (a!35 (or (not (= (select asg1 8) 3)) (not r_A31_2)))
+      (a!36 (or (not (= (select asg1 8) 3)) (not r_A31_3)))
+      (a!37 (or (not (= (select asg1 9) 3)) r_A31_0))
+      (a!38 (or (not (= (select asg1 9) 3)) (not r_A31_1)))
+      (a!39 (or (not (= (select asg1 9) 3)) (not r_A31_2)))
+      (a!40 (or (not (= (select asg1 9) 3)) r_A31_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg1 0) 4)) (not r_A41_0)))
+      (a!2 (or (not (= (select asg1 0) 4)) (not r_A41_1)))
+      (a!3 (or (not (= (select asg1 0) 4)) (not r_A41_2)))
+      (a!4 (or (not (= (select asg1 0) 4)) (not r_A41_3)))
+      (a!5 (or (not (= (select asg1 1) 4)) (not r_A41_0)))
+      (a!6 (or (not (= (select asg1 1) 4)) (not r_A41_1)))
+      (a!7 (or (not (= (select asg1 1) 4)) (not r_A41_2)))
+      (a!8 (or (not (= (select asg1 1) 4)) r_A41_3))
+      (a!9 (or (not (= (select asg1 2) 4)) (not r_A41_0)))
+      (a!10 (or (not (= (select asg1 2) 4)) (not r_A41_1)))
+      (a!11 (or (not (= (select asg1 2) 4)) r_A41_2))
+      (a!12 (or (not (= (select asg1 2) 4)) (not r_A41_3)))
+      (a!13 (or (not (= (select asg1 3) 4)) (not r_A41_0)))
+      (a!14 (or (not (= (select asg1 3) 4)) (not r_A41_1)))
+      (a!15 (or (not (= (select asg1 3) 4)) r_A41_2))
+      (a!16 (or (not (= (select asg1 3) 4)) r_A41_3))
+      (a!17 (or (not (= (select asg1 4) 4)) (not r_A41_0)))
+      (a!18 (or (not (= (select asg1 4) 4)) r_A41_1))
+      (a!19 (or (not (= (select asg1 4) 4)) (not r_A41_2)))
+      (a!20 (or (not (= (select asg1 4) 4)) (not r_A41_3)))
+      (a!21 (or (not (= (select asg1 5) 4)) (not r_A41_0)))
+      (a!22 (or (not (= (select asg1 5) 4)) r_A41_1))
+      (a!23 (or (not (= (select asg1 5) 4)) (not r_A41_2)))
+      (a!24 (or (not (= (select asg1 5) 4)) r_A41_3))
+      (a!25 (or (not (= (select asg1 6) 4)) (not r_A41_0)))
+      (a!26 (or (not (= (select asg1 6) 4)) r_A41_1))
+      (a!27 (or (not (= (select asg1 6) 4)) r_A41_2))
+      (a!28 (or (not (= (select asg1 6) 4)) (not r_A41_3)))
+      (a!29 (or (not (= (select asg1 7) 4)) (not r_A41_0)))
+      (a!30 (or (not (= (select asg1 7) 4)) r_A41_1))
+      (a!31 (or (not (= (select asg1 7) 4)) r_A41_2))
+      (a!32 (or (not (= (select asg1 7) 4)) r_A41_3))
+      (a!33 (or (not (= (select asg1 8) 4)) r_A41_0))
+      (a!34 (or (not (= (select asg1 8) 4)) (not r_A41_1)))
+      (a!35 (or (not (= (select asg1 8) 4)) (not r_A41_2)))
+      (a!36 (or (not (= (select asg1 8) 4)) (not r_A41_3)))
+      (a!37 (or (not (= (select asg1 9) 4)) r_A41_0))
+      (a!38 (or (not (= (select asg1 9) 4)) (not r_A41_1)))
+      (a!39 (or (not (= (select asg1 9) 4)) (not r_A41_2)))
+      (a!40 (or (not (= (select asg1 9) 4)) r_A41_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg1 0) 5)) (not r_A51_0)))
+      (a!2 (or (not (= (select asg1 0) 5)) (not r_A51_1)))
+      (a!3 (or (not (= (select asg1 0) 5)) (not r_A51_2)))
+      (a!4 (or (not (= (select asg1 0) 5)) (not r_A51_3)))
+      (a!5 (or (not (= (select asg1 1) 5)) (not r_A51_0)))
+      (a!6 (or (not (= (select asg1 1) 5)) (not r_A51_1)))
+      (a!7 (or (not (= (select asg1 1) 5)) (not r_A51_2)))
+      (a!8 (or (not (= (select asg1 1) 5)) r_A51_3))
+      (a!9 (or (not (= (select asg1 2) 5)) (not r_A51_0)))
+      (a!10 (or (not (= (select asg1 2) 5)) (not r_A51_1)))
+      (a!11 (or (not (= (select asg1 2) 5)) r_A51_2))
+      (a!12 (or (not (= (select asg1 2) 5)) (not r_A51_3)))
+      (a!13 (or (not (= (select asg1 3) 5)) (not r_A51_0)))
+      (a!14 (or (not (= (select asg1 3) 5)) (not r_A51_1)))
+      (a!15 (or (not (= (select asg1 3) 5)) r_A51_2))
+      (a!16 (or (not (= (select asg1 3) 5)) r_A51_3))
+      (a!17 (or (not (= (select asg1 4) 5)) (not r_A51_0)))
+      (a!18 (or (not (= (select asg1 4) 5)) r_A51_1))
+      (a!19 (or (not (= (select asg1 4) 5)) (not r_A51_2)))
+      (a!20 (or (not (= (select asg1 4) 5)) (not r_A51_3)))
+      (a!21 (or (not (= (select asg1 5) 5)) (not r_A51_0)))
+      (a!22 (or (not (= (select asg1 5) 5)) r_A51_1))
+      (a!23 (or (not (= (select asg1 5) 5)) (not r_A51_2)))
+      (a!24 (or (not (= (select asg1 5) 5)) r_A51_3))
+      (a!25 (or (not (= (select asg1 6) 5)) (not r_A51_0)))
+      (a!26 (or (not (= (select asg1 6) 5)) r_A51_1))
+      (a!27 (or (not (= (select asg1 6) 5)) r_A51_2))
+      (a!28 (or (not (= (select asg1 6) 5)) (not r_A51_3)))
+      (a!29 (or (not (= (select asg1 7) 5)) (not r_A51_0)))
+      (a!30 (or (not (= (select asg1 7) 5)) r_A51_1))
+      (a!31 (or (not (= (select asg1 7) 5)) r_A51_2))
+      (a!32 (or (not (= (select asg1 7) 5)) r_A51_3))
+      (a!33 (or (not (= (select asg1 8) 5)) r_A51_0))
+      (a!34 (or (not (= (select asg1 8) 5)) (not r_A51_1)))
+      (a!35 (or (not (= (select asg1 8) 5)) (not r_A51_2)))
+      (a!36 (or (not (= (select asg1 8) 5)) (not r_A51_3)))
+      (a!37 (or (not (= (select asg1 9) 5)) r_A51_0))
+      (a!38 (or (not (= (select asg1 9) 5)) (not r_A51_1)))
+      (a!39 (or (not (= (select asg1 9) 5)) (not r_A51_2)))
+      (a!40 (or (not (= (select asg1 9) 5)) r_A51_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg1 0) 6)) (not r_A61_0)))
+      (a!2 (or (not (= (select asg1 0) 6)) (not r_A61_1)))
+      (a!3 (or (not (= (select asg1 0) 6)) (not r_A61_2)))
+      (a!4 (or (not (= (select asg1 0) 6)) (not r_A61_3)))
+      (a!5 (or (not (= (select asg1 1) 6)) (not r_A61_0)))
+      (a!6 (or (not (= (select asg1 1) 6)) (not r_A61_1)))
+      (a!7 (or (not (= (select asg1 1) 6)) (not r_A61_2)))
+      (a!8 (or (not (= (select asg1 1) 6)) r_A61_3))
+      (a!9 (or (not (= (select asg1 2) 6)) (not r_A61_0)))
+      (a!10 (or (not (= (select asg1 2) 6)) (not r_A61_1)))
+      (a!11 (or (not (= (select asg1 2) 6)) r_A61_2))
+      (a!12 (or (not (= (select asg1 2) 6)) (not r_A61_3)))
+      (a!13 (or (not (= (select asg1 3) 6)) (not r_A61_0)))
+      (a!14 (or (not (= (select asg1 3) 6)) (not r_A61_1)))
+      (a!15 (or (not (= (select asg1 3) 6)) r_A61_2))
+      (a!16 (or (not (= (select asg1 3) 6)) r_A61_3))
+      (a!17 (or (not (= (select asg1 4) 6)) (not r_A61_0)))
+      (a!18 (or (not (= (select asg1 4) 6)) r_A61_1))
+      (a!19 (or (not (= (select asg1 4) 6)) (not r_A61_2)))
+      (a!20 (or (not (= (select asg1 4) 6)) (not r_A61_3)))
+      (a!21 (or (not (= (select asg1 5) 6)) (not r_A61_0)))
+      (a!22 (or (not (= (select asg1 5) 6)) r_A61_1))
+      (a!23 (or (not (= (select asg1 5) 6)) (not r_A61_2)))
+      (a!24 (or (not (= (select asg1 5) 6)) r_A61_3))
+      (a!25 (or (not (= (select asg1 6) 6)) (not r_A61_0)))
+      (a!26 (or (not (= (select asg1 6) 6)) r_A61_1))
+      (a!27 (or (not (= (select asg1 6) 6)) r_A61_2))
+      (a!28 (or (not (= (select asg1 6) 6)) (not r_A61_3)))
+      (a!29 (or (not (= (select asg1 7) 6)) (not r_A61_0)))
+      (a!30 (or (not (= (select asg1 7) 6)) r_A61_1))
+      (a!31 (or (not (= (select asg1 7) 6)) r_A61_2))
+      (a!32 (or (not (= (select asg1 7) 6)) r_A61_3))
+      (a!33 (or (not (= (select asg1 8) 6)) r_A61_0))
+      (a!34 (or (not (= (select asg1 8) 6)) (not r_A61_1)))
+      (a!35 (or (not (= (select asg1 8) 6)) (not r_A61_2)))
+      (a!36 (or (not (= (select asg1 8) 6)) (not r_A61_3)))
+      (a!37 (or (not (= (select asg1 9) 6)) r_A61_0))
+      (a!38 (or (not (= (select asg1 9) 6)) (not r_A61_1)))
+      (a!39 (or (not (= (select asg1 9) 6)) (not r_A61_2)))
+      (a!40 (or (not (= (select asg1 9) 6)) r_A61_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg1 0) 7)) (not r_A71_0)))
+      (a!2 (or (not (= (select asg1 0) 7)) (not r_A71_1)))
+      (a!3 (or (not (= (select asg1 0) 7)) (not r_A71_2)))
+      (a!4 (or (not (= (select asg1 0) 7)) (not r_A71_3)))
+      (a!5 (or (not (= (select asg1 1) 7)) (not r_A71_0)))
+      (a!6 (or (not (= (select asg1 1) 7)) (not r_A71_1)))
+      (a!7 (or (not (= (select asg1 1) 7)) (not r_A71_2)))
+      (a!8 (or (not (= (select asg1 1) 7)) r_A71_3))
+      (a!9 (or (not (= (select asg1 2) 7)) (not r_A71_0)))
+      (a!10 (or (not (= (select asg1 2) 7)) (not r_A71_1)))
+      (a!11 (or (not (= (select asg1 2) 7)) r_A71_2))
+      (a!12 (or (not (= (select asg1 2) 7)) (not r_A71_3)))
+      (a!13 (or (not (= (select asg1 3) 7)) (not r_A71_0)))
+      (a!14 (or (not (= (select asg1 3) 7)) (not r_A71_1)))
+      (a!15 (or (not (= (select asg1 3) 7)) r_A71_2))
+      (a!16 (or (not (= (select asg1 3) 7)) r_A71_3))
+      (a!17 (or (not (= (select asg1 4) 7)) (not r_A71_0)))
+      (a!18 (or (not (= (select asg1 4) 7)) r_A71_1))
+      (a!19 (or (not (= (select asg1 4) 7)) (not r_A71_2)))
+      (a!20 (or (not (= (select asg1 4) 7)) (not r_A71_3)))
+      (a!21 (or (not (= (select asg1 5) 7)) (not r_A71_0)))
+      (a!22 (or (not (= (select asg1 5) 7)) r_A71_1))
+      (a!23 (or (not (= (select asg1 5) 7)) (not r_A71_2)))
+      (a!24 (or (not (= (select asg1 5) 7)) r_A71_3))
+      (a!25 (or (not (= (select asg1 6) 7)) (not r_A71_0)))
+      (a!26 (or (not (= (select asg1 6) 7)) r_A71_1))
+      (a!27 (or (not (= (select asg1 6) 7)) r_A71_2))
+      (a!28 (or (not (= (select asg1 6) 7)) (not r_A71_3)))
+      (a!29 (or (not (= (select asg1 7) 7)) (not r_A71_0)))
+      (a!30 (or (not (= (select asg1 7) 7)) r_A71_1))
+      (a!31 (or (not (= (select asg1 7) 7)) r_A71_2))
+      (a!32 (or (not (= (select asg1 7) 7)) r_A71_3))
+      (a!33 (or (not (= (select asg1 8) 7)) r_A71_0))
+      (a!34 (or (not (= (select asg1 8) 7)) (not r_A71_1)))
+      (a!35 (or (not (= (select asg1 8) 7)) (not r_A71_2)))
+      (a!36 (or (not (= (select asg1 8) 7)) (not r_A71_3)))
+      (a!37 (or (not (= (select asg1 9) 7)) r_A71_0))
+      (a!38 (or (not (= (select asg1 9) 7)) (not r_A71_1)))
+      (a!39 (or (not (= (select asg1 9) 7)) (not r_A71_2)))
+      (a!40 (or (not (= (select asg1 9) 7)) r_A71_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg1 0) 8)) (not r_A81_0)))
+      (a!2 (or (not (= (select asg1 0) 8)) (not r_A81_1)))
+      (a!3 (or (not (= (select asg1 0) 8)) (not r_A81_2)))
+      (a!4 (or (not (= (select asg1 0) 8)) (not r_A81_3)))
+      (a!5 (or (not (= (select asg1 1) 8)) (not r_A81_0)))
+      (a!6 (or (not (= (select asg1 1) 8)) (not r_A81_1)))
+      (a!7 (or (not (= (select asg1 1) 8)) (not r_A81_2)))
+      (a!8 (or (not (= (select asg1 1) 8)) r_A81_3))
+      (a!9 (or (not (= (select asg1 2) 8)) (not r_A81_0)))
+      (a!10 (or (not (= (select asg1 2) 8)) (not r_A81_1)))
+      (a!11 (or (not (= (select asg1 2) 8)) r_A81_2))
+      (a!12 (or (not (= (select asg1 2) 8)) (not r_A81_3)))
+      (a!13 (or (not (= (select asg1 3) 8)) (not r_A81_0)))
+      (a!14 (or (not (= (select asg1 3) 8)) (not r_A81_1)))
+      (a!15 (or (not (= (select asg1 3) 8)) r_A81_2))
+      (a!16 (or (not (= (select asg1 3) 8)) r_A81_3))
+      (a!17 (or (not (= (select asg1 4) 8)) (not r_A81_0)))
+      (a!18 (or (not (= (select asg1 4) 8)) r_A81_1))
+      (a!19 (or (not (= (select asg1 4) 8)) (not r_A81_2)))
+      (a!20 (or (not (= (select asg1 4) 8)) (not r_A81_3)))
+      (a!21 (or (not (= (select asg1 5) 8)) (not r_A81_0)))
+      (a!22 (or (not (= (select asg1 5) 8)) r_A81_1))
+      (a!23 (or (not (= (select asg1 5) 8)) (not r_A81_2)))
+      (a!24 (or (not (= (select asg1 5) 8)) r_A81_3))
+      (a!25 (or (not (= (select asg1 6) 8)) (not r_A81_0)))
+      (a!26 (or (not (= (select asg1 6) 8)) r_A81_1))
+      (a!27 (or (not (= (select asg1 6) 8)) r_A81_2))
+      (a!28 (or (not (= (select asg1 6) 8)) (not r_A81_3)))
+      (a!29 (or (not (= (select asg1 7) 8)) (not r_A81_0)))
+      (a!30 (or (not (= (select asg1 7) 8)) r_A81_1))
+      (a!31 (or (not (= (select asg1 7) 8)) r_A81_2))
+      (a!32 (or (not (= (select asg1 7) 8)) r_A81_3))
+      (a!33 (or (not (= (select asg1 8) 8)) r_A81_0))
+      (a!34 (or (not (= (select asg1 8) 8)) (not r_A81_1)))
+      (a!35 (or (not (= (select asg1 8) 8)) (not r_A81_2)))
+      (a!36 (or (not (= (select asg1 8) 8)) (not r_A81_3)))
+      (a!37 (or (not (= (select asg1 9) 8)) r_A81_0))
+      (a!38 (or (not (= (select asg1 9) 8)) (not r_A81_1)))
+      (a!39 (or (not (= (select asg1 9) 8)) (not r_A81_2)))
+      (a!40 (or (not (= (select asg1 9) 8)) r_A81_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg1 0) 9)) (not r_A91_0)))
+      (a!2 (or (not (= (select asg1 0) 9)) (not r_A91_1)))
+      (a!3 (or (not (= (select asg1 0) 9)) (not r_A91_2)))
+      (a!4 (or (not (= (select asg1 0) 9)) (not r_A91_3)))
+      (a!5 (or (not (= (select asg1 1) 9)) (not r_A91_0)))
+      (a!6 (or (not (= (select asg1 1) 9)) (not r_A91_1)))
+      (a!7 (or (not (= (select asg1 1) 9)) (not r_A91_2)))
+      (a!8 (or (not (= (select asg1 1) 9)) r_A91_3))
+      (a!9 (or (not (= (select asg1 2) 9)) (not r_A91_0)))
+      (a!10 (or (not (= (select asg1 2) 9)) (not r_A91_1)))
+      (a!11 (or (not (= (select asg1 2) 9)) r_A91_2))
+      (a!12 (or (not (= (select asg1 2) 9)) (not r_A91_3)))
+      (a!13 (or (not (= (select asg1 3) 9)) (not r_A91_0)))
+      (a!14 (or (not (= (select asg1 3) 9)) (not r_A91_1)))
+      (a!15 (or (not (= (select asg1 3) 9)) r_A91_2))
+      (a!16 (or (not (= (select asg1 3) 9)) r_A91_3))
+      (a!17 (or (not (= (select asg1 4) 9)) (not r_A91_0)))
+      (a!18 (or (not (= (select asg1 4) 9)) r_A91_1))
+      (a!19 (or (not (= (select asg1 4) 9)) (not r_A91_2)))
+      (a!20 (or (not (= (select asg1 4) 9)) (not r_A91_3)))
+      (a!21 (or (not (= (select asg1 5) 9)) (not r_A91_0)))
+      (a!22 (or (not (= (select asg1 5) 9)) r_A91_1))
+      (a!23 (or (not (= (select asg1 5) 9)) (not r_A91_2)))
+      (a!24 (or (not (= (select asg1 5) 9)) r_A91_3))
+      (a!25 (or (not (= (select asg1 6) 9)) (not r_A91_0)))
+      (a!26 (or (not (= (select asg1 6) 9)) r_A91_1))
+      (a!27 (or (not (= (select asg1 6) 9)) r_A91_2))
+      (a!28 (or (not (= (select asg1 6) 9)) (not r_A91_3)))
+      (a!29 (or (not (= (select asg1 7) 9)) (not r_A91_0)))
+      (a!30 (or (not (= (select asg1 7) 9)) r_A91_1))
+      (a!31 (or (not (= (select asg1 7) 9)) r_A91_2))
+      (a!32 (or (not (= (select asg1 7) 9)) r_A91_3))
+      (a!33 (or (not (= (select asg1 8) 9)) r_A91_0))
+      (a!34 (or (not (= (select asg1 8) 9)) (not r_A91_1)))
+      (a!35 (or (not (= (select asg1 8) 9)) (not r_A91_2)))
+      (a!36 (or (not (= (select asg1 8) 9)) (not r_A91_3)))
+      (a!37 (or (not (= (select asg1 9) 9)) r_A91_0))
+      (a!38 (or (not (= (select asg1 9) 9)) (not r_A91_1)))
+      (a!39 (or (not (= (select asg1 9) 9)) (not r_A91_2)))
+      (a!40 (or (not (= (select asg1 9) 9)) r_A91_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg2 0) 0)) (not r_A02_0)))
+      (a!2 (or (not (= (select asg2 0) 0)) (not r_A02_1)))
+      (a!3 (or (not (= (select asg2 0) 0)) (not r_A02_2)))
+      (a!4 (or (not (= (select asg2 0) 0)) (not r_A02_3)))
+      (a!5 (or (not (= (select asg2 1) 0)) (not r_A02_0)))
+      (a!6 (or (not (= (select asg2 1) 0)) (not r_A02_1)))
+      (a!7 (or (not (= (select asg2 1) 0)) (not r_A02_2)))
+      (a!8 (or (not (= (select asg2 1) 0)) r_A02_3))
+      (a!9 (or (not (= (select asg2 2) 0)) (not r_A02_0)))
+      (a!10 (or (not (= (select asg2 2) 0)) (not r_A02_1)))
+      (a!11 (or (not (= (select asg2 2) 0)) r_A02_2))
+      (a!12 (or (not (= (select asg2 2) 0)) (not r_A02_3)))
+      (a!13 (or (not (= (select asg2 3) 0)) (not r_A02_0)))
+      (a!14 (or (not (= (select asg2 3) 0)) (not r_A02_1)))
+      (a!15 (or (not (= (select asg2 3) 0)) r_A02_2))
+      (a!16 (or (not (= (select asg2 3) 0)) r_A02_3))
+      (a!17 (or (not (= (select asg2 4) 0)) (not r_A02_0)))
+      (a!18 (or (not (= (select asg2 4) 0)) r_A02_1))
+      (a!19 (or (not (= (select asg2 4) 0)) (not r_A02_2)))
+      (a!20 (or (not (= (select asg2 4) 0)) (not r_A02_3)))
+      (a!21 (or (not (= (select asg2 5) 0)) (not r_A02_0)))
+      (a!22 (or (not (= (select asg2 5) 0)) r_A02_1))
+      (a!23 (or (not (= (select asg2 5) 0)) (not r_A02_2)))
+      (a!24 (or (not (= (select asg2 5) 0)) r_A02_3))
+      (a!25 (or (not (= (select asg2 6) 0)) (not r_A02_0)))
+      (a!26 (or (not (= (select asg2 6) 0)) r_A02_1))
+      (a!27 (or (not (= (select asg2 6) 0)) r_A02_2))
+      (a!28 (or (not (= (select asg2 6) 0)) (not r_A02_3)))
+      (a!29 (or (not (= (select asg2 7) 0)) (not r_A02_0)))
+      (a!30 (or (not (= (select asg2 7) 0)) r_A02_1))
+      (a!31 (or (not (= (select asg2 7) 0)) r_A02_2))
+      (a!32 (or (not (= (select asg2 7) 0)) r_A02_3))
+      (a!33 (or (not (= (select asg2 8) 0)) r_A02_0))
+      (a!34 (or (not (= (select asg2 8) 0)) (not r_A02_1)))
+      (a!35 (or (not (= (select asg2 8) 0)) (not r_A02_2)))
+      (a!36 (or (not (= (select asg2 8) 0)) (not r_A02_3)))
+      (a!37 (or (not (= (select asg2 9) 0)) r_A02_0))
+      (a!38 (or (not (= (select asg2 9) 0)) (not r_A02_1)))
+      (a!39 (or (not (= (select asg2 9) 0)) (not r_A02_2)))
+      (a!40 (or (not (= (select asg2 9) 0)) r_A02_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg2 0) 1)) (not r_A12_0)))
+      (a!2 (or (not (= (select asg2 0) 1)) (not r_A12_1)))
+      (a!3 (or (not (= (select asg2 0) 1)) (not r_A12_2)))
+      (a!4 (or (not (= (select asg2 0) 1)) (not r_A12_3)))
+      (a!5 (or (not (= (select asg2 1) 1)) (not r_A12_0)))
+      (a!6 (or (not (= (select asg2 1) 1)) (not r_A12_1)))
+      (a!7 (or (not (= (select asg2 1) 1)) (not r_A12_2)))
+      (a!8 (or (not (= (select asg2 1) 1)) r_A12_3))
+      (a!9 (or (not (= (select asg2 2) 1)) (not r_A12_0)))
+      (a!10 (or (not (= (select asg2 2) 1)) (not r_A12_1)))
+      (a!11 (or (not (= (select asg2 2) 1)) r_A12_2))
+      (a!12 (or (not (= (select asg2 2) 1)) (not r_A12_3)))
+      (a!13 (or (not (= (select asg2 3) 1)) (not r_A12_0)))
+      (a!14 (or (not (= (select asg2 3) 1)) (not r_A12_1)))
+      (a!15 (or (not (= (select asg2 3) 1)) r_A12_2))
+      (a!16 (or (not (= (select asg2 3) 1)) r_A12_3))
+      (a!17 (or (not (= (select asg2 4) 1)) (not r_A12_0)))
+      (a!18 (or (not (= (select asg2 4) 1)) r_A12_1))
+      (a!19 (or (not (= (select asg2 4) 1)) (not r_A12_2)))
+      (a!20 (or (not (= (select asg2 4) 1)) (not r_A12_3)))
+      (a!21 (or (not (= (select asg2 5) 1)) (not r_A12_0)))
+      (a!22 (or (not (= (select asg2 5) 1)) r_A12_1))
+      (a!23 (or (not (= (select asg2 5) 1)) (not r_A12_2)))
+      (a!24 (or (not (= (select asg2 5) 1)) r_A12_3))
+      (a!25 (or (not (= (select asg2 6) 1)) (not r_A12_0)))
+      (a!26 (or (not (= (select asg2 6) 1)) r_A12_1))
+      (a!27 (or (not (= (select asg2 6) 1)) r_A12_2))
+      (a!28 (or (not (= (select asg2 6) 1)) (not r_A12_3)))
+      (a!29 (or (not (= (select asg2 7) 1)) (not r_A12_0)))
+      (a!30 (or (not (= (select asg2 7) 1)) r_A12_1))
+      (a!31 (or (not (= (select asg2 7) 1)) r_A12_2))
+      (a!32 (or (not (= (select asg2 7) 1)) r_A12_3))
+      (a!33 (or (not (= (select asg2 8) 1)) r_A12_0))
+      (a!34 (or (not (= (select asg2 8) 1)) (not r_A12_1)))
+      (a!35 (or (not (= (select asg2 8) 1)) (not r_A12_2)))
+      (a!36 (or (not (= (select asg2 8) 1)) (not r_A12_3)))
+      (a!37 (or (not (= (select asg2 9) 1)) r_A12_0))
+      (a!38 (or (not (= (select asg2 9) 1)) (not r_A12_1)))
+      (a!39 (or (not (= (select asg2 9) 1)) (not r_A12_2)))
+      (a!40 (or (not (= (select asg2 9) 1)) r_A12_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg2 0) 2)) (not r_A22_0)))
+      (a!2 (or (not (= (select asg2 0) 2)) (not r_A22_1)))
+      (a!3 (or (not (= (select asg2 0) 2)) (not r_A22_2)))
+      (a!4 (or (not (= (select asg2 0) 2)) (not r_A22_3)))
+      (a!5 (or (not (= (select asg2 1) 2)) (not r_A22_0)))
+      (a!6 (or (not (= (select asg2 1) 2)) (not r_A22_1)))
+      (a!7 (or (not (= (select asg2 1) 2)) (not r_A22_2)))
+      (a!8 (or (not (= (select asg2 1) 2)) r_A22_3))
+      (a!9 (or (not (= (select asg2 2) 2)) (not r_A22_0)))
+      (a!10 (or (not (= (select asg2 2) 2)) (not r_A22_1)))
+      (a!11 (or (not (= (select asg2 2) 2)) r_A22_2))
+      (a!12 (or (not (= (select asg2 2) 2)) (not r_A22_3)))
+      (a!13 (or (not (= (select asg2 3) 2)) (not r_A22_0)))
+      (a!14 (or (not (= (select asg2 3) 2)) (not r_A22_1)))
+      (a!15 (or (not (= (select asg2 3) 2)) r_A22_2))
+      (a!16 (or (not (= (select asg2 3) 2)) r_A22_3))
+      (a!17 (or (not (= (select asg2 4) 2)) (not r_A22_0)))
+      (a!18 (or (not (= (select asg2 4) 2)) r_A22_1))
+      (a!19 (or (not (= (select asg2 4) 2)) (not r_A22_2)))
+      (a!20 (or (not (= (select asg2 4) 2)) (not r_A22_3)))
+      (a!21 (or (not (= (select asg2 5) 2)) (not r_A22_0)))
+      (a!22 (or (not (= (select asg2 5) 2)) r_A22_1))
+      (a!23 (or (not (= (select asg2 5) 2)) (not r_A22_2)))
+      (a!24 (or (not (= (select asg2 5) 2)) r_A22_3))
+      (a!25 (or (not (= (select asg2 6) 2)) (not r_A22_0)))
+      (a!26 (or (not (= (select asg2 6) 2)) r_A22_1))
+      (a!27 (or (not (= (select asg2 6) 2)) r_A22_2))
+      (a!28 (or (not (= (select asg2 6) 2)) (not r_A22_3)))
+      (a!29 (or (not (= (select asg2 7) 2)) (not r_A22_0)))
+      (a!30 (or (not (= (select asg2 7) 2)) r_A22_1))
+      (a!31 (or (not (= (select asg2 7) 2)) r_A22_2))
+      (a!32 (or (not (= (select asg2 7) 2)) r_A22_3))
+      (a!33 (or (not (= (select asg2 8) 2)) r_A22_0))
+      (a!34 (or (not (= (select asg2 8) 2)) (not r_A22_1)))
+      (a!35 (or (not (= (select asg2 8) 2)) (not r_A22_2)))
+      (a!36 (or (not (= (select asg2 8) 2)) (not r_A22_3)))
+      (a!37 (or (not (= (select asg2 9) 2)) r_A22_0))
+      (a!38 (or (not (= (select asg2 9) 2)) (not r_A22_1)))
+      (a!39 (or (not (= (select asg2 9) 2)) (not r_A22_2)))
+      (a!40 (or (not (= (select asg2 9) 2)) r_A22_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg2 0) 3)) (not r_A32_0)))
+      (a!2 (or (not (= (select asg2 0) 3)) (not r_A32_1)))
+      (a!3 (or (not (= (select asg2 0) 3)) (not r_A32_2)))
+      (a!4 (or (not (= (select asg2 0) 3)) (not r_A32_3)))
+      (a!5 (or (not (= (select asg2 1) 3)) (not r_A32_0)))
+      (a!6 (or (not (= (select asg2 1) 3)) (not r_A32_1)))
+      (a!7 (or (not (= (select asg2 1) 3)) (not r_A32_2)))
+      (a!8 (or (not (= (select asg2 1) 3)) r_A32_3))
+      (a!9 (or (not (= (select asg2 2) 3)) (not r_A32_0)))
+      (a!10 (or (not (= (select asg2 2) 3)) (not r_A32_1)))
+      (a!11 (or (not (= (select asg2 2) 3)) r_A32_2))
+      (a!12 (or (not (= (select asg2 2) 3)) (not r_A32_3)))
+      (a!13 (or (not (= (select asg2 3) 3)) (not r_A32_0)))
+      (a!14 (or (not (= (select asg2 3) 3)) (not r_A32_1)))
+      (a!15 (or (not (= (select asg2 3) 3)) r_A32_2))
+      (a!16 (or (not (= (select asg2 3) 3)) r_A32_3))
+      (a!17 (or (not (= (select asg2 4) 3)) (not r_A32_0)))
+      (a!18 (or (not (= (select asg2 4) 3)) r_A32_1))
+      (a!19 (or (not (= (select asg2 4) 3)) (not r_A32_2)))
+      (a!20 (or (not (= (select asg2 4) 3)) (not r_A32_3)))
+      (a!21 (or (not (= (select asg2 5) 3)) (not r_A32_0)))
+      (a!22 (or (not (= (select asg2 5) 3)) r_A32_1))
+      (a!23 (or (not (= (select asg2 5) 3)) (not r_A32_2)))
+      (a!24 (or (not (= (select asg2 5) 3)) r_A32_3))
+      (a!25 (or (not (= (select asg2 6) 3)) (not r_A32_0)))
+      (a!26 (or (not (= (select asg2 6) 3)) r_A32_1))
+      (a!27 (or (not (= (select asg2 6) 3)) r_A32_2))
+      (a!28 (or (not (= (select asg2 6) 3)) (not r_A32_3)))
+      (a!29 (or (not (= (select asg2 7) 3)) (not r_A32_0)))
+      (a!30 (or (not (= (select asg2 7) 3)) r_A32_1))
+      (a!31 (or (not (= (select asg2 7) 3)) r_A32_2))
+      (a!32 (or (not (= (select asg2 7) 3)) r_A32_3))
+      (a!33 (or (not (= (select asg2 8) 3)) r_A32_0))
+      (a!34 (or (not (= (select asg2 8) 3)) (not r_A32_1)))
+      (a!35 (or (not (= (select asg2 8) 3)) (not r_A32_2)))
+      (a!36 (or (not (= (select asg2 8) 3)) (not r_A32_3)))
+      (a!37 (or (not (= (select asg2 9) 3)) r_A32_0))
+      (a!38 (or (not (= (select asg2 9) 3)) (not r_A32_1)))
+      (a!39 (or (not (= (select asg2 9) 3)) (not r_A32_2)))
+      (a!40 (or (not (= (select asg2 9) 3)) r_A32_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg2 0) 4)) (not r_A42_0)))
+      (a!2 (or (not (= (select asg2 0) 4)) (not r_A42_1)))
+      (a!3 (or (not (= (select asg2 0) 4)) (not r_A42_2)))
+      (a!4 (or (not (= (select asg2 0) 4)) (not r_A42_3)))
+      (a!5 (or (not (= (select asg2 1) 4)) (not r_A42_0)))
+      (a!6 (or (not (= (select asg2 1) 4)) (not r_A42_1)))
+      (a!7 (or (not (= (select asg2 1) 4)) (not r_A42_2)))
+      (a!8 (or (not (= (select asg2 1) 4)) r_A42_3))
+      (a!9 (or (not (= (select asg2 2) 4)) (not r_A42_0)))
+      (a!10 (or (not (= (select asg2 2) 4)) (not r_A42_1)))
+      (a!11 (or (not (= (select asg2 2) 4)) r_A42_2))
+      (a!12 (or (not (= (select asg2 2) 4)) (not r_A42_3)))
+      (a!13 (or (not (= (select asg2 3) 4)) (not r_A42_0)))
+      (a!14 (or (not (= (select asg2 3) 4)) (not r_A42_1)))
+      (a!15 (or (not (= (select asg2 3) 4)) r_A42_2))
+      (a!16 (or (not (= (select asg2 3) 4)) r_A42_3))
+      (a!17 (or (not (= (select asg2 4) 4)) (not r_A42_0)))
+      (a!18 (or (not (= (select asg2 4) 4)) r_A42_1))
+      (a!19 (or (not (= (select asg2 4) 4)) (not r_A42_2)))
+      (a!20 (or (not (= (select asg2 4) 4)) (not r_A42_3)))
+      (a!21 (or (not (= (select asg2 5) 4)) (not r_A42_0)))
+      (a!22 (or (not (= (select asg2 5) 4)) r_A42_1))
+      (a!23 (or (not (= (select asg2 5) 4)) (not r_A42_2)))
+      (a!24 (or (not (= (select asg2 5) 4)) r_A42_3))
+      (a!25 (or (not (= (select asg2 6) 4)) (not r_A42_0)))
+      (a!26 (or (not (= (select asg2 6) 4)) r_A42_1))
+      (a!27 (or (not (= (select asg2 6) 4)) r_A42_2))
+      (a!28 (or (not (= (select asg2 6) 4)) (not r_A42_3)))
+      (a!29 (or (not (= (select asg2 7) 4)) (not r_A42_0)))
+      (a!30 (or (not (= (select asg2 7) 4)) r_A42_1))
+      (a!31 (or (not (= (select asg2 7) 4)) r_A42_2))
+      (a!32 (or (not (= (select asg2 7) 4)) r_A42_3))
+      (a!33 (or (not (= (select asg2 8) 4)) r_A42_0))
+      (a!34 (or (not (= (select asg2 8) 4)) (not r_A42_1)))
+      (a!35 (or (not (= (select asg2 8) 4)) (not r_A42_2)))
+      (a!36 (or (not (= (select asg2 8) 4)) (not r_A42_3)))
+      (a!37 (or (not (= (select asg2 9) 4)) r_A42_0))
+      (a!38 (or (not (= (select asg2 9) 4)) (not r_A42_1)))
+      (a!39 (or (not (= (select asg2 9) 4)) (not r_A42_2)))
+      (a!40 (or (not (= (select asg2 9) 4)) r_A42_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg2 0) 5)) (not r_A52_0)))
+      (a!2 (or (not (= (select asg2 0) 5)) (not r_A52_1)))
+      (a!3 (or (not (= (select asg2 0) 5)) (not r_A52_2)))
+      (a!4 (or (not (= (select asg2 0) 5)) (not r_A52_3)))
+      (a!5 (or (not (= (select asg2 1) 5)) (not r_A52_0)))
+      (a!6 (or (not (= (select asg2 1) 5)) (not r_A52_1)))
+      (a!7 (or (not (= (select asg2 1) 5)) (not r_A52_2)))
+      (a!8 (or (not (= (select asg2 1) 5)) r_A52_3))
+      (a!9 (or (not (= (select asg2 2) 5)) (not r_A52_0)))
+      (a!10 (or (not (= (select asg2 2) 5)) (not r_A52_1)))
+      (a!11 (or (not (= (select asg2 2) 5)) r_A52_2))
+      (a!12 (or (not (= (select asg2 2) 5)) (not r_A52_3)))
+      (a!13 (or (not (= (select asg2 3) 5)) (not r_A52_0)))
+      (a!14 (or (not (= (select asg2 3) 5)) (not r_A52_1)))
+      (a!15 (or (not (= (select asg2 3) 5)) r_A52_2))
+      (a!16 (or (not (= (select asg2 3) 5)) r_A52_3))
+      (a!17 (or (not (= (select asg2 4) 5)) (not r_A52_0)))
+      (a!18 (or (not (= (select asg2 4) 5)) r_A52_1))
+      (a!19 (or (not (= (select asg2 4) 5)) (not r_A52_2)))
+      (a!20 (or (not (= (select asg2 4) 5)) (not r_A52_3)))
+      (a!21 (or (not (= (select asg2 5) 5)) (not r_A52_0)))
+      (a!22 (or (not (= (select asg2 5) 5)) r_A52_1))
+      (a!23 (or (not (= (select asg2 5) 5)) (not r_A52_2)))
+      (a!24 (or (not (= (select asg2 5) 5)) r_A52_3))
+      (a!25 (or (not (= (select asg2 6) 5)) (not r_A52_0)))
+      (a!26 (or (not (= (select asg2 6) 5)) r_A52_1))
+      (a!27 (or (not (= (select asg2 6) 5)) r_A52_2))
+      (a!28 (or (not (= (select asg2 6) 5)) (not r_A52_3)))
+      (a!29 (or (not (= (select asg2 7) 5)) (not r_A52_0)))
+      (a!30 (or (not (= (select asg2 7) 5)) r_A52_1))
+      (a!31 (or (not (= (select asg2 7) 5)) r_A52_2))
+      (a!32 (or (not (= (select asg2 7) 5)) r_A52_3))
+      (a!33 (or (not (= (select asg2 8) 5)) r_A52_0))
+      (a!34 (or (not (= (select asg2 8) 5)) (not r_A52_1)))
+      (a!35 (or (not (= (select asg2 8) 5)) (not r_A52_2)))
+      (a!36 (or (not (= (select asg2 8) 5)) (not r_A52_3)))
+      (a!37 (or (not (= (select asg2 9) 5)) r_A52_0))
+      (a!38 (or (not (= (select asg2 9) 5)) (not r_A52_1)))
+      (a!39 (or (not (= (select asg2 9) 5)) (not r_A52_2)))
+      (a!40 (or (not (= (select asg2 9) 5)) r_A52_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg2 0) 6)) (not r_A62_0)))
+      (a!2 (or (not (= (select asg2 0) 6)) (not r_A62_1)))
+      (a!3 (or (not (= (select asg2 0) 6)) (not r_A62_2)))
+      (a!4 (or (not (= (select asg2 0) 6)) (not r_A62_3)))
+      (a!5 (or (not (= (select asg2 1) 6)) (not r_A62_0)))
+      (a!6 (or (not (= (select asg2 1) 6)) (not r_A62_1)))
+      (a!7 (or (not (= (select asg2 1) 6)) (not r_A62_2)))
+      (a!8 (or (not (= (select asg2 1) 6)) r_A62_3))
+      (a!9 (or (not (= (select asg2 2) 6)) (not r_A62_0)))
+      (a!10 (or (not (= (select asg2 2) 6)) (not r_A62_1)))
+      (a!11 (or (not (= (select asg2 2) 6)) r_A62_2))
+      (a!12 (or (not (= (select asg2 2) 6)) (not r_A62_3)))
+      (a!13 (or (not (= (select asg2 3) 6)) (not r_A62_0)))
+      (a!14 (or (not (= (select asg2 3) 6)) (not r_A62_1)))
+      (a!15 (or (not (= (select asg2 3) 6)) r_A62_2))
+      (a!16 (or (not (= (select asg2 3) 6)) r_A62_3))
+      (a!17 (or (not (= (select asg2 4) 6)) (not r_A62_0)))
+      (a!18 (or (not (= (select asg2 4) 6)) r_A62_1))
+      (a!19 (or (not (= (select asg2 4) 6)) (not r_A62_2)))
+      (a!20 (or (not (= (select asg2 4) 6)) (not r_A62_3)))
+      (a!21 (or (not (= (select asg2 5) 6)) (not r_A62_0)))
+      (a!22 (or (not (= (select asg2 5) 6)) r_A62_1))
+      (a!23 (or (not (= (select asg2 5) 6)) (not r_A62_2)))
+      (a!24 (or (not (= (select asg2 5) 6)) r_A62_3))
+      (a!25 (or (not (= (select asg2 6) 6)) (not r_A62_0)))
+      (a!26 (or (not (= (select asg2 6) 6)) r_A62_1))
+      (a!27 (or (not (= (select asg2 6) 6)) r_A62_2))
+      (a!28 (or (not (= (select asg2 6) 6)) (not r_A62_3)))
+      (a!29 (or (not (= (select asg2 7) 6)) (not r_A62_0)))
+      (a!30 (or (not (= (select asg2 7) 6)) r_A62_1))
+      (a!31 (or (not (= (select asg2 7) 6)) r_A62_2))
+      (a!32 (or (not (= (select asg2 7) 6)) r_A62_3))
+      (a!33 (or (not (= (select asg2 8) 6)) r_A62_0))
+      (a!34 (or (not (= (select asg2 8) 6)) (not r_A62_1)))
+      (a!35 (or (not (= (select asg2 8) 6)) (not r_A62_2)))
+      (a!36 (or (not (= (select asg2 8) 6)) (not r_A62_3)))
+      (a!37 (or (not (= (select asg2 9) 6)) r_A62_0))
+      (a!38 (or (not (= (select asg2 9) 6)) (not r_A62_1)))
+      (a!39 (or (not (= (select asg2 9) 6)) (not r_A62_2)))
+      (a!40 (or (not (= (select asg2 9) 6)) r_A62_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg2 0) 7)) (not r_A72_0)))
+      (a!2 (or (not (= (select asg2 0) 7)) (not r_A72_1)))
+      (a!3 (or (not (= (select asg2 0) 7)) (not r_A72_2)))
+      (a!4 (or (not (= (select asg2 0) 7)) (not r_A72_3)))
+      (a!5 (or (not (= (select asg2 1) 7)) (not r_A72_0)))
+      (a!6 (or (not (= (select asg2 1) 7)) (not r_A72_1)))
+      (a!7 (or (not (= (select asg2 1) 7)) (not r_A72_2)))
+      (a!8 (or (not (= (select asg2 1) 7)) r_A72_3))
+      (a!9 (or (not (= (select asg2 2) 7)) (not r_A72_0)))
+      (a!10 (or (not (= (select asg2 2) 7)) (not r_A72_1)))
+      (a!11 (or (not (= (select asg2 2) 7)) r_A72_2))
+      (a!12 (or (not (= (select asg2 2) 7)) (not r_A72_3)))
+      (a!13 (or (not (= (select asg2 3) 7)) (not r_A72_0)))
+      (a!14 (or (not (= (select asg2 3) 7)) (not r_A72_1)))
+      (a!15 (or (not (= (select asg2 3) 7)) r_A72_2))
+      (a!16 (or (not (= (select asg2 3) 7)) r_A72_3))
+      (a!17 (or (not (= (select asg2 4) 7)) (not r_A72_0)))
+      (a!18 (or (not (= (select asg2 4) 7)) r_A72_1))
+      (a!19 (or (not (= (select asg2 4) 7)) (not r_A72_2)))
+      (a!20 (or (not (= (select asg2 4) 7)) (not r_A72_3)))
+      (a!21 (or (not (= (select asg2 5) 7)) (not r_A72_0)))
+      (a!22 (or (not (= (select asg2 5) 7)) r_A72_1))
+      (a!23 (or (not (= (select asg2 5) 7)) (not r_A72_2)))
+      (a!24 (or (not (= (select asg2 5) 7)) r_A72_3))
+      (a!25 (or (not (= (select asg2 6) 7)) (not r_A72_0)))
+      (a!26 (or (not (= (select asg2 6) 7)) r_A72_1))
+      (a!27 (or (not (= (select asg2 6) 7)) r_A72_2))
+      (a!28 (or (not (= (select asg2 6) 7)) (not r_A72_3)))
+      (a!29 (or (not (= (select asg2 7) 7)) (not r_A72_0)))
+      (a!30 (or (not (= (select asg2 7) 7)) r_A72_1))
+      (a!31 (or (not (= (select asg2 7) 7)) r_A72_2))
+      (a!32 (or (not (= (select asg2 7) 7)) r_A72_3))
+      (a!33 (or (not (= (select asg2 8) 7)) r_A72_0))
+      (a!34 (or (not (= (select asg2 8) 7)) (not r_A72_1)))
+      (a!35 (or (not (= (select asg2 8) 7)) (not r_A72_2)))
+      (a!36 (or (not (= (select asg2 8) 7)) (not r_A72_3)))
+      (a!37 (or (not (= (select asg2 9) 7)) r_A72_0))
+      (a!38 (or (not (= (select asg2 9) 7)) (not r_A72_1)))
+      (a!39 (or (not (= (select asg2 9) 7)) (not r_A72_2)))
+      (a!40 (or (not (= (select asg2 9) 7)) r_A72_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg2 0) 8)) (not r_A82_0)))
+      (a!2 (or (not (= (select asg2 0) 8)) (not r_A82_1)))
+      (a!3 (or (not (= (select asg2 0) 8)) (not r_A82_2)))
+      (a!4 (or (not (= (select asg2 0) 8)) (not r_A82_3)))
+      (a!5 (or (not (= (select asg2 1) 8)) (not r_A82_0)))
+      (a!6 (or (not (= (select asg2 1) 8)) (not r_A82_1)))
+      (a!7 (or (not (= (select asg2 1) 8)) (not r_A82_2)))
+      (a!8 (or (not (= (select asg2 1) 8)) r_A82_3))
+      (a!9 (or (not (= (select asg2 2) 8)) (not r_A82_0)))
+      (a!10 (or (not (= (select asg2 2) 8)) (not r_A82_1)))
+      (a!11 (or (not (= (select asg2 2) 8)) r_A82_2))
+      (a!12 (or (not (= (select asg2 2) 8)) (not r_A82_3)))
+      (a!13 (or (not (= (select asg2 3) 8)) (not r_A82_0)))
+      (a!14 (or (not (= (select asg2 3) 8)) (not r_A82_1)))
+      (a!15 (or (not (= (select asg2 3) 8)) r_A82_2))
+      (a!16 (or (not (= (select asg2 3) 8)) r_A82_3))
+      (a!17 (or (not (= (select asg2 4) 8)) (not r_A82_0)))
+      (a!18 (or (not (= (select asg2 4) 8)) r_A82_1))
+      (a!19 (or (not (= (select asg2 4) 8)) (not r_A82_2)))
+      (a!20 (or (not (= (select asg2 4) 8)) (not r_A82_3)))
+      (a!21 (or (not (= (select asg2 5) 8)) (not r_A82_0)))
+      (a!22 (or (not (= (select asg2 5) 8)) r_A82_1))
+      (a!23 (or (not (= (select asg2 5) 8)) (not r_A82_2)))
+      (a!24 (or (not (= (select asg2 5) 8)) r_A82_3))
+      (a!25 (or (not (= (select asg2 6) 8)) (not r_A82_0)))
+      (a!26 (or (not (= (select asg2 6) 8)) r_A82_1))
+      (a!27 (or (not (= (select asg2 6) 8)) r_A82_2))
+      (a!28 (or (not (= (select asg2 6) 8)) (not r_A82_3)))
+      (a!29 (or (not (= (select asg2 7) 8)) (not r_A82_0)))
+      (a!30 (or (not (= (select asg2 7) 8)) r_A82_1))
+      (a!31 (or (not (= (select asg2 7) 8)) r_A82_2))
+      (a!32 (or (not (= (select asg2 7) 8)) r_A82_3))
+      (a!33 (or (not (= (select asg2 8) 8)) r_A82_0))
+      (a!34 (or (not (= (select asg2 8) 8)) (not r_A82_1)))
+      (a!35 (or (not (= (select asg2 8) 8)) (not r_A82_2)))
+      (a!36 (or (not (= (select asg2 8) 8)) (not r_A82_3)))
+      (a!37 (or (not (= (select asg2 9) 8)) r_A82_0))
+      (a!38 (or (not (= (select asg2 9) 8)) (not r_A82_1)))
+      (a!39 (or (not (= (select asg2 9) 8)) (not r_A82_2)))
+      (a!40 (or (not (= (select asg2 9) 8)) r_A82_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg2 0) 9)) (not r_A92_0)))
+      (a!2 (or (not (= (select asg2 0) 9)) (not r_A92_1)))
+      (a!3 (or (not (= (select asg2 0) 9)) (not r_A92_2)))
+      (a!4 (or (not (= (select asg2 0) 9)) (not r_A92_3)))
+      (a!5 (or (not (= (select asg2 1) 9)) (not r_A92_0)))
+      (a!6 (or (not (= (select asg2 1) 9)) (not r_A92_1)))
+      (a!7 (or (not (= (select asg2 1) 9)) (not r_A92_2)))
+      (a!8 (or (not (= (select asg2 1) 9)) r_A92_3))
+      (a!9 (or (not (= (select asg2 2) 9)) (not r_A92_0)))
+      (a!10 (or (not (= (select asg2 2) 9)) (not r_A92_1)))
+      (a!11 (or (not (= (select asg2 2) 9)) r_A92_2))
+      (a!12 (or (not (= (select asg2 2) 9)) (not r_A92_3)))
+      (a!13 (or (not (= (select asg2 3) 9)) (not r_A92_0)))
+      (a!14 (or (not (= (select asg2 3) 9)) (not r_A92_1)))
+      (a!15 (or (not (= (select asg2 3) 9)) r_A92_2))
+      (a!16 (or (not (= (select asg2 3) 9)) r_A92_3))
+      (a!17 (or (not (= (select asg2 4) 9)) (not r_A92_0)))
+      (a!18 (or (not (= (select asg2 4) 9)) r_A92_1))
+      (a!19 (or (not (= (select asg2 4) 9)) (not r_A92_2)))
+      (a!20 (or (not (= (select asg2 4) 9)) (not r_A92_3)))
+      (a!21 (or (not (= (select asg2 5) 9)) (not r_A92_0)))
+      (a!22 (or (not (= (select asg2 5) 9)) r_A92_1))
+      (a!23 (or (not (= (select asg2 5) 9)) (not r_A92_2)))
+      (a!24 (or (not (= (select asg2 5) 9)) r_A92_3))
+      (a!25 (or (not (= (select asg2 6) 9)) (not r_A92_0)))
+      (a!26 (or (not (= (select asg2 6) 9)) r_A92_1))
+      (a!27 (or (not (= (select asg2 6) 9)) r_A92_2))
+      (a!28 (or (not (= (select asg2 6) 9)) (not r_A92_3)))
+      (a!29 (or (not (= (select asg2 7) 9)) (not r_A92_0)))
+      (a!30 (or (not (= (select asg2 7) 9)) r_A92_1))
+      (a!31 (or (not (= (select asg2 7) 9)) r_A92_2))
+      (a!32 (or (not (= (select asg2 7) 9)) r_A92_3))
+      (a!33 (or (not (= (select asg2 8) 9)) r_A92_0))
+      (a!34 (or (not (= (select asg2 8) 9)) (not r_A92_1)))
+      (a!35 (or (not (= (select asg2 8) 9)) (not r_A92_2)))
+      (a!36 (or (not (= (select asg2 8) 9)) (not r_A92_3)))
+      (a!37 (or (not (= (select asg2 9) 9)) r_A92_0))
+      (a!38 (or (not (= (select asg2 9) 9)) (not r_A92_1)))
+      (a!39 (or (not (= (select asg2 9) 9)) (not r_A92_2)))
+      (a!40 (or (not (= (select asg2 9) 9)) r_A92_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg3 0) 0)) (not r_A03_0)))
+      (a!2 (or (not (= (select asg3 0) 0)) (not r_A03_1)))
+      (a!3 (or (not (= (select asg3 0) 0)) (not r_A03_2)))
+      (a!4 (or (not (= (select asg3 0) 0)) (not r_A03_3)))
+      (a!5 (or (not (= (select asg3 1) 0)) (not r_A03_0)))
+      (a!6 (or (not (= (select asg3 1) 0)) (not r_A03_1)))
+      (a!7 (or (not (= (select asg3 1) 0)) (not r_A03_2)))
+      (a!8 (or (not (= (select asg3 1) 0)) r_A03_3))
+      (a!9 (or (not (= (select asg3 2) 0)) (not r_A03_0)))
+      (a!10 (or (not (= (select asg3 2) 0)) (not r_A03_1)))
+      (a!11 (or (not (= (select asg3 2) 0)) r_A03_2))
+      (a!12 (or (not (= (select asg3 2) 0)) (not r_A03_3)))
+      (a!13 (or (not (= (select asg3 3) 0)) (not r_A03_0)))
+      (a!14 (or (not (= (select asg3 3) 0)) (not r_A03_1)))
+      (a!15 (or (not (= (select asg3 3) 0)) r_A03_2))
+      (a!16 (or (not (= (select asg3 3) 0)) r_A03_3))
+      (a!17 (or (not (= (select asg3 4) 0)) (not r_A03_0)))
+      (a!18 (or (not (= (select asg3 4) 0)) r_A03_1))
+      (a!19 (or (not (= (select asg3 4) 0)) (not r_A03_2)))
+      (a!20 (or (not (= (select asg3 4) 0)) (not r_A03_3)))
+      (a!21 (or (not (= (select asg3 5) 0)) (not r_A03_0)))
+      (a!22 (or (not (= (select asg3 5) 0)) r_A03_1))
+      (a!23 (or (not (= (select asg3 5) 0)) (not r_A03_2)))
+      (a!24 (or (not (= (select asg3 5) 0)) r_A03_3))
+      (a!25 (or (not (= (select asg3 6) 0)) (not r_A03_0)))
+      (a!26 (or (not (= (select asg3 6) 0)) r_A03_1))
+      (a!27 (or (not (= (select asg3 6) 0)) r_A03_2))
+      (a!28 (or (not (= (select asg3 6) 0)) (not r_A03_3)))
+      (a!29 (or (not (= (select asg3 7) 0)) (not r_A03_0)))
+      (a!30 (or (not (= (select asg3 7) 0)) r_A03_1))
+      (a!31 (or (not (= (select asg3 7) 0)) r_A03_2))
+      (a!32 (or (not (= (select asg3 7) 0)) r_A03_3))
+      (a!33 (or (not (= (select asg3 8) 0)) r_A03_0))
+      (a!34 (or (not (= (select asg3 8) 0)) (not r_A03_1)))
+      (a!35 (or (not (= (select asg3 8) 0)) (not r_A03_2)))
+      (a!36 (or (not (= (select asg3 8) 0)) (not r_A03_3)))
+      (a!37 (or (not (= (select asg3 9) 0)) r_A03_0))
+      (a!38 (or (not (= (select asg3 9) 0)) (not r_A03_1)))
+      (a!39 (or (not (= (select asg3 9) 0)) (not r_A03_2)))
+      (a!40 (or (not (= (select asg3 9) 0)) r_A03_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg3 0) 1)) (not r_A13_0)))
+      (a!2 (or (not (= (select asg3 0) 1)) (not r_A13_1)))
+      (a!3 (or (not (= (select asg3 0) 1)) (not r_A13_2)))
+      (a!4 (or (not (= (select asg3 0) 1)) (not r_A13_3)))
+      (a!5 (or (not (= (select asg3 1) 1)) (not r_A13_0)))
+      (a!6 (or (not (= (select asg3 1) 1)) (not r_A13_1)))
+      (a!7 (or (not (= (select asg3 1) 1)) (not r_A13_2)))
+      (a!8 (or (not (= (select asg3 1) 1)) r_A13_3))
+      (a!9 (or (not (= (select asg3 2) 1)) (not r_A13_0)))
+      (a!10 (or (not (= (select asg3 2) 1)) (not r_A13_1)))
+      (a!11 (or (not (= (select asg3 2) 1)) r_A13_2))
+      (a!12 (or (not (= (select asg3 2) 1)) (not r_A13_3)))
+      (a!13 (or (not (= (select asg3 3) 1)) (not r_A13_0)))
+      (a!14 (or (not (= (select asg3 3) 1)) (not r_A13_1)))
+      (a!15 (or (not (= (select asg3 3) 1)) r_A13_2))
+      (a!16 (or (not (= (select asg3 3) 1)) r_A13_3))
+      (a!17 (or (not (= (select asg3 4) 1)) (not r_A13_0)))
+      (a!18 (or (not (= (select asg3 4) 1)) r_A13_1))
+      (a!19 (or (not (= (select asg3 4) 1)) (not r_A13_2)))
+      (a!20 (or (not (= (select asg3 4) 1)) (not r_A13_3)))
+      (a!21 (or (not (= (select asg3 5) 1)) (not r_A13_0)))
+      (a!22 (or (not (= (select asg3 5) 1)) r_A13_1))
+      (a!23 (or (not (= (select asg3 5) 1)) (not r_A13_2)))
+      (a!24 (or (not (= (select asg3 5) 1)) r_A13_3))
+      (a!25 (or (not (= (select asg3 6) 1)) (not r_A13_0)))
+      (a!26 (or (not (= (select asg3 6) 1)) r_A13_1))
+      (a!27 (or (not (= (select asg3 6) 1)) r_A13_2))
+      (a!28 (or (not (= (select asg3 6) 1)) (not r_A13_3)))
+      (a!29 (or (not (= (select asg3 7) 1)) (not r_A13_0)))
+      (a!30 (or (not (= (select asg3 7) 1)) r_A13_1))
+      (a!31 (or (not (= (select asg3 7) 1)) r_A13_2))
+      (a!32 (or (not (= (select asg3 7) 1)) r_A13_3))
+      (a!33 (or (not (= (select asg3 8) 1)) r_A13_0))
+      (a!34 (or (not (= (select asg3 8) 1)) (not r_A13_1)))
+      (a!35 (or (not (= (select asg3 8) 1)) (not r_A13_2)))
+      (a!36 (or (not (= (select asg3 8) 1)) (not r_A13_3)))
+      (a!37 (or (not (= (select asg3 9) 1)) r_A13_0))
+      (a!38 (or (not (= (select asg3 9) 1)) (not r_A13_1)))
+      (a!39 (or (not (= (select asg3 9) 1)) (not r_A13_2)))
+      (a!40 (or (not (= (select asg3 9) 1)) r_A13_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg3 0) 2)) (not r_A23_0)))
+      (a!2 (or (not (= (select asg3 0) 2)) (not r_A23_1)))
+      (a!3 (or (not (= (select asg3 0) 2)) (not r_A23_2)))
+      (a!4 (or (not (= (select asg3 0) 2)) (not r_A23_3)))
+      (a!5 (or (not (= (select asg3 1) 2)) (not r_A23_0)))
+      (a!6 (or (not (= (select asg3 1) 2)) (not r_A23_1)))
+      (a!7 (or (not (= (select asg3 1) 2)) (not r_A23_2)))
+      (a!8 (or (not (= (select asg3 1) 2)) r_A23_3))
+      (a!9 (or (not (= (select asg3 2) 2)) (not r_A23_0)))
+      (a!10 (or (not (= (select asg3 2) 2)) (not r_A23_1)))
+      (a!11 (or (not (= (select asg3 2) 2)) r_A23_2))
+      (a!12 (or (not (= (select asg3 2) 2)) (not r_A23_3)))
+      (a!13 (or (not (= (select asg3 3) 2)) (not r_A23_0)))
+      (a!14 (or (not (= (select asg3 3) 2)) (not r_A23_1)))
+      (a!15 (or (not (= (select asg3 3) 2)) r_A23_2))
+      (a!16 (or (not (= (select asg3 3) 2)) r_A23_3))
+      (a!17 (or (not (= (select asg3 4) 2)) (not r_A23_0)))
+      (a!18 (or (not (= (select asg3 4) 2)) r_A23_1))
+      (a!19 (or (not (= (select asg3 4) 2)) (not r_A23_2)))
+      (a!20 (or (not (= (select asg3 4) 2)) (not r_A23_3)))
+      (a!21 (or (not (= (select asg3 5) 2)) (not r_A23_0)))
+      (a!22 (or (not (= (select asg3 5) 2)) r_A23_1))
+      (a!23 (or (not (= (select asg3 5) 2)) (not r_A23_2)))
+      (a!24 (or (not (= (select asg3 5) 2)) r_A23_3))
+      (a!25 (or (not (= (select asg3 6) 2)) (not r_A23_0)))
+      (a!26 (or (not (= (select asg3 6) 2)) r_A23_1))
+      (a!27 (or (not (= (select asg3 6) 2)) r_A23_2))
+      (a!28 (or (not (= (select asg3 6) 2)) (not r_A23_3)))
+      (a!29 (or (not (= (select asg3 7) 2)) (not r_A23_0)))
+      (a!30 (or (not (= (select asg3 7) 2)) r_A23_1))
+      (a!31 (or (not (= (select asg3 7) 2)) r_A23_2))
+      (a!32 (or (not (= (select asg3 7) 2)) r_A23_3))
+      (a!33 (or (not (= (select asg3 8) 2)) r_A23_0))
+      (a!34 (or (not (= (select asg3 8) 2)) (not r_A23_1)))
+      (a!35 (or (not (= (select asg3 8) 2)) (not r_A23_2)))
+      (a!36 (or (not (= (select asg3 8) 2)) (not r_A23_3)))
+      (a!37 (or (not (= (select asg3 9) 2)) r_A23_0))
+      (a!38 (or (not (= (select asg3 9) 2)) (not r_A23_1)))
+      (a!39 (or (not (= (select asg3 9) 2)) (not r_A23_2)))
+      (a!40 (or (not (= (select asg3 9) 2)) r_A23_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg3 0) 3)) (not r_A33_0)))
+      (a!2 (or (not (= (select asg3 0) 3)) (not r_A33_1)))
+      (a!3 (or (not (= (select asg3 0) 3)) (not r_A33_2)))
+      (a!4 (or (not (= (select asg3 0) 3)) (not r_A33_3)))
+      (a!5 (or (not (= (select asg3 1) 3)) (not r_A33_0)))
+      (a!6 (or (not (= (select asg3 1) 3)) (not r_A33_1)))
+      (a!7 (or (not (= (select asg3 1) 3)) (not r_A33_2)))
+      (a!8 (or (not (= (select asg3 1) 3)) r_A33_3))
+      (a!9 (or (not (= (select asg3 2) 3)) (not r_A33_0)))
+      (a!10 (or (not (= (select asg3 2) 3)) (not r_A33_1)))
+      (a!11 (or (not (= (select asg3 2) 3)) r_A33_2))
+      (a!12 (or (not (= (select asg3 2) 3)) (not r_A33_3)))
+      (a!13 (or (not (= (select asg3 3) 3)) (not r_A33_0)))
+      (a!14 (or (not (= (select asg3 3) 3)) (not r_A33_1)))
+      (a!15 (or (not (= (select asg3 3) 3)) r_A33_2))
+      (a!16 (or (not (= (select asg3 3) 3)) r_A33_3))
+      (a!17 (or (not (= (select asg3 4) 3)) (not r_A33_0)))
+      (a!18 (or (not (= (select asg3 4) 3)) r_A33_1))
+      (a!19 (or (not (= (select asg3 4) 3)) (not r_A33_2)))
+      (a!20 (or (not (= (select asg3 4) 3)) (not r_A33_3)))
+      (a!21 (or (not (= (select asg3 5) 3)) (not r_A33_0)))
+      (a!22 (or (not (= (select asg3 5) 3)) r_A33_1))
+      (a!23 (or (not (= (select asg3 5) 3)) (not r_A33_2)))
+      (a!24 (or (not (= (select asg3 5) 3)) r_A33_3))
+      (a!25 (or (not (= (select asg3 6) 3)) (not r_A33_0)))
+      (a!26 (or (not (= (select asg3 6) 3)) r_A33_1))
+      (a!27 (or (not (= (select asg3 6) 3)) r_A33_2))
+      (a!28 (or (not (= (select asg3 6) 3)) (not r_A33_3)))
+      (a!29 (or (not (= (select asg3 7) 3)) (not r_A33_0)))
+      (a!30 (or (not (= (select asg3 7) 3)) r_A33_1))
+      (a!31 (or (not (= (select asg3 7) 3)) r_A33_2))
+      (a!32 (or (not (= (select asg3 7) 3)) r_A33_3))
+      (a!33 (or (not (= (select asg3 8) 3)) r_A33_0))
+      (a!34 (or (not (= (select asg3 8) 3)) (not r_A33_1)))
+      (a!35 (or (not (= (select asg3 8) 3)) (not r_A33_2)))
+      (a!36 (or (not (= (select asg3 8) 3)) (not r_A33_3)))
+      (a!37 (or (not (= (select asg3 9) 3)) r_A33_0))
+      (a!38 (or (not (= (select asg3 9) 3)) (not r_A33_1)))
+      (a!39 (or (not (= (select asg3 9) 3)) (not r_A33_2)))
+      (a!40 (or (not (= (select asg3 9) 3)) r_A33_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg3 0) 4)) (not r_A43_0)))
+      (a!2 (or (not (= (select asg3 0) 4)) (not r_A43_1)))
+      (a!3 (or (not (= (select asg3 0) 4)) (not r_A43_2)))
+      (a!4 (or (not (= (select asg3 0) 4)) (not r_A43_3)))
+      (a!5 (or (not (= (select asg3 1) 4)) (not r_A43_0)))
+      (a!6 (or (not (= (select asg3 1) 4)) (not r_A43_1)))
+      (a!7 (or (not (= (select asg3 1) 4)) (not r_A43_2)))
+      (a!8 (or (not (= (select asg3 1) 4)) r_A43_3))
+      (a!9 (or (not (= (select asg3 2) 4)) (not r_A43_0)))
+      (a!10 (or (not (= (select asg3 2) 4)) (not r_A43_1)))
+      (a!11 (or (not (= (select asg3 2) 4)) r_A43_2))
+      (a!12 (or (not (= (select asg3 2) 4)) (not r_A43_3)))
+      (a!13 (or (not (= (select asg3 3) 4)) (not r_A43_0)))
+      (a!14 (or (not (= (select asg3 3) 4)) (not r_A43_1)))
+      (a!15 (or (not (= (select asg3 3) 4)) r_A43_2))
+      (a!16 (or (not (= (select asg3 3) 4)) r_A43_3))
+      (a!17 (or (not (= (select asg3 4) 4)) (not r_A43_0)))
+      (a!18 (or (not (= (select asg3 4) 4)) r_A43_1))
+      (a!19 (or (not (= (select asg3 4) 4)) (not r_A43_2)))
+      (a!20 (or (not (= (select asg3 4) 4)) (not r_A43_3)))
+      (a!21 (or (not (= (select asg3 5) 4)) (not r_A43_0)))
+      (a!22 (or (not (= (select asg3 5) 4)) r_A43_1))
+      (a!23 (or (not (= (select asg3 5) 4)) (not r_A43_2)))
+      (a!24 (or (not (= (select asg3 5) 4)) r_A43_3))
+      (a!25 (or (not (= (select asg3 6) 4)) (not r_A43_0)))
+      (a!26 (or (not (= (select asg3 6) 4)) r_A43_1))
+      (a!27 (or (not (= (select asg3 6) 4)) r_A43_2))
+      (a!28 (or (not (= (select asg3 6) 4)) (not r_A43_3)))
+      (a!29 (or (not (= (select asg3 7) 4)) (not r_A43_0)))
+      (a!30 (or (not (= (select asg3 7) 4)) r_A43_1))
+      (a!31 (or (not (= (select asg3 7) 4)) r_A43_2))
+      (a!32 (or (not (= (select asg3 7) 4)) r_A43_3))
+      (a!33 (or (not (= (select asg3 8) 4)) r_A43_0))
+      (a!34 (or (not (= (select asg3 8) 4)) (not r_A43_1)))
+      (a!35 (or (not (= (select asg3 8) 4)) (not r_A43_2)))
+      (a!36 (or (not (= (select asg3 8) 4)) (not r_A43_3)))
+      (a!37 (or (not (= (select asg3 9) 4)) r_A43_0))
+      (a!38 (or (not (= (select asg3 9) 4)) (not r_A43_1)))
+      (a!39 (or (not (= (select asg3 9) 4)) (not r_A43_2)))
+      (a!40 (or (not (= (select asg3 9) 4)) r_A43_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg3 0) 5)) (not r_A53_0)))
+      (a!2 (or (not (= (select asg3 0) 5)) (not r_A53_1)))
+      (a!3 (or (not (= (select asg3 0) 5)) (not r_A53_2)))
+      (a!4 (or (not (= (select asg3 0) 5)) (not r_A53_3)))
+      (a!5 (or (not (= (select asg3 1) 5)) (not r_A53_0)))
+      (a!6 (or (not (= (select asg3 1) 5)) (not r_A53_1)))
+      (a!7 (or (not (= (select asg3 1) 5)) (not r_A53_2)))
+      (a!8 (or (not (= (select asg3 1) 5)) r_A53_3))
+      (a!9 (or (not (= (select asg3 2) 5)) (not r_A53_0)))
+      (a!10 (or (not (= (select asg3 2) 5)) (not r_A53_1)))
+      (a!11 (or (not (= (select asg3 2) 5)) r_A53_2))
+      (a!12 (or (not (= (select asg3 2) 5)) (not r_A53_3)))
+      (a!13 (or (not (= (select asg3 3) 5)) (not r_A53_0)))
+      (a!14 (or (not (= (select asg3 3) 5)) (not r_A53_1)))
+      (a!15 (or (not (= (select asg3 3) 5)) r_A53_2))
+      (a!16 (or (not (= (select asg3 3) 5)) r_A53_3))
+      (a!17 (or (not (= (select asg3 4) 5)) (not r_A53_0)))
+      (a!18 (or (not (= (select asg3 4) 5)) r_A53_1))
+      (a!19 (or (not (= (select asg3 4) 5)) (not r_A53_2)))
+      (a!20 (or (not (= (select asg3 4) 5)) (not r_A53_3)))
+      (a!21 (or (not (= (select asg3 5) 5)) (not r_A53_0)))
+      (a!22 (or (not (= (select asg3 5) 5)) r_A53_1))
+      (a!23 (or (not (= (select asg3 5) 5)) (not r_A53_2)))
+      (a!24 (or (not (= (select asg3 5) 5)) r_A53_3))
+      (a!25 (or (not (= (select asg3 6) 5)) (not r_A53_0)))
+      (a!26 (or (not (= (select asg3 6) 5)) r_A53_1))
+      (a!27 (or (not (= (select asg3 6) 5)) r_A53_2))
+      (a!28 (or (not (= (select asg3 6) 5)) (not r_A53_3)))
+      (a!29 (or (not (= (select asg3 7) 5)) (not r_A53_0)))
+      (a!30 (or (not (= (select asg3 7) 5)) r_A53_1))
+      (a!31 (or (not (= (select asg3 7) 5)) r_A53_2))
+      (a!32 (or (not (= (select asg3 7) 5)) r_A53_3))
+      (a!33 (or (not (= (select asg3 8) 5)) r_A53_0))
+      (a!34 (or (not (= (select asg3 8) 5)) (not r_A53_1)))
+      (a!35 (or (not (= (select asg3 8) 5)) (not r_A53_2)))
+      (a!36 (or (not (= (select asg3 8) 5)) (not r_A53_3)))
+      (a!37 (or (not (= (select asg3 9) 5)) r_A53_0))
+      (a!38 (or (not (= (select asg3 9) 5)) (not r_A53_1)))
+      (a!39 (or (not (= (select asg3 9) 5)) (not r_A53_2)))
+      (a!40 (or (not (= (select asg3 9) 5)) r_A53_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg3 0) 6)) (not r_A63_0)))
+      (a!2 (or (not (= (select asg3 0) 6)) (not r_A63_1)))
+      (a!3 (or (not (= (select asg3 0) 6)) (not r_A63_2)))
+      (a!4 (or (not (= (select asg3 0) 6)) (not r_A63_3)))
+      (a!5 (or (not (= (select asg3 1) 6)) (not r_A63_0)))
+      (a!6 (or (not (= (select asg3 1) 6)) (not r_A63_1)))
+      (a!7 (or (not (= (select asg3 1) 6)) (not r_A63_2)))
+      (a!8 (or (not (= (select asg3 1) 6)) r_A63_3))
+      (a!9 (or (not (= (select asg3 2) 6)) (not r_A63_0)))
+      (a!10 (or (not (= (select asg3 2) 6)) (not r_A63_1)))
+      (a!11 (or (not (= (select asg3 2) 6)) r_A63_2))
+      (a!12 (or (not (= (select asg3 2) 6)) (not r_A63_3)))
+      (a!13 (or (not (= (select asg3 3) 6)) (not r_A63_0)))
+      (a!14 (or (not (= (select asg3 3) 6)) (not r_A63_1)))
+      (a!15 (or (not (= (select asg3 3) 6)) r_A63_2))
+      (a!16 (or (not (= (select asg3 3) 6)) r_A63_3))
+      (a!17 (or (not (= (select asg3 4) 6)) (not r_A63_0)))
+      (a!18 (or (not (= (select asg3 4) 6)) r_A63_1))
+      (a!19 (or (not (= (select asg3 4) 6)) (not r_A63_2)))
+      (a!20 (or (not (= (select asg3 4) 6)) (not r_A63_3)))
+      (a!21 (or (not (= (select asg3 5) 6)) (not r_A63_0)))
+      (a!22 (or (not (= (select asg3 5) 6)) r_A63_1))
+      (a!23 (or (not (= (select asg3 5) 6)) (not r_A63_2)))
+      (a!24 (or (not (= (select asg3 5) 6)) r_A63_3))
+      (a!25 (or (not (= (select asg3 6) 6)) (not r_A63_0)))
+      (a!26 (or (not (= (select asg3 6) 6)) r_A63_1))
+      (a!27 (or (not (= (select asg3 6) 6)) r_A63_2))
+      (a!28 (or (not (= (select asg3 6) 6)) (not r_A63_3)))
+      (a!29 (or (not (= (select asg3 7) 6)) (not r_A63_0)))
+      (a!30 (or (not (= (select asg3 7) 6)) r_A63_1))
+      (a!31 (or (not (= (select asg3 7) 6)) r_A63_2))
+      (a!32 (or (not (= (select asg3 7) 6)) r_A63_3))
+      (a!33 (or (not (= (select asg3 8) 6)) r_A63_0))
+      (a!34 (or (not (= (select asg3 8) 6)) (not r_A63_1)))
+      (a!35 (or (not (= (select asg3 8) 6)) (not r_A63_2)))
+      (a!36 (or (not (= (select asg3 8) 6)) (not r_A63_3)))
+      (a!37 (or (not (= (select asg3 9) 6)) r_A63_0))
+      (a!38 (or (not (= (select asg3 9) 6)) (not r_A63_1)))
+      (a!39 (or (not (= (select asg3 9) 6)) (not r_A63_2)))
+      (a!40 (or (not (= (select asg3 9) 6)) r_A63_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg3 0) 7)) (not r_A73_0)))
+      (a!2 (or (not (= (select asg3 0) 7)) (not r_A73_1)))
+      (a!3 (or (not (= (select asg3 0) 7)) (not r_A73_2)))
+      (a!4 (or (not (= (select asg3 0) 7)) (not r_A73_3)))
+      (a!5 (or (not (= (select asg3 1) 7)) (not r_A73_0)))
+      (a!6 (or (not (= (select asg3 1) 7)) (not r_A73_1)))
+      (a!7 (or (not (= (select asg3 1) 7)) (not r_A73_2)))
+      (a!8 (or (not (= (select asg3 1) 7)) r_A73_3))
+      (a!9 (or (not (= (select asg3 2) 7)) (not r_A73_0)))
+      (a!10 (or (not (= (select asg3 2) 7)) (not r_A73_1)))
+      (a!11 (or (not (= (select asg3 2) 7)) r_A73_2))
+      (a!12 (or (not (= (select asg3 2) 7)) (not r_A73_3)))
+      (a!13 (or (not (= (select asg3 3) 7)) (not r_A73_0)))
+      (a!14 (or (not (= (select asg3 3) 7)) (not r_A73_1)))
+      (a!15 (or (not (= (select asg3 3) 7)) r_A73_2))
+      (a!16 (or (not (= (select asg3 3) 7)) r_A73_3))
+      (a!17 (or (not (= (select asg3 4) 7)) (not r_A73_0)))
+      (a!18 (or (not (= (select asg3 4) 7)) r_A73_1))
+      (a!19 (or (not (= (select asg3 4) 7)) (not r_A73_2)))
+      (a!20 (or (not (= (select asg3 4) 7)) (not r_A73_3)))
+      (a!21 (or (not (= (select asg3 5) 7)) (not r_A73_0)))
+      (a!22 (or (not (= (select asg3 5) 7)) r_A73_1))
+      (a!23 (or (not (= (select asg3 5) 7)) (not r_A73_2)))
+      (a!24 (or (not (= (select asg3 5) 7)) r_A73_3))
+      (a!25 (or (not (= (select asg3 6) 7)) (not r_A73_0)))
+      (a!26 (or (not (= (select asg3 6) 7)) r_A73_1))
+      (a!27 (or (not (= (select asg3 6) 7)) r_A73_2))
+      (a!28 (or (not (= (select asg3 6) 7)) (not r_A73_3)))
+      (a!29 (or (not (= (select asg3 7) 7)) (not r_A73_0)))
+      (a!30 (or (not (= (select asg3 7) 7)) r_A73_1))
+      (a!31 (or (not (= (select asg3 7) 7)) r_A73_2))
+      (a!32 (or (not (= (select asg3 7) 7)) r_A73_3))
+      (a!33 (or (not (= (select asg3 8) 7)) r_A73_0))
+      (a!34 (or (not (= (select asg3 8) 7)) (not r_A73_1)))
+      (a!35 (or (not (= (select asg3 8) 7)) (not r_A73_2)))
+      (a!36 (or (not (= (select asg3 8) 7)) (not r_A73_3)))
+      (a!37 (or (not (= (select asg3 9) 7)) r_A73_0))
+      (a!38 (or (not (= (select asg3 9) 7)) (not r_A73_1)))
+      (a!39 (or (not (= (select asg3 9) 7)) (not r_A73_2)))
+      (a!40 (or (not (= (select asg3 9) 7)) r_A73_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg3 0) 8)) (not r_A83_0)))
+      (a!2 (or (not (= (select asg3 0) 8)) (not r_A83_1)))
+      (a!3 (or (not (= (select asg3 0) 8)) (not r_A83_2)))
+      (a!4 (or (not (= (select asg3 0) 8)) (not r_A83_3)))
+      (a!5 (or (not (= (select asg3 1) 8)) (not r_A83_0)))
+      (a!6 (or (not (= (select asg3 1) 8)) (not r_A83_1)))
+      (a!7 (or (not (= (select asg3 1) 8)) (not r_A83_2)))
+      (a!8 (or (not (= (select asg3 1) 8)) r_A83_3))
+      (a!9 (or (not (= (select asg3 2) 8)) (not r_A83_0)))
+      (a!10 (or (not (= (select asg3 2) 8)) (not r_A83_1)))
+      (a!11 (or (not (= (select asg3 2) 8)) r_A83_2))
+      (a!12 (or (not (= (select asg3 2) 8)) (not r_A83_3)))
+      (a!13 (or (not (= (select asg3 3) 8)) (not r_A83_0)))
+      (a!14 (or (not (= (select asg3 3) 8)) (not r_A83_1)))
+      (a!15 (or (not (= (select asg3 3) 8)) r_A83_2))
+      (a!16 (or (not (= (select asg3 3) 8)) r_A83_3))
+      (a!17 (or (not (= (select asg3 4) 8)) (not r_A83_0)))
+      (a!18 (or (not (= (select asg3 4) 8)) r_A83_1))
+      (a!19 (or (not (= (select asg3 4) 8)) (not r_A83_2)))
+      (a!20 (or (not (= (select asg3 4) 8)) (not r_A83_3)))
+      (a!21 (or (not (= (select asg3 5) 8)) (not r_A83_0)))
+      (a!22 (or (not (= (select asg3 5) 8)) r_A83_1))
+      (a!23 (or (not (= (select asg3 5) 8)) (not r_A83_2)))
+      (a!24 (or (not (= (select asg3 5) 8)) r_A83_3))
+      (a!25 (or (not (= (select asg3 6) 8)) (not r_A83_0)))
+      (a!26 (or (not (= (select asg3 6) 8)) r_A83_1))
+      (a!27 (or (not (= (select asg3 6) 8)) r_A83_2))
+      (a!28 (or (not (= (select asg3 6) 8)) (not r_A83_3)))
+      (a!29 (or (not (= (select asg3 7) 8)) (not r_A83_0)))
+      (a!30 (or (not (= (select asg3 7) 8)) r_A83_1))
+      (a!31 (or (not (= (select asg3 7) 8)) r_A83_2))
+      (a!32 (or (not (= (select asg3 7) 8)) r_A83_3))
+      (a!33 (or (not (= (select asg3 8) 8)) r_A83_0))
+      (a!34 (or (not (= (select asg3 8) 8)) (not r_A83_1)))
+      (a!35 (or (not (= (select asg3 8) 8)) (not r_A83_2)))
+      (a!36 (or (not (= (select asg3 8) 8)) (not r_A83_3)))
+      (a!37 (or (not (= (select asg3 9) 8)) r_A83_0))
+      (a!38 (or (not (= (select asg3 9) 8)) (not r_A83_1)))
+      (a!39 (or (not (= (select asg3 9) 8)) (not r_A83_2)))
+      (a!40 (or (not (= (select asg3 9) 8)) r_A83_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg3 0) 9)) (not r_A93_0)))
+      (a!2 (or (not (= (select asg3 0) 9)) (not r_A93_1)))
+      (a!3 (or (not (= (select asg3 0) 9)) (not r_A93_2)))
+      (a!4 (or (not (= (select asg3 0) 9)) (not r_A93_3)))
+      (a!5 (or (not (= (select asg3 1) 9)) (not r_A93_0)))
+      (a!6 (or (not (= (select asg3 1) 9)) (not r_A93_1)))
+      (a!7 (or (not (= (select asg3 1) 9)) (not r_A93_2)))
+      (a!8 (or (not (= (select asg3 1) 9)) r_A93_3))
+      (a!9 (or (not (= (select asg3 2) 9)) (not r_A93_0)))
+      (a!10 (or (not (= (select asg3 2) 9)) (not r_A93_1)))
+      (a!11 (or (not (= (select asg3 2) 9)) r_A93_2))
+      (a!12 (or (not (= (select asg3 2) 9)) (not r_A93_3)))
+      (a!13 (or (not (= (select asg3 3) 9)) (not r_A93_0)))
+      (a!14 (or (not (= (select asg3 3) 9)) (not r_A93_1)))
+      (a!15 (or (not (= (select asg3 3) 9)) r_A93_2))
+      (a!16 (or (not (= (select asg3 3) 9)) r_A93_3))
+      (a!17 (or (not (= (select asg3 4) 9)) (not r_A93_0)))
+      (a!18 (or (not (= (select asg3 4) 9)) r_A93_1))
+      (a!19 (or (not (= (select asg3 4) 9)) (not r_A93_2)))
+      (a!20 (or (not (= (select asg3 4) 9)) (not r_A93_3)))
+      (a!21 (or (not (= (select asg3 5) 9)) (not r_A93_0)))
+      (a!22 (or (not (= (select asg3 5) 9)) r_A93_1))
+      (a!23 (or (not (= (select asg3 5) 9)) (not r_A93_2)))
+      (a!24 (or (not (= (select asg3 5) 9)) r_A93_3))
+      (a!25 (or (not (= (select asg3 6) 9)) (not r_A93_0)))
+      (a!26 (or (not (= (select asg3 6) 9)) r_A93_1))
+      (a!27 (or (not (= (select asg3 6) 9)) r_A93_2))
+      (a!28 (or (not (= (select asg3 6) 9)) (not r_A93_3)))
+      (a!29 (or (not (= (select asg3 7) 9)) (not r_A93_0)))
+      (a!30 (or (not (= (select asg3 7) 9)) r_A93_1))
+      (a!31 (or (not (= (select asg3 7) 9)) r_A93_2))
+      (a!32 (or (not (= (select asg3 7) 9)) r_A93_3))
+      (a!33 (or (not (= (select asg3 8) 9)) r_A93_0))
+      (a!34 (or (not (= (select asg3 8) 9)) (not r_A93_1)))
+      (a!35 (or (not (= (select asg3 8) 9)) (not r_A93_2)))
+      (a!36 (or (not (= (select asg3 8) 9)) (not r_A93_3)))
+      (a!37 (or (not (= (select asg3 9) 9)) r_A93_0))
+      (a!38 (or (not (= (select asg3 9) 9)) (not r_A93_1)))
+      (a!39 (or (not (= (select asg3 9) 9)) (not r_A93_2)))
+      (a!40 (or (not (= (select asg3 9) 9)) r_A93_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg4 0) 0)) (not r_A04_0)))
+      (a!2 (or (not (= (select asg4 0) 0)) (not r_A04_1)))
+      (a!3 (or (not (= (select asg4 0) 0)) (not r_A04_2)))
+      (a!4 (or (not (= (select asg4 0) 0)) (not r_A04_3)))
+      (a!5 (or (not (= (select asg4 1) 0)) (not r_A04_0)))
+      (a!6 (or (not (= (select asg4 1) 0)) (not r_A04_1)))
+      (a!7 (or (not (= (select asg4 1) 0)) (not r_A04_2)))
+      (a!8 (or (not (= (select asg4 1) 0)) r_A04_3))
+      (a!9 (or (not (= (select asg4 2) 0)) (not r_A04_0)))
+      (a!10 (or (not (= (select asg4 2) 0)) (not r_A04_1)))
+      (a!11 (or (not (= (select asg4 2) 0)) r_A04_2))
+      (a!12 (or (not (= (select asg4 2) 0)) (not r_A04_3)))
+      (a!13 (or (not (= (select asg4 3) 0)) (not r_A04_0)))
+      (a!14 (or (not (= (select asg4 3) 0)) (not r_A04_1)))
+      (a!15 (or (not (= (select asg4 3) 0)) r_A04_2))
+      (a!16 (or (not (= (select asg4 3) 0)) r_A04_3))
+      (a!17 (or (not (= (select asg4 4) 0)) (not r_A04_0)))
+      (a!18 (or (not (= (select asg4 4) 0)) r_A04_1))
+      (a!19 (or (not (= (select asg4 4) 0)) (not r_A04_2)))
+      (a!20 (or (not (= (select asg4 4) 0)) (not r_A04_3)))
+      (a!21 (or (not (= (select asg4 5) 0)) (not r_A04_0)))
+      (a!22 (or (not (= (select asg4 5) 0)) r_A04_1))
+      (a!23 (or (not (= (select asg4 5) 0)) (not r_A04_2)))
+      (a!24 (or (not (= (select asg4 5) 0)) r_A04_3))
+      (a!25 (or (not (= (select asg4 6) 0)) (not r_A04_0)))
+      (a!26 (or (not (= (select asg4 6) 0)) r_A04_1))
+      (a!27 (or (not (= (select asg4 6) 0)) r_A04_2))
+      (a!28 (or (not (= (select asg4 6) 0)) (not r_A04_3)))
+      (a!29 (or (not (= (select asg4 7) 0)) (not r_A04_0)))
+      (a!30 (or (not (= (select asg4 7) 0)) r_A04_1))
+      (a!31 (or (not (= (select asg4 7) 0)) r_A04_2))
+      (a!32 (or (not (= (select asg4 7) 0)) r_A04_3))
+      (a!33 (or (not (= (select asg4 8) 0)) r_A04_0))
+      (a!34 (or (not (= (select asg4 8) 0)) (not r_A04_1)))
+      (a!35 (or (not (= (select asg4 8) 0)) (not r_A04_2)))
+      (a!36 (or (not (= (select asg4 8) 0)) (not r_A04_3)))
+      (a!37 (or (not (= (select asg4 9) 0)) r_A04_0))
+      (a!38 (or (not (= (select asg4 9) 0)) (not r_A04_1)))
+      (a!39 (or (not (= (select asg4 9) 0)) (not r_A04_2)))
+      (a!40 (or (not (= (select asg4 9) 0)) r_A04_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg4 0) 1)) (not r_A14_0)))
+      (a!2 (or (not (= (select asg4 0) 1)) (not r_A14_1)))
+      (a!3 (or (not (= (select asg4 0) 1)) (not r_A14_2)))
+      (a!4 (or (not (= (select asg4 0) 1)) (not r_A14_3)))
+      (a!5 (or (not (= (select asg4 1) 1)) (not r_A14_0)))
+      (a!6 (or (not (= (select asg4 1) 1)) (not r_A14_1)))
+      (a!7 (or (not (= (select asg4 1) 1)) (not r_A14_2)))
+      (a!8 (or (not (= (select asg4 1) 1)) r_A14_3))
+      (a!9 (or (not (= (select asg4 2) 1)) (not r_A14_0)))
+      (a!10 (or (not (= (select asg4 2) 1)) (not r_A14_1)))
+      (a!11 (or (not (= (select asg4 2) 1)) r_A14_2))
+      (a!12 (or (not (= (select asg4 2) 1)) (not r_A14_3)))
+      (a!13 (or (not (= (select asg4 3) 1)) (not r_A14_0)))
+      (a!14 (or (not (= (select asg4 3) 1)) (not r_A14_1)))
+      (a!15 (or (not (= (select asg4 3) 1)) r_A14_2))
+      (a!16 (or (not (= (select asg4 3) 1)) r_A14_3))
+      (a!17 (or (not (= (select asg4 4) 1)) (not r_A14_0)))
+      (a!18 (or (not (= (select asg4 4) 1)) r_A14_1))
+      (a!19 (or (not (= (select asg4 4) 1)) (not r_A14_2)))
+      (a!20 (or (not (= (select asg4 4) 1)) (not r_A14_3)))
+      (a!21 (or (not (= (select asg4 5) 1)) (not r_A14_0)))
+      (a!22 (or (not (= (select asg4 5) 1)) r_A14_1))
+      (a!23 (or (not (= (select asg4 5) 1)) (not r_A14_2)))
+      (a!24 (or (not (= (select asg4 5) 1)) r_A14_3))
+      (a!25 (or (not (= (select asg4 6) 1)) (not r_A14_0)))
+      (a!26 (or (not (= (select asg4 6) 1)) r_A14_1))
+      (a!27 (or (not (= (select asg4 6) 1)) r_A14_2))
+      (a!28 (or (not (= (select asg4 6) 1)) (not r_A14_3)))
+      (a!29 (or (not (= (select asg4 7) 1)) (not r_A14_0)))
+      (a!30 (or (not (= (select asg4 7) 1)) r_A14_1))
+      (a!31 (or (not (= (select asg4 7) 1)) r_A14_2))
+      (a!32 (or (not (= (select asg4 7) 1)) r_A14_3))
+      (a!33 (or (not (= (select asg4 8) 1)) r_A14_0))
+      (a!34 (or (not (= (select asg4 8) 1)) (not r_A14_1)))
+      (a!35 (or (not (= (select asg4 8) 1)) (not r_A14_2)))
+      (a!36 (or (not (= (select asg4 8) 1)) (not r_A14_3)))
+      (a!37 (or (not (= (select asg4 9) 1)) r_A14_0))
+      (a!38 (or (not (= (select asg4 9) 1)) (not r_A14_1)))
+      (a!39 (or (not (= (select asg4 9) 1)) (not r_A14_2)))
+      (a!40 (or (not (= (select asg4 9) 1)) r_A14_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg4 0) 2)) (not r_A24_0)))
+      (a!2 (or (not (= (select asg4 0) 2)) (not r_A24_1)))
+      (a!3 (or (not (= (select asg4 0) 2)) (not r_A24_2)))
+      (a!4 (or (not (= (select asg4 0) 2)) (not r_A24_3)))
+      (a!5 (or (not (= (select asg4 1) 2)) (not r_A24_0)))
+      (a!6 (or (not (= (select asg4 1) 2)) (not r_A24_1)))
+      (a!7 (or (not (= (select asg4 1) 2)) (not r_A24_2)))
+      (a!8 (or (not (= (select asg4 1) 2)) r_A24_3))
+      (a!9 (or (not (= (select asg4 2) 2)) (not r_A24_0)))
+      (a!10 (or (not (= (select asg4 2) 2)) (not r_A24_1)))
+      (a!11 (or (not (= (select asg4 2) 2)) r_A24_2))
+      (a!12 (or (not (= (select asg4 2) 2)) (not r_A24_3)))
+      (a!13 (or (not (= (select asg4 3) 2)) (not r_A24_0)))
+      (a!14 (or (not (= (select asg4 3) 2)) (not r_A24_1)))
+      (a!15 (or (not (= (select asg4 3) 2)) r_A24_2))
+      (a!16 (or (not (= (select asg4 3) 2)) r_A24_3))
+      (a!17 (or (not (= (select asg4 4) 2)) (not r_A24_0)))
+      (a!18 (or (not (= (select asg4 4) 2)) r_A24_1))
+      (a!19 (or (not (= (select asg4 4) 2)) (not r_A24_2)))
+      (a!20 (or (not (= (select asg4 4) 2)) (not r_A24_3)))
+      (a!21 (or (not (= (select asg4 5) 2)) (not r_A24_0)))
+      (a!22 (or (not (= (select asg4 5) 2)) r_A24_1))
+      (a!23 (or (not (= (select asg4 5) 2)) (not r_A24_2)))
+      (a!24 (or (not (= (select asg4 5) 2)) r_A24_3))
+      (a!25 (or (not (= (select asg4 6) 2)) (not r_A24_0)))
+      (a!26 (or (not (= (select asg4 6) 2)) r_A24_1))
+      (a!27 (or (not (= (select asg4 6) 2)) r_A24_2))
+      (a!28 (or (not (= (select asg4 6) 2)) (not r_A24_3)))
+      (a!29 (or (not (= (select asg4 7) 2)) (not r_A24_0)))
+      (a!30 (or (not (= (select asg4 7) 2)) r_A24_1))
+      (a!31 (or (not (= (select asg4 7) 2)) r_A24_2))
+      (a!32 (or (not (= (select asg4 7) 2)) r_A24_3))
+      (a!33 (or (not (= (select asg4 8) 2)) r_A24_0))
+      (a!34 (or (not (= (select asg4 8) 2)) (not r_A24_1)))
+      (a!35 (or (not (= (select asg4 8) 2)) (not r_A24_2)))
+      (a!36 (or (not (= (select asg4 8) 2)) (not r_A24_3)))
+      (a!37 (or (not (= (select asg4 9) 2)) r_A24_0))
+      (a!38 (or (not (= (select asg4 9) 2)) (not r_A24_1)))
+      (a!39 (or (not (= (select asg4 9) 2)) (not r_A24_2)))
+      (a!40 (or (not (= (select asg4 9) 2)) r_A24_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg4 0) 3)) (not r_A34_0)))
+      (a!2 (or (not (= (select asg4 0) 3)) (not r_A34_1)))
+      (a!3 (or (not (= (select asg4 0) 3)) (not r_A34_2)))
+      (a!4 (or (not (= (select asg4 0) 3)) (not r_A34_3)))
+      (a!5 (or (not (= (select asg4 1) 3)) (not r_A34_0)))
+      (a!6 (or (not (= (select asg4 1) 3)) (not r_A34_1)))
+      (a!7 (or (not (= (select asg4 1) 3)) (not r_A34_2)))
+      (a!8 (or (not (= (select asg4 1) 3)) r_A34_3))
+      (a!9 (or (not (= (select asg4 2) 3)) (not r_A34_0)))
+      (a!10 (or (not (= (select asg4 2) 3)) (not r_A34_1)))
+      (a!11 (or (not (= (select asg4 2) 3)) r_A34_2))
+      (a!12 (or (not (= (select asg4 2) 3)) (not r_A34_3)))
+      (a!13 (or (not (= (select asg4 3) 3)) (not r_A34_0)))
+      (a!14 (or (not (= (select asg4 3) 3)) (not r_A34_1)))
+      (a!15 (or (not (= (select asg4 3) 3)) r_A34_2))
+      (a!16 (or (not (= (select asg4 3) 3)) r_A34_3))
+      (a!17 (or (not (= (select asg4 4) 3)) (not r_A34_0)))
+      (a!18 (or (not (= (select asg4 4) 3)) r_A34_1))
+      (a!19 (or (not (= (select asg4 4) 3)) (not r_A34_2)))
+      (a!20 (or (not (= (select asg4 4) 3)) (not r_A34_3)))
+      (a!21 (or (not (= (select asg4 5) 3)) (not r_A34_0)))
+      (a!22 (or (not (= (select asg4 5) 3)) r_A34_1))
+      (a!23 (or (not (= (select asg4 5) 3)) (not r_A34_2)))
+      (a!24 (or (not (= (select asg4 5) 3)) r_A34_3))
+      (a!25 (or (not (= (select asg4 6) 3)) (not r_A34_0)))
+      (a!26 (or (not (= (select asg4 6) 3)) r_A34_1))
+      (a!27 (or (not (= (select asg4 6) 3)) r_A34_2))
+      (a!28 (or (not (= (select asg4 6) 3)) (not r_A34_3)))
+      (a!29 (or (not (= (select asg4 7) 3)) (not r_A34_0)))
+      (a!30 (or (not (= (select asg4 7) 3)) r_A34_1))
+      (a!31 (or (not (= (select asg4 7) 3)) r_A34_2))
+      (a!32 (or (not (= (select asg4 7) 3)) r_A34_3))
+      (a!33 (or (not (= (select asg4 8) 3)) r_A34_0))
+      (a!34 (or (not (= (select asg4 8) 3)) (not r_A34_1)))
+      (a!35 (or (not (= (select asg4 8) 3)) (not r_A34_2)))
+      (a!36 (or (not (= (select asg4 8) 3)) (not r_A34_3)))
+      (a!37 (or (not (= (select asg4 9) 3)) r_A34_0))
+      (a!38 (or (not (= (select asg4 9) 3)) (not r_A34_1)))
+      (a!39 (or (not (= (select asg4 9) 3)) (not r_A34_2)))
+      (a!40 (or (not (= (select asg4 9) 3)) r_A34_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg4 0) 4)) (not r_A44_0)))
+      (a!2 (or (not (= (select asg4 0) 4)) (not r_A44_1)))
+      (a!3 (or (not (= (select asg4 0) 4)) (not r_A44_2)))
+      (a!4 (or (not (= (select asg4 0) 4)) (not r_A44_3)))
+      (a!5 (or (not (= (select asg4 1) 4)) (not r_A44_0)))
+      (a!6 (or (not (= (select asg4 1) 4)) (not r_A44_1)))
+      (a!7 (or (not (= (select asg4 1) 4)) (not r_A44_2)))
+      (a!8 (or (not (= (select asg4 1) 4)) r_A44_3))
+      (a!9 (or (not (= (select asg4 2) 4)) (not r_A44_0)))
+      (a!10 (or (not (= (select asg4 2) 4)) (not r_A44_1)))
+      (a!11 (or (not (= (select asg4 2) 4)) r_A44_2))
+      (a!12 (or (not (= (select asg4 2) 4)) (not r_A44_3)))
+      (a!13 (or (not (= (select asg4 3) 4)) (not r_A44_0)))
+      (a!14 (or (not (= (select asg4 3) 4)) (not r_A44_1)))
+      (a!15 (or (not (= (select asg4 3) 4)) r_A44_2))
+      (a!16 (or (not (= (select asg4 3) 4)) r_A44_3))
+      (a!17 (or (not (= (select asg4 4) 4)) (not r_A44_0)))
+      (a!18 (or (not (= (select asg4 4) 4)) r_A44_1))
+      (a!19 (or (not (= (select asg4 4) 4)) (not r_A44_2)))
+      (a!20 (or (not (= (select asg4 4) 4)) (not r_A44_3)))
+      (a!21 (or (not (= (select asg4 5) 4)) (not r_A44_0)))
+      (a!22 (or (not (= (select asg4 5) 4)) r_A44_1))
+      (a!23 (or (not (= (select asg4 5) 4)) (not r_A44_2)))
+      (a!24 (or (not (= (select asg4 5) 4)) r_A44_3))
+      (a!25 (or (not (= (select asg4 6) 4)) (not r_A44_0)))
+      (a!26 (or (not (= (select asg4 6) 4)) r_A44_1))
+      (a!27 (or (not (= (select asg4 6) 4)) r_A44_2))
+      (a!28 (or (not (= (select asg4 6) 4)) (not r_A44_3)))
+      (a!29 (or (not (= (select asg4 7) 4)) (not r_A44_0)))
+      (a!30 (or (not (= (select asg4 7) 4)) r_A44_1))
+      (a!31 (or (not (= (select asg4 7) 4)) r_A44_2))
+      (a!32 (or (not (= (select asg4 7) 4)) r_A44_3))
+      (a!33 (or (not (= (select asg4 8) 4)) r_A44_0))
+      (a!34 (or (not (= (select asg4 8) 4)) (not r_A44_1)))
+      (a!35 (or (not (= (select asg4 8) 4)) (not r_A44_2)))
+      (a!36 (or (not (= (select asg4 8) 4)) (not r_A44_3)))
+      (a!37 (or (not (= (select asg4 9) 4)) r_A44_0))
+      (a!38 (or (not (= (select asg4 9) 4)) (not r_A44_1)))
+      (a!39 (or (not (= (select asg4 9) 4)) (not r_A44_2)))
+      (a!40 (or (not (= (select asg4 9) 4)) r_A44_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg4 0) 5)) (not r_A54_0)))
+      (a!2 (or (not (= (select asg4 0) 5)) (not r_A54_1)))
+      (a!3 (or (not (= (select asg4 0) 5)) (not r_A54_2)))
+      (a!4 (or (not (= (select asg4 0) 5)) (not r_A54_3)))
+      (a!5 (or (not (= (select asg4 1) 5)) (not r_A54_0)))
+      (a!6 (or (not (= (select asg4 1) 5)) (not r_A54_1)))
+      (a!7 (or (not (= (select asg4 1) 5)) (not r_A54_2)))
+      (a!8 (or (not (= (select asg4 1) 5)) r_A54_3))
+      (a!9 (or (not (= (select asg4 2) 5)) (not r_A54_0)))
+      (a!10 (or (not (= (select asg4 2) 5)) (not r_A54_1)))
+      (a!11 (or (not (= (select asg4 2) 5)) r_A54_2))
+      (a!12 (or (not (= (select asg4 2) 5)) (not r_A54_3)))
+      (a!13 (or (not (= (select asg4 3) 5)) (not r_A54_0)))
+      (a!14 (or (not (= (select asg4 3) 5)) (not r_A54_1)))
+      (a!15 (or (not (= (select asg4 3) 5)) r_A54_2))
+      (a!16 (or (not (= (select asg4 3) 5)) r_A54_3))
+      (a!17 (or (not (= (select asg4 4) 5)) (not r_A54_0)))
+      (a!18 (or (not (= (select asg4 4) 5)) r_A54_1))
+      (a!19 (or (not (= (select asg4 4) 5)) (not r_A54_2)))
+      (a!20 (or (not (= (select asg4 4) 5)) (not r_A54_3)))
+      (a!21 (or (not (= (select asg4 5) 5)) (not r_A54_0)))
+      (a!22 (or (not (= (select asg4 5) 5)) r_A54_1))
+      (a!23 (or (not (= (select asg4 5) 5)) (not r_A54_2)))
+      (a!24 (or (not (= (select asg4 5) 5)) r_A54_3))
+      (a!25 (or (not (= (select asg4 6) 5)) (not r_A54_0)))
+      (a!26 (or (not (= (select asg4 6) 5)) r_A54_1))
+      (a!27 (or (not (= (select asg4 6) 5)) r_A54_2))
+      (a!28 (or (not (= (select asg4 6) 5)) (not r_A54_3)))
+      (a!29 (or (not (= (select asg4 7) 5)) (not r_A54_0)))
+      (a!30 (or (not (= (select asg4 7) 5)) r_A54_1))
+      (a!31 (or (not (= (select asg4 7) 5)) r_A54_2))
+      (a!32 (or (not (= (select asg4 7) 5)) r_A54_3))
+      (a!33 (or (not (= (select asg4 8) 5)) r_A54_0))
+      (a!34 (or (not (= (select asg4 8) 5)) (not r_A54_1)))
+      (a!35 (or (not (= (select asg4 8) 5)) (not r_A54_2)))
+      (a!36 (or (not (= (select asg4 8) 5)) (not r_A54_3)))
+      (a!37 (or (not (= (select asg4 9) 5)) r_A54_0))
+      (a!38 (or (not (= (select asg4 9) 5)) (not r_A54_1)))
+      (a!39 (or (not (= (select asg4 9) 5)) (not r_A54_2)))
+      (a!40 (or (not (= (select asg4 9) 5)) r_A54_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg4 0) 6)) (not r_A64_0)))
+      (a!2 (or (not (= (select asg4 0) 6)) (not r_A64_1)))
+      (a!3 (or (not (= (select asg4 0) 6)) (not r_A64_2)))
+      (a!4 (or (not (= (select asg4 0) 6)) (not r_A64_3)))
+      (a!5 (or (not (= (select asg4 1) 6)) (not r_A64_0)))
+      (a!6 (or (not (= (select asg4 1) 6)) (not r_A64_1)))
+      (a!7 (or (not (= (select asg4 1) 6)) (not r_A64_2)))
+      (a!8 (or (not (= (select asg4 1) 6)) r_A64_3))
+      (a!9 (or (not (= (select asg4 2) 6)) (not r_A64_0)))
+      (a!10 (or (not (= (select asg4 2) 6)) (not r_A64_1)))
+      (a!11 (or (not (= (select asg4 2) 6)) r_A64_2))
+      (a!12 (or (not (= (select asg4 2) 6)) (not r_A64_3)))
+      (a!13 (or (not (= (select asg4 3) 6)) (not r_A64_0)))
+      (a!14 (or (not (= (select asg4 3) 6)) (not r_A64_1)))
+      (a!15 (or (not (= (select asg4 3) 6)) r_A64_2))
+      (a!16 (or (not (= (select asg4 3) 6)) r_A64_3))
+      (a!17 (or (not (= (select asg4 4) 6)) (not r_A64_0)))
+      (a!18 (or (not (= (select asg4 4) 6)) r_A64_1))
+      (a!19 (or (not (= (select asg4 4) 6)) (not r_A64_2)))
+      (a!20 (or (not (= (select asg4 4) 6)) (not r_A64_3)))
+      (a!21 (or (not (= (select asg4 5) 6)) (not r_A64_0)))
+      (a!22 (or (not (= (select asg4 5) 6)) r_A64_1))
+      (a!23 (or (not (= (select asg4 5) 6)) (not r_A64_2)))
+      (a!24 (or (not (= (select asg4 5) 6)) r_A64_3))
+      (a!25 (or (not (= (select asg4 6) 6)) (not r_A64_0)))
+      (a!26 (or (not (= (select asg4 6) 6)) r_A64_1))
+      (a!27 (or (not (= (select asg4 6) 6)) r_A64_2))
+      (a!28 (or (not (= (select asg4 6) 6)) (not r_A64_3)))
+      (a!29 (or (not (= (select asg4 7) 6)) (not r_A64_0)))
+      (a!30 (or (not (= (select asg4 7) 6)) r_A64_1))
+      (a!31 (or (not (= (select asg4 7) 6)) r_A64_2))
+      (a!32 (or (not (= (select asg4 7) 6)) r_A64_3))
+      (a!33 (or (not (= (select asg4 8) 6)) r_A64_0))
+      (a!34 (or (not (= (select asg4 8) 6)) (not r_A64_1)))
+      (a!35 (or (not (= (select asg4 8) 6)) (not r_A64_2)))
+      (a!36 (or (not (= (select asg4 8) 6)) (not r_A64_3)))
+      (a!37 (or (not (= (select asg4 9) 6)) r_A64_0))
+      (a!38 (or (not (= (select asg4 9) 6)) (not r_A64_1)))
+      (a!39 (or (not (= (select asg4 9) 6)) (not r_A64_2)))
+      (a!40 (or (not (= (select asg4 9) 6)) r_A64_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg4 0) 7)) (not r_A74_0)))
+      (a!2 (or (not (= (select asg4 0) 7)) (not r_A74_1)))
+      (a!3 (or (not (= (select asg4 0) 7)) (not r_A74_2)))
+      (a!4 (or (not (= (select asg4 0) 7)) (not r_A74_3)))
+      (a!5 (or (not (= (select asg4 1) 7)) (not r_A74_0)))
+      (a!6 (or (not (= (select asg4 1) 7)) (not r_A74_1)))
+      (a!7 (or (not (= (select asg4 1) 7)) (not r_A74_2)))
+      (a!8 (or (not (= (select asg4 1) 7)) r_A74_3))
+      (a!9 (or (not (= (select asg4 2) 7)) (not r_A74_0)))
+      (a!10 (or (not (= (select asg4 2) 7)) (not r_A74_1)))
+      (a!11 (or (not (= (select asg4 2) 7)) r_A74_2))
+      (a!12 (or (not (= (select asg4 2) 7)) (not r_A74_3)))
+      (a!13 (or (not (= (select asg4 3) 7)) (not r_A74_0)))
+      (a!14 (or (not (= (select asg4 3) 7)) (not r_A74_1)))
+      (a!15 (or (not (= (select asg4 3) 7)) r_A74_2))
+      (a!16 (or (not (= (select asg4 3) 7)) r_A74_3))
+      (a!17 (or (not (= (select asg4 4) 7)) (not r_A74_0)))
+      (a!18 (or (not (= (select asg4 4) 7)) r_A74_1))
+      (a!19 (or (not (= (select asg4 4) 7)) (not r_A74_2)))
+      (a!20 (or (not (= (select asg4 4) 7)) (not r_A74_3)))
+      (a!21 (or (not (= (select asg4 5) 7)) (not r_A74_0)))
+      (a!22 (or (not (= (select asg4 5) 7)) r_A74_1))
+      (a!23 (or (not (= (select asg4 5) 7)) (not r_A74_2)))
+      (a!24 (or (not (= (select asg4 5) 7)) r_A74_3))
+      (a!25 (or (not (= (select asg4 6) 7)) (not r_A74_0)))
+      (a!26 (or (not (= (select asg4 6) 7)) r_A74_1))
+      (a!27 (or (not (= (select asg4 6) 7)) r_A74_2))
+      (a!28 (or (not (= (select asg4 6) 7)) (not r_A74_3)))
+      (a!29 (or (not (= (select asg4 7) 7)) (not r_A74_0)))
+      (a!30 (or (not (= (select asg4 7) 7)) r_A74_1))
+      (a!31 (or (not (= (select asg4 7) 7)) r_A74_2))
+      (a!32 (or (not (= (select asg4 7) 7)) r_A74_3))
+      (a!33 (or (not (= (select asg4 8) 7)) r_A74_0))
+      (a!34 (or (not (= (select asg4 8) 7)) (not r_A74_1)))
+      (a!35 (or (not (= (select asg4 8) 7)) (not r_A74_2)))
+      (a!36 (or (not (= (select asg4 8) 7)) (not r_A74_3)))
+      (a!37 (or (not (= (select asg4 9) 7)) r_A74_0))
+      (a!38 (or (not (= (select asg4 9) 7)) (not r_A74_1)))
+      (a!39 (or (not (= (select asg4 9) 7)) (not r_A74_2)))
+      (a!40 (or (not (= (select asg4 9) 7)) r_A74_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg4 0) 8)) (not r_A84_0)))
+      (a!2 (or (not (= (select asg4 0) 8)) (not r_A84_1)))
+      (a!3 (or (not (= (select asg4 0) 8)) (not r_A84_2)))
+      (a!4 (or (not (= (select asg4 0) 8)) (not r_A84_3)))
+      (a!5 (or (not (= (select asg4 1) 8)) (not r_A84_0)))
+      (a!6 (or (not (= (select asg4 1) 8)) (not r_A84_1)))
+      (a!7 (or (not (= (select asg4 1) 8)) (not r_A84_2)))
+      (a!8 (or (not (= (select asg4 1) 8)) r_A84_3))
+      (a!9 (or (not (= (select asg4 2) 8)) (not r_A84_0)))
+      (a!10 (or (not (= (select asg4 2) 8)) (not r_A84_1)))
+      (a!11 (or (not (= (select asg4 2) 8)) r_A84_2))
+      (a!12 (or (not (= (select asg4 2) 8)) (not r_A84_3)))
+      (a!13 (or (not (= (select asg4 3) 8)) (not r_A84_0)))
+      (a!14 (or (not (= (select asg4 3) 8)) (not r_A84_1)))
+      (a!15 (or (not (= (select asg4 3) 8)) r_A84_2))
+      (a!16 (or (not (= (select asg4 3) 8)) r_A84_3))
+      (a!17 (or (not (= (select asg4 4) 8)) (not r_A84_0)))
+      (a!18 (or (not (= (select asg4 4) 8)) r_A84_1))
+      (a!19 (or (not (= (select asg4 4) 8)) (not r_A84_2)))
+      (a!20 (or (not (= (select asg4 4) 8)) (not r_A84_3)))
+      (a!21 (or (not (= (select asg4 5) 8)) (not r_A84_0)))
+      (a!22 (or (not (= (select asg4 5) 8)) r_A84_1))
+      (a!23 (or (not (= (select asg4 5) 8)) (not r_A84_2)))
+      (a!24 (or (not (= (select asg4 5) 8)) r_A84_3))
+      (a!25 (or (not (= (select asg4 6) 8)) (not r_A84_0)))
+      (a!26 (or (not (= (select asg4 6) 8)) r_A84_1))
+      (a!27 (or (not (= (select asg4 6) 8)) r_A84_2))
+      (a!28 (or (not (= (select asg4 6) 8)) (not r_A84_3)))
+      (a!29 (or (not (= (select asg4 7) 8)) (not r_A84_0)))
+      (a!30 (or (not (= (select asg4 7) 8)) r_A84_1))
+      (a!31 (or (not (= (select asg4 7) 8)) r_A84_2))
+      (a!32 (or (not (= (select asg4 7) 8)) r_A84_3))
+      (a!33 (or (not (= (select asg4 8) 8)) r_A84_0))
+      (a!34 (or (not (= (select asg4 8) 8)) (not r_A84_1)))
+      (a!35 (or (not (= (select asg4 8) 8)) (not r_A84_2)))
+      (a!36 (or (not (= (select asg4 8) 8)) (not r_A84_3)))
+      (a!37 (or (not (= (select asg4 9) 8)) r_A84_0))
+      (a!38 (or (not (= (select asg4 9) 8)) (not r_A84_1)))
+      (a!39 (or (not (= (select asg4 9) 8)) (not r_A84_2)))
+      (a!40 (or (not (= (select asg4 9) 8)) r_A84_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg4 0) 9)) (not r_A94_0)))
+      (a!2 (or (not (= (select asg4 0) 9)) (not r_A94_1)))
+      (a!3 (or (not (= (select asg4 0) 9)) (not r_A94_2)))
+      (a!4 (or (not (= (select asg4 0) 9)) (not r_A94_3)))
+      (a!5 (or (not (= (select asg4 1) 9)) (not r_A94_0)))
+      (a!6 (or (not (= (select asg4 1) 9)) (not r_A94_1)))
+      (a!7 (or (not (= (select asg4 1) 9)) (not r_A94_2)))
+      (a!8 (or (not (= (select asg4 1) 9)) r_A94_3))
+      (a!9 (or (not (= (select asg4 2) 9)) (not r_A94_0)))
+      (a!10 (or (not (= (select asg4 2) 9)) (not r_A94_1)))
+      (a!11 (or (not (= (select asg4 2) 9)) r_A94_2))
+      (a!12 (or (not (= (select asg4 2) 9)) (not r_A94_3)))
+      (a!13 (or (not (= (select asg4 3) 9)) (not r_A94_0)))
+      (a!14 (or (not (= (select asg4 3) 9)) (not r_A94_1)))
+      (a!15 (or (not (= (select asg4 3) 9)) r_A94_2))
+      (a!16 (or (not (= (select asg4 3) 9)) r_A94_3))
+      (a!17 (or (not (= (select asg4 4) 9)) (not r_A94_0)))
+      (a!18 (or (not (= (select asg4 4) 9)) r_A94_1))
+      (a!19 (or (not (= (select asg4 4) 9)) (not r_A94_2)))
+      (a!20 (or (not (= (select asg4 4) 9)) (not r_A94_3)))
+      (a!21 (or (not (= (select asg4 5) 9)) (not r_A94_0)))
+      (a!22 (or (not (= (select asg4 5) 9)) r_A94_1))
+      (a!23 (or (not (= (select asg4 5) 9)) (not r_A94_2)))
+      (a!24 (or (not (= (select asg4 5) 9)) r_A94_3))
+      (a!25 (or (not (= (select asg4 6) 9)) (not r_A94_0)))
+      (a!26 (or (not (= (select asg4 6) 9)) r_A94_1))
+      (a!27 (or (not (= (select asg4 6) 9)) r_A94_2))
+      (a!28 (or (not (= (select asg4 6) 9)) (not r_A94_3)))
+      (a!29 (or (not (= (select asg4 7) 9)) (not r_A94_0)))
+      (a!30 (or (not (= (select asg4 7) 9)) r_A94_1))
+      (a!31 (or (not (= (select asg4 7) 9)) r_A94_2))
+      (a!32 (or (not (= (select asg4 7) 9)) r_A94_3))
+      (a!33 (or (not (= (select asg4 8) 9)) r_A94_0))
+      (a!34 (or (not (= (select asg4 8) 9)) (not r_A94_1)))
+      (a!35 (or (not (= (select asg4 8) 9)) (not r_A94_2)))
+      (a!36 (or (not (= (select asg4 8) 9)) (not r_A94_3)))
+      (a!37 (or (not (= (select asg4 9) 9)) r_A94_0))
+      (a!38 (or (not (= (select asg4 9) 9)) (not r_A94_1)))
+      (a!39 (or (not (= (select asg4 9) 9)) (not r_A94_2)))
+      (a!40 (or (not (= (select asg4 9) 9)) r_A94_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg5 0) 0)) (not r_A05_0)))
+      (a!2 (or (not (= (select asg5 0) 0)) (not r_A05_1)))
+      (a!3 (or (not (= (select asg5 0) 0)) (not r_A05_2)))
+      (a!4 (or (not (= (select asg5 0) 0)) (not r_A05_3)))
+      (a!5 (or (not (= (select asg5 1) 0)) (not r_A05_0)))
+      (a!6 (or (not (= (select asg5 1) 0)) (not r_A05_1)))
+      (a!7 (or (not (= (select asg5 1) 0)) (not r_A05_2)))
+      (a!8 (or (not (= (select asg5 1) 0)) r_A05_3))
+      (a!9 (or (not (= (select asg5 2) 0)) (not r_A05_0)))
+      (a!10 (or (not (= (select asg5 2) 0)) (not r_A05_1)))
+      (a!11 (or (not (= (select asg5 2) 0)) r_A05_2))
+      (a!12 (or (not (= (select asg5 2) 0)) (not r_A05_3)))
+      (a!13 (or (not (= (select asg5 3) 0)) (not r_A05_0)))
+      (a!14 (or (not (= (select asg5 3) 0)) (not r_A05_1)))
+      (a!15 (or (not (= (select asg5 3) 0)) r_A05_2))
+      (a!16 (or (not (= (select asg5 3) 0)) r_A05_3))
+      (a!17 (or (not (= (select asg5 4) 0)) (not r_A05_0)))
+      (a!18 (or (not (= (select asg5 4) 0)) r_A05_1))
+      (a!19 (or (not (= (select asg5 4) 0)) (not r_A05_2)))
+      (a!20 (or (not (= (select asg5 4) 0)) (not r_A05_3)))
+      (a!21 (or (not (= (select asg5 5) 0)) (not r_A05_0)))
+      (a!22 (or (not (= (select asg5 5) 0)) r_A05_1))
+      (a!23 (or (not (= (select asg5 5) 0)) (not r_A05_2)))
+      (a!24 (or (not (= (select asg5 5) 0)) r_A05_3))
+      (a!25 (or (not (= (select asg5 6) 0)) (not r_A05_0)))
+      (a!26 (or (not (= (select asg5 6) 0)) r_A05_1))
+      (a!27 (or (not (= (select asg5 6) 0)) r_A05_2))
+      (a!28 (or (not (= (select asg5 6) 0)) (not r_A05_3)))
+      (a!29 (or (not (= (select asg5 7) 0)) (not r_A05_0)))
+      (a!30 (or (not (= (select asg5 7) 0)) r_A05_1))
+      (a!31 (or (not (= (select asg5 7) 0)) r_A05_2))
+      (a!32 (or (not (= (select asg5 7) 0)) r_A05_3))
+      (a!33 (or (not (= (select asg5 8) 0)) r_A05_0))
+      (a!34 (or (not (= (select asg5 8) 0)) (not r_A05_1)))
+      (a!35 (or (not (= (select asg5 8) 0)) (not r_A05_2)))
+      (a!36 (or (not (= (select asg5 8) 0)) (not r_A05_3)))
+      (a!37 (or (not (= (select asg5 9) 0)) r_A05_0))
+      (a!38 (or (not (= (select asg5 9) 0)) (not r_A05_1)))
+      (a!39 (or (not (= (select asg5 9) 0)) (not r_A05_2)))
+      (a!40 (or (not (= (select asg5 9) 0)) r_A05_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg5 0) 1)) (not r_A15_0)))
+      (a!2 (or (not (= (select asg5 0) 1)) (not r_A15_1)))
+      (a!3 (or (not (= (select asg5 0) 1)) (not r_A15_2)))
+      (a!4 (or (not (= (select asg5 0) 1)) (not r_A15_3)))
+      (a!5 (or (not (= (select asg5 1) 1)) (not r_A15_0)))
+      (a!6 (or (not (= (select asg5 1) 1)) (not r_A15_1)))
+      (a!7 (or (not (= (select asg5 1) 1)) (not r_A15_2)))
+      (a!8 (or (not (= (select asg5 1) 1)) r_A15_3))
+      (a!9 (or (not (= (select asg5 2) 1)) (not r_A15_0)))
+      (a!10 (or (not (= (select asg5 2) 1)) (not r_A15_1)))
+      (a!11 (or (not (= (select asg5 2) 1)) r_A15_2))
+      (a!12 (or (not (= (select asg5 2) 1)) (not r_A15_3)))
+      (a!13 (or (not (= (select asg5 3) 1)) (not r_A15_0)))
+      (a!14 (or (not (= (select asg5 3) 1)) (not r_A15_1)))
+      (a!15 (or (not (= (select asg5 3) 1)) r_A15_2))
+      (a!16 (or (not (= (select asg5 3) 1)) r_A15_3))
+      (a!17 (or (not (= (select asg5 4) 1)) (not r_A15_0)))
+      (a!18 (or (not (= (select asg5 4) 1)) r_A15_1))
+      (a!19 (or (not (= (select asg5 4) 1)) (not r_A15_2)))
+      (a!20 (or (not (= (select asg5 4) 1)) (not r_A15_3)))
+      (a!21 (or (not (= (select asg5 5) 1)) (not r_A15_0)))
+      (a!22 (or (not (= (select asg5 5) 1)) r_A15_1))
+      (a!23 (or (not (= (select asg5 5) 1)) (not r_A15_2)))
+      (a!24 (or (not (= (select asg5 5) 1)) r_A15_3))
+      (a!25 (or (not (= (select asg5 6) 1)) (not r_A15_0)))
+      (a!26 (or (not (= (select asg5 6) 1)) r_A15_1))
+      (a!27 (or (not (= (select asg5 6) 1)) r_A15_2))
+      (a!28 (or (not (= (select asg5 6) 1)) (not r_A15_3)))
+      (a!29 (or (not (= (select asg5 7) 1)) (not r_A15_0)))
+      (a!30 (or (not (= (select asg5 7) 1)) r_A15_1))
+      (a!31 (or (not (= (select asg5 7) 1)) r_A15_2))
+      (a!32 (or (not (= (select asg5 7) 1)) r_A15_3))
+      (a!33 (or (not (= (select asg5 8) 1)) r_A15_0))
+      (a!34 (or (not (= (select asg5 8) 1)) (not r_A15_1)))
+      (a!35 (or (not (= (select asg5 8) 1)) (not r_A15_2)))
+      (a!36 (or (not (= (select asg5 8) 1)) (not r_A15_3)))
+      (a!37 (or (not (= (select asg5 9) 1)) r_A15_0))
+      (a!38 (or (not (= (select asg5 9) 1)) (not r_A15_1)))
+      (a!39 (or (not (= (select asg5 9) 1)) (not r_A15_2)))
+      (a!40 (or (not (= (select asg5 9) 1)) r_A15_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg5 0) 2)) (not r_A25_0)))
+      (a!2 (or (not (= (select asg5 0) 2)) (not r_A25_1)))
+      (a!3 (or (not (= (select asg5 0) 2)) (not r_A25_2)))
+      (a!4 (or (not (= (select asg5 0) 2)) (not r_A25_3)))
+      (a!5 (or (not (= (select asg5 1) 2)) (not r_A25_0)))
+      (a!6 (or (not (= (select asg5 1) 2)) (not r_A25_1)))
+      (a!7 (or (not (= (select asg5 1) 2)) (not r_A25_2)))
+      (a!8 (or (not (= (select asg5 1) 2)) r_A25_3))
+      (a!9 (or (not (= (select asg5 2) 2)) (not r_A25_0)))
+      (a!10 (or (not (= (select asg5 2) 2)) (not r_A25_1)))
+      (a!11 (or (not (= (select asg5 2) 2)) r_A25_2))
+      (a!12 (or (not (= (select asg5 2) 2)) (not r_A25_3)))
+      (a!13 (or (not (= (select asg5 3) 2)) (not r_A25_0)))
+      (a!14 (or (not (= (select asg5 3) 2)) (not r_A25_1)))
+      (a!15 (or (not (= (select asg5 3) 2)) r_A25_2))
+      (a!16 (or (not (= (select asg5 3) 2)) r_A25_3))
+      (a!17 (or (not (= (select asg5 4) 2)) (not r_A25_0)))
+      (a!18 (or (not (= (select asg5 4) 2)) r_A25_1))
+      (a!19 (or (not (= (select asg5 4) 2)) (not r_A25_2)))
+      (a!20 (or (not (= (select asg5 4) 2)) (not r_A25_3)))
+      (a!21 (or (not (= (select asg5 5) 2)) (not r_A25_0)))
+      (a!22 (or (not (= (select asg5 5) 2)) r_A25_1))
+      (a!23 (or (not (= (select asg5 5) 2)) (not r_A25_2)))
+      (a!24 (or (not (= (select asg5 5) 2)) r_A25_3))
+      (a!25 (or (not (= (select asg5 6) 2)) (not r_A25_0)))
+      (a!26 (or (not (= (select asg5 6) 2)) r_A25_1))
+      (a!27 (or (not (= (select asg5 6) 2)) r_A25_2))
+      (a!28 (or (not (= (select asg5 6) 2)) (not r_A25_3)))
+      (a!29 (or (not (= (select asg5 7) 2)) (not r_A25_0)))
+      (a!30 (or (not (= (select asg5 7) 2)) r_A25_1))
+      (a!31 (or (not (= (select asg5 7) 2)) r_A25_2))
+      (a!32 (or (not (= (select asg5 7) 2)) r_A25_3))
+      (a!33 (or (not (= (select asg5 8) 2)) r_A25_0))
+      (a!34 (or (not (= (select asg5 8) 2)) (not r_A25_1)))
+      (a!35 (or (not (= (select asg5 8) 2)) (not r_A25_2)))
+      (a!36 (or (not (= (select asg5 8) 2)) (not r_A25_3)))
+      (a!37 (or (not (= (select asg5 9) 2)) r_A25_0))
+      (a!38 (or (not (= (select asg5 9) 2)) (not r_A25_1)))
+      (a!39 (or (not (= (select asg5 9) 2)) (not r_A25_2)))
+      (a!40 (or (not (= (select asg5 9) 2)) r_A25_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg5 0) 3)) (not r_A35_0)))
+      (a!2 (or (not (= (select asg5 0) 3)) (not r_A35_1)))
+      (a!3 (or (not (= (select asg5 0) 3)) (not r_A35_2)))
+      (a!4 (or (not (= (select asg5 0) 3)) (not r_A35_3)))
+      (a!5 (or (not (= (select asg5 1) 3)) (not r_A35_0)))
+      (a!6 (or (not (= (select asg5 1) 3)) (not r_A35_1)))
+      (a!7 (or (not (= (select asg5 1) 3)) (not r_A35_2)))
+      (a!8 (or (not (= (select asg5 1) 3)) r_A35_3))
+      (a!9 (or (not (= (select asg5 2) 3)) (not r_A35_0)))
+      (a!10 (or (not (= (select asg5 2) 3)) (not r_A35_1)))
+      (a!11 (or (not (= (select asg5 2) 3)) r_A35_2))
+      (a!12 (or (not (= (select asg5 2) 3)) (not r_A35_3)))
+      (a!13 (or (not (= (select asg5 3) 3)) (not r_A35_0)))
+      (a!14 (or (not (= (select asg5 3) 3)) (not r_A35_1)))
+      (a!15 (or (not (= (select asg5 3) 3)) r_A35_2))
+      (a!16 (or (not (= (select asg5 3) 3)) r_A35_3))
+      (a!17 (or (not (= (select asg5 4) 3)) (not r_A35_0)))
+      (a!18 (or (not (= (select asg5 4) 3)) r_A35_1))
+      (a!19 (or (not (= (select asg5 4) 3)) (not r_A35_2)))
+      (a!20 (or (not (= (select asg5 4) 3)) (not r_A35_3)))
+      (a!21 (or (not (= (select asg5 5) 3)) (not r_A35_0)))
+      (a!22 (or (not (= (select asg5 5) 3)) r_A35_1))
+      (a!23 (or (not (= (select asg5 5) 3)) (not r_A35_2)))
+      (a!24 (or (not (= (select asg5 5) 3)) r_A35_3))
+      (a!25 (or (not (= (select asg5 6) 3)) (not r_A35_0)))
+      (a!26 (or (not (= (select asg5 6) 3)) r_A35_1))
+      (a!27 (or (not (= (select asg5 6) 3)) r_A35_2))
+      (a!28 (or (not (= (select asg5 6) 3)) (not r_A35_3)))
+      (a!29 (or (not (= (select asg5 7) 3)) (not r_A35_0)))
+      (a!30 (or (not (= (select asg5 7) 3)) r_A35_1))
+      (a!31 (or (not (= (select asg5 7) 3)) r_A35_2))
+      (a!32 (or (not (= (select asg5 7) 3)) r_A35_3))
+      (a!33 (or (not (= (select asg5 8) 3)) r_A35_0))
+      (a!34 (or (not (= (select asg5 8) 3)) (not r_A35_1)))
+      (a!35 (or (not (= (select asg5 8) 3)) (not r_A35_2)))
+      (a!36 (or (not (= (select asg5 8) 3)) (not r_A35_3)))
+      (a!37 (or (not (= (select asg5 9) 3)) r_A35_0))
+      (a!38 (or (not (= (select asg5 9) 3)) (not r_A35_1)))
+      (a!39 (or (not (= (select asg5 9) 3)) (not r_A35_2)))
+      (a!40 (or (not (= (select asg5 9) 3)) r_A35_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg5 0) 4)) (not r_A45_0)))
+      (a!2 (or (not (= (select asg5 0) 4)) (not r_A45_1)))
+      (a!3 (or (not (= (select asg5 0) 4)) (not r_A45_2)))
+      (a!4 (or (not (= (select asg5 0) 4)) (not r_A45_3)))
+      (a!5 (or (not (= (select asg5 1) 4)) (not r_A45_0)))
+      (a!6 (or (not (= (select asg5 1) 4)) (not r_A45_1)))
+      (a!7 (or (not (= (select asg5 1) 4)) (not r_A45_2)))
+      (a!8 (or (not (= (select asg5 1) 4)) r_A45_3))
+      (a!9 (or (not (= (select asg5 2) 4)) (not r_A45_0)))
+      (a!10 (or (not (= (select asg5 2) 4)) (not r_A45_1)))
+      (a!11 (or (not (= (select asg5 2) 4)) r_A45_2))
+      (a!12 (or (not (= (select asg5 2) 4)) (not r_A45_3)))
+      (a!13 (or (not (= (select asg5 3) 4)) (not r_A45_0)))
+      (a!14 (or (not (= (select asg5 3) 4)) (not r_A45_1)))
+      (a!15 (or (not (= (select asg5 3) 4)) r_A45_2))
+      (a!16 (or (not (= (select asg5 3) 4)) r_A45_3))
+      (a!17 (or (not (= (select asg5 4) 4)) (not r_A45_0)))
+      (a!18 (or (not (= (select asg5 4) 4)) r_A45_1))
+      (a!19 (or (not (= (select asg5 4) 4)) (not r_A45_2)))
+      (a!20 (or (not (= (select asg5 4) 4)) (not r_A45_3)))
+      (a!21 (or (not (= (select asg5 5) 4)) (not r_A45_0)))
+      (a!22 (or (not (= (select asg5 5) 4)) r_A45_1))
+      (a!23 (or (not (= (select asg5 5) 4)) (not r_A45_2)))
+      (a!24 (or (not (= (select asg5 5) 4)) r_A45_3))
+      (a!25 (or (not (= (select asg5 6) 4)) (not r_A45_0)))
+      (a!26 (or (not (= (select asg5 6) 4)) r_A45_1))
+      (a!27 (or (not (= (select asg5 6) 4)) r_A45_2))
+      (a!28 (or (not (= (select asg5 6) 4)) (not r_A45_3)))
+      (a!29 (or (not (= (select asg5 7) 4)) (not r_A45_0)))
+      (a!30 (or (not (= (select asg5 7) 4)) r_A45_1))
+      (a!31 (or (not (= (select asg5 7) 4)) r_A45_2))
+      (a!32 (or (not (= (select asg5 7) 4)) r_A45_3))
+      (a!33 (or (not (= (select asg5 8) 4)) r_A45_0))
+      (a!34 (or (not (= (select asg5 8) 4)) (not r_A45_1)))
+      (a!35 (or (not (= (select asg5 8) 4)) (not r_A45_2)))
+      (a!36 (or (not (= (select asg5 8) 4)) (not r_A45_3)))
+      (a!37 (or (not (= (select asg5 9) 4)) r_A45_0))
+      (a!38 (or (not (= (select asg5 9) 4)) (not r_A45_1)))
+      (a!39 (or (not (= (select asg5 9) 4)) (not r_A45_2)))
+      (a!40 (or (not (= (select asg5 9) 4)) r_A45_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg5 0) 5)) (not r_A55_0)))
+      (a!2 (or (not (= (select asg5 0) 5)) (not r_A55_1)))
+      (a!3 (or (not (= (select asg5 0) 5)) (not r_A55_2)))
+      (a!4 (or (not (= (select asg5 0) 5)) (not r_A55_3)))
+      (a!5 (or (not (= (select asg5 1) 5)) (not r_A55_0)))
+      (a!6 (or (not (= (select asg5 1) 5)) (not r_A55_1)))
+      (a!7 (or (not (= (select asg5 1) 5)) (not r_A55_2)))
+      (a!8 (or (not (= (select asg5 1) 5)) r_A55_3))
+      (a!9 (or (not (= (select asg5 2) 5)) (not r_A55_0)))
+      (a!10 (or (not (= (select asg5 2) 5)) (not r_A55_1)))
+      (a!11 (or (not (= (select asg5 2) 5)) r_A55_2))
+      (a!12 (or (not (= (select asg5 2) 5)) (not r_A55_3)))
+      (a!13 (or (not (= (select asg5 3) 5)) (not r_A55_0)))
+      (a!14 (or (not (= (select asg5 3) 5)) (not r_A55_1)))
+      (a!15 (or (not (= (select asg5 3) 5)) r_A55_2))
+      (a!16 (or (not (= (select asg5 3) 5)) r_A55_3))
+      (a!17 (or (not (= (select asg5 4) 5)) (not r_A55_0)))
+      (a!18 (or (not (= (select asg5 4) 5)) r_A55_1))
+      (a!19 (or (not (= (select asg5 4) 5)) (not r_A55_2)))
+      (a!20 (or (not (= (select asg5 4) 5)) (not r_A55_3)))
+      (a!21 (or (not (= (select asg5 5) 5)) (not r_A55_0)))
+      (a!22 (or (not (= (select asg5 5) 5)) r_A55_1))
+      (a!23 (or (not (= (select asg5 5) 5)) (not r_A55_2)))
+      (a!24 (or (not (= (select asg5 5) 5)) r_A55_3))
+      (a!25 (or (not (= (select asg5 6) 5)) (not r_A55_0)))
+      (a!26 (or (not (= (select asg5 6) 5)) r_A55_1))
+      (a!27 (or (not (= (select asg5 6) 5)) r_A55_2))
+      (a!28 (or (not (= (select asg5 6) 5)) (not r_A55_3)))
+      (a!29 (or (not (= (select asg5 7) 5)) (not r_A55_0)))
+      (a!30 (or (not (= (select asg5 7) 5)) r_A55_1))
+      (a!31 (or (not (= (select asg5 7) 5)) r_A55_2))
+      (a!32 (or (not (= (select asg5 7) 5)) r_A55_3))
+      (a!33 (or (not (= (select asg5 8) 5)) r_A55_0))
+      (a!34 (or (not (= (select asg5 8) 5)) (not r_A55_1)))
+      (a!35 (or (not (= (select asg5 8) 5)) (not r_A55_2)))
+      (a!36 (or (not (= (select asg5 8) 5)) (not r_A55_3)))
+      (a!37 (or (not (= (select asg5 9) 5)) r_A55_0))
+      (a!38 (or (not (= (select asg5 9) 5)) (not r_A55_1)))
+      (a!39 (or (not (= (select asg5 9) 5)) (not r_A55_2)))
+      (a!40 (or (not (= (select asg5 9) 5)) r_A55_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg5 0) 6)) (not r_A65_0)))
+      (a!2 (or (not (= (select asg5 0) 6)) (not r_A65_1)))
+      (a!3 (or (not (= (select asg5 0) 6)) (not r_A65_2)))
+      (a!4 (or (not (= (select asg5 0) 6)) (not r_A65_3)))
+      (a!5 (or (not (= (select asg5 1) 6)) (not r_A65_0)))
+      (a!6 (or (not (= (select asg5 1) 6)) (not r_A65_1)))
+      (a!7 (or (not (= (select asg5 1) 6)) (not r_A65_2)))
+      (a!8 (or (not (= (select asg5 1) 6)) r_A65_3))
+      (a!9 (or (not (= (select asg5 2) 6)) (not r_A65_0)))
+      (a!10 (or (not (= (select asg5 2) 6)) (not r_A65_1)))
+      (a!11 (or (not (= (select asg5 2) 6)) r_A65_2))
+      (a!12 (or (not (= (select asg5 2) 6)) (not r_A65_3)))
+      (a!13 (or (not (= (select asg5 3) 6)) (not r_A65_0)))
+      (a!14 (or (not (= (select asg5 3) 6)) (not r_A65_1)))
+      (a!15 (or (not (= (select asg5 3) 6)) r_A65_2))
+      (a!16 (or (not (= (select asg5 3) 6)) r_A65_3))
+      (a!17 (or (not (= (select asg5 4) 6)) (not r_A65_0)))
+      (a!18 (or (not (= (select asg5 4) 6)) r_A65_1))
+      (a!19 (or (not (= (select asg5 4) 6)) (not r_A65_2)))
+      (a!20 (or (not (= (select asg5 4) 6)) (not r_A65_3)))
+      (a!21 (or (not (= (select asg5 5) 6)) (not r_A65_0)))
+      (a!22 (or (not (= (select asg5 5) 6)) r_A65_1))
+      (a!23 (or (not (= (select asg5 5) 6)) (not r_A65_2)))
+      (a!24 (or (not (= (select asg5 5) 6)) r_A65_3))
+      (a!25 (or (not (= (select asg5 6) 6)) (not r_A65_0)))
+      (a!26 (or (not (= (select asg5 6) 6)) r_A65_1))
+      (a!27 (or (not (= (select asg5 6) 6)) r_A65_2))
+      (a!28 (or (not (= (select asg5 6) 6)) (not r_A65_3)))
+      (a!29 (or (not (= (select asg5 7) 6)) (not r_A65_0)))
+      (a!30 (or (not (= (select asg5 7) 6)) r_A65_1))
+      (a!31 (or (not (= (select asg5 7) 6)) r_A65_2))
+      (a!32 (or (not (= (select asg5 7) 6)) r_A65_3))
+      (a!33 (or (not (= (select asg5 8) 6)) r_A65_0))
+      (a!34 (or (not (= (select asg5 8) 6)) (not r_A65_1)))
+      (a!35 (or (not (= (select asg5 8) 6)) (not r_A65_2)))
+      (a!36 (or (not (= (select asg5 8) 6)) (not r_A65_3)))
+      (a!37 (or (not (= (select asg5 9) 6)) r_A65_0))
+      (a!38 (or (not (= (select asg5 9) 6)) (not r_A65_1)))
+      (a!39 (or (not (= (select asg5 9) 6)) (not r_A65_2)))
+      (a!40 (or (not (= (select asg5 9) 6)) r_A65_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg5 0) 7)) (not r_A75_0)))
+      (a!2 (or (not (= (select asg5 0) 7)) (not r_A75_1)))
+      (a!3 (or (not (= (select asg5 0) 7)) (not r_A75_2)))
+      (a!4 (or (not (= (select asg5 0) 7)) (not r_A75_3)))
+      (a!5 (or (not (= (select asg5 1) 7)) (not r_A75_0)))
+      (a!6 (or (not (= (select asg5 1) 7)) (not r_A75_1)))
+      (a!7 (or (not (= (select asg5 1) 7)) (not r_A75_2)))
+      (a!8 (or (not (= (select asg5 1) 7)) r_A75_3))
+      (a!9 (or (not (= (select asg5 2) 7)) (not r_A75_0)))
+      (a!10 (or (not (= (select asg5 2) 7)) (not r_A75_1)))
+      (a!11 (or (not (= (select asg5 2) 7)) r_A75_2))
+      (a!12 (or (not (= (select asg5 2) 7)) (not r_A75_3)))
+      (a!13 (or (not (= (select asg5 3) 7)) (not r_A75_0)))
+      (a!14 (or (not (= (select asg5 3) 7)) (not r_A75_1)))
+      (a!15 (or (not (= (select asg5 3) 7)) r_A75_2))
+      (a!16 (or (not (= (select asg5 3) 7)) r_A75_3))
+      (a!17 (or (not (= (select asg5 4) 7)) (not r_A75_0)))
+      (a!18 (or (not (= (select asg5 4) 7)) r_A75_1))
+      (a!19 (or (not (= (select asg5 4) 7)) (not r_A75_2)))
+      (a!20 (or (not (= (select asg5 4) 7)) (not r_A75_3)))
+      (a!21 (or (not (= (select asg5 5) 7)) (not r_A75_0)))
+      (a!22 (or (not (= (select asg5 5) 7)) r_A75_1))
+      (a!23 (or (not (= (select asg5 5) 7)) (not r_A75_2)))
+      (a!24 (or (not (= (select asg5 5) 7)) r_A75_3))
+      (a!25 (or (not (= (select asg5 6) 7)) (not r_A75_0)))
+      (a!26 (or (not (= (select asg5 6) 7)) r_A75_1))
+      (a!27 (or (not (= (select asg5 6) 7)) r_A75_2))
+      (a!28 (or (not (= (select asg5 6) 7)) (not r_A75_3)))
+      (a!29 (or (not (= (select asg5 7) 7)) (not r_A75_0)))
+      (a!30 (or (not (= (select asg5 7) 7)) r_A75_1))
+      (a!31 (or (not (= (select asg5 7) 7)) r_A75_2))
+      (a!32 (or (not (= (select asg5 7) 7)) r_A75_3))
+      (a!33 (or (not (= (select asg5 8) 7)) r_A75_0))
+      (a!34 (or (not (= (select asg5 8) 7)) (not r_A75_1)))
+      (a!35 (or (not (= (select asg5 8) 7)) (not r_A75_2)))
+      (a!36 (or (not (= (select asg5 8) 7)) (not r_A75_3)))
+      (a!37 (or (not (= (select asg5 9) 7)) r_A75_0))
+      (a!38 (or (not (= (select asg5 9) 7)) (not r_A75_1)))
+      (a!39 (or (not (= (select asg5 9) 7)) (not r_A75_2)))
+      (a!40 (or (not (= (select asg5 9) 7)) r_A75_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg5 0) 8)) (not r_A85_0)))
+      (a!2 (or (not (= (select asg5 0) 8)) (not r_A85_1)))
+      (a!3 (or (not (= (select asg5 0) 8)) (not r_A85_2)))
+      (a!4 (or (not (= (select asg5 0) 8)) (not r_A85_3)))
+      (a!5 (or (not (= (select asg5 1) 8)) (not r_A85_0)))
+      (a!6 (or (not (= (select asg5 1) 8)) (not r_A85_1)))
+      (a!7 (or (not (= (select asg5 1) 8)) (not r_A85_2)))
+      (a!8 (or (not (= (select asg5 1) 8)) r_A85_3))
+      (a!9 (or (not (= (select asg5 2) 8)) (not r_A85_0)))
+      (a!10 (or (not (= (select asg5 2) 8)) (not r_A85_1)))
+      (a!11 (or (not (= (select asg5 2) 8)) r_A85_2))
+      (a!12 (or (not (= (select asg5 2) 8)) (not r_A85_3)))
+      (a!13 (or (not (= (select asg5 3) 8)) (not r_A85_0)))
+      (a!14 (or (not (= (select asg5 3) 8)) (not r_A85_1)))
+      (a!15 (or (not (= (select asg5 3) 8)) r_A85_2))
+      (a!16 (or (not (= (select asg5 3) 8)) r_A85_3))
+      (a!17 (or (not (= (select asg5 4) 8)) (not r_A85_0)))
+      (a!18 (or (not (= (select asg5 4) 8)) r_A85_1))
+      (a!19 (or (not (= (select asg5 4) 8)) (not r_A85_2)))
+      (a!20 (or (not (= (select asg5 4) 8)) (not r_A85_3)))
+      (a!21 (or (not (= (select asg5 5) 8)) (not r_A85_0)))
+      (a!22 (or (not (= (select asg5 5) 8)) r_A85_1))
+      (a!23 (or (not (= (select asg5 5) 8)) (not r_A85_2)))
+      (a!24 (or (not (= (select asg5 5) 8)) r_A85_3))
+      (a!25 (or (not (= (select asg5 6) 8)) (not r_A85_0)))
+      (a!26 (or (not (= (select asg5 6) 8)) r_A85_1))
+      (a!27 (or (not (= (select asg5 6) 8)) r_A85_2))
+      (a!28 (or (not (= (select asg5 6) 8)) (not r_A85_3)))
+      (a!29 (or (not (= (select asg5 7) 8)) (not r_A85_0)))
+      (a!30 (or (not (= (select asg5 7) 8)) r_A85_1))
+      (a!31 (or (not (= (select asg5 7) 8)) r_A85_2))
+      (a!32 (or (not (= (select asg5 7) 8)) r_A85_3))
+      (a!33 (or (not (= (select asg5 8) 8)) r_A85_0))
+      (a!34 (or (not (= (select asg5 8) 8)) (not r_A85_1)))
+      (a!35 (or (not (= (select asg5 8) 8)) (not r_A85_2)))
+      (a!36 (or (not (= (select asg5 8) 8)) (not r_A85_3)))
+      (a!37 (or (not (= (select asg5 9) 8)) r_A85_0))
+      (a!38 (or (not (= (select asg5 9) 8)) (not r_A85_1)))
+      (a!39 (or (not (= (select asg5 9) 8)) (not r_A85_2)))
+      (a!40 (or (not (= (select asg5 9) 8)) r_A85_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (let ((a!1 (or (not (= (select asg5 0) 9)) (not r_A95_0)))
+      (a!2 (or (not (= (select asg5 0) 9)) (not r_A95_1)))
+      (a!3 (or (not (= (select asg5 0) 9)) (not r_A95_2)))
+      (a!4 (or (not (= (select asg5 0) 9)) (not r_A95_3)))
+      (a!5 (or (not (= (select asg5 1) 9)) (not r_A95_0)))
+      (a!6 (or (not (= (select asg5 1) 9)) (not r_A95_1)))
+      (a!7 (or (not (= (select asg5 1) 9)) (not r_A95_2)))
+      (a!8 (or (not (= (select asg5 1) 9)) r_A95_3))
+      (a!9 (or (not (= (select asg5 2) 9)) (not r_A95_0)))
+      (a!10 (or (not (= (select asg5 2) 9)) (not r_A95_1)))
+      (a!11 (or (not (= (select asg5 2) 9)) r_A95_2))
+      (a!12 (or (not (= (select asg5 2) 9)) (not r_A95_3)))
+      (a!13 (or (not (= (select asg5 3) 9)) (not r_A95_0)))
+      (a!14 (or (not (= (select asg5 3) 9)) (not r_A95_1)))
+      (a!15 (or (not (= (select asg5 3) 9)) r_A95_2))
+      (a!16 (or (not (= (select asg5 3) 9)) r_A95_3))
+      (a!17 (or (not (= (select asg5 4) 9)) (not r_A95_0)))
+      (a!18 (or (not (= (select asg5 4) 9)) r_A95_1))
+      (a!19 (or (not (= (select asg5 4) 9)) (not r_A95_2)))
+      (a!20 (or (not (= (select asg5 4) 9)) (not r_A95_3)))
+      (a!21 (or (not (= (select asg5 5) 9)) (not r_A95_0)))
+      (a!22 (or (not (= (select asg5 5) 9)) r_A95_1))
+      (a!23 (or (not (= (select asg5 5) 9)) (not r_A95_2)))
+      (a!24 (or (not (= (select asg5 5) 9)) r_A95_3))
+      (a!25 (or (not (= (select asg5 6) 9)) (not r_A95_0)))
+      (a!26 (or (not (= (select asg5 6) 9)) r_A95_1))
+      (a!27 (or (not (= (select asg5 6) 9)) r_A95_2))
+      (a!28 (or (not (= (select asg5 6) 9)) (not r_A95_3)))
+      (a!29 (or (not (= (select asg5 7) 9)) (not r_A95_0)))
+      (a!30 (or (not (= (select asg5 7) 9)) r_A95_1))
+      (a!31 (or (not (= (select asg5 7) 9)) r_A95_2))
+      (a!32 (or (not (= (select asg5 7) 9)) r_A95_3))
+      (a!33 (or (not (= (select asg5 8) 9)) r_A95_0))
+      (a!34 (or (not (= (select asg5 8) 9)) (not r_A95_1)))
+      (a!35 (or (not (= (select asg5 8) 9)) (not r_A95_2)))
+      (a!36 (or (not (= (select asg5 8) 9)) (not r_A95_3)))
+      (a!37 (or (not (= (select asg5 9) 9)) r_A95_0))
+      (a!38 (or (not (= (select asg5 9) 9)) (not r_A95_1)))
+      (a!39 (or (not (= (select asg5 9) 9)) (not r_A95_2)))
+      (a!40 (or (not (= (select asg5 9) 9)) r_A95_3)))
+  (and a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40)))
+(assert (or (= (select asg0 0) 9)
+    (= (select asg0 1) 9)
+    (= (select asg0 2) 9)
+    (= (select asg0 3) 9)
+    (= (select asg0 4) 9)
+    (= (select asg0 5) 9)
+    (= (select asg0 6) 9)
+    (= (select asg0 7) 9)
+    (= (select asg0 8) 9)
+    (= (select asg0 9) 9)
+    (= (+ (select asg0 0)
+          (select asg0 1)
+          (select asg0 2)
+          (select asg0 3)
+          (select asg0 4)
+          (select asg0 5)
+          (select asg0 6)
+          (select asg0 7)
+          (select asg0 8)
+          (select asg0 9))
+       (- 10))))
+(assert (or (= (select asg1 0) 9)
+    (= (select asg1 1) 9)
+    (= (select asg1 2) 9)
+    (= (select asg1 3) 9)
+    (= (select asg1 4) 9)
+    (= (select asg1 5) 9)
+    (= (select asg1 6) 9)
+    (= (select asg1 7) 9)
+    (= (select asg1 8) 9)
+    (= (select asg1 9) 9)
+    (= (+ (select asg1 0)
+          (select asg1 1)
+          (select asg1 2)
+          (select asg1 3)
+          (select asg1 4)
+          (select asg1 5)
+          (select asg1 6)
+          (select asg1 7)
+          (select asg1 8)
+          (select asg1 9))
+       (- 10))))
+(assert (or (= (select asg2 0) 9)
+    (= (select asg2 1) 9)
+    (= (select asg2 2) 9)
+    (= (select asg2 3) 9)
+    (= (select asg2 4) 9)
+    (= (select asg2 5) 9)
+    (= (select asg2 6) 9)
+    (= (select asg2 7) 9)
+    (= (select asg2 8) 9)
+    (= (select asg2 9) 9)
+    (= (+ (select asg2 0)
+          (select asg2 1)
+          (select asg2 2)
+          (select asg2 3)
+          (select asg2 4)
+          (select asg2 5)
+          (select asg2 6)
+          (select asg2 7)
+          (select asg2 8)
+          (select asg2 9))
+       (- 10))))
+(assert (or (= (select asg3 0) 9)
+    (= (select asg3 1) 9)
+    (= (select asg3 2) 9)
+    (= (select asg3 3) 9)
+    (= (select asg3 4) 9)
+    (= (select asg3 5) 9)
+    (= (select asg3 6) 9)
+    (= (select asg3 7) 9)
+    (= (select asg3 8) 9)
+    (= (select asg3 9) 9)
+    (= (+ (select asg3 0)
+          (select asg3 1)
+          (select asg3 2)
+          (select asg3 3)
+          (select asg3 4)
+          (select asg3 5)
+          (select asg3 6)
+          (select asg3 7)
+          (select asg3 8)
+          (select asg3 9))
+       (- 10))))
+(assert (or (= (select asg4 0) 9)
+    (= (select asg4 1) 9)
+    (= (select asg4 2) 9)
+    (= (select asg4 3) 9)
+    (= (select asg4 4) 9)
+    (= (select asg4 5) 9)
+    (= (select asg4 6) 9)
+    (= (select asg4 7) 9)
+    (= (select asg4 8) 9)
+    (= (select asg4 9) 9)
+    (= (+ (select asg4 0)
+          (select asg4 1)
+          (select asg4 2)
+          (select asg4 3)
+          (select asg4 4)
+          (select asg4 5)
+          (select asg4 6)
+          (select asg4 7)
+          (select asg4 8)
+          (select asg4 9))
+       (- 10))))
+(assert (or (= (select asg5 0) 9)
+    (= (select asg5 1) 9)
+    (= (select asg5 2) 9)
+    (= (select asg5 3) 9)
+    (= (select asg5 4) 9)
+    (= (select asg5 5) 9)
+    (= (select asg5 6) 9)
+    (= (select asg5 7) 9)
+    (= (select asg5 8) 9)
+    (= (select asg5 9) 9)
+    (= (+ (select asg5 0)
+          (select asg5 1)
+          (select asg5 2)
+          (select asg5 3)
+          (select asg5 4)
+          (select asg5 5)
+          (select asg5 6)
+          (select asg5 7)
+          (select asg5 8)
+          (select asg5 9))
+       (- 10))))
+(assert (let ((a!1 (or (not (= (select asg0 0) 0)) (not r_0_0)))
+      (a!2 (or (not (= (select asg0 0) 0)) (not r_0_1)))
+      (a!3 (or (not (= (select asg0 0) 0)) (not r_0_2)))
+      (a!4 (or (not (= (select asg0 0) 0)) (not r_0_3)))
+      (a!5 (or (not (= (select asg0 0) 0)) (not r_0_4)))
+      (a!6 (or (not (= (select asg0 0) 0)) (not r_0_5)))
+      (a!7 (or (not (= (select asg0 1) 0)) (not r_0_0)))
+      (a!8 (or (not (= (select asg0 1) 0)) (not r_0_1)))
+      (a!9 (or (not (= (select asg0 1) 0)) (not r_0_2)))
+      (a!10 (or (not (= (select asg0 1) 0)) (not r_0_3)))
+      (a!11 (or (not (= (select asg0 1) 0)) (not r_0_4)))
+      (a!12 (or (not (= (select asg0 1) 0)) r_0_5))
+      (a!13 (or (not (= (select asg0 2) 0)) (not r_0_0)))
+      (a!14 (or (not (= (select asg0 2) 0)) (not r_0_1)))
+      (a!15 (or (not (= (select asg0 2) 0)) (not r_0_2)))
+      (a!16 (or (not (= (select asg0 2) 0)) (not r_0_3)))
+      (a!17 (or (not (= (select asg0 2) 0)) r_0_4))
+      (a!18 (or (not (= (select asg0 2) 0)) (not r_0_5)))
+      (a!19 (or (not (= (select asg0 3) 0)) (not r_0_0)))
+      (a!20 (or (not (= (select asg0 3) 0)) (not r_0_1)))
+      (a!21 (or (not (= (select asg0 3) 0)) (not r_0_2)))
+      (a!22 (or (not (= (select asg0 3) 0)) (not r_0_3)))
+      (a!23 (or (not (= (select asg0 3) 0)) r_0_4))
+      (a!24 (or (not (= (select asg0 3) 0)) r_0_5))
+      (a!25 (or (not (= (select asg0 4) 0)) (not r_0_0)))
+      (a!26 (or (not (= (select asg0 4) 0)) (not r_0_1)))
+      (a!27 (or (not (= (select asg0 4) 0)) (not r_0_2)))
+      (a!28 (or (not (= (select asg0 4) 0)) r_0_3))
+      (a!29 (or (not (= (select asg0 4) 0)) (not r_0_4)))
+      (a!30 (or (not (= (select asg0 4) 0)) (not r_0_5)))
+      (a!31 (or (not (= (select asg0 5) 0)) (not r_0_0)))
+      (a!32 (or (not (= (select asg0 5) 0)) (not r_0_1)))
+      (a!33 (or (not (= (select asg0 5) 0)) (not r_0_2)))
+      (a!34 (or (not (= (select asg0 5) 0)) r_0_3))
+      (a!35 (or (not (= (select asg0 5) 0)) (not r_0_4)))
+      (a!36 (or (not (= (select asg0 5) 0)) r_0_5))
+      (a!37 (or (not (= (select asg0 6) 0)) (not r_0_0)))
+      (a!38 (or (not (= (select asg0 6) 0)) (not r_0_1)))
+      (a!39 (or (not (= (select asg0 6) 0)) (not r_0_2)))
+      (a!40 (or (not (= (select asg0 6) 0)) r_0_3))
+      (a!41 (or (not (= (select asg0 6) 0)) r_0_4))
+      (a!42 (or (not (= (select asg0 6) 0)) (not r_0_5)))
+      (a!43 (or (not (= (select asg0 7) 0)) (not r_0_0)))
+      (a!44 (or (not (= (select asg0 7) 0)) (not r_0_1)))
+      (a!45 (or (not (= (select asg0 7) 0)) (not r_0_2)))
+      (a!46 (or (not (= (select asg0 7) 0)) r_0_3))
+      (a!47 (or (not (= (select asg0 7) 0)) r_0_4))
+      (a!48 (or (not (= (select asg0 7) 0)) r_0_5))
+      (a!49 (or (not (= (select asg0 8) 0)) (not r_0_0)))
+      (a!50 (or (not (= (select asg0 8) 0)) (not r_0_1)))
+      (a!51 (or (not (= (select asg0 8) 0)) r_0_2))
+      (a!52 (or (not (= (select asg0 8) 0)) (not r_0_3)))
+      (a!53 (or (not (= (select asg0 8) 0)) (not r_0_4)))
+      (a!54 (or (not (= (select asg0 8) 0)) (not r_0_5)))
+      (a!55 (or (not (= (select asg0 9) 0)) (not r_0_0)))
+      (a!56 (or (not (= (select asg0 9) 0)) (not r_0_1)))
+      (a!57 (or (not (= (select asg0 9) 0)) r_0_2))
+      (a!58 (or (not (= (select asg0 9) 0)) (not r_0_3)))
+      (a!59 (or (not (= (select asg0 9) 0)) (not r_0_4)))
+      (a!60 (or (not (= (select asg0 9) 0)) r_0_5))
+      (a!61 (or (not (= (select asg1 0) 0)) (not r_0_0)))
+      (a!62 (or (not (= (select asg1 0) 0)) (not r_0_1)))
+      (a!63 (or (not (= (select asg1 0) 0)) r_0_2))
+      (a!64 (or (not (= (select asg1 0) 0)) (not r_0_3)))
+      (a!65 (or (not (= (select asg1 0) 0)) r_0_4))
+      (a!66 (or (not (= (select asg1 0) 0)) (not r_0_5)))
+      (a!67 (or (not (= (select asg1 1) 0)) (not r_0_0)))
+      (a!68 (or (not (= (select asg1 1) 0)) (not r_0_1)))
+      (a!69 (or (not (= (select asg1 1) 0)) r_0_2))
+      (a!70 (or (not (= (select asg1 1) 0)) (not r_0_3)))
+      (a!71 (or (not (= (select asg1 1) 0)) r_0_4))
+      (a!72 (or (not (= (select asg1 1) 0)) r_0_5))
+      (a!73 (or (not (= (select asg1 2) 0)) (not r_0_0)))
+      (a!74 (or (not (= (select asg1 2) 0)) (not r_0_1)))
+      (a!75 (or (not (= (select asg1 2) 0)) r_0_2))
+      (a!76 (or (not (= (select asg1 2) 0)) r_0_3))
+      (a!77 (or (not (= (select asg1 2) 0)) (not r_0_4)))
+      (a!78 (or (not (= (select asg1 2) 0)) (not r_0_5)))
+      (a!79 (or (not (= (select asg1 3) 0)) (not r_0_0)))
+      (a!80 (or (not (= (select asg1 3) 0)) (not r_0_1)))
+      (a!81 (or (not (= (select asg1 3) 0)) r_0_2))
+      (a!82 (or (not (= (select asg1 3) 0)) r_0_3))
+      (a!83 (or (not (= (select asg1 3) 0)) (not r_0_4)))
+      (a!84 (or (not (= (select asg1 3) 0)) r_0_5))
+      (a!85 (or (not (= (select asg1 4) 0)) (not r_0_0)))
+      (a!86 (or (not (= (select asg1 4) 0)) (not r_0_1)))
+      (a!87 (or (not (= (select asg1 4) 0)) r_0_2))
+      (a!88 (or (not (= (select asg1 4) 0)) r_0_3))
+      (a!89 (or (not (= (select asg1 4) 0)) r_0_4))
+      (a!90 (or (not (= (select asg1 4) 0)) (not r_0_5)))
+      (a!91 (or (not (= (select asg1 5) 0)) (not r_0_0)))
+      (a!92 (or (not (= (select asg1 5) 0)) (not r_0_1)))
+      (a!93 (or (not (= (select asg1 5) 0)) r_0_2))
+      (a!94 (or (not (= (select asg1 5) 0)) r_0_3))
+      (a!95 (or (not (= (select asg1 5) 0)) r_0_4))
+      (a!96 (or (not (= (select asg1 5) 0)) r_0_5))
+      (a!97 (or (not (= (select asg1 6) 0)) (not r_0_0)))
+      (a!98 (or (not (= (select asg1 6) 0)) r_0_1))
+      (a!99 (or (not (= (select asg1 6) 0)) (not r_0_2)))
+      (a!100 (or (not (= (select asg1 6) 0)) (not r_0_3)))
+      (a!101 (or (not (= (select asg1 6) 0)) (not r_0_4)))
+      (a!102 (or (not (= (select asg1 6) 0)) (not r_0_5)))
+      (a!103 (or (not (= (select asg1 7) 0)) (not r_0_0)))
+      (a!104 (or (not (= (select asg1 7) 0)) r_0_1))
+      (a!105 (or (not (= (select asg1 7) 0)) (not r_0_2)))
+      (a!106 (or (not (= (select asg1 7) 0)) (not r_0_3)))
+      (a!107 (or (not (= (select asg1 7) 0)) (not r_0_4)))
+      (a!108 (or (not (= (select asg1 7) 0)) r_0_5))
+      (a!109 (or (not (= (select asg1 8) 0)) (not r_0_0)))
+      (a!110 (or (not (= (select asg1 8) 0)) r_0_1))
+      (a!111 (or (not (= (select asg1 8) 0)) (not r_0_2)))
+      (a!112 (or (not (= (select asg1 8) 0)) (not r_0_3)))
+      (a!113 (or (not (= (select asg1 8) 0)) r_0_4))
+      (a!114 (or (not (= (select asg1 8) 0)) (not r_0_5)))
+      (a!115 (or (not (= (select asg1 9) 0)) (not r_0_0)))
+      (a!116 (or (not (= (select asg1 9) 0)) r_0_1))
+      (a!117 (or (not (= (select asg1 9) 0)) (not r_0_2)))
+      (a!118 (or (not (= (select asg1 9) 0)) (not r_0_3)))
+      (a!119 (or (not (= (select asg1 9) 0)) r_0_4))
+      (a!120 (or (not (= (select asg1 9) 0)) r_0_5))
+      (a!121 (or (not (= (select asg2 0) 0)) (not r_0_0)))
+      (a!122 (or (not (= (select asg2 0) 0)) r_0_1))
+      (a!123 (or (not (= (select asg2 0) 0)) (not r_0_2)))
+      (a!124 (or (not (= (select asg2 0) 0)) r_0_3))
+      (a!125 (or (not (= (select asg2 0) 0)) (not r_0_4)))
+      (a!126 (or (not (= (select asg2 0) 0)) (not r_0_5)))
+      (a!127 (or (not (= (select asg2 1) 0)) (not r_0_0)))
+      (a!128 (or (not (= (select asg2 1) 0)) r_0_1))
+      (a!129 (or (not (= (select asg2 1) 0)) (not r_0_2)))
+      (a!130 (or (not (= (select asg2 1) 0)) r_0_3))
+      (a!131 (or (not (= (select asg2 1) 0)) (not r_0_4)))
+      (a!132 (or (not (= (select asg2 1) 0)) r_0_5))
+      (a!133 (or (not (= (select asg2 2) 0)) (not r_0_0)))
+      (a!134 (or (not (= (select asg2 2) 0)) r_0_1))
+      (a!135 (or (not (= (select asg2 2) 0)) (not r_0_2)))
+      (a!136 (or (not (= (select asg2 2) 0)) r_0_3))
+      (a!137 (or (not (= (select asg2 2) 0)) r_0_4))
+      (a!138 (or (not (= (select asg2 2) 0)) (not r_0_5)))
+      (a!139 (or (not (= (select asg2 3) 0)) (not r_0_0)))
+      (a!140 (or (not (= (select asg2 3) 0)) r_0_1))
+      (a!141 (or (not (= (select asg2 3) 0)) (not r_0_2)))
+      (a!142 (or (not (= (select asg2 3) 0)) r_0_3))
+      (a!143 (or (not (= (select asg2 3) 0)) r_0_4))
+      (a!144 (or (not (= (select asg2 3) 0)) r_0_5))
+      (a!145 (or (not (= (select asg2 4) 0)) (not r_0_0)))
+      (a!146 (or (not (= (select asg2 4) 0)) r_0_1))
+      (a!147 (or (not (= (select asg2 4) 0)) r_0_2))
+      (a!148 (or (not (= (select asg2 4) 0)) (not r_0_3)))
+      (a!149 (or (not (= (select asg2 4) 0)) (not r_0_4)))
+      (a!150 (or (not (= (select asg2 4) 0)) (not r_0_5)))
+      (a!151 (or (not (= (select asg2 5) 0)) (not r_0_0)))
+      (a!152 (or (not (= (select asg2 5) 0)) r_0_1))
+      (a!153 (or (not (= (select asg2 5) 0)) r_0_2))
+      (a!154 (or (not (= (select asg2 5) 0)) (not r_0_3)))
+      (a!155 (or (not (= (select asg2 5) 0)) (not r_0_4)))
+      (a!156 (or (not (= (select asg2 5) 0)) r_0_5))
+      (a!157 (or (not (= (select asg2 6) 0)) (not r_0_0)))
+      (a!158 (or (not (= (select asg2 6) 0)) r_0_1))
+      (a!159 (or (not (= (select asg2 6) 0)) r_0_2))
+      (a!160 (or (not (= (select asg2 6) 0)) (not r_0_3)))
+      (a!161 (or (not (= (select asg2 6) 0)) r_0_4))
+      (a!162 (or (not (= (select asg2 6) 0)) (not r_0_5)))
+      (a!163 (or (not (= (select asg2 7) 0)) (not r_0_0)))
+      (a!164 (or (not (= (select asg2 7) 0)) r_0_1))
+      (a!165 (or (not (= (select asg2 7) 0)) r_0_2))
+      (a!166 (or (not (= (select asg2 7) 0)) (not r_0_3)))
+      (a!167 (or (not (= (select asg2 7) 0)) r_0_4))
+      (a!168 (or (not (= (select asg2 7) 0)) r_0_5))
+      (a!169 (or (not (= (select asg2 8) 0)) (not r_0_0)))
+      (a!170 (or (not (= (select asg2 8) 0)) r_0_1))
+      (a!171 (or (not (= (select asg2 8) 0)) r_0_2))
+      (a!172 (or (not (= (select asg2 8) 0)) r_0_3))
+      (a!173 (or (not (= (select asg2 8) 0)) (not r_0_4)))
+      (a!174 (or (not (= (select asg2 8) 0)) (not r_0_5)))
+      (a!175 (or (not (= (select asg2 9) 0)) (not r_0_0)))
+      (a!176 (or (not (= (select asg2 9) 0)) r_0_1))
+      (a!177 (or (not (= (select asg2 9) 0)) r_0_2))
+      (a!178 (or (not (= (select asg2 9) 0)) r_0_3))
+      (a!179 (or (not (= (select asg2 9) 0)) (not r_0_4)))
+      (a!180 (or (not (= (select asg2 9) 0)) r_0_5))
+      (a!181 (or (not (= (select asg3 0) 0)) (not r_0_0)))
+      (a!182 (or (not (= (select asg3 0) 0)) r_0_1))
+      (a!183 (or (not (= (select asg3 0) 0)) r_0_2))
+      (a!184 (or (not (= (select asg3 0) 0)) r_0_3))
+      (a!185 (or (not (= (select asg3 0) 0)) r_0_4))
+      (a!186 (or (not (= (select asg3 0) 0)) (not r_0_5)))
+      (a!187 (or (not (= (select asg3 1) 0)) (not r_0_0)))
+      (a!188 (or (not (= (select asg3 1) 0)) r_0_1))
+      (a!189 (or (not (= (select asg3 1) 0)) r_0_2))
+      (a!190 (or (not (= (select asg3 1) 0)) r_0_3))
+      (a!191 (or (not (= (select asg3 1) 0)) r_0_4))
+      (a!192 (or (not (= (select asg3 1) 0)) r_0_5))
+      (a!193 (or (not (= (select asg3 2) 0)) r_0_0))
+      (a!194 (or (not (= (select asg3 2) 0)) (not r_0_1)))
+      (a!195 (or (not (= (select asg3 2) 0)) (not r_0_2)))
+      (a!196 (or (not (= (select asg3 2) 0)) (not r_0_3)))
+      (a!197 (or (not (= (select asg3 2) 0)) (not r_0_4)))
+      (a!198 (or (not (= (select asg3 2) 0)) (not r_0_5)))
+      (a!199 (or (not (= (select asg3 3) 0)) r_0_0))
+      (a!200 (or (not (= (select asg3 3) 0)) (not r_0_1)))
+      (a!201 (or (not (= (select asg3 3) 0)) (not r_0_2)))
+      (a!202 (or (not (= (select asg3 3) 0)) (not r_0_3)))
+      (a!203 (or (not (= (select asg3 3) 0)) (not r_0_4)))
+      (a!204 (or (not (= (select asg3 3) 0)) r_0_5))
+      (a!205 (or (not (= (select asg3 4) 0)) r_0_0))
+      (a!206 (or (not (= (select asg3 4) 0)) (not r_0_1)))
+      (a!207 (or (not (= (select asg3 4) 0)) (not r_0_2)))
+      (a!208 (or (not (= (select asg3 4) 0)) (not r_0_3)))
+      (a!209 (or (not (= (select asg3 4) 0)) r_0_4))
+      (a!210 (or (not (= (select asg3 4) 0)) (not r_0_5)))
+      (a!211 (or (not (= (select asg3 5) 0)) r_0_0))
+      (a!212 (or (not (= (select asg3 5) 0)) (not r_0_1)))
+      (a!213 (or (not (= (select asg3 5) 0)) (not r_0_2)))
+      (a!214 (or (not (= (select asg3 5) 0)) (not r_0_3)))
+      (a!215 (or (not (= (select asg3 5) 0)) r_0_4))
+      (a!216 (or (not (= (select asg3 5) 0)) r_0_5))
+      (a!217 (or (not (= (select asg3 6) 0)) r_0_0))
+      (a!218 (or (not (= (select asg3 6) 0)) (not r_0_1)))
+      (a!219 (or (not (= (select asg3 6) 0)) (not r_0_2)))
+      (a!220 (or (not (= (select asg3 6) 0)) r_0_3))
+      (a!221 (or (not (= (select asg3 6) 0)) (not r_0_4)))
+      (a!222 (or (not (= (select asg3 6) 0)) (not r_0_5)))
+      (a!223 (or (not (= (select asg3 7) 0)) r_0_0))
+      (a!224 (or (not (= (select asg3 7) 0)) (not r_0_1)))
+      (a!225 (or (not (= (select asg3 7) 0)) (not r_0_2)))
+      (a!226 (or (not (= (select asg3 7) 0)) r_0_3))
+      (a!227 (or (not (= (select asg3 7) 0)) (not r_0_4)))
+      (a!228 (or (not (= (select asg3 7) 0)) r_0_5))
+      (a!229 (or (not (= (select asg3 8) 0)) r_0_0))
+      (a!230 (or (not (= (select asg3 8) 0)) (not r_0_1)))
+      (a!231 (or (not (= (select asg3 8) 0)) (not r_0_2)))
+      (a!232 (or (not (= (select asg3 8) 0)) r_0_3))
+      (a!233 (or (not (= (select asg3 8) 0)) r_0_4))
+      (a!234 (or (not (= (select asg3 8) 0)) (not r_0_5)))
+      (a!235 (or (not (= (select asg3 9) 0)) r_0_0))
+      (a!236 (or (not (= (select asg3 9) 0)) (not r_0_1)))
+      (a!237 (or (not (= (select asg3 9) 0)) (not r_0_2)))
+      (a!238 (or (not (= (select asg3 9) 0)) r_0_3))
+      (a!239 (or (not (= (select asg3 9) 0)) r_0_4))
+      (a!240 (or (not (= (select asg3 9) 0)) r_0_5))
+      (a!241 (or (not (= (select asg4 0) 0)) r_0_0))
+      (a!242 (or (not (= (select asg4 0) 0)) (not r_0_1)))
+      (a!243 (or (not (= (select asg4 0) 0)) r_0_2))
+      (a!244 (or (not (= (select asg4 0) 0)) (not r_0_3)))
+      (a!245 (or (not (= (select asg4 0) 0)) (not r_0_4)))
+      (a!246 (or (not (= (select asg4 0) 0)) (not r_0_5)))
+      (a!247 (or (not (= (select asg4 1) 0)) r_0_0))
+      (a!248 (or (not (= (select asg4 1) 0)) (not r_0_1)))
+      (a!249 (or (not (= (select asg4 1) 0)) r_0_2))
+      (a!250 (or (not (= (select asg4 1) 0)) (not r_0_3)))
+      (a!251 (or (not (= (select asg4 1) 0)) (not r_0_4)))
+      (a!252 (or (not (= (select asg4 1) 0)) r_0_5))
+      (a!253 (or (not (= (select asg4 2) 0)) r_0_0))
+      (a!254 (or (not (= (select asg4 2) 0)) (not r_0_1)))
+      (a!255 (or (not (= (select asg4 2) 0)) r_0_2))
+      (a!256 (or (not (= (select asg4 2) 0)) (not r_0_3)))
+      (a!257 (or (not (= (select asg4 2) 0)) r_0_4))
+      (a!258 (or (not (= (select asg4 2) 0)) (not r_0_5)))
+      (a!259 (or (not (= (select asg4 3) 0)) r_0_0))
+      (a!260 (or (not (= (select asg4 3) 0)) (not r_0_1)))
+      (a!261 (or (not (= (select asg4 3) 0)) r_0_2))
+      (a!262 (or (not (= (select asg4 3) 0)) (not r_0_3)))
+      (a!263 (or (not (= (select asg4 3) 0)) r_0_4))
+      (a!264 (or (not (= (select asg4 3) 0)) r_0_5))
+      (a!265 (or (not (= (select asg4 4) 0)) r_0_0))
+      (a!266 (or (not (= (select asg4 4) 0)) (not r_0_1)))
+      (a!267 (or (not (= (select asg4 4) 0)) r_0_2))
+      (a!268 (or (not (= (select asg4 4) 0)) r_0_3))
+      (a!269 (or (not (= (select asg4 4) 0)) (not r_0_4)))
+      (a!270 (or (not (= (select asg4 4) 0)) (not r_0_5)))
+      (a!271 (or (not (= (select asg4 5) 0)) r_0_0))
+      (a!272 (or (not (= (select asg4 5) 0)) (not r_0_1)))
+      (a!273 (or (not (= (select asg4 5) 0)) r_0_2))
+      (a!274 (or (not (= (select asg4 5) 0)) r_0_3))
+      (a!275 (or (not (= (select asg4 5) 0)) (not r_0_4)))
+      (a!276 (or (not (= (select asg4 5) 0)) r_0_5))
+      (a!277 (or (not (= (select asg4 6) 0)) r_0_0))
+      (a!278 (or (not (= (select asg4 6) 0)) (not r_0_1)))
+      (a!279 (or (not (= (select asg4 6) 0)) r_0_2))
+      (a!280 (or (not (= (select asg4 6) 0)) r_0_3))
+      (a!281 (or (not (= (select asg4 6) 0)) r_0_4))
+      (a!282 (or (not (= (select asg4 6) 0)) (not r_0_5)))
+      (a!283 (or (not (= (select asg4 7) 0)) r_0_0))
+      (a!284 (or (not (= (select asg4 7) 0)) (not r_0_1)))
+      (a!285 (or (not (= (select asg4 7) 0)) r_0_2))
+      (a!286 (or (not (= (select asg4 7) 0)) r_0_3))
+      (a!287 (or (not (= (select asg4 7) 0)) r_0_4))
+      (a!288 (or (not (= (select asg4 7) 0)) r_0_5))
+      (a!289 (or (not (= (select asg4 8) 0)) r_0_0))
+      (a!290 (or (not (= (select asg4 8) 0)) r_0_1))
+      (a!291 (or (not (= (select asg4 8) 0)) (not r_0_2)))
+      (a!292 (or (not (= (select asg4 8) 0)) (not r_0_3)))
+      (a!293 (or (not (= (select asg4 8) 0)) (not r_0_4)))
+      (a!294 (or (not (= (select asg4 8) 0)) (not r_0_5)))
+      (a!295 (or (not (= (select asg4 9) 0)) r_0_0))
+      (a!296 (or (not (= (select asg4 9) 0)) r_0_1))
+      (a!297 (or (not (= (select asg4 9) 0)) (not r_0_2)))
+      (a!298 (or (not (= (select asg4 9) 0)) (not r_0_3)))
+      (a!299 (or (not (= (select asg4 9) 0)) (not r_0_4)))
+      (a!300 (or (not (= (select asg4 9) 0)) r_0_5))
+      (a!301 (or (not (= (select asg5 0) 0)) r_0_0))
+      (a!302 (or (not (= (select asg5 0) 0)) r_0_1))
+      (a!303 (or (not (= (select asg5 0) 0)) (not r_0_2)))
+      (a!304 (or (not (= (select asg5 0) 0)) (not r_0_3)))
+      (a!305 (or (not (= (select asg5 0) 0)) r_0_4))
+      (a!306 (or (not (= (select asg5 0) 0)) (not r_0_5)))
+      (a!307 (or (not (= (select asg5 1) 0)) r_0_0))
+      (a!308 (or (not (= (select asg5 1) 0)) r_0_1))
+      (a!309 (or (not (= (select asg5 1) 0)) (not r_0_2)))
+      (a!310 (or (not (= (select asg5 1) 0)) (not r_0_3)))
+      (a!311 (or (not (= (select asg5 1) 0)) r_0_4))
+      (a!312 (or (not (= (select asg5 1) 0)) r_0_5))
+      (a!313 (or (not (= (select asg5 2) 0)) r_0_0))
+      (a!314 (or (not (= (select asg5 2) 0)) r_0_1))
+      (a!315 (or (not (= (select asg5 2) 0)) (not r_0_2)))
+      (a!316 (or (not (= (select asg5 2) 0)) r_0_3))
+      (a!317 (or (not (= (select asg5 2) 0)) (not r_0_4)))
+      (a!318 (or (not (= (select asg5 2) 0)) (not r_0_5)))
+      (a!319 (or (not (= (select asg5 3) 0)) r_0_0))
+      (a!320 (or (not (= (select asg5 3) 0)) r_0_1))
+      (a!321 (or (not (= (select asg5 3) 0)) (not r_0_2)))
+      (a!322 (or (not (= (select asg5 3) 0)) r_0_3))
+      (a!323 (or (not (= (select asg5 3) 0)) (not r_0_4)))
+      (a!324 (or (not (= (select asg5 3) 0)) r_0_5))
+      (a!325 (or (not (= (select asg5 4) 0)) r_0_0))
+      (a!326 (or (not (= (select asg5 4) 0)) r_0_1))
+      (a!327 (or (not (= (select asg5 4) 0)) (not r_0_2)))
+      (a!328 (or (not (= (select asg5 4) 0)) r_0_3))
+      (a!329 (or (not (= (select asg5 4) 0)) r_0_4))
+      (a!330 (or (not (= (select asg5 4) 0)) (not r_0_5)))
+      (a!331 (or (not (= (select asg5 5) 0)) r_0_0))
+      (a!332 (or (not (= (select asg5 5) 0)) r_0_1))
+      (a!333 (or (not (= (select asg5 5) 0)) (not r_0_2)))
+      (a!334 (or (not (= (select asg5 5) 0)) r_0_3))
+      (a!335 (or (not (= (select asg5 5) 0)) r_0_4))
+      (a!336 (or (not (= (select asg5 5) 0)) r_0_5))
+      (a!337 (or (not (= (select asg5 6) 0)) r_0_0))
+      (a!338 (or (not (= (select asg5 6) 0)) r_0_1))
+      (a!339 (or (not (= (select asg5 6) 0)) r_0_2))
+      (a!340 (or (not (= (select asg5 6) 0)) (not r_0_3)))
+      (a!341 (or (not (= (select asg5 6) 0)) (not r_0_4)))
+      (a!342 (or (not (= (select asg5 6) 0)) (not r_0_5)))
+      (a!343 (or (not (= (select asg5 7) 0)) r_0_0))
+      (a!344 (or (not (= (select asg5 7) 0)) r_0_1))
+      (a!345 (or (not (= (select asg5 7) 0)) r_0_2))
+      (a!346 (or (not (= (select asg5 7) 0)) (not r_0_3)))
+      (a!347 (or (not (= (select asg5 7) 0)) (not r_0_4)))
+      (a!348 (or (not (= (select asg5 7) 0)) r_0_5))
+      (a!349 (or (not (= (select asg5 8) 0)) r_0_0))
+      (a!350 (or (not (= (select asg5 8) 0)) r_0_1))
+      (a!351 (or (not (= (select asg5 8) 0)) r_0_2))
+      (a!352 (or (not (= (select asg5 8) 0)) (not r_0_3)))
+      (a!353 (or (not (= (select asg5 8) 0)) r_0_4))
+      (a!354 (or (not (= (select asg5 8) 0)) (not r_0_5)))
+      (a!355 (or (not (= (select asg5 9) 0)) r_0_0))
+      (a!356 (or (not (= (select asg5 9) 0)) r_0_1))
+      (a!357 (or (not (= (select asg5 9) 0)) r_0_2))
+      (a!358 (or (not (= (select asg5 9) 0)) (not r_0_3)))
+      (a!359 (or (not (= (select asg5 9) 0)) r_0_4))
+      (a!360 (or (not (= (select asg5 9) 0)) r_0_5)))
+  (and (or (= (select asg0 0) 0)
+           (= (select asg0 1) 0)
+           (= (select asg0 2) 0)
+           (= (select asg0 3) 0)
+           (= (select asg0 4) 0)
+           (= (select asg0 5) 0)
+           (= (select asg0 6) 0)
+           (= (select asg0 7) 0)
+           (= (select asg0 8) 0)
+           (= (select asg0 9) 0)
+           (= (select asg1 0) 0)
+           (= (select asg1 1) 0)
+           (= (select asg1 2) 0)
+           (= (select asg1 3) 0)
+           (= (select asg1 4) 0)
+           (= (select asg1 5) 0)
+           (= (select asg1 6) 0)
+           (= (select asg1 7) 0)
+           (= (select asg1 8) 0)
+           (= (select asg1 9) 0)
+           (= (select asg2 0) 0)
+           (= (select asg2 1) 0)
+           (= (select asg2 2) 0)
+           (= (select asg2 3) 0)
+           (= (select asg2 4) 0)
+           (= (select asg2 5) 0)
+           (= (select asg2 6) 0)
+           (= (select asg2 7) 0)
+           (= (select asg2 8) 0)
+           (= (select asg2 9) 0)
+           (= (select asg3 0) 0)
+           (= (select asg3 1) 0)
+           (= (select asg3 2) 0)
+           (= (select asg3 3) 0)
+           (= (select asg3 4) 0)
+           (= (select asg3 5) 0)
+           (= (select asg3 6) 0)
+           (= (select asg3 7) 0)
+           (= (select asg3 8) 0)
+           (= (select asg3 9) 0)
+           (= (select asg4 0) 0)
+           (= (select asg4 1) 0)
+           (= (select asg4 2) 0)
+           (= (select asg4 3) 0)
+           (= (select asg4 4) 0)
+           (= (select asg4 5) 0)
+           (= (select asg4 6) 0)
+           (= (select asg4 7) 0)
+           (= (select asg4 8) 0)
+           (= (select asg4 9) 0)
+           (= (select asg5 0) 0)
+           (= (select asg5 1) 0)
+           (= (select asg5 2) 0)
+           (= (select asg5 3) 0)
+           (= (select asg5 4) 0)
+           (= (select asg5 5) 0)
+           (= (select asg5 6) 0)
+           (= (select asg5 7) 0)
+           (= (select asg5 8) 0)
+           (= (select asg5 9) 0))
+       a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40
+       a!41
+       a!42
+       a!43
+       a!44
+       a!45
+       a!46
+       a!47
+       a!48
+       a!49
+       a!50
+       a!51
+       a!52
+       a!53
+       a!54
+       a!55
+       a!56
+       a!57
+       a!58
+       a!59
+       a!60
+       a!61
+       a!62
+       a!63
+       a!64
+       a!65
+       a!66
+       a!67
+       a!68
+       a!69
+       a!70
+       a!71
+       a!72
+       a!73
+       a!74
+       a!75
+       a!76
+       a!77
+       a!78
+       a!79
+       a!80
+       a!81
+       a!82
+       a!83
+       a!84
+       a!85
+       a!86
+       a!87
+       a!88
+       a!89
+       a!90
+       a!91
+       a!92
+       a!93
+       a!94
+       a!95
+       a!96
+       a!97
+       a!98
+       a!99
+       a!100
+       a!101
+       a!102
+       a!103
+       a!104
+       a!105
+       a!106
+       a!107
+       a!108
+       a!109
+       a!110
+       a!111
+       a!112
+       a!113
+       a!114
+       a!115
+       a!116
+       a!117
+       a!118
+       a!119
+       a!120
+       a!121
+       a!122
+       a!123
+       a!124
+       a!125
+       a!126
+       a!127
+       a!128
+       a!129
+       a!130
+       a!131
+       a!132
+       a!133
+       a!134
+       a!135
+       a!136
+       a!137
+       a!138
+       a!139
+       a!140
+       a!141
+       a!142
+       a!143
+       a!144
+       a!145
+       a!146
+       a!147
+       a!148
+       a!149
+       a!150
+       a!151
+       a!152
+       a!153
+       a!154
+       a!155
+       a!156
+       a!157
+       a!158
+       a!159
+       a!160
+       a!161
+       a!162
+       a!163
+       a!164
+       a!165
+       a!166
+       a!167
+       a!168
+       a!169
+       a!170
+       a!171
+       a!172
+       a!173
+       a!174
+       a!175
+       a!176
+       a!177
+       a!178
+       a!179
+       a!180
+       a!181
+       a!182
+       a!183
+       a!184
+       a!185
+       a!186
+       a!187
+       a!188
+       a!189
+       a!190
+       a!191
+       a!192
+       a!193
+       a!194
+       a!195
+       a!196
+       a!197
+       a!198
+       a!199
+       a!200
+       a!201
+       a!202
+       a!203
+       a!204
+       a!205
+       a!206
+       a!207
+       a!208
+       a!209
+       a!210
+       a!211
+       a!212
+       a!213
+       a!214
+       a!215
+       a!216
+       a!217
+       a!218
+       a!219
+       a!220
+       a!221
+       a!222
+       a!223
+       a!224
+       a!225
+       a!226
+       a!227
+       a!228
+       a!229
+       a!230
+       a!231
+       a!232
+       a!233
+       a!234
+       a!235
+       a!236
+       a!237
+       a!238
+       a!239
+       a!240
+       a!241
+       a!242
+       a!243
+       a!244
+       a!245
+       a!246
+       a!247
+       a!248
+       a!249
+       a!250
+       a!251
+       a!252
+       a!253
+       a!254
+       a!255
+       a!256
+       a!257
+       a!258
+       a!259
+       a!260
+       a!261
+       a!262
+       a!263
+       a!264
+       a!265
+       a!266
+       a!267
+       a!268
+       a!269
+       a!270
+       a!271
+       a!272
+       a!273
+       a!274
+       a!275
+       a!276
+       a!277
+       a!278
+       a!279
+       a!280
+       a!281
+       a!282
+       a!283
+       a!284
+       a!285
+       a!286
+       a!287
+       a!288
+       a!289
+       a!290
+       a!291
+       a!292
+       a!293
+       a!294
+       a!295
+       a!296
+       a!297
+       a!298
+       a!299
+       a!300
+       a!301
+       a!302
+       a!303
+       a!304
+       a!305
+       a!306
+       a!307
+       a!308
+       a!309
+       a!310
+       a!311
+       a!312
+       a!313
+       a!314
+       a!315
+       a!316
+       a!317
+       a!318
+       a!319
+       a!320
+       a!321
+       a!322
+       a!323
+       a!324
+       a!325
+       a!326
+       a!327
+       a!328
+       a!329
+       a!330
+       a!331
+       a!332
+       a!333
+       a!334
+       a!335
+       a!336
+       a!337
+       a!338
+       a!339
+       a!340
+       a!341
+       a!342
+       a!343
+       a!344
+       a!345
+       a!346
+       a!347
+       a!348
+       a!349
+       a!350
+       a!351
+       a!352
+       a!353
+       a!354
+       a!355
+       a!356
+       a!357
+       a!358
+       a!359
+       a!360)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 1)) (not r_1_0)))
+      (a!2 (or (not (= (select asg0 0) 1)) (not r_1_1)))
+      (a!3 (or (not (= (select asg0 0) 1)) (not r_1_2)))
+      (a!4 (or (not (= (select asg0 0) 1)) (not r_1_3)))
+      (a!5 (or (not (= (select asg0 0) 1)) (not r_1_4)))
+      (a!6 (or (not (= (select asg0 0) 1)) (not r_1_5)))
+      (a!7 (or (not (= (select asg0 1) 1)) (not r_1_0)))
+      (a!8 (or (not (= (select asg0 1) 1)) (not r_1_1)))
+      (a!9 (or (not (= (select asg0 1) 1)) (not r_1_2)))
+      (a!10 (or (not (= (select asg0 1) 1)) (not r_1_3)))
+      (a!11 (or (not (= (select asg0 1) 1)) (not r_1_4)))
+      (a!12 (or (not (= (select asg0 1) 1)) r_1_5))
+      (a!13 (or (not (= (select asg0 2) 1)) (not r_1_0)))
+      (a!14 (or (not (= (select asg0 2) 1)) (not r_1_1)))
+      (a!15 (or (not (= (select asg0 2) 1)) (not r_1_2)))
+      (a!16 (or (not (= (select asg0 2) 1)) (not r_1_3)))
+      (a!17 (or (not (= (select asg0 2) 1)) r_1_4))
+      (a!18 (or (not (= (select asg0 2) 1)) (not r_1_5)))
+      (a!19 (or (not (= (select asg0 3) 1)) (not r_1_0)))
+      (a!20 (or (not (= (select asg0 3) 1)) (not r_1_1)))
+      (a!21 (or (not (= (select asg0 3) 1)) (not r_1_2)))
+      (a!22 (or (not (= (select asg0 3) 1)) (not r_1_3)))
+      (a!23 (or (not (= (select asg0 3) 1)) r_1_4))
+      (a!24 (or (not (= (select asg0 3) 1)) r_1_5))
+      (a!25 (or (not (= (select asg0 4) 1)) (not r_1_0)))
+      (a!26 (or (not (= (select asg0 4) 1)) (not r_1_1)))
+      (a!27 (or (not (= (select asg0 4) 1)) (not r_1_2)))
+      (a!28 (or (not (= (select asg0 4) 1)) r_1_3))
+      (a!29 (or (not (= (select asg0 4) 1)) (not r_1_4)))
+      (a!30 (or (not (= (select asg0 4) 1)) (not r_1_5)))
+      (a!31 (or (not (= (select asg0 5) 1)) (not r_1_0)))
+      (a!32 (or (not (= (select asg0 5) 1)) (not r_1_1)))
+      (a!33 (or (not (= (select asg0 5) 1)) (not r_1_2)))
+      (a!34 (or (not (= (select asg0 5) 1)) r_1_3))
+      (a!35 (or (not (= (select asg0 5) 1)) (not r_1_4)))
+      (a!36 (or (not (= (select asg0 5) 1)) r_1_5))
+      (a!37 (or (not (= (select asg0 6) 1)) (not r_1_0)))
+      (a!38 (or (not (= (select asg0 6) 1)) (not r_1_1)))
+      (a!39 (or (not (= (select asg0 6) 1)) (not r_1_2)))
+      (a!40 (or (not (= (select asg0 6) 1)) r_1_3))
+      (a!41 (or (not (= (select asg0 6) 1)) r_1_4))
+      (a!42 (or (not (= (select asg0 6) 1)) (not r_1_5)))
+      (a!43 (or (not (= (select asg0 7) 1)) (not r_1_0)))
+      (a!44 (or (not (= (select asg0 7) 1)) (not r_1_1)))
+      (a!45 (or (not (= (select asg0 7) 1)) (not r_1_2)))
+      (a!46 (or (not (= (select asg0 7) 1)) r_1_3))
+      (a!47 (or (not (= (select asg0 7) 1)) r_1_4))
+      (a!48 (or (not (= (select asg0 7) 1)) r_1_5))
+      (a!49 (or (not (= (select asg0 8) 1)) (not r_1_0)))
+      (a!50 (or (not (= (select asg0 8) 1)) (not r_1_1)))
+      (a!51 (or (not (= (select asg0 8) 1)) r_1_2))
+      (a!52 (or (not (= (select asg0 8) 1)) (not r_1_3)))
+      (a!53 (or (not (= (select asg0 8) 1)) (not r_1_4)))
+      (a!54 (or (not (= (select asg0 8) 1)) (not r_1_5)))
+      (a!55 (or (not (= (select asg0 9) 1)) (not r_1_0)))
+      (a!56 (or (not (= (select asg0 9) 1)) (not r_1_1)))
+      (a!57 (or (not (= (select asg0 9) 1)) r_1_2))
+      (a!58 (or (not (= (select asg0 9) 1)) (not r_1_3)))
+      (a!59 (or (not (= (select asg0 9) 1)) (not r_1_4)))
+      (a!60 (or (not (= (select asg0 9) 1)) r_1_5))
+      (a!61 (or (not (= (select asg1 0) 1)) (not r_1_0)))
+      (a!62 (or (not (= (select asg1 0) 1)) (not r_1_1)))
+      (a!63 (or (not (= (select asg1 0) 1)) r_1_2))
+      (a!64 (or (not (= (select asg1 0) 1)) (not r_1_3)))
+      (a!65 (or (not (= (select asg1 0) 1)) r_1_4))
+      (a!66 (or (not (= (select asg1 0) 1)) (not r_1_5)))
+      (a!67 (or (not (= (select asg1 1) 1)) (not r_1_0)))
+      (a!68 (or (not (= (select asg1 1) 1)) (not r_1_1)))
+      (a!69 (or (not (= (select asg1 1) 1)) r_1_2))
+      (a!70 (or (not (= (select asg1 1) 1)) (not r_1_3)))
+      (a!71 (or (not (= (select asg1 1) 1)) r_1_4))
+      (a!72 (or (not (= (select asg1 1) 1)) r_1_5))
+      (a!73 (or (not (= (select asg1 2) 1)) (not r_1_0)))
+      (a!74 (or (not (= (select asg1 2) 1)) (not r_1_1)))
+      (a!75 (or (not (= (select asg1 2) 1)) r_1_2))
+      (a!76 (or (not (= (select asg1 2) 1)) r_1_3))
+      (a!77 (or (not (= (select asg1 2) 1)) (not r_1_4)))
+      (a!78 (or (not (= (select asg1 2) 1)) (not r_1_5)))
+      (a!79 (or (not (= (select asg1 3) 1)) (not r_1_0)))
+      (a!80 (or (not (= (select asg1 3) 1)) (not r_1_1)))
+      (a!81 (or (not (= (select asg1 3) 1)) r_1_2))
+      (a!82 (or (not (= (select asg1 3) 1)) r_1_3))
+      (a!83 (or (not (= (select asg1 3) 1)) (not r_1_4)))
+      (a!84 (or (not (= (select asg1 3) 1)) r_1_5))
+      (a!85 (or (not (= (select asg1 4) 1)) (not r_1_0)))
+      (a!86 (or (not (= (select asg1 4) 1)) (not r_1_1)))
+      (a!87 (or (not (= (select asg1 4) 1)) r_1_2))
+      (a!88 (or (not (= (select asg1 4) 1)) r_1_3))
+      (a!89 (or (not (= (select asg1 4) 1)) r_1_4))
+      (a!90 (or (not (= (select asg1 4) 1)) (not r_1_5)))
+      (a!91 (or (not (= (select asg1 5) 1)) (not r_1_0)))
+      (a!92 (or (not (= (select asg1 5) 1)) (not r_1_1)))
+      (a!93 (or (not (= (select asg1 5) 1)) r_1_2))
+      (a!94 (or (not (= (select asg1 5) 1)) r_1_3))
+      (a!95 (or (not (= (select asg1 5) 1)) r_1_4))
+      (a!96 (or (not (= (select asg1 5) 1)) r_1_5))
+      (a!97 (or (not (= (select asg1 6) 1)) (not r_1_0)))
+      (a!98 (or (not (= (select asg1 6) 1)) r_1_1))
+      (a!99 (or (not (= (select asg1 6) 1)) (not r_1_2)))
+      (a!100 (or (not (= (select asg1 6) 1)) (not r_1_3)))
+      (a!101 (or (not (= (select asg1 6) 1)) (not r_1_4)))
+      (a!102 (or (not (= (select asg1 6) 1)) (not r_1_5)))
+      (a!103 (or (not (= (select asg1 7) 1)) (not r_1_0)))
+      (a!104 (or (not (= (select asg1 7) 1)) r_1_1))
+      (a!105 (or (not (= (select asg1 7) 1)) (not r_1_2)))
+      (a!106 (or (not (= (select asg1 7) 1)) (not r_1_3)))
+      (a!107 (or (not (= (select asg1 7) 1)) (not r_1_4)))
+      (a!108 (or (not (= (select asg1 7) 1)) r_1_5))
+      (a!109 (or (not (= (select asg1 8) 1)) (not r_1_0)))
+      (a!110 (or (not (= (select asg1 8) 1)) r_1_1))
+      (a!111 (or (not (= (select asg1 8) 1)) (not r_1_2)))
+      (a!112 (or (not (= (select asg1 8) 1)) (not r_1_3)))
+      (a!113 (or (not (= (select asg1 8) 1)) r_1_4))
+      (a!114 (or (not (= (select asg1 8) 1)) (not r_1_5)))
+      (a!115 (or (not (= (select asg1 9) 1)) (not r_1_0)))
+      (a!116 (or (not (= (select asg1 9) 1)) r_1_1))
+      (a!117 (or (not (= (select asg1 9) 1)) (not r_1_2)))
+      (a!118 (or (not (= (select asg1 9) 1)) (not r_1_3)))
+      (a!119 (or (not (= (select asg1 9) 1)) r_1_4))
+      (a!120 (or (not (= (select asg1 9) 1)) r_1_5))
+      (a!121 (or (not (= (select asg2 0) 1)) (not r_1_0)))
+      (a!122 (or (not (= (select asg2 0) 1)) r_1_1))
+      (a!123 (or (not (= (select asg2 0) 1)) (not r_1_2)))
+      (a!124 (or (not (= (select asg2 0) 1)) r_1_3))
+      (a!125 (or (not (= (select asg2 0) 1)) (not r_1_4)))
+      (a!126 (or (not (= (select asg2 0) 1)) (not r_1_5)))
+      (a!127 (or (not (= (select asg2 1) 1)) (not r_1_0)))
+      (a!128 (or (not (= (select asg2 1) 1)) r_1_1))
+      (a!129 (or (not (= (select asg2 1) 1)) (not r_1_2)))
+      (a!130 (or (not (= (select asg2 1) 1)) r_1_3))
+      (a!131 (or (not (= (select asg2 1) 1)) (not r_1_4)))
+      (a!132 (or (not (= (select asg2 1) 1)) r_1_5))
+      (a!133 (or (not (= (select asg2 2) 1)) (not r_1_0)))
+      (a!134 (or (not (= (select asg2 2) 1)) r_1_1))
+      (a!135 (or (not (= (select asg2 2) 1)) (not r_1_2)))
+      (a!136 (or (not (= (select asg2 2) 1)) r_1_3))
+      (a!137 (or (not (= (select asg2 2) 1)) r_1_4))
+      (a!138 (or (not (= (select asg2 2) 1)) (not r_1_5)))
+      (a!139 (or (not (= (select asg2 3) 1)) (not r_1_0)))
+      (a!140 (or (not (= (select asg2 3) 1)) r_1_1))
+      (a!141 (or (not (= (select asg2 3) 1)) (not r_1_2)))
+      (a!142 (or (not (= (select asg2 3) 1)) r_1_3))
+      (a!143 (or (not (= (select asg2 3) 1)) r_1_4))
+      (a!144 (or (not (= (select asg2 3) 1)) r_1_5))
+      (a!145 (or (not (= (select asg2 4) 1)) (not r_1_0)))
+      (a!146 (or (not (= (select asg2 4) 1)) r_1_1))
+      (a!147 (or (not (= (select asg2 4) 1)) r_1_2))
+      (a!148 (or (not (= (select asg2 4) 1)) (not r_1_3)))
+      (a!149 (or (not (= (select asg2 4) 1)) (not r_1_4)))
+      (a!150 (or (not (= (select asg2 4) 1)) (not r_1_5)))
+      (a!151 (or (not (= (select asg2 5) 1)) (not r_1_0)))
+      (a!152 (or (not (= (select asg2 5) 1)) r_1_1))
+      (a!153 (or (not (= (select asg2 5) 1)) r_1_2))
+      (a!154 (or (not (= (select asg2 5) 1)) (not r_1_3)))
+      (a!155 (or (not (= (select asg2 5) 1)) (not r_1_4)))
+      (a!156 (or (not (= (select asg2 5) 1)) r_1_5))
+      (a!157 (or (not (= (select asg2 6) 1)) (not r_1_0)))
+      (a!158 (or (not (= (select asg2 6) 1)) r_1_1))
+      (a!159 (or (not (= (select asg2 6) 1)) r_1_2))
+      (a!160 (or (not (= (select asg2 6) 1)) (not r_1_3)))
+      (a!161 (or (not (= (select asg2 6) 1)) r_1_4))
+      (a!162 (or (not (= (select asg2 6) 1)) (not r_1_5)))
+      (a!163 (or (not (= (select asg2 7) 1)) (not r_1_0)))
+      (a!164 (or (not (= (select asg2 7) 1)) r_1_1))
+      (a!165 (or (not (= (select asg2 7) 1)) r_1_2))
+      (a!166 (or (not (= (select asg2 7) 1)) (not r_1_3)))
+      (a!167 (or (not (= (select asg2 7) 1)) r_1_4))
+      (a!168 (or (not (= (select asg2 7) 1)) r_1_5))
+      (a!169 (or (not (= (select asg2 8) 1)) (not r_1_0)))
+      (a!170 (or (not (= (select asg2 8) 1)) r_1_1))
+      (a!171 (or (not (= (select asg2 8) 1)) r_1_2))
+      (a!172 (or (not (= (select asg2 8) 1)) r_1_3))
+      (a!173 (or (not (= (select asg2 8) 1)) (not r_1_4)))
+      (a!174 (or (not (= (select asg2 8) 1)) (not r_1_5)))
+      (a!175 (or (not (= (select asg2 9) 1)) (not r_1_0)))
+      (a!176 (or (not (= (select asg2 9) 1)) r_1_1))
+      (a!177 (or (not (= (select asg2 9) 1)) r_1_2))
+      (a!178 (or (not (= (select asg2 9) 1)) r_1_3))
+      (a!179 (or (not (= (select asg2 9) 1)) (not r_1_4)))
+      (a!180 (or (not (= (select asg2 9) 1)) r_1_5))
+      (a!181 (or (not (= (select asg3 0) 1)) (not r_1_0)))
+      (a!182 (or (not (= (select asg3 0) 1)) r_1_1))
+      (a!183 (or (not (= (select asg3 0) 1)) r_1_2))
+      (a!184 (or (not (= (select asg3 0) 1)) r_1_3))
+      (a!185 (or (not (= (select asg3 0) 1)) r_1_4))
+      (a!186 (or (not (= (select asg3 0) 1)) (not r_1_5)))
+      (a!187 (or (not (= (select asg3 1) 1)) (not r_1_0)))
+      (a!188 (or (not (= (select asg3 1) 1)) r_1_1))
+      (a!189 (or (not (= (select asg3 1) 1)) r_1_2))
+      (a!190 (or (not (= (select asg3 1) 1)) r_1_3))
+      (a!191 (or (not (= (select asg3 1) 1)) r_1_4))
+      (a!192 (or (not (= (select asg3 1) 1)) r_1_5))
+      (a!193 (or (not (= (select asg3 2) 1)) r_1_0))
+      (a!194 (or (not (= (select asg3 2) 1)) (not r_1_1)))
+      (a!195 (or (not (= (select asg3 2) 1)) (not r_1_2)))
+      (a!196 (or (not (= (select asg3 2) 1)) (not r_1_3)))
+      (a!197 (or (not (= (select asg3 2) 1)) (not r_1_4)))
+      (a!198 (or (not (= (select asg3 2) 1)) (not r_1_5)))
+      (a!199 (or (not (= (select asg3 3) 1)) r_1_0))
+      (a!200 (or (not (= (select asg3 3) 1)) (not r_1_1)))
+      (a!201 (or (not (= (select asg3 3) 1)) (not r_1_2)))
+      (a!202 (or (not (= (select asg3 3) 1)) (not r_1_3)))
+      (a!203 (or (not (= (select asg3 3) 1)) (not r_1_4)))
+      (a!204 (or (not (= (select asg3 3) 1)) r_1_5))
+      (a!205 (or (not (= (select asg3 4) 1)) r_1_0))
+      (a!206 (or (not (= (select asg3 4) 1)) (not r_1_1)))
+      (a!207 (or (not (= (select asg3 4) 1)) (not r_1_2)))
+      (a!208 (or (not (= (select asg3 4) 1)) (not r_1_3)))
+      (a!209 (or (not (= (select asg3 4) 1)) r_1_4))
+      (a!210 (or (not (= (select asg3 4) 1)) (not r_1_5)))
+      (a!211 (or (not (= (select asg3 5) 1)) r_1_0))
+      (a!212 (or (not (= (select asg3 5) 1)) (not r_1_1)))
+      (a!213 (or (not (= (select asg3 5) 1)) (not r_1_2)))
+      (a!214 (or (not (= (select asg3 5) 1)) (not r_1_3)))
+      (a!215 (or (not (= (select asg3 5) 1)) r_1_4))
+      (a!216 (or (not (= (select asg3 5) 1)) r_1_5))
+      (a!217 (or (not (= (select asg3 6) 1)) r_1_0))
+      (a!218 (or (not (= (select asg3 6) 1)) (not r_1_1)))
+      (a!219 (or (not (= (select asg3 6) 1)) (not r_1_2)))
+      (a!220 (or (not (= (select asg3 6) 1)) r_1_3))
+      (a!221 (or (not (= (select asg3 6) 1)) (not r_1_4)))
+      (a!222 (or (not (= (select asg3 6) 1)) (not r_1_5)))
+      (a!223 (or (not (= (select asg3 7) 1)) r_1_0))
+      (a!224 (or (not (= (select asg3 7) 1)) (not r_1_1)))
+      (a!225 (or (not (= (select asg3 7) 1)) (not r_1_2)))
+      (a!226 (or (not (= (select asg3 7) 1)) r_1_3))
+      (a!227 (or (not (= (select asg3 7) 1)) (not r_1_4)))
+      (a!228 (or (not (= (select asg3 7) 1)) r_1_5))
+      (a!229 (or (not (= (select asg3 8) 1)) r_1_0))
+      (a!230 (or (not (= (select asg3 8) 1)) (not r_1_1)))
+      (a!231 (or (not (= (select asg3 8) 1)) (not r_1_2)))
+      (a!232 (or (not (= (select asg3 8) 1)) r_1_3))
+      (a!233 (or (not (= (select asg3 8) 1)) r_1_4))
+      (a!234 (or (not (= (select asg3 8) 1)) (not r_1_5)))
+      (a!235 (or (not (= (select asg3 9) 1)) r_1_0))
+      (a!236 (or (not (= (select asg3 9) 1)) (not r_1_1)))
+      (a!237 (or (not (= (select asg3 9) 1)) (not r_1_2)))
+      (a!238 (or (not (= (select asg3 9) 1)) r_1_3))
+      (a!239 (or (not (= (select asg3 9) 1)) r_1_4))
+      (a!240 (or (not (= (select asg3 9) 1)) r_1_5))
+      (a!241 (or (not (= (select asg4 0) 1)) r_1_0))
+      (a!242 (or (not (= (select asg4 0) 1)) (not r_1_1)))
+      (a!243 (or (not (= (select asg4 0) 1)) r_1_2))
+      (a!244 (or (not (= (select asg4 0) 1)) (not r_1_3)))
+      (a!245 (or (not (= (select asg4 0) 1)) (not r_1_4)))
+      (a!246 (or (not (= (select asg4 0) 1)) (not r_1_5)))
+      (a!247 (or (not (= (select asg4 1) 1)) r_1_0))
+      (a!248 (or (not (= (select asg4 1) 1)) (not r_1_1)))
+      (a!249 (or (not (= (select asg4 1) 1)) r_1_2))
+      (a!250 (or (not (= (select asg4 1) 1)) (not r_1_3)))
+      (a!251 (or (not (= (select asg4 1) 1)) (not r_1_4)))
+      (a!252 (or (not (= (select asg4 1) 1)) r_1_5))
+      (a!253 (or (not (= (select asg4 2) 1)) r_1_0))
+      (a!254 (or (not (= (select asg4 2) 1)) (not r_1_1)))
+      (a!255 (or (not (= (select asg4 2) 1)) r_1_2))
+      (a!256 (or (not (= (select asg4 2) 1)) (not r_1_3)))
+      (a!257 (or (not (= (select asg4 2) 1)) r_1_4))
+      (a!258 (or (not (= (select asg4 2) 1)) (not r_1_5)))
+      (a!259 (or (not (= (select asg4 3) 1)) r_1_0))
+      (a!260 (or (not (= (select asg4 3) 1)) (not r_1_1)))
+      (a!261 (or (not (= (select asg4 3) 1)) r_1_2))
+      (a!262 (or (not (= (select asg4 3) 1)) (not r_1_3)))
+      (a!263 (or (not (= (select asg4 3) 1)) r_1_4))
+      (a!264 (or (not (= (select asg4 3) 1)) r_1_5))
+      (a!265 (or (not (= (select asg4 4) 1)) r_1_0))
+      (a!266 (or (not (= (select asg4 4) 1)) (not r_1_1)))
+      (a!267 (or (not (= (select asg4 4) 1)) r_1_2))
+      (a!268 (or (not (= (select asg4 4) 1)) r_1_3))
+      (a!269 (or (not (= (select asg4 4) 1)) (not r_1_4)))
+      (a!270 (or (not (= (select asg4 4) 1)) (not r_1_5)))
+      (a!271 (or (not (= (select asg4 5) 1)) r_1_0))
+      (a!272 (or (not (= (select asg4 5) 1)) (not r_1_1)))
+      (a!273 (or (not (= (select asg4 5) 1)) r_1_2))
+      (a!274 (or (not (= (select asg4 5) 1)) r_1_3))
+      (a!275 (or (not (= (select asg4 5) 1)) (not r_1_4)))
+      (a!276 (or (not (= (select asg4 5) 1)) r_1_5))
+      (a!277 (or (not (= (select asg4 6) 1)) r_1_0))
+      (a!278 (or (not (= (select asg4 6) 1)) (not r_1_1)))
+      (a!279 (or (not (= (select asg4 6) 1)) r_1_2))
+      (a!280 (or (not (= (select asg4 6) 1)) r_1_3))
+      (a!281 (or (not (= (select asg4 6) 1)) r_1_4))
+      (a!282 (or (not (= (select asg4 6) 1)) (not r_1_5)))
+      (a!283 (or (not (= (select asg4 7) 1)) r_1_0))
+      (a!284 (or (not (= (select asg4 7) 1)) (not r_1_1)))
+      (a!285 (or (not (= (select asg4 7) 1)) r_1_2))
+      (a!286 (or (not (= (select asg4 7) 1)) r_1_3))
+      (a!287 (or (not (= (select asg4 7) 1)) r_1_4))
+      (a!288 (or (not (= (select asg4 7) 1)) r_1_5))
+      (a!289 (or (not (= (select asg4 8) 1)) r_1_0))
+      (a!290 (or (not (= (select asg4 8) 1)) r_1_1))
+      (a!291 (or (not (= (select asg4 8) 1)) (not r_1_2)))
+      (a!292 (or (not (= (select asg4 8) 1)) (not r_1_3)))
+      (a!293 (or (not (= (select asg4 8) 1)) (not r_1_4)))
+      (a!294 (or (not (= (select asg4 8) 1)) (not r_1_5)))
+      (a!295 (or (not (= (select asg4 9) 1)) r_1_0))
+      (a!296 (or (not (= (select asg4 9) 1)) r_1_1))
+      (a!297 (or (not (= (select asg4 9) 1)) (not r_1_2)))
+      (a!298 (or (not (= (select asg4 9) 1)) (not r_1_3)))
+      (a!299 (or (not (= (select asg4 9) 1)) (not r_1_4)))
+      (a!300 (or (not (= (select asg4 9) 1)) r_1_5))
+      (a!301 (or (not (= (select asg5 0) 1)) r_1_0))
+      (a!302 (or (not (= (select asg5 0) 1)) r_1_1))
+      (a!303 (or (not (= (select asg5 0) 1)) (not r_1_2)))
+      (a!304 (or (not (= (select asg5 0) 1)) (not r_1_3)))
+      (a!305 (or (not (= (select asg5 0) 1)) r_1_4))
+      (a!306 (or (not (= (select asg5 0) 1)) (not r_1_5)))
+      (a!307 (or (not (= (select asg5 1) 1)) r_1_0))
+      (a!308 (or (not (= (select asg5 1) 1)) r_1_1))
+      (a!309 (or (not (= (select asg5 1) 1)) (not r_1_2)))
+      (a!310 (or (not (= (select asg5 1) 1)) (not r_1_3)))
+      (a!311 (or (not (= (select asg5 1) 1)) r_1_4))
+      (a!312 (or (not (= (select asg5 1) 1)) r_1_5))
+      (a!313 (or (not (= (select asg5 2) 1)) r_1_0))
+      (a!314 (or (not (= (select asg5 2) 1)) r_1_1))
+      (a!315 (or (not (= (select asg5 2) 1)) (not r_1_2)))
+      (a!316 (or (not (= (select asg5 2) 1)) r_1_3))
+      (a!317 (or (not (= (select asg5 2) 1)) (not r_1_4)))
+      (a!318 (or (not (= (select asg5 2) 1)) (not r_1_5)))
+      (a!319 (or (not (= (select asg5 3) 1)) r_1_0))
+      (a!320 (or (not (= (select asg5 3) 1)) r_1_1))
+      (a!321 (or (not (= (select asg5 3) 1)) (not r_1_2)))
+      (a!322 (or (not (= (select asg5 3) 1)) r_1_3))
+      (a!323 (or (not (= (select asg5 3) 1)) (not r_1_4)))
+      (a!324 (or (not (= (select asg5 3) 1)) r_1_5))
+      (a!325 (or (not (= (select asg5 4) 1)) r_1_0))
+      (a!326 (or (not (= (select asg5 4) 1)) r_1_1))
+      (a!327 (or (not (= (select asg5 4) 1)) (not r_1_2)))
+      (a!328 (or (not (= (select asg5 4) 1)) r_1_3))
+      (a!329 (or (not (= (select asg5 4) 1)) r_1_4))
+      (a!330 (or (not (= (select asg5 4) 1)) (not r_1_5)))
+      (a!331 (or (not (= (select asg5 5) 1)) r_1_0))
+      (a!332 (or (not (= (select asg5 5) 1)) r_1_1))
+      (a!333 (or (not (= (select asg5 5) 1)) (not r_1_2)))
+      (a!334 (or (not (= (select asg5 5) 1)) r_1_3))
+      (a!335 (or (not (= (select asg5 5) 1)) r_1_4))
+      (a!336 (or (not (= (select asg5 5) 1)) r_1_5))
+      (a!337 (or (not (= (select asg5 6) 1)) r_1_0))
+      (a!338 (or (not (= (select asg5 6) 1)) r_1_1))
+      (a!339 (or (not (= (select asg5 6) 1)) r_1_2))
+      (a!340 (or (not (= (select asg5 6) 1)) (not r_1_3)))
+      (a!341 (or (not (= (select asg5 6) 1)) (not r_1_4)))
+      (a!342 (or (not (= (select asg5 6) 1)) (not r_1_5)))
+      (a!343 (or (not (= (select asg5 7) 1)) r_1_0))
+      (a!344 (or (not (= (select asg5 7) 1)) r_1_1))
+      (a!345 (or (not (= (select asg5 7) 1)) r_1_2))
+      (a!346 (or (not (= (select asg5 7) 1)) (not r_1_3)))
+      (a!347 (or (not (= (select asg5 7) 1)) (not r_1_4)))
+      (a!348 (or (not (= (select asg5 7) 1)) r_1_5))
+      (a!349 (or (not (= (select asg5 8) 1)) r_1_0))
+      (a!350 (or (not (= (select asg5 8) 1)) r_1_1))
+      (a!351 (or (not (= (select asg5 8) 1)) r_1_2))
+      (a!352 (or (not (= (select asg5 8) 1)) (not r_1_3)))
+      (a!353 (or (not (= (select asg5 8) 1)) r_1_4))
+      (a!354 (or (not (= (select asg5 8) 1)) (not r_1_5)))
+      (a!355 (or (not (= (select asg5 9) 1)) r_1_0))
+      (a!356 (or (not (= (select asg5 9) 1)) r_1_1))
+      (a!357 (or (not (= (select asg5 9) 1)) r_1_2))
+      (a!358 (or (not (= (select asg5 9) 1)) (not r_1_3)))
+      (a!359 (or (not (= (select asg5 9) 1)) r_1_4))
+      (a!360 (or (not (= (select asg5 9) 1)) r_1_5)))
+  (and (or (= (select asg0 0) 1)
+           (= (select asg0 1) 1)
+           (= (select asg0 2) 1)
+           (= (select asg0 3) 1)
+           (= (select asg0 4) 1)
+           (= (select asg0 5) 1)
+           (= (select asg0 6) 1)
+           (= (select asg0 7) 1)
+           (= (select asg0 8) 1)
+           (= (select asg0 9) 1)
+           (= (select asg1 0) 1)
+           (= (select asg1 1) 1)
+           (= (select asg1 2) 1)
+           (= (select asg1 3) 1)
+           (= (select asg1 4) 1)
+           (= (select asg1 5) 1)
+           (= (select asg1 6) 1)
+           (= (select asg1 7) 1)
+           (= (select asg1 8) 1)
+           (= (select asg1 9) 1)
+           (= (select asg2 0) 1)
+           (= (select asg2 1) 1)
+           (= (select asg2 2) 1)
+           (= (select asg2 3) 1)
+           (= (select asg2 4) 1)
+           (= (select asg2 5) 1)
+           (= (select asg2 6) 1)
+           (= (select asg2 7) 1)
+           (= (select asg2 8) 1)
+           (= (select asg2 9) 1)
+           (= (select asg3 0) 1)
+           (= (select asg3 1) 1)
+           (= (select asg3 2) 1)
+           (= (select asg3 3) 1)
+           (= (select asg3 4) 1)
+           (= (select asg3 5) 1)
+           (= (select asg3 6) 1)
+           (= (select asg3 7) 1)
+           (= (select asg3 8) 1)
+           (= (select asg3 9) 1)
+           (= (select asg4 0) 1)
+           (= (select asg4 1) 1)
+           (= (select asg4 2) 1)
+           (= (select asg4 3) 1)
+           (= (select asg4 4) 1)
+           (= (select asg4 5) 1)
+           (= (select asg4 6) 1)
+           (= (select asg4 7) 1)
+           (= (select asg4 8) 1)
+           (= (select asg4 9) 1)
+           (= (select asg5 0) 1)
+           (= (select asg5 1) 1)
+           (= (select asg5 2) 1)
+           (= (select asg5 3) 1)
+           (= (select asg5 4) 1)
+           (= (select asg5 5) 1)
+           (= (select asg5 6) 1)
+           (= (select asg5 7) 1)
+           (= (select asg5 8) 1)
+           (= (select asg5 9) 1))
+       a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40
+       a!41
+       a!42
+       a!43
+       a!44
+       a!45
+       a!46
+       a!47
+       a!48
+       a!49
+       a!50
+       a!51
+       a!52
+       a!53
+       a!54
+       a!55
+       a!56
+       a!57
+       a!58
+       a!59
+       a!60
+       a!61
+       a!62
+       a!63
+       a!64
+       a!65
+       a!66
+       a!67
+       a!68
+       a!69
+       a!70
+       a!71
+       a!72
+       a!73
+       a!74
+       a!75
+       a!76
+       a!77
+       a!78
+       a!79
+       a!80
+       a!81
+       a!82
+       a!83
+       a!84
+       a!85
+       a!86
+       a!87
+       a!88
+       a!89
+       a!90
+       a!91
+       a!92
+       a!93
+       a!94
+       a!95
+       a!96
+       a!97
+       a!98
+       a!99
+       a!100
+       a!101
+       a!102
+       a!103
+       a!104
+       a!105
+       a!106
+       a!107
+       a!108
+       a!109
+       a!110
+       a!111
+       a!112
+       a!113
+       a!114
+       a!115
+       a!116
+       a!117
+       a!118
+       a!119
+       a!120
+       a!121
+       a!122
+       a!123
+       a!124
+       a!125
+       a!126
+       a!127
+       a!128
+       a!129
+       a!130
+       a!131
+       a!132
+       a!133
+       a!134
+       a!135
+       a!136
+       a!137
+       a!138
+       a!139
+       a!140
+       a!141
+       a!142
+       a!143
+       a!144
+       a!145
+       a!146
+       a!147
+       a!148
+       a!149
+       a!150
+       a!151
+       a!152
+       a!153
+       a!154
+       a!155
+       a!156
+       a!157
+       a!158
+       a!159
+       a!160
+       a!161
+       a!162
+       a!163
+       a!164
+       a!165
+       a!166
+       a!167
+       a!168
+       a!169
+       a!170
+       a!171
+       a!172
+       a!173
+       a!174
+       a!175
+       a!176
+       a!177
+       a!178
+       a!179
+       a!180
+       a!181
+       a!182
+       a!183
+       a!184
+       a!185
+       a!186
+       a!187
+       a!188
+       a!189
+       a!190
+       a!191
+       a!192
+       a!193
+       a!194
+       a!195
+       a!196
+       a!197
+       a!198
+       a!199
+       a!200
+       a!201
+       a!202
+       a!203
+       a!204
+       a!205
+       a!206
+       a!207
+       a!208
+       a!209
+       a!210
+       a!211
+       a!212
+       a!213
+       a!214
+       a!215
+       a!216
+       a!217
+       a!218
+       a!219
+       a!220
+       a!221
+       a!222
+       a!223
+       a!224
+       a!225
+       a!226
+       a!227
+       a!228
+       a!229
+       a!230
+       a!231
+       a!232
+       a!233
+       a!234
+       a!235
+       a!236
+       a!237
+       a!238
+       a!239
+       a!240
+       a!241
+       a!242
+       a!243
+       a!244
+       a!245
+       a!246
+       a!247
+       a!248
+       a!249
+       a!250
+       a!251
+       a!252
+       a!253
+       a!254
+       a!255
+       a!256
+       a!257
+       a!258
+       a!259
+       a!260
+       a!261
+       a!262
+       a!263
+       a!264
+       a!265
+       a!266
+       a!267
+       a!268
+       a!269
+       a!270
+       a!271
+       a!272
+       a!273
+       a!274
+       a!275
+       a!276
+       a!277
+       a!278
+       a!279
+       a!280
+       a!281
+       a!282
+       a!283
+       a!284
+       a!285
+       a!286
+       a!287
+       a!288
+       a!289
+       a!290
+       a!291
+       a!292
+       a!293
+       a!294
+       a!295
+       a!296
+       a!297
+       a!298
+       a!299
+       a!300
+       a!301
+       a!302
+       a!303
+       a!304
+       a!305
+       a!306
+       a!307
+       a!308
+       a!309
+       a!310
+       a!311
+       a!312
+       a!313
+       a!314
+       a!315
+       a!316
+       a!317
+       a!318
+       a!319
+       a!320
+       a!321
+       a!322
+       a!323
+       a!324
+       a!325
+       a!326
+       a!327
+       a!328
+       a!329
+       a!330
+       a!331
+       a!332
+       a!333
+       a!334
+       a!335
+       a!336
+       a!337
+       a!338
+       a!339
+       a!340
+       a!341
+       a!342
+       a!343
+       a!344
+       a!345
+       a!346
+       a!347
+       a!348
+       a!349
+       a!350
+       a!351
+       a!352
+       a!353
+       a!354
+       a!355
+       a!356
+       a!357
+       a!358
+       a!359
+       a!360)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 2)) (not r_2_0)))
+      (a!2 (or (not (= (select asg0 0) 2)) (not r_2_1)))
+      (a!3 (or (not (= (select asg0 0) 2)) (not r_2_2)))
+      (a!4 (or (not (= (select asg0 0) 2)) (not r_2_3)))
+      (a!5 (or (not (= (select asg0 0) 2)) (not r_2_4)))
+      (a!6 (or (not (= (select asg0 0) 2)) (not r_2_5)))
+      (a!7 (or (not (= (select asg0 1) 2)) (not r_2_0)))
+      (a!8 (or (not (= (select asg0 1) 2)) (not r_2_1)))
+      (a!9 (or (not (= (select asg0 1) 2)) (not r_2_2)))
+      (a!10 (or (not (= (select asg0 1) 2)) (not r_2_3)))
+      (a!11 (or (not (= (select asg0 1) 2)) (not r_2_4)))
+      (a!12 (or (not (= (select asg0 1) 2)) r_2_5))
+      (a!13 (or (not (= (select asg0 2) 2)) (not r_2_0)))
+      (a!14 (or (not (= (select asg0 2) 2)) (not r_2_1)))
+      (a!15 (or (not (= (select asg0 2) 2)) (not r_2_2)))
+      (a!16 (or (not (= (select asg0 2) 2)) (not r_2_3)))
+      (a!17 (or (not (= (select asg0 2) 2)) r_2_4))
+      (a!18 (or (not (= (select asg0 2) 2)) (not r_2_5)))
+      (a!19 (or (not (= (select asg0 3) 2)) (not r_2_0)))
+      (a!20 (or (not (= (select asg0 3) 2)) (not r_2_1)))
+      (a!21 (or (not (= (select asg0 3) 2)) (not r_2_2)))
+      (a!22 (or (not (= (select asg0 3) 2)) (not r_2_3)))
+      (a!23 (or (not (= (select asg0 3) 2)) r_2_4))
+      (a!24 (or (not (= (select asg0 3) 2)) r_2_5))
+      (a!25 (or (not (= (select asg0 4) 2)) (not r_2_0)))
+      (a!26 (or (not (= (select asg0 4) 2)) (not r_2_1)))
+      (a!27 (or (not (= (select asg0 4) 2)) (not r_2_2)))
+      (a!28 (or (not (= (select asg0 4) 2)) r_2_3))
+      (a!29 (or (not (= (select asg0 4) 2)) (not r_2_4)))
+      (a!30 (or (not (= (select asg0 4) 2)) (not r_2_5)))
+      (a!31 (or (not (= (select asg0 5) 2)) (not r_2_0)))
+      (a!32 (or (not (= (select asg0 5) 2)) (not r_2_1)))
+      (a!33 (or (not (= (select asg0 5) 2)) (not r_2_2)))
+      (a!34 (or (not (= (select asg0 5) 2)) r_2_3))
+      (a!35 (or (not (= (select asg0 5) 2)) (not r_2_4)))
+      (a!36 (or (not (= (select asg0 5) 2)) r_2_5))
+      (a!37 (or (not (= (select asg0 6) 2)) (not r_2_0)))
+      (a!38 (or (not (= (select asg0 6) 2)) (not r_2_1)))
+      (a!39 (or (not (= (select asg0 6) 2)) (not r_2_2)))
+      (a!40 (or (not (= (select asg0 6) 2)) r_2_3))
+      (a!41 (or (not (= (select asg0 6) 2)) r_2_4))
+      (a!42 (or (not (= (select asg0 6) 2)) (not r_2_5)))
+      (a!43 (or (not (= (select asg0 7) 2)) (not r_2_0)))
+      (a!44 (or (not (= (select asg0 7) 2)) (not r_2_1)))
+      (a!45 (or (not (= (select asg0 7) 2)) (not r_2_2)))
+      (a!46 (or (not (= (select asg0 7) 2)) r_2_3))
+      (a!47 (or (not (= (select asg0 7) 2)) r_2_4))
+      (a!48 (or (not (= (select asg0 7) 2)) r_2_5))
+      (a!49 (or (not (= (select asg0 8) 2)) (not r_2_0)))
+      (a!50 (or (not (= (select asg0 8) 2)) (not r_2_1)))
+      (a!51 (or (not (= (select asg0 8) 2)) r_2_2))
+      (a!52 (or (not (= (select asg0 8) 2)) (not r_2_3)))
+      (a!53 (or (not (= (select asg0 8) 2)) (not r_2_4)))
+      (a!54 (or (not (= (select asg0 8) 2)) (not r_2_5)))
+      (a!55 (or (not (= (select asg0 9) 2)) (not r_2_0)))
+      (a!56 (or (not (= (select asg0 9) 2)) (not r_2_1)))
+      (a!57 (or (not (= (select asg0 9) 2)) r_2_2))
+      (a!58 (or (not (= (select asg0 9) 2)) (not r_2_3)))
+      (a!59 (or (not (= (select asg0 9) 2)) (not r_2_4)))
+      (a!60 (or (not (= (select asg0 9) 2)) r_2_5))
+      (a!61 (or (not (= (select asg1 0) 2)) (not r_2_0)))
+      (a!62 (or (not (= (select asg1 0) 2)) (not r_2_1)))
+      (a!63 (or (not (= (select asg1 0) 2)) r_2_2))
+      (a!64 (or (not (= (select asg1 0) 2)) (not r_2_3)))
+      (a!65 (or (not (= (select asg1 0) 2)) r_2_4))
+      (a!66 (or (not (= (select asg1 0) 2)) (not r_2_5)))
+      (a!67 (or (not (= (select asg1 1) 2)) (not r_2_0)))
+      (a!68 (or (not (= (select asg1 1) 2)) (not r_2_1)))
+      (a!69 (or (not (= (select asg1 1) 2)) r_2_2))
+      (a!70 (or (not (= (select asg1 1) 2)) (not r_2_3)))
+      (a!71 (or (not (= (select asg1 1) 2)) r_2_4))
+      (a!72 (or (not (= (select asg1 1) 2)) r_2_5))
+      (a!73 (or (not (= (select asg1 2) 2)) (not r_2_0)))
+      (a!74 (or (not (= (select asg1 2) 2)) (not r_2_1)))
+      (a!75 (or (not (= (select asg1 2) 2)) r_2_2))
+      (a!76 (or (not (= (select asg1 2) 2)) r_2_3))
+      (a!77 (or (not (= (select asg1 2) 2)) (not r_2_4)))
+      (a!78 (or (not (= (select asg1 2) 2)) (not r_2_5)))
+      (a!79 (or (not (= (select asg1 3) 2)) (not r_2_0)))
+      (a!80 (or (not (= (select asg1 3) 2)) (not r_2_1)))
+      (a!81 (or (not (= (select asg1 3) 2)) r_2_2))
+      (a!82 (or (not (= (select asg1 3) 2)) r_2_3))
+      (a!83 (or (not (= (select asg1 3) 2)) (not r_2_4)))
+      (a!84 (or (not (= (select asg1 3) 2)) r_2_5))
+      (a!85 (or (not (= (select asg1 4) 2)) (not r_2_0)))
+      (a!86 (or (not (= (select asg1 4) 2)) (not r_2_1)))
+      (a!87 (or (not (= (select asg1 4) 2)) r_2_2))
+      (a!88 (or (not (= (select asg1 4) 2)) r_2_3))
+      (a!89 (or (not (= (select asg1 4) 2)) r_2_4))
+      (a!90 (or (not (= (select asg1 4) 2)) (not r_2_5)))
+      (a!91 (or (not (= (select asg1 5) 2)) (not r_2_0)))
+      (a!92 (or (not (= (select asg1 5) 2)) (not r_2_1)))
+      (a!93 (or (not (= (select asg1 5) 2)) r_2_2))
+      (a!94 (or (not (= (select asg1 5) 2)) r_2_3))
+      (a!95 (or (not (= (select asg1 5) 2)) r_2_4))
+      (a!96 (or (not (= (select asg1 5) 2)) r_2_5))
+      (a!97 (or (not (= (select asg1 6) 2)) (not r_2_0)))
+      (a!98 (or (not (= (select asg1 6) 2)) r_2_1))
+      (a!99 (or (not (= (select asg1 6) 2)) (not r_2_2)))
+      (a!100 (or (not (= (select asg1 6) 2)) (not r_2_3)))
+      (a!101 (or (not (= (select asg1 6) 2)) (not r_2_4)))
+      (a!102 (or (not (= (select asg1 6) 2)) (not r_2_5)))
+      (a!103 (or (not (= (select asg1 7) 2)) (not r_2_0)))
+      (a!104 (or (not (= (select asg1 7) 2)) r_2_1))
+      (a!105 (or (not (= (select asg1 7) 2)) (not r_2_2)))
+      (a!106 (or (not (= (select asg1 7) 2)) (not r_2_3)))
+      (a!107 (or (not (= (select asg1 7) 2)) (not r_2_4)))
+      (a!108 (or (not (= (select asg1 7) 2)) r_2_5))
+      (a!109 (or (not (= (select asg1 8) 2)) (not r_2_0)))
+      (a!110 (or (not (= (select asg1 8) 2)) r_2_1))
+      (a!111 (or (not (= (select asg1 8) 2)) (not r_2_2)))
+      (a!112 (or (not (= (select asg1 8) 2)) (not r_2_3)))
+      (a!113 (or (not (= (select asg1 8) 2)) r_2_4))
+      (a!114 (or (not (= (select asg1 8) 2)) (not r_2_5)))
+      (a!115 (or (not (= (select asg1 9) 2)) (not r_2_0)))
+      (a!116 (or (not (= (select asg1 9) 2)) r_2_1))
+      (a!117 (or (not (= (select asg1 9) 2)) (not r_2_2)))
+      (a!118 (or (not (= (select asg1 9) 2)) (not r_2_3)))
+      (a!119 (or (not (= (select asg1 9) 2)) r_2_4))
+      (a!120 (or (not (= (select asg1 9) 2)) r_2_5))
+      (a!121 (or (not (= (select asg2 0) 2)) (not r_2_0)))
+      (a!122 (or (not (= (select asg2 0) 2)) r_2_1))
+      (a!123 (or (not (= (select asg2 0) 2)) (not r_2_2)))
+      (a!124 (or (not (= (select asg2 0) 2)) r_2_3))
+      (a!125 (or (not (= (select asg2 0) 2)) (not r_2_4)))
+      (a!126 (or (not (= (select asg2 0) 2)) (not r_2_5)))
+      (a!127 (or (not (= (select asg2 1) 2)) (not r_2_0)))
+      (a!128 (or (not (= (select asg2 1) 2)) r_2_1))
+      (a!129 (or (not (= (select asg2 1) 2)) (not r_2_2)))
+      (a!130 (or (not (= (select asg2 1) 2)) r_2_3))
+      (a!131 (or (not (= (select asg2 1) 2)) (not r_2_4)))
+      (a!132 (or (not (= (select asg2 1) 2)) r_2_5))
+      (a!133 (or (not (= (select asg2 2) 2)) (not r_2_0)))
+      (a!134 (or (not (= (select asg2 2) 2)) r_2_1))
+      (a!135 (or (not (= (select asg2 2) 2)) (not r_2_2)))
+      (a!136 (or (not (= (select asg2 2) 2)) r_2_3))
+      (a!137 (or (not (= (select asg2 2) 2)) r_2_4))
+      (a!138 (or (not (= (select asg2 2) 2)) (not r_2_5)))
+      (a!139 (or (not (= (select asg2 3) 2)) (not r_2_0)))
+      (a!140 (or (not (= (select asg2 3) 2)) r_2_1))
+      (a!141 (or (not (= (select asg2 3) 2)) (not r_2_2)))
+      (a!142 (or (not (= (select asg2 3) 2)) r_2_3))
+      (a!143 (or (not (= (select asg2 3) 2)) r_2_4))
+      (a!144 (or (not (= (select asg2 3) 2)) r_2_5))
+      (a!145 (or (not (= (select asg2 4) 2)) (not r_2_0)))
+      (a!146 (or (not (= (select asg2 4) 2)) r_2_1))
+      (a!147 (or (not (= (select asg2 4) 2)) r_2_2))
+      (a!148 (or (not (= (select asg2 4) 2)) (not r_2_3)))
+      (a!149 (or (not (= (select asg2 4) 2)) (not r_2_4)))
+      (a!150 (or (not (= (select asg2 4) 2)) (not r_2_5)))
+      (a!151 (or (not (= (select asg2 5) 2)) (not r_2_0)))
+      (a!152 (or (not (= (select asg2 5) 2)) r_2_1))
+      (a!153 (or (not (= (select asg2 5) 2)) r_2_2))
+      (a!154 (or (not (= (select asg2 5) 2)) (not r_2_3)))
+      (a!155 (or (not (= (select asg2 5) 2)) (not r_2_4)))
+      (a!156 (or (not (= (select asg2 5) 2)) r_2_5))
+      (a!157 (or (not (= (select asg2 6) 2)) (not r_2_0)))
+      (a!158 (or (not (= (select asg2 6) 2)) r_2_1))
+      (a!159 (or (not (= (select asg2 6) 2)) r_2_2))
+      (a!160 (or (not (= (select asg2 6) 2)) (not r_2_3)))
+      (a!161 (or (not (= (select asg2 6) 2)) r_2_4))
+      (a!162 (or (not (= (select asg2 6) 2)) (not r_2_5)))
+      (a!163 (or (not (= (select asg2 7) 2)) (not r_2_0)))
+      (a!164 (or (not (= (select asg2 7) 2)) r_2_1))
+      (a!165 (or (not (= (select asg2 7) 2)) r_2_2))
+      (a!166 (or (not (= (select asg2 7) 2)) (not r_2_3)))
+      (a!167 (or (not (= (select asg2 7) 2)) r_2_4))
+      (a!168 (or (not (= (select asg2 7) 2)) r_2_5))
+      (a!169 (or (not (= (select asg2 8) 2)) (not r_2_0)))
+      (a!170 (or (not (= (select asg2 8) 2)) r_2_1))
+      (a!171 (or (not (= (select asg2 8) 2)) r_2_2))
+      (a!172 (or (not (= (select asg2 8) 2)) r_2_3))
+      (a!173 (or (not (= (select asg2 8) 2)) (not r_2_4)))
+      (a!174 (or (not (= (select asg2 8) 2)) (not r_2_5)))
+      (a!175 (or (not (= (select asg2 9) 2)) (not r_2_0)))
+      (a!176 (or (not (= (select asg2 9) 2)) r_2_1))
+      (a!177 (or (not (= (select asg2 9) 2)) r_2_2))
+      (a!178 (or (not (= (select asg2 9) 2)) r_2_3))
+      (a!179 (or (not (= (select asg2 9) 2)) (not r_2_4)))
+      (a!180 (or (not (= (select asg2 9) 2)) r_2_5))
+      (a!181 (or (not (= (select asg3 0) 2)) (not r_2_0)))
+      (a!182 (or (not (= (select asg3 0) 2)) r_2_1))
+      (a!183 (or (not (= (select asg3 0) 2)) r_2_2))
+      (a!184 (or (not (= (select asg3 0) 2)) r_2_3))
+      (a!185 (or (not (= (select asg3 0) 2)) r_2_4))
+      (a!186 (or (not (= (select asg3 0) 2)) (not r_2_5)))
+      (a!187 (or (not (= (select asg3 1) 2)) (not r_2_0)))
+      (a!188 (or (not (= (select asg3 1) 2)) r_2_1))
+      (a!189 (or (not (= (select asg3 1) 2)) r_2_2))
+      (a!190 (or (not (= (select asg3 1) 2)) r_2_3))
+      (a!191 (or (not (= (select asg3 1) 2)) r_2_4))
+      (a!192 (or (not (= (select asg3 1) 2)) r_2_5))
+      (a!193 (or (not (= (select asg3 2) 2)) r_2_0))
+      (a!194 (or (not (= (select asg3 2) 2)) (not r_2_1)))
+      (a!195 (or (not (= (select asg3 2) 2)) (not r_2_2)))
+      (a!196 (or (not (= (select asg3 2) 2)) (not r_2_3)))
+      (a!197 (or (not (= (select asg3 2) 2)) (not r_2_4)))
+      (a!198 (or (not (= (select asg3 2) 2)) (not r_2_5)))
+      (a!199 (or (not (= (select asg3 3) 2)) r_2_0))
+      (a!200 (or (not (= (select asg3 3) 2)) (not r_2_1)))
+      (a!201 (or (not (= (select asg3 3) 2)) (not r_2_2)))
+      (a!202 (or (not (= (select asg3 3) 2)) (not r_2_3)))
+      (a!203 (or (not (= (select asg3 3) 2)) (not r_2_4)))
+      (a!204 (or (not (= (select asg3 3) 2)) r_2_5))
+      (a!205 (or (not (= (select asg3 4) 2)) r_2_0))
+      (a!206 (or (not (= (select asg3 4) 2)) (not r_2_1)))
+      (a!207 (or (not (= (select asg3 4) 2)) (not r_2_2)))
+      (a!208 (or (not (= (select asg3 4) 2)) (not r_2_3)))
+      (a!209 (or (not (= (select asg3 4) 2)) r_2_4))
+      (a!210 (or (not (= (select asg3 4) 2)) (not r_2_5)))
+      (a!211 (or (not (= (select asg3 5) 2)) r_2_0))
+      (a!212 (or (not (= (select asg3 5) 2)) (not r_2_1)))
+      (a!213 (or (not (= (select asg3 5) 2)) (not r_2_2)))
+      (a!214 (or (not (= (select asg3 5) 2)) (not r_2_3)))
+      (a!215 (or (not (= (select asg3 5) 2)) r_2_4))
+      (a!216 (or (not (= (select asg3 5) 2)) r_2_5))
+      (a!217 (or (not (= (select asg3 6) 2)) r_2_0))
+      (a!218 (or (not (= (select asg3 6) 2)) (not r_2_1)))
+      (a!219 (or (not (= (select asg3 6) 2)) (not r_2_2)))
+      (a!220 (or (not (= (select asg3 6) 2)) r_2_3))
+      (a!221 (or (not (= (select asg3 6) 2)) (not r_2_4)))
+      (a!222 (or (not (= (select asg3 6) 2)) (not r_2_5)))
+      (a!223 (or (not (= (select asg3 7) 2)) r_2_0))
+      (a!224 (or (not (= (select asg3 7) 2)) (not r_2_1)))
+      (a!225 (or (not (= (select asg3 7) 2)) (not r_2_2)))
+      (a!226 (or (not (= (select asg3 7) 2)) r_2_3))
+      (a!227 (or (not (= (select asg3 7) 2)) (not r_2_4)))
+      (a!228 (or (not (= (select asg3 7) 2)) r_2_5))
+      (a!229 (or (not (= (select asg3 8) 2)) r_2_0))
+      (a!230 (or (not (= (select asg3 8) 2)) (not r_2_1)))
+      (a!231 (or (not (= (select asg3 8) 2)) (not r_2_2)))
+      (a!232 (or (not (= (select asg3 8) 2)) r_2_3))
+      (a!233 (or (not (= (select asg3 8) 2)) r_2_4))
+      (a!234 (or (not (= (select asg3 8) 2)) (not r_2_5)))
+      (a!235 (or (not (= (select asg3 9) 2)) r_2_0))
+      (a!236 (or (not (= (select asg3 9) 2)) (not r_2_1)))
+      (a!237 (or (not (= (select asg3 9) 2)) (not r_2_2)))
+      (a!238 (or (not (= (select asg3 9) 2)) r_2_3))
+      (a!239 (or (not (= (select asg3 9) 2)) r_2_4))
+      (a!240 (or (not (= (select asg3 9) 2)) r_2_5))
+      (a!241 (or (not (= (select asg4 0) 2)) r_2_0))
+      (a!242 (or (not (= (select asg4 0) 2)) (not r_2_1)))
+      (a!243 (or (not (= (select asg4 0) 2)) r_2_2))
+      (a!244 (or (not (= (select asg4 0) 2)) (not r_2_3)))
+      (a!245 (or (not (= (select asg4 0) 2)) (not r_2_4)))
+      (a!246 (or (not (= (select asg4 0) 2)) (not r_2_5)))
+      (a!247 (or (not (= (select asg4 1) 2)) r_2_0))
+      (a!248 (or (not (= (select asg4 1) 2)) (not r_2_1)))
+      (a!249 (or (not (= (select asg4 1) 2)) r_2_2))
+      (a!250 (or (not (= (select asg4 1) 2)) (not r_2_3)))
+      (a!251 (or (not (= (select asg4 1) 2)) (not r_2_4)))
+      (a!252 (or (not (= (select asg4 1) 2)) r_2_5))
+      (a!253 (or (not (= (select asg4 2) 2)) r_2_0))
+      (a!254 (or (not (= (select asg4 2) 2)) (not r_2_1)))
+      (a!255 (or (not (= (select asg4 2) 2)) r_2_2))
+      (a!256 (or (not (= (select asg4 2) 2)) (not r_2_3)))
+      (a!257 (or (not (= (select asg4 2) 2)) r_2_4))
+      (a!258 (or (not (= (select asg4 2) 2)) (not r_2_5)))
+      (a!259 (or (not (= (select asg4 3) 2)) r_2_0))
+      (a!260 (or (not (= (select asg4 3) 2)) (not r_2_1)))
+      (a!261 (or (not (= (select asg4 3) 2)) r_2_2))
+      (a!262 (or (not (= (select asg4 3) 2)) (not r_2_3)))
+      (a!263 (or (not (= (select asg4 3) 2)) r_2_4))
+      (a!264 (or (not (= (select asg4 3) 2)) r_2_5))
+      (a!265 (or (not (= (select asg4 4) 2)) r_2_0))
+      (a!266 (or (not (= (select asg4 4) 2)) (not r_2_1)))
+      (a!267 (or (not (= (select asg4 4) 2)) r_2_2))
+      (a!268 (or (not (= (select asg4 4) 2)) r_2_3))
+      (a!269 (or (not (= (select asg4 4) 2)) (not r_2_4)))
+      (a!270 (or (not (= (select asg4 4) 2)) (not r_2_5)))
+      (a!271 (or (not (= (select asg4 5) 2)) r_2_0))
+      (a!272 (or (not (= (select asg4 5) 2)) (not r_2_1)))
+      (a!273 (or (not (= (select asg4 5) 2)) r_2_2))
+      (a!274 (or (not (= (select asg4 5) 2)) r_2_3))
+      (a!275 (or (not (= (select asg4 5) 2)) (not r_2_4)))
+      (a!276 (or (not (= (select asg4 5) 2)) r_2_5))
+      (a!277 (or (not (= (select asg4 6) 2)) r_2_0))
+      (a!278 (or (not (= (select asg4 6) 2)) (not r_2_1)))
+      (a!279 (or (not (= (select asg4 6) 2)) r_2_2))
+      (a!280 (or (not (= (select asg4 6) 2)) r_2_3))
+      (a!281 (or (not (= (select asg4 6) 2)) r_2_4))
+      (a!282 (or (not (= (select asg4 6) 2)) (not r_2_5)))
+      (a!283 (or (not (= (select asg4 7) 2)) r_2_0))
+      (a!284 (or (not (= (select asg4 7) 2)) (not r_2_1)))
+      (a!285 (or (not (= (select asg4 7) 2)) r_2_2))
+      (a!286 (or (not (= (select asg4 7) 2)) r_2_3))
+      (a!287 (or (not (= (select asg4 7) 2)) r_2_4))
+      (a!288 (or (not (= (select asg4 7) 2)) r_2_5))
+      (a!289 (or (not (= (select asg4 8) 2)) r_2_0))
+      (a!290 (or (not (= (select asg4 8) 2)) r_2_1))
+      (a!291 (or (not (= (select asg4 8) 2)) (not r_2_2)))
+      (a!292 (or (not (= (select asg4 8) 2)) (not r_2_3)))
+      (a!293 (or (not (= (select asg4 8) 2)) (not r_2_4)))
+      (a!294 (or (not (= (select asg4 8) 2)) (not r_2_5)))
+      (a!295 (or (not (= (select asg4 9) 2)) r_2_0))
+      (a!296 (or (not (= (select asg4 9) 2)) r_2_1))
+      (a!297 (or (not (= (select asg4 9) 2)) (not r_2_2)))
+      (a!298 (or (not (= (select asg4 9) 2)) (not r_2_3)))
+      (a!299 (or (not (= (select asg4 9) 2)) (not r_2_4)))
+      (a!300 (or (not (= (select asg4 9) 2)) r_2_5))
+      (a!301 (or (not (= (select asg5 0) 2)) r_2_0))
+      (a!302 (or (not (= (select asg5 0) 2)) r_2_1))
+      (a!303 (or (not (= (select asg5 0) 2)) (not r_2_2)))
+      (a!304 (or (not (= (select asg5 0) 2)) (not r_2_3)))
+      (a!305 (or (not (= (select asg5 0) 2)) r_2_4))
+      (a!306 (or (not (= (select asg5 0) 2)) (not r_2_5)))
+      (a!307 (or (not (= (select asg5 1) 2)) r_2_0))
+      (a!308 (or (not (= (select asg5 1) 2)) r_2_1))
+      (a!309 (or (not (= (select asg5 1) 2)) (not r_2_2)))
+      (a!310 (or (not (= (select asg5 1) 2)) (not r_2_3)))
+      (a!311 (or (not (= (select asg5 1) 2)) r_2_4))
+      (a!312 (or (not (= (select asg5 1) 2)) r_2_5))
+      (a!313 (or (not (= (select asg5 2) 2)) r_2_0))
+      (a!314 (or (not (= (select asg5 2) 2)) r_2_1))
+      (a!315 (or (not (= (select asg5 2) 2)) (not r_2_2)))
+      (a!316 (or (not (= (select asg5 2) 2)) r_2_3))
+      (a!317 (or (not (= (select asg5 2) 2)) (not r_2_4)))
+      (a!318 (or (not (= (select asg5 2) 2)) (not r_2_5)))
+      (a!319 (or (not (= (select asg5 3) 2)) r_2_0))
+      (a!320 (or (not (= (select asg5 3) 2)) r_2_1))
+      (a!321 (or (not (= (select asg5 3) 2)) (not r_2_2)))
+      (a!322 (or (not (= (select asg5 3) 2)) r_2_3))
+      (a!323 (or (not (= (select asg5 3) 2)) (not r_2_4)))
+      (a!324 (or (not (= (select asg5 3) 2)) r_2_5))
+      (a!325 (or (not (= (select asg5 4) 2)) r_2_0))
+      (a!326 (or (not (= (select asg5 4) 2)) r_2_1))
+      (a!327 (or (not (= (select asg5 4) 2)) (not r_2_2)))
+      (a!328 (or (not (= (select asg5 4) 2)) r_2_3))
+      (a!329 (or (not (= (select asg5 4) 2)) r_2_4))
+      (a!330 (or (not (= (select asg5 4) 2)) (not r_2_5)))
+      (a!331 (or (not (= (select asg5 5) 2)) r_2_0))
+      (a!332 (or (not (= (select asg5 5) 2)) r_2_1))
+      (a!333 (or (not (= (select asg5 5) 2)) (not r_2_2)))
+      (a!334 (or (not (= (select asg5 5) 2)) r_2_3))
+      (a!335 (or (not (= (select asg5 5) 2)) r_2_4))
+      (a!336 (or (not (= (select asg5 5) 2)) r_2_5))
+      (a!337 (or (not (= (select asg5 6) 2)) r_2_0))
+      (a!338 (or (not (= (select asg5 6) 2)) r_2_1))
+      (a!339 (or (not (= (select asg5 6) 2)) r_2_2))
+      (a!340 (or (not (= (select asg5 6) 2)) (not r_2_3)))
+      (a!341 (or (not (= (select asg5 6) 2)) (not r_2_4)))
+      (a!342 (or (not (= (select asg5 6) 2)) (not r_2_5)))
+      (a!343 (or (not (= (select asg5 7) 2)) r_2_0))
+      (a!344 (or (not (= (select asg5 7) 2)) r_2_1))
+      (a!345 (or (not (= (select asg5 7) 2)) r_2_2))
+      (a!346 (or (not (= (select asg5 7) 2)) (not r_2_3)))
+      (a!347 (or (not (= (select asg5 7) 2)) (not r_2_4)))
+      (a!348 (or (not (= (select asg5 7) 2)) r_2_5))
+      (a!349 (or (not (= (select asg5 8) 2)) r_2_0))
+      (a!350 (or (not (= (select asg5 8) 2)) r_2_1))
+      (a!351 (or (not (= (select asg5 8) 2)) r_2_2))
+      (a!352 (or (not (= (select asg5 8) 2)) (not r_2_3)))
+      (a!353 (or (not (= (select asg5 8) 2)) r_2_4))
+      (a!354 (or (not (= (select asg5 8) 2)) (not r_2_5)))
+      (a!355 (or (not (= (select asg5 9) 2)) r_2_0))
+      (a!356 (or (not (= (select asg5 9) 2)) r_2_1))
+      (a!357 (or (not (= (select asg5 9) 2)) r_2_2))
+      (a!358 (or (not (= (select asg5 9) 2)) (not r_2_3)))
+      (a!359 (or (not (= (select asg5 9) 2)) r_2_4))
+      (a!360 (or (not (= (select asg5 9) 2)) r_2_5)))
+  (and (or (= (select asg0 0) 2)
+           (= (select asg0 1) 2)
+           (= (select asg0 2) 2)
+           (= (select asg0 3) 2)
+           (= (select asg0 4) 2)
+           (= (select asg0 5) 2)
+           (= (select asg0 6) 2)
+           (= (select asg0 7) 2)
+           (= (select asg0 8) 2)
+           (= (select asg0 9) 2)
+           (= (select asg1 0) 2)
+           (= (select asg1 1) 2)
+           (= (select asg1 2) 2)
+           (= (select asg1 3) 2)
+           (= (select asg1 4) 2)
+           (= (select asg1 5) 2)
+           (= (select asg1 6) 2)
+           (= (select asg1 7) 2)
+           (= (select asg1 8) 2)
+           (= (select asg1 9) 2)
+           (= (select asg2 0) 2)
+           (= (select asg2 1) 2)
+           (= (select asg2 2) 2)
+           (= (select asg2 3) 2)
+           (= (select asg2 4) 2)
+           (= (select asg2 5) 2)
+           (= (select asg2 6) 2)
+           (= (select asg2 7) 2)
+           (= (select asg2 8) 2)
+           (= (select asg2 9) 2)
+           (= (select asg3 0) 2)
+           (= (select asg3 1) 2)
+           (= (select asg3 2) 2)
+           (= (select asg3 3) 2)
+           (= (select asg3 4) 2)
+           (= (select asg3 5) 2)
+           (= (select asg3 6) 2)
+           (= (select asg3 7) 2)
+           (= (select asg3 8) 2)
+           (= (select asg3 9) 2)
+           (= (select asg4 0) 2)
+           (= (select asg4 1) 2)
+           (= (select asg4 2) 2)
+           (= (select asg4 3) 2)
+           (= (select asg4 4) 2)
+           (= (select asg4 5) 2)
+           (= (select asg4 6) 2)
+           (= (select asg4 7) 2)
+           (= (select asg4 8) 2)
+           (= (select asg4 9) 2)
+           (= (select asg5 0) 2)
+           (= (select asg5 1) 2)
+           (= (select asg5 2) 2)
+           (= (select asg5 3) 2)
+           (= (select asg5 4) 2)
+           (= (select asg5 5) 2)
+           (= (select asg5 6) 2)
+           (= (select asg5 7) 2)
+           (= (select asg5 8) 2)
+           (= (select asg5 9) 2))
+       a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40
+       a!41
+       a!42
+       a!43
+       a!44
+       a!45
+       a!46
+       a!47
+       a!48
+       a!49
+       a!50
+       a!51
+       a!52
+       a!53
+       a!54
+       a!55
+       a!56
+       a!57
+       a!58
+       a!59
+       a!60
+       a!61
+       a!62
+       a!63
+       a!64
+       a!65
+       a!66
+       a!67
+       a!68
+       a!69
+       a!70
+       a!71
+       a!72
+       a!73
+       a!74
+       a!75
+       a!76
+       a!77
+       a!78
+       a!79
+       a!80
+       a!81
+       a!82
+       a!83
+       a!84
+       a!85
+       a!86
+       a!87
+       a!88
+       a!89
+       a!90
+       a!91
+       a!92
+       a!93
+       a!94
+       a!95
+       a!96
+       a!97
+       a!98
+       a!99
+       a!100
+       a!101
+       a!102
+       a!103
+       a!104
+       a!105
+       a!106
+       a!107
+       a!108
+       a!109
+       a!110
+       a!111
+       a!112
+       a!113
+       a!114
+       a!115
+       a!116
+       a!117
+       a!118
+       a!119
+       a!120
+       a!121
+       a!122
+       a!123
+       a!124
+       a!125
+       a!126
+       a!127
+       a!128
+       a!129
+       a!130
+       a!131
+       a!132
+       a!133
+       a!134
+       a!135
+       a!136
+       a!137
+       a!138
+       a!139
+       a!140
+       a!141
+       a!142
+       a!143
+       a!144
+       a!145
+       a!146
+       a!147
+       a!148
+       a!149
+       a!150
+       a!151
+       a!152
+       a!153
+       a!154
+       a!155
+       a!156
+       a!157
+       a!158
+       a!159
+       a!160
+       a!161
+       a!162
+       a!163
+       a!164
+       a!165
+       a!166
+       a!167
+       a!168
+       a!169
+       a!170
+       a!171
+       a!172
+       a!173
+       a!174
+       a!175
+       a!176
+       a!177
+       a!178
+       a!179
+       a!180
+       a!181
+       a!182
+       a!183
+       a!184
+       a!185
+       a!186
+       a!187
+       a!188
+       a!189
+       a!190
+       a!191
+       a!192
+       a!193
+       a!194
+       a!195
+       a!196
+       a!197
+       a!198
+       a!199
+       a!200
+       a!201
+       a!202
+       a!203
+       a!204
+       a!205
+       a!206
+       a!207
+       a!208
+       a!209
+       a!210
+       a!211
+       a!212
+       a!213
+       a!214
+       a!215
+       a!216
+       a!217
+       a!218
+       a!219
+       a!220
+       a!221
+       a!222
+       a!223
+       a!224
+       a!225
+       a!226
+       a!227
+       a!228
+       a!229
+       a!230
+       a!231
+       a!232
+       a!233
+       a!234
+       a!235
+       a!236
+       a!237
+       a!238
+       a!239
+       a!240
+       a!241
+       a!242
+       a!243
+       a!244
+       a!245
+       a!246
+       a!247
+       a!248
+       a!249
+       a!250
+       a!251
+       a!252
+       a!253
+       a!254
+       a!255
+       a!256
+       a!257
+       a!258
+       a!259
+       a!260
+       a!261
+       a!262
+       a!263
+       a!264
+       a!265
+       a!266
+       a!267
+       a!268
+       a!269
+       a!270
+       a!271
+       a!272
+       a!273
+       a!274
+       a!275
+       a!276
+       a!277
+       a!278
+       a!279
+       a!280
+       a!281
+       a!282
+       a!283
+       a!284
+       a!285
+       a!286
+       a!287
+       a!288
+       a!289
+       a!290
+       a!291
+       a!292
+       a!293
+       a!294
+       a!295
+       a!296
+       a!297
+       a!298
+       a!299
+       a!300
+       a!301
+       a!302
+       a!303
+       a!304
+       a!305
+       a!306
+       a!307
+       a!308
+       a!309
+       a!310
+       a!311
+       a!312
+       a!313
+       a!314
+       a!315
+       a!316
+       a!317
+       a!318
+       a!319
+       a!320
+       a!321
+       a!322
+       a!323
+       a!324
+       a!325
+       a!326
+       a!327
+       a!328
+       a!329
+       a!330
+       a!331
+       a!332
+       a!333
+       a!334
+       a!335
+       a!336
+       a!337
+       a!338
+       a!339
+       a!340
+       a!341
+       a!342
+       a!343
+       a!344
+       a!345
+       a!346
+       a!347
+       a!348
+       a!349
+       a!350
+       a!351
+       a!352
+       a!353
+       a!354
+       a!355
+       a!356
+       a!357
+       a!358
+       a!359
+       a!360)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 3)) (not r_3_0)))
+      (a!2 (or (not (= (select asg0 0) 3)) (not r_3_1)))
+      (a!3 (or (not (= (select asg0 0) 3)) (not r_3_2)))
+      (a!4 (or (not (= (select asg0 0) 3)) (not r_3_3)))
+      (a!5 (or (not (= (select asg0 0) 3)) (not r_3_4)))
+      (a!6 (or (not (= (select asg0 0) 3)) (not r_3_5)))
+      (a!7 (or (not (= (select asg0 1) 3)) (not r_3_0)))
+      (a!8 (or (not (= (select asg0 1) 3)) (not r_3_1)))
+      (a!9 (or (not (= (select asg0 1) 3)) (not r_3_2)))
+      (a!10 (or (not (= (select asg0 1) 3)) (not r_3_3)))
+      (a!11 (or (not (= (select asg0 1) 3)) (not r_3_4)))
+      (a!12 (or (not (= (select asg0 1) 3)) r_3_5))
+      (a!13 (or (not (= (select asg0 2) 3)) (not r_3_0)))
+      (a!14 (or (not (= (select asg0 2) 3)) (not r_3_1)))
+      (a!15 (or (not (= (select asg0 2) 3)) (not r_3_2)))
+      (a!16 (or (not (= (select asg0 2) 3)) (not r_3_3)))
+      (a!17 (or (not (= (select asg0 2) 3)) r_3_4))
+      (a!18 (or (not (= (select asg0 2) 3)) (not r_3_5)))
+      (a!19 (or (not (= (select asg0 3) 3)) (not r_3_0)))
+      (a!20 (or (not (= (select asg0 3) 3)) (not r_3_1)))
+      (a!21 (or (not (= (select asg0 3) 3)) (not r_3_2)))
+      (a!22 (or (not (= (select asg0 3) 3)) (not r_3_3)))
+      (a!23 (or (not (= (select asg0 3) 3)) r_3_4))
+      (a!24 (or (not (= (select asg0 3) 3)) r_3_5))
+      (a!25 (or (not (= (select asg0 4) 3)) (not r_3_0)))
+      (a!26 (or (not (= (select asg0 4) 3)) (not r_3_1)))
+      (a!27 (or (not (= (select asg0 4) 3)) (not r_3_2)))
+      (a!28 (or (not (= (select asg0 4) 3)) r_3_3))
+      (a!29 (or (not (= (select asg0 4) 3)) (not r_3_4)))
+      (a!30 (or (not (= (select asg0 4) 3)) (not r_3_5)))
+      (a!31 (or (not (= (select asg0 5) 3)) (not r_3_0)))
+      (a!32 (or (not (= (select asg0 5) 3)) (not r_3_1)))
+      (a!33 (or (not (= (select asg0 5) 3)) (not r_3_2)))
+      (a!34 (or (not (= (select asg0 5) 3)) r_3_3))
+      (a!35 (or (not (= (select asg0 5) 3)) (not r_3_4)))
+      (a!36 (or (not (= (select asg0 5) 3)) r_3_5))
+      (a!37 (or (not (= (select asg0 6) 3)) (not r_3_0)))
+      (a!38 (or (not (= (select asg0 6) 3)) (not r_3_1)))
+      (a!39 (or (not (= (select asg0 6) 3)) (not r_3_2)))
+      (a!40 (or (not (= (select asg0 6) 3)) r_3_3))
+      (a!41 (or (not (= (select asg0 6) 3)) r_3_4))
+      (a!42 (or (not (= (select asg0 6) 3)) (not r_3_5)))
+      (a!43 (or (not (= (select asg0 7) 3)) (not r_3_0)))
+      (a!44 (or (not (= (select asg0 7) 3)) (not r_3_1)))
+      (a!45 (or (not (= (select asg0 7) 3)) (not r_3_2)))
+      (a!46 (or (not (= (select asg0 7) 3)) r_3_3))
+      (a!47 (or (not (= (select asg0 7) 3)) r_3_4))
+      (a!48 (or (not (= (select asg0 7) 3)) r_3_5))
+      (a!49 (or (not (= (select asg0 8) 3)) (not r_3_0)))
+      (a!50 (or (not (= (select asg0 8) 3)) (not r_3_1)))
+      (a!51 (or (not (= (select asg0 8) 3)) r_3_2))
+      (a!52 (or (not (= (select asg0 8) 3)) (not r_3_3)))
+      (a!53 (or (not (= (select asg0 8) 3)) (not r_3_4)))
+      (a!54 (or (not (= (select asg0 8) 3)) (not r_3_5)))
+      (a!55 (or (not (= (select asg0 9) 3)) (not r_3_0)))
+      (a!56 (or (not (= (select asg0 9) 3)) (not r_3_1)))
+      (a!57 (or (not (= (select asg0 9) 3)) r_3_2))
+      (a!58 (or (not (= (select asg0 9) 3)) (not r_3_3)))
+      (a!59 (or (not (= (select asg0 9) 3)) (not r_3_4)))
+      (a!60 (or (not (= (select asg0 9) 3)) r_3_5))
+      (a!61 (or (not (= (select asg1 0) 3)) (not r_3_0)))
+      (a!62 (or (not (= (select asg1 0) 3)) (not r_3_1)))
+      (a!63 (or (not (= (select asg1 0) 3)) r_3_2))
+      (a!64 (or (not (= (select asg1 0) 3)) (not r_3_3)))
+      (a!65 (or (not (= (select asg1 0) 3)) r_3_4))
+      (a!66 (or (not (= (select asg1 0) 3)) (not r_3_5)))
+      (a!67 (or (not (= (select asg1 1) 3)) (not r_3_0)))
+      (a!68 (or (not (= (select asg1 1) 3)) (not r_3_1)))
+      (a!69 (or (not (= (select asg1 1) 3)) r_3_2))
+      (a!70 (or (not (= (select asg1 1) 3)) (not r_3_3)))
+      (a!71 (or (not (= (select asg1 1) 3)) r_3_4))
+      (a!72 (or (not (= (select asg1 1) 3)) r_3_5))
+      (a!73 (or (not (= (select asg1 2) 3)) (not r_3_0)))
+      (a!74 (or (not (= (select asg1 2) 3)) (not r_3_1)))
+      (a!75 (or (not (= (select asg1 2) 3)) r_3_2))
+      (a!76 (or (not (= (select asg1 2) 3)) r_3_3))
+      (a!77 (or (not (= (select asg1 2) 3)) (not r_3_4)))
+      (a!78 (or (not (= (select asg1 2) 3)) (not r_3_5)))
+      (a!79 (or (not (= (select asg1 3) 3)) (not r_3_0)))
+      (a!80 (or (not (= (select asg1 3) 3)) (not r_3_1)))
+      (a!81 (or (not (= (select asg1 3) 3)) r_3_2))
+      (a!82 (or (not (= (select asg1 3) 3)) r_3_3))
+      (a!83 (or (not (= (select asg1 3) 3)) (not r_3_4)))
+      (a!84 (or (not (= (select asg1 3) 3)) r_3_5))
+      (a!85 (or (not (= (select asg1 4) 3)) (not r_3_0)))
+      (a!86 (or (not (= (select asg1 4) 3)) (not r_3_1)))
+      (a!87 (or (not (= (select asg1 4) 3)) r_3_2))
+      (a!88 (or (not (= (select asg1 4) 3)) r_3_3))
+      (a!89 (or (not (= (select asg1 4) 3)) r_3_4))
+      (a!90 (or (not (= (select asg1 4) 3)) (not r_3_5)))
+      (a!91 (or (not (= (select asg1 5) 3)) (not r_3_0)))
+      (a!92 (or (not (= (select asg1 5) 3)) (not r_3_1)))
+      (a!93 (or (not (= (select asg1 5) 3)) r_3_2))
+      (a!94 (or (not (= (select asg1 5) 3)) r_3_3))
+      (a!95 (or (not (= (select asg1 5) 3)) r_3_4))
+      (a!96 (or (not (= (select asg1 5) 3)) r_3_5))
+      (a!97 (or (not (= (select asg1 6) 3)) (not r_3_0)))
+      (a!98 (or (not (= (select asg1 6) 3)) r_3_1))
+      (a!99 (or (not (= (select asg1 6) 3)) (not r_3_2)))
+      (a!100 (or (not (= (select asg1 6) 3)) (not r_3_3)))
+      (a!101 (or (not (= (select asg1 6) 3)) (not r_3_4)))
+      (a!102 (or (not (= (select asg1 6) 3)) (not r_3_5)))
+      (a!103 (or (not (= (select asg1 7) 3)) (not r_3_0)))
+      (a!104 (or (not (= (select asg1 7) 3)) r_3_1))
+      (a!105 (or (not (= (select asg1 7) 3)) (not r_3_2)))
+      (a!106 (or (not (= (select asg1 7) 3)) (not r_3_3)))
+      (a!107 (or (not (= (select asg1 7) 3)) (not r_3_4)))
+      (a!108 (or (not (= (select asg1 7) 3)) r_3_5))
+      (a!109 (or (not (= (select asg1 8) 3)) (not r_3_0)))
+      (a!110 (or (not (= (select asg1 8) 3)) r_3_1))
+      (a!111 (or (not (= (select asg1 8) 3)) (not r_3_2)))
+      (a!112 (or (not (= (select asg1 8) 3)) (not r_3_3)))
+      (a!113 (or (not (= (select asg1 8) 3)) r_3_4))
+      (a!114 (or (not (= (select asg1 8) 3)) (not r_3_5)))
+      (a!115 (or (not (= (select asg1 9) 3)) (not r_3_0)))
+      (a!116 (or (not (= (select asg1 9) 3)) r_3_1))
+      (a!117 (or (not (= (select asg1 9) 3)) (not r_3_2)))
+      (a!118 (or (not (= (select asg1 9) 3)) (not r_3_3)))
+      (a!119 (or (not (= (select asg1 9) 3)) r_3_4))
+      (a!120 (or (not (= (select asg1 9) 3)) r_3_5))
+      (a!121 (or (not (= (select asg2 0) 3)) (not r_3_0)))
+      (a!122 (or (not (= (select asg2 0) 3)) r_3_1))
+      (a!123 (or (not (= (select asg2 0) 3)) (not r_3_2)))
+      (a!124 (or (not (= (select asg2 0) 3)) r_3_3))
+      (a!125 (or (not (= (select asg2 0) 3)) (not r_3_4)))
+      (a!126 (or (not (= (select asg2 0) 3)) (not r_3_5)))
+      (a!127 (or (not (= (select asg2 1) 3)) (not r_3_0)))
+      (a!128 (or (not (= (select asg2 1) 3)) r_3_1))
+      (a!129 (or (not (= (select asg2 1) 3)) (not r_3_2)))
+      (a!130 (or (not (= (select asg2 1) 3)) r_3_3))
+      (a!131 (or (not (= (select asg2 1) 3)) (not r_3_4)))
+      (a!132 (or (not (= (select asg2 1) 3)) r_3_5))
+      (a!133 (or (not (= (select asg2 2) 3)) (not r_3_0)))
+      (a!134 (or (not (= (select asg2 2) 3)) r_3_1))
+      (a!135 (or (not (= (select asg2 2) 3)) (not r_3_2)))
+      (a!136 (or (not (= (select asg2 2) 3)) r_3_3))
+      (a!137 (or (not (= (select asg2 2) 3)) r_3_4))
+      (a!138 (or (not (= (select asg2 2) 3)) (not r_3_5)))
+      (a!139 (or (not (= (select asg2 3) 3)) (not r_3_0)))
+      (a!140 (or (not (= (select asg2 3) 3)) r_3_1))
+      (a!141 (or (not (= (select asg2 3) 3)) (not r_3_2)))
+      (a!142 (or (not (= (select asg2 3) 3)) r_3_3))
+      (a!143 (or (not (= (select asg2 3) 3)) r_3_4))
+      (a!144 (or (not (= (select asg2 3) 3)) r_3_5))
+      (a!145 (or (not (= (select asg2 4) 3)) (not r_3_0)))
+      (a!146 (or (not (= (select asg2 4) 3)) r_3_1))
+      (a!147 (or (not (= (select asg2 4) 3)) r_3_2))
+      (a!148 (or (not (= (select asg2 4) 3)) (not r_3_3)))
+      (a!149 (or (not (= (select asg2 4) 3)) (not r_3_4)))
+      (a!150 (or (not (= (select asg2 4) 3)) (not r_3_5)))
+      (a!151 (or (not (= (select asg2 5) 3)) (not r_3_0)))
+      (a!152 (or (not (= (select asg2 5) 3)) r_3_1))
+      (a!153 (or (not (= (select asg2 5) 3)) r_3_2))
+      (a!154 (or (not (= (select asg2 5) 3)) (not r_3_3)))
+      (a!155 (or (not (= (select asg2 5) 3)) (not r_3_4)))
+      (a!156 (or (not (= (select asg2 5) 3)) r_3_5))
+      (a!157 (or (not (= (select asg2 6) 3)) (not r_3_0)))
+      (a!158 (or (not (= (select asg2 6) 3)) r_3_1))
+      (a!159 (or (not (= (select asg2 6) 3)) r_3_2))
+      (a!160 (or (not (= (select asg2 6) 3)) (not r_3_3)))
+      (a!161 (or (not (= (select asg2 6) 3)) r_3_4))
+      (a!162 (or (not (= (select asg2 6) 3)) (not r_3_5)))
+      (a!163 (or (not (= (select asg2 7) 3)) (not r_3_0)))
+      (a!164 (or (not (= (select asg2 7) 3)) r_3_1))
+      (a!165 (or (not (= (select asg2 7) 3)) r_3_2))
+      (a!166 (or (not (= (select asg2 7) 3)) (not r_3_3)))
+      (a!167 (or (not (= (select asg2 7) 3)) r_3_4))
+      (a!168 (or (not (= (select asg2 7) 3)) r_3_5))
+      (a!169 (or (not (= (select asg2 8) 3)) (not r_3_0)))
+      (a!170 (or (not (= (select asg2 8) 3)) r_3_1))
+      (a!171 (or (not (= (select asg2 8) 3)) r_3_2))
+      (a!172 (or (not (= (select asg2 8) 3)) r_3_3))
+      (a!173 (or (not (= (select asg2 8) 3)) (not r_3_4)))
+      (a!174 (or (not (= (select asg2 8) 3)) (not r_3_5)))
+      (a!175 (or (not (= (select asg2 9) 3)) (not r_3_0)))
+      (a!176 (or (not (= (select asg2 9) 3)) r_3_1))
+      (a!177 (or (not (= (select asg2 9) 3)) r_3_2))
+      (a!178 (or (not (= (select asg2 9) 3)) r_3_3))
+      (a!179 (or (not (= (select asg2 9) 3)) (not r_3_4)))
+      (a!180 (or (not (= (select asg2 9) 3)) r_3_5))
+      (a!181 (or (not (= (select asg3 0) 3)) (not r_3_0)))
+      (a!182 (or (not (= (select asg3 0) 3)) r_3_1))
+      (a!183 (or (not (= (select asg3 0) 3)) r_3_2))
+      (a!184 (or (not (= (select asg3 0) 3)) r_3_3))
+      (a!185 (or (not (= (select asg3 0) 3)) r_3_4))
+      (a!186 (or (not (= (select asg3 0) 3)) (not r_3_5)))
+      (a!187 (or (not (= (select asg3 1) 3)) (not r_3_0)))
+      (a!188 (or (not (= (select asg3 1) 3)) r_3_1))
+      (a!189 (or (not (= (select asg3 1) 3)) r_3_2))
+      (a!190 (or (not (= (select asg3 1) 3)) r_3_3))
+      (a!191 (or (not (= (select asg3 1) 3)) r_3_4))
+      (a!192 (or (not (= (select asg3 1) 3)) r_3_5))
+      (a!193 (or (not (= (select asg3 2) 3)) r_3_0))
+      (a!194 (or (not (= (select asg3 2) 3)) (not r_3_1)))
+      (a!195 (or (not (= (select asg3 2) 3)) (not r_3_2)))
+      (a!196 (or (not (= (select asg3 2) 3)) (not r_3_3)))
+      (a!197 (or (not (= (select asg3 2) 3)) (not r_3_4)))
+      (a!198 (or (not (= (select asg3 2) 3)) (not r_3_5)))
+      (a!199 (or (not (= (select asg3 3) 3)) r_3_0))
+      (a!200 (or (not (= (select asg3 3) 3)) (not r_3_1)))
+      (a!201 (or (not (= (select asg3 3) 3)) (not r_3_2)))
+      (a!202 (or (not (= (select asg3 3) 3)) (not r_3_3)))
+      (a!203 (or (not (= (select asg3 3) 3)) (not r_3_4)))
+      (a!204 (or (not (= (select asg3 3) 3)) r_3_5))
+      (a!205 (or (not (= (select asg3 4) 3)) r_3_0))
+      (a!206 (or (not (= (select asg3 4) 3)) (not r_3_1)))
+      (a!207 (or (not (= (select asg3 4) 3)) (not r_3_2)))
+      (a!208 (or (not (= (select asg3 4) 3)) (not r_3_3)))
+      (a!209 (or (not (= (select asg3 4) 3)) r_3_4))
+      (a!210 (or (not (= (select asg3 4) 3)) (not r_3_5)))
+      (a!211 (or (not (= (select asg3 5) 3)) r_3_0))
+      (a!212 (or (not (= (select asg3 5) 3)) (not r_3_1)))
+      (a!213 (or (not (= (select asg3 5) 3)) (not r_3_2)))
+      (a!214 (or (not (= (select asg3 5) 3)) (not r_3_3)))
+      (a!215 (or (not (= (select asg3 5) 3)) r_3_4))
+      (a!216 (or (not (= (select asg3 5) 3)) r_3_5))
+      (a!217 (or (not (= (select asg3 6) 3)) r_3_0))
+      (a!218 (or (not (= (select asg3 6) 3)) (not r_3_1)))
+      (a!219 (or (not (= (select asg3 6) 3)) (not r_3_2)))
+      (a!220 (or (not (= (select asg3 6) 3)) r_3_3))
+      (a!221 (or (not (= (select asg3 6) 3)) (not r_3_4)))
+      (a!222 (or (not (= (select asg3 6) 3)) (not r_3_5)))
+      (a!223 (or (not (= (select asg3 7) 3)) r_3_0))
+      (a!224 (or (not (= (select asg3 7) 3)) (not r_3_1)))
+      (a!225 (or (not (= (select asg3 7) 3)) (not r_3_2)))
+      (a!226 (or (not (= (select asg3 7) 3)) r_3_3))
+      (a!227 (or (not (= (select asg3 7) 3)) (not r_3_4)))
+      (a!228 (or (not (= (select asg3 7) 3)) r_3_5))
+      (a!229 (or (not (= (select asg3 8) 3)) r_3_0))
+      (a!230 (or (not (= (select asg3 8) 3)) (not r_3_1)))
+      (a!231 (or (not (= (select asg3 8) 3)) (not r_3_2)))
+      (a!232 (or (not (= (select asg3 8) 3)) r_3_3))
+      (a!233 (or (not (= (select asg3 8) 3)) r_3_4))
+      (a!234 (or (not (= (select asg3 8) 3)) (not r_3_5)))
+      (a!235 (or (not (= (select asg3 9) 3)) r_3_0))
+      (a!236 (or (not (= (select asg3 9) 3)) (not r_3_1)))
+      (a!237 (or (not (= (select asg3 9) 3)) (not r_3_2)))
+      (a!238 (or (not (= (select asg3 9) 3)) r_3_3))
+      (a!239 (or (not (= (select asg3 9) 3)) r_3_4))
+      (a!240 (or (not (= (select asg3 9) 3)) r_3_5))
+      (a!241 (or (not (= (select asg4 0) 3)) r_3_0))
+      (a!242 (or (not (= (select asg4 0) 3)) (not r_3_1)))
+      (a!243 (or (not (= (select asg4 0) 3)) r_3_2))
+      (a!244 (or (not (= (select asg4 0) 3)) (not r_3_3)))
+      (a!245 (or (not (= (select asg4 0) 3)) (not r_3_4)))
+      (a!246 (or (not (= (select asg4 0) 3)) (not r_3_5)))
+      (a!247 (or (not (= (select asg4 1) 3)) r_3_0))
+      (a!248 (or (not (= (select asg4 1) 3)) (not r_3_1)))
+      (a!249 (or (not (= (select asg4 1) 3)) r_3_2))
+      (a!250 (or (not (= (select asg4 1) 3)) (not r_3_3)))
+      (a!251 (or (not (= (select asg4 1) 3)) (not r_3_4)))
+      (a!252 (or (not (= (select asg4 1) 3)) r_3_5))
+      (a!253 (or (not (= (select asg4 2) 3)) r_3_0))
+      (a!254 (or (not (= (select asg4 2) 3)) (not r_3_1)))
+      (a!255 (or (not (= (select asg4 2) 3)) r_3_2))
+      (a!256 (or (not (= (select asg4 2) 3)) (not r_3_3)))
+      (a!257 (or (not (= (select asg4 2) 3)) r_3_4))
+      (a!258 (or (not (= (select asg4 2) 3)) (not r_3_5)))
+      (a!259 (or (not (= (select asg4 3) 3)) r_3_0))
+      (a!260 (or (not (= (select asg4 3) 3)) (not r_3_1)))
+      (a!261 (or (not (= (select asg4 3) 3)) r_3_2))
+      (a!262 (or (not (= (select asg4 3) 3)) (not r_3_3)))
+      (a!263 (or (not (= (select asg4 3) 3)) r_3_4))
+      (a!264 (or (not (= (select asg4 3) 3)) r_3_5))
+      (a!265 (or (not (= (select asg4 4) 3)) r_3_0))
+      (a!266 (or (not (= (select asg4 4) 3)) (not r_3_1)))
+      (a!267 (or (not (= (select asg4 4) 3)) r_3_2))
+      (a!268 (or (not (= (select asg4 4) 3)) r_3_3))
+      (a!269 (or (not (= (select asg4 4) 3)) (not r_3_4)))
+      (a!270 (or (not (= (select asg4 4) 3)) (not r_3_5)))
+      (a!271 (or (not (= (select asg4 5) 3)) r_3_0))
+      (a!272 (or (not (= (select asg4 5) 3)) (not r_3_1)))
+      (a!273 (or (not (= (select asg4 5) 3)) r_3_2))
+      (a!274 (or (not (= (select asg4 5) 3)) r_3_3))
+      (a!275 (or (not (= (select asg4 5) 3)) (not r_3_4)))
+      (a!276 (or (not (= (select asg4 5) 3)) r_3_5))
+      (a!277 (or (not (= (select asg4 6) 3)) r_3_0))
+      (a!278 (or (not (= (select asg4 6) 3)) (not r_3_1)))
+      (a!279 (or (not (= (select asg4 6) 3)) r_3_2))
+      (a!280 (or (not (= (select asg4 6) 3)) r_3_3))
+      (a!281 (or (not (= (select asg4 6) 3)) r_3_4))
+      (a!282 (or (not (= (select asg4 6) 3)) (not r_3_5)))
+      (a!283 (or (not (= (select asg4 7) 3)) r_3_0))
+      (a!284 (or (not (= (select asg4 7) 3)) (not r_3_1)))
+      (a!285 (or (not (= (select asg4 7) 3)) r_3_2))
+      (a!286 (or (not (= (select asg4 7) 3)) r_3_3))
+      (a!287 (or (not (= (select asg4 7) 3)) r_3_4))
+      (a!288 (or (not (= (select asg4 7) 3)) r_3_5))
+      (a!289 (or (not (= (select asg4 8) 3)) r_3_0))
+      (a!290 (or (not (= (select asg4 8) 3)) r_3_1))
+      (a!291 (or (not (= (select asg4 8) 3)) (not r_3_2)))
+      (a!292 (or (not (= (select asg4 8) 3)) (not r_3_3)))
+      (a!293 (or (not (= (select asg4 8) 3)) (not r_3_4)))
+      (a!294 (or (not (= (select asg4 8) 3)) (not r_3_5)))
+      (a!295 (or (not (= (select asg4 9) 3)) r_3_0))
+      (a!296 (or (not (= (select asg4 9) 3)) r_3_1))
+      (a!297 (or (not (= (select asg4 9) 3)) (not r_3_2)))
+      (a!298 (or (not (= (select asg4 9) 3)) (not r_3_3)))
+      (a!299 (or (not (= (select asg4 9) 3)) (not r_3_4)))
+      (a!300 (or (not (= (select asg4 9) 3)) r_3_5))
+      (a!301 (or (not (= (select asg5 0) 3)) r_3_0))
+      (a!302 (or (not (= (select asg5 0) 3)) r_3_1))
+      (a!303 (or (not (= (select asg5 0) 3)) (not r_3_2)))
+      (a!304 (or (not (= (select asg5 0) 3)) (not r_3_3)))
+      (a!305 (or (not (= (select asg5 0) 3)) r_3_4))
+      (a!306 (or (not (= (select asg5 0) 3)) (not r_3_5)))
+      (a!307 (or (not (= (select asg5 1) 3)) r_3_0))
+      (a!308 (or (not (= (select asg5 1) 3)) r_3_1))
+      (a!309 (or (not (= (select asg5 1) 3)) (not r_3_2)))
+      (a!310 (or (not (= (select asg5 1) 3)) (not r_3_3)))
+      (a!311 (or (not (= (select asg5 1) 3)) r_3_4))
+      (a!312 (or (not (= (select asg5 1) 3)) r_3_5))
+      (a!313 (or (not (= (select asg5 2) 3)) r_3_0))
+      (a!314 (or (not (= (select asg5 2) 3)) r_3_1))
+      (a!315 (or (not (= (select asg5 2) 3)) (not r_3_2)))
+      (a!316 (or (not (= (select asg5 2) 3)) r_3_3))
+      (a!317 (or (not (= (select asg5 2) 3)) (not r_3_4)))
+      (a!318 (or (not (= (select asg5 2) 3)) (not r_3_5)))
+      (a!319 (or (not (= (select asg5 3) 3)) r_3_0))
+      (a!320 (or (not (= (select asg5 3) 3)) r_3_1))
+      (a!321 (or (not (= (select asg5 3) 3)) (not r_3_2)))
+      (a!322 (or (not (= (select asg5 3) 3)) r_3_3))
+      (a!323 (or (not (= (select asg5 3) 3)) (not r_3_4)))
+      (a!324 (or (not (= (select asg5 3) 3)) r_3_5))
+      (a!325 (or (not (= (select asg5 4) 3)) r_3_0))
+      (a!326 (or (not (= (select asg5 4) 3)) r_3_1))
+      (a!327 (or (not (= (select asg5 4) 3)) (not r_3_2)))
+      (a!328 (or (not (= (select asg5 4) 3)) r_3_3))
+      (a!329 (or (not (= (select asg5 4) 3)) r_3_4))
+      (a!330 (or (not (= (select asg5 4) 3)) (not r_3_5)))
+      (a!331 (or (not (= (select asg5 5) 3)) r_3_0))
+      (a!332 (or (not (= (select asg5 5) 3)) r_3_1))
+      (a!333 (or (not (= (select asg5 5) 3)) (not r_3_2)))
+      (a!334 (or (not (= (select asg5 5) 3)) r_3_3))
+      (a!335 (or (not (= (select asg5 5) 3)) r_3_4))
+      (a!336 (or (not (= (select asg5 5) 3)) r_3_5))
+      (a!337 (or (not (= (select asg5 6) 3)) r_3_0))
+      (a!338 (or (not (= (select asg5 6) 3)) r_3_1))
+      (a!339 (or (not (= (select asg5 6) 3)) r_3_2))
+      (a!340 (or (not (= (select asg5 6) 3)) (not r_3_3)))
+      (a!341 (or (not (= (select asg5 6) 3)) (not r_3_4)))
+      (a!342 (or (not (= (select asg5 6) 3)) (not r_3_5)))
+      (a!343 (or (not (= (select asg5 7) 3)) r_3_0))
+      (a!344 (or (not (= (select asg5 7) 3)) r_3_1))
+      (a!345 (or (not (= (select asg5 7) 3)) r_3_2))
+      (a!346 (or (not (= (select asg5 7) 3)) (not r_3_3)))
+      (a!347 (or (not (= (select asg5 7) 3)) (not r_3_4)))
+      (a!348 (or (not (= (select asg5 7) 3)) r_3_5))
+      (a!349 (or (not (= (select asg5 8) 3)) r_3_0))
+      (a!350 (or (not (= (select asg5 8) 3)) r_3_1))
+      (a!351 (or (not (= (select asg5 8) 3)) r_3_2))
+      (a!352 (or (not (= (select asg5 8) 3)) (not r_3_3)))
+      (a!353 (or (not (= (select asg5 8) 3)) r_3_4))
+      (a!354 (or (not (= (select asg5 8) 3)) (not r_3_5)))
+      (a!355 (or (not (= (select asg5 9) 3)) r_3_0))
+      (a!356 (or (not (= (select asg5 9) 3)) r_3_1))
+      (a!357 (or (not (= (select asg5 9) 3)) r_3_2))
+      (a!358 (or (not (= (select asg5 9) 3)) (not r_3_3)))
+      (a!359 (or (not (= (select asg5 9) 3)) r_3_4))
+      (a!360 (or (not (= (select asg5 9) 3)) r_3_5)))
+  (and (or (= (select asg0 0) 3)
+           (= (select asg0 1) 3)
+           (= (select asg0 2) 3)
+           (= (select asg0 3) 3)
+           (= (select asg0 4) 3)
+           (= (select asg0 5) 3)
+           (= (select asg0 6) 3)
+           (= (select asg0 7) 3)
+           (= (select asg0 8) 3)
+           (= (select asg0 9) 3)
+           (= (select asg1 0) 3)
+           (= (select asg1 1) 3)
+           (= (select asg1 2) 3)
+           (= (select asg1 3) 3)
+           (= (select asg1 4) 3)
+           (= (select asg1 5) 3)
+           (= (select asg1 6) 3)
+           (= (select asg1 7) 3)
+           (= (select asg1 8) 3)
+           (= (select asg1 9) 3)
+           (= (select asg2 0) 3)
+           (= (select asg2 1) 3)
+           (= (select asg2 2) 3)
+           (= (select asg2 3) 3)
+           (= (select asg2 4) 3)
+           (= (select asg2 5) 3)
+           (= (select asg2 6) 3)
+           (= (select asg2 7) 3)
+           (= (select asg2 8) 3)
+           (= (select asg2 9) 3)
+           (= (select asg3 0) 3)
+           (= (select asg3 1) 3)
+           (= (select asg3 2) 3)
+           (= (select asg3 3) 3)
+           (= (select asg3 4) 3)
+           (= (select asg3 5) 3)
+           (= (select asg3 6) 3)
+           (= (select asg3 7) 3)
+           (= (select asg3 8) 3)
+           (= (select asg3 9) 3)
+           (= (select asg4 0) 3)
+           (= (select asg4 1) 3)
+           (= (select asg4 2) 3)
+           (= (select asg4 3) 3)
+           (= (select asg4 4) 3)
+           (= (select asg4 5) 3)
+           (= (select asg4 6) 3)
+           (= (select asg4 7) 3)
+           (= (select asg4 8) 3)
+           (= (select asg4 9) 3)
+           (= (select asg5 0) 3)
+           (= (select asg5 1) 3)
+           (= (select asg5 2) 3)
+           (= (select asg5 3) 3)
+           (= (select asg5 4) 3)
+           (= (select asg5 5) 3)
+           (= (select asg5 6) 3)
+           (= (select asg5 7) 3)
+           (= (select asg5 8) 3)
+           (= (select asg5 9) 3))
+       a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40
+       a!41
+       a!42
+       a!43
+       a!44
+       a!45
+       a!46
+       a!47
+       a!48
+       a!49
+       a!50
+       a!51
+       a!52
+       a!53
+       a!54
+       a!55
+       a!56
+       a!57
+       a!58
+       a!59
+       a!60
+       a!61
+       a!62
+       a!63
+       a!64
+       a!65
+       a!66
+       a!67
+       a!68
+       a!69
+       a!70
+       a!71
+       a!72
+       a!73
+       a!74
+       a!75
+       a!76
+       a!77
+       a!78
+       a!79
+       a!80
+       a!81
+       a!82
+       a!83
+       a!84
+       a!85
+       a!86
+       a!87
+       a!88
+       a!89
+       a!90
+       a!91
+       a!92
+       a!93
+       a!94
+       a!95
+       a!96
+       a!97
+       a!98
+       a!99
+       a!100
+       a!101
+       a!102
+       a!103
+       a!104
+       a!105
+       a!106
+       a!107
+       a!108
+       a!109
+       a!110
+       a!111
+       a!112
+       a!113
+       a!114
+       a!115
+       a!116
+       a!117
+       a!118
+       a!119
+       a!120
+       a!121
+       a!122
+       a!123
+       a!124
+       a!125
+       a!126
+       a!127
+       a!128
+       a!129
+       a!130
+       a!131
+       a!132
+       a!133
+       a!134
+       a!135
+       a!136
+       a!137
+       a!138
+       a!139
+       a!140
+       a!141
+       a!142
+       a!143
+       a!144
+       a!145
+       a!146
+       a!147
+       a!148
+       a!149
+       a!150
+       a!151
+       a!152
+       a!153
+       a!154
+       a!155
+       a!156
+       a!157
+       a!158
+       a!159
+       a!160
+       a!161
+       a!162
+       a!163
+       a!164
+       a!165
+       a!166
+       a!167
+       a!168
+       a!169
+       a!170
+       a!171
+       a!172
+       a!173
+       a!174
+       a!175
+       a!176
+       a!177
+       a!178
+       a!179
+       a!180
+       a!181
+       a!182
+       a!183
+       a!184
+       a!185
+       a!186
+       a!187
+       a!188
+       a!189
+       a!190
+       a!191
+       a!192
+       a!193
+       a!194
+       a!195
+       a!196
+       a!197
+       a!198
+       a!199
+       a!200
+       a!201
+       a!202
+       a!203
+       a!204
+       a!205
+       a!206
+       a!207
+       a!208
+       a!209
+       a!210
+       a!211
+       a!212
+       a!213
+       a!214
+       a!215
+       a!216
+       a!217
+       a!218
+       a!219
+       a!220
+       a!221
+       a!222
+       a!223
+       a!224
+       a!225
+       a!226
+       a!227
+       a!228
+       a!229
+       a!230
+       a!231
+       a!232
+       a!233
+       a!234
+       a!235
+       a!236
+       a!237
+       a!238
+       a!239
+       a!240
+       a!241
+       a!242
+       a!243
+       a!244
+       a!245
+       a!246
+       a!247
+       a!248
+       a!249
+       a!250
+       a!251
+       a!252
+       a!253
+       a!254
+       a!255
+       a!256
+       a!257
+       a!258
+       a!259
+       a!260
+       a!261
+       a!262
+       a!263
+       a!264
+       a!265
+       a!266
+       a!267
+       a!268
+       a!269
+       a!270
+       a!271
+       a!272
+       a!273
+       a!274
+       a!275
+       a!276
+       a!277
+       a!278
+       a!279
+       a!280
+       a!281
+       a!282
+       a!283
+       a!284
+       a!285
+       a!286
+       a!287
+       a!288
+       a!289
+       a!290
+       a!291
+       a!292
+       a!293
+       a!294
+       a!295
+       a!296
+       a!297
+       a!298
+       a!299
+       a!300
+       a!301
+       a!302
+       a!303
+       a!304
+       a!305
+       a!306
+       a!307
+       a!308
+       a!309
+       a!310
+       a!311
+       a!312
+       a!313
+       a!314
+       a!315
+       a!316
+       a!317
+       a!318
+       a!319
+       a!320
+       a!321
+       a!322
+       a!323
+       a!324
+       a!325
+       a!326
+       a!327
+       a!328
+       a!329
+       a!330
+       a!331
+       a!332
+       a!333
+       a!334
+       a!335
+       a!336
+       a!337
+       a!338
+       a!339
+       a!340
+       a!341
+       a!342
+       a!343
+       a!344
+       a!345
+       a!346
+       a!347
+       a!348
+       a!349
+       a!350
+       a!351
+       a!352
+       a!353
+       a!354
+       a!355
+       a!356
+       a!357
+       a!358
+       a!359
+       a!360)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 4)) (not r_4_0)))
+      (a!2 (or (not (= (select asg0 0) 4)) (not r_4_1)))
+      (a!3 (or (not (= (select asg0 0) 4)) (not r_4_2)))
+      (a!4 (or (not (= (select asg0 0) 4)) (not r_4_3)))
+      (a!5 (or (not (= (select asg0 0) 4)) (not r_4_4)))
+      (a!6 (or (not (= (select asg0 0) 4)) (not r_4_5)))
+      (a!7 (or (not (= (select asg0 1) 4)) (not r_4_0)))
+      (a!8 (or (not (= (select asg0 1) 4)) (not r_4_1)))
+      (a!9 (or (not (= (select asg0 1) 4)) (not r_4_2)))
+      (a!10 (or (not (= (select asg0 1) 4)) (not r_4_3)))
+      (a!11 (or (not (= (select asg0 1) 4)) (not r_4_4)))
+      (a!12 (or (not (= (select asg0 1) 4)) r_4_5))
+      (a!13 (or (not (= (select asg0 2) 4)) (not r_4_0)))
+      (a!14 (or (not (= (select asg0 2) 4)) (not r_4_1)))
+      (a!15 (or (not (= (select asg0 2) 4)) (not r_4_2)))
+      (a!16 (or (not (= (select asg0 2) 4)) (not r_4_3)))
+      (a!17 (or (not (= (select asg0 2) 4)) r_4_4))
+      (a!18 (or (not (= (select asg0 2) 4)) (not r_4_5)))
+      (a!19 (or (not (= (select asg0 3) 4)) (not r_4_0)))
+      (a!20 (or (not (= (select asg0 3) 4)) (not r_4_1)))
+      (a!21 (or (not (= (select asg0 3) 4)) (not r_4_2)))
+      (a!22 (or (not (= (select asg0 3) 4)) (not r_4_3)))
+      (a!23 (or (not (= (select asg0 3) 4)) r_4_4))
+      (a!24 (or (not (= (select asg0 3) 4)) r_4_5))
+      (a!25 (or (not (= (select asg0 4) 4)) (not r_4_0)))
+      (a!26 (or (not (= (select asg0 4) 4)) (not r_4_1)))
+      (a!27 (or (not (= (select asg0 4) 4)) (not r_4_2)))
+      (a!28 (or (not (= (select asg0 4) 4)) r_4_3))
+      (a!29 (or (not (= (select asg0 4) 4)) (not r_4_4)))
+      (a!30 (or (not (= (select asg0 4) 4)) (not r_4_5)))
+      (a!31 (or (not (= (select asg0 5) 4)) (not r_4_0)))
+      (a!32 (or (not (= (select asg0 5) 4)) (not r_4_1)))
+      (a!33 (or (not (= (select asg0 5) 4)) (not r_4_2)))
+      (a!34 (or (not (= (select asg0 5) 4)) r_4_3))
+      (a!35 (or (not (= (select asg0 5) 4)) (not r_4_4)))
+      (a!36 (or (not (= (select asg0 5) 4)) r_4_5))
+      (a!37 (or (not (= (select asg0 6) 4)) (not r_4_0)))
+      (a!38 (or (not (= (select asg0 6) 4)) (not r_4_1)))
+      (a!39 (or (not (= (select asg0 6) 4)) (not r_4_2)))
+      (a!40 (or (not (= (select asg0 6) 4)) r_4_3))
+      (a!41 (or (not (= (select asg0 6) 4)) r_4_4))
+      (a!42 (or (not (= (select asg0 6) 4)) (not r_4_5)))
+      (a!43 (or (not (= (select asg0 7) 4)) (not r_4_0)))
+      (a!44 (or (not (= (select asg0 7) 4)) (not r_4_1)))
+      (a!45 (or (not (= (select asg0 7) 4)) (not r_4_2)))
+      (a!46 (or (not (= (select asg0 7) 4)) r_4_3))
+      (a!47 (or (not (= (select asg0 7) 4)) r_4_4))
+      (a!48 (or (not (= (select asg0 7) 4)) r_4_5))
+      (a!49 (or (not (= (select asg0 8) 4)) (not r_4_0)))
+      (a!50 (or (not (= (select asg0 8) 4)) (not r_4_1)))
+      (a!51 (or (not (= (select asg0 8) 4)) r_4_2))
+      (a!52 (or (not (= (select asg0 8) 4)) (not r_4_3)))
+      (a!53 (or (not (= (select asg0 8) 4)) (not r_4_4)))
+      (a!54 (or (not (= (select asg0 8) 4)) (not r_4_5)))
+      (a!55 (or (not (= (select asg0 9) 4)) (not r_4_0)))
+      (a!56 (or (not (= (select asg0 9) 4)) (not r_4_1)))
+      (a!57 (or (not (= (select asg0 9) 4)) r_4_2))
+      (a!58 (or (not (= (select asg0 9) 4)) (not r_4_3)))
+      (a!59 (or (not (= (select asg0 9) 4)) (not r_4_4)))
+      (a!60 (or (not (= (select asg0 9) 4)) r_4_5))
+      (a!61 (or (not (= (select asg1 0) 4)) (not r_4_0)))
+      (a!62 (or (not (= (select asg1 0) 4)) (not r_4_1)))
+      (a!63 (or (not (= (select asg1 0) 4)) r_4_2))
+      (a!64 (or (not (= (select asg1 0) 4)) (not r_4_3)))
+      (a!65 (or (not (= (select asg1 0) 4)) r_4_4))
+      (a!66 (or (not (= (select asg1 0) 4)) (not r_4_5)))
+      (a!67 (or (not (= (select asg1 1) 4)) (not r_4_0)))
+      (a!68 (or (not (= (select asg1 1) 4)) (not r_4_1)))
+      (a!69 (or (not (= (select asg1 1) 4)) r_4_2))
+      (a!70 (or (not (= (select asg1 1) 4)) (not r_4_3)))
+      (a!71 (or (not (= (select asg1 1) 4)) r_4_4))
+      (a!72 (or (not (= (select asg1 1) 4)) r_4_5))
+      (a!73 (or (not (= (select asg1 2) 4)) (not r_4_0)))
+      (a!74 (or (not (= (select asg1 2) 4)) (not r_4_1)))
+      (a!75 (or (not (= (select asg1 2) 4)) r_4_2))
+      (a!76 (or (not (= (select asg1 2) 4)) r_4_3))
+      (a!77 (or (not (= (select asg1 2) 4)) (not r_4_4)))
+      (a!78 (or (not (= (select asg1 2) 4)) (not r_4_5)))
+      (a!79 (or (not (= (select asg1 3) 4)) (not r_4_0)))
+      (a!80 (or (not (= (select asg1 3) 4)) (not r_4_1)))
+      (a!81 (or (not (= (select asg1 3) 4)) r_4_2))
+      (a!82 (or (not (= (select asg1 3) 4)) r_4_3))
+      (a!83 (or (not (= (select asg1 3) 4)) (not r_4_4)))
+      (a!84 (or (not (= (select asg1 3) 4)) r_4_5))
+      (a!85 (or (not (= (select asg1 4) 4)) (not r_4_0)))
+      (a!86 (or (not (= (select asg1 4) 4)) (not r_4_1)))
+      (a!87 (or (not (= (select asg1 4) 4)) r_4_2))
+      (a!88 (or (not (= (select asg1 4) 4)) r_4_3))
+      (a!89 (or (not (= (select asg1 4) 4)) r_4_4))
+      (a!90 (or (not (= (select asg1 4) 4)) (not r_4_5)))
+      (a!91 (or (not (= (select asg1 5) 4)) (not r_4_0)))
+      (a!92 (or (not (= (select asg1 5) 4)) (not r_4_1)))
+      (a!93 (or (not (= (select asg1 5) 4)) r_4_2))
+      (a!94 (or (not (= (select asg1 5) 4)) r_4_3))
+      (a!95 (or (not (= (select asg1 5) 4)) r_4_4))
+      (a!96 (or (not (= (select asg1 5) 4)) r_4_5))
+      (a!97 (or (not (= (select asg1 6) 4)) (not r_4_0)))
+      (a!98 (or (not (= (select asg1 6) 4)) r_4_1))
+      (a!99 (or (not (= (select asg1 6) 4)) (not r_4_2)))
+      (a!100 (or (not (= (select asg1 6) 4)) (not r_4_3)))
+      (a!101 (or (not (= (select asg1 6) 4)) (not r_4_4)))
+      (a!102 (or (not (= (select asg1 6) 4)) (not r_4_5)))
+      (a!103 (or (not (= (select asg1 7) 4)) (not r_4_0)))
+      (a!104 (or (not (= (select asg1 7) 4)) r_4_1))
+      (a!105 (or (not (= (select asg1 7) 4)) (not r_4_2)))
+      (a!106 (or (not (= (select asg1 7) 4)) (not r_4_3)))
+      (a!107 (or (not (= (select asg1 7) 4)) (not r_4_4)))
+      (a!108 (or (not (= (select asg1 7) 4)) r_4_5))
+      (a!109 (or (not (= (select asg1 8) 4)) (not r_4_0)))
+      (a!110 (or (not (= (select asg1 8) 4)) r_4_1))
+      (a!111 (or (not (= (select asg1 8) 4)) (not r_4_2)))
+      (a!112 (or (not (= (select asg1 8) 4)) (not r_4_3)))
+      (a!113 (or (not (= (select asg1 8) 4)) r_4_4))
+      (a!114 (or (not (= (select asg1 8) 4)) (not r_4_5)))
+      (a!115 (or (not (= (select asg1 9) 4)) (not r_4_0)))
+      (a!116 (or (not (= (select asg1 9) 4)) r_4_1))
+      (a!117 (or (not (= (select asg1 9) 4)) (not r_4_2)))
+      (a!118 (or (not (= (select asg1 9) 4)) (not r_4_3)))
+      (a!119 (or (not (= (select asg1 9) 4)) r_4_4))
+      (a!120 (or (not (= (select asg1 9) 4)) r_4_5))
+      (a!121 (or (not (= (select asg2 0) 4)) (not r_4_0)))
+      (a!122 (or (not (= (select asg2 0) 4)) r_4_1))
+      (a!123 (or (not (= (select asg2 0) 4)) (not r_4_2)))
+      (a!124 (or (not (= (select asg2 0) 4)) r_4_3))
+      (a!125 (or (not (= (select asg2 0) 4)) (not r_4_4)))
+      (a!126 (or (not (= (select asg2 0) 4)) (not r_4_5)))
+      (a!127 (or (not (= (select asg2 1) 4)) (not r_4_0)))
+      (a!128 (or (not (= (select asg2 1) 4)) r_4_1))
+      (a!129 (or (not (= (select asg2 1) 4)) (not r_4_2)))
+      (a!130 (or (not (= (select asg2 1) 4)) r_4_3))
+      (a!131 (or (not (= (select asg2 1) 4)) (not r_4_4)))
+      (a!132 (or (not (= (select asg2 1) 4)) r_4_5))
+      (a!133 (or (not (= (select asg2 2) 4)) (not r_4_0)))
+      (a!134 (or (not (= (select asg2 2) 4)) r_4_1))
+      (a!135 (or (not (= (select asg2 2) 4)) (not r_4_2)))
+      (a!136 (or (not (= (select asg2 2) 4)) r_4_3))
+      (a!137 (or (not (= (select asg2 2) 4)) r_4_4))
+      (a!138 (or (not (= (select asg2 2) 4)) (not r_4_5)))
+      (a!139 (or (not (= (select asg2 3) 4)) (not r_4_0)))
+      (a!140 (or (not (= (select asg2 3) 4)) r_4_1))
+      (a!141 (or (not (= (select asg2 3) 4)) (not r_4_2)))
+      (a!142 (or (not (= (select asg2 3) 4)) r_4_3))
+      (a!143 (or (not (= (select asg2 3) 4)) r_4_4))
+      (a!144 (or (not (= (select asg2 3) 4)) r_4_5))
+      (a!145 (or (not (= (select asg2 4) 4)) (not r_4_0)))
+      (a!146 (or (not (= (select asg2 4) 4)) r_4_1))
+      (a!147 (or (not (= (select asg2 4) 4)) r_4_2))
+      (a!148 (or (not (= (select asg2 4) 4)) (not r_4_3)))
+      (a!149 (or (not (= (select asg2 4) 4)) (not r_4_4)))
+      (a!150 (or (not (= (select asg2 4) 4)) (not r_4_5)))
+      (a!151 (or (not (= (select asg2 5) 4)) (not r_4_0)))
+      (a!152 (or (not (= (select asg2 5) 4)) r_4_1))
+      (a!153 (or (not (= (select asg2 5) 4)) r_4_2))
+      (a!154 (or (not (= (select asg2 5) 4)) (not r_4_3)))
+      (a!155 (or (not (= (select asg2 5) 4)) (not r_4_4)))
+      (a!156 (or (not (= (select asg2 5) 4)) r_4_5))
+      (a!157 (or (not (= (select asg2 6) 4)) (not r_4_0)))
+      (a!158 (or (not (= (select asg2 6) 4)) r_4_1))
+      (a!159 (or (not (= (select asg2 6) 4)) r_4_2))
+      (a!160 (or (not (= (select asg2 6) 4)) (not r_4_3)))
+      (a!161 (or (not (= (select asg2 6) 4)) r_4_4))
+      (a!162 (or (not (= (select asg2 6) 4)) (not r_4_5)))
+      (a!163 (or (not (= (select asg2 7) 4)) (not r_4_0)))
+      (a!164 (or (not (= (select asg2 7) 4)) r_4_1))
+      (a!165 (or (not (= (select asg2 7) 4)) r_4_2))
+      (a!166 (or (not (= (select asg2 7) 4)) (not r_4_3)))
+      (a!167 (or (not (= (select asg2 7) 4)) r_4_4))
+      (a!168 (or (not (= (select asg2 7) 4)) r_4_5))
+      (a!169 (or (not (= (select asg2 8) 4)) (not r_4_0)))
+      (a!170 (or (not (= (select asg2 8) 4)) r_4_1))
+      (a!171 (or (not (= (select asg2 8) 4)) r_4_2))
+      (a!172 (or (not (= (select asg2 8) 4)) r_4_3))
+      (a!173 (or (not (= (select asg2 8) 4)) (not r_4_4)))
+      (a!174 (or (not (= (select asg2 8) 4)) (not r_4_5)))
+      (a!175 (or (not (= (select asg2 9) 4)) (not r_4_0)))
+      (a!176 (or (not (= (select asg2 9) 4)) r_4_1))
+      (a!177 (or (not (= (select asg2 9) 4)) r_4_2))
+      (a!178 (or (not (= (select asg2 9) 4)) r_4_3))
+      (a!179 (or (not (= (select asg2 9) 4)) (not r_4_4)))
+      (a!180 (or (not (= (select asg2 9) 4)) r_4_5))
+      (a!181 (or (not (= (select asg3 0) 4)) (not r_4_0)))
+      (a!182 (or (not (= (select asg3 0) 4)) r_4_1))
+      (a!183 (or (not (= (select asg3 0) 4)) r_4_2))
+      (a!184 (or (not (= (select asg3 0) 4)) r_4_3))
+      (a!185 (or (not (= (select asg3 0) 4)) r_4_4))
+      (a!186 (or (not (= (select asg3 0) 4)) (not r_4_5)))
+      (a!187 (or (not (= (select asg3 1) 4)) (not r_4_0)))
+      (a!188 (or (not (= (select asg3 1) 4)) r_4_1))
+      (a!189 (or (not (= (select asg3 1) 4)) r_4_2))
+      (a!190 (or (not (= (select asg3 1) 4)) r_4_3))
+      (a!191 (or (not (= (select asg3 1) 4)) r_4_4))
+      (a!192 (or (not (= (select asg3 1) 4)) r_4_5))
+      (a!193 (or (not (= (select asg3 2) 4)) r_4_0))
+      (a!194 (or (not (= (select asg3 2) 4)) (not r_4_1)))
+      (a!195 (or (not (= (select asg3 2) 4)) (not r_4_2)))
+      (a!196 (or (not (= (select asg3 2) 4)) (not r_4_3)))
+      (a!197 (or (not (= (select asg3 2) 4)) (not r_4_4)))
+      (a!198 (or (not (= (select asg3 2) 4)) (not r_4_5)))
+      (a!199 (or (not (= (select asg3 3) 4)) r_4_0))
+      (a!200 (or (not (= (select asg3 3) 4)) (not r_4_1)))
+      (a!201 (or (not (= (select asg3 3) 4)) (not r_4_2)))
+      (a!202 (or (not (= (select asg3 3) 4)) (not r_4_3)))
+      (a!203 (or (not (= (select asg3 3) 4)) (not r_4_4)))
+      (a!204 (or (not (= (select asg3 3) 4)) r_4_5))
+      (a!205 (or (not (= (select asg3 4) 4)) r_4_0))
+      (a!206 (or (not (= (select asg3 4) 4)) (not r_4_1)))
+      (a!207 (or (not (= (select asg3 4) 4)) (not r_4_2)))
+      (a!208 (or (not (= (select asg3 4) 4)) (not r_4_3)))
+      (a!209 (or (not (= (select asg3 4) 4)) r_4_4))
+      (a!210 (or (not (= (select asg3 4) 4)) (not r_4_5)))
+      (a!211 (or (not (= (select asg3 5) 4)) r_4_0))
+      (a!212 (or (not (= (select asg3 5) 4)) (not r_4_1)))
+      (a!213 (or (not (= (select asg3 5) 4)) (not r_4_2)))
+      (a!214 (or (not (= (select asg3 5) 4)) (not r_4_3)))
+      (a!215 (or (not (= (select asg3 5) 4)) r_4_4))
+      (a!216 (or (not (= (select asg3 5) 4)) r_4_5))
+      (a!217 (or (not (= (select asg3 6) 4)) r_4_0))
+      (a!218 (or (not (= (select asg3 6) 4)) (not r_4_1)))
+      (a!219 (or (not (= (select asg3 6) 4)) (not r_4_2)))
+      (a!220 (or (not (= (select asg3 6) 4)) r_4_3))
+      (a!221 (or (not (= (select asg3 6) 4)) (not r_4_4)))
+      (a!222 (or (not (= (select asg3 6) 4)) (not r_4_5)))
+      (a!223 (or (not (= (select asg3 7) 4)) r_4_0))
+      (a!224 (or (not (= (select asg3 7) 4)) (not r_4_1)))
+      (a!225 (or (not (= (select asg3 7) 4)) (not r_4_2)))
+      (a!226 (or (not (= (select asg3 7) 4)) r_4_3))
+      (a!227 (or (not (= (select asg3 7) 4)) (not r_4_4)))
+      (a!228 (or (not (= (select asg3 7) 4)) r_4_5))
+      (a!229 (or (not (= (select asg3 8) 4)) r_4_0))
+      (a!230 (or (not (= (select asg3 8) 4)) (not r_4_1)))
+      (a!231 (or (not (= (select asg3 8) 4)) (not r_4_2)))
+      (a!232 (or (not (= (select asg3 8) 4)) r_4_3))
+      (a!233 (or (not (= (select asg3 8) 4)) r_4_4))
+      (a!234 (or (not (= (select asg3 8) 4)) (not r_4_5)))
+      (a!235 (or (not (= (select asg3 9) 4)) r_4_0))
+      (a!236 (or (not (= (select asg3 9) 4)) (not r_4_1)))
+      (a!237 (or (not (= (select asg3 9) 4)) (not r_4_2)))
+      (a!238 (or (not (= (select asg3 9) 4)) r_4_3))
+      (a!239 (or (not (= (select asg3 9) 4)) r_4_4))
+      (a!240 (or (not (= (select asg3 9) 4)) r_4_5))
+      (a!241 (or (not (= (select asg4 0) 4)) r_4_0))
+      (a!242 (or (not (= (select asg4 0) 4)) (not r_4_1)))
+      (a!243 (or (not (= (select asg4 0) 4)) r_4_2))
+      (a!244 (or (not (= (select asg4 0) 4)) (not r_4_3)))
+      (a!245 (or (not (= (select asg4 0) 4)) (not r_4_4)))
+      (a!246 (or (not (= (select asg4 0) 4)) (not r_4_5)))
+      (a!247 (or (not (= (select asg4 1) 4)) r_4_0))
+      (a!248 (or (not (= (select asg4 1) 4)) (not r_4_1)))
+      (a!249 (or (not (= (select asg4 1) 4)) r_4_2))
+      (a!250 (or (not (= (select asg4 1) 4)) (not r_4_3)))
+      (a!251 (or (not (= (select asg4 1) 4)) (not r_4_4)))
+      (a!252 (or (not (= (select asg4 1) 4)) r_4_5))
+      (a!253 (or (not (= (select asg4 2) 4)) r_4_0))
+      (a!254 (or (not (= (select asg4 2) 4)) (not r_4_1)))
+      (a!255 (or (not (= (select asg4 2) 4)) r_4_2))
+      (a!256 (or (not (= (select asg4 2) 4)) (not r_4_3)))
+      (a!257 (or (not (= (select asg4 2) 4)) r_4_4))
+      (a!258 (or (not (= (select asg4 2) 4)) (not r_4_5)))
+      (a!259 (or (not (= (select asg4 3) 4)) r_4_0))
+      (a!260 (or (not (= (select asg4 3) 4)) (not r_4_1)))
+      (a!261 (or (not (= (select asg4 3) 4)) r_4_2))
+      (a!262 (or (not (= (select asg4 3) 4)) (not r_4_3)))
+      (a!263 (or (not (= (select asg4 3) 4)) r_4_4))
+      (a!264 (or (not (= (select asg4 3) 4)) r_4_5))
+      (a!265 (or (not (= (select asg4 4) 4)) r_4_0))
+      (a!266 (or (not (= (select asg4 4) 4)) (not r_4_1)))
+      (a!267 (or (not (= (select asg4 4) 4)) r_4_2))
+      (a!268 (or (not (= (select asg4 4) 4)) r_4_3))
+      (a!269 (or (not (= (select asg4 4) 4)) (not r_4_4)))
+      (a!270 (or (not (= (select asg4 4) 4)) (not r_4_5)))
+      (a!271 (or (not (= (select asg4 5) 4)) r_4_0))
+      (a!272 (or (not (= (select asg4 5) 4)) (not r_4_1)))
+      (a!273 (or (not (= (select asg4 5) 4)) r_4_2))
+      (a!274 (or (not (= (select asg4 5) 4)) r_4_3))
+      (a!275 (or (not (= (select asg4 5) 4)) (not r_4_4)))
+      (a!276 (or (not (= (select asg4 5) 4)) r_4_5))
+      (a!277 (or (not (= (select asg4 6) 4)) r_4_0))
+      (a!278 (or (not (= (select asg4 6) 4)) (not r_4_1)))
+      (a!279 (or (not (= (select asg4 6) 4)) r_4_2))
+      (a!280 (or (not (= (select asg4 6) 4)) r_4_3))
+      (a!281 (or (not (= (select asg4 6) 4)) r_4_4))
+      (a!282 (or (not (= (select asg4 6) 4)) (not r_4_5)))
+      (a!283 (or (not (= (select asg4 7) 4)) r_4_0))
+      (a!284 (or (not (= (select asg4 7) 4)) (not r_4_1)))
+      (a!285 (or (not (= (select asg4 7) 4)) r_4_2))
+      (a!286 (or (not (= (select asg4 7) 4)) r_4_3))
+      (a!287 (or (not (= (select asg4 7) 4)) r_4_4))
+      (a!288 (or (not (= (select asg4 7) 4)) r_4_5))
+      (a!289 (or (not (= (select asg4 8) 4)) r_4_0))
+      (a!290 (or (not (= (select asg4 8) 4)) r_4_1))
+      (a!291 (or (not (= (select asg4 8) 4)) (not r_4_2)))
+      (a!292 (or (not (= (select asg4 8) 4)) (not r_4_3)))
+      (a!293 (or (not (= (select asg4 8) 4)) (not r_4_4)))
+      (a!294 (or (not (= (select asg4 8) 4)) (not r_4_5)))
+      (a!295 (or (not (= (select asg4 9) 4)) r_4_0))
+      (a!296 (or (not (= (select asg4 9) 4)) r_4_1))
+      (a!297 (or (not (= (select asg4 9) 4)) (not r_4_2)))
+      (a!298 (or (not (= (select asg4 9) 4)) (not r_4_3)))
+      (a!299 (or (not (= (select asg4 9) 4)) (not r_4_4)))
+      (a!300 (or (not (= (select asg4 9) 4)) r_4_5))
+      (a!301 (or (not (= (select asg5 0) 4)) r_4_0))
+      (a!302 (or (not (= (select asg5 0) 4)) r_4_1))
+      (a!303 (or (not (= (select asg5 0) 4)) (not r_4_2)))
+      (a!304 (or (not (= (select asg5 0) 4)) (not r_4_3)))
+      (a!305 (or (not (= (select asg5 0) 4)) r_4_4))
+      (a!306 (or (not (= (select asg5 0) 4)) (not r_4_5)))
+      (a!307 (or (not (= (select asg5 1) 4)) r_4_0))
+      (a!308 (or (not (= (select asg5 1) 4)) r_4_1))
+      (a!309 (or (not (= (select asg5 1) 4)) (not r_4_2)))
+      (a!310 (or (not (= (select asg5 1) 4)) (not r_4_3)))
+      (a!311 (or (not (= (select asg5 1) 4)) r_4_4))
+      (a!312 (or (not (= (select asg5 1) 4)) r_4_5))
+      (a!313 (or (not (= (select asg5 2) 4)) r_4_0))
+      (a!314 (or (not (= (select asg5 2) 4)) r_4_1))
+      (a!315 (or (not (= (select asg5 2) 4)) (not r_4_2)))
+      (a!316 (or (not (= (select asg5 2) 4)) r_4_3))
+      (a!317 (or (not (= (select asg5 2) 4)) (not r_4_4)))
+      (a!318 (or (not (= (select asg5 2) 4)) (not r_4_5)))
+      (a!319 (or (not (= (select asg5 3) 4)) r_4_0))
+      (a!320 (or (not (= (select asg5 3) 4)) r_4_1))
+      (a!321 (or (not (= (select asg5 3) 4)) (not r_4_2)))
+      (a!322 (or (not (= (select asg5 3) 4)) r_4_3))
+      (a!323 (or (not (= (select asg5 3) 4)) (not r_4_4)))
+      (a!324 (or (not (= (select asg5 3) 4)) r_4_5))
+      (a!325 (or (not (= (select asg5 4) 4)) r_4_0))
+      (a!326 (or (not (= (select asg5 4) 4)) r_4_1))
+      (a!327 (or (not (= (select asg5 4) 4)) (not r_4_2)))
+      (a!328 (or (not (= (select asg5 4) 4)) r_4_3))
+      (a!329 (or (not (= (select asg5 4) 4)) r_4_4))
+      (a!330 (or (not (= (select asg5 4) 4)) (not r_4_5)))
+      (a!331 (or (not (= (select asg5 5) 4)) r_4_0))
+      (a!332 (or (not (= (select asg5 5) 4)) r_4_1))
+      (a!333 (or (not (= (select asg5 5) 4)) (not r_4_2)))
+      (a!334 (or (not (= (select asg5 5) 4)) r_4_3))
+      (a!335 (or (not (= (select asg5 5) 4)) r_4_4))
+      (a!336 (or (not (= (select asg5 5) 4)) r_4_5))
+      (a!337 (or (not (= (select asg5 6) 4)) r_4_0))
+      (a!338 (or (not (= (select asg5 6) 4)) r_4_1))
+      (a!339 (or (not (= (select asg5 6) 4)) r_4_2))
+      (a!340 (or (not (= (select asg5 6) 4)) (not r_4_3)))
+      (a!341 (or (not (= (select asg5 6) 4)) (not r_4_4)))
+      (a!342 (or (not (= (select asg5 6) 4)) (not r_4_5)))
+      (a!343 (or (not (= (select asg5 7) 4)) r_4_0))
+      (a!344 (or (not (= (select asg5 7) 4)) r_4_1))
+      (a!345 (or (not (= (select asg5 7) 4)) r_4_2))
+      (a!346 (or (not (= (select asg5 7) 4)) (not r_4_3)))
+      (a!347 (or (not (= (select asg5 7) 4)) (not r_4_4)))
+      (a!348 (or (not (= (select asg5 7) 4)) r_4_5))
+      (a!349 (or (not (= (select asg5 8) 4)) r_4_0))
+      (a!350 (or (not (= (select asg5 8) 4)) r_4_1))
+      (a!351 (or (not (= (select asg5 8) 4)) r_4_2))
+      (a!352 (or (not (= (select asg5 8) 4)) (not r_4_3)))
+      (a!353 (or (not (= (select asg5 8) 4)) r_4_4))
+      (a!354 (or (not (= (select asg5 8) 4)) (not r_4_5)))
+      (a!355 (or (not (= (select asg5 9) 4)) r_4_0))
+      (a!356 (or (not (= (select asg5 9) 4)) r_4_1))
+      (a!357 (or (not (= (select asg5 9) 4)) r_4_2))
+      (a!358 (or (not (= (select asg5 9) 4)) (not r_4_3)))
+      (a!359 (or (not (= (select asg5 9) 4)) r_4_4))
+      (a!360 (or (not (= (select asg5 9) 4)) r_4_5)))
+  (and (or (= (select asg0 0) 4)
+           (= (select asg0 1) 4)
+           (= (select asg0 2) 4)
+           (= (select asg0 3) 4)
+           (= (select asg0 4) 4)
+           (= (select asg0 5) 4)
+           (= (select asg0 6) 4)
+           (= (select asg0 7) 4)
+           (= (select asg0 8) 4)
+           (= (select asg0 9) 4)
+           (= (select asg1 0) 4)
+           (= (select asg1 1) 4)
+           (= (select asg1 2) 4)
+           (= (select asg1 3) 4)
+           (= (select asg1 4) 4)
+           (= (select asg1 5) 4)
+           (= (select asg1 6) 4)
+           (= (select asg1 7) 4)
+           (= (select asg1 8) 4)
+           (= (select asg1 9) 4)
+           (= (select asg2 0) 4)
+           (= (select asg2 1) 4)
+           (= (select asg2 2) 4)
+           (= (select asg2 3) 4)
+           (= (select asg2 4) 4)
+           (= (select asg2 5) 4)
+           (= (select asg2 6) 4)
+           (= (select asg2 7) 4)
+           (= (select asg2 8) 4)
+           (= (select asg2 9) 4)
+           (= (select asg3 0) 4)
+           (= (select asg3 1) 4)
+           (= (select asg3 2) 4)
+           (= (select asg3 3) 4)
+           (= (select asg3 4) 4)
+           (= (select asg3 5) 4)
+           (= (select asg3 6) 4)
+           (= (select asg3 7) 4)
+           (= (select asg3 8) 4)
+           (= (select asg3 9) 4)
+           (= (select asg4 0) 4)
+           (= (select asg4 1) 4)
+           (= (select asg4 2) 4)
+           (= (select asg4 3) 4)
+           (= (select asg4 4) 4)
+           (= (select asg4 5) 4)
+           (= (select asg4 6) 4)
+           (= (select asg4 7) 4)
+           (= (select asg4 8) 4)
+           (= (select asg4 9) 4)
+           (= (select asg5 0) 4)
+           (= (select asg5 1) 4)
+           (= (select asg5 2) 4)
+           (= (select asg5 3) 4)
+           (= (select asg5 4) 4)
+           (= (select asg5 5) 4)
+           (= (select asg5 6) 4)
+           (= (select asg5 7) 4)
+           (= (select asg5 8) 4)
+           (= (select asg5 9) 4))
+       a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40
+       a!41
+       a!42
+       a!43
+       a!44
+       a!45
+       a!46
+       a!47
+       a!48
+       a!49
+       a!50
+       a!51
+       a!52
+       a!53
+       a!54
+       a!55
+       a!56
+       a!57
+       a!58
+       a!59
+       a!60
+       a!61
+       a!62
+       a!63
+       a!64
+       a!65
+       a!66
+       a!67
+       a!68
+       a!69
+       a!70
+       a!71
+       a!72
+       a!73
+       a!74
+       a!75
+       a!76
+       a!77
+       a!78
+       a!79
+       a!80
+       a!81
+       a!82
+       a!83
+       a!84
+       a!85
+       a!86
+       a!87
+       a!88
+       a!89
+       a!90
+       a!91
+       a!92
+       a!93
+       a!94
+       a!95
+       a!96
+       a!97
+       a!98
+       a!99
+       a!100
+       a!101
+       a!102
+       a!103
+       a!104
+       a!105
+       a!106
+       a!107
+       a!108
+       a!109
+       a!110
+       a!111
+       a!112
+       a!113
+       a!114
+       a!115
+       a!116
+       a!117
+       a!118
+       a!119
+       a!120
+       a!121
+       a!122
+       a!123
+       a!124
+       a!125
+       a!126
+       a!127
+       a!128
+       a!129
+       a!130
+       a!131
+       a!132
+       a!133
+       a!134
+       a!135
+       a!136
+       a!137
+       a!138
+       a!139
+       a!140
+       a!141
+       a!142
+       a!143
+       a!144
+       a!145
+       a!146
+       a!147
+       a!148
+       a!149
+       a!150
+       a!151
+       a!152
+       a!153
+       a!154
+       a!155
+       a!156
+       a!157
+       a!158
+       a!159
+       a!160
+       a!161
+       a!162
+       a!163
+       a!164
+       a!165
+       a!166
+       a!167
+       a!168
+       a!169
+       a!170
+       a!171
+       a!172
+       a!173
+       a!174
+       a!175
+       a!176
+       a!177
+       a!178
+       a!179
+       a!180
+       a!181
+       a!182
+       a!183
+       a!184
+       a!185
+       a!186
+       a!187
+       a!188
+       a!189
+       a!190
+       a!191
+       a!192
+       a!193
+       a!194
+       a!195
+       a!196
+       a!197
+       a!198
+       a!199
+       a!200
+       a!201
+       a!202
+       a!203
+       a!204
+       a!205
+       a!206
+       a!207
+       a!208
+       a!209
+       a!210
+       a!211
+       a!212
+       a!213
+       a!214
+       a!215
+       a!216
+       a!217
+       a!218
+       a!219
+       a!220
+       a!221
+       a!222
+       a!223
+       a!224
+       a!225
+       a!226
+       a!227
+       a!228
+       a!229
+       a!230
+       a!231
+       a!232
+       a!233
+       a!234
+       a!235
+       a!236
+       a!237
+       a!238
+       a!239
+       a!240
+       a!241
+       a!242
+       a!243
+       a!244
+       a!245
+       a!246
+       a!247
+       a!248
+       a!249
+       a!250
+       a!251
+       a!252
+       a!253
+       a!254
+       a!255
+       a!256
+       a!257
+       a!258
+       a!259
+       a!260
+       a!261
+       a!262
+       a!263
+       a!264
+       a!265
+       a!266
+       a!267
+       a!268
+       a!269
+       a!270
+       a!271
+       a!272
+       a!273
+       a!274
+       a!275
+       a!276
+       a!277
+       a!278
+       a!279
+       a!280
+       a!281
+       a!282
+       a!283
+       a!284
+       a!285
+       a!286
+       a!287
+       a!288
+       a!289
+       a!290
+       a!291
+       a!292
+       a!293
+       a!294
+       a!295
+       a!296
+       a!297
+       a!298
+       a!299
+       a!300
+       a!301
+       a!302
+       a!303
+       a!304
+       a!305
+       a!306
+       a!307
+       a!308
+       a!309
+       a!310
+       a!311
+       a!312
+       a!313
+       a!314
+       a!315
+       a!316
+       a!317
+       a!318
+       a!319
+       a!320
+       a!321
+       a!322
+       a!323
+       a!324
+       a!325
+       a!326
+       a!327
+       a!328
+       a!329
+       a!330
+       a!331
+       a!332
+       a!333
+       a!334
+       a!335
+       a!336
+       a!337
+       a!338
+       a!339
+       a!340
+       a!341
+       a!342
+       a!343
+       a!344
+       a!345
+       a!346
+       a!347
+       a!348
+       a!349
+       a!350
+       a!351
+       a!352
+       a!353
+       a!354
+       a!355
+       a!356
+       a!357
+       a!358
+       a!359
+       a!360)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 5)) (not r_5_0)))
+      (a!2 (or (not (= (select asg0 0) 5)) (not r_5_1)))
+      (a!3 (or (not (= (select asg0 0) 5)) (not r_5_2)))
+      (a!4 (or (not (= (select asg0 0) 5)) (not r_5_3)))
+      (a!5 (or (not (= (select asg0 0) 5)) (not r_5_4)))
+      (a!6 (or (not (= (select asg0 0) 5)) (not r_5_5)))
+      (a!7 (or (not (= (select asg0 1) 5)) (not r_5_0)))
+      (a!8 (or (not (= (select asg0 1) 5)) (not r_5_1)))
+      (a!9 (or (not (= (select asg0 1) 5)) (not r_5_2)))
+      (a!10 (or (not (= (select asg0 1) 5)) (not r_5_3)))
+      (a!11 (or (not (= (select asg0 1) 5)) (not r_5_4)))
+      (a!12 (or (not (= (select asg0 1) 5)) r_5_5))
+      (a!13 (or (not (= (select asg0 2) 5)) (not r_5_0)))
+      (a!14 (or (not (= (select asg0 2) 5)) (not r_5_1)))
+      (a!15 (or (not (= (select asg0 2) 5)) (not r_5_2)))
+      (a!16 (or (not (= (select asg0 2) 5)) (not r_5_3)))
+      (a!17 (or (not (= (select asg0 2) 5)) r_5_4))
+      (a!18 (or (not (= (select asg0 2) 5)) (not r_5_5)))
+      (a!19 (or (not (= (select asg0 3) 5)) (not r_5_0)))
+      (a!20 (or (not (= (select asg0 3) 5)) (not r_5_1)))
+      (a!21 (or (not (= (select asg0 3) 5)) (not r_5_2)))
+      (a!22 (or (not (= (select asg0 3) 5)) (not r_5_3)))
+      (a!23 (or (not (= (select asg0 3) 5)) r_5_4))
+      (a!24 (or (not (= (select asg0 3) 5)) r_5_5))
+      (a!25 (or (not (= (select asg0 4) 5)) (not r_5_0)))
+      (a!26 (or (not (= (select asg0 4) 5)) (not r_5_1)))
+      (a!27 (or (not (= (select asg0 4) 5)) (not r_5_2)))
+      (a!28 (or (not (= (select asg0 4) 5)) r_5_3))
+      (a!29 (or (not (= (select asg0 4) 5)) (not r_5_4)))
+      (a!30 (or (not (= (select asg0 4) 5)) (not r_5_5)))
+      (a!31 (or (not (= (select asg0 5) 5)) (not r_5_0)))
+      (a!32 (or (not (= (select asg0 5) 5)) (not r_5_1)))
+      (a!33 (or (not (= (select asg0 5) 5)) (not r_5_2)))
+      (a!34 (or (not (= (select asg0 5) 5)) r_5_3))
+      (a!35 (or (not (= (select asg0 5) 5)) (not r_5_4)))
+      (a!36 (or (not (= (select asg0 5) 5)) r_5_5))
+      (a!37 (or (not (= (select asg0 6) 5)) (not r_5_0)))
+      (a!38 (or (not (= (select asg0 6) 5)) (not r_5_1)))
+      (a!39 (or (not (= (select asg0 6) 5)) (not r_5_2)))
+      (a!40 (or (not (= (select asg0 6) 5)) r_5_3))
+      (a!41 (or (not (= (select asg0 6) 5)) r_5_4))
+      (a!42 (or (not (= (select asg0 6) 5)) (not r_5_5)))
+      (a!43 (or (not (= (select asg0 7) 5)) (not r_5_0)))
+      (a!44 (or (not (= (select asg0 7) 5)) (not r_5_1)))
+      (a!45 (or (not (= (select asg0 7) 5)) (not r_5_2)))
+      (a!46 (or (not (= (select asg0 7) 5)) r_5_3))
+      (a!47 (or (not (= (select asg0 7) 5)) r_5_4))
+      (a!48 (or (not (= (select asg0 7) 5)) r_5_5))
+      (a!49 (or (not (= (select asg0 8) 5)) (not r_5_0)))
+      (a!50 (or (not (= (select asg0 8) 5)) (not r_5_1)))
+      (a!51 (or (not (= (select asg0 8) 5)) r_5_2))
+      (a!52 (or (not (= (select asg0 8) 5)) (not r_5_3)))
+      (a!53 (or (not (= (select asg0 8) 5)) (not r_5_4)))
+      (a!54 (or (not (= (select asg0 8) 5)) (not r_5_5)))
+      (a!55 (or (not (= (select asg0 9) 5)) (not r_5_0)))
+      (a!56 (or (not (= (select asg0 9) 5)) (not r_5_1)))
+      (a!57 (or (not (= (select asg0 9) 5)) r_5_2))
+      (a!58 (or (not (= (select asg0 9) 5)) (not r_5_3)))
+      (a!59 (or (not (= (select asg0 9) 5)) (not r_5_4)))
+      (a!60 (or (not (= (select asg0 9) 5)) r_5_5))
+      (a!61 (or (not (= (select asg1 0) 5)) (not r_5_0)))
+      (a!62 (or (not (= (select asg1 0) 5)) (not r_5_1)))
+      (a!63 (or (not (= (select asg1 0) 5)) r_5_2))
+      (a!64 (or (not (= (select asg1 0) 5)) (not r_5_3)))
+      (a!65 (or (not (= (select asg1 0) 5)) r_5_4))
+      (a!66 (or (not (= (select asg1 0) 5)) (not r_5_5)))
+      (a!67 (or (not (= (select asg1 1) 5)) (not r_5_0)))
+      (a!68 (or (not (= (select asg1 1) 5)) (not r_5_1)))
+      (a!69 (or (not (= (select asg1 1) 5)) r_5_2))
+      (a!70 (or (not (= (select asg1 1) 5)) (not r_5_3)))
+      (a!71 (or (not (= (select asg1 1) 5)) r_5_4))
+      (a!72 (or (not (= (select asg1 1) 5)) r_5_5))
+      (a!73 (or (not (= (select asg1 2) 5)) (not r_5_0)))
+      (a!74 (or (not (= (select asg1 2) 5)) (not r_5_1)))
+      (a!75 (or (not (= (select asg1 2) 5)) r_5_2))
+      (a!76 (or (not (= (select asg1 2) 5)) r_5_3))
+      (a!77 (or (not (= (select asg1 2) 5)) (not r_5_4)))
+      (a!78 (or (not (= (select asg1 2) 5)) (not r_5_5)))
+      (a!79 (or (not (= (select asg1 3) 5)) (not r_5_0)))
+      (a!80 (or (not (= (select asg1 3) 5)) (not r_5_1)))
+      (a!81 (or (not (= (select asg1 3) 5)) r_5_2))
+      (a!82 (or (not (= (select asg1 3) 5)) r_5_3))
+      (a!83 (or (not (= (select asg1 3) 5)) (not r_5_4)))
+      (a!84 (or (not (= (select asg1 3) 5)) r_5_5))
+      (a!85 (or (not (= (select asg1 4) 5)) (not r_5_0)))
+      (a!86 (or (not (= (select asg1 4) 5)) (not r_5_1)))
+      (a!87 (or (not (= (select asg1 4) 5)) r_5_2))
+      (a!88 (or (not (= (select asg1 4) 5)) r_5_3))
+      (a!89 (or (not (= (select asg1 4) 5)) r_5_4))
+      (a!90 (or (not (= (select asg1 4) 5)) (not r_5_5)))
+      (a!91 (or (not (= (select asg1 5) 5)) (not r_5_0)))
+      (a!92 (or (not (= (select asg1 5) 5)) (not r_5_1)))
+      (a!93 (or (not (= (select asg1 5) 5)) r_5_2))
+      (a!94 (or (not (= (select asg1 5) 5)) r_5_3))
+      (a!95 (or (not (= (select asg1 5) 5)) r_5_4))
+      (a!96 (or (not (= (select asg1 5) 5)) r_5_5))
+      (a!97 (or (not (= (select asg1 6) 5)) (not r_5_0)))
+      (a!98 (or (not (= (select asg1 6) 5)) r_5_1))
+      (a!99 (or (not (= (select asg1 6) 5)) (not r_5_2)))
+      (a!100 (or (not (= (select asg1 6) 5)) (not r_5_3)))
+      (a!101 (or (not (= (select asg1 6) 5)) (not r_5_4)))
+      (a!102 (or (not (= (select asg1 6) 5)) (not r_5_5)))
+      (a!103 (or (not (= (select asg1 7) 5)) (not r_5_0)))
+      (a!104 (or (not (= (select asg1 7) 5)) r_5_1))
+      (a!105 (or (not (= (select asg1 7) 5)) (not r_5_2)))
+      (a!106 (or (not (= (select asg1 7) 5)) (not r_5_3)))
+      (a!107 (or (not (= (select asg1 7) 5)) (not r_5_4)))
+      (a!108 (or (not (= (select asg1 7) 5)) r_5_5))
+      (a!109 (or (not (= (select asg1 8) 5)) (not r_5_0)))
+      (a!110 (or (not (= (select asg1 8) 5)) r_5_1))
+      (a!111 (or (not (= (select asg1 8) 5)) (not r_5_2)))
+      (a!112 (or (not (= (select asg1 8) 5)) (not r_5_3)))
+      (a!113 (or (not (= (select asg1 8) 5)) r_5_4))
+      (a!114 (or (not (= (select asg1 8) 5)) (not r_5_5)))
+      (a!115 (or (not (= (select asg1 9) 5)) (not r_5_0)))
+      (a!116 (or (not (= (select asg1 9) 5)) r_5_1))
+      (a!117 (or (not (= (select asg1 9) 5)) (not r_5_2)))
+      (a!118 (or (not (= (select asg1 9) 5)) (not r_5_3)))
+      (a!119 (or (not (= (select asg1 9) 5)) r_5_4))
+      (a!120 (or (not (= (select asg1 9) 5)) r_5_5))
+      (a!121 (or (not (= (select asg2 0) 5)) (not r_5_0)))
+      (a!122 (or (not (= (select asg2 0) 5)) r_5_1))
+      (a!123 (or (not (= (select asg2 0) 5)) (not r_5_2)))
+      (a!124 (or (not (= (select asg2 0) 5)) r_5_3))
+      (a!125 (or (not (= (select asg2 0) 5)) (not r_5_4)))
+      (a!126 (or (not (= (select asg2 0) 5)) (not r_5_5)))
+      (a!127 (or (not (= (select asg2 1) 5)) (not r_5_0)))
+      (a!128 (or (not (= (select asg2 1) 5)) r_5_1))
+      (a!129 (or (not (= (select asg2 1) 5)) (not r_5_2)))
+      (a!130 (or (not (= (select asg2 1) 5)) r_5_3))
+      (a!131 (or (not (= (select asg2 1) 5)) (not r_5_4)))
+      (a!132 (or (not (= (select asg2 1) 5)) r_5_5))
+      (a!133 (or (not (= (select asg2 2) 5)) (not r_5_0)))
+      (a!134 (or (not (= (select asg2 2) 5)) r_5_1))
+      (a!135 (or (not (= (select asg2 2) 5)) (not r_5_2)))
+      (a!136 (or (not (= (select asg2 2) 5)) r_5_3))
+      (a!137 (or (not (= (select asg2 2) 5)) r_5_4))
+      (a!138 (or (not (= (select asg2 2) 5)) (not r_5_5)))
+      (a!139 (or (not (= (select asg2 3) 5)) (not r_5_0)))
+      (a!140 (or (not (= (select asg2 3) 5)) r_5_1))
+      (a!141 (or (not (= (select asg2 3) 5)) (not r_5_2)))
+      (a!142 (or (not (= (select asg2 3) 5)) r_5_3))
+      (a!143 (or (not (= (select asg2 3) 5)) r_5_4))
+      (a!144 (or (not (= (select asg2 3) 5)) r_5_5))
+      (a!145 (or (not (= (select asg2 4) 5)) (not r_5_0)))
+      (a!146 (or (not (= (select asg2 4) 5)) r_5_1))
+      (a!147 (or (not (= (select asg2 4) 5)) r_5_2))
+      (a!148 (or (not (= (select asg2 4) 5)) (not r_5_3)))
+      (a!149 (or (not (= (select asg2 4) 5)) (not r_5_4)))
+      (a!150 (or (not (= (select asg2 4) 5)) (not r_5_5)))
+      (a!151 (or (not (= (select asg2 5) 5)) (not r_5_0)))
+      (a!152 (or (not (= (select asg2 5) 5)) r_5_1))
+      (a!153 (or (not (= (select asg2 5) 5)) r_5_2))
+      (a!154 (or (not (= (select asg2 5) 5)) (not r_5_3)))
+      (a!155 (or (not (= (select asg2 5) 5)) (not r_5_4)))
+      (a!156 (or (not (= (select asg2 5) 5)) r_5_5))
+      (a!157 (or (not (= (select asg2 6) 5)) (not r_5_0)))
+      (a!158 (or (not (= (select asg2 6) 5)) r_5_1))
+      (a!159 (or (not (= (select asg2 6) 5)) r_5_2))
+      (a!160 (or (not (= (select asg2 6) 5)) (not r_5_3)))
+      (a!161 (or (not (= (select asg2 6) 5)) r_5_4))
+      (a!162 (or (not (= (select asg2 6) 5)) (not r_5_5)))
+      (a!163 (or (not (= (select asg2 7) 5)) (not r_5_0)))
+      (a!164 (or (not (= (select asg2 7) 5)) r_5_1))
+      (a!165 (or (not (= (select asg2 7) 5)) r_5_2))
+      (a!166 (or (not (= (select asg2 7) 5)) (not r_5_3)))
+      (a!167 (or (not (= (select asg2 7) 5)) r_5_4))
+      (a!168 (or (not (= (select asg2 7) 5)) r_5_5))
+      (a!169 (or (not (= (select asg2 8) 5)) (not r_5_0)))
+      (a!170 (or (not (= (select asg2 8) 5)) r_5_1))
+      (a!171 (or (not (= (select asg2 8) 5)) r_5_2))
+      (a!172 (or (not (= (select asg2 8) 5)) r_5_3))
+      (a!173 (or (not (= (select asg2 8) 5)) (not r_5_4)))
+      (a!174 (or (not (= (select asg2 8) 5)) (not r_5_5)))
+      (a!175 (or (not (= (select asg2 9) 5)) (not r_5_0)))
+      (a!176 (or (not (= (select asg2 9) 5)) r_5_1))
+      (a!177 (or (not (= (select asg2 9) 5)) r_5_2))
+      (a!178 (or (not (= (select asg2 9) 5)) r_5_3))
+      (a!179 (or (not (= (select asg2 9) 5)) (not r_5_4)))
+      (a!180 (or (not (= (select asg2 9) 5)) r_5_5))
+      (a!181 (or (not (= (select asg3 0) 5)) (not r_5_0)))
+      (a!182 (or (not (= (select asg3 0) 5)) r_5_1))
+      (a!183 (or (not (= (select asg3 0) 5)) r_5_2))
+      (a!184 (or (not (= (select asg3 0) 5)) r_5_3))
+      (a!185 (or (not (= (select asg3 0) 5)) r_5_4))
+      (a!186 (or (not (= (select asg3 0) 5)) (not r_5_5)))
+      (a!187 (or (not (= (select asg3 1) 5)) (not r_5_0)))
+      (a!188 (or (not (= (select asg3 1) 5)) r_5_1))
+      (a!189 (or (not (= (select asg3 1) 5)) r_5_2))
+      (a!190 (or (not (= (select asg3 1) 5)) r_5_3))
+      (a!191 (or (not (= (select asg3 1) 5)) r_5_4))
+      (a!192 (or (not (= (select asg3 1) 5)) r_5_5))
+      (a!193 (or (not (= (select asg3 2) 5)) r_5_0))
+      (a!194 (or (not (= (select asg3 2) 5)) (not r_5_1)))
+      (a!195 (or (not (= (select asg3 2) 5)) (not r_5_2)))
+      (a!196 (or (not (= (select asg3 2) 5)) (not r_5_3)))
+      (a!197 (or (not (= (select asg3 2) 5)) (not r_5_4)))
+      (a!198 (or (not (= (select asg3 2) 5)) (not r_5_5)))
+      (a!199 (or (not (= (select asg3 3) 5)) r_5_0))
+      (a!200 (or (not (= (select asg3 3) 5)) (not r_5_1)))
+      (a!201 (or (not (= (select asg3 3) 5)) (not r_5_2)))
+      (a!202 (or (not (= (select asg3 3) 5)) (not r_5_3)))
+      (a!203 (or (not (= (select asg3 3) 5)) (not r_5_4)))
+      (a!204 (or (not (= (select asg3 3) 5)) r_5_5))
+      (a!205 (or (not (= (select asg3 4) 5)) r_5_0))
+      (a!206 (or (not (= (select asg3 4) 5)) (not r_5_1)))
+      (a!207 (or (not (= (select asg3 4) 5)) (not r_5_2)))
+      (a!208 (or (not (= (select asg3 4) 5)) (not r_5_3)))
+      (a!209 (or (not (= (select asg3 4) 5)) r_5_4))
+      (a!210 (or (not (= (select asg3 4) 5)) (not r_5_5)))
+      (a!211 (or (not (= (select asg3 5) 5)) r_5_0))
+      (a!212 (or (not (= (select asg3 5) 5)) (not r_5_1)))
+      (a!213 (or (not (= (select asg3 5) 5)) (not r_5_2)))
+      (a!214 (or (not (= (select asg3 5) 5)) (not r_5_3)))
+      (a!215 (or (not (= (select asg3 5) 5)) r_5_4))
+      (a!216 (or (not (= (select asg3 5) 5)) r_5_5))
+      (a!217 (or (not (= (select asg3 6) 5)) r_5_0))
+      (a!218 (or (not (= (select asg3 6) 5)) (not r_5_1)))
+      (a!219 (or (not (= (select asg3 6) 5)) (not r_5_2)))
+      (a!220 (or (not (= (select asg3 6) 5)) r_5_3))
+      (a!221 (or (not (= (select asg3 6) 5)) (not r_5_4)))
+      (a!222 (or (not (= (select asg3 6) 5)) (not r_5_5)))
+      (a!223 (or (not (= (select asg3 7) 5)) r_5_0))
+      (a!224 (or (not (= (select asg3 7) 5)) (not r_5_1)))
+      (a!225 (or (not (= (select asg3 7) 5)) (not r_5_2)))
+      (a!226 (or (not (= (select asg3 7) 5)) r_5_3))
+      (a!227 (or (not (= (select asg3 7) 5)) (not r_5_4)))
+      (a!228 (or (not (= (select asg3 7) 5)) r_5_5))
+      (a!229 (or (not (= (select asg3 8) 5)) r_5_0))
+      (a!230 (or (not (= (select asg3 8) 5)) (not r_5_1)))
+      (a!231 (or (not (= (select asg3 8) 5)) (not r_5_2)))
+      (a!232 (or (not (= (select asg3 8) 5)) r_5_3))
+      (a!233 (or (not (= (select asg3 8) 5)) r_5_4))
+      (a!234 (or (not (= (select asg3 8) 5)) (not r_5_5)))
+      (a!235 (or (not (= (select asg3 9) 5)) r_5_0))
+      (a!236 (or (not (= (select asg3 9) 5)) (not r_5_1)))
+      (a!237 (or (not (= (select asg3 9) 5)) (not r_5_2)))
+      (a!238 (or (not (= (select asg3 9) 5)) r_5_3))
+      (a!239 (or (not (= (select asg3 9) 5)) r_5_4))
+      (a!240 (or (not (= (select asg3 9) 5)) r_5_5))
+      (a!241 (or (not (= (select asg4 0) 5)) r_5_0))
+      (a!242 (or (not (= (select asg4 0) 5)) (not r_5_1)))
+      (a!243 (or (not (= (select asg4 0) 5)) r_5_2))
+      (a!244 (or (not (= (select asg4 0) 5)) (not r_5_3)))
+      (a!245 (or (not (= (select asg4 0) 5)) (not r_5_4)))
+      (a!246 (or (not (= (select asg4 0) 5)) (not r_5_5)))
+      (a!247 (or (not (= (select asg4 1) 5)) r_5_0))
+      (a!248 (or (not (= (select asg4 1) 5)) (not r_5_1)))
+      (a!249 (or (not (= (select asg4 1) 5)) r_5_2))
+      (a!250 (or (not (= (select asg4 1) 5)) (not r_5_3)))
+      (a!251 (or (not (= (select asg4 1) 5)) (not r_5_4)))
+      (a!252 (or (not (= (select asg4 1) 5)) r_5_5))
+      (a!253 (or (not (= (select asg4 2) 5)) r_5_0))
+      (a!254 (or (not (= (select asg4 2) 5)) (not r_5_1)))
+      (a!255 (or (not (= (select asg4 2) 5)) r_5_2))
+      (a!256 (or (not (= (select asg4 2) 5)) (not r_5_3)))
+      (a!257 (or (not (= (select asg4 2) 5)) r_5_4))
+      (a!258 (or (not (= (select asg4 2) 5)) (not r_5_5)))
+      (a!259 (or (not (= (select asg4 3) 5)) r_5_0))
+      (a!260 (or (not (= (select asg4 3) 5)) (not r_5_1)))
+      (a!261 (or (not (= (select asg4 3) 5)) r_5_2))
+      (a!262 (or (not (= (select asg4 3) 5)) (not r_5_3)))
+      (a!263 (or (not (= (select asg4 3) 5)) r_5_4))
+      (a!264 (or (not (= (select asg4 3) 5)) r_5_5))
+      (a!265 (or (not (= (select asg4 4) 5)) r_5_0))
+      (a!266 (or (not (= (select asg4 4) 5)) (not r_5_1)))
+      (a!267 (or (not (= (select asg4 4) 5)) r_5_2))
+      (a!268 (or (not (= (select asg4 4) 5)) r_5_3))
+      (a!269 (or (not (= (select asg4 4) 5)) (not r_5_4)))
+      (a!270 (or (not (= (select asg4 4) 5)) (not r_5_5)))
+      (a!271 (or (not (= (select asg4 5) 5)) r_5_0))
+      (a!272 (or (not (= (select asg4 5) 5)) (not r_5_1)))
+      (a!273 (or (not (= (select asg4 5) 5)) r_5_2))
+      (a!274 (or (not (= (select asg4 5) 5)) r_5_3))
+      (a!275 (or (not (= (select asg4 5) 5)) (not r_5_4)))
+      (a!276 (or (not (= (select asg4 5) 5)) r_5_5))
+      (a!277 (or (not (= (select asg4 6) 5)) r_5_0))
+      (a!278 (or (not (= (select asg4 6) 5)) (not r_5_1)))
+      (a!279 (or (not (= (select asg4 6) 5)) r_5_2))
+      (a!280 (or (not (= (select asg4 6) 5)) r_5_3))
+      (a!281 (or (not (= (select asg4 6) 5)) r_5_4))
+      (a!282 (or (not (= (select asg4 6) 5)) (not r_5_5)))
+      (a!283 (or (not (= (select asg4 7) 5)) r_5_0))
+      (a!284 (or (not (= (select asg4 7) 5)) (not r_5_1)))
+      (a!285 (or (not (= (select asg4 7) 5)) r_5_2))
+      (a!286 (or (not (= (select asg4 7) 5)) r_5_3))
+      (a!287 (or (not (= (select asg4 7) 5)) r_5_4))
+      (a!288 (or (not (= (select asg4 7) 5)) r_5_5))
+      (a!289 (or (not (= (select asg4 8) 5)) r_5_0))
+      (a!290 (or (not (= (select asg4 8) 5)) r_5_1))
+      (a!291 (or (not (= (select asg4 8) 5)) (not r_5_2)))
+      (a!292 (or (not (= (select asg4 8) 5)) (not r_5_3)))
+      (a!293 (or (not (= (select asg4 8) 5)) (not r_5_4)))
+      (a!294 (or (not (= (select asg4 8) 5)) (not r_5_5)))
+      (a!295 (or (not (= (select asg4 9) 5)) r_5_0))
+      (a!296 (or (not (= (select asg4 9) 5)) r_5_1))
+      (a!297 (or (not (= (select asg4 9) 5)) (not r_5_2)))
+      (a!298 (or (not (= (select asg4 9) 5)) (not r_5_3)))
+      (a!299 (or (not (= (select asg4 9) 5)) (not r_5_4)))
+      (a!300 (or (not (= (select asg4 9) 5)) r_5_5))
+      (a!301 (or (not (= (select asg5 0) 5)) r_5_0))
+      (a!302 (or (not (= (select asg5 0) 5)) r_5_1))
+      (a!303 (or (not (= (select asg5 0) 5)) (not r_5_2)))
+      (a!304 (or (not (= (select asg5 0) 5)) (not r_5_3)))
+      (a!305 (or (not (= (select asg5 0) 5)) r_5_4))
+      (a!306 (or (not (= (select asg5 0) 5)) (not r_5_5)))
+      (a!307 (or (not (= (select asg5 1) 5)) r_5_0))
+      (a!308 (or (not (= (select asg5 1) 5)) r_5_1))
+      (a!309 (or (not (= (select asg5 1) 5)) (not r_5_2)))
+      (a!310 (or (not (= (select asg5 1) 5)) (not r_5_3)))
+      (a!311 (or (not (= (select asg5 1) 5)) r_5_4))
+      (a!312 (or (not (= (select asg5 1) 5)) r_5_5))
+      (a!313 (or (not (= (select asg5 2) 5)) r_5_0))
+      (a!314 (or (not (= (select asg5 2) 5)) r_5_1))
+      (a!315 (or (not (= (select asg5 2) 5)) (not r_5_2)))
+      (a!316 (or (not (= (select asg5 2) 5)) r_5_3))
+      (a!317 (or (not (= (select asg5 2) 5)) (not r_5_4)))
+      (a!318 (or (not (= (select asg5 2) 5)) (not r_5_5)))
+      (a!319 (or (not (= (select asg5 3) 5)) r_5_0))
+      (a!320 (or (not (= (select asg5 3) 5)) r_5_1))
+      (a!321 (or (not (= (select asg5 3) 5)) (not r_5_2)))
+      (a!322 (or (not (= (select asg5 3) 5)) r_5_3))
+      (a!323 (or (not (= (select asg5 3) 5)) (not r_5_4)))
+      (a!324 (or (not (= (select asg5 3) 5)) r_5_5))
+      (a!325 (or (not (= (select asg5 4) 5)) r_5_0))
+      (a!326 (or (not (= (select asg5 4) 5)) r_5_1))
+      (a!327 (or (not (= (select asg5 4) 5)) (not r_5_2)))
+      (a!328 (or (not (= (select asg5 4) 5)) r_5_3))
+      (a!329 (or (not (= (select asg5 4) 5)) r_5_4))
+      (a!330 (or (not (= (select asg5 4) 5)) (not r_5_5)))
+      (a!331 (or (not (= (select asg5 5) 5)) r_5_0))
+      (a!332 (or (not (= (select asg5 5) 5)) r_5_1))
+      (a!333 (or (not (= (select asg5 5) 5)) (not r_5_2)))
+      (a!334 (or (not (= (select asg5 5) 5)) r_5_3))
+      (a!335 (or (not (= (select asg5 5) 5)) r_5_4))
+      (a!336 (or (not (= (select asg5 5) 5)) r_5_5))
+      (a!337 (or (not (= (select asg5 6) 5)) r_5_0))
+      (a!338 (or (not (= (select asg5 6) 5)) r_5_1))
+      (a!339 (or (not (= (select asg5 6) 5)) r_5_2))
+      (a!340 (or (not (= (select asg5 6) 5)) (not r_5_3)))
+      (a!341 (or (not (= (select asg5 6) 5)) (not r_5_4)))
+      (a!342 (or (not (= (select asg5 6) 5)) (not r_5_5)))
+      (a!343 (or (not (= (select asg5 7) 5)) r_5_0))
+      (a!344 (or (not (= (select asg5 7) 5)) r_5_1))
+      (a!345 (or (not (= (select asg5 7) 5)) r_5_2))
+      (a!346 (or (not (= (select asg5 7) 5)) (not r_5_3)))
+      (a!347 (or (not (= (select asg5 7) 5)) (not r_5_4)))
+      (a!348 (or (not (= (select asg5 7) 5)) r_5_5))
+      (a!349 (or (not (= (select asg5 8) 5)) r_5_0))
+      (a!350 (or (not (= (select asg5 8) 5)) r_5_1))
+      (a!351 (or (not (= (select asg5 8) 5)) r_5_2))
+      (a!352 (or (not (= (select asg5 8) 5)) (not r_5_3)))
+      (a!353 (or (not (= (select asg5 8) 5)) r_5_4))
+      (a!354 (or (not (= (select asg5 8) 5)) (not r_5_5)))
+      (a!355 (or (not (= (select asg5 9) 5)) r_5_0))
+      (a!356 (or (not (= (select asg5 9) 5)) r_5_1))
+      (a!357 (or (not (= (select asg5 9) 5)) r_5_2))
+      (a!358 (or (not (= (select asg5 9) 5)) (not r_5_3)))
+      (a!359 (or (not (= (select asg5 9) 5)) r_5_4))
+      (a!360 (or (not (= (select asg5 9) 5)) r_5_5)))
+  (and (or (= (select asg0 0) 5)
+           (= (select asg0 1) 5)
+           (= (select asg0 2) 5)
+           (= (select asg0 3) 5)
+           (= (select asg0 4) 5)
+           (= (select asg0 5) 5)
+           (= (select asg0 6) 5)
+           (= (select asg0 7) 5)
+           (= (select asg0 8) 5)
+           (= (select asg0 9) 5)
+           (= (select asg1 0) 5)
+           (= (select asg1 1) 5)
+           (= (select asg1 2) 5)
+           (= (select asg1 3) 5)
+           (= (select asg1 4) 5)
+           (= (select asg1 5) 5)
+           (= (select asg1 6) 5)
+           (= (select asg1 7) 5)
+           (= (select asg1 8) 5)
+           (= (select asg1 9) 5)
+           (= (select asg2 0) 5)
+           (= (select asg2 1) 5)
+           (= (select asg2 2) 5)
+           (= (select asg2 3) 5)
+           (= (select asg2 4) 5)
+           (= (select asg2 5) 5)
+           (= (select asg2 6) 5)
+           (= (select asg2 7) 5)
+           (= (select asg2 8) 5)
+           (= (select asg2 9) 5)
+           (= (select asg3 0) 5)
+           (= (select asg3 1) 5)
+           (= (select asg3 2) 5)
+           (= (select asg3 3) 5)
+           (= (select asg3 4) 5)
+           (= (select asg3 5) 5)
+           (= (select asg3 6) 5)
+           (= (select asg3 7) 5)
+           (= (select asg3 8) 5)
+           (= (select asg3 9) 5)
+           (= (select asg4 0) 5)
+           (= (select asg4 1) 5)
+           (= (select asg4 2) 5)
+           (= (select asg4 3) 5)
+           (= (select asg4 4) 5)
+           (= (select asg4 5) 5)
+           (= (select asg4 6) 5)
+           (= (select asg4 7) 5)
+           (= (select asg4 8) 5)
+           (= (select asg4 9) 5)
+           (= (select asg5 0) 5)
+           (= (select asg5 1) 5)
+           (= (select asg5 2) 5)
+           (= (select asg5 3) 5)
+           (= (select asg5 4) 5)
+           (= (select asg5 5) 5)
+           (= (select asg5 6) 5)
+           (= (select asg5 7) 5)
+           (= (select asg5 8) 5)
+           (= (select asg5 9) 5))
+       a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40
+       a!41
+       a!42
+       a!43
+       a!44
+       a!45
+       a!46
+       a!47
+       a!48
+       a!49
+       a!50
+       a!51
+       a!52
+       a!53
+       a!54
+       a!55
+       a!56
+       a!57
+       a!58
+       a!59
+       a!60
+       a!61
+       a!62
+       a!63
+       a!64
+       a!65
+       a!66
+       a!67
+       a!68
+       a!69
+       a!70
+       a!71
+       a!72
+       a!73
+       a!74
+       a!75
+       a!76
+       a!77
+       a!78
+       a!79
+       a!80
+       a!81
+       a!82
+       a!83
+       a!84
+       a!85
+       a!86
+       a!87
+       a!88
+       a!89
+       a!90
+       a!91
+       a!92
+       a!93
+       a!94
+       a!95
+       a!96
+       a!97
+       a!98
+       a!99
+       a!100
+       a!101
+       a!102
+       a!103
+       a!104
+       a!105
+       a!106
+       a!107
+       a!108
+       a!109
+       a!110
+       a!111
+       a!112
+       a!113
+       a!114
+       a!115
+       a!116
+       a!117
+       a!118
+       a!119
+       a!120
+       a!121
+       a!122
+       a!123
+       a!124
+       a!125
+       a!126
+       a!127
+       a!128
+       a!129
+       a!130
+       a!131
+       a!132
+       a!133
+       a!134
+       a!135
+       a!136
+       a!137
+       a!138
+       a!139
+       a!140
+       a!141
+       a!142
+       a!143
+       a!144
+       a!145
+       a!146
+       a!147
+       a!148
+       a!149
+       a!150
+       a!151
+       a!152
+       a!153
+       a!154
+       a!155
+       a!156
+       a!157
+       a!158
+       a!159
+       a!160
+       a!161
+       a!162
+       a!163
+       a!164
+       a!165
+       a!166
+       a!167
+       a!168
+       a!169
+       a!170
+       a!171
+       a!172
+       a!173
+       a!174
+       a!175
+       a!176
+       a!177
+       a!178
+       a!179
+       a!180
+       a!181
+       a!182
+       a!183
+       a!184
+       a!185
+       a!186
+       a!187
+       a!188
+       a!189
+       a!190
+       a!191
+       a!192
+       a!193
+       a!194
+       a!195
+       a!196
+       a!197
+       a!198
+       a!199
+       a!200
+       a!201
+       a!202
+       a!203
+       a!204
+       a!205
+       a!206
+       a!207
+       a!208
+       a!209
+       a!210
+       a!211
+       a!212
+       a!213
+       a!214
+       a!215
+       a!216
+       a!217
+       a!218
+       a!219
+       a!220
+       a!221
+       a!222
+       a!223
+       a!224
+       a!225
+       a!226
+       a!227
+       a!228
+       a!229
+       a!230
+       a!231
+       a!232
+       a!233
+       a!234
+       a!235
+       a!236
+       a!237
+       a!238
+       a!239
+       a!240
+       a!241
+       a!242
+       a!243
+       a!244
+       a!245
+       a!246
+       a!247
+       a!248
+       a!249
+       a!250
+       a!251
+       a!252
+       a!253
+       a!254
+       a!255
+       a!256
+       a!257
+       a!258
+       a!259
+       a!260
+       a!261
+       a!262
+       a!263
+       a!264
+       a!265
+       a!266
+       a!267
+       a!268
+       a!269
+       a!270
+       a!271
+       a!272
+       a!273
+       a!274
+       a!275
+       a!276
+       a!277
+       a!278
+       a!279
+       a!280
+       a!281
+       a!282
+       a!283
+       a!284
+       a!285
+       a!286
+       a!287
+       a!288
+       a!289
+       a!290
+       a!291
+       a!292
+       a!293
+       a!294
+       a!295
+       a!296
+       a!297
+       a!298
+       a!299
+       a!300
+       a!301
+       a!302
+       a!303
+       a!304
+       a!305
+       a!306
+       a!307
+       a!308
+       a!309
+       a!310
+       a!311
+       a!312
+       a!313
+       a!314
+       a!315
+       a!316
+       a!317
+       a!318
+       a!319
+       a!320
+       a!321
+       a!322
+       a!323
+       a!324
+       a!325
+       a!326
+       a!327
+       a!328
+       a!329
+       a!330
+       a!331
+       a!332
+       a!333
+       a!334
+       a!335
+       a!336
+       a!337
+       a!338
+       a!339
+       a!340
+       a!341
+       a!342
+       a!343
+       a!344
+       a!345
+       a!346
+       a!347
+       a!348
+       a!349
+       a!350
+       a!351
+       a!352
+       a!353
+       a!354
+       a!355
+       a!356
+       a!357
+       a!358
+       a!359
+       a!360)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 6)) (not r_6_0)))
+      (a!2 (or (not (= (select asg0 0) 6)) (not r_6_1)))
+      (a!3 (or (not (= (select asg0 0) 6)) (not r_6_2)))
+      (a!4 (or (not (= (select asg0 0) 6)) (not r_6_3)))
+      (a!5 (or (not (= (select asg0 0) 6)) (not r_6_4)))
+      (a!6 (or (not (= (select asg0 0) 6)) (not r_6_5)))
+      (a!7 (or (not (= (select asg0 1) 6)) (not r_6_0)))
+      (a!8 (or (not (= (select asg0 1) 6)) (not r_6_1)))
+      (a!9 (or (not (= (select asg0 1) 6)) (not r_6_2)))
+      (a!10 (or (not (= (select asg0 1) 6)) (not r_6_3)))
+      (a!11 (or (not (= (select asg0 1) 6)) (not r_6_4)))
+      (a!12 (or (not (= (select asg0 1) 6)) r_6_5))
+      (a!13 (or (not (= (select asg0 2) 6)) (not r_6_0)))
+      (a!14 (or (not (= (select asg0 2) 6)) (not r_6_1)))
+      (a!15 (or (not (= (select asg0 2) 6)) (not r_6_2)))
+      (a!16 (or (not (= (select asg0 2) 6)) (not r_6_3)))
+      (a!17 (or (not (= (select asg0 2) 6)) r_6_4))
+      (a!18 (or (not (= (select asg0 2) 6)) (not r_6_5)))
+      (a!19 (or (not (= (select asg0 3) 6)) (not r_6_0)))
+      (a!20 (or (not (= (select asg0 3) 6)) (not r_6_1)))
+      (a!21 (or (not (= (select asg0 3) 6)) (not r_6_2)))
+      (a!22 (or (not (= (select asg0 3) 6)) (not r_6_3)))
+      (a!23 (or (not (= (select asg0 3) 6)) r_6_4))
+      (a!24 (or (not (= (select asg0 3) 6)) r_6_5))
+      (a!25 (or (not (= (select asg0 4) 6)) (not r_6_0)))
+      (a!26 (or (not (= (select asg0 4) 6)) (not r_6_1)))
+      (a!27 (or (not (= (select asg0 4) 6)) (not r_6_2)))
+      (a!28 (or (not (= (select asg0 4) 6)) r_6_3))
+      (a!29 (or (not (= (select asg0 4) 6)) (not r_6_4)))
+      (a!30 (or (not (= (select asg0 4) 6)) (not r_6_5)))
+      (a!31 (or (not (= (select asg0 5) 6)) (not r_6_0)))
+      (a!32 (or (not (= (select asg0 5) 6)) (not r_6_1)))
+      (a!33 (or (not (= (select asg0 5) 6)) (not r_6_2)))
+      (a!34 (or (not (= (select asg0 5) 6)) r_6_3))
+      (a!35 (or (not (= (select asg0 5) 6)) (not r_6_4)))
+      (a!36 (or (not (= (select asg0 5) 6)) r_6_5))
+      (a!37 (or (not (= (select asg0 6) 6)) (not r_6_0)))
+      (a!38 (or (not (= (select asg0 6) 6)) (not r_6_1)))
+      (a!39 (or (not (= (select asg0 6) 6)) (not r_6_2)))
+      (a!40 (or (not (= (select asg0 6) 6)) r_6_3))
+      (a!41 (or (not (= (select asg0 6) 6)) r_6_4))
+      (a!42 (or (not (= (select asg0 6) 6)) (not r_6_5)))
+      (a!43 (or (not (= (select asg0 7) 6)) (not r_6_0)))
+      (a!44 (or (not (= (select asg0 7) 6)) (not r_6_1)))
+      (a!45 (or (not (= (select asg0 7) 6)) (not r_6_2)))
+      (a!46 (or (not (= (select asg0 7) 6)) r_6_3))
+      (a!47 (or (not (= (select asg0 7) 6)) r_6_4))
+      (a!48 (or (not (= (select asg0 7) 6)) r_6_5))
+      (a!49 (or (not (= (select asg0 8) 6)) (not r_6_0)))
+      (a!50 (or (not (= (select asg0 8) 6)) (not r_6_1)))
+      (a!51 (or (not (= (select asg0 8) 6)) r_6_2))
+      (a!52 (or (not (= (select asg0 8) 6)) (not r_6_3)))
+      (a!53 (or (not (= (select asg0 8) 6)) (not r_6_4)))
+      (a!54 (or (not (= (select asg0 8) 6)) (not r_6_5)))
+      (a!55 (or (not (= (select asg0 9) 6)) (not r_6_0)))
+      (a!56 (or (not (= (select asg0 9) 6)) (not r_6_1)))
+      (a!57 (or (not (= (select asg0 9) 6)) r_6_2))
+      (a!58 (or (not (= (select asg0 9) 6)) (not r_6_3)))
+      (a!59 (or (not (= (select asg0 9) 6)) (not r_6_4)))
+      (a!60 (or (not (= (select asg0 9) 6)) r_6_5))
+      (a!61 (or (not (= (select asg1 0) 6)) (not r_6_0)))
+      (a!62 (or (not (= (select asg1 0) 6)) (not r_6_1)))
+      (a!63 (or (not (= (select asg1 0) 6)) r_6_2))
+      (a!64 (or (not (= (select asg1 0) 6)) (not r_6_3)))
+      (a!65 (or (not (= (select asg1 0) 6)) r_6_4))
+      (a!66 (or (not (= (select asg1 0) 6)) (not r_6_5)))
+      (a!67 (or (not (= (select asg1 1) 6)) (not r_6_0)))
+      (a!68 (or (not (= (select asg1 1) 6)) (not r_6_1)))
+      (a!69 (or (not (= (select asg1 1) 6)) r_6_2))
+      (a!70 (or (not (= (select asg1 1) 6)) (not r_6_3)))
+      (a!71 (or (not (= (select asg1 1) 6)) r_6_4))
+      (a!72 (or (not (= (select asg1 1) 6)) r_6_5))
+      (a!73 (or (not (= (select asg1 2) 6)) (not r_6_0)))
+      (a!74 (or (not (= (select asg1 2) 6)) (not r_6_1)))
+      (a!75 (or (not (= (select asg1 2) 6)) r_6_2))
+      (a!76 (or (not (= (select asg1 2) 6)) r_6_3))
+      (a!77 (or (not (= (select asg1 2) 6)) (not r_6_4)))
+      (a!78 (or (not (= (select asg1 2) 6)) (not r_6_5)))
+      (a!79 (or (not (= (select asg1 3) 6)) (not r_6_0)))
+      (a!80 (or (not (= (select asg1 3) 6)) (not r_6_1)))
+      (a!81 (or (not (= (select asg1 3) 6)) r_6_2))
+      (a!82 (or (not (= (select asg1 3) 6)) r_6_3))
+      (a!83 (or (not (= (select asg1 3) 6)) (not r_6_4)))
+      (a!84 (or (not (= (select asg1 3) 6)) r_6_5))
+      (a!85 (or (not (= (select asg1 4) 6)) (not r_6_0)))
+      (a!86 (or (not (= (select asg1 4) 6)) (not r_6_1)))
+      (a!87 (or (not (= (select asg1 4) 6)) r_6_2))
+      (a!88 (or (not (= (select asg1 4) 6)) r_6_3))
+      (a!89 (or (not (= (select asg1 4) 6)) r_6_4))
+      (a!90 (or (not (= (select asg1 4) 6)) (not r_6_5)))
+      (a!91 (or (not (= (select asg1 5) 6)) (not r_6_0)))
+      (a!92 (or (not (= (select asg1 5) 6)) (not r_6_1)))
+      (a!93 (or (not (= (select asg1 5) 6)) r_6_2))
+      (a!94 (or (not (= (select asg1 5) 6)) r_6_3))
+      (a!95 (or (not (= (select asg1 5) 6)) r_6_4))
+      (a!96 (or (not (= (select asg1 5) 6)) r_6_5))
+      (a!97 (or (not (= (select asg1 6) 6)) (not r_6_0)))
+      (a!98 (or (not (= (select asg1 6) 6)) r_6_1))
+      (a!99 (or (not (= (select asg1 6) 6)) (not r_6_2)))
+      (a!100 (or (not (= (select asg1 6) 6)) (not r_6_3)))
+      (a!101 (or (not (= (select asg1 6) 6)) (not r_6_4)))
+      (a!102 (or (not (= (select asg1 6) 6)) (not r_6_5)))
+      (a!103 (or (not (= (select asg1 7) 6)) (not r_6_0)))
+      (a!104 (or (not (= (select asg1 7) 6)) r_6_1))
+      (a!105 (or (not (= (select asg1 7) 6)) (not r_6_2)))
+      (a!106 (or (not (= (select asg1 7) 6)) (not r_6_3)))
+      (a!107 (or (not (= (select asg1 7) 6)) (not r_6_4)))
+      (a!108 (or (not (= (select asg1 7) 6)) r_6_5))
+      (a!109 (or (not (= (select asg1 8) 6)) (not r_6_0)))
+      (a!110 (or (not (= (select asg1 8) 6)) r_6_1))
+      (a!111 (or (not (= (select asg1 8) 6)) (not r_6_2)))
+      (a!112 (or (not (= (select asg1 8) 6)) (not r_6_3)))
+      (a!113 (or (not (= (select asg1 8) 6)) r_6_4))
+      (a!114 (or (not (= (select asg1 8) 6)) (not r_6_5)))
+      (a!115 (or (not (= (select asg1 9) 6)) (not r_6_0)))
+      (a!116 (or (not (= (select asg1 9) 6)) r_6_1))
+      (a!117 (or (not (= (select asg1 9) 6)) (not r_6_2)))
+      (a!118 (or (not (= (select asg1 9) 6)) (not r_6_3)))
+      (a!119 (or (not (= (select asg1 9) 6)) r_6_4))
+      (a!120 (or (not (= (select asg1 9) 6)) r_6_5))
+      (a!121 (or (not (= (select asg2 0) 6)) (not r_6_0)))
+      (a!122 (or (not (= (select asg2 0) 6)) r_6_1))
+      (a!123 (or (not (= (select asg2 0) 6)) (not r_6_2)))
+      (a!124 (or (not (= (select asg2 0) 6)) r_6_3))
+      (a!125 (or (not (= (select asg2 0) 6)) (not r_6_4)))
+      (a!126 (or (not (= (select asg2 0) 6)) (not r_6_5)))
+      (a!127 (or (not (= (select asg2 1) 6)) (not r_6_0)))
+      (a!128 (or (not (= (select asg2 1) 6)) r_6_1))
+      (a!129 (or (not (= (select asg2 1) 6)) (not r_6_2)))
+      (a!130 (or (not (= (select asg2 1) 6)) r_6_3))
+      (a!131 (or (not (= (select asg2 1) 6)) (not r_6_4)))
+      (a!132 (or (not (= (select asg2 1) 6)) r_6_5))
+      (a!133 (or (not (= (select asg2 2) 6)) (not r_6_0)))
+      (a!134 (or (not (= (select asg2 2) 6)) r_6_1))
+      (a!135 (or (not (= (select asg2 2) 6)) (not r_6_2)))
+      (a!136 (or (not (= (select asg2 2) 6)) r_6_3))
+      (a!137 (or (not (= (select asg2 2) 6)) r_6_4))
+      (a!138 (or (not (= (select asg2 2) 6)) (not r_6_5)))
+      (a!139 (or (not (= (select asg2 3) 6)) (not r_6_0)))
+      (a!140 (or (not (= (select asg2 3) 6)) r_6_1))
+      (a!141 (or (not (= (select asg2 3) 6)) (not r_6_2)))
+      (a!142 (or (not (= (select asg2 3) 6)) r_6_3))
+      (a!143 (or (not (= (select asg2 3) 6)) r_6_4))
+      (a!144 (or (not (= (select asg2 3) 6)) r_6_5))
+      (a!145 (or (not (= (select asg2 4) 6)) (not r_6_0)))
+      (a!146 (or (not (= (select asg2 4) 6)) r_6_1))
+      (a!147 (or (not (= (select asg2 4) 6)) r_6_2))
+      (a!148 (or (not (= (select asg2 4) 6)) (not r_6_3)))
+      (a!149 (or (not (= (select asg2 4) 6)) (not r_6_4)))
+      (a!150 (or (not (= (select asg2 4) 6)) (not r_6_5)))
+      (a!151 (or (not (= (select asg2 5) 6)) (not r_6_0)))
+      (a!152 (or (not (= (select asg2 5) 6)) r_6_1))
+      (a!153 (or (not (= (select asg2 5) 6)) r_6_2))
+      (a!154 (or (not (= (select asg2 5) 6)) (not r_6_3)))
+      (a!155 (or (not (= (select asg2 5) 6)) (not r_6_4)))
+      (a!156 (or (not (= (select asg2 5) 6)) r_6_5))
+      (a!157 (or (not (= (select asg2 6) 6)) (not r_6_0)))
+      (a!158 (or (not (= (select asg2 6) 6)) r_6_1))
+      (a!159 (or (not (= (select asg2 6) 6)) r_6_2))
+      (a!160 (or (not (= (select asg2 6) 6)) (not r_6_3)))
+      (a!161 (or (not (= (select asg2 6) 6)) r_6_4))
+      (a!162 (or (not (= (select asg2 6) 6)) (not r_6_5)))
+      (a!163 (or (not (= (select asg2 7) 6)) (not r_6_0)))
+      (a!164 (or (not (= (select asg2 7) 6)) r_6_1))
+      (a!165 (or (not (= (select asg2 7) 6)) r_6_2))
+      (a!166 (or (not (= (select asg2 7) 6)) (not r_6_3)))
+      (a!167 (or (not (= (select asg2 7) 6)) r_6_4))
+      (a!168 (or (not (= (select asg2 7) 6)) r_6_5))
+      (a!169 (or (not (= (select asg2 8) 6)) (not r_6_0)))
+      (a!170 (or (not (= (select asg2 8) 6)) r_6_1))
+      (a!171 (or (not (= (select asg2 8) 6)) r_6_2))
+      (a!172 (or (not (= (select asg2 8) 6)) r_6_3))
+      (a!173 (or (not (= (select asg2 8) 6)) (not r_6_4)))
+      (a!174 (or (not (= (select asg2 8) 6)) (not r_6_5)))
+      (a!175 (or (not (= (select asg2 9) 6)) (not r_6_0)))
+      (a!176 (or (not (= (select asg2 9) 6)) r_6_1))
+      (a!177 (or (not (= (select asg2 9) 6)) r_6_2))
+      (a!178 (or (not (= (select asg2 9) 6)) r_6_3))
+      (a!179 (or (not (= (select asg2 9) 6)) (not r_6_4)))
+      (a!180 (or (not (= (select asg2 9) 6)) r_6_5))
+      (a!181 (or (not (= (select asg3 0) 6)) (not r_6_0)))
+      (a!182 (or (not (= (select asg3 0) 6)) r_6_1))
+      (a!183 (or (not (= (select asg3 0) 6)) r_6_2))
+      (a!184 (or (not (= (select asg3 0) 6)) r_6_3))
+      (a!185 (or (not (= (select asg3 0) 6)) r_6_4))
+      (a!186 (or (not (= (select asg3 0) 6)) (not r_6_5)))
+      (a!187 (or (not (= (select asg3 1) 6)) (not r_6_0)))
+      (a!188 (or (not (= (select asg3 1) 6)) r_6_1))
+      (a!189 (or (not (= (select asg3 1) 6)) r_6_2))
+      (a!190 (or (not (= (select asg3 1) 6)) r_6_3))
+      (a!191 (or (not (= (select asg3 1) 6)) r_6_4))
+      (a!192 (or (not (= (select asg3 1) 6)) r_6_5))
+      (a!193 (or (not (= (select asg3 2) 6)) r_6_0))
+      (a!194 (or (not (= (select asg3 2) 6)) (not r_6_1)))
+      (a!195 (or (not (= (select asg3 2) 6)) (not r_6_2)))
+      (a!196 (or (not (= (select asg3 2) 6)) (not r_6_3)))
+      (a!197 (or (not (= (select asg3 2) 6)) (not r_6_4)))
+      (a!198 (or (not (= (select asg3 2) 6)) (not r_6_5)))
+      (a!199 (or (not (= (select asg3 3) 6)) r_6_0))
+      (a!200 (or (not (= (select asg3 3) 6)) (not r_6_1)))
+      (a!201 (or (not (= (select asg3 3) 6)) (not r_6_2)))
+      (a!202 (or (not (= (select asg3 3) 6)) (not r_6_3)))
+      (a!203 (or (not (= (select asg3 3) 6)) (not r_6_4)))
+      (a!204 (or (not (= (select asg3 3) 6)) r_6_5))
+      (a!205 (or (not (= (select asg3 4) 6)) r_6_0))
+      (a!206 (or (not (= (select asg3 4) 6)) (not r_6_1)))
+      (a!207 (or (not (= (select asg3 4) 6)) (not r_6_2)))
+      (a!208 (or (not (= (select asg3 4) 6)) (not r_6_3)))
+      (a!209 (or (not (= (select asg3 4) 6)) r_6_4))
+      (a!210 (or (not (= (select asg3 4) 6)) (not r_6_5)))
+      (a!211 (or (not (= (select asg3 5) 6)) r_6_0))
+      (a!212 (or (not (= (select asg3 5) 6)) (not r_6_1)))
+      (a!213 (or (not (= (select asg3 5) 6)) (not r_6_2)))
+      (a!214 (or (not (= (select asg3 5) 6)) (not r_6_3)))
+      (a!215 (or (not (= (select asg3 5) 6)) r_6_4))
+      (a!216 (or (not (= (select asg3 5) 6)) r_6_5))
+      (a!217 (or (not (= (select asg3 6) 6)) r_6_0))
+      (a!218 (or (not (= (select asg3 6) 6)) (not r_6_1)))
+      (a!219 (or (not (= (select asg3 6) 6)) (not r_6_2)))
+      (a!220 (or (not (= (select asg3 6) 6)) r_6_3))
+      (a!221 (or (not (= (select asg3 6) 6)) (not r_6_4)))
+      (a!222 (or (not (= (select asg3 6) 6)) (not r_6_5)))
+      (a!223 (or (not (= (select asg3 7) 6)) r_6_0))
+      (a!224 (or (not (= (select asg3 7) 6)) (not r_6_1)))
+      (a!225 (or (not (= (select asg3 7) 6)) (not r_6_2)))
+      (a!226 (or (not (= (select asg3 7) 6)) r_6_3))
+      (a!227 (or (not (= (select asg3 7) 6)) (not r_6_4)))
+      (a!228 (or (not (= (select asg3 7) 6)) r_6_5))
+      (a!229 (or (not (= (select asg3 8) 6)) r_6_0))
+      (a!230 (or (not (= (select asg3 8) 6)) (not r_6_1)))
+      (a!231 (or (not (= (select asg3 8) 6)) (not r_6_2)))
+      (a!232 (or (not (= (select asg3 8) 6)) r_6_3))
+      (a!233 (or (not (= (select asg3 8) 6)) r_6_4))
+      (a!234 (or (not (= (select asg3 8) 6)) (not r_6_5)))
+      (a!235 (or (not (= (select asg3 9) 6)) r_6_0))
+      (a!236 (or (not (= (select asg3 9) 6)) (not r_6_1)))
+      (a!237 (or (not (= (select asg3 9) 6)) (not r_6_2)))
+      (a!238 (or (not (= (select asg3 9) 6)) r_6_3))
+      (a!239 (or (not (= (select asg3 9) 6)) r_6_4))
+      (a!240 (or (not (= (select asg3 9) 6)) r_6_5))
+      (a!241 (or (not (= (select asg4 0) 6)) r_6_0))
+      (a!242 (or (not (= (select asg4 0) 6)) (not r_6_1)))
+      (a!243 (or (not (= (select asg4 0) 6)) r_6_2))
+      (a!244 (or (not (= (select asg4 0) 6)) (not r_6_3)))
+      (a!245 (or (not (= (select asg4 0) 6)) (not r_6_4)))
+      (a!246 (or (not (= (select asg4 0) 6)) (not r_6_5)))
+      (a!247 (or (not (= (select asg4 1) 6)) r_6_0))
+      (a!248 (or (not (= (select asg4 1) 6)) (not r_6_1)))
+      (a!249 (or (not (= (select asg4 1) 6)) r_6_2))
+      (a!250 (or (not (= (select asg4 1) 6)) (not r_6_3)))
+      (a!251 (or (not (= (select asg4 1) 6)) (not r_6_4)))
+      (a!252 (or (not (= (select asg4 1) 6)) r_6_5))
+      (a!253 (or (not (= (select asg4 2) 6)) r_6_0))
+      (a!254 (or (not (= (select asg4 2) 6)) (not r_6_1)))
+      (a!255 (or (not (= (select asg4 2) 6)) r_6_2))
+      (a!256 (or (not (= (select asg4 2) 6)) (not r_6_3)))
+      (a!257 (or (not (= (select asg4 2) 6)) r_6_4))
+      (a!258 (or (not (= (select asg4 2) 6)) (not r_6_5)))
+      (a!259 (or (not (= (select asg4 3) 6)) r_6_0))
+      (a!260 (or (not (= (select asg4 3) 6)) (not r_6_1)))
+      (a!261 (or (not (= (select asg4 3) 6)) r_6_2))
+      (a!262 (or (not (= (select asg4 3) 6)) (not r_6_3)))
+      (a!263 (or (not (= (select asg4 3) 6)) r_6_4))
+      (a!264 (or (not (= (select asg4 3) 6)) r_6_5))
+      (a!265 (or (not (= (select asg4 4) 6)) r_6_0))
+      (a!266 (or (not (= (select asg4 4) 6)) (not r_6_1)))
+      (a!267 (or (not (= (select asg4 4) 6)) r_6_2))
+      (a!268 (or (not (= (select asg4 4) 6)) r_6_3))
+      (a!269 (or (not (= (select asg4 4) 6)) (not r_6_4)))
+      (a!270 (or (not (= (select asg4 4) 6)) (not r_6_5)))
+      (a!271 (or (not (= (select asg4 5) 6)) r_6_0))
+      (a!272 (or (not (= (select asg4 5) 6)) (not r_6_1)))
+      (a!273 (or (not (= (select asg4 5) 6)) r_6_2))
+      (a!274 (or (not (= (select asg4 5) 6)) r_6_3))
+      (a!275 (or (not (= (select asg4 5) 6)) (not r_6_4)))
+      (a!276 (or (not (= (select asg4 5) 6)) r_6_5))
+      (a!277 (or (not (= (select asg4 6) 6)) r_6_0))
+      (a!278 (or (not (= (select asg4 6) 6)) (not r_6_1)))
+      (a!279 (or (not (= (select asg4 6) 6)) r_6_2))
+      (a!280 (or (not (= (select asg4 6) 6)) r_6_3))
+      (a!281 (or (not (= (select asg4 6) 6)) r_6_4))
+      (a!282 (or (not (= (select asg4 6) 6)) (not r_6_5)))
+      (a!283 (or (not (= (select asg4 7) 6)) r_6_0))
+      (a!284 (or (not (= (select asg4 7) 6)) (not r_6_1)))
+      (a!285 (or (not (= (select asg4 7) 6)) r_6_2))
+      (a!286 (or (not (= (select asg4 7) 6)) r_6_3))
+      (a!287 (or (not (= (select asg4 7) 6)) r_6_4))
+      (a!288 (or (not (= (select asg4 7) 6)) r_6_5))
+      (a!289 (or (not (= (select asg4 8) 6)) r_6_0))
+      (a!290 (or (not (= (select asg4 8) 6)) r_6_1))
+      (a!291 (or (not (= (select asg4 8) 6)) (not r_6_2)))
+      (a!292 (or (not (= (select asg4 8) 6)) (not r_6_3)))
+      (a!293 (or (not (= (select asg4 8) 6)) (not r_6_4)))
+      (a!294 (or (not (= (select asg4 8) 6)) (not r_6_5)))
+      (a!295 (or (not (= (select asg4 9) 6)) r_6_0))
+      (a!296 (or (not (= (select asg4 9) 6)) r_6_1))
+      (a!297 (or (not (= (select asg4 9) 6)) (not r_6_2)))
+      (a!298 (or (not (= (select asg4 9) 6)) (not r_6_3)))
+      (a!299 (or (not (= (select asg4 9) 6)) (not r_6_4)))
+      (a!300 (or (not (= (select asg4 9) 6)) r_6_5))
+      (a!301 (or (not (= (select asg5 0) 6)) r_6_0))
+      (a!302 (or (not (= (select asg5 0) 6)) r_6_1))
+      (a!303 (or (not (= (select asg5 0) 6)) (not r_6_2)))
+      (a!304 (or (not (= (select asg5 0) 6)) (not r_6_3)))
+      (a!305 (or (not (= (select asg5 0) 6)) r_6_4))
+      (a!306 (or (not (= (select asg5 0) 6)) (not r_6_5)))
+      (a!307 (or (not (= (select asg5 1) 6)) r_6_0))
+      (a!308 (or (not (= (select asg5 1) 6)) r_6_1))
+      (a!309 (or (not (= (select asg5 1) 6)) (not r_6_2)))
+      (a!310 (or (not (= (select asg5 1) 6)) (not r_6_3)))
+      (a!311 (or (not (= (select asg5 1) 6)) r_6_4))
+      (a!312 (or (not (= (select asg5 1) 6)) r_6_5))
+      (a!313 (or (not (= (select asg5 2) 6)) r_6_0))
+      (a!314 (or (not (= (select asg5 2) 6)) r_6_1))
+      (a!315 (or (not (= (select asg5 2) 6)) (not r_6_2)))
+      (a!316 (or (not (= (select asg5 2) 6)) r_6_3))
+      (a!317 (or (not (= (select asg5 2) 6)) (not r_6_4)))
+      (a!318 (or (not (= (select asg5 2) 6)) (not r_6_5)))
+      (a!319 (or (not (= (select asg5 3) 6)) r_6_0))
+      (a!320 (or (not (= (select asg5 3) 6)) r_6_1))
+      (a!321 (or (not (= (select asg5 3) 6)) (not r_6_2)))
+      (a!322 (or (not (= (select asg5 3) 6)) r_6_3))
+      (a!323 (or (not (= (select asg5 3) 6)) (not r_6_4)))
+      (a!324 (or (not (= (select asg5 3) 6)) r_6_5))
+      (a!325 (or (not (= (select asg5 4) 6)) r_6_0))
+      (a!326 (or (not (= (select asg5 4) 6)) r_6_1))
+      (a!327 (or (not (= (select asg5 4) 6)) (not r_6_2)))
+      (a!328 (or (not (= (select asg5 4) 6)) r_6_3))
+      (a!329 (or (not (= (select asg5 4) 6)) r_6_4))
+      (a!330 (or (not (= (select asg5 4) 6)) (not r_6_5)))
+      (a!331 (or (not (= (select asg5 5) 6)) r_6_0))
+      (a!332 (or (not (= (select asg5 5) 6)) r_6_1))
+      (a!333 (or (not (= (select asg5 5) 6)) (not r_6_2)))
+      (a!334 (or (not (= (select asg5 5) 6)) r_6_3))
+      (a!335 (or (not (= (select asg5 5) 6)) r_6_4))
+      (a!336 (or (not (= (select asg5 5) 6)) r_6_5))
+      (a!337 (or (not (= (select asg5 6) 6)) r_6_0))
+      (a!338 (or (not (= (select asg5 6) 6)) r_6_1))
+      (a!339 (or (not (= (select asg5 6) 6)) r_6_2))
+      (a!340 (or (not (= (select asg5 6) 6)) (not r_6_3)))
+      (a!341 (or (not (= (select asg5 6) 6)) (not r_6_4)))
+      (a!342 (or (not (= (select asg5 6) 6)) (not r_6_5)))
+      (a!343 (or (not (= (select asg5 7) 6)) r_6_0))
+      (a!344 (or (not (= (select asg5 7) 6)) r_6_1))
+      (a!345 (or (not (= (select asg5 7) 6)) r_6_2))
+      (a!346 (or (not (= (select asg5 7) 6)) (not r_6_3)))
+      (a!347 (or (not (= (select asg5 7) 6)) (not r_6_4)))
+      (a!348 (or (not (= (select asg5 7) 6)) r_6_5))
+      (a!349 (or (not (= (select asg5 8) 6)) r_6_0))
+      (a!350 (or (not (= (select asg5 8) 6)) r_6_1))
+      (a!351 (or (not (= (select asg5 8) 6)) r_6_2))
+      (a!352 (or (not (= (select asg5 8) 6)) (not r_6_3)))
+      (a!353 (or (not (= (select asg5 8) 6)) r_6_4))
+      (a!354 (or (not (= (select asg5 8) 6)) (not r_6_5)))
+      (a!355 (or (not (= (select asg5 9) 6)) r_6_0))
+      (a!356 (or (not (= (select asg5 9) 6)) r_6_1))
+      (a!357 (or (not (= (select asg5 9) 6)) r_6_2))
+      (a!358 (or (not (= (select asg5 9) 6)) (not r_6_3)))
+      (a!359 (or (not (= (select asg5 9) 6)) r_6_4))
+      (a!360 (or (not (= (select asg5 9) 6)) r_6_5)))
+  (and (or (= (select asg0 0) 6)
+           (= (select asg0 1) 6)
+           (= (select asg0 2) 6)
+           (= (select asg0 3) 6)
+           (= (select asg0 4) 6)
+           (= (select asg0 5) 6)
+           (= (select asg0 6) 6)
+           (= (select asg0 7) 6)
+           (= (select asg0 8) 6)
+           (= (select asg0 9) 6)
+           (= (select asg1 0) 6)
+           (= (select asg1 1) 6)
+           (= (select asg1 2) 6)
+           (= (select asg1 3) 6)
+           (= (select asg1 4) 6)
+           (= (select asg1 5) 6)
+           (= (select asg1 6) 6)
+           (= (select asg1 7) 6)
+           (= (select asg1 8) 6)
+           (= (select asg1 9) 6)
+           (= (select asg2 0) 6)
+           (= (select asg2 1) 6)
+           (= (select asg2 2) 6)
+           (= (select asg2 3) 6)
+           (= (select asg2 4) 6)
+           (= (select asg2 5) 6)
+           (= (select asg2 6) 6)
+           (= (select asg2 7) 6)
+           (= (select asg2 8) 6)
+           (= (select asg2 9) 6)
+           (= (select asg3 0) 6)
+           (= (select asg3 1) 6)
+           (= (select asg3 2) 6)
+           (= (select asg3 3) 6)
+           (= (select asg3 4) 6)
+           (= (select asg3 5) 6)
+           (= (select asg3 6) 6)
+           (= (select asg3 7) 6)
+           (= (select asg3 8) 6)
+           (= (select asg3 9) 6)
+           (= (select asg4 0) 6)
+           (= (select asg4 1) 6)
+           (= (select asg4 2) 6)
+           (= (select asg4 3) 6)
+           (= (select asg4 4) 6)
+           (= (select asg4 5) 6)
+           (= (select asg4 6) 6)
+           (= (select asg4 7) 6)
+           (= (select asg4 8) 6)
+           (= (select asg4 9) 6)
+           (= (select asg5 0) 6)
+           (= (select asg5 1) 6)
+           (= (select asg5 2) 6)
+           (= (select asg5 3) 6)
+           (= (select asg5 4) 6)
+           (= (select asg5 5) 6)
+           (= (select asg5 6) 6)
+           (= (select asg5 7) 6)
+           (= (select asg5 8) 6)
+           (= (select asg5 9) 6))
+       a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40
+       a!41
+       a!42
+       a!43
+       a!44
+       a!45
+       a!46
+       a!47
+       a!48
+       a!49
+       a!50
+       a!51
+       a!52
+       a!53
+       a!54
+       a!55
+       a!56
+       a!57
+       a!58
+       a!59
+       a!60
+       a!61
+       a!62
+       a!63
+       a!64
+       a!65
+       a!66
+       a!67
+       a!68
+       a!69
+       a!70
+       a!71
+       a!72
+       a!73
+       a!74
+       a!75
+       a!76
+       a!77
+       a!78
+       a!79
+       a!80
+       a!81
+       a!82
+       a!83
+       a!84
+       a!85
+       a!86
+       a!87
+       a!88
+       a!89
+       a!90
+       a!91
+       a!92
+       a!93
+       a!94
+       a!95
+       a!96
+       a!97
+       a!98
+       a!99
+       a!100
+       a!101
+       a!102
+       a!103
+       a!104
+       a!105
+       a!106
+       a!107
+       a!108
+       a!109
+       a!110
+       a!111
+       a!112
+       a!113
+       a!114
+       a!115
+       a!116
+       a!117
+       a!118
+       a!119
+       a!120
+       a!121
+       a!122
+       a!123
+       a!124
+       a!125
+       a!126
+       a!127
+       a!128
+       a!129
+       a!130
+       a!131
+       a!132
+       a!133
+       a!134
+       a!135
+       a!136
+       a!137
+       a!138
+       a!139
+       a!140
+       a!141
+       a!142
+       a!143
+       a!144
+       a!145
+       a!146
+       a!147
+       a!148
+       a!149
+       a!150
+       a!151
+       a!152
+       a!153
+       a!154
+       a!155
+       a!156
+       a!157
+       a!158
+       a!159
+       a!160
+       a!161
+       a!162
+       a!163
+       a!164
+       a!165
+       a!166
+       a!167
+       a!168
+       a!169
+       a!170
+       a!171
+       a!172
+       a!173
+       a!174
+       a!175
+       a!176
+       a!177
+       a!178
+       a!179
+       a!180
+       a!181
+       a!182
+       a!183
+       a!184
+       a!185
+       a!186
+       a!187
+       a!188
+       a!189
+       a!190
+       a!191
+       a!192
+       a!193
+       a!194
+       a!195
+       a!196
+       a!197
+       a!198
+       a!199
+       a!200
+       a!201
+       a!202
+       a!203
+       a!204
+       a!205
+       a!206
+       a!207
+       a!208
+       a!209
+       a!210
+       a!211
+       a!212
+       a!213
+       a!214
+       a!215
+       a!216
+       a!217
+       a!218
+       a!219
+       a!220
+       a!221
+       a!222
+       a!223
+       a!224
+       a!225
+       a!226
+       a!227
+       a!228
+       a!229
+       a!230
+       a!231
+       a!232
+       a!233
+       a!234
+       a!235
+       a!236
+       a!237
+       a!238
+       a!239
+       a!240
+       a!241
+       a!242
+       a!243
+       a!244
+       a!245
+       a!246
+       a!247
+       a!248
+       a!249
+       a!250
+       a!251
+       a!252
+       a!253
+       a!254
+       a!255
+       a!256
+       a!257
+       a!258
+       a!259
+       a!260
+       a!261
+       a!262
+       a!263
+       a!264
+       a!265
+       a!266
+       a!267
+       a!268
+       a!269
+       a!270
+       a!271
+       a!272
+       a!273
+       a!274
+       a!275
+       a!276
+       a!277
+       a!278
+       a!279
+       a!280
+       a!281
+       a!282
+       a!283
+       a!284
+       a!285
+       a!286
+       a!287
+       a!288
+       a!289
+       a!290
+       a!291
+       a!292
+       a!293
+       a!294
+       a!295
+       a!296
+       a!297
+       a!298
+       a!299
+       a!300
+       a!301
+       a!302
+       a!303
+       a!304
+       a!305
+       a!306
+       a!307
+       a!308
+       a!309
+       a!310
+       a!311
+       a!312
+       a!313
+       a!314
+       a!315
+       a!316
+       a!317
+       a!318
+       a!319
+       a!320
+       a!321
+       a!322
+       a!323
+       a!324
+       a!325
+       a!326
+       a!327
+       a!328
+       a!329
+       a!330
+       a!331
+       a!332
+       a!333
+       a!334
+       a!335
+       a!336
+       a!337
+       a!338
+       a!339
+       a!340
+       a!341
+       a!342
+       a!343
+       a!344
+       a!345
+       a!346
+       a!347
+       a!348
+       a!349
+       a!350
+       a!351
+       a!352
+       a!353
+       a!354
+       a!355
+       a!356
+       a!357
+       a!358
+       a!359
+       a!360)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 7)) (not r_7_0)))
+      (a!2 (or (not (= (select asg0 0) 7)) (not r_7_1)))
+      (a!3 (or (not (= (select asg0 0) 7)) (not r_7_2)))
+      (a!4 (or (not (= (select asg0 0) 7)) (not r_7_3)))
+      (a!5 (or (not (= (select asg0 0) 7)) (not r_7_4)))
+      (a!6 (or (not (= (select asg0 0) 7)) (not r_7_5)))
+      (a!7 (or (not (= (select asg0 1) 7)) (not r_7_0)))
+      (a!8 (or (not (= (select asg0 1) 7)) (not r_7_1)))
+      (a!9 (or (not (= (select asg0 1) 7)) (not r_7_2)))
+      (a!10 (or (not (= (select asg0 1) 7)) (not r_7_3)))
+      (a!11 (or (not (= (select asg0 1) 7)) (not r_7_4)))
+      (a!12 (or (not (= (select asg0 1) 7)) r_7_5))
+      (a!13 (or (not (= (select asg0 2) 7)) (not r_7_0)))
+      (a!14 (or (not (= (select asg0 2) 7)) (not r_7_1)))
+      (a!15 (or (not (= (select asg0 2) 7)) (not r_7_2)))
+      (a!16 (or (not (= (select asg0 2) 7)) (not r_7_3)))
+      (a!17 (or (not (= (select asg0 2) 7)) r_7_4))
+      (a!18 (or (not (= (select asg0 2) 7)) (not r_7_5)))
+      (a!19 (or (not (= (select asg0 3) 7)) (not r_7_0)))
+      (a!20 (or (not (= (select asg0 3) 7)) (not r_7_1)))
+      (a!21 (or (not (= (select asg0 3) 7)) (not r_7_2)))
+      (a!22 (or (not (= (select asg0 3) 7)) (not r_7_3)))
+      (a!23 (or (not (= (select asg0 3) 7)) r_7_4))
+      (a!24 (or (not (= (select asg0 3) 7)) r_7_5))
+      (a!25 (or (not (= (select asg0 4) 7)) (not r_7_0)))
+      (a!26 (or (not (= (select asg0 4) 7)) (not r_7_1)))
+      (a!27 (or (not (= (select asg0 4) 7)) (not r_7_2)))
+      (a!28 (or (not (= (select asg0 4) 7)) r_7_3))
+      (a!29 (or (not (= (select asg0 4) 7)) (not r_7_4)))
+      (a!30 (or (not (= (select asg0 4) 7)) (not r_7_5)))
+      (a!31 (or (not (= (select asg0 5) 7)) (not r_7_0)))
+      (a!32 (or (not (= (select asg0 5) 7)) (not r_7_1)))
+      (a!33 (or (not (= (select asg0 5) 7)) (not r_7_2)))
+      (a!34 (or (not (= (select asg0 5) 7)) r_7_3))
+      (a!35 (or (not (= (select asg0 5) 7)) (not r_7_4)))
+      (a!36 (or (not (= (select asg0 5) 7)) r_7_5))
+      (a!37 (or (not (= (select asg0 6) 7)) (not r_7_0)))
+      (a!38 (or (not (= (select asg0 6) 7)) (not r_7_1)))
+      (a!39 (or (not (= (select asg0 6) 7)) (not r_7_2)))
+      (a!40 (or (not (= (select asg0 6) 7)) r_7_3))
+      (a!41 (or (not (= (select asg0 6) 7)) r_7_4))
+      (a!42 (or (not (= (select asg0 6) 7)) (not r_7_5)))
+      (a!43 (or (not (= (select asg0 7) 7)) (not r_7_0)))
+      (a!44 (or (not (= (select asg0 7) 7)) (not r_7_1)))
+      (a!45 (or (not (= (select asg0 7) 7)) (not r_7_2)))
+      (a!46 (or (not (= (select asg0 7) 7)) r_7_3))
+      (a!47 (or (not (= (select asg0 7) 7)) r_7_4))
+      (a!48 (or (not (= (select asg0 7) 7)) r_7_5))
+      (a!49 (or (not (= (select asg0 8) 7)) (not r_7_0)))
+      (a!50 (or (not (= (select asg0 8) 7)) (not r_7_1)))
+      (a!51 (or (not (= (select asg0 8) 7)) r_7_2))
+      (a!52 (or (not (= (select asg0 8) 7)) (not r_7_3)))
+      (a!53 (or (not (= (select asg0 8) 7)) (not r_7_4)))
+      (a!54 (or (not (= (select asg0 8) 7)) (not r_7_5)))
+      (a!55 (or (not (= (select asg0 9) 7)) (not r_7_0)))
+      (a!56 (or (not (= (select asg0 9) 7)) (not r_7_1)))
+      (a!57 (or (not (= (select asg0 9) 7)) r_7_2))
+      (a!58 (or (not (= (select asg0 9) 7)) (not r_7_3)))
+      (a!59 (or (not (= (select asg0 9) 7)) (not r_7_4)))
+      (a!60 (or (not (= (select asg0 9) 7)) r_7_5))
+      (a!61 (or (not (= (select asg1 0) 7)) (not r_7_0)))
+      (a!62 (or (not (= (select asg1 0) 7)) (not r_7_1)))
+      (a!63 (or (not (= (select asg1 0) 7)) r_7_2))
+      (a!64 (or (not (= (select asg1 0) 7)) (not r_7_3)))
+      (a!65 (or (not (= (select asg1 0) 7)) r_7_4))
+      (a!66 (or (not (= (select asg1 0) 7)) (not r_7_5)))
+      (a!67 (or (not (= (select asg1 1) 7)) (not r_7_0)))
+      (a!68 (or (not (= (select asg1 1) 7)) (not r_7_1)))
+      (a!69 (or (not (= (select asg1 1) 7)) r_7_2))
+      (a!70 (or (not (= (select asg1 1) 7)) (not r_7_3)))
+      (a!71 (or (not (= (select asg1 1) 7)) r_7_4))
+      (a!72 (or (not (= (select asg1 1) 7)) r_7_5))
+      (a!73 (or (not (= (select asg1 2) 7)) (not r_7_0)))
+      (a!74 (or (not (= (select asg1 2) 7)) (not r_7_1)))
+      (a!75 (or (not (= (select asg1 2) 7)) r_7_2))
+      (a!76 (or (not (= (select asg1 2) 7)) r_7_3))
+      (a!77 (or (not (= (select asg1 2) 7)) (not r_7_4)))
+      (a!78 (or (not (= (select asg1 2) 7)) (not r_7_5)))
+      (a!79 (or (not (= (select asg1 3) 7)) (not r_7_0)))
+      (a!80 (or (not (= (select asg1 3) 7)) (not r_7_1)))
+      (a!81 (or (not (= (select asg1 3) 7)) r_7_2))
+      (a!82 (or (not (= (select asg1 3) 7)) r_7_3))
+      (a!83 (or (not (= (select asg1 3) 7)) (not r_7_4)))
+      (a!84 (or (not (= (select asg1 3) 7)) r_7_5))
+      (a!85 (or (not (= (select asg1 4) 7)) (not r_7_0)))
+      (a!86 (or (not (= (select asg1 4) 7)) (not r_7_1)))
+      (a!87 (or (not (= (select asg1 4) 7)) r_7_2))
+      (a!88 (or (not (= (select asg1 4) 7)) r_7_3))
+      (a!89 (or (not (= (select asg1 4) 7)) r_7_4))
+      (a!90 (or (not (= (select asg1 4) 7)) (not r_7_5)))
+      (a!91 (or (not (= (select asg1 5) 7)) (not r_7_0)))
+      (a!92 (or (not (= (select asg1 5) 7)) (not r_7_1)))
+      (a!93 (or (not (= (select asg1 5) 7)) r_7_2))
+      (a!94 (or (not (= (select asg1 5) 7)) r_7_3))
+      (a!95 (or (not (= (select asg1 5) 7)) r_7_4))
+      (a!96 (or (not (= (select asg1 5) 7)) r_7_5))
+      (a!97 (or (not (= (select asg1 6) 7)) (not r_7_0)))
+      (a!98 (or (not (= (select asg1 6) 7)) r_7_1))
+      (a!99 (or (not (= (select asg1 6) 7)) (not r_7_2)))
+      (a!100 (or (not (= (select asg1 6) 7)) (not r_7_3)))
+      (a!101 (or (not (= (select asg1 6) 7)) (not r_7_4)))
+      (a!102 (or (not (= (select asg1 6) 7)) (not r_7_5)))
+      (a!103 (or (not (= (select asg1 7) 7)) (not r_7_0)))
+      (a!104 (or (not (= (select asg1 7) 7)) r_7_1))
+      (a!105 (or (not (= (select asg1 7) 7)) (not r_7_2)))
+      (a!106 (or (not (= (select asg1 7) 7)) (not r_7_3)))
+      (a!107 (or (not (= (select asg1 7) 7)) (not r_7_4)))
+      (a!108 (or (not (= (select asg1 7) 7)) r_7_5))
+      (a!109 (or (not (= (select asg1 8) 7)) (not r_7_0)))
+      (a!110 (or (not (= (select asg1 8) 7)) r_7_1))
+      (a!111 (or (not (= (select asg1 8) 7)) (not r_7_2)))
+      (a!112 (or (not (= (select asg1 8) 7)) (not r_7_3)))
+      (a!113 (or (not (= (select asg1 8) 7)) r_7_4))
+      (a!114 (or (not (= (select asg1 8) 7)) (not r_7_5)))
+      (a!115 (or (not (= (select asg1 9) 7)) (not r_7_0)))
+      (a!116 (or (not (= (select asg1 9) 7)) r_7_1))
+      (a!117 (or (not (= (select asg1 9) 7)) (not r_7_2)))
+      (a!118 (or (not (= (select asg1 9) 7)) (not r_7_3)))
+      (a!119 (or (not (= (select asg1 9) 7)) r_7_4))
+      (a!120 (or (not (= (select asg1 9) 7)) r_7_5))
+      (a!121 (or (not (= (select asg2 0) 7)) (not r_7_0)))
+      (a!122 (or (not (= (select asg2 0) 7)) r_7_1))
+      (a!123 (or (not (= (select asg2 0) 7)) (not r_7_2)))
+      (a!124 (or (not (= (select asg2 0) 7)) r_7_3))
+      (a!125 (or (not (= (select asg2 0) 7)) (not r_7_4)))
+      (a!126 (or (not (= (select asg2 0) 7)) (not r_7_5)))
+      (a!127 (or (not (= (select asg2 1) 7)) (not r_7_0)))
+      (a!128 (or (not (= (select asg2 1) 7)) r_7_1))
+      (a!129 (or (not (= (select asg2 1) 7)) (not r_7_2)))
+      (a!130 (or (not (= (select asg2 1) 7)) r_7_3))
+      (a!131 (or (not (= (select asg2 1) 7)) (not r_7_4)))
+      (a!132 (or (not (= (select asg2 1) 7)) r_7_5))
+      (a!133 (or (not (= (select asg2 2) 7)) (not r_7_0)))
+      (a!134 (or (not (= (select asg2 2) 7)) r_7_1))
+      (a!135 (or (not (= (select asg2 2) 7)) (not r_7_2)))
+      (a!136 (or (not (= (select asg2 2) 7)) r_7_3))
+      (a!137 (or (not (= (select asg2 2) 7)) r_7_4))
+      (a!138 (or (not (= (select asg2 2) 7)) (not r_7_5)))
+      (a!139 (or (not (= (select asg2 3) 7)) (not r_7_0)))
+      (a!140 (or (not (= (select asg2 3) 7)) r_7_1))
+      (a!141 (or (not (= (select asg2 3) 7)) (not r_7_2)))
+      (a!142 (or (not (= (select asg2 3) 7)) r_7_3))
+      (a!143 (or (not (= (select asg2 3) 7)) r_7_4))
+      (a!144 (or (not (= (select asg2 3) 7)) r_7_5))
+      (a!145 (or (not (= (select asg2 4) 7)) (not r_7_0)))
+      (a!146 (or (not (= (select asg2 4) 7)) r_7_1))
+      (a!147 (or (not (= (select asg2 4) 7)) r_7_2))
+      (a!148 (or (not (= (select asg2 4) 7)) (not r_7_3)))
+      (a!149 (or (not (= (select asg2 4) 7)) (not r_7_4)))
+      (a!150 (or (not (= (select asg2 4) 7)) (not r_7_5)))
+      (a!151 (or (not (= (select asg2 5) 7)) (not r_7_0)))
+      (a!152 (or (not (= (select asg2 5) 7)) r_7_1))
+      (a!153 (or (not (= (select asg2 5) 7)) r_7_2))
+      (a!154 (or (not (= (select asg2 5) 7)) (not r_7_3)))
+      (a!155 (or (not (= (select asg2 5) 7)) (not r_7_4)))
+      (a!156 (or (not (= (select asg2 5) 7)) r_7_5))
+      (a!157 (or (not (= (select asg2 6) 7)) (not r_7_0)))
+      (a!158 (or (not (= (select asg2 6) 7)) r_7_1))
+      (a!159 (or (not (= (select asg2 6) 7)) r_7_2))
+      (a!160 (or (not (= (select asg2 6) 7)) (not r_7_3)))
+      (a!161 (or (not (= (select asg2 6) 7)) r_7_4))
+      (a!162 (or (not (= (select asg2 6) 7)) (not r_7_5)))
+      (a!163 (or (not (= (select asg2 7) 7)) (not r_7_0)))
+      (a!164 (or (not (= (select asg2 7) 7)) r_7_1))
+      (a!165 (or (not (= (select asg2 7) 7)) r_7_2))
+      (a!166 (or (not (= (select asg2 7) 7)) (not r_7_3)))
+      (a!167 (or (not (= (select asg2 7) 7)) r_7_4))
+      (a!168 (or (not (= (select asg2 7) 7)) r_7_5))
+      (a!169 (or (not (= (select asg2 8) 7)) (not r_7_0)))
+      (a!170 (or (not (= (select asg2 8) 7)) r_7_1))
+      (a!171 (or (not (= (select asg2 8) 7)) r_7_2))
+      (a!172 (or (not (= (select asg2 8) 7)) r_7_3))
+      (a!173 (or (not (= (select asg2 8) 7)) (not r_7_4)))
+      (a!174 (or (not (= (select asg2 8) 7)) (not r_7_5)))
+      (a!175 (or (not (= (select asg2 9) 7)) (not r_7_0)))
+      (a!176 (or (not (= (select asg2 9) 7)) r_7_1))
+      (a!177 (or (not (= (select asg2 9) 7)) r_7_2))
+      (a!178 (or (not (= (select asg2 9) 7)) r_7_3))
+      (a!179 (or (not (= (select asg2 9) 7)) (not r_7_4)))
+      (a!180 (or (not (= (select asg2 9) 7)) r_7_5))
+      (a!181 (or (not (= (select asg3 0) 7)) (not r_7_0)))
+      (a!182 (or (not (= (select asg3 0) 7)) r_7_1))
+      (a!183 (or (not (= (select asg3 0) 7)) r_7_2))
+      (a!184 (or (not (= (select asg3 0) 7)) r_7_3))
+      (a!185 (or (not (= (select asg3 0) 7)) r_7_4))
+      (a!186 (or (not (= (select asg3 0) 7)) (not r_7_5)))
+      (a!187 (or (not (= (select asg3 1) 7)) (not r_7_0)))
+      (a!188 (or (not (= (select asg3 1) 7)) r_7_1))
+      (a!189 (or (not (= (select asg3 1) 7)) r_7_2))
+      (a!190 (or (not (= (select asg3 1) 7)) r_7_3))
+      (a!191 (or (not (= (select asg3 1) 7)) r_7_4))
+      (a!192 (or (not (= (select asg3 1) 7)) r_7_5))
+      (a!193 (or (not (= (select asg3 2) 7)) r_7_0))
+      (a!194 (or (not (= (select asg3 2) 7)) (not r_7_1)))
+      (a!195 (or (not (= (select asg3 2) 7)) (not r_7_2)))
+      (a!196 (or (not (= (select asg3 2) 7)) (not r_7_3)))
+      (a!197 (or (not (= (select asg3 2) 7)) (not r_7_4)))
+      (a!198 (or (not (= (select asg3 2) 7)) (not r_7_5)))
+      (a!199 (or (not (= (select asg3 3) 7)) r_7_0))
+      (a!200 (or (not (= (select asg3 3) 7)) (not r_7_1)))
+      (a!201 (or (not (= (select asg3 3) 7)) (not r_7_2)))
+      (a!202 (or (not (= (select asg3 3) 7)) (not r_7_3)))
+      (a!203 (or (not (= (select asg3 3) 7)) (not r_7_4)))
+      (a!204 (or (not (= (select asg3 3) 7)) r_7_5))
+      (a!205 (or (not (= (select asg3 4) 7)) r_7_0))
+      (a!206 (or (not (= (select asg3 4) 7)) (not r_7_1)))
+      (a!207 (or (not (= (select asg3 4) 7)) (not r_7_2)))
+      (a!208 (or (not (= (select asg3 4) 7)) (not r_7_3)))
+      (a!209 (or (not (= (select asg3 4) 7)) r_7_4))
+      (a!210 (or (not (= (select asg3 4) 7)) (not r_7_5)))
+      (a!211 (or (not (= (select asg3 5) 7)) r_7_0))
+      (a!212 (or (not (= (select asg3 5) 7)) (not r_7_1)))
+      (a!213 (or (not (= (select asg3 5) 7)) (not r_7_2)))
+      (a!214 (or (not (= (select asg3 5) 7)) (not r_7_3)))
+      (a!215 (or (not (= (select asg3 5) 7)) r_7_4))
+      (a!216 (or (not (= (select asg3 5) 7)) r_7_5))
+      (a!217 (or (not (= (select asg3 6) 7)) r_7_0))
+      (a!218 (or (not (= (select asg3 6) 7)) (not r_7_1)))
+      (a!219 (or (not (= (select asg3 6) 7)) (not r_7_2)))
+      (a!220 (or (not (= (select asg3 6) 7)) r_7_3))
+      (a!221 (or (not (= (select asg3 6) 7)) (not r_7_4)))
+      (a!222 (or (not (= (select asg3 6) 7)) (not r_7_5)))
+      (a!223 (or (not (= (select asg3 7) 7)) r_7_0))
+      (a!224 (or (not (= (select asg3 7) 7)) (not r_7_1)))
+      (a!225 (or (not (= (select asg3 7) 7)) (not r_7_2)))
+      (a!226 (or (not (= (select asg3 7) 7)) r_7_3))
+      (a!227 (or (not (= (select asg3 7) 7)) (not r_7_4)))
+      (a!228 (or (not (= (select asg3 7) 7)) r_7_5))
+      (a!229 (or (not (= (select asg3 8) 7)) r_7_0))
+      (a!230 (or (not (= (select asg3 8) 7)) (not r_7_1)))
+      (a!231 (or (not (= (select asg3 8) 7)) (not r_7_2)))
+      (a!232 (or (not (= (select asg3 8) 7)) r_7_3))
+      (a!233 (or (not (= (select asg3 8) 7)) r_7_4))
+      (a!234 (or (not (= (select asg3 8) 7)) (not r_7_5)))
+      (a!235 (or (not (= (select asg3 9) 7)) r_7_0))
+      (a!236 (or (not (= (select asg3 9) 7)) (not r_7_1)))
+      (a!237 (or (not (= (select asg3 9) 7)) (not r_7_2)))
+      (a!238 (or (not (= (select asg3 9) 7)) r_7_3))
+      (a!239 (or (not (= (select asg3 9) 7)) r_7_4))
+      (a!240 (or (not (= (select asg3 9) 7)) r_7_5))
+      (a!241 (or (not (= (select asg4 0) 7)) r_7_0))
+      (a!242 (or (not (= (select asg4 0) 7)) (not r_7_1)))
+      (a!243 (or (not (= (select asg4 0) 7)) r_7_2))
+      (a!244 (or (not (= (select asg4 0) 7)) (not r_7_3)))
+      (a!245 (or (not (= (select asg4 0) 7)) (not r_7_4)))
+      (a!246 (or (not (= (select asg4 0) 7)) (not r_7_5)))
+      (a!247 (or (not (= (select asg4 1) 7)) r_7_0))
+      (a!248 (or (not (= (select asg4 1) 7)) (not r_7_1)))
+      (a!249 (or (not (= (select asg4 1) 7)) r_7_2))
+      (a!250 (or (not (= (select asg4 1) 7)) (not r_7_3)))
+      (a!251 (or (not (= (select asg4 1) 7)) (not r_7_4)))
+      (a!252 (or (not (= (select asg4 1) 7)) r_7_5))
+      (a!253 (or (not (= (select asg4 2) 7)) r_7_0))
+      (a!254 (or (not (= (select asg4 2) 7)) (not r_7_1)))
+      (a!255 (or (not (= (select asg4 2) 7)) r_7_2))
+      (a!256 (or (not (= (select asg4 2) 7)) (not r_7_3)))
+      (a!257 (or (not (= (select asg4 2) 7)) r_7_4))
+      (a!258 (or (not (= (select asg4 2) 7)) (not r_7_5)))
+      (a!259 (or (not (= (select asg4 3) 7)) r_7_0))
+      (a!260 (or (not (= (select asg4 3) 7)) (not r_7_1)))
+      (a!261 (or (not (= (select asg4 3) 7)) r_7_2))
+      (a!262 (or (not (= (select asg4 3) 7)) (not r_7_3)))
+      (a!263 (or (not (= (select asg4 3) 7)) r_7_4))
+      (a!264 (or (not (= (select asg4 3) 7)) r_7_5))
+      (a!265 (or (not (= (select asg4 4) 7)) r_7_0))
+      (a!266 (or (not (= (select asg4 4) 7)) (not r_7_1)))
+      (a!267 (or (not (= (select asg4 4) 7)) r_7_2))
+      (a!268 (or (not (= (select asg4 4) 7)) r_7_3))
+      (a!269 (or (not (= (select asg4 4) 7)) (not r_7_4)))
+      (a!270 (or (not (= (select asg4 4) 7)) (not r_7_5)))
+      (a!271 (or (not (= (select asg4 5) 7)) r_7_0))
+      (a!272 (or (not (= (select asg4 5) 7)) (not r_7_1)))
+      (a!273 (or (not (= (select asg4 5) 7)) r_7_2))
+      (a!274 (or (not (= (select asg4 5) 7)) r_7_3))
+      (a!275 (or (not (= (select asg4 5) 7)) (not r_7_4)))
+      (a!276 (or (not (= (select asg4 5) 7)) r_7_5))
+      (a!277 (or (not (= (select asg4 6) 7)) r_7_0))
+      (a!278 (or (not (= (select asg4 6) 7)) (not r_7_1)))
+      (a!279 (or (not (= (select asg4 6) 7)) r_7_2))
+      (a!280 (or (not (= (select asg4 6) 7)) r_7_3))
+      (a!281 (or (not (= (select asg4 6) 7)) r_7_4))
+      (a!282 (or (not (= (select asg4 6) 7)) (not r_7_5)))
+      (a!283 (or (not (= (select asg4 7) 7)) r_7_0))
+      (a!284 (or (not (= (select asg4 7) 7)) (not r_7_1)))
+      (a!285 (or (not (= (select asg4 7) 7)) r_7_2))
+      (a!286 (or (not (= (select asg4 7) 7)) r_7_3))
+      (a!287 (or (not (= (select asg4 7) 7)) r_7_4))
+      (a!288 (or (not (= (select asg4 7) 7)) r_7_5))
+      (a!289 (or (not (= (select asg4 8) 7)) r_7_0))
+      (a!290 (or (not (= (select asg4 8) 7)) r_7_1))
+      (a!291 (or (not (= (select asg4 8) 7)) (not r_7_2)))
+      (a!292 (or (not (= (select asg4 8) 7)) (not r_7_3)))
+      (a!293 (or (not (= (select asg4 8) 7)) (not r_7_4)))
+      (a!294 (or (not (= (select asg4 8) 7)) (not r_7_5)))
+      (a!295 (or (not (= (select asg4 9) 7)) r_7_0))
+      (a!296 (or (not (= (select asg4 9) 7)) r_7_1))
+      (a!297 (or (not (= (select asg4 9) 7)) (not r_7_2)))
+      (a!298 (or (not (= (select asg4 9) 7)) (not r_7_3)))
+      (a!299 (or (not (= (select asg4 9) 7)) (not r_7_4)))
+      (a!300 (or (not (= (select asg4 9) 7)) r_7_5))
+      (a!301 (or (not (= (select asg5 0) 7)) r_7_0))
+      (a!302 (or (not (= (select asg5 0) 7)) r_7_1))
+      (a!303 (or (not (= (select asg5 0) 7)) (not r_7_2)))
+      (a!304 (or (not (= (select asg5 0) 7)) (not r_7_3)))
+      (a!305 (or (not (= (select asg5 0) 7)) r_7_4))
+      (a!306 (or (not (= (select asg5 0) 7)) (not r_7_5)))
+      (a!307 (or (not (= (select asg5 1) 7)) r_7_0))
+      (a!308 (or (not (= (select asg5 1) 7)) r_7_1))
+      (a!309 (or (not (= (select asg5 1) 7)) (not r_7_2)))
+      (a!310 (or (not (= (select asg5 1) 7)) (not r_7_3)))
+      (a!311 (or (not (= (select asg5 1) 7)) r_7_4))
+      (a!312 (or (not (= (select asg5 1) 7)) r_7_5))
+      (a!313 (or (not (= (select asg5 2) 7)) r_7_0))
+      (a!314 (or (not (= (select asg5 2) 7)) r_7_1))
+      (a!315 (or (not (= (select asg5 2) 7)) (not r_7_2)))
+      (a!316 (or (not (= (select asg5 2) 7)) r_7_3))
+      (a!317 (or (not (= (select asg5 2) 7)) (not r_7_4)))
+      (a!318 (or (not (= (select asg5 2) 7)) (not r_7_5)))
+      (a!319 (or (not (= (select asg5 3) 7)) r_7_0))
+      (a!320 (or (not (= (select asg5 3) 7)) r_7_1))
+      (a!321 (or (not (= (select asg5 3) 7)) (not r_7_2)))
+      (a!322 (or (not (= (select asg5 3) 7)) r_7_3))
+      (a!323 (or (not (= (select asg5 3) 7)) (not r_7_4)))
+      (a!324 (or (not (= (select asg5 3) 7)) r_7_5))
+      (a!325 (or (not (= (select asg5 4) 7)) r_7_0))
+      (a!326 (or (not (= (select asg5 4) 7)) r_7_1))
+      (a!327 (or (not (= (select asg5 4) 7)) (not r_7_2)))
+      (a!328 (or (not (= (select asg5 4) 7)) r_7_3))
+      (a!329 (or (not (= (select asg5 4) 7)) r_7_4))
+      (a!330 (or (not (= (select asg5 4) 7)) (not r_7_5)))
+      (a!331 (or (not (= (select asg5 5) 7)) r_7_0))
+      (a!332 (or (not (= (select asg5 5) 7)) r_7_1))
+      (a!333 (or (not (= (select asg5 5) 7)) (not r_7_2)))
+      (a!334 (or (not (= (select asg5 5) 7)) r_7_3))
+      (a!335 (or (not (= (select asg5 5) 7)) r_7_4))
+      (a!336 (or (not (= (select asg5 5) 7)) r_7_5))
+      (a!337 (or (not (= (select asg5 6) 7)) r_7_0))
+      (a!338 (or (not (= (select asg5 6) 7)) r_7_1))
+      (a!339 (or (not (= (select asg5 6) 7)) r_7_2))
+      (a!340 (or (not (= (select asg5 6) 7)) (not r_7_3)))
+      (a!341 (or (not (= (select asg5 6) 7)) (not r_7_4)))
+      (a!342 (or (not (= (select asg5 6) 7)) (not r_7_5)))
+      (a!343 (or (not (= (select asg5 7) 7)) r_7_0))
+      (a!344 (or (not (= (select asg5 7) 7)) r_7_1))
+      (a!345 (or (not (= (select asg5 7) 7)) r_7_2))
+      (a!346 (or (not (= (select asg5 7) 7)) (not r_7_3)))
+      (a!347 (or (not (= (select asg5 7) 7)) (not r_7_4)))
+      (a!348 (or (not (= (select asg5 7) 7)) r_7_5))
+      (a!349 (or (not (= (select asg5 8) 7)) r_7_0))
+      (a!350 (or (not (= (select asg5 8) 7)) r_7_1))
+      (a!351 (or (not (= (select asg5 8) 7)) r_7_2))
+      (a!352 (or (not (= (select asg5 8) 7)) (not r_7_3)))
+      (a!353 (or (not (= (select asg5 8) 7)) r_7_4))
+      (a!354 (or (not (= (select asg5 8) 7)) (not r_7_5)))
+      (a!355 (or (not (= (select asg5 9) 7)) r_7_0))
+      (a!356 (or (not (= (select asg5 9) 7)) r_7_1))
+      (a!357 (or (not (= (select asg5 9) 7)) r_7_2))
+      (a!358 (or (not (= (select asg5 9) 7)) (not r_7_3)))
+      (a!359 (or (not (= (select asg5 9) 7)) r_7_4))
+      (a!360 (or (not (= (select asg5 9) 7)) r_7_5)))
+  (and (or (= (select asg0 0) 7)
+           (= (select asg0 1) 7)
+           (= (select asg0 2) 7)
+           (= (select asg0 3) 7)
+           (= (select asg0 4) 7)
+           (= (select asg0 5) 7)
+           (= (select asg0 6) 7)
+           (= (select asg0 7) 7)
+           (= (select asg0 8) 7)
+           (= (select asg0 9) 7)
+           (= (select asg1 0) 7)
+           (= (select asg1 1) 7)
+           (= (select asg1 2) 7)
+           (= (select asg1 3) 7)
+           (= (select asg1 4) 7)
+           (= (select asg1 5) 7)
+           (= (select asg1 6) 7)
+           (= (select asg1 7) 7)
+           (= (select asg1 8) 7)
+           (= (select asg1 9) 7)
+           (= (select asg2 0) 7)
+           (= (select asg2 1) 7)
+           (= (select asg2 2) 7)
+           (= (select asg2 3) 7)
+           (= (select asg2 4) 7)
+           (= (select asg2 5) 7)
+           (= (select asg2 6) 7)
+           (= (select asg2 7) 7)
+           (= (select asg2 8) 7)
+           (= (select asg2 9) 7)
+           (= (select asg3 0) 7)
+           (= (select asg3 1) 7)
+           (= (select asg3 2) 7)
+           (= (select asg3 3) 7)
+           (= (select asg3 4) 7)
+           (= (select asg3 5) 7)
+           (= (select asg3 6) 7)
+           (= (select asg3 7) 7)
+           (= (select asg3 8) 7)
+           (= (select asg3 9) 7)
+           (= (select asg4 0) 7)
+           (= (select asg4 1) 7)
+           (= (select asg4 2) 7)
+           (= (select asg4 3) 7)
+           (= (select asg4 4) 7)
+           (= (select asg4 5) 7)
+           (= (select asg4 6) 7)
+           (= (select asg4 7) 7)
+           (= (select asg4 8) 7)
+           (= (select asg4 9) 7)
+           (= (select asg5 0) 7)
+           (= (select asg5 1) 7)
+           (= (select asg5 2) 7)
+           (= (select asg5 3) 7)
+           (= (select asg5 4) 7)
+           (= (select asg5 5) 7)
+           (= (select asg5 6) 7)
+           (= (select asg5 7) 7)
+           (= (select asg5 8) 7)
+           (= (select asg5 9) 7))
+       a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40
+       a!41
+       a!42
+       a!43
+       a!44
+       a!45
+       a!46
+       a!47
+       a!48
+       a!49
+       a!50
+       a!51
+       a!52
+       a!53
+       a!54
+       a!55
+       a!56
+       a!57
+       a!58
+       a!59
+       a!60
+       a!61
+       a!62
+       a!63
+       a!64
+       a!65
+       a!66
+       a!67
+       a!68
+       a!69
+       a!70
+       a!71
+       a!72
+       a!73
+       a!74
+       a!75
+       a!76
+       a!77
+       a!78
+       a!79
+       a!80
+       a!81
+       a!82
+       a!83
+       a!84
+       a!85
+       a!86
+       a!87
+       a!88
+       a!89
+       a!90
+       a!91
+       a!92
+       a!93
+       a!94
+       a!95
+       a!96
+       a!97
+       a!98
+       a!99
+       a!100
+       a!101
+       a!102
+       a!103
+       a!104
+       a!105
+       a!106
+       a!107
+       a!108
+       a!109
+       a!110
+       a!111
+       a!112
+       a!113
+       a!114
+       a!115
+       a!116
+       a!117
+       a!118
+       a!119
+       a!120
+       a!121
+       a!122
+       a!123
+       a!124
+       a!125
+       a!126
+       a!127
+       a!128
+       a!129
+       a!130
+       a!131
+       a!132
+       a!133
+       a!134
+       a!135
+       a!136
+       a!137
+       a!138
+       a!139
+       a!140
+       a!141
+       a!142
+       a!143
+       a!144
+       a!145
+       a!146
+       a!147
+       a!148
+       a!149
+       a!150
+       a!151
+       a!152
+       a!153
+       a!154
+       a!155
+       a!156
+       a!157
+       a!158
+       a!159
+       a!160
+       a!161
+       a!162
+       a!163
+       a!164
+       a!165
+       a!166
+       a!167
+       a!168
+       a!169
+       a!170
+       a!171
+       a!172
+       a!173
+       a!174
+       a!175
+       a!176
+       a!177
+       a!178
+       a!179
+       a!180
+       a!181
+       a!182
+       a!183
+       a!184
+       a!185
+       a!186
+       a!187
+       a!188
+       a!189
+       a!190
+       a!191
+       a!192
+       a!193
+       a!194
+       a!195
+       a!196
+       a!197
+       a!198
+       a!199
+       a!200
+       a!201
+       a!202
+       a!203
+       a!204
+       a!205
+       a!206
+       a!207
+       a!208
+       a!209
+       a!210
+       a!211
+       a!212
+       a!213
+       a!214
+       a!215
+       a!216
+       a!217
+       a!218
+       a!219
+       a!220
+       a!221
+       a!222
+       a!223
+       a!224
+       a!225
+       a!226
+       a!227
+       a!228
+       a!229
+       a!230
+       a!231
+       a!232
+       a!233
+       a!234
+       a!235
+       a!236
+       a!237
+       a!238
+       a!239
+       a!240
+       a!241
+       a!242
+       a!243
+       a!244
+       a!245
+       a!246
+       a!247
+       a!248
+       a!249
+       a!250
+       a!251
+       a!252
+       a!253
+       a!254
+       a!255
+       a!256
+       a!257
+       a!258
+       a!259
+       a!260
+       a!261
+       a!262
+       a!263
+       a!264
+       a!265
+       a!266
+       a!267
+       a!268
+       a!269
+       a!270
+       a!271
+       a!272
+       a!273
+       a!274
+       a!275
+       a!276
+       a!277
+       a!278
+       a!279
+       a!280
+       a!281
+       a!282
+       a!283
+       a!284
+       a!285
+       a!286
+       a!287
+       a!288
+       a!289
+       a!290
+       a!291
+       a!292
+       a!293
+       a!294
+       a!295
+       a!296
+       a!297
+       a!298
+       a!299
+       a!300
+       a!301
+       a!302
+       a!303
+       a!304
+       a!305
+       a!306
+       a!307
+       a!308
+       a!309
+       a!310
+       a!311
+       a!312
+       a!313
+       a!314
+       a!315
+       a!316
+       a!317
+       a!318
+       a!319
+       a!320
+       a!321
+       a!322
+       a!323
+       a!324
+       a!325
+       a!326
+       a!327
+       a!328
+       a!329
+       a!330
+       a!331
+       a!332
+       a!333
+       a!334
+       a!335
+       a!336
+       a!337
+       a!338
+       a!339
+       a!340
+       a!341
+       a!342
+       a!343
+       a!344
+       a!345
+       a!346
+       a!347
+       a!348
+       a!349
+       a!350
+       a!351
+       a!352
+       a!353
+       a!354
+       a!355
+       a!356
+       a!357
+       a!358
+       a!359
+       a!360)))
+(assert (let ((a!1 (or (not (= (select asg0 0) 8)) (not r_8_0)))
+      (a!2 (or (not (= (select asg0 0) 8)) (not r_8_1)))
+      (a!3 (or (not (= (select asg0 0) 8)) (not r_8_2)))
+      (a!4 (or (not (= (select asg0 0) 8)) (not r_8_3)))
+      (a!5 (or (not (= (select asg0 0) 8)) (not r_8_4)))
+      (a!6 (or (not (= (select asg0 0) 8)) (not r_8_5)))
+      (a!7 (or (not (= (select asg0 1) 8)) (not r_8_0)))
+      (a!8 (or (not (= (select asg0 1) 8)) (not r_8_1)))
+      (a!9 (or (not (= (select asg0 1) 8)) (not r_8_2)))
+      (a!10 (or (not (= (select asg0 1) 8)) (not r_8_3)))
+      (a!11 (or (not (= (select asg0 1) 8)) (not r_8_4)))
+      (a!12 (or (not (= (select asg0 1) 8)) r_8_5))
+      (a!13 (or (not (= (select asg0 2) 8)) (not r_8_0)))
+      (a!14 (or (not (= (select asg0 2) 8)) (not r_8_1)))
+      (a!15 (or (not (= (select asg0 2) 8)) (not r_8_2)))
+      (a!16 (or (not (= (select asg0 2) 8)) (not r_8_3)))
+      (a!17 (or (not (= (select asg0 2) 8)) r_8_4))
+      (a!18 (or (not (= (select asg0 2) 8)) (not r_8_5)))
+      (a!19 (or (not (= (select asg0 3) 8)) (not r_8_0)))
+      (a!20 (or (not (= (select asg0 3) 8)) (not r_8_1)))
+      (a!21 (or (not (= (select asg0 3) 8)) (not r_8_2)))
+      (a!22 (or (not (= (select asg0 3) 8)) (not r_8_3)))
+      (a!23 (or (not (= (select asg0 3) 8)) r_8_4))
+      (a!24 (or (not (= (select asg0 3) 8)) r_8_5))
+      (a!25 (or (not (= (select asg0 4) 8)) (not r_8_0)))
+      (a!26 (or (not (= (select asg0 4) 8)) (not r_8_1)))
+      (a!27 (or (not (= (select asg0 4) 8)) (not r_8_2)))
+      (a!28 (or (not (= (select asg0 4) 8)) r_8_3))
+      (a!29 (or (not (= (select asg0 4) 8)) (not r_8_4)))
+      (a!30 (or (not (= (select asg0 4) 8)) (not r_8_5)))
+      (a!31 (or (not (= (select asg0 5) 8)) (not r_8_0)))
+      (a!32 (or (not (= (select asg0 5) 8)) (not r_8_1)))
+      (a!33 (or (not (= (select asg0 5) 8)) (not r_8_2)))
+      (a!34 (or (not (= (select asg0 5) 8)) r_8_3))
+      (a!35 (or (not (= (select asg0 5) 8)) (not r_8_4)))
+      (a!36 (or (not (= (select asg0 5) 8)) r_8_5))
+      (a!37 (or (not (= (select asg0 6) 8)) (not r_8_0)))
+      (a!38 (or (not (= (select asg0 6) 8)) (not r_8_1)))
+      (a!39 (or (not (= (select asg0 6) 8)) (not r_8_2)))
+      (a!40 (or (not (= (select asg0 6) 8)) r_8_3))
+      (a!41 (or (not (= (select asg0 6) 8)) r_8_4))
+      (a!42 (or (not (= (select asg0 6) 8)) (not r_8_5)))
+      (a!43 (or (not (= (select asg0 7) 8)) (not r_8_0)))
+      (a!44 (or (not (= (select asg0 7) 8)) (not r_8_1)))
+      (a!45 (or (not (= (select asg0 7) 8)) (not r_8_2)))
+      (a!46 (or (not (= (select asg0 7) 8)) r_8_3))
+      (a!47 (or (not (= (select asg0 7) 8)) r_8_4))
+      (a!48 (or (not (= (select asg0 7) 8)) r_8_5))
+      (a!49 (or (not (= (select asg0 8) 8)) (not r_8_0)))
+      (a!50 (or (not (= (select asg0 8) 8)) (not r_8_1)))
+      (a!51 (or (not (= (select asg0 8) 8)) r_8_2))
+      (a!52 (or (not (= (select asg0 8) 8)) (not r_8_3)))
+      (a!53 (or (not (= (select asg0 8) 8)) (not r_8_4)))
+      (a!54 (or (not (= (select asg0 8) 8)) (not r_8_5)))
+      (a!55 (or (not (= (select asg0 9) 8)) (not r_8_0)))
+      (a!56 (or (not (= (select asg0 9) 8)) (not r_8_1)))
+      (a!57 (or (not (= (select asg0 9) 8)) r_8_2))
+      (a!58 (or (not (= (select asg0 9) 8)) (not r_8_3)))
+      (a!59 (or (not (= (select asg0 9) 8)) (not r_8_4)))
+      (a!60 (or (not (= (select asg0 9) 8)) r_8_5))
+      (a!61 (or (not (= (select asg1 0) 8)) (not r_8_0)))
+      (a!62 (or (not (= (select asg1 0) 8)) (not r_8_1)))
+      (a!63 (or (not (= (select asg1 0) 8)) r_8_2))
+      (a!64 (or (not (= (select asg1 0) 8)) (not r_8_3)))
+      (a!65 (or (not (= (select asg1 0) 8)) r_8_4))
+      (a!66 (or (not (= (select asg1 0) 8)) (not r_8_5)))
+      (a!67 (or (not (= (select asg1 1) 8)) (not r_8_0)))
+      (a!68 (or (not (= (select asg1 1) 8)) (not r_8_1)))
+      (a!69 (or (not (= (select asg1 1) 8)) r_8_2))
+      (a!70 (or (not (= (select asg1 1) 8)) (not r_8_3)))
+      (a!71 (or (not (= (select asg1 1) 8)) r_8_4))
+      (a!72 (or (not (= (select asg1 1) 8)) r_8_5))
+      (a!73 (or (not (= (select asg1 2) 8)) (not r_8_0)))
+      (a!74 (or (not (= (select asg1 2) 8)) (not r_8_1)))
+      (a!75 (or (not (= (select asg1 2) 8)) r_8_2))
+      (a!76 (or (not (= (select asg1 2) 8)) r_8_3))
+      (a!77 (or (not (= (select asg1 2) 8)) (not r_8_4)))
+      (a!78 (or (not (= (select asg1 2) 8)) (not r_8_5)))
+      (a!79 (or (not (= (select asg1 3) 8)) (not r_8_0)))
+      (a!80 (or (not (= (select asg1 3) 8)) (not r_8_1)))
+      (a!81 (or (not (= (select asg1 3) 8)) r_8_2))
+      (a!82 (or (not (= (select asg1 3) 8)) r_8_3))
+      (a!83 (or (not (= (select asg1 3) 8)) (not r_8_4)))
+      (a!84 (or (not (= (select asg1 3) 8)) r_8_5))
+      (a!85 (or (not (= (select asg1 4) 8)) (not r_8_0)))
+      (a!86 (or (not (= (select asg1 4) 8)) (not r_8_1)))
+      (a!87 (or (not (= (select asg1 4) 8)) r_8_2))
+      (a!88 (or (not (= (select asg1 4) 8)) r_8_3))
+      (a!89 (or (not (= (select asg1 4) 8)) r_8_4))
+      (a!90 (or (not (= (select asg1 4) 8)) (not r_8_5)))
+      (a!91 (or (not (= (select asg1 5) 8)) (not r_8_0)))
+      (a!92 (or (not (= (select asg1 5) 8)) (not r_8_1)))
+      (a!93 (or (not (= (select asg1 5) 8)) r_8_2))
+      (a!94 (or (not (= (select asg1 5) 8)) r_8_3))
+      (a!95 (or (not (= (select asg1 5) 8)) r_8_4))
+      (a!96 (or (not (= (select asg1 5) 8)) r_8_5))
+      (a!97 (or (not (= (select asg1 6) 8)) (not r_8_0)))
+      (a!98 (or (not (= (select asg1 6) 8)) r_8_1))
+      (a!99 (or (not (= (select asg1 6) 8)) (not r_8_2)))
+      (a!100 (or (not (= (select asg1 6) 8)) (not r_8_3)))
+      (a!101 (or (not (= (select asg1 6) 8)) (not r_8_4)))
+      (a!102 (or (not (= (select asg1 6) 8)) (not r_8_5)))
+      (a!103 (or (not (= (select asg1 7) 8)) (not r_8_0)))
+      (a!104 (or (not (= (select asg1 7) 8)) r_8_1))
+      (a!105 (or (not (= (select asg1 7) 8)) (not r_8_2)))
+      (a!106 (or (not (= (select asg1 7) 8)) (not r_8_3)))
+      (a!107 (or (not (= (select asg1 7) 8)) (not r_8_4)))
+      (a!108 (or (not (= (select asg1 7) 8)) r_8_5))
+      (a!109 (or (not (= (select asg1 8) 8)) (not r_8_0)))
+      (a!110 (or (not (= (select asg1 8) 8)) r_8_1))
+      (a!111 (or (not (= (select asg1 8) 8)) (not r_8_2)))
+      (a!112 (or (not (= (select asg1 8) 8)) (not r_8_3)))
+      (a!113 (or (not (= (select asg1 8) 8)) r_8_4))
+      (a!114 (or (not (= (select asg1 8) 8)) (not r_8_5)))
+      (a!115 (or (not (= (select asg1 9) 8)) (not r_8_0)))
+      (a!116 (or (not (= (select asg1 9) 8)) r_8_1))
+      (a!117 (or (not (= (select asg1 9) 8)) (not r_8_2)))
+      (a!118 (or (not (= (select asg1 9) 8)) (not r_8_3)))
+      (a!119 (or (not (= (select asg1 9) 8)) r_8_4))
+      (a!120 (or (not (= (select asg1 9) 8)) r_8_5))
+      (a!121 (or (not (= (select asg2 0) 8)) (not r_8_0)))
+      (a!122 (or (not (= (select asg2 0) 8)) r_8_1))
+      (a!123 (or (not (= (select asg2 0) 8)) (not r_8_2)))
+      (a!124 (or (not (= (select asg2 0) 8)) r_8_3))
+      (a!125 (or (not (= (select asg2 0) 8)) (not r_8_4)))
+      (a!126 (or (not (= (select asg2 0) 8)) (not r_8_5)))
+      (a!127 (or (not (= (select asg2 1) 8)) (not r_8_0)))
+      (a!128 (or (not (= (select asg2 1) 8)) r_8_1))
+      (a!129 (or (not (= (select asg2 1) 8)) (not r_8_2)))
+      (a!130 (or (not (= (select asg2 1) 8)) r_8_3))
+      (a!131 (or (not (= (select asg2 1) 8)) (not r_8_4)))
+      (a!132 (or (not (= (select asg2 1) 8)) r_8_5))
+      (a!133 (or (not (= (select asg2 2) 8)) (not r_8_0)))
+      (a!134 (or (not (= (select asg2 2) 8)) r_8_1))
+      (a!135 (or (not (= (select asg2 2) 8)) (not r_8_2)))
+      (a!136 (or (not (= (select asg2 2) 8)) r_8_3))
+      (a!137 (or (not (= (select asg2 2) 8)) r_8_4))
+      (a!138 (or (not (= (select asg2 2) 8)) (not r_8_5)))
+      (a!139 (or (not (= (select asg2 3) 8)) (not r_8_0)))
+      (a!140 (or (not (= (select asg2 3) 8)) r_8_1))
+      (a!141 (or (not (= (select asg2 3) 8)) (not r_8_2)))
+      (a!142 (or (not (= (select asg2 3) 8)) r_8_3))
+      (a!143 (or (not (= (select asg2 3) 8)) r_8_4))
+      (a!144 (or (not (= (select asg2 3) 8)) r_8_5))
+      (a!145 (or (not (= (select asg2 4) 8)) (not r_8_0)))
+      (a!146 (or (not (= (select asg2 4) 8)) r_8_1))
+      (a!147 (or (not (= (select asg2 4) 8)) r_8_2))
+      (a!148 (or (not (= (select asg2 4) 8)) (not r_8_3)))
+      (a!149 (or (not (= (select asg2 4) 8)) (not r_8_4)))
+      (a!150 (or (not (= (select asg2 4) 8)) (not r_8_5)))
+      (a!151 (or (not (= (select asg2 5) 8)) (not r_8_0)))
+      (a!152 (or (not (= (select asg2 5) 8)) r_8_1))
+      (a!153 (or (not (= (select asg2 5) 8)) r_8_2))
+      (a!154 (or (not (= (select asg2 5) 8)) (not r_8_3)))
+      (a!155 (or (not (= (select asg2 5) 8)) (not r_8_4)))
+      (a!156 (or (not (= (select asg2 5) 8)) r_8_5))
+      (a!157 (or (not (= (select asg2 6) 8)) (not r_8_0)))
+      (a!158 (or (not (= (select asg2 6) 8)) r_8_1))
+      (a!159 (or (not (= (select asg2 6) 8)) r_8_2))
+      (a!160 (or (not (= (select asg2 6) 8)) (not r_8_3)))
+      (a!161 (or (not (= (select asg2 6) 8)) r_8_4))
+      (a!162 (or (not (= (select asg2 6) 8)) (not r_8_5)))
+      (a!163 (or (not (= (select asg2 7) 8)) (not r_8_0)))
+      (a!164 (or (not (= (select asg2 7) 8)) r_8_1))
+      (a!165 (or (not (= (select asg2 7) 8)) r_8_2))
+      (a!166 (or (not (= (select asg2 7) 8)) (not r_8_3)))
+      (a!167 (or (not (= (select asg2 7) 8)) r_8_4))
+      (a!168 (or (not (= (select asg2 7) 8)) r_8_5))
+      (a!169 (or (not (= (select asg2 8) 8)) (not r_8_0)))
+      (a!170 (or (not (= (select asg2 8) 8)) r_8_1))
+      (a!171 (or (not (= (select asg2 8) 8)) r_8_2))
+      (a!172 (or (not (= (select asg2 8) 8)) r_8_3))
+      (a!173 (or (not (= (select asg2 8) 8)) (not r_8_4)))
+      (a!174 (or (not (= (select asg2 8) 8)) (not r_8_5)))
+      (a!175 (or (not (= (select asg2 9) 8)) (not r_8_0)))
+      (a!176 (or (not (= (select asg2 9) 8)) r_8_1))
+      (a!177 (or (not (= (select asg2 9) 8)) r_8_2))
+      (a!178 (or (not (= (select asg2 9) 8)) r_8_3))
+      (a!179 (or (not (= (select asg2 9) 8)) (not r_8_4)))
+      (a!180 (or (not (= (select asg2 9) 8)) r_8_5))
+      (a!181 (or (not (= (select asg3 0) 8)) (not r_8_0)))
+      (a!182 (or (not (= (select asg3 0) 8)) r_8_1))
+      (a!183 (or (not (= (select asg3 0) 8)) r_8_2))
+      (a!184 (or (not (= (select asg3 0) 8)) r_8_3))
+      (a!185 (or (not (= (select asg3 0) 8)) r_8_4))
+      (a!186 (or (not (= (select asg3 0) 8)) (not r_8_5)))
+      (a!187 (or (not (= (select asg3 1) 8)) (not r_8_0)))
+      (a!188 (or (not (= (select asg3 1) 8)) r_8_1))
+      (a!189 (or (not (= (select asg3 1) 8)) r_8_2))
+      (a!190 (or (not (= (select asg3 1) 8)) r_8_3))
+      (a!191 (or (not (= (select asg3 1) 8)) r_8_4))
+      (a!192 (or (not (= (select asg3 1) 8)) r_8_5))
+      (a!193 (or (not (= (select asg3 2) 8)) r_8_0))
+      (a!194 (or (not (= (select asg3 2) 8)) (not r_8_1)))
+      (a!195 (or (not (= (select asg3 2) 8)) (not r_8_2)))
+      (a!196 (or (not (= (select asg3 2) 8)) (not r_8_3)))
+      (a!197 (or (not (= (select asg3 2) 8)) (not r_8_4)))
+      (a!198 (or (not (= (select asg3 2) 8)) (not r_8_5)))
+      (a!199 (or (not (= (select asg3 3) 8)) r_8_0))
+      (a!200 (or (not (= (select asg3 3) 8)) (not r_8_1)))
+      (a!201 (or (not (= (select asg3 3) 8)) (not r_8_2)))
+      (a!202 (or (not (= (select asg3 3) 8)) (not r_8_3)))
+      (a!203 (or (not (= (select asg3 3) 8)) (not r_8_4)))
+      (a!204 (or (not (= (select asg3 3) 8)) r_8_5))
+      (a!205 (or (not (= (select asg3 4) 8)) r_8_0))
+      (a!206 (or (not (= (select asg3 4) 8)) (not r_8_1)))
+      (a!207 (or (not (= (select asg3 4) 8)) (not r_8_2)))
+      (a!208 (or (not (= (select asg3 4) 8)) (not r_8_3)))
+      (a!209 (or (not (= (select asg3 4) 8)) r_8_4))
+      (a!210 (or (not (= (select asg3 4) 8)) (not r_8_5)))
+      (a!211 (or (not (= (select asg3 5) 8)) r_8_0))
+      (a!212 (or (not (= (select asg3 5) 8)) (not r_8_1)))
+      (a!213 (or (not (= (select asg3 5) 8)) (not r_8_2)))
+      (a!214 (or (not (= (select asg3 5) 8)) (not r_8_3)))
+      (a!215 (or (not (= (select asg3 5) 8)) r_8_4))
+      (a!216 (or (not (= (select asg3 5) 8)) r_8_5))
+      (a!217 (or (not (= (select asg3 6) 8)) r_8_0))
+      (a!218 (or (not (= (select asg3 6) 8)) (not r_8_1)))
+      (a!219 (or (not (= (select asg3 6) 8)) (not r_8_2)))
+      (a!220 (or (not (= (select asg3 6) 8)) r_8_3))
+      (a!221 (or (not (= (select asg3 6) 8)) (not r_8_4)))
+      (a!222 (or (not (= (select asg3 6) 8)) (not r_8_5)))
+      (a!223 (or (not (= (select asg3 7) 8)) r_8_0))
+      (a!224 (or (not (= (select asg3 7) 8)) (not r_8_1)))
+      (a!225 (or (not (= (select asg3 7) 8)) (not r_8_2)))
+      (a!226 (or (not (= (select asg3 7) 8)) r_8_3))
+      (a!227 (or (not (= (select asg3 7) 8)) (not r_8_4)))
+      (a!228 (or (not (= (select asg3 7) 8)) r_8_5))
+      (a!229 (or (not (= (select asg3 8) 8)) r_8_0))
+      (a!230 (or (not (= (select asg3 8) 8)) (not r_8_1)))
+      (a!231 (or (not (= (select asg3 8) 8)) (not r_8_2)))
+      (a!232 (or (not (= (select asg3 8) 8)) r_8_3))
+      (a!233 (or (not (= (select asg3 8) 8)) r_8_4))
+      (a!234 (or (not (= (select asg3 8) 8)) (not r_8_5)))
+      (a!235 (or (not (= (select asg3 9) 8)) r_8_0))
+      (a!236 (or (not (= (select asg3 9) 8)) (not r_8_1)))
+      (a!237 (or (not (= (select asg3 9) 8)) (not r_8_2)))
+      (a!238 (or (not (= (select asg3 9) 8)) r_8_3))
+      (a!239 (or (not (= (select asg3 9) 8)) r_8_4))
+      (a!240 (or (not (= (select asg3 9) 8)) r_8_5))
+      (a!241 (or (not (= (select asg4 0) 8)) r_8_0))
+      (a!242 (or (not (= (select asg4 0) 8)) (not r_8_1)))
+      (a!243 (or (not (= (select asg4 0) 8)) r_8_2))
+      (a!244 (or (not (= (select asg4 0) 8)) (not r_8_3)))
+      (a!245 (or (not (= (select asg4 0) 8)) (not r_8_4)))
+      (a!246 (or (not (= (select asg4 0) 8)) (not r_8_5)))
+      (a!247 (or (not (= (select asg4 1) 8)) r_8_0))
+      (a!248 (or (not (= (select asg4 1) 8)) (not r_8_1)))
+      (a!249 (or (not (= (select asg4 1) 8)) r_8_2))
+      (a!250 (or (not (= (select asg4 1) 8)) (not r_8_3)))
+      (a!251 (or (not (= (select asg4 1) 8)) (not r_8_4)))
+      (a!252 (or (not (= (select asg4 1) 8)) r_8_5))
+      (a!253 (or (not (= (select asg4 2) 8)) r_8_0))
+      (a!254 (or (not (= (select asg4 2) 8)) (not r_8_1)))
+      (a!255 (or (not (= (select asg4 2) 8)) r_8_2))
+      (a!256 (or (not (= (select asg4 2) 8)) (not r_8_3)))
+      (a!257 (or (not (= (select asg4 2) 8)) r_8_4))
+      (a!258 (or (not (= (select asg4 2) 8)) (not r_8_5)))
+      (a!259 (or (not (= (select asg4 3) 8)) r_8_0))
+      (a!260 (or (not (= (select asg4 3) 8)) (not r_8_1)))
+      (a!261 (or (not (= (select asg4 3) 8)) r_8_2))
+      (a!262 (or (not (= (select asg4 3) 8)) (not r_8_3)))
+      (a!263 (or (not (= (select asg4 3) 8)) r_8_4))
+      (a!264 (or (not (= (select asg4 3) 8)) r_8_5))
+      (a!265 (or (not (= (select asg4 4) 8)) r_8_0))
+      (a!266 (or (not (= (select asg4 4) 8)) (not r_8_1)))
+      (a!267 (or (not (= (select asg4 4) 8)) r_8_2))
+      (a!268 (or (not (= (select asg4 4) 8)) r_8_3))
+      (a!269 (or (not (= (select asg4 4) 8)) (not r_8_4)))
+      (a!270 (or (not (= (select asg4 4) 8)) (not r_8_5)))
+      (a!271 (or (not (= (select asg4 5) 8)) r_8_0))
+      (a!272 (or (not (= (select asg4 5) 8)) (not r_8_1)))
+      (a!273 (or (not (= (select asg4 5) 8)) r_8_2))
+      (a!274 (or (not (= (select asg4 5) 8)) r_8_3))
+      (a!275 (or (not (= (select asg4 5) 8)) (not r_8_4)))
+      (a!276 (or (not (= (select asg4 5) 8)) r_8_5))
+      (a!277 (or (not (= (select asg4 6) 8)) r_8_0))
+      (a!278 (or (not (= (select asg4 6) 8)) (not r_8_1)))
+      (a!279 (or (not (= (select asg4 6) 8)) r_8_2))
+      (a!280 (or (not (= (select asg4 6) 8)) r_8_3))
+      (a!281 (or (not (= (select asg4 6) 8)) r_8_4))
+      (a!282 (or (not (= (select asg4 6) 8)) (not r_8_5)))
+      (a!283 (or (not (= (select asg4 7) 8)) r_8_0))
+      (a!284 (or (not (= (select asg4 7) 8)) (not r_8_1)))
+      (a!285 (or (not (= (select asg4 7) 8)) r_8_2))
+      (a!286 (or (not (= (select asg4 7) 8)) r_8_3))
+      (a!287 (or (not (= (select asg4 7) 8)) r_8_4))
+      (a!288 (or (not (= (select asg4 7) 8)) r_8_5))
+      (a!289 (or (not (= (select asg4 8) 8)) r_8_0))
+      (a!290 (or (not (= (select asg4 8) 8)) r_8_1))
+      (a!291 (or (not (= (select asg4 8) 8)) (not r_8_2)))
+      (a!292 (or (not (= (select asg4 8) 8)) (not r_8_3)))
+      (a!293 (or (not (= (select asg4 8) 8)) (not r_8_4)))
+      (a!294 (or (not (= (select asg4 8) 8)) (not r_8_5)))
+      (a!295 (or (not (= (select asg4 9) 8)) r_8_0))
+      (a!296 (or (not (= (select asg4 9) 8)) r_8_1))
+      (a!297 (or (not (= (select asg4 9) 8)) (not r_8_2)))
+      (a!298 (or (not (= (select asg4 9) 8)) (not r_8_3)))
+      (a!299 (or (not (= (select asg4 9) 8)) (not r_8_4)))
+      (a!300 (or (not (= (select asg4 9) 8)) r_8_5))
+      (a!301 (or (not (= (select asg5 0) 8)) r_8_0))
+      (a!302 (or (not (= (select asg5 0) 8)) r_8_1))
+      (a!303 (or (not (= (select asg5 0) 8)) (not r_8_2)))
+      (a!304 (or (not (= (select asg5 0) 8)) (not r_8_3)))
+      (a!305 (or (not (= (select asg5 0) 8)) r_8_4))
+      (a!306 (or (not (= (select asg5 0) 8)) (not r_8_5)))
+      (a!307 (or (not (= (select asg5 1) 8)) r_8_0))
+      (a!308 (or (not (= (select asg5 1) 8)) r_8_1))
+      (a!309 (or (not (= (select asg5 1) 8)) (not r_8_2)))
+      (a!310 (or (not (= (select asg5 1) 8)) (not r_8_3)))
+      (a!311 (or (not (= (select asg5 1) 8)) r_8_4))
+      (a!312 (or (not (= (select asg5 1) 8)) r_8_5))
+      (a!313 (or (not (= (select asg5 2) 8)) r_8_0))
+      (a!314 (or (not (= (select asg5 2) 8)) r_8_1))
+      (a!315 (or (not (= (select asg5 2) 8)) (not r_8_2)))
+      (a!316 (or (not (= (select asg5 2) 8)) r_8_3))
+      (a!317 (or (not (= (select asg5 2) 8)) (not r_8_4)))
+      (a!318 (or (not (= (select asg5 2) 8)) (not r_8_5)))
+      (a!319 (or (not (= (select asg5 3) 8)) r_8_0))
+      (a!320 (or (not (= (select asg5 3) 8)) r_8_1))
+      (a!321 (or (not (= (select asg5 3) 8)) (not r_8_2)))
+      (a!322 (or (not (= (select asg5 3) 8)) r_8_3))
+      (a!323 (or (not (= (select asg5 3) 8)) (not r_8_4)))
+      (a!324 (or (not (= (select asg5 3) 8)) r_8_5))
+      (a!325 (or (not (= (select asg5 4) 8)) r_8_0))
+      (a!326 (or (not (= (select asg5 4) 8)) r_8_1))
+      (a!327 (or (not (= (select asg5 4) 8)) (not r_8_2)))
+      (a!328 (or (not (= (select asg5 4) 8)) r_8_3))
+      (a!329 (or (not (= (select asg5 4) 8)) r_8_4))
+      (a!330 (or (not (= (select asg5 4) 8)) (not r_8_5)))
+      (a!331 (or (not (= (select asg5 5) 8)) r_8_0))
+      (a!332 (or (not (= (select asg5 5) 8)) r_8_1))
+      (a!333 (or (not (= (select asg5 5) 8)) (not r_8_2)))
+      (a!334 (or (not (= (select asg5 5) 8)) r_8_3))
+      (a!335 (or (not (= (select asg5 5) 8)) r_8_4))
+      (a!336 (or (not (= (select asg5 5) 8)) r_8_5))
+      (a!337 (or (not (= (select asg5 6) 8)) r_8_0))
+      (a!338 (or (not (= (select asg5 6) 8)) r_8_1))
+      (a!339 (or (not (= (select asg5 6) 8)) r_8_2))
+      (a!340 (or (not (= (select asg5 6) 8)) (not r_8_3)))
+      (a!341 (or (not (= (select asg5 6) 8)) (not r_8_4)))
+      (a!342 (or (not (= (select asg5 6) 8)) (not r_8_5)))
+      (a!343 (or (not (= (select asg5 7) 8)) r_8_0))
+      (a!344 (or (not (= (select asg5 7) 8)) r_8_1))
+      (a!345 (or (not (= (select asg5 7) 8)) r_8_2))
+      (a!346 (or (not (= (select asg5 7) 8)) (not r_8_3)))
+      (a!347 (or (not (= (select asg5 7) 8)) (not r_8_4)))
+      (a!348 (or (not (= (select asg5 7) 8)) r_8_5))
+      (a!349 (or (not (= (select asg5 8) 8)) r_8_0))
+      (a!350 (or (not (= (select asg5 8) 8)) r_8_1))
+      (a!351 (or (not (= (select asg5 8) 8)) r_8_2))
+      (a!352 (or (not (= (select asg5 8) 8)) (not r_8_3)))
+      (a!353 (or (not (= (select asg5 8) 8)) r_8_4))
+      (a!354 (or (not (= (select asg5 8) 8)) (not r_8_5)))
+      (a!355 (or (not (= (select asg5 9) 8)) r_8_0))
+      (a!356 (or (not (= (select asg5 9) 8)) r_8_1))
+      (a!357 (or (not (= (select asg5 9) 8)) r_8_2))
+      (a!358 (or (not (= (select asg5 9) 8)) (not r_8_3)))
+      (a!359 (or (not (= (select asg5 9) 8)) r_8_4))
+      (a!360 (or (not (= (select asg5 9) 8)) r_8_5)))
+  (and (or (= (select asg0 0) 8)
+           (= (select asg0 1) 8)
+           (= (select asg0 2) 8)
+           (= (select asg0 3) 8)
+           (= (select asg0 4) 8)
+           (= (select asg0 5) 8)
+           (= (select asg0 6) 8)
+           (= (select asg0 7) 8)
+           (= (select asg0 8) 8)
+           (= (select asg0 9) 8)
+           (= (select asg1 0) 8)
+           (= (select asg1 1) 8)
+           (= (select asg1 2) 8)
+           (= (select asg1 3) 8)
+           (= (select asg1 4) 8)
+           (= (select asg1 5) 8)
+           (= (select asg1 6) 8)
+           (= (select asg1 7) 8)
+           (= (select asg1 8) 8)
+           (= (select asg1 9) 8)
+           (= (select asg2 0) 8)
+           (= (select asg2 1) 8)
+           (= (select asg2 2) 8)
+           (= (select asg2 3) 8)
+           (= (select asg2 4) 8)
+           (= (select asg2 5) 8)
+           (= (select asg2 6) 8)
+           (= (select asg2 7) 8)
+           (= (select asg2 8) 8)
+           (= (select asg2 9) 8)
+           (= (select asg3 0) 8)
+           (= (select asg3 1) 8)
+           (= (select asg3 2) 8)
+           (= (select asg3 3) 8)
+           (= (select asg3 4) 8)
+           (= (select asg3 5) 8)
+           (= (select asg3 6) 8)
+           (= (select asg3 7) 8)
+           (= (select asg3 8) 8)
+           (= (select asg3 9) 8)
+           (= (select asg4 0) 8)
+           (= (select asg4 1) 8)
+           (= (select asg4 2) 8)
+           (= (select asg4 3) 8)
+           (= (select asg4 4) 8)
+           (= (select asg4 5) 8)
+           (= (select asg4 6) 8)
+           (= (select asg4 7) 8)
+           (= (select asg4 8) 8)
+           (= (select asg4 9) 8)
+           (= (select asg5 0) 8)
+           (= (select asg5 1) 8)
+           (= (select asg5 2) 8)
+           (= (select asg5 3) 8)
+           (= (select asg5 4) 8)
+           (= (select asg5 5) 8)
+           (= (select asg5 6) 8)
+           (= (select asg5 7) 8)
+           (= (select asg5 8) 8)
+           (= (select asg5 9) 8))
+       a!1
+       a!2
+       a!3
+       a!4
+       a!5
+       a!6
+       a!7
+       a!8
+       a!9
+       a!10
+       a!11
+       a!12
+       a!13
+       a!14
+       a!15
+       a!16
+       a!17
+       a!18
+       a!19
+       a!20
+       a!21
+       a!22
+       a!23
+       a!24
+       a!25
+       a!26
+       a!27
+       a!28
+       a!29
+       a!30
+       a!31
+       a!32
+       a!33
+       a!34
+       a!35
+       a!36
+       a!37
+       a!38
+       a!39
+       a!40
+       a!41
+       a!42
+       a!43
+       a!44
+       a!45
+       a!46
+       a!47
+       a!48
+       a!49
+       a!50
+       a!51
+       a!52
+       a!53
+       a!54
+       a!55
+       a!56
+       a!57
+       a!58
+       a!59
+       a!60
+       a!61
+       a!62
+       a!63
+       a!64
+       a!65
+       a!66
+       a!67
+       a!68
+       a!69
+       a!70
+       a!71
+       a!72
+       a!73
+       a!74
+       a!75
+       a!76
+       a!77
+       a!78
+       a!79
+       a!80
+       a!81
+       a!82
+       a!83
+       a!84
+       a!85
+       a!86
+       a!87
+       a!88
+       a!89
+       a!90
+       a!91
+       a!92
+       a!93
+       a!94
+       a!95
+       a!96
+       a!97
+       a!98
+       a!99
+       a!100
+       a!101
+       a!102
+       a!103
+       a!104
+       a!105
+       a!106
+       a!107
+       a!108
+       a!109
+       a!110
+       a!111
+       a!112
+       a!113
+       a!114
+       a!115
+       a!116
+       a!117
+       a!118
+       a!119
+       a!120
+       a!121
+       a!122
+       a!123
+       a!124
+       a!125
+       a!126
+       a!127
+       a!128
+       a!129
+       a!130
+       a!131
+       a!132
+       a!133
+       a!134
+       a!135
+       a!136
+       a!137
+       a!138
+       a!139
+       a!140
+       a!141
+       a!142
+       a!143
+       a!144
+       a!145
+       a!146
+       a!147
+       a!148
+       a!149
+       a!150
+       a!151
+       a!152
+       a!153
+       a!154
+       a!155
+       a!156
+       a!157
+       a!158
+       a!159
+       a!160
+       a!161
+       a!162
+       a!163
+       a!164
+       a!165
+       a!166
+       a!167
+       a!168
+       a!169
+       a!170
+       a!171
+       a!172
+       a!173
+       a!174
+       a!175
+       a!176
+       a!177
+       a!178
+       a!179
+       a!180
+       a!181
+       a!182
+       a!183
+       a!184
+       a!185
+       a!186
+       a!187
+       a!188
+       a!189
+       a!190
+       a!191
+       a!192
+       a!193
+       a!194
+       a!195
+       a!196
+       a!197
+       a!198
+       a!199
+       a!200
+       a!201
+       a!202
+       a!203
+       a!204
+       a!205
+       a!206
+       a!207
+       a!208
+       a!209
+       a!210
+       a!211
+       a!212
+       a!213
+       a!214
+       a!215
+       a!216
+       a!217
+       a!218
+       a!219
+       a!220
+       a!221
+       a!222
+       a!223
+       a!224
+       a!225
+       a!226
+       a!227
+       a!228
+       a!229
+       a!230
+       a!231
+       a!232
+       a!233
+       a!234
+       a!235
+       a!236
+       a!237
+       a!238
+       a!239
+       a!240
+       a!241
+       a!242
+       a!243
+       a!244
+       a!245
+       a!246
+       a!247
+       a!248
+       a!249
+       a!250
+       a!251
+       a!252
+       a!253
+       a!254
+       a!255
+       a!256
+       a!257
+       a!258
+       a!259
+       a!260
+       a!261
+       a!262
+       a!263
+       a!264
+       a!265
+       a!266
+       a!267
+       a!268
+       a!269
+       a!270
+       a!271
+       a!272
+       a!273
+       a!274
+       a!275
+       a!276
+       a!277
+       a!278
+       a!279
+       a!280
+       a!281
+       a!282
+       a!283
+       a!284
+       a!285
+       a!286
+       a!287
+       a!288
+       a!289
+       a!290
+       a!291
+       a!292
+       a!293
+       a!294
+       a!295
+       a!296
+       a!297
+       a!298
+       a!299
+       a!300
+       a!301
+       a!302
+       a!303
+       a!304
+       a!305
+       a!306
+       a!307
+       a!308
+       a!309
+       a!310
+       a!311
+       a!312
+       a!313
+       a!314
+       a!315
+       a!316
+       a!317
+       a!318
+       a!319
+       a!320
+       a!321
+       a!322
+       a!323
+       a!324
+       a!325
+       a!326
+       a!327
+       a!328
+       a!329
+       a!330
+       a!331
+       a!332
+       a!333
+       a!334
+       a!335
+       a!336
+       a!337
+       a!338
+       a!339
+       a!340
+       a!341
+       a!342
+       a!343
+       a!344
+       a!345
+       a!346
+       a!347
+       a!348
+       a!349
+       a!350
+       a!351
+       a!352
+       a!353
+       a!354
+       a!355
+       a!356
+       a!357
+       a!358
+       a!359
+       a!360)))
+(assert (let ((a!1 (+ (ite (distinct (select asg0 0) (- 1)) 11 0)
+              (ite (distinct (select asg0 1) (- 1)) 11 0)
+              (ite (distinct (select asg0 2) (- 1)) 23 0)
+              (ite (distinct (select asg0 3) (- 1)) 16 0)
+              (ite (distinct (select asg0 4) (- 1)) 2 0)
+              (ite (distinct (select asg0 5) (- 1)) 1 0)
+              (ite (distinct (select asg0 6) (- 1)) 24 0)
+              (ite (distinct (select asg0 7) (- 1)) 14 0)
+              (ite (distinct (select asg0 8) (- 1)) 20 0))))
+  (= loads0 a!1)))
+(assert (let ((a!1 (+ (ite (distinct (select asg1 0) (- 1)) 11 0)
+              (ite (distinct (select asg1 1) (- 1)) 11 0)
+              (ite (distinct (select asg1 2) (- 1)) 23 0)
+              (ite (distinct (select asg1 3) (- 1)) 16 0)
+              (ite (distinct (select asg1 4) (- 1)) 2 0)
+              (ite (distinct (select asg1 5) (- 1)) 1 0)
+              (ite (distinct (select asg1 6) (- 1)) 24 0)
+              (ite (distinct (select asg1 7) (- 1)) 14 0)
+              (ite (distinct (select asg1 8) (- 1)) 20 0))))
+  (= loads1 a!1)))
+(assert (let ((a!1 (+ (ite (distinct (select asg2 0) (- 1)) 11 0)
+              (ite (distinct (select asg2 1) (- 1)) 11 0)
+              (ite (distinct (select asg2 2) (- 1)) 23 0)
+              (ite (distinct (select asg2 3) (- 1)) 16 0)
+              (ite (distinct (select asg2 4) (- 1)) 2 0)
+              (ite (distinct (select asg2 5) (- 1)) 1 0)
+              (ite (distinct (select asg2 6) (- 1)) 24 0)
+              (ite (distinct (select asg2 7) (- 1)) 14 0)
+              (ite (distinct (select asg2 8) (- 1)) 20 0))))
+  (= loads2 a!1)))
+(assert (let ((a!1 (+ (ite (distinct (select asg3 0) (- 1)) 11 0)
+              (ite (distinct (select asg3 1) (- 1)) 11 0)
+              (ite (distinct (select asg3 2) (- 1)) 23 0)
+              (ite (distinct (select asg3 3) (- 1)) 16 0)
+              (ite (distinct (select asg3 4) (- 1)) 2 0)
+              (ite (distinct (select asg3 5) (- 1)) 1 0)
+              (ite (distinct (select asg3 6) (- 1)) 24 0)
+              (ite (distinct (select asg3 7) (- 1)) 14 0)
+              (ite (distinct (select asg3 8) (- 1)) 20 0))))
+  (= loads3 a!1)))
+(assert (let ((a!1 (+ (ite (distinct (select asg4 0) (- 1)) 11 0)
+              (ite (distinct (select asg4 1) (- 1)) 11 0)
+              (ite (distinct (select asg4 2) (- 1)) 23 0)
+              (ite (distinct (select asg4 3) (- 1)) 16 0)
+              (ite (distinct (select asg4 4) (- 1)) 2 0)
+              (ite (distinct (select asg4 5) (- 1)) 1 0)
+              (ite (distinct (select asg4 6) (- 1)) 24 0)
+              (ite (distinct (select asg4 7) (- 1)) 14 0)
+              (ite (distinct (select asg4 8) (- 1)) 20 0))))
+  (= loads4 a!1)))
+(assert (let ((a!1 (+ (ite (distinct (select asg5 0) (- 1)) 11 0)
+              (ite (distinct (select asg5 1) (- 1)) 11 0)
+              (ite (distinct (select asg5 2) (- 1)) 23 0)
+              (ite (distinct (select asg5 3) (- 1)) 16 0)
+              (ite (distinct (select asg5 4) (- 1)) 2 0)
+              (ite (distinct (select asg5 5) (- 1)) 1 0)
+              (ite (distinct (select asg5 6) (- 1)) 24 0)
+              (ite (distinct (select asg5 7) (- 1)) 14 0)
+              (ite (distinct (select asg5 8) (- 1)) 20 0))))
+  (= loads5 a!1)))
 (assert (<= loads0 190))
 (assert (<= loads1 185))
 (assert (<= loads2 185))
 (assert (<= loads3 190))
 (assert (<= loads4 195))
 (assert (<= loads5 185))
-(assert (= (select distances 0) 0))
-(assert (= (select distances 1) 199))
-(assert (= (select distances 2) 119))
-(assert (= (select distances 3) 28))
-(assert (= (select distances 4) 179))
-(assert (= (select distances 5) 77))
-(assert (= (select distances 6) 145))
-(assert (= (select distances 7) 61))
-(assert (= (select distances 8) 123))
-(assert (= (select distances 9) 87))
-(assert (= (select distances 10) 199))
-(assert (= (select distances 11) 0))
-(assert (= (select distances 12) 81))
-(assert (= (select distances 13) 206))
-(assert (= (select distances 14) 38))
-(assert (= (select distances 15) 122))
-(assert (= (select distances 16) 55))
-(assert (= (select distances 17) 138))
-(assert (= (select distances 18) 76))
-(assert (= (select distances 19) 113))
-(assert (= (select distances 20) 119))
-(assert (= (select distances 21) 81))
-(assert (= (select distances 22) 0))
-(assert (= (select distances 23) 126))
-(assert (= (select distances 24) 69))
-(assert (= (select distances 25) 121))
-(assert (= (select distances 26) 26))
-(assert (= (select distances 27) 117))
-(assert (= (select distances 28) 91))
-(assert (= (select distances 29) 32))
-(assert (= (select distances 30) 28))
-(assert (= (select distances 31) 206))
-(assert (= (select distances 32) 126))
-(assert (= (select distances 33) 0))
-(assert (= (select distances 34) 186))
-(assert (= (select distances 35) 84))
-(assert (= (select distances 36) 152))
-(assert (= (select distances 37) 68))
-(assert (= (select distances 38) 130))
-(assert (= (select distances 39) 94))
-(assert (= (select distances 40) 169))
-(assert (= (select distances 41) 38))
-(assert (= (select distances 42) 79))
-(assert (= (select distances 43) 176))
-(assert (= (select distances 44) 0))
-(assert (= (select distances 45) 92))
-(assert (= (select distances 46) 58))
-(assert (= (select distances 47) 108))
-(assert (= (select distances 48) 46))
-(assert (= (select distances 49) 98))
-(assert (= (select distances 50) 77))
-(assert (= (select distances 51) 122))
-(assert (= (select distances 52) 121))
-(assert (= (select distances 53) 84))
-(assert (= (select distances 54) 102))
-(assert (= (select distances 55) 0))
-(assert (= (select distances 56) 100))
-(assert (= (select distances 57) 16))
-(assert (= (select distances 58) 46))
-(assert (= (select distances 59) 96))
-(assert (= (select distances 60) 145))
-(assert (= (select distances 61) 55))
-(assert (= (select distances 62) 26))
-(assert (= (select distances 63) 152))
-(assert (= (select distances 64) 58))
-(assert (= (select distances 65) 100))
-(assert (= (select distances 66) 0))
-(assert (= (select distances 67) 91))
-(assert (= (select distances 68) 70))
-(assert (= (select distances 69) 58))
-(assert (= (select distances 70) 61))
-(assert (= (select distances 71) 138))
-(assert (= (select distances 72) 113))
-(assert (= (select distances 73) 68))
-(assert (= (select distances 74) 118))
-(assert (= (select distances 75) 16))
-(assert (= (select distances 76) 91))
-(assert (= (select distances 77) 0))
-(assert (= (select distances 78) 62))
-(assert (= (select distances 79) 87))
-(assert (= (select distances 80) 123))
-(assert (= (select distances 81) 76))
-(assert (= (select distances 82) 91))
-(assert (= (select distances 83) 130))
-(assert (= (select distances 84) 56))
-(assert (= (select distances 85) 46))
-(assert (= (select distances 86) 70))
-(assert (= (select distances 87) 62))
-(assert (= (select distances 88) 0))
-(assert (= (select distances 89) 66))
-(assert (= (select distances 90) 87))
-(assert (= (select distances 91) 113))
-(assert (= (select distances 92) 32))
-(assert (= (select distances 93) 94))
-(assert (= (select distances 94) 94))
-(assert (= (select distances 95) 96))
-(assert (= (select distances 96) 58))
-(assert (= (select distances 97) 87))
-(assert (= (select distances 98) 66))
-(assert (= (select distances 99) 0))
-(assert (let ((a!1 (ite (distinct x00 (- 1)) (select distances (+ (* x00 10) y00)) 0))
-      (a!2 (ite (distinct x01 (- 1)) (select distances (+ (* x01 10) y01)) 0))
-      (a!3 (ite (distinct x02 (- 1)) (select distances (+ (* x02 10) y02)) 0))
-      (a!4 (ite (distinct x03 (- 1)) (select distances (+ (* x03 10) y03)) 0))
-      (a!5 (ite (distinct x04 (- 1)) (select distances (+ (* x04 10) y04)) 0))
-      (a!6 (ite (distinct x05 (- 1)) (select distances (+ (* x05 10) y05)) 0))
-      (a!7 (ite (distinct x06 (- 1)) (select distances (+ (* x06 10) y06)) 0))
-      (a!8 (ite (distinct x07 (- 1)) (select distances (+ (* x07 10) y07)) 0))
-      (a!9 (ite (distinct x08 (- 1)) (select distances (+ (* x08 10) y08)) 0))
-      (a!10 (ite (distinct x09 (- 1)) (select distances (+ (* x09 10) y09)) 0)))
-  (= dist0 (+ a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8 a!9 a!10))))
-(assert (let ((a!1 (ite (distinct x10 (- 1)) (select distances (+ (* x10 10) y10)) 0))
-      (a!2 (ite (distinct x11 (- 1)) (select distances (+ (* x11 10) y11)) 0))
-      (a!3 (ite (distinct x12 (- 1)) (select distances (+ (* x12 10) y12)) 0))
-      (a!4 (ite (distinct x13 (- 1)) (select distances (+ (* x13 10) y13)) 0))
-      (a!5 (ite (distinct x14 (- 1)) (select distances (+ (* x14 10) y14)) 0))
-      (a!6 (ite (distinct x15 (- 1)) (select distances (+ (* x15 10) y15)) 0))
-      (a!7 (ite (distinct x16 (- 1)) (select distances (+ (* x16 10) y16)) 0))
-      (a!8 (ite (distinct x17 (- 1)) (select distances (+ (* x17 10) y17)) 0))
-      (a!9 (ite (distinct x18 (- 1)) (select distances (+ (* x18 10) y18)) 0))
-      (a!10 (ite (distinct x19 (- 1)) (select distances (+ (* x19 10) y19)) 0)))
-  (= dist1 (+ a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8 a!9 a!10))))
-(assert (let ((a!1 (ite (distinct x20 (- 1)) (select distances (+ (* x20 10) y20)) 0))
-      (a!2 (ite (distinct x21 (- 1)) (select distances (+ (* x21 10) y21)) 0))
-      (a!3 (ite (distinct x22 (- 1)) (select distances (+ (* x22 10) y22)) 0))
-      (a!4 (ite (distinct x23 (- 1)) (select distances (+ (* x23 10) y23)) 0))
-      (a!5 (ite (distinct x24 (- 1)) (select distances (+ (* x24 10) y24)) 0))
-      (a!6 (ite (distinct x25 (- 1)) (select distances (+ (* x25 10) y25)) 0))
-      (a!7 (ite (distinct x26 (- 1)) (select distances (+ (* x26 10) y26)) 0))
-      (a!8 (ite (distinct x27 (- 1)) (select distances (+ (* x27 10) y27)) 0))
-      (a!9 (ite (distinct x28 (- 1)) (select distances (+ (* x28 10) y28)) 0))
-      (a!10 (ite (distinct x29 (- 1)) (select distances (+ (* x29 10) y29)) 0)))
-  (= dist2 (+ a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8 a!9 a!10))))
-(assert (let ((a!1 (ite (distinct x30 (- 1)) (select distances (+ (* x30 10) y30)) 0))
-      (a!2 (ite (distinct x31 (- 1)) (select distances (+ (* x31 10) y31)) 0))
-      (a!3 (ite (distinct x32 (- 1)) (select distances (+ (* x32 10) y32)) 0))
-      (a!4 (ite (distinct x33 (- 1)) (select distances (+ (* x33 10) y33)) 0))
-      (a!5 (ite (distinct x34 (- 1)) (select distances (+ (* x34 10) y34)) 0))
-      (a!6 (ite (distinct x35 (- 1)) (select distances (+ (* x35 10) y35)) 0))
-      (a!7 (ite (distinct x36 (- 1)) (select distances (+ (* x36 10) y36)) 0))
-      (a!8 (ite (distinct x37 (- 1)) (select distances (+ (* x37 10) y37)) 0))
-      (a!9 (ite (distinct x38 (- 1)) (select distances (+ (* x38 10) y38)) 0))
-      (a!10 (ite (distinct x39 (- 1)) (select distances (+ (* x39 10) y39)) 0)))
-  (= dist3 (+ a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8 a!9 a!10))))
-(assert (let ((a!1 (ite (distinct x40 (- 1)) (select distances (+ (* x40 10) y40)) 0))
-      (a!2 (ite (distinct x41 (- 1)) (select distances (+ (* x41 10) y41)) 0))
-      (a!3 (ite (distinct x42 (- 1)) (select distances (+ (* x42 10) y42)) 0))
-      (a!4 (ite (distinct x43 (- 1)) (select distances (+ (* x43 10) y43)) 0))
-      (a!5 (ite (distinct x44 (- 1)) (select distances (+ (* x44 10) y44)) 0))
-      (a!6 (ite (distinct x45 (- 1)) (select distances (+ (* x45 10) y45)) 0))
-      (a!7 (ite (distinct x46 (- 1)) (select distances (+ (* x46 10) y46)) 0))
-      (a!8 (ite (distinct x47 (- 1)) (select distances (+ (* x47 10) y47)) 0))
-      (a!9 (ite (distinct x48 (- 1)) (select distances (+ (* x48 10) y48)) 0))
-      (a!10 (ite (distinct x49 (- 1)) (select distances (+ (* x49 10) y49)) 0)))
-  (= dist4 (+ a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8 a!9 a!10))))
-(assert (let ((a!1 (ite (distinct x50 (- 1)) (select distances (+ (* x50 10) y50)) 0))
-      (a!2 (ite (distinct x51 (- 1)) (select distances (+ (* x51 10) y51)) 0))
-      (a!3 (ite (distinct x52 (- 1)) (select distances (+ (* x52 10) y52)) 0))
-      (a!4 (ite (distinct x53 (- 1)) (select distances (+ (* x53 10) y53)) 0))
-      (a!5 (ite (distinct x54 (- 1)) (select distances (+ (* x54 10) y54)) 0))
-      (a!6 (ite (distinct x55 (- 1)) (select distances (+ (* x55 10) y55)) 0))
-      (a!7 (ite (distinct x56 (- 1)) (select distances (+ (* x56 10) y56)) 0))
-      (a!8 (ite (distinct x57 (- 1)) (select distances (+ (* x57 10) y57)) 0))
-      (a!9 (ite (distinct x58 (- 1)) (select distances (+ (* x58 10) y58)) 0))
-      (a!10 (ite (distinct x59 (- 1)) (select distances (+ (* x59 10) y59)) 0)))
-  (= dist5 (+ a!1 a!2 a!3 a!4 a!5 a!6 a!7 a!8 a!9 a!10))))
+(assert (let ((a!1 (+ (ite (distinct (select asg0 0) (- 1))
+                   (select distances0 (select asg0 0))
+                   0)
+              (ite (distinct (select asg0 1) (- 1))
+                   (select distances1 (select asg0 1))
+                   0)
+              (ite (distinct (select asg0 2) (- 1))
+                   (select distances2 (select asg0 2))
+                   0)
+              (ite (distinct (select asg0 3) (- 1))
+                   (select distances3 (select asg0 3))
+                   0)
+              (ite (distinct (select asg0 4) (- 1))
+                   (select distances4 (select asg0 4))
+                   0)
+              (ite (distinct (select asg0 5) (- 1))
+                   (select distances5 (select asg0 5))
+                   0)
+              (ite (distinct (select asg0 6) (- 1))
+                   (select distances6 (select asg0 6))
+                   0)
+              (ite (distinct (select asg0 7) (- 1))
+                   (select distances7 (select asg0 7))
+                   0)
+              (ite (distinct (select asg0 8) (- 1))
+                   (select distances8 (select asg0 8))
+                   0)
+              (ite (distinct (select asg0 9) (- 1))
+                   (select distances9 (select asg0 9))
+                   0))))
+  (= dist0 a!1)))
+(assert (let ((a!1 (+ (ite (distinct (select asg1 0) (- 1))
+                   (select distances0 (select asg1 0))
+                   0)
+              (ite (distinct (select asg1 1) (- 1))
+                   (select distances1 (select asg1 1))
+                   0)
+              (ite (distinct (select asg1 2) (- 1))
+                   (select distances2 (select asg1 2))
+                   0)
+              (ite (distinct (select asg1 3) (- 1))
+                   (select distances3 (select asg1 3))
+                   0)
+              (ite (distinct (select asg1 4) (- 1))
+                   (select distances4 (select asg1 4))
+                   0)
+              (ite (distinct (select asg1 5) (- 1))
+                   (select distances5 (select asg1 5))
+                   0)
+              (ite (distinct (select asg1 6) (- 1))
+                   (select distances6 (select asg1 6))
+                   0)
+              (ite (distinct (select asg1 7) (- 1))
+                   (select distances7 (select asg1 7))
+                   0)
+              (ite (distinct (select asg1 8) (- 1))
+                   (select distances8 (select asg1 8))
+                   0)
+              (ite (distinct (select asg1 9) (- 1))
+                   (select distances9 (select asg1 9))
+                   0))))
+  (= dist1 a!1)))
+(assert (let ((a!1 (+ (ite (distinct (select asg2 0) (- 1))
+                   (select distances0 (select asg2 0))
+                   0)
+              (ite (distinct (select asg2 1) (- 1))
+                   (select distances1 (select asg2 1))
+                   0)
+              (ite (distinct (select asg2 2) (- 1))
+                   (select distances2 (select asg2 2))
+                   0)
+              (ite (distinct (select asg2 3) (- 1))
+                   (select distances3 (select asg2 3))
+                   0)
+              (ite (distinct (select asg2 4) (- 1))
+                   (select distances4 (select asg2 4))
+                   0)
+              (ite (distinct (select asg2 5) (- 1))
+                   (select distances5 (select asg2 5))
+                   0)
+              (ite (distinct (select asg2 6) (- 1))
+                   (select distances6 (select asg2 6))
+                   0)
+              (ite (distinct (select asg2 7) (- 1))
+                   (select distances7 (select asg2 7))
+                   0)
+              (ite (distinct (select asg2 8) (- 1))
+                   (select distances8 (select asg2 8))
+                   0)
+              (ite (distinct (select asg2 9) (- 1))
+                   (select distances9 (select asg2 9))
+                   0))))
+  (= dist2 a!1)))
+(assert (let ((a!1 (+ (ite (distinct (select asg3 0) (- 1))
+                   (select distances0 (select asg3 0))
+                   0)
+              (ite (distinct (select asg3 1) (- 1))
+                   (select distances1 (select asg3 1))
+                   0)
+              (ite (distinct (select asg3 2) (- 1))
+                   (select distances2 (select asg3 2))
+                   0)
+              (ite (distinct (select asg3 3) (- 1))
+                   (select distances3 (select asg3 3))
+                   0)
+              (ite (distinct (select asg3 4) (- 1))
+                   (select distances4 (select asg3 4))
+                   0)
+              (ite (distinct (select asg3 5) (- 1))
+                   (select distances5 (select asg3 5))
+                   0)
+              (ite (distinct (select asg3 6) (- 1))
+                   (select distances6 (select asg3 6))
+                   0)
+              (ite (distinct (select asg3 7) (- 1))
+                   (select distances7 (select asg3 7))
+                   0)
+              (ite (distinct (select asg3 8) (- 1))
+                   (select distances8 (select asg3 8))
+                   0)
+              (ite (distinct (select asg3 9) (- 1))
+                   (select distances9 (select asg3 9))
+                   0))))
+  (= dist3 a!1)))
+(assert (let ((a!1 (+ (ite (distinct (select asg4 0) (- 1))
+                   (select distances0 (select asg4 0))
+                   0)
+              (ite (distinct (select asg4 1) (- 1))
+                   (select distances1 (select asg4 1))
+                   0)
+              (ite (distinct (select asg4 2) (- 1))
+                   (select distances2 (select asg4 2))
+                   0)
+              (ite (distinct (select asg4 3) (- 1))
+                   (select distances3 (select asg4 3))
+                   0)
+              (ite (distinct (select asg4 4) (- 1))
+                   (select distances4 (select asg4 4))
+                   0)
+              (ite (distinct (select asg4 5) (- 1))
+                   (select distances5 (select asg4 5))
+                   0)
+              (ite (distinct (select asg4 6) (- 1))
+                   (select distances6 (select asg4 6))
+                   0)
+              (ite (distinct (select asg4 7) (- 1))
+                   (select distances7 (select asg4 7))
+                   0)
+              (ite (distinct (select asg4 8) (- 1))
+                   (select distances8 (select asg4 8))
+                   0)
+              (ite (distinct (select asg4 9) (- 1))
+                   (select distances9 (select asg4 9))
+                   0))))
+  (= dist4 a!1)))
+(assert (let ((a!1 (+ (ite (distinct (select asg5 0) (- 1))
+                   (select distances0 (select asg5 0))
+                   0)
+              (ite (distinct (select asg5 1) (- 1))
+                   (select distances1 (select asg5 1))
+                   0)
+              (ite (distinct (select asg5 2) (- 1))
+                   (select distances2 (select asg5 2))
+                   0)
+              (ite (distinct (select asg5 3) (- 1))
+                   (select distances3 (select asg5 3))
+                   0)
+              (ite (distinct (select asg5 4) (- 1))
+                   (select distances4 (select asg5 4))
+                   0)
+              (ite (distinct (select asg5 5) (- 1))
+                   (select distances5 (select asg5 5))
+                   0)
+              (ite (distinct (select asg5 6) (- 1))
+                   (select distances6 (select asg5 6))
+                   0)
+              (ite (distinct (select asg5 7) (- 1))
+                   (select distances7 (select asg5 7))
+                   0)
+              (ite (distinct (select asg5 8) (- 1))
+                   (select distances8 (select asg5 8))
+                   0)
+              (ite (distinct (select asg5 9) (- 1))
+                   (select distances9 (select asg5 9))
+                   0))))
+  (= dist5 a!1)))
 (assert (let ((a!1 (ite (> dist2 (ite (> dist1 dist0) dist1 dist0))
                 dist2
                 (ite (> dist1 dist0) dist1 dist0))))
@@ -8794,6 +14247,22 @@
                 dist4
                 (ite (> dist3 a!1) dist3 a!1))))
   (= max (ite (> dist5 a!2) dist5 a!2)))))
-(assert (< max 50))
+(assert (< max 8486))
+(assert (< max 4356))
+(assert (< max 540))
+(assert (< max 494))
+(assert (< max 364))
+(assert (< max 346))
+(assert (< max 278))
+(assert (< max 260))
+(assert (< max 249))
+(assert (< max 241))
+(assert (< max 233))
+(assert (< max 232))
 (check-sat)
-(get-value (max))
+(get-value (asg0))
+(get-value (asg1))
+(get-value (asg2))
+(get-value (asg3))
+(get-value (asg4))
+(get-value (asg5))

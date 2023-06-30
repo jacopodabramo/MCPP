@@ -3,7 +3,7 @@ import os
 import time
 from smt.src.smt_functions import *
 from smt.src.solver import SMTsolver
-from utils import saving_file, format_output_smtlib
+from utils import saving_file, format_output_smtlib,set_lower_bound
 
 
 
@@ -47,7 +47,7 @@ class SMTLIBsolver(SMTsolver):
        
     def solve(self):
         i = 0
-        if self.model == 0: # linear search
+        if self.model == 1: # linear search
             bash_file = 'smt/src/linear_search.sh'
             type_search = "linear_search"
         else: # binary search
@@ -62,7 +62,7 @@ class SMTLIBsolver(SMTsolver):
             filename = "out_" + key.split('.')[0] + '.json'
             
             # extracting the number of couriers and items to return the correct format of the file
-            couriers = value[0] 
+            couriers = value[0]
             num_items = value[1]
             distances = value[4]
             starting_value = sum(sum(sublist) for sublist in distances)
@@ -73,17 +73,18 @@ class SMTLIBsolver(SMTsolver):
             
             # execution of the bash file
             path = os.path.join(os.getcwd(),bash_file) # path to execute the bash file
-            command = f"timeout {self.timeout} bash {path} '{self.file}' 'max' '{starting_value}' '{self.solver}' '{couriers}'"
+            lower_bound = set_lower_bound(value) # this value will be used only by binary search
+            command = f"timeout {self.timeout} bash {path} '{self.file}' 'max' '{starting_value}' '{lower_bound}' '{self.solver}' '{couriers}'"
             start_time = time.time()
             result = subprocess.run(command, shell=True, capture_output=True, text=True)
             total_time = time.time() - start_time
             output = result.stdout # to have the output in a string format
             if output == 'unsat':
                 print("Unsatisfiable")
-                saving_file({'satisfiable':False}, path, filename)
+                saving_file({'satisfiable':False}, saving_path, filename)
             elif output ==  "" or output == 'unknown':
                 print("Unknown") # we have unknown also when we have timeout
-                saving_file({'unknown_solution':True})
+                saving_file({'unknown_solution':True},saving_path,filename)
             else:
                 output = split_string(output) # to make the correct split of results given by CMD
                 # Prepocess the result in order to have correct format for output
@@ -91,7 +92,6 @@ class SMTLIBsolver(SMTsolver):
                 print("Output = ",output)
                 json_dict = format_output_smtlib(output,num_items, total_time,True,self.solver)
                 saving_file(json_dict, saving_path, filename)
-                #print("Dict vale = ", json_dict)
             
             
                 

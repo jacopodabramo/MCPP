@@ -250,6 +250,8 @@ def creating_path(instance,num_items):
     Ex input {1:5,4:6,5:4,6:1} where 6 in num_items, the function will return a list
     [1,5,4], this list will used to write it in the json dict
     """
+    if instance == {}:
+        return []
     elem = instance[num_items]
     items_for_courier = [elem + 1]
     while elem != num_items:
@@ -263,6 +265,7 @@ def format_output_smtlib(result,num_items,time,opt,solver):
     time = int(time)
     all_dist = []
     for i in range(1, len(result)):
+    
         all_dist.append(creating_path(result[i],num_items))
         
     if solver == "z3":

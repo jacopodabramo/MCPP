@@ -1858,7 +1858,7 @@
   (= dist1 a!1)))
 (assert (= max (ite (> dist1 dist0) dist1 dist0)))
 (assert (< max 176))
-(assert (< max 88))
+(assert (< max 92))
 (assert (< max 15))
 (assert (< max 16))
 (check-sat)

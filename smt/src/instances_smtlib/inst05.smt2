@@ -453,7 +453,7 @@
   (= dist1 a!1)))
 (assert (= max (ite (> dist1 dist0) dist1 dist0)))
 (assert (< max 802))
-(assert (< max 401))
+(assert (< max 490))
 (check-sat)
 (get-value (asg0))
 (get-value (asg1))

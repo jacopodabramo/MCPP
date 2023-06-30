@@ -93,8 +93,10 @@ def split_string(string):
         if ")" in item:
             open_parentheses = False
             to_append = temp_string.replace("\n", " ")
-            if "(store a!1" in to_append:
-                to_append = to_append.replace("(store a!1", "")
+            to_append = to_append.replace("(- 1)","")
+            to_append = re.sub(r'\s\s\d+\)', '', to_append)
+            if not "asg" in to_append:
+                #to_append = to_append.replace("(store a!1", "")
                 merged_result[-1] = merged_result[-1] + to_append
             else:
                 merged_result.append(to_append)
@@ -114,14 +116,28 @@ def result_preprocessing(result):
     {starting:ending}, where the key is the starting position and ending the ending position
     Ex: {1:2,4:5,2:4} means that the courier goes from 1 to 2, from 2 to 4 and from 4 to 5
     """
+    #print("Arriva ",result)
+    
     result_to_write = [int(result[0])]
     for i in range(1,len(result)):
-        
-        new_string = result[i].replace(")", "")
-        value_asg = [s for s in new_string.split() if s.isdigit()][1:] # the first value is not significant
-        asg = {int(value_asg[i]): int(value_asg[i+1]) for i in range(0, len(value_asg)-1, 2)}
-        #value_asg.reverse() 
-        # reverting the list because we want to start from items+1 to extract the vorrect order
+        result[i] = result[i].replace("a!1","")
+        result[i] = re.sub(r'\)\s\d+\)\)', '', result[i])
+        numbers = re.findall(r'\b\d+\b', result[i])
+        #print("Valore = ",numbers)
+        value_asg = [int(num) for num in numbers]
+        asg = {int(value_asg[i]): int(value_asg[i+1]) if int(value_asg[i]) != int(value_asg[i+1]) else None for i in range(0, len(value_asg)-1, 2) if int(value_asg[i]) != int(value_asg[i+1])}
+
         result_to_write.append(asg)
     return result_to_write
-        
+     
+'''
+r = ['220', '((asg0 (store (store (store ((as const (Array Int Int)) ) 9 10) 0 9) 10 0)))', 
+'((asg1 (store (store (store ((as const (Array Int Int)) ) 2 10) 10 2)))', 
+'((asg2 (let ((a!1 (store (store (store ((as const (Array Int Int)) ) 6 8) 1 10) 199)))(store (store (store a!1 8 1) 3 6) 10 3))))', 
+'((asg3 (store ((as const (Array Int Int)) )))', '((asg4 (store ((as const (Array Int Int)) ) 10 10)))', 
+'((asg5 (store (store (store ((as const (Array Int Int)) ) 5 4) 4 10) 10 5)))', 
+'((asg6 (store (store ((as const (Array Int Int)) ) 7 10) 10 7)))',
+'((asg7 ((as const (Array Int Int)) )))']
+
+result_preprocessing(r)
+'''

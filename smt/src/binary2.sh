@@ -8,9 +8,9 @@
 in_file=$1
 obj_var=$2
 obj_val=$3
+lower_bound=$4
 
-
-solve_type=$4
+solve_type=$5
 case $solve_type in
   z3)   solver_cmd=( z3 -in ) ;;
   cvc4) solver_cmd=( cvc4 --lang smt --produce-models --incremental ) ;;
@@ -18,7 +18,7 @@ case $solve_type in
   *)    echo "ERROR: Unknown solver type" >&2; exit 1;;
 esac
 
-couriers=$5
+couriers=$6
 # Minimization problem.
 rel='<'
 next=-1
@@ -33,9 +33,9 @@ out=0
 
 update=1
 upper_bound=$obj_val
-lower_bound=0
-bound_distance=$((upper_bound - lower_bound))
-middle=$((obj_val/2))
+sub_tr=$((upper_bound - lower_bound))
+bound_distance=$((sub_tr / 2))
+middle=$((upper_bound - bound_distance))
 while true;
 do
 step=0

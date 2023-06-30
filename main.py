@@ -53,7 +53,7 @@ def main():
             output_dir=args.output_dir,
             timeout=int(args.timeout),
             model=args.model)
-        
+    
     elif args.approach == "smtlib":
         solver = SMTLIBsolver(
             data=data,
