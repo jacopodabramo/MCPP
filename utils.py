@@ -317,11 +317,6 @@ def format_output_mip_model0(solver, result, opt):
 
 
 def sorting_couriers(value):
-    """
-    The function takes in input the courier_size list and return the courier_size sorting
-    in descending order and the corresponding_dict where the key is the position in sorting list
-    and the value is the old position, the position that we read from the inst.dat
-    """
     courier_size = value[2]
     size_pos = {}
     # Initialization
@@ -336,6 +331,34 @@ def sorting_couriers(value):
     for i in range(len(courier_size)):
         corresponding_dict[i] = size_pos[courier_size[i]][0]
         size_pos[courier_size[i]].pop(0)
+
     return corresponding_dict
 
+def sorting_correspondence(res, corresponding_dict):
+    '''
+    Takes the output of the model and change the positions
+    according to the corresponding dictionary.
 
+    Final res will contain the list with output where all the result 
+    are provided according to the original order, before the sorting of 
+    couriers
+    
+    '''
+    final_res = [[] for _ in range(len(res))]
+
+    # Assigned the corrispondences with the dictionary
+    for i in range(len(res)):
+        courier = corresponding_dict[i]
+        final_res[courier] = res[i]
+    return final_res
+
+def set_lower_bound(instance):
+    """
+    This function is used by binary search to set lower bound, it takes the sum of the maximum of
+    last row and loast column - 1
+    """
+    _, _, _, _, distances = instance
+    last_row = distances[-1]
+    last_column = [distances[i][-1] for i in range(len(distances[0]))]
+    value = max(last_row) + max(last_column) - 1
+    return value

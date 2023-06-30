@@ -39,11 +39,28 @@ def main():
             model=args.model,
         )
     
-    
-    if args.approach == "smt":
-        solver = SMTsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout), model=args.model)
+    elif args.approach == "sat":
+        solver = SATsolver(
+            data=data, 
+            output_dir=args.output_dir,
+            timeout=int(args.timeout), 
+            search=args.model
+        )
+
+    elif args.approach == "smt":
+        solver = SMTsolver(
+            data=data,
+            output_dir=args.output_dir,
+            timeout=int(args.timeout),
+            model=args.model)
+        
     elif args.approach == "smtlib":
-        solver = SMTLIBsolver(data=data, output_dir=args.output_dir, timeout=int(args.timeout),model=args.model)
+        solver = SMTLIBsolver(
+            data=data,
+            output_dir=args.output_dir,
+            timeout=int(args.timeout),
+            model=args.model)
+        
     else:
         raise argparse.ArgumentError(None, "Please select a solver between cp, sat, smt and lp.")
 

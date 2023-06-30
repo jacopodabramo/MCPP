@@ -54,7 +54,7 @@ def binary_sum(a, b, res, name):
     return And(c1, c2, c3)
 
 
-def greater(vec1, vec2, name):
+def greater_eq(vec1, vec2, name):
     constraints = []
     gt = [Bool(f"gt_{name}{i}") for i in range(len(vec1))]
 
@@ -84,13 +84,10 @@ def greater(vec1, vec2, name):
     return And(constraints)
 
 
-def max_of_bin_int(values, max_values):
+def max_of_bin_int(values, max_values, name):
     '''
     values is a list of bitvectors representing integers
     max will be bounded to a list where the last element is the max
-
-    values dimension is n x LENBITS
-    max dimension is (n+1)*LENBITS
     '''
 
     constraints = []
@@ -102,13 +99,14 @@ def max_of_bin_int(values, max_values):
     for i in range(0, len(values) - 1):
         constraints.append(
             Or(
-                And(greater(max_values[i], values[i + 1], f"st{i}"),
+                And(greater_eq(max_values[i], values[i + 1], f"{name}st{i}"),
                     And([max_values[i + 1][j] == max_values[i][j] for j in range(len_bits)])),
-                And(greater(values[i + 1], max_values[i], f"opp{i}"),
+                And(greater_eq(values[i + 1], max_values[i], f"{name}opp{i}"),
                     And([max_values[i + 1][j] == values[i + 1][j] for j in range(len_bits)]))
             )
         )
     return And(constraints)
+
 
 
 def toBinary(num, length=None):
@@ -162,61 +160,47 @@ def converter_boolean2(item, lenbits):
 
 
 def model_input(instance):
+    '''
+    :param instance: The tuple containing the instance to solve
+                     in the same from given in the input file
+    '''
+    corr_dict = sorting_couriers(instance)
     couriers, items, courier_size, item_size, distances = instance
 
-    load_couriers_bit = max(math.ceil(math.log2(sum(item_size))), math.ceil(math.log2(max(courier_size))))
-    distances_bit = math.ceil(math.log2(sum([sum(distances[i]) for i in range(len(distances))])))
+    # sorting in descending order the couriers to apply symmetry
+    courier_size = np.sort(courier_size)[::-1]
 
+    load_couriers_bit = max(
+                            math.ceil(math.log2(sum(item_size))), 
+                            math.ceil(math.log2(max(courier_size)))
+                    )
+    distances_bit = math.ceil(
+                                math.log2(sum(
+                                                [max(distances[i]) 
+                                                    for i in range(len(distances))]
+                                            ))
+                        )
+    print(sum(
+                [max(distances[i]) 
+                    for i in range(len(distances))]
+                                            ))
+    
     courier_size_conv = converter_sat(courier_size, 0, load_couriers_bit)
     item_size_conv = converter_sat(item_size, 0, load_couriers_bit)
     distances_conv = converter_sat(distances, 1, distances_bit)
-    return couriers, items, courier_size_conv, item_size_conv, distances_conv, load_couriers_bit, distances_bit
 
+    prepared_instance = (
+                couriers, 
+                items, 
+                courier_size_conv, 
+                item_size_conv, 
+                distances_conv, 
+                load_couriers_bit, 
+                distances_bit
+    )
 
-def print_solution(solution, seconds):
-    start, end, _, distances, couriers, items = solution
-    obj_distances = []
-    for k in range(couriers):
-        print("Courier = ", k)
-        obj_distances.append(convert_from_binary_to_int(distances[k][-1]))
-        for i in range(items + 1):
-            first_pos = -1
-            second_pos = -1
-            for j in range(items + 1):
-                if start[k][i][j]:
-                    first_pos = j + 1
-                    if first_pos == items + 1:
-                        first_pos = "ORIGIN"
-                if end[k][i][j]:
-                    second_pos = j + 1
-                    if second_pos == items + 1:
-                        second_pos = "ORIGIN"
-
-            print("Starting node: ", first_pos, "Ending: ", second_pos)
-
-    print(f"Total distances =  {obj_distances}")
-    print("TIME = ", seconds)
-    print("--------------------------------------------------")
-
-
-def format_output_sat(solver, solution, optimal, seconds):
-    seconds = int(seconds).__floor__()
-
-    start, _, _, distances, couriers, items = solution
-
-    obj_distances = []
-    res = []
-    for k in range(couriers):
-        asg = []
-        obj_distances.append(convert_from_binary_to_int(distances[k][-1]))
-        for i in range(items + 1):
-            for j in range(items + 1):
-                if start[k][i][j] and j+1 != items+1:
-                    asg.append(j+1)
-        res.append(asg)
-
-    obj = max(obj_distances)
-    return get_dict(solver, seconds, optimal, obj, res)
+    
+    return prepared_instance, corr_dict
 
 def calculate_distance(distances, couriers):
     distance = []
@@ -224,6 +208,40 @@ def calculate_distance(distances, couriers):
         distance.append(convert_from_binary_to_int(distances[k][-1]))
     return distance
 
+
+def get_numeric_solution(model, results):
+    start, end, couriers_load, couriers_distance = results
+
+    couriers = len(start)
+    # calculating bits
+    load_couriers_bit = len(couriers_load[0])
+    distances_bit = len(couriers_distance[0])
+    items = len(start[0]) - 1
+
+    # model = self.solver.model()
+    start_sol = [[[model.evaluate(start[k][j][i]) 
+                    for i in range(items + 1)] 
+                    for j in range(items + 1)]
+                    for k in range(couriers)
+                ]
+
+    end_sol = [[[model.evaluate(end[k][j][i]) 
+                    for i in range(items + 1)] 
+                    for j in range(items + 1)]
+                    for k in range(couriers)
+            ]
+  
+    loads_sol = [[model.evaluate(couriers_load[k][j])
+                    for j in range(load_couriers_bit)] 
+                    for k in range(couriers)
+            ]
+  
+    distances_sol = [[model.evaluate(couriers_distance[k][j]) 
+                        for j in range(distances_bit)]
+                        for k in range(couriers)
+                ]
+    
+    return start_sol, end_sol, loads_sol, distances_sol
 
 def evaluate(model, results):
     start, end, couriers_load, couriers_distance = results
@@ -248,3 +266,53 @@ def evaluate(model, results):
                       for i in range((items + 1) ** 2 + 1)] for k in range(couriers)]
     
     return start_sol, end_sol, loads_sol, distances_sol, couriers, items
+
+def print_solution(solution, seconds):
+    start, end, _, distances = solution
+    obj_distances = []
+    couriers = len(start)
+    items = len(start[0]) - 1
+    for k in range(couriers):
+        print("Courier = ", k)
+        obj_distances.append(convert_from_binary_to_int(distances[k]))
+        for i in range(items + 1):
+            first_pos = -1
+            second_pos = -1
+            for j in range(items + 1):
+                if start[k][i][j]:
+                    first_pos = j + 1
+                    if first_pos == items + 1:
+                        first_pos = "ORIGIN"
+                if end[k][i][j]:
+                    second_pos = j + 1
+                    if second_pos == items + 1:
+                        second_pos = "ORIGIN"
+
+            print("Starting node: ", first_pos, "Ending: ", second_pos)
+
+    print(f"Total distances =  {obj_distances}")
+    print("TIME = ", seconds)
+    print("--------------------------------------------------")
+
+
+def format_output_sat(solver, solution, optimal, seconds):
+    seconds = int(seconds).__floor__()
+
+    start, _, _, distances = solution
+
+    couriers = len(start)
+    items = len(start[0]) - 1
+
+    obj_distances = []
+    res = []
+    for k in range(couriers):
+        asg = []
+        obj_distances.append(convert_from_binary_to_int(distances[k]))
+        for i in range(items + 1):
+            for j in range(items + 1):
+                if start[k][i][j] and j+1 != items+1:
+                    asg.append(j+1)
+        res.append(asg)
+
+    obj = max(obj_distances)
+    return get_dict(solver, seconds, optimal, obj, res)
