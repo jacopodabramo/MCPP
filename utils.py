@@ -197,15 +197,14 @@ def format_output_graph_model(solver, seconds, optimal, ns, es, starting_nd,endi
     return get_dict(solver, seconds, optimal, obj, final_res)
 
 
-def get_dict(solver, seconds, optimal, obj, res):
+def get_dict(seconds, optimal, obj, res):
     return {
-        solver: {
             'time': seconds,
             'optimal': optimal,
             'obj': obj,
             'sol': res
         }
-    }
+
 
 
 def format_output_smt_model0(result, opt):
@@ -329,11 +328,12 @@ def sorting_couriers(value):
     for i in range(len(courier_size)):
         size_pos[courier_size[i]].append(i)
 
-    courier_size.sort(reverse=True)
+    courier_size_copy = courier_size.copy()
+    courier_size_copy.sort(reverse=True)
     corresponding_dict = {}
     for i in range(len(courier_size)):
-        corresponding_dict[i] = size_pos[courier_size[i]][0]
-        size_pos[courier_size[i]].pop(0)
+        corresponding_dict[i] = size_pos[courier_size_copy[i]][0]
+        size_pos[courier_size_copy[i]].pop(0)
 
     return corresponding_dict
 
@@ -348,6 +348,8 @@ def sorting_correspondence(res, corresponding_dict):
     
     '''
     final_res = [[] for _ in range(len(res))]
+    if len(res) != len(corresponding_dict):
+        return res
 
     # Assigned the corrispondences with the dictionary
     for i in range(len(res)):
@@ -355,12 +357,11 @@ def sorting_correspondence(res, corresponding_dict):
         final_res[courier] = res[i]
     return final_res
 
-def set_lower_bound(instance):
+def set_lower_bound(distances):
     """
     This function is used by binary search to set lower bound, it takes the sum of the maximum of
     last row and loast column - 1
     """
-    _, _, _, _, distances = instance
     last_row = distances[-1]
     last_column = [distances[i][-1] for i in range(len(distances[0]))]
     value = max(last_row) + max(last_column) - 1

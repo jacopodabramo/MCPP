@@ -21,7 +21,7 @@ def checking(input, output):
             dist += distances[first][n_items]
             obj.append(dist)
             if sum_item > couriers_size[k]:
-                return -1
+                return -1, solver
         find = False
         i = 0
         while i < len(obj):
@@ -29,8 +29,8 @@ def checking(input, output):
                 find = True
             i += 1
         if find == False:
-            return -2 # Errore nelle distances
-    return 0
+            return -2,solver # Errore nelle distances
+    return 0,None
 
 
 
@@ -48,18 +48,19 @@ def main():
         for file in sub_folder:
             output_path = start_path + '/' + folder + '/' + file
             input_path = file.removesuffix('.json')
-            input_path = 'input/' + input_path[4:] + '.dat'
+            input_path = 'input/' + 'inst' + input_path + '.dat'
             # Reading the input and output file
             input = read_instance(input_path)
             f = open(output_path)
             data = json.load(f)
+            solution = checking(input,data)
             try:
-                if checking(input,data) == 0:
+                if solution[0] == 0:
                     print(f"The {output_path} is correct")
-                elif checking(input,data) == -1:
-                    print(f"The {output_path} HAS AN ERROR IN COURIER SIZE ")
+                elif solution[0] == -1:
+                    print(f"THE SOLVER {solution[1]} IN THE {output_path} HAS AN ERROR IN COURIER SIZE ")
                 else:
-                    print(f"The {output_path} HAS AN ERROR IN OBJECT DISTANCE")
+                    print(f"THE SOLVER {solution[1]} IN THE {output_path} HAS AN ERROR IN OBJECT DISTANCE")
             except Exception:
                 print(f"I cannot check unsat/unknow solution for {output_path}")
 
