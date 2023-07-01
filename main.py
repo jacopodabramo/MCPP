@@ -64,6 +64,13 @@ def main():
             output_dir=args.output_dir,
             timeout=int(args.timeout),
             model=args.model)
+
+    elif args.approach == "lp":
+        solver = MIPsolver(
+            data=data,
+            output_dir=args.output_dir,
+            timeout=int(args.timeout),
+            model=args.model)
         
     else:
         raise argparse.ArgumentError(None, "Please select a solver between cp, sat, smt and lp.")

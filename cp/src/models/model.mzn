@@ -25,6 +25,13 @@ array[NODES, NODES] of int: distances;
 array[COURIERS] of var int: obj_dist;
 array[COURIERS, NODES] of var NODES: asg;
 
+% objective function
+
+int :low_bound = max([distances[items+1, j] | j in NODES]) + max([distances[i, items+1] | i in NODES]);
+int :up_bound = sum([distances[i, j] | i in NODES, j in NODES]);
+
+var low_bound..up_bound: maximum;
+
 array[NODES, COURIERS] of var int: symmetry;
 
 array[ITEMS] of var int: loads;
@@ -76,6 +83,8 @@ constraint forall(k in COURIERS)(
     )
 );
 
+constraint maximum = max(obj_dist);
+
 constraint if forall(k in 1..courier-1) (courier_size[courier] >= couriers_loads[k]) then 
             forall(k in COURIERS) (forall(i in NODES) (symmetry[i,k] = asg[k, i]))
            else forall(k in COURIERS) (forall(i in NODES) (symmetry[i,k] = 0)) endif;
@@ -85,7 +94,7 @@ constraint lex_chain(symmetry);
 solve :: seq_search([
                 int_search(loads, first_fail, indomain_min),
                 int_search(asg, first_fail, indomain_min)])
-     minimize(max(obj_dist));
+     minimize(maximum);
 
 %solve minimize(max(obj_dist));
 

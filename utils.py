@@ -137,7 +137,7 @@ def print_model(asg, matrix, obj_dist, seconds,corresponding_dict):
     print("TIME =", seconds)
     print("---------------------------------------------")
 
-def cp_correspondence(res,corresponding_dict):
+def cp_correspondence(res, corresponding_dict):
     final_res = [[] for _ in range(len(res))]
 
     # Assigned the corrispondences with the dictionary

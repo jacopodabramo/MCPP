@@ -1,58 +1,54 @@
 import time as t
 from sat.src.sat_functions import *
+from constants import *
 
 
 class SATsolver:
 
-    def __init__(self, data, output_dir, timeout=300, model=0, solver_name='z3'):
+    def __init__(self, data, output_dir, timeout=300, model=0):
         self.data = data
         self.output_dir = output_dir
         self.timeout = timeout
         self.solver = Solver()
         self.model = model
-        self.search = 1 # Setting linear search
-        self.solver_name = solver_name  # Need some decision on the looping over the solvers
 
     # Solving part
     def solve(self):
         # to select the correct folder
         type_model = ""
-        if self.model == 0:
+        if self.model == START_END_SAT:
             type_model += "_0"
-        else:
+        elif self.model == SINGLE_MATRIX_SAT:
             type_model += "_1"
         path = self.output_dir + "/sat" + type_model + "/"
 
-        for key, value in self.data.items():
+        for key, instance in self.data.items():
             dict_to_save = {}
-            for solver in range(2):
-                key_dict = ""
-                if solver == 1:
-                    key_dict += self.solver_name + "_linear_search"
-                    self.search = 1
-                else:
-                    key_dict += self.solver_name + "_binary_search"
-                    self.search = 0
+            for search in SEARCH_STRATEGIES:
+                key_dict = f"z3_{SEARCH_STRATEGIES[search]}"
                 print('File =', key)
                 filename = key.split('.')[0][-2:] + '.json'
                 try:
-                    solution = self.optimizer(value)
+                    solution = self.optimizer(instance, search)
                     dict_to_save[key_dict] = solution
                     # Create a new solver for the next instance
                     self.set_solver()
                 except TimeoutError:
                     print("No solution found in the time given")
                     saving_file({'unknown_solution': True})
-                except Exception:
-                    print("Unsatisfiable")
-                    saving_file({'satisfiable': False}, path, filename)
+                except Z3Exception as e:
+                    print("Exception:", e)
+                    saving_file({'out_of_memory': True}, path, filename)
+                #except Exception:
+                #    print("Unsatisfiable")
+                #    saving_file({'satisfiable': False}, path, filename)
 
             saving_file(dict_to_save, path, filename)
 
-    def optimizer(self, instance):
-        if self.search == 1:  # Linear Search
+    def optimizer(self, instance, search):
+        if search == LINEAR_SEARCH:
             return self.linear_search(instance)
-        else:
+        elif search == BINARY_SEARCH:
             return self.binary_search(instance)
 
     def set_solver(self):
@@ -60,9 +56,10 @@ class SATsolver:
         self.solver.set('timeout', self.timeout * 1000)
 
     def get_solution(self, model, results):
-        if self.model == 0:
+        if self.model == START_END_SAT:
             return get_numeric_solution_model0(model, results)
-        return get_numeric_solution_model1(model, results)
+        elif self.model == SINGLE_MATRIX_SAT:
+            return get_numeric_solution_model1(model, results)
 
     def print(self,final_evaluation, time_solution):
         if self.model == 0:

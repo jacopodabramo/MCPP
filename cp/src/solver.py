@@ -1,136 +1,136 @@
 import datetime
-import numpy as np
+from constants import *
 from minizinc import Model, Solver, Status, Instance
-from utils import *
-
-
-
+from cp.src.cp_utils import *
 
 class CPsolver:
-
     def __init__(self, data, output_dir, timeout=300, model=1):
+
         self.output_dir = output_dir
         self.timeout = timeout
-        self.solver = 'chuffed'
-        if model == 1:
+
+        if model == CIRCUIT_MODEL_CP:
             self.data = data
             self.solver_path = "./cp/src/models/model.mzn"
-        else:
+        elif model == GRAPH_MODEL_CP:
             self.data = load_preprocessing(data)
             self.solver_path = "./cp/src/models/graph_model.mzn"
 
     def solve(self):
         model = Model(self.solver_path)
-        solver = Solver.lookup('chuffed')
-
         if self.solver_path == "./cp/src/models/model.mzn":
-            result = self.model_solve(model, solver)
+            self.model_solve(model)
         else:
-            result = self.graph_model_solve(model, solver)
+            self.graph_model_solve(model)
 
-        return result
+    def model_solve(self, model):
+        solver_list = ['org.gecode.gist', 'chuffed', 'gecode']
 
-    def model_solve(self, model, solver):
-        
         for key, value in self.data.items():
             values = list(value) # casting for modify the value of couriers (mutable object)
             print("File = ", key)
-            path = self.output_dir + "/cp_model/"
-            filename = "out_"+ key.split('.')[0] + '.json'
+            path = self.output_dir + "/cp_1/"
+            filename = key.split('.')[0][-2:] + '.json'
             corresponding_dict = sorting_couriers(values) # Passing by reference
-            try:
-                instance = Instance(solver, model)
-                result = self.model_solve_instance(values, instance)
-                
-                # Unsat 
-                if result.status is Status.UNSATISFIABLE:
-                    output_dict = {
-                        'unsatisifable': True
-                    }
-                
-                # No solution found in the time given
-                elif result.status is Status.UNKNOWN:
-                    output_dict = {
-                        'unknwon solution':True
-                    }
 
-                # At least a solution
-                else:
-                    assignments = result["asg"]
-                    obj_dist = result["obj_dist"]
-
-                    if result.status is Status.OPTIMAL_SOLUTION:
-                        optimal = True 
-                        time_computed = result.statistics['solveTime'].total_seconds()
+            results = {}
+            for solver_name in solver_list:
+                solver = Solver.lookup(solver_name)
+                print('Current solver', solver_name)
+                try:
+                    instance = Instance(solver, model)
+                    result = self.model_solve_instance(values, instance)
+                    # Unsat
+                    if result.status is Status.UNSATISFIABLE:
+                        output_dict = {
+                            'unsatisifable': True
+                        }
+                    # No solution found in the time given
+                    elif result.status is Status.UNKNOWN:
+                        output_dict = {
+                            'unknwon solution':True
+                        }
+                    # At least a solution
                     else:
-                        optimal = False
-                        time_computed = self.timeout
+                        assignments = result["asg"]
+                        obj_dist = result["obj_dist"]
 
-                    print_model(assignments, instance["distances"], obj_dist, time_computed,corresponding_dict)
-                    output_dict = format_output_cp_model(self.solver, time_computed, optimal, obj_dist, assignments,corresponding_dict)
+                        if result.status is Status.OPTIMAL_SOLUTION:
+                            optimal = True
+                            time_computed = result.statistics['solveTime'].total_seconds()
+                        else:
+                            optimal = False
+                            time_computed = self.timeout
 
-                # This function should be carried out from here and put in a place where
-                # All the solvers are ran toghether, so that the dict contains 
-                saving_file(output_dict, path, filename)
-                          
-            except Exception as e:
-                print("Exception:", e)
-                
+                        print_model(assignments, instance["distances"], obj_dist, time_computed,corresponding_dict)
+                        output_dict = format_output_cp_model(time_computed, optimal, obj_dist, assignments,corresponding_dict)
 
-        return output_dict
+                    # This function should be carried out from here and put in a place where
+                    # All the solvers are ran toghether, so that the dict contains
 
-    def graph_model_solve(self, model, solver):
-        i = 1
-        solutions = []
+                except Exception as e:
+                    print("Exception:", e)
+
+                results[solver_name] = output_dict
+
+            saving_file(results, path, filename)
+
+    def graph_model_solve(self, model):
+        solver_list = ['org.gecode.gist', 'chuffed', 'gecode']
+
         for key,value in self.data.items():
-            values = list(value) # casting for modify the value of couriers (mutable object)
+            values = list(value)  # casting for modify the value of couriers (mutable object)
             print("File = ", key)
-            path = self.output_dir + "/cp_graph_model/"
-            filename = "out_"+ key.split('.')[0] + '.json'
+            path = self.output_dir + "/cp_1/"
+            filename = key.split('.')[0][-2:] + '.json'
             corresponding_dict = sorting_couriers(values)  # Passing by reference
-            try:
-                instance = Instance(solver, model)
-                result = self.graph_model_solve_instance(values, instance)
-                
-                # Unsat
-                if result.status is Status.UNSATISFIABLE:
-                    output_dict = {
-                        'unsatisifable': True
-                    }
-                
-                # No solution in the time given
-                elif result.status is Status.UNKNOWN:
-                    output_dict = {
-                        'unknwon solution':True
-                    }
-                
-                # At least a solution
-                else :
-                    ns = result["ns"]
-                    es = result["es"]
-                    obj_dist = result["path_dist"]
-                    
-                    # Optimal solution
-                    if result.status is Status.OPTIMAL_SOLUTION:
-                        optimal = True
-                        time_computed = result.statistics['solveTime'].total_seconds()
-                    else:
-                        optimal = False
-                        time_computed = self.timeout
-                
-                    print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], obj_dist, time_computed,corresponding_dict)
-                    output_dict = format_output_graph_model(self.solver, time_computed, optimal, ns,es, instance['starting_nd'],instance['ending_nd'], obj_dist,corresponding_dict)
-                        # saving on file
-                    saving_file(output_dict, path, filename)
+
+            results = {}
+            for solver_name in solver_list:
+                solver = Solver.lookup(solver_name)
+                print('Current solver', solver_name)
+
+                try:
+                    instance = Instance(solver, model)
+                    result = self.graph_model_solve_instance(values, instance)
+
+                    # Unsat
+                    if result.status is Status.UNSATISFIABLE:
+                        output_dict = {
+                            'unsatisifable': True
+                        }
+
+                    # No solution in the time given
+                    elif result.status is Status.UNKNOWN:
+                        output_dict = {
+                            'unknwon solution':True
+                        }
+
+                    # At least a solution
+                    else :
+                        ns = result["ns"]
+                        es = result["es"]
+                        obj_dist = result["path_dist"]
+
+                        # Optimal solution
+                        if result.status is Status.OPTIMAL_SOLUTION:
+                            optimal = True
+                            time_computed = result.statistics['solveTime'].total_seconds()
+                        else:
+                            optimal = False
+                            time_computed = self.timeout
+
+                        print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], obj_dist, time_computed,corresponding_dict)
+                        output_dict = format_output_graph_model(time_computed, optimal, ns,es, instance['starting_nd'],instance['ending_nd'], obj_dist,corresponding_dict)
+                            # saving on file
 
 
+                except Exception as e:
+                    print("Exception:", e)
 
-            except Exception as e:
-                print("Exception:", e)
-                pass
+                results[solver_name] = output_dict
 
-            i += 1
-        return solutions
+            saving_file(results, path, filename)
 
     def model_solve_instance(self, d, instance):
         courier, item, courier_size, item_size, distances = d

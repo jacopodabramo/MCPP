@@ -3,10 +3,15 @@ import os
 import argparse
 from utils import *
 
-def checking(input, output):
+def checking(input, output,path):
     n_couriers, n_items, couriers_size, objects_size, distances = input
     for solver,solution in output.items():
+        if solution == {"unknown_solution": True} or solution == {"satisfaible": False}:
+            print(f"I cannot check solution for {solver} and for file {path}" )
+            continue
+
         sol = solution["sol"]
+
         obj = []
         for k in range(n_couriers):
             sum_item = 0
@@ -53,8 +58,9 @@ def main():
             input = read_instance(input_path)
             f = open(output_path)
             data = json.load(f)
-            solution = checking(input,data)
+
             try:
+                solution = checking(input, data,output_path)
                 if solution[0] == 0:
                     print(f"The {output_path} is correct")
                 elif solution[0] == -1:
@@ -62,7 +68,7 @@ def main():
                 else:
                     print(f"THE SOLVER {solution[1]} IN THE {output_path} HAS AN ERROR IN OBJECT DISTANCE")
             except Exception:
-                print(f"I cannot check unsat/unknow solution for {output_path}")
+                print(f"I cannot check unsat solution for {output_path}")
 
 if __name__ == '__main__':
     main()
