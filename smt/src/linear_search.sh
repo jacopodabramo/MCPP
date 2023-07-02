@@ -19,11 +19,11 @@ case $solve_type in
 esac
 
 couriers=$6
-
+items=$7
 # Minimization problem.
 rel='<'
 next=-1
-
+under="_"
 SOL=0 # variable needed to understand if a solution is sat or unsat
 
 # Inserting first constraints to check if the problem is sat or not
@@ -85,10 +85,20 @@ elif [ "$line" = 'unsat' ]; then
   sed -i '$ d' $in_file # deleting get value of max
   sed -i '$ d' $in_file 
   sed -i '$ d' $in_file 
-  echo "(check-sat)" >> $in_file
-  for ((i=0; i<couriers; i++)); do
-     echo "(get-value (asg$i))" >> $in_file
+  
+  for ((i=0; i<couriers; i++));do
+  for ((j=0; j<items; j++));do
+  echo "(declare-fun val$i$under$j () Int)" >> $in_file
+  echo "(assert (= (select asg$i $j) val$i$under$j))" >> $in_file
   done
+  done
+  echo "(check-sat)" >> $in_file
+  for ((i=0; i<couriers; i++));do
+  for ((j=0; j<items; j++));do
+  echo "(get-value (val$i$under$j))">> $in_file
+  done
+  done
+  
   while read line; do
   	if [ $line == 'sat' ]; then
   	   continue

@@ -3897,9 +3897,3 @@
                 dist2
                 (ite (> dist1 dist0) dist1 dist0))))
   (= max a!1)))
-(assert (< max 247))
-(assert (< max 127))
-(check-sat)
-(get-value (asg0))
-(get-value (asg1))
-(get-value (asg2))

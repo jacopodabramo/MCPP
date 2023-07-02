@@ -13,19 +13,21 @@ def main():
 
     parser.add_argument("-a", "--approach", help="Select a modelling appraoch between cp sat, smt and lp",
                         default="cp", type=str)
-    #parser.add_argument("-s", "--solver", help="select a solver choerent with your apporach, each apprach folder contains the acceptable solvers", default=0, type=int)
+
     parser.add_argument("-m", "--model", help="Select a model for the solver choosen, look for additional information in the cp folder ",
-                        default=0, type=int)
-    parser.add_argument("-s", "--search", help="Select a type of search: linear search, binary search ",
-                        default=0, type=int)
+                        default=1, type=int)
+
     parser.add_argument("-n", "--num_instance",
-                        help="Select the number of the instance you want to solve, default = 0 solve all",
+                        help="Select the instance that you want to solve, default = 0 solve all",
                         default=0, type=int)
+
     parser.add_argument("-i", "--input_dir",
                         help="Directory where the instance txt files can be found",
                         default="./input", type=str)
+
     parser.add_argument("-o", "--output_dir",
                         help="Directory where the output will be saved", default="./output")
+
     parser.add_argument("-t", "--timeout", help="Timeout in seconds", default=300)
     
     args = parser.parse_args()
@@ -33,7 +35,6 @@ def main():
 
     print("Loading instances")
     data = load_data(args.input_dir, args.num_instance)
-    # print(data)
     
     if args.approach == "cp":
         solver = CPsolver(
@@ -63,7 +64,7 @@ def main():
             data=data,
             output_dir=args.output_dir,
             timeout=int(args.timeout),
-            model=args.model)
+            )
 
     elif args.approach == "lp":
         solver = MIPsolver(

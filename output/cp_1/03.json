@@ -1,1 +1,1 @@
-{"org.gecode.gist": {"time": 0, "optimal": true, "obj": 12, "sol": [[3, 6, 5], [2, 4], [1, 7]]}, "chuffed": {"time": 0, "optimal": true, "obj": 12, "sol": [[5, 4, 2], [3, 6], [1, 7]]}, "gecode": {"time": 0, "optimal": true, "obj": 12, "sol": [[3, 6, 5], [2, 4], [1, 7]]}}
+{"gecode": {"time": 0, "optimal": true, "obj": 12, "sol": [[5, 4, 2], [3, 7], [1, 6]]}, "org.gecode.gist": {"time": 0, "optimal": true, "obj": 12, "sol": [[5, 4, 2], [3, 7], [1, 6]]}, "chuffed": {"time": 0, "optimal": true, "obj": 12, "sol": [[3, 6, 5], [2, 4], [1, 7]]}}

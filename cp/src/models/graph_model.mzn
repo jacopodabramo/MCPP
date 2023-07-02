@@ -32,19 +32,22 @@ array[GRAPH_EDGES] of NODES: starting_nd;
 array[GRAPH_EDGES] of NODES: ending_nd;
 array[GRAPH_EDGES] of int: weights;
 
+int: low_bound;
+int: up_bound;
 
+var low_bound..up_bound: maximum;
 
 % Variables
 array[COURIERS, NODES] of var bool :ns;
 array[COURIERS, GRAPH_EDGES] of var bool :es;
-array[COURIERS] of var int: path_dist;
+array[COURIERS] of var 0..up_bound: path_dist;
 
 % Variable to apply bin packing
 array[ITEMS] of var COURIERS: loads;
 
 % Symmetry breaking variables
 array[NODES, COURIERS] of var bool: symmetry;
-array[COURIERS] of var int: couriers_loads;
+array[COURIERS] of var 0..max(courier_size): couriers_loads;
 
 % force the pair ns es to be a sub graph of the original one for each courier, it also
 % computes the total cost of the path (cycle) obtained (see  https://www.minizinc.org/doc-2.5.5/en/lib-globals.html#index-125)
@@ -92,22 +95,13 @@ constraint if forall(k in 1..courier-1) (courier_size[courier] >= couriers_loads
 
 constraint lex_chain(symmetry);
 
+% Obj setting
+constraint maximum = max(path_dist);
+
 % Constraint to avoid any courier to return in an already visited node:
 % this may ensure that meaningless part of the tree are not visited
-/*
-constraint forall(i in GRAPH_EDGES)(
-    if count([es[k,i]|k in COURIERS], true, 1) /\
-              starting_nd[i] != 1 /\
-              ending_nd[i] != items + 2 /\
-              ending_nd[i] > starting_nd[i]
-              then
-                 count([es[k, ((items+1)*(ending_nd[i]-2)+(starting_nd[i]-2)+1)]|k in COURIERS], true, 0)
-              endif
-);
-*/
-
 solve ::  int_search(loads, first_fail, indomain_min)
-  minimize(max(path_dist));
+  minimize(maximum);
 
 %solve minimize(max(path_dist));
 

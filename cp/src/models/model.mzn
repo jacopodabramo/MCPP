@@ -8,21 +8,24 @@
 include "alldifferent.mzn";
 include "globals.mzn";
 
-% useful sets
-set of int: COURIERS = 1..courier;
-set of int: ITEMS = 1..items;
-set of int: NODES = 1..items + 1;
 
 % Input variables
 int: courier;
 int: items;
 
+% useful sets
+set of int: COURIERS = 1..courier;
+set of int: ITEMS = 1..items;
+set of int: NODES = 1..items + 1;
+
 array[COURIERS] of int: courier_size;
 array[ITEMS] of int: item_size;
 array[NODES, NODES] of int: distances;
 
+int :max_dist = sum([max([distances[i, j] | i in NODES]) | j in NODES]);
+
 % Model variables
-array[COURIERS] of var int: obj_dist;
+array[COURIERS] of var 0..max_dist: obj_dist;
 array[COURIERS, NODES] of var NODES: asg;
 
 % objective function
@@ -32,11 +35,13 @@ int :up_bound = sum([distances[i, j] | i in NODES, j in NODES]);
 
 var low_bound..up_bound: maximum;
 
-array[NODES, COURIERS] of var int: symmetry;
+int :max_load = max(courier_size) + 1;
 
-array[ITEMS] of var int: loads;
+%array[NODES, COURIERS] of var 0..items+1: symmetry;
 
-array[COURIERS] of var int: couriers_loads;
+array[ITEMS] of var 0..courier: loads;
+
+array[COURIERS] of var 0..max_load: couriers_loads;
 
 
 % ensure that each courier starts and ends in origin point
@@ -84,16 +89,16 @@ constraint forall(k in COURIERS)(
 );
 
 constraint maximum = max(obj_dist);
-
+/*
 constraint if forall(k in 1..courier-1) (courier_size[courier] >= couriers_loads[k]) then 
             forall(k in COURIERS) (forall(i in NODES) (symmetry[i,k] = asg[k, i]))
            else forall(k in COURIERS) (forall(i in NODES) (symmetry[i,k] = 0)) endif;
 
 constraint lex_chain(symmetry);
-
+*/
 solve :: seq_search([
-                int_search(loads, first_fail, indomain_min),
-                int_search(asg, first_fail, indomain_min)])
+                int_search(asg, first_fail, indomain_min),
+                int_search(loads, first_fail, indomain_min)])
      minimize(maximum);
 
 %solve minimize(max(obj_dist));

@@ -1,6 +1,7 @@
-import time
+import time as t
 from smt.src.smt_functions import *
-from utils import saving_file, format_output_smt_model0, format_output_smt_model1
+from utils import saving_file
+from sat.src.sat_functions import  at_most_one_bw, exactly_one_bw
 
 
 class SMTsolver:
@@ -13,75 +14,73 @@ class SMTsolver:
         self.set_optimizer() # setting the Optimize
 
     def solve(self):
+        if self.model == 1:
+            path = self.output_dir + "/smt_1/"
+        elif self.model == 0:
+            path = self.output_dir + "/smt_0/"
+        
         for key, value in self.data.items():
             print('File =', key)
-            path = self.output_dir
-            filename = "out_" + key.split('.')[0] + '.json'
+            filename = key.split('.')[0][-2:] + '.json'
             try:
                 solution = self.solve_instance(value)
                 opt = True
                 if solution[1] == self.timeout:
                     opt = False
-                if self.model == 0:
-                    json_dict = format_output_smt_model0(solution,opt)
-                    path = path + "/smt_model0/"
-                    saving_file(json_dict, path, filename)
-                else:
-                    json_dict = format_output_smt_model1(solution,opt)
-                    path = path + "/smt_model1/"
-                    saving_file(json_dict, path, filename)
+                json_dict = {'z3-solver':self.format_output(solution,opt)}
+                saving_file(json_dict, path, filename)
                 self.set_optimizer()
             except TimeoutError:
                 print("TimeoutError")
-                if self.model == 0:
-                    path = path + "smt_model0/"
-                    saving_file({'unknown_solution': True}, path, filename)
-                else:
-                    path = path + "smt_model1/"
-                    saving_file({'unknown_solution': True}, path, filename)
+                saving_file({'unknown_solution': True}, path, filename)
+            '''
             except Exception as e:
                 print("Unsatisfiable",e)
-                if self.model == 0:
-                    path = path + "/smt_model0/"
-                    saving_file({'satisfiable': False}, path, filename)
-                else:
-                    path = path + "/smt_model1/"
-                    saving_file({'satisfiable': False}, path, filename)
+                saving_file({'satisfiable': False}, path, filename)
+            '''
+           
+           
+    def format_output(self, solution, opt):
+        if self.model == 0:
+            return format_output_smt_model0(solution,opt)
+        elif self.model == 1:
+            return format_output_smt_model1(solution,opt)
+        
 
     def set_optimizer(self):
         self.optimizer = Optimize()
         self.optimizer.set(timeout=self.timeout*1000)
 
     def solve_instance(self, data):
-        start_time = time.time()
+        start_time = t.time()
         if self.model == 0:
             objective, model_variables = self.set_model_zero(data)
             self.optimizer.minimize(objective)
             if self.optimizer.check() == sat:
-                total_time = time.time() - start_time
-                results = self.evaluate(model_variables)
+                total_time = t.time() - start_time
+                results = evaluate(self.optimizer.model(),model_variables)
 
-                self.print_solutions(results, total_time)
+                print_solutions(results, total_time)
             elif self.optimizer.check() == unsat:
                 raise Exception
             else:
                 total_time = self.timeout
-                results = self.evaluate(model_variables)
-                self.print_solutions(results, total_time)
+                results = evaluate(self.optimizer.model(),model_variables)
+                print_solutions(results, total_time)
 
         else:
             objective, model_variables = self.set_model_one(data)
             self.optimizer.minimize(objective)
             if self.optimizer.check() == sat:
-                total_time = time.time() - start_time
-                results = self.evaluate_model1(model_variables)
-                self.print_solutions_model1(results, total_time)
+                total_time = t.time() - start_time
+                results = evaluate_model1(self.optimizer.model(),model_variables)
+                print_solutions_model1(results, total_time)
             elif self.optimizer.check() == unsat:
                 raise Exception
             else:
                 total_time = self.timeout
-                results = self.evaluate_model1(model_variables)
-                self.print_solutions_model1(results, total_time)
+                results = evaluate_model1(self.optimizer.model(), model_variables)
+                print_solutions_model1(results, total_time)
 
         return results,total_time
 
@@ -163,7 +162,7 @@ class SMTsolver:
 
         # Objective 
         maximum = Int(f"max")
-        self.optimizer.add(maximum == my_max([final_distances[i] for i in range(couriers)]))
+        self.optimizer.add(maximum == smt_max([final_distances[i] for i in range(couriers)]))
 
         return maximum, (couriers_loads, final_distances, asg, items, couriers)
 
@@ -244,69 +243,7 @@ class SMTsolver:
                  range(items+1)]))
         # Searching the max
         maximum = Int(f"max")
-        self.optimizer.add(maximum == my_max([final_distances[k] for k in range(couriers)]))
+        self.optimizer.add(maximum == smt_max([final_distances[k] for k in range(couriers)]))
 
         return maximum, (starting_point, ending_point, couriers_loads, final_distances, items, couriers)
 
-    def evaluate(self, results):
-        couriers_loads, final_distances, asg, items, couriers = results
-
-        model = self.optimizer.model()
-
-        assignments = [[model.evaluate(asg[k][j]) for j in range(items+1)] for k in range(couriers)]
-
-        distances = [model.evaluate(final_distances[i]) for i in range(couriers)]
-
-        loads = [model.evaluate(couriers_loads[k]) for k in range(couriers)]
-
-        return assignments, distances, loads, couriers, items
-
-    def evaluate_model1(self, result):
-        starting_point, ending_point, couriers_loads, final_distances, items, couriers = result
-
-        model = self.optimizer.model()
-
-        start = [[model.evaluate(starting_point[k][j]) for j in range(items+1)]
-                 for k in range(couriers)]
-        ending = [[model.evaluate(ending_point[k][j]) for j in range(items+1)]
-                  for k in range(couriers)]
-
-        load = [model.evaluate(couriers_loads[k]) for k in range(couriers)]
-        d = [model.evaluate(final_distances[k]) for k in range(couriers)]
-
-        return start, ending, load, d, items, couriers
-
-    def print_solutions(self, solution, seconds):
-        asg, distances, _, couriers, items = solution
-        for k in range(couriers):
-            print("Courier = ", k)
-            print(asg[k])
-            for i in range(items + 1):
-                if asg[k][i].as_long() != -1:
-                    if asg[k][i].as_long() == items + 1:
-                        first_pos = i + 1
-                        second_pos = 'ORIGIN'
-                    elif i == items + 1:
-                        first_pos = 'ORIGIN'
-                        second_pos = asg[k][i].as_long() + 1
-                    else:
-                        first_pos = i + 1
-                        second_pos = asg[k][i].as_long() + 1
-
-                    print("Starting node: ", first_pos, "Ending: ", second_pos)
-
-        print(f"Total distances =  {distances}")
-        print("TIME = ", seconds)
-        print("--------------------------------------------------")
-
-    def print_solutions_model1(self,solutions,seconds):
-        start, ending, load, d, _, couriers = solutions
-
-        for k in range(couriers):
-            print("Courier = ", k)
-            print("Starting = ", start[k])
-            print("Ending = ", ending[k])
-            print("Load = ", load[k])
-            print(f"Final distance for courier {k} = {d[k]}")
-
-        print('total time',seconds)

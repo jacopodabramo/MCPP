@@ -14,6 +14,9 @@ class SATsolver:
 
     # Solving part
     def solve(self):
+        """
+        solve a SAT problem for a set of instances
+        """
         # to select the correct folder
         type_model = ""
         if self.model == START_END_SAT:
@@ -46,33 +49,60 @@ class SATsolver:
             saving_file(dict_to_save, path, filename)
 
     def optimizer(self, instance, search):
+        """
+        :param instance: input data for the problem
+        :param search: defines the type of search (binary,linear)
+        :return: solution of the sat problem
+        """
         if search == LINEAR_SEARCH:
             return self.linear_search(instance)
         elif search == BINARY_SEARCH:
             return self.binary_search(instance)
 
     def set_solver(self):
+        """
+        defines a z3 Solver
+        """
         self.solver = Solver()
         self.solver.set('timeout', self.timeout * 1000)
 
     def get_solution(self, model, results):
+        """
+        :param model: z3 model
+        :param results: solutions of the problem to be evaluated
+        :return: solutions evaluated (numeric solution)
+        """
         if self.model == START_END_SAT:
             return get_numeric_solution_model0(model, results)
         elif self.model == SINGLE_MATRIX_SAT:
             return get_numeric_solution_model1(model, results)
 
     def print(self,final_evaluation, time_solution):
+        """
+        :param final_evaluation: solutions evaluated
+        :param time_solution: time taken by the solver to solve the problem
+        """
         if self.model == 0:
             print_solution_model0(final_evaluation, time_solution)
         else:
             print_solution_model1(final_evaluation, time_solution)
 
     def format_output(self, final_evaluation, opt, time):
+        """
+        :param final_evaluation: solutions evaluated
+        :param opt: defines if the solution is optimal or not
+        :param time: time taken by the solver to solve the problem
+        :return: dictionary of the form {time: optimal: obj: sol:}
+        """
         if self.model == 0:
             return format_output_sat_model0(final_evaluation, opt, time)
         else:
             return format_output_sat_model1(final_evaluation, opt, time)
     def linear_search(self, instance):
+        """
+        :param instance: input data
+        :return: dictionary containing the solution
+        """
 
         print('Starting optimization exploiting linear search')
 
@@ -90,7 +120,7 @@ class SATsolver:
         start_time = t.time()
 
         while satisfiable:
-            conv_upper_bound = converter_boolean2(upper_bound, distance_bits)  # converting
+            conv_upper_bound = [True if el == '1' else False for el in to_binary(upper_bound, distance_bits)]  # converting
             # Max
             max_val = [[Bool(f"max_{j}_{i}") for i in range(distance_bits)] for j in range(couriers)]
             self.solver.add(
@@ -144,10 +174,10 @@ class SATsolver:
         return output_dict
 
     def binary_search(self, instance):
-        '''
-        It takes the input instance and perform the optimization
-        using a binary search approach.
-        '''
+        """
+        :param instance: input data
+        :return: dictionary containing the solution
+        """
 
         print('Starting optimization exploiting binary search')
 
@@ -175,8 +205,7 @@ class SATsolver:
 
         while satisfiable:
             # Get bound
-            conv_middle_bound = converter_boolean2(middle, distance_bits)  # converting
-
+            conv_middle_bound = [True if el == '1' else False for el in to_binary(middle, distance_bits)]  # converting
             # Update the maximum
             max_val = [[Bool(f"max_{j}{i}") for i in range(distance_bits)] for j in range(couriers)]
             self.solver.add(max_of_bin_int([results[-1][k] for k in range(couriers)], max_val, 'maxobj'))
@@ -234,17 +263,15 @@ class SATsolver:
         return self.set_constraints_model1(data)
 
     def set_constraints_model0(self, data):
-        '''
+        """
         Take a tuple with the ocntent of an instance and then build the model:
-
         The function is divided into two components:
             - Initialization of z3 variables.
             - Setting of the constraints on the variables.
-        
-        For references on the structure of the model refer to the README in the sat folder.
 
-        '''
-
+        :param data: input data
+        :return: a tuple containing the structures of the model
+        """
         couriers, items, couriers_size, item_size, distances, loads_bits, distances_bits = data
         start = [
             [[Bool(f"start_{k}_{i}_{j}")
@@ -467,7 +494,14 @@ class SATsolver:
         )
 
     def set_constraints_model1(self, data):
-
+        """
+        this model is defined by 3 matrices:
+          - assignments: (COURIERS x ITEMS+1) for each couriers the items assigned
+          - couples: (ITEMS+1 x ITEMS+1) if 1 in position i,j it means that the a couriers goes from the item i-th to the item j-th
+          - orderings (ITEMS+2 x ITEMS+2) defines the ordering for the couriers
+        :param data: input data
+        :return: a tuple containing the structures of the model
+        """
         couriers, items, couriers_size, item_size, distances, loads_bits, distances_bits = data
         # Structures
 

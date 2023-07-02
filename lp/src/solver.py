@@ -3,10 +3,10 @@ from utils import saving_file, set_lower_bound
 from pulp import *
 import numpy as np
 import time
-
+from constants import *
 
 class MIPsolver:
-    def __init__(self, data, output_dir, timeout=300, model=1):
+    def __init__(self, data, output_dir, timeout=300, model=SINGLE_MATRIX_MIP):
         self.model = None
         self.data = data
         self.output_dir = output_dir
@@ -15,19 +15,19 @@ class MIPsolver:
 
     def solve(self):
         """
-        The function solve an LP problem for a set of instances
+        solve an LP problem for a set of instances
         """
-        solvers = ['PULP_CBC_CMD', 'GLPK_CMD']
+
         dict_to_save = {}
 
         for key, value in self.data.items():
-            if self.mip_model == 1:
+            if self.mip_model == SINGLE_MATRIX_MIP:
                 path = self.output_dir + "/mip_1/"
             else:
                 path = self.output_dir + "/mip_0/"
             filename = key.split('.')[0][-2:] + '.json'
 
-            for solver in solvers:
+            for solver in MIP_SOLVERS:
                 print('File =', key, ' wtih solver:', solver)
 
                 try:
@@ -37,7 +37,7 @@ class MIPsolver:
                     if result[1] >= self.timeout:
                         opt = False
 
-                    if self.mip_model == 1:
+                    if self.mip_model == SINGLE_MATRIX_MIP:
                         json_dict = format_output_mip_model1(result, opt)
                     else:
                         json_dict = format_output_mip_model0(result, opt)
@@ -48,9 +48,12 @@ class MIPsolver:
                     print("No solution found in the time given")
                     json_dict = {'unknown_solution': True}
                     dict_to_save[solver] = json_dict
+                except ValueError:
+                    print("unsatisfiable")
+                    json_dict = {'satisfiable': True}
+                    dict_to_save[solver] = json_dict
                 except Exception as e:
-                    print("No solution")
-                    json_dict = {'satisfiable': False}
+                    json_dict = {'unknown_solution': True}
                     dict_to_save[solver] = json_dict
 
                 print('-------------------------------------------------------------')
@@ -63,27 +66,27 @@ class MIPsolver:
         """
 
         # optimal case
-        if self.model.sol_status == 1:
-            if self.mip_model == 1:
+        if self.model.sol_status == OPTIMAL_CASE:
+            if self.mip_model == SINGLE_MATRIX_MIP:
                 print_solution_model1(result, self.model.solutionTime)
             else :
                 print_solution_model0(result, self.model.solutionTime)
 
         # sub-optimal case
-        elif self.model.sol_status == 2:
+        elif self.model.sol_status == SUB_OPTIMAL_CASE:
             self.model.solutionTime = self.timeout
-            if self.mip_model == 1:
+            if self.mip_model == SINGLE_MATRIX_MIP:
                 print_solution_model1(result, self.model.solutionTime)
             else:
                 print_solution_model0(result, self.model.solutionTime)
 
         # no solution in time given
-        elif self.model.sol_status == 0:
+        elif self.model.sol_status == NO_SOLUTION:
             raise TimeoutError
 
         # not satisfiable
         else:
-            raise Exception
+            raise ValueError
 
         return result, self.model.solutionTime
 
@@ -96,16 +99,16 @@ class MIPsolver:
         if self.model.solutionTime >= self.timeout:
             raise TimeoutError
 
-        # optimal case and non optimal case
-        elif self.model.status == 1:
-            if self.mip_model == 1:
+        # optimal case
+        elif self.model.status == OPTIMAL_CASE:
+            if self.mip_model == SINGLE_MATRIX_MIP:
                 print_solution_model1(result, self.model.solutionTime)
             else:
                 print_solution_model0(result, self.model.solutionTime)
 
         # not satisfiable
         else:
-            raise Exception
+            raise ValueError
 
         return result, self.model.solutionTime
 
@@ -120,23 +123,23 @@ class MIPsolver:
         self.model = LpProblem('MCPP', LpMinimize)
 
         # definition of the constraints
-        if self.mip_model == 1:
+        if self.mip_model == SINGLE_MATRIX_MIP:
             result = self.set_constraints_model1(instance)
-        elif self.mip_model == 0:
+        else:
             result = self.set_constraints_model0(instance)
 
         # choice of the solver
-        if solver_name == 'PULP_CBC_CMD':
+        if solver_name == MIP_SOLVERS[0]:
             solver = PULP_CBC_CMD(msg=False, timeLimit=self.timeout)
         else:
-            solver = GLPK_CMD(path='C:\\Users\\jacop\\Downloads\\glpk-4.65\\w64\\glpsol.exe', msg=False,
+            solver = GLPK_CMD(path='C:\\Users\\jacop\\Downloads\\winglpk-4.65\\glpk-4.65\\w64\\glpsol.exe', msg=False,
                               timeLimit=self.timeout)
 
         # solving
         self.model.solve(solver)
 
         # check the solution based on the solver choosen
-        if solver_name == 'PULP_CBC_CMD':
+        if solver_name == MIP_SOLVERS[0]:
             result, time = self.check_solution_CBC(result)
         else:
             result, time = self.check_solution_GLPK(result)
@@ -152,7 +155,6 @@ class MIPsolver:
         :param name: name of the product
         :return: the result of the product
         """
-
         res = LpVariable(cat=LpInteger, name=name)
         self.model += ub * binary_var >= res
         self.model += countinuos_var >= res
@@ -161,12 +163,27 @@ class MIPsolver:
         return res
 
     def If(self, a, b, M, name):
+        """
+        if(a>b)
+        :param a: left side condition
+        :param b: right side condition
+        :param M: big M
+        :param name: name of the if
+        :return: binary var: 1 if a>b 0 otherwise
+        """
         delta = LpVariable(cat=LpInteger, name=name)
         self.model += a >= b + (0.001) - M * (1 - delta)
         self.model += a <= b + M * delta
         return delta
 
     def And(self, a, b, name):
+        """
+        And(a,b)
+        :param a: first parameter of And condition
+        :param b: second parameter of And condition
+        :param name: name of the And
+        :return: 1 if a and b is true, false otherwise
+        """
         delta = LpVariable(cat=LpInteger, name=name)
         self.model += delta <= a
         self.model += delta >= a + b - 1
@@ -176,9 +193,10 @@ class MIPsolver:
 
     def set_constraints_model1(self, data):
         """
-                :param data: data of the instance
-                :return: model structures
-                """
+        :param data: data of the instance
+        :return: model structures
+        """
+        print('setting constraints...')
 
         # Instance retrieval
         couriers, items, courier_size, item_size, distances = data
@@ -296,7 +314,7 @@ class MIPsolver:
             self.model += couriers_distances[k] == lpSum([
                 self.linear_prod(
                     self.And(asg[k][j], asg[k][i], f'and_dist_{i}_{j}_{k}'),
-                    self.linear_prod(couples[i][j], distances[i][j], distances[i][j], f'p1{k}_{i}_{j}'),
+                    couples[i][j]*distances[i][j],
                     distances[i][j],
                     f'prod_2{k}_{i}_{j}'
                 )
@@ -307,6 +325,7 @@ class MIPsolver:
         for el in couriers_distances:
             self.model += maximum >= el
 
+
         return couriers, items, asg, couples, couriers_distances, courier_loads, distances
 
     def set_constraints_model0(self, data):
@@ -314,7 +333,7 @@ class MIPsolver:
         :param data: data of the instance
         :return: model structures
         """
-
+        print('setting constraints...')
         # Instance retrieval
         couriers, items, courier_size, item_size, distances = data
 

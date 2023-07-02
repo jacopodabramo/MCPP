@@ -4,6 +4,10 @@ from utils import get_dict
 
 
 def print_solution_model1(result, time):
+    """
+    :param result: the result of the MIP solver
+    :param time: time taken to execute the instance
+    """
     couriers, items, asg, couples, couriers_distances, courier_loads, distances = result
 
     found = True
@@ -34,6 +38,10 @@ def print_solution_model1(result, time):
 
 
 def print_solution_model0(result, time):
+    """
+    :param result: the result of the MIP solver
+    :param time: time taken to execute the instance
+    """
     asg, weights, obj_dist, couriers, items, _ = result
     depot = True
     prec = 0
@@ -58,6 +66,11 @@ def print_solution_model0(result, time):
 
 
 def format_output_mip_model1(result, opt):
+    """
+    :param result: the result of the MIP solver
+    :param opt: indicates whether it is an optimal solution or not
+    :return: a dictionary {time: optimal: obj: sol:}
+    """
     couriers, items, asg, couples, couriers_distances, courier_loads, distances = result[0]
     seconds = result[1].__floor__()
     optimal = opt
@@ -87,6 +100,11 @@ def format_output_mip_model1(result, opt):
 
 
 def format_output_mip_model0(result, opt):
+    """
+    :param result: the result of the MIP solver
+    :param opt: indicates whether it is an optimal solution or not
+    :return: a dictionary {time: optimal: obj: sol:}
+    """
     asg, weigths, obj_dist, couriers, items, distances = result[0]
     seconds = result[1].__floor__()
     optimal = opt

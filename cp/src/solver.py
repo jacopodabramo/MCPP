@@ -5,7 +5,6 @@ from cp.src.cp_utils import *
 
 class CPsolver:
     def __init__(self, data, output_dir, timeout=300, model=1):
-
         self.output_dir = output_dir
         self.timeout = timeout
 
@@ -13,33 +12,44 @@ class CPsolver:
             self.data = data
             self.solver_path = "./cp/src/models/model.mzn"
         elif model == GRAPH_MODEL_CP:
-            self.data = load_preprocessing(data)
+            self.data = loop_preprocessing_graph(data)
             self.solver_path = "./cp/src/models/graph_model.mzn"
 
     def solve(self):
         model = Model(self.solver_path)
         if self.solver_path == "./cp/src/models/model.mzn":
-            self.model_solve(model)
+            self.circuit_model_solve(model)
         else:
             self.graph_model_solve(model)
 
-    def model_solve(self, model):
-        solver_list = ['org.gecode.gist', 'chuffed', 'gecode']
+    def circuit_model_solve(self, model):
+        '''
+        :param model: a minizinc model (circuit or grpah based) to solve the current instance
 
+        :result None, it saves the result in json format for each solver in the solver list,
+                which is located in the constants file
+        '''
         for key, value in self.data.items():
+
             values = list(value) # casting for modify the value of couriers (mutable object)
+
             print("File = ", key)
+
             path = self.output_dir + "/cp_1/"
             filename = key.split('.')[0][-2:] + '.json'
-            corresponding_dict = sorting_couriers(values) # Passing by reference
 
+            # Get the corresponding dictionary
+            corresponding_dict = sorting_couriers(values) # Passing by reference
+            print(corresponding_dict)
+            # solve for each file
             results = {}
-            for solver_name in solver_list:
+            for solver_name in CP_SOLVERS:
                 solver = Solver.lookup(solver_name)
                 print('Current solver', solver_name)
                 try:
                     instance = Instance(solver, model)
-                    result = self.model_solve_instance(values, instance)
+                    result = self.circuit_model_solve_instance(values, instance)
+
                     # Unsat
                     if result.status is Status.UNSATISFIABLE:
                         output_dict = {
@@ -54,6 +64,7 @@ class CPsolver:
                     else:
                         assignments = result["asg"]
                         obj_dist = result["obj_dist"]
+                        distances = instance["distances"]
 
                         if result.status is Status.OPTIMAL_SOLUTION:
                             optimal = True
@@ -61,12 +72,16 @@ class CPsolver:
                         else:
                             optimal = False
                             time_computed = self.timeout
+                        
+                        evaluated_results = (
+                                            assignments,
+                                            obj_dist,
+                                            distances,
+                                            time_computed
+                        )
 
-                        print_model(assignments, instance["distances"], obj_dist, time_computed,corresponding_dict)
-                        output_dict = format_output_cp_model(time_computed, optimal, obj_dist, assignments,corresponding_dict)
-
-                    # This function should be carried out from here and put in a place where
-                    # All the solvers are ran toghether, so that the dict contains
+                        print_model(evaluated_results, corresponding_dict)
+                        output_dict = format_output_cp_model(evaluated_results, optimal, corresponding_dict)
 
                 except Exception as e:
                     print("Exception:", e)
@@ -76,7 +91,6 @@ class CPsolver:
             saving_file(results, path, filename)
 
     def graph_model_solve(self, model):
-        solver_list = ['org.gecode.gist', 'chuffed', 'gecode']
 
         for key,value in self.data.items():
             values = list(value)  # casting for modify the value of couriers (mutable object)
@@ -86,7 +100,7 @@ class CPsolver:
             corresponding_dict = sorting_couriers(values)  # Passing by reference
 
             results = {}
-            for solver_name in solver_list:
+            for solver_name in CP_SOLVERS:
                 solver = Solver.lookup(solver_name)
                 print('Current solver', solver_name)
 
@@ -111,6 +125,8 @@ class CPsolver:
                         ns = result["ns"]
                         es = result["es"]
                         obj_dist = result["path_dist"]
+                        starting_nd = instance['starting_nd']
+                        ending_nd = instance['ending_nd']
 
                         # Optimal solution
                         if result.status is Status.OPTIMAL_SOLUTION:
@@ -119,9 +135,18 @@ class CPsolver:
                         else:
                             optimal = False
                             time_computed = self.timeout
+                        
+                        evaluated_result = (
+                                    ns, 
+                                    es,
+                                    starting_nd,
+                                    ending_nd,
+                                    obj_dist,
+                                    time_computed
+                        )
 
-                        print_graph(ns, es, instance['starting_nd'], instance['ending_nd'], obj_dist, time_computed,corresponding_dict)
-                        output_dict = format_output_graph_model(time_computed, optimal, ns,es, instance['starting_nd'],instance['ending_nd'], obj_dist,corresponding_dict)
+                        print_graph(evaluated_result, corresponding_dict)
+                        output_dict = format_output_graph_model(evaluated_result, optimal, corresponding_dict)
                             # saving on file
 
 
@@ -132,7 +157,7 @@ class CPsolver:
 
             saving_file(results, path, filename)
 
-    def model_solve_instance(self, d, instance):
+    def circuit_model_solve_instance(self, d, instance):
         courier, item, courier_size, item_size, distances = d
         instance["courier"] = courier
         instance["items"] = item
@@ -144,7 +169,16 @@ class CPsolver:
 
     def graph_model_solve_instance(self, d, instance):
         
-        n_couriers, n_items, couriers_size, objects_size, starting_nd, ending_nd, weights, n_edges = d
+        (n_couriers, 
+         n_items, 
+         couriers_size, 
+         objects_size, 
+         starting_nd, 
+         ending_nd, 
+         weights, 
+         n_edges,
+         low_bound,
+         up_bound  ) = d
         
         instance["courier"] = n_couriers
         instance["items"] = n_items
@@ -154,5 +188,7 @@ class CPsolver:
         instance["ending_nd"] = ending_nd
         instance["weights"] = weights
         instance["n_edges"] = n_edges
+        instance['low_bound'] = low_bound
+        instance['up_bound'] = up_bound
         return instance.solve(timeout=datetime.timedelta(seconds=self.timeout), processes=10, random_seed=42,
                               free_search=True)

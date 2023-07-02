@@ -1,11 +1,30 @@
 from utils import *
 
 
-def print_graph(ns, es, starting_nd, ending_nd, path_dist, seconds,corresponding_dict):
+def print_graph(evaluated_result,corresponding_dict):
+    '''
+    :param evaluated_result: tuple with the whole set of assigned variables 
+                              plus the time needed to compute the solution.
+    :param corresponding_dict: dictionary to reorder the assignments in the original order, 
+                               see sorting couriers for additional information.
+
+    :result: None, it simply print on terminal the solution found by the graph model 
+    '''
+    (
+        ns,
+        es, 
+        starting_nd, 
+        ending_nd,
+        path_dist, 
+        seconds
+    ) = evaluated_result 
+
     for i in range(len(ns)):
         old_pos = corresponding_dict[i]
         print("Courier = ", old_pos)
+
         for j in range(len(es[old_pos])):
+
             if es[old_pos][j] == True:
                 if starting_nd[j] == 1 or starting_nd[j] == len(ns[old_pos]):
                     start = "O"
@@ -23,23 +42,99 @@ def print_graph(ns, es, starting_nd, ending_nd, path_dist, seconds,corresponding
 
 
 
-def search_graph_path(starting_nd,ending_nd,es,courier):
+def search_graph_path(starting_nd, ending_nd, es, courier):
+    '''
+    :param starting_nd: array |EDGES| containing the first endpoint of each edge 
+                        contained in the graph 
+    :param ending_nd: array |EDGES| containing the second endpoint of each edge 
+                      contained in the graph 
+    :param es: array array Mx|EDGES| containing the edges for each courier 
+    :param courier: Is the i-th courier for which we need the path
+
+    :result a dictionary containing the path for the i-th courier.
+    '''
     true_path = {}
     for j in range(len(es[courier])):
+
         if es[courier][j]:
             start_pos = starting_nd[j] - 1
             end_pos = ending_nd[j] - 1
             true_path[start_pos] = end_pos
+
     return true_path
 
+def loop_preprocessing_graph(data):
+    '''
+    param: data: the instances in the standard form
 
-def print_model(asg, matrix, obj_dist, seconds,corresponding_dict):
+    result: the instances in the form correct for the grpah model
+    '''
+    for d in data.keys():
+        data[d] = preprocessing_graph(data[d])
+    return data
+
+def preprocessing_graph(instance):
+    '''
+    param: instance: the instance in the standard form
+
+    result: the instance in the correct form for the graph model
+    '''
+    (n_couriers, 
+     n_items, 
+     couriers_size, 
+     objects_size, 
+     distances) = instance
+
+    low_bound = set_lower_bound(distances)
+    up_bound = sum([max(distances[i]) for i in range(n_items)])
+
+    starting_nd = []
+    ending_nd = []
+    weigths = []
+    for i in range(1, len(distances[0]) + 1):
+        for j in range(1, len(distances[0]) + 1):
+            if i != j and i < len(distances[0]):
+                starting_nd.append(i + 1)
+                ending_nd.append(j + 1)
+                weigths.append(distances[i - 1][j - 1])
+            elif i != j:
+                starting_nd.append(1)
+                ending_nd.append(j + 1)
+                weigths.append(distances[i - 1][j - 1])
+            elif i == j and i == len(distances[0]):
+                # Add the no travel node
+                starting_nd.append(1)
+                ending_nd.append(len(distances[0]) + 1)
+                weigths.append(0)
+    return (
+            n_couriers, 
+            n_items, 
+            couriers_size, 
+            objects_size, 
+            starting_nd, 
+            ending_nd, 
+            weigths, 
+            len(starting_nd),
+            low_bound,
+            up_bound
+    )
+
+
+def print_model(evaluated_results, corresponding_dict):
+    (asg,
+     obj_dist,
+     distances,
+     seconds) = evaluated_results
     for k in range(len(asg)):
         print("Courier = ", corresponding_dict[k])
         for i in range(len(asg[k])):
             if asg[k][i] != i + 1:
-                print("Starting Node: {} Ending Node: {} ({} km)".format(i + 1, asg[corresponding_dict[k]][i],
-                                                                         matrix[i][asg[corresponding_dict[k]][i] - 1]))
+                print("Starting Node: {} Ending Node: {} ({} km)".format(
+                                                                i + 1, 
+                                                                asg[corresponding_dict[k]][i],
+                                                                distances[i][asg[corresponding_dict[k]][i] - 1]
+                                                                )
+                )
     print("Total distances = ", obj_dist)
     print("TIME =", seconds)
     print("---------------------------------------------")
@@ -67,12 +162,25 @@ def sorting_correspondence(res, corresponding_dict):
 
 
 
-def format_output_graph_model(seconds, optimal, ns, es, starting_nd,ending_nd, obj_dist,corresponding_dict):
+def format_output_graph_model(evaluated_result, optimal, corresponding_dict):
     '''
-    Create the the dictionary to save in the output folder, it needs to
-    convert the assignment format in a list containing only the correct
-    assignments.
+    :param evaluated_result: tuple with the whole set of assigned variables 
+                              plus the time needed to compute the solution.
+    
+    :param optimal: True if the solution is the optimal one
+    :param corresponding_dict: dictionary to reorder the assignments in the original order, 
+                               see sorting couriers for additional information.
+
+    :result: the dictionary to save in the output folder, 
     '''
+    (
+     ns,
+     es, 
+     starting_nd, 
+     ending_nd,
+     obj_dist, 
+     seconds) = evaluated_result
+    
     seconds = seconds.__floor__()
     obj = max(obj_dist)
     res = []
@@ -93,12 +201,18 @@ def format_output_graph_model(seconds, optimal, ns, es, starting_nd,ending_nd, o
 
 
 
-def format_output_cp_model(seconds, optimal, obj_dist, assignments,corresponding_dict):
+def format_output_cp_model(evaluated_result, optimal, corresponding_dict):
     '''
     Create the the dictionary to save in the output folder, it needs to
     convert the assignment format in a list containing only the correct
     assignments.
     '''
+    (assignments,
+     obj_dist,
+     _,
+     seconds
+    )=evaluated_result
+
     seconds = seconds.__floor__()
     obj = max(obj_dist)
 

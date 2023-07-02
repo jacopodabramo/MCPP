@@ -1,1 +1,0 @@
-{"PULP_CBC_CMD": {"time": 30, "optimal": false, "obj": 200, "sol": [[8, 10], [6], [1, 2], [5], [7, 9], [], [4], [3]]}, "GLPK_CMD": {"unknown_solution": true}}
