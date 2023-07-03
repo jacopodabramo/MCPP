@@ -11,6 +11,7 @@
 */
 include "alldifferent.mzn";
 include "globals.mzn";
+include "bounded_path.mzn";
 
 % useful sets
 set of int: COURIERS = 1..courier;
@@ -64,7 +65,6 @@ constraint forall(i in 2..items+1)(
 );
 
 % channelling the loads with the assignments
-
 constraint forall (k in 1..courier) 
       (forall(i in 2..items+1)(
       if ns[k, i] then loads[i-1] = k endif

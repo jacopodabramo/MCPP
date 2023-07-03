@@ -88,6 +88,15 @@ constraint forall(k in COURIERS)(
     )
 );
 
+% sub tour elimination, if the last courier can carry all the packages
+% then all courier must start
+/*
+constraint forall(k in COURIERS) (
+                  if courier_size[courier] >= max(item_size) then 
+                  asg[k, items+1] != items+1   
+                  endif
+            );
+*/
 constraint maximum = max(obj_dist);
 /*
 constraint if forall(k in 1..courier-1) (courier_size[courier] >= couriers_loads[k]) then 
@@ -103,6 +112,6 @@ solve :: seq_search([
 
 %solve minimize(max(obj_dist));
 
-output [show(obj_dist) ++ "\n"];
+%output [show(obj_dist) ++ "\n"];
 
 %output [show(symmetry[i, 1]) ++ " "| i in NODES]

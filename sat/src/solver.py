@@ -111,7 +111,7 @@ class SATsolver:
         distance_bits = input_data[6]
         satisfiable = True
         upper_bound = (2 ** distance_bits) - 1
-        i = 0
+        iter = 0
 
         results = self.set_constraints(input_data)
 
@@ -120,14 +120,20 @@ class SATsolver:
         start_time = t.time()
 
         while satisfiable:
-            conv_upper_bound = [True if el == '1' else False for el in to_binary(upper_bound, distance_bits)]  # converting
+            conv_upper_bound = to_binary(upper_bound, distance_bits)  # converting
+            
+            lower_bound = to_binary(set_lower_bound(instance[4]), distance_bits)
             # Max
-            max_val = [[Bool(f"max_{j}_{i}") for i in range(distance_bits)] for j in range(couriers)]
+            max_val = [[Bool(f"max_{j}_{i}_{iter}") for i in range(distance_bits)] for j in range(couriers)]
             self.solver.add(
-                max_of_bin_int([results[-1][k] for k in range(couriers)], max_val, 'max_obj')
+                max_of_bin_int([results[-1][k] for k in range(couriers)], max_val, f'max_obj{iter}')
             )
             self.solver.add(
-                greater_eq(conv_upper_bound, max_val[-1], "bound" + str(i))
+                greater_eq(conv_upper_bound, max_val[-1], f"up_bound{iter}")
+            )
+
+            self.solver.add(
+                greater_eq(max_val[-1], lower_bound, f"low_bound{iter}")
             )
 
             status = self.solver.check()
@@ -135,13 +141,13 @@ class SATsolver:
             try_timeout = t.time() - start_time
 
             if status == unsat:
-                if i == 0:
+                if iter == 0:
                     print('unsat')
                     raise ValueError
                 satisfiable = False
 
             elif status == sat:
-                i += 1
+                iter += 1
                 model = self.solver.model()
                 max_val_binary = [model.evaluate(max_val[-1][j]) for j in range(distance_bits)]
                 upper_bound = convert_from_binary_to_int(max_val_binary)
@@ -159,7 +165,7 @@ class SATsolver:
 
                 optimal = False
                 # Check whether there's at least a solution
-                if i == 0:
+                if iter == 0:
                     raise TimeoutError
                 else:
                     return output_dict
@@ -189,6 +195,9 @@ class SATsolver:
         upper_bound = (2 ** distance_bits) - 1
         lower_bound = set_lower_bound(instance[4]) + 1
 
+        bin_lower_bound = to_binary(set_lower_bound(instance[4]), distance_bits)
+            
+
         bound_distance = (upper_bound - lower_bound) // 2
         middle = upper_bound - bound_distance
         satisfiable = True
@@ -198,18 +207,21 @@ class SATsolver:
         print('Model built, beginning the optimization')
 
         start_time = t.time()
-        i = 0
+        iter = 0
 
         # Setting lower bound
         # Check satisfiability and get a solution
 
         while satisfiable:
             # Get bound
-            conv_middle_bound = [True if el == '1' else False for el in to_binary(middle, distance_bits)]  # converting
+            conv_middle_bound = to_binary(middle, distance_bits)  # converting
             # Update the maximum
-            max_val = [[Bool(f"max_{j}{i}") for i in range(distance_bits)] for j in range(couriers)]
-            self.solver.add(max_of_bin_int([results[-1][k] for k in range(couriers)], max_val, 'maxobj'))
-            self.solver.add(greater_eq(conv_middle_bound, max_val[-1], "bound" + str(i)))
+            max_val = [[Bool(f"max_{j}_{i}_{iter}") for i in range(distance_bits)] for j in range(couriers)]
+            self.solver.add(max_of_bin_int([results[-1][k] for k in range(couriers)], max_val, f'maxobj_{iter}'))
+            
+            self.solver.add(greater_eq(conv_middle_bound, max_val[-1], f"up_bound{iter}"))
+
+            self.solver.add(greater_eq(max_val[-1], bin_lower_bound, f"low_bound_{iter}"))
 
 
             if previous:
@@ -222,7 +234,7 @@ class SATsolver:
             status = self.solver.check()
             try_timeout = t.time() - start_time
             if status == unsat:  # Found unsat in the lower region
-                if i == 0:
+                if iter == 0:
                     raise Exception
                 lower_bound = middle  # Move the search in the upper one
                 previous = True
@@ -239,14 +251,14 @@ class SATsolver:
                 output_dict = self.format_output(final_evaluation, False, self.timeout)
 
             if (self.timeout - try_timeout) < 0:
-                if i == 0:
+                if iter == 0:
                     raise TimeoutError
                 else:
                     return output_dict
 
             bound_distance = (upper_bound - lower_bound) // 2
             middle = upper_bound - bound_distance
-            i += 1
+            iter += 1
 
         evaluation = self.get_solution(model, results)
         final_evaluation = [sorting_correspondence(res, correspondence_dict)
@@ -272,7 +284,15 @@ class SATsolver:
         :param data: input data
         :return: a tuple containing the structures of the model
         """
-        couriers, items, couriers_size, item_size, distances, loads_bits, distances_bits = data
+        (couriers, 
+         items, 
+         couriers_size, 
+         item_size, 
+         distances, 
+         loads_bits, 
+         distances_bits,
+         sub_tour) = data
+        
         start = [
             [[Bool(f"start_{k}_{i}_{j}")
               for i in range(items + 1)]
@@ -299,9 +319,6 @@ class SATsolver:
              for i in range((items + 1) ** 2 + 1)]
             for k in range(couriers)]
 
-        max_item = [[Bool(f"max_item_{i}_{j}")
-                     for i in range(len(item_size[0]))]
-                    for j in range(items)]
 
         # If a courier move from depot then it must return to it but 
         # the last arrival must not be the origin
@@ -400,35 +417,29 @@ class SATsolver:
             self.solver.add(
                 greater_eq(couriers_load[k][-1], couriers_load[k + 1][-1], f'symmetry_{k}')
             )
-
-        self.solver.add(
-            max_of_bin_int(item_size, max_item, 'item_max')
-        )
-
+        
         # Symmetry breaking constraint
         self.solver.add(
             Implies(
-                greater_eq(
-                    couriers_size[-1], max_item[-1], 'tr-ineq'
-                ),
+                sub_tour,
                 And(
                     And([start[k][0][-1] for k in range(couriers)]),
                     And(
                         Not(Or(
                             [start[k][i][j] for k in range(couriers)
-                             for i in range(items + 2 - couriers)
+                             for i in range(items + 2 - couriers, items+1)
                              for j in range(items + 1)]
                         )),
                         Not(Or(
                             [end[k][i][j] for k in range(couriers)
-                             for i in range(items + 2 - couriers)
+                             for i in range(items + 2 - couriers, items+1)
                              for j in range(items + 1)]
                         ))
                     )
                 )
             )
         )
-
+        
         # Accumulation of the load for each courier
         t = 1
         for k in range(couriers):
@@ -502,7 +513,14 @@ class SATsolver:
         :param data: input data
         :return: a tuple containing the structures of the model
         """
-        couriers, items, couriers_size, item_size, distances, loads_bits, distances_bits = data
+        (couriers, 
+         items, 
+         couriers_size, 
+         item_size, 
+         distances, 
+         loads_bits, 
+         distances_bits, 
+         sub_tour) = data
         # Structures
 
         asg = [[Bool(f'asg{i}_{j}') for j in range(items + 1)] for i in range(couriers)]
@@ -655,6 +673,30 @@ class SATsolver:
                 )
             )
 
+        # 9) Ensure that a courier can start from the origin just once
+        for k in range(couriers):
+            self.solver.add(
+                at_most_one_bw(
+                          [And(couples[-1][i], asg[k][i]) for i in range(items)],
+                          f'nds_{k}'  
+                )
+            )
+            self.solver.add(
+                at_most_one_bw(
+                          [And(couples[i][-1], asg[k][i]) for i in range(items)],
+                          f'nde_{k}'  
+                )
+            )
+        # 10) subtour elimination, if the last courier can carry all the 
+        #     packages then all of them must start
+        self.solver.add(
+                    Implies(
+                        sub_tour, 
+                        And([asg[k][-1] for k in range(couriers)])
+                    )
+        )
+    
+        '''
         for i in range(items):
             for j in range(items):
                 if i > j:
@@ -670,7 +712,7 @@ class SATsolver:
                             Not(Or([And(asg[k][i], asg[k][j]) for k in range(couriers)]))
                         )
                     )
-
+        '''
         # 9) Distances sum computation
         t = 1
         for k in range(couriers):

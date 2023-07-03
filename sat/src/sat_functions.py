@@ -26,7 +26,7 @@ def at_most_one_bw(bool_vars, name):
     for i in range(n):
         for j in range(m):
             phi = Not(r[j])
-            if binaries[i][j] == "1":
+            if binaries[i][j]:
                 phi = r[j]
             constraints.append(Or(Not(bool_vars[i]), phi))
     return And(constraints)
@@ -164,8 +164,8 @@ def to_binary(num, length=None):
     num_bin = bin(num).split("b")[-1]
 
     if length:
-        return "0" * (length - len(num_bin)) + num_bin
-    return num_bin
+        num_bin = "0" * (length - len(num_bin)) + num_bin
+    return [True if bit == '1' else False for bit in num_bin]
 
 def convert_from_binary_to_int(val):
     """
@@ -220,13 +220,13 @@ def model_input(instance):
              for i in range(len(distances))]
         ))
     )
-    courier_size_conv = [[True if el == '1' else False for el in to_binary(courier_size[i], load_couriers_bit)] for i in range(couriers)]
-    item_size_conv = [[True if el == '1' else False for el in to_binary(item_size[i], load_couriers_bit)]for i in range(items)]
-    distances_conv = [[
-                    [True if el == '1' else False for el in to_binary(distances[i][j], distances_bit)] for j in range(items+1)
-                 ]for i in range(items+1)]
-
-
+    courier_size_conv = [to_binary(courier_size[i], load_couriers_bit) for i in range(couriers)]
+    item_size_conv = [to_binary(item_size[i], load_couriers_bit) for i in range(items)]
+    distances_conv = [[to_binary(distances[i][j], distances_bit) 
+                                                for j in range(items+1)]
+                                                for i in range(items+1)]
+    
+    sub_tour = (True if min(courier_size) > max(item_size) else False)
     prepared_instance = (
         couriers,
         items,
@@ -234,7 +234,8 @@ def model_input(instance):
         item_size_conv,
         distances_conv,
         load_couriers_bit,
-        distances_bit
+        distances_bit,
+        sub_tour
     )
 
     return prepared_instance, corr_dict

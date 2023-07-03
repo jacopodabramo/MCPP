@@ -40,7 +40,6 @@ class CPsolver:
 
             # Get the corresponding dictionary
             corresponding_dict = sorting_couriers(values) # Passing by reference
-            print(corresponding_dict)
             # solve for each file
             results = {}
             for solver_name in CP_SOLVERS:
