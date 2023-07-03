@@ -132,7 +132,7 @@ class MIPsolver:
         if solver_name == MIP_SOLVERS[0]:
             solver = PULP_CBC_CMD(msg=False, timeLimit=self.timeout)
         else:
-            solver = GLPK_CMD(path='C:\\Users\\jacop\\Downloads\\winglpk-4.65\\glpk-4.65\\w64\\glpsol.exe', msg=False,
+            solver = GLPK_CMD(msg=False,
                               timeLimit=self.timeout)
 
         # solving

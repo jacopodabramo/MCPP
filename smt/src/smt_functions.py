@@ -1,6 +1,7 @@
 from z3 import *
 import re
 from utils import *
+from z3.z3 import And,Or,Not,If
 
 
 def evaluate(model,results):

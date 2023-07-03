@@ -1,7 +1,8 @@
 import time as t
 from smt.src.smt_functions import *
 from utils import saving_file
-from sat.src.sat_functions import  at_most_one_bw, exactly_one_bw
+from sat.src.sat_functions import at_most_one_bw, exactly_one_bw
+from z3.z3 import *
 
 
 class SMTsolver:

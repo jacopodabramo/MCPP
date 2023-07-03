@@ -1,6 +1,8 @@
 import time as t
 from sat.src.sat_functions import *
 from constants import *
+from z3.z3 import Solver,Bool,And,Or,Not,Implies,If,Xor,sat,unsat
+
 
 
 class SATsolver:
