@@ -2,7 +2,7 @@
 GRAPH_MODEL_CP = 0
 CIRCUIT_MODEL_CP = 1
 
-CP_SOLVERS = ['gecode','chuffed']
+CP_SOLVERS = ['gecode', 'chuffed']
 
 #SAT
 BINARY_SEARCH = 0

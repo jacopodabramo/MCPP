@@ -1,7 +1,7 @@
 import time as t
 from sat.src.sat_functions import *
 from constants import *
-from z3.z3 import Solver,Bool,And,Or,Not,Implies,If,Xor,sat,unsat
+from z3.z3 import *
 
 
 
@@ -30,6 +30,7 @@ class SATsolver:
         for key, instance in self.data.items():
             dict_to_save = {}
             for search in SEARCH_STRATEGIES:
+                self.set_solver()
                 key_dict = f"z3_{SEARCH_STRATEGIES[search]}"
                 print('File =', key)
                 filename = key.split('.')[0][-2:] + '.json'
@@ -37,17 +38,17 @@ class SATsolver:
                     solution = self.optimizer(instance, search)
                     dict_to_save[key_dict] = solution
                     # Create a new solver for the next instance
-                    self.set_solver()
+                    
                 except TimeoutError:
                     print("No solution found in the time given")
-                    saving_file({'unknown_solution': True})
+                    dict_to_save[key_dict] = {'unknown_solution':True} 
                 except Z3Exception as e:
                     print("Exception:", e)
-                    saving_file({'out_of_memory': True}, path, filename)
-                #except Exception:
-                #    print("Unsatisfiable")
-                #    saving_file({'satisfiable': False}, path, filename)
-
+                    dict_to_save[key_dict] = {'out_of_memory':True}
+                except Exception:
+                    print("Unsatisfiable")
+                    dict_to_save[key_dict] = {'satisfiable':False}
+            
             saving_file(dict_to_save, path, filename)
 
     def optimizer(self, instance, search):
@@ -112,8 +113,10 @@ class SATsolver:
         couriers = input_data[0]
         distance_bits = input_data[6]
         satisfiable = True
-        upper_bound = (2 ** distance_bits) - 1
+        
         iter = 0
+
+        upper_bound = set_upper_bound(instance[4], input_data[-1], couriers)
 
         results = self.set_constraints(input_data)
 
@@ -126,9 +129,14 @@ class SATsolver:
             
             lower_bound = to_binary(set_lower_bound(instance[4]), distance_bits)
             # Max
-            max_val = [[Bool(f"max_{j}_{i}_{iter}") for i in range(distance_bits)] for j in range(couriers)]
+            max_val = [[Bool(f"max_{j}_{i}_{iter}") for i in range(distance_bits)] 
+                                                    for j in range(couriers)]
             self.solver.add(
-                max_of_bin_int([results[-1][k] for k in range(couriers)], max_val, f'max_obj{iter}')
+                max_of_bin_int(
+                        [results[-1][k] for k in range(couriers)], 
+                        max_val, 
+                        f'max_obj{iter}'
+                    )
             )
             self.solver.add(
                 greater_eq(conv_upper_bound, max_val[-1], f"up_bound{iter}")
@@ -194,8 +202,8 @@ class SATsolver:
         couriers = input_data[0]
         distance_bits = input_data[6]
         # Set bounds
-        upper_bound = (2 ** distance_bits) - 1
         lower_bound = set_lower_bound(instance[4]) + 1
+        upper_bound = set_upper_bound(instance[4], instance[-1], couriers)
 
         bin_lower_bound = to_binary(set_lower_bound(instance[4]), distance_bits)
             
@@ -218,8 +226,14 @@ class SATsolver:
             # Get bound
             conv_middle_bound = to_binary(middle, distance_bits)  # converting
             # Update the maximum
-            max_val = [[Bool(f"max_{j}_{i}_{iter}") for i in range(distance_bits)] for j in range(couriers)]
-            self.solver.add(max_of_bin_int([results[-1][k] for k in range(couriers)], max_val, f'maxobj_{iter}'))
+            max_val = [[Bool(f"max_{j}_{i}_{iter}") for i in range(distance_bits)] 
+                                                    for j in range(couriers)]
+            self.solver.add(max_of_bin_int(
+                            [results[-1][k] for k in range(couriers)], 
+                            max_val, 
+                            f'maxobj_{iter}'
+                        )
+            )
             
             self.solver.add(greater_eq(conv_middle_bound, max_val[-1], f"up_bound{iter}"))
 
@@ -230,7 +244,7 @@ class SATsolver:
                 self.solver.push()
                 previous = False
 
-            if bound_distance == 1:  # Search completed
+            if bound_distance < 1:  # Search completed
                 satisfiable = False
 
             status = self.solver.check()
@@ -244,9 +258,12 @@ class SATsolver:
 
             elif status == sat:
                 model = self.solver.model()
+                
                 max_val_binary = [model.evaluate(max_val[-1][j]) for j in range(distance_bits)]
                 upper_bound = convert_from_binary_to_int(max_val_binary)
+                
                 previous = False
+                
                 evaluation = self.get_solution(model, results)
                 final_evaluation = [sorting_correspondence(res, correspondence_dict)
                                     for res in evaluation]
@@ -613,7 +630,6 @@ class SATsolver:
 
         # We force each each couple of places to be assigned to the same courier
         # (travel coherence)
-
         for i in range(items + 1):
             for j in range(items + 1):
                 if i != j:
@@ -689,6 +705,15 @@ class SATsolver:
                           f'nde_{k}'  
                 )
             )
+
+        # Symmetry breaking 
+        for k in range(couriers - 1):
+            self.solver.add(
+                greater_eq(
+                        courier_loads[k][-1], courier_loads[k+1][-1], f'sym_br_{k}'
+                )
+            )
+        
         # 10) subtour elimination, if the last courier can carry all the 
         #     packages then all of them must start
         self.solver.add(
@@ -697,24 +722,7 @@ class SATsolver:
                         And([asg[k][-1] for k in range(couriers)])
                     )
         )
-    
-        '''
-        for i in range(items):
-            for j in range(items):
-                if i > j:
-                    self.solver.add(
-                        Implies(
-                            And(couples[-1][j], couples[-1][i]),
-                            Not(Or([And(asg[k][i], asg[k][j]) for k in range(couriers)]))
-                        )
-                    )
-                    self.solver.add(
-                        Implies(
-                            And(couples[j][-1], couples[i][-1]),
-                            Not(Or([And(asg[k][i], asg[k][j]) for k in range(couriers)]))
-                        )
-                    )
-        '''
+
         # 9) Distances sum computation
         t = 1
         for k in range(couriers):

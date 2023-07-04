@@ -94,7 +94,7 @@ class CPsolver:
         for key,value in self.data.items():
             values = list(value)  # casting for modify the value of couriers (mutable object)
             print("File = ", key)
-            path = self.output_dir + "/cp_1/"
+            path = self.output_dir + "/cp_0/"
             filename = key.split('.')[0][-2:] + '.json'
             corresponding_dict = sorting_couriers(values)  # Passing by reference
 
@@ -146,7 +146,7 @@ class CPsolver:
 
                         print_graph(evaluated_result, corresponding_dict)
                         output_dict = format_output_graph_model(evaluated_result, optimal, corresponding_dict)
-                            # saving on file
+                        # saving on file
 
 
                 except Exception as e:
@@ -157,12 +157,16 @@ class CPsolver:
             saving_file(results, path, filename)
 
     def circuit_model_solve_instance(self, d, instance):
-        courier, item, courier_size, item_size, distances = d
-        instance["courier"] = courier
-        instance["items"] = item
+        couriers, items, courier_size, item_size, distances = d
+
+        all_travel = (True if min(courier_size) >= max(item_size) else False)
+        upper_bound = set_upper_bound(distances, all_travel, couriers)
+        instance["courier"] = couriers
+        instance["items"] = items
         instance["courier_size"] = np.sort(courier_size)[::-1]
         instance["item_size"] = item_size
         instance["distances"] = distances
+        instance["up_bound"] = upper_bound
         return instance.solve(timeout=datetime.timedelta(seconds=self.timeout), processes=10, random_seed=42,
                               free_search=True)
 
@@ -181,7 +185,7 @@ class CPsolver:
         
         instance["courier"] = n_couriers
         instance["items"] = n_items
-        instance["courier_size"] = couriers_size
+        instance["courier_size"] = sorted(couriers_size)[::-1]
         instance["item_size"] = objects_size
         instance["starting_nd"] = starting_nd
         instance["ending_nd"] = ending_nd

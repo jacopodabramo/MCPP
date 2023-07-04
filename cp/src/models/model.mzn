@@ -12,6 +12,7 @@ include "globals.mzn";
 % Input variables
 int: courier;
 int: items;
+int: up_bound;
 
 % useful sets
 set of int: COURIERS = 1..courier;
@@ -20,24 +21,19 @@ set of int: NODES = 1..items + 1;
 
 array[COURIERS] of int: courier_size;
 array[ITEMS] of int: item_size;
-array[NODES, NODES] of int: distances;
-
-int :max_dist = sum([max([distances[i, j] | i in NODES]) | j in NODES]);
+array[NODES, NODES] of int: distances; 
 
 % Model variables
-array[COURIERS] of var 0..max_dist: obj_dist;
+array[COURIERS] of var 0..up_bound: obj_dist;
 array[COURIERS, NODES] of var NODES: asg;
 
 % objective function
 
 int :low_bound = max([distances[items+1, j] | j in NODES]) + max([distances[i, items+1] | i in NODES]);
-int :up_bound = sum([distances[i, j] | i in NODES, j in NODES]);
 
-var low_bound..up_bound: maximum;
+var low_bound..up_bound: maximum; 
 
 int :max_load = max(courier_size) + 1;
-
-%array[NODES, COURIERS] of var 0..items+1: symmetry;
 
 array[ITEMS] of var 0..courier: loads;
 
@@ -90,21 +86,22 @@ constraint forall(k in COURIERS)(
 
 % sub tour elimination, if the last courier can carry all the packages
 % then all courier must start
-/*
 constraint forall(k in COURIERS) (
                   if courier_size[courier] >= max(item_size) then 
                   asg[k, items+1] != items+1   
                   endif
             );
+
+/*
+% Symmetry breaking 
+constraint forall(k in 1..courier-1) (
+      couriers_loads[k] >= couriers_loads[k+1]
+);
 */
 constraint maximum = max(obj_dist);
-/*
-constraint if forall(k in 1..courier-1) (courier_size[courier] >= couriers_loads[k]) then 
-            forall(k in COURIERS) (forall(i in NODES) (symmetry[i,k] = asg[k, i]))
-           else forall(k in COURIERS) (forall(i in NODES) (symmetry[i,k] = 0)) endif;
+ 
 
-constraint lex_chain(symmetry);
-*/
+
 solve :: seq_search([
                 int_search(asg, first_fail, indomain_min),
                 int_search(loads, first_fail, indomain_min)])

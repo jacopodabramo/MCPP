@@ -1,5 +1,5 @@
 from lp.src.mip_utilis import *
-from utils import saving_file, set_lower_bound
+from utils import *
 from pulp import *
 import numpy as np
 import time
@@ -56,10 +56,10 @@ class MIPsolver:
                     json_dict = {'unknown_solution': True}
                     dict_to_save[solver] = json_dict
 
-                print('-------------------------------------------------------------')
+                #print('-------------------------------------------------------------')
             saving_file(dict_to_save, path, filename)
 
-    def check_solution_CBC(self, result):
+    def check_solution_CBC(self, result, corr_dict):
         """
         :param result: the result of the model to be printed
         :return: the result and the time taken by the model to solve the problem
@@ -68,18 +68,22 @@ class MIPsolver:
         # optimal case
         if self.model.sol_status == OPTIMAL_CASE:
             if self.mip_model == SINGLE_MATRIX_MIP:
-                print_solution_model1(result, self.model.solutionTime)
+                result_reordered = [sorting_correspondence(res, corr_dict) for res in result] 
+                print_solution_model1(result_reordered, self.model.solutionTime)
+
             else :
-                print_solution_model0(result, self.model.solutionTime)
+                result_reordered = [sorting_correspondence(res, corr_dict) for res in result]
+                print_solution_model0(result_reordered, self.model.solutionTime)
 
         # sub-optimal case
         elif self.model.sol_status == SUB_OPTIMAL_CASE:
             self.model.solutionTime = self.timeout
             if self.mip_model == SINGLE_MATRIX_MIP:
-                print_solution_model1(result, self.model.solutionTime)
+                result_reordered = [sorting_correspondence(res, corr_dict) for res in result]
+                print_solution_model1(result_reordered, self.model.solutionTime)
             else:
-                print_solution_model0(result, self.model.solutionTime)
-
+                result_reordered = [sorting_correspondence(res, corr_dict) for res in result]
+                print_solution_model0(result_reordered, self.model.solutionTime)
         # no solution in time given
         elif self.model.sol_status == NO_SOLUTION:
             raise TimeoutError
@@ -88,29 +92,32 @@ class MIPsolver:
         else:
             raise ValueError
 
-        return result, self.model.solutionTime
+        return result_reordered, self.model.solutionTime
 
-    def check_solution_GLPK(self, result):
+    def check_solution_GLPK(self, result, corr_dict):
         """
         :param result: the result of the model to be printed
         :return: the result and the time taken by the model to solve the problem
         """
 
         if self.model.solutionTime >= self.timeout:
+            print('Timeout reached')
             raise TimeoutError
 
         # optimal case
         elif self.model.status == OPTIMAL_CASE:
             if self.mip_model == SINGLE_MATRIX_MIP:
-                print_solution_model1(result, self.model.solutionTime)
+                result_reordered = [sorting_correspondence(res, corr_dict) for res in result]
+                print_solution_model1(result_reordered, self.model.solutionTime)
             else:
-                print_solution_model0(result, self.model.solutionTime)
+                result_reordered = [sorting_correspondence(res, corr_dict) for res in result]
+                print_solution_model0(result_reordered, self.model.solutionTime)
 
         # not satisfiable
         else:
             raise ValueError
 
-        return result, self.model.solutionTime
+        return result_reordered, self.model.solutionTime
 
     def solve_instance(self, instance, solver_name):
         """
@@ -124,9 +131,9 @@ class MIPsolver:
 
         # definition of the constraints
         if self.mip_model == SINGLE_MATRIX_MIP:
-            result = self.set_constraints_model1(instance)
+            result, corr_dict = self.set_constraints_model1(instance)
         else:
-            result = self.set_constraints_model0(instance)
+            result, corr_dict = self.set_constraints_model0(instance)
 
         # choice of the solver
         if solver_name == MIP_SOLVERS[0]:
@@ -140,9 +147,9 @@ class MIPsolver:
 
         # check the solution based on the solver choosen
         if solver_name == MIP_SOLVERS[0]:
-            result, time = self.check_solution_CBC(result)
+            result, time = self.check_solution_CBC(result, corr_dict)
         else:
-            result, time = self.check_solution_GLPK(result)
+            result, time = self.check_solution_GLPK(result, corr_dict)
 
         return result, time
 
@@ -198,18 +205,18 @@ class MIPsolver:
         """
         print('setting constraints...')
 
+        corr_dict = sorting_couriers(data)
+
         # Instance retrieval
         couriers, items, courier_size, item_size, distances = data
 
+        courier_size = sorted(courier_size)[::-1]
+
         lower_bound = set_lower_bound(distances) + 1
 
-        row_sums = []  # List to store the sums of maximum values in each row
+        all_travel = (True if max(item_size) <= courier_size[-1] else False)
 
-        for row in distances:
-            max_value = max(row)  # Find the maximum value in the current row
-            row_sums.append(max_value)  # Add the maximum value to the row_sums list
-
-        upper_bound = sum(row_sums)  # Sum all the maximum values from each row
+        upper_bound = set_upper_bound(distances, all_travel, couriers)  # Sum all the maximum values from each row
 
         print('lower bound: ', lower_bound)
         print('upper bound: ', upper_bound)
@@ -278,13 +285,12 @@ class MIPsolver:
         self.model += lpSum([couples[i][i] for i in range(items + 1)]) == 0
 
         # 6) ensure that the number of couriers which start are respected in the last row and column of the couples matrix
-
         self.model += lpSum(couples[-1]) == lpSum([asg[k][-1] for k in range(couriers)])
 
         self.model += lpSum([couples[i][-1] for i in range(items + 1)]) == lpSum([asg[k][-1] for k in range(couriers)])
-        # 7) We force each each couple of places to be assigned to the same courier
+        
+        # 7) We force each visit to be assigned to the same courier
         # (travel coherence)
-
         for i in range(items + 1):
             for j in range(items + 1):
                 if i != j:
@@ -298,35 +304,74 @@ class MIPsolver:
             for j in range(items + 1):
                 if j != items and i != j:
                     self.model += self.linear_prod(couples[i][j],
-                                                   self.If(orderings[j], orderings[i], 1000, f'delta_prod{i}_{j}'),
+                                                   self.If(
+                                                            orderings[j], 
+                                                            orderings[i], 
+                                                            1000, 
+                                                            f'delta_prod{i}_{j}'
+                                                        ),
                                                    1,
                                                    f'lprod_{i}_{j}') <= 0
-
+        # Bin packing constraint
         for k in range(couriers):
             self.model += lpSum([
-                asg[k][i] * item_size[i]
-                for i in range(items)
-            ]) == courier_loads[k]
-
+                            asg[k][i] * item_size[i]
+                            for i in range(items)
+                            ]) == courier_loads[k]
             self.model += courier_loads[k] <= courier_size[k]
 
+        # Distances constraint
         for k in range(couriers):
             self.model += couriers_distances[k] == lpSum([
                 self.linear_prod(
                     self.And(asg[k][j], asg[k][i], f'and_dist_{i}_{j}_{k}'),
-                    couples[i][j]*distances[i][j],
+                    #self.linear_prod(
+                    #        couples[i][j],
+                    #        distances[i][j],
+                    #        ub = distances[i][j],
+                    #        name = f'lin_prod1{k}_{i}_{j}'
+                    #),
+                    distances[i][j] * couples[i][j],
                     distances[i][j],
                     f'prod_2{k}_{i}_{j}'
                 )
                 for j in range(items + 1) for i in range(items + 1) if i != j]
             )
+        
+        # Sub tour elimination
+        self.model += self.linear_prod(
+                            self.If(
+                                    courier_size[-1], 
+                                    max(item_size), 
+                                    M = 1000, 
+                                    name = 'sub_tour'
+                            ), 
+                            couriers - lpSum(asg[k][-1] for k in range(couriers)),
+                            ub = couriers,
+                            name = 'sub_tour_prod'
+                        ) == 0
+        
+        # Symmetry breaking 
+        for k in range(couriers-1):
+            self.model += lpSum(
+                courier_loads[k] >= courier_loads[k+1]
+            )
+            
 
         # Compute the maximum
         for el in couriers_distances:
             self.model += maximum >= el
 
 
-        return couriers, items, asg, couples, couriers_distances, courier_loads, distances
+        return (
+            couriers, 
+            items, 
+            asg, 
+            couples, 
+            couriers_distances, 
+            courier_loads, 
+            distances
+        ), corr_dict
 
     def set_constraints_model0(self, data):
         """
@@ -334,8 +379,12 @@ class MIPsolver:
         :return: model structures
         """
         print('setting constraints...')
+
+        corr_dict = sorting_couriers(data)
         # Instance retrieval
         couriers, items, courier_size, item_size, distances = data
+
+        courier_size = np.sort(courier_size)[::-1]
 
         lower_bound = set_lower_bound(distances) + 1
 
@@ -439,4 +488,9 @@ class MIPsolver:
                 for i in range(items)
                 for j in range(items)])
 
-        return asg, weigths, obj_dist, couriers, items, distances
+        return (asg, 
+                weigths, 
+                obj_dist, 
+                couriers, 
+                items, 
+                distances), corr_dict

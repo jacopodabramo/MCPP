@@ -1,7 +1,6 @@
 from itertools import combinations
-from z3 import *
+from z3.z3 import *
 from utils import *
-from z3.z3 import Solver,Bool,And,Or,Not,Implies,If,Xor,sat,unsat
 import math
 
 

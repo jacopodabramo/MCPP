@@ -130,12 +130,16 @@ def sorting_correspondence(res, corresponding_dict):
     :result: the set of result reordered according to the original instance
     '''
 
-    final_res = [[] for _ in range(len(res))]
+    
 
     # We reorder only the result whose first dimension is M 
+    if not isinstance(res, list):
+        return res
+    
     if len(res) != len(corresponding_dict):
         return res
 
+    final_res = [[] for _ in range(len(res))]
     # Assigned the corrispondences with the dictionary
     for i in range(len(res)):
         courier = corresponding_dict[i]
@@ -151,6 +155,31 @@ def set_lower_bound(distances):
     last_column = [distances[i][-1] for i in range(len(distances[0]))]
     value1 = last_column[np.argmax(last_row)] + max(last_row)
     value2 = last_row[np.argmax(last_column)] + max(last_column)
-    value = max(value1,value2) - 1
+    value = max(value1, value2) - 1
 
     return value
+
+def set_upper_bound(distances, all_travel, couriers):
+    '''
+    :param distances: matrix of distances
+    :param all_travel: boolean true if max(items_size) <= min(courier_size)
+
+    return the two possible upper bounds
+    '''
+    items = len(distances) - 1
+    if not all_travel:
+        return sum([max(distances[i]) for i in range(items+1)])
+    else:
+        last_row = distances[-1][couriers-1:]
+        last_col = [distances[k][-1] for k in range(couriers-1, items+1)]
+
+        max_single_path = max(
+                            last_col[np.argmax(last_row)] + max(last_row),
+                            last_row[np.argmax(last_col)] + max(last_col)
+                        )
+        max_long_path = sum([max(distances[i]) for i in range(couriers-1, items+1)])
+
+        return max(
+            max_single_path,
+            max_long_path
+        )

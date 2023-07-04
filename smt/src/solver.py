@@ -24,6 +24,7 @@ class SMTsolver:
             print('File =', key)
             filename = key.split('.')[0][-2:] + '.json'
             try:
+
                 solution = self.solve_instance(value)
                 opt = True
                 if solution[1] == self.timeout:
@@ -34,12 +35,10 @@ class SMTsolver:
             except TimeoutError:
                 print("TimeoutError")
                 saving_file({'unknown_solution': True}, path, filename)
-            '''
+            
             except Exception as e:
                 print("Unsatisfiable",e)
                 saving_file({'satisfiable': False}, path, filename)
-            '''
-           
            
     def format_output(self, solution, opt):
         if self.model == 0:
@@ -47,46 +46,88 @@ class SMTsolver:
         elif self.model == 1:
             return format_output_smt_model1(solution,opt)
         
-
     def set_optimizer(self):
+        '''
+        Create a new optimizer and set the timeout
+        '''
         self.optimizer = Optimize()
         self.optimizer.set(timeout=self.timeout*1000)
 
+    def prepare_data(self, instance):
+        '''
+        Creates the corresponding dict and sort the couriers by size
+        '''
+        couriers, items, courier_size, item_size, distances = instance
+        corr_dict = sorting_couriers(instance)
+
+        sorted_csize = sorted(courier_size)[::-1]
+
+        return (couriers, 
+                items, 
+                sorted_csize, 
+                item_size, 
+                distances), corr_dict 
+
     def solve_instance(self, data):
-        start_time = t.time()
+        '''
+        :param data: the instance to solve
+
+        :result result: the result of the optimization process
+        :result time: the time needed to complete the whole procedure 
+        '''
+        data, corr_dict = self.prepare_data(data)
         if self.model == 0:
             objective, model_variables = self.set_model_zero(data)
+            start_time = t.time()
+            
             self.optimizer.minimize(objective)
-            if self.optimizer.check() == sat:
+
+            status = self.optimizer.check()
+
+            if status == sat: # Optimal
                 total_time = t.time() - start_time
-                results = evaluate(self.optimizer.model(),model_variables)
-
-                print_solutions(results, total_time)
-            elif self.optimizer.check() == unsat:
+                results = evaluate(self.optimizer.model(), model_variables)
+                sorted_results = [sorting_correspondence(res, corr_dict) for res in results] 
+                print_solutions(sorted_results, total_time)
+            
+            elif status == unsat: # Unsat
                 raise Exception
-            else:
+            
+            else: # Not optimal
                 total_time = self.timeout
-                results = evaluate(self.optimizer.model(),model_variables)
-                print_solutions(results, total_time)
+                results = evaluate(self.optimizer.model(), model_variables)
+                sorted_results = [sorting_correspondence(res, corr_dict) for res in results] 
+                print_solutions(sorted_results, total_time)
 
-        else:
+        else: # Second model
             objective, model_variables = self.set_model_one(data)
+            start_time = t.time()
             self.optimizer.minimize(objective)
-            if self.optimizer.check() == sat:
+            
+            if self.optimizer.check() == sat: #Optimal
                 total_time = t.time() - start_time
                 results = evaluate_model1(self.optimizer.model(),model_variables)
-                print_solutions_model1(results, total_time)
-            elif self.optimizer.check() == unsat:
+                sorted_results = [sorting_correspondence(res, corr_dict) for res in results] 
+                print_solutions_model1(sorted_results, total_time)
+
+            elif self.optimizer.check() == unsat: # Unsat
                 raise Exception
-            else:
+            
+            else: # Not optimal
                 total_time = self.timeout
                 results = evaluate_model1(self.optimizer.model(), model_variables)
-                print_solutions_model1(results, total_time)
+                sorted_results = [sorting_correspondence(res, corr_dict) for res in results] 
+                print_solutions_model1(sorted_results, total_time)
 
-        return results,total_time
+        return sorted_results, total_time
 
     def set_model_zero(self, data):
         couriers, items, courier_size, item_size, distances = data
+
+        all_travel = (True if max(item_size) <= min(courier_size) else False)
+
+        up_bound = set_upper_bound(distances, all_travel, couriers)
+        low_bound = set_lower_bound(distances)
 
         couriers_loads = [Int(f'loads{i}') for i in range(couriers)]
 
@@ -95,6 +136,9 @@ class SMTsolver:
         asg = [Array(f"asg{i}", IntSort(), IntSort()) for i in range(couriers)]
 
         array_of_distances = [Array(f'distances{i}', IntSort(), IntSort()) for i in range(items + 1)]
+        
+        # Objective 
+        maximum = Int(f"max")
 
         # define the distances
         for i in range(items + 1):
@@ -110,6 +154,7 @@ class SMTsolver:
                     is_circuit_element(items, asg[k][i], 0, asg[k], items + 1)
                 )
                 )
+        
 
         # Set the boundaries for our vectors
         for k in range(couriers):
@@ -117,12 +162,29 @@ class SMTsolver:
                 self.optimizer.add(asg[k][i] >= -1)
                 self.optimizer.add(asg[k][i] <= items)
         
+        self.optimizer.add(
+            maximum >= low_bound
+        )
+
+        self.optimizer.add(
+            maximum <= up_bound
+        )
+
+        for k in range(couriers):
+            self.optimizer.add(
+                final_distances[k] >= 0
+            )
+            self.optimizer.add(
+                final_distances[k] <= up_bound
+            )
+        
         # Circuits for all values
         for k in range(couriers):
             for i in range(items+1):
                 self.optimizer.add(
                     Implies(asg[k][i] != -1, asg[k][asg[k][i]] != -1)
                     )
+                
         # In each row we have no repetitions of distirbution center
         # Origin incuded (-1 is excuded because we need potentially
         # more than one in some rows)
@@ -130,6 +192,10 @@ class SMTsolver:
             for j in range(items + 1):
                 self.optimizer.add(at_most_one_bw([asg[k][i] == j for i in range(items + 1)], f"A{j}{k}"))
 
+        for i in range(items+1):
+            self.optimizer.add(
+                [asg[k][i] != i for k in range(couriers)]
+            )
 
         for k in range(couriers):
              self.optimizer.add(
@@ -138,11 +204,26 @@ class SMTsolver:
                     Or(Sum([asg[k][i] for i in range(items+1)]) == -(items+1))
                  )
              )
+            
         # Each item must be carried
         for i in range(items):
             self.optimizer.add(exactly_one_bw(
                 [asg[k][j] == i for k in range(couriers) for j in range(items + 1)], f'{i}')
             )
+        
+        # Symmetry breaking
+        for k in range(couriers - 1):
+            self.optimizer.add(
+                couriers_loads[k] >= couriers_loads[k + 1]
+            )
+
+        # Sub tour elimination
+        self.optimizer.add(
+            Implies(
+            all_travel, 
+            And([asg[k][items] != -1 for k in range(couriers)])
+            )
+        )
 
         # Bin packing constraint 1
         for k in range(couriers):
@@ -161,8 +242,6 @@ class SMTsolver:
                 [If(asg[k][i] != -1, array_of_distances[i][asg[k][i]], 0) for i in range(items + 1)]))
 
 
-        # Objective 
-        maximum = Int(f"max")
         self.optimizer.add(maximum == smt_max([final_distances[i] for i in range(couriers)]))
 
         return maximum, (couriers_loads, final_distances, asg, items, couriers)
@@ -246,5 +325,11 @@ class SMTsolver:
         maximum = Int(f"max")
         self.optimizer.add(maximum == smt_max([final_distances[k] for k in range(couriers)]))
 
-        return maximum, (starting_point, ending_point, couriers_loads, final_distances, items, couriers)
+        return maximum, (starting_point, 
+                         ending_point, 
+                         couriers_loads, 
+                         final_distances, 
+                         items, 
+                         couriers
+                        )
 
