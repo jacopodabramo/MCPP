@@ -84,6 +84,7 @@ class CPsolver:
 
                 except Exception as e:
                     print("Exception:", e)
+                    output_dict = {'unknwon solution':True}
 
                 results[solver_name] = output_dict
 

@@ -50,7 +50,7 @@ class MIPsolver:
                     dict_to_save[solver] = json_dict
                 except ValueError:
                     print("unsatisfiable")
-                    json_dict = {'satisfiable': True}
+                    json_dict = {'satisfiable': False}
                     dict_to_save[solver] = json_dict
                 except Exception as e:
                     json_dict = {'unknown_solution': True}
