@@ -339,24 +339,12 @@ class MIPsolver:
             )
         
         # Sub tour elimination
-        self.model += self.linear_prod(
-                            self.If(
-                                    courier_size[-1], 
-                                    max(item_size), 
-                                    M = 1000, 
-                                    name = 'sub_tour'
-                            ), 
-                            couriers - lpSum(asg[k][-1] for k in range(couriers)),
-                            ub = couriers,
-                            name = 'sub_tour_prod'
-                        ) == 0
-        
+        self.model += (couriers - lpSum(asg[k][-1] for k in range(couriers))) * all_travel == 0
+        """
         # Symmetry breaking 
         for k in range(couriers-1):
-            self.model += lpSum(
-                courier_loads[k] >= courier_loads[k+1]
-            )
-            
+            self.model += courier_loads[k]  >= courier_loads[k+1]
+        """
 
         # Compute the maximum
         for el in couriers_distances:

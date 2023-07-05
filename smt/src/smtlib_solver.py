@@ -3,7 +3,7 @@ import os
 import time as t
 from smt.src.smt_functions import *
 from smt.src.solver import SMTsolver
-from utils import saving_file, format_output_smtlib,set_lower_bound
+from utils import saving_file, format_output_smtlib,set_lower_bound,set_upper_bound
 from constants import *
 
 class SMTLIBsolver(SMTsolver):
@@ -45,14 +45,13 @@ class SMTLIBsolver(SMTsolver):
      
      
     def set_command(self,instance, bash_file,solver):
-        couriers = instance[0]
-        num_items = instance[1]
-        distances = instance[4]
-        starting_value = sum(sum(sublist) for sublist in distances)
+        couriers, num_items, courier_size, item_size, distances = instance
+        sub_tour = (True if min(courier_size) > max(item_size) else False)
+        upper_bound = set_upper_bound(distances, sub_tour, couriers)
         # execution of the bash file
         path = os.path.join(os.getcwd(),bash_file) # path to execute the bash file
         lower_bound = set_lower_bound(distances) -1# this value will be used only by binary search
-        command = f"timeout {self.timeout} bash {path} '{self.file}' 'max' '{starting_value}' '{lower_bound}' '{solver}' '{couriers}' '{num_items + 1}'"
+        command = f"timeout {self.timeout} bash {path} '{self.file}' 'max' '{upper_bound}' '{lower_bound}' '{solver}' '{couriers}' '{num_items + 1}'"
         return command
         
         
@@ -65,6 +64,7 @@ class SMTLIBsolver(SMTsolver):
             filename = key.split('.')[0][-2:] + '.json'
             for solver_type in SMTLIB_SOLVER: 
                 for search in SEARCH_STRATEGIES:
+                    data, corr_dict = self.prepare_data(instance)
                     type_search = SEARCH_STRATEGIES[search]
                     key_dict = solver_type + '_' + type_search
                     bash_file = 'smt/src/' + type_search + '.sh'
@@ -73,7 +73,7 @@ class SMTLIBsolver(SMTsolver):
                     print("Type search = ",type_search)
                     
                     self.file = self.instances_dir + str(key).removesuffix('.dat') + ".smt2"
-                    self.create_file(instance) # creating smtlib file 
+                    self.create_file(data) # creating smtlib file 
                     
                     # Creating path to save the result
                     
@@ -95,11 +95,13 @@ class SMTLIBsolver(SMTsolver):
                         num_items = instance[1]
                         #print("Output ",output)
                         couriers = instance[0]
-                        output = split_string(output,couriers) 
+                        obj,output = split_string(output,couriers) 
+                        final_output = sorting_correspondence(output, corr_dict)
                         # Prepocess the result in order to have correct format for output
-                        print("Output = ",output)
-                           
-                        out_dict = format_output_smtlib(output,num_items, total_time,True)
+                        res = [obj] + final_output
+                        print("Output = ",res)
+                        
+                        out_dict = format_output_smtlib(res,num_items, total_time,True)
                        
                     dict_to_save[key_dict] = out_dict
             saving_file(dict_to_save,saving_path,filename)

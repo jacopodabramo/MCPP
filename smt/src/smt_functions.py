@@ -219,7 +219,7 @@ def split_string(string,couriers):
     """
     # Split the string at "\n" unless it is inside parentheses
     result = re.split('\n', string)
-    final_result = [int(result[0])] # append the object value in the string
+    final_result = [] 
     dict_courier = [{} for i in range(couriers)]
     # Merge the strings that should not be separated
     default_value = "(- 1)"
@@ -228,12 +228,11 @@ def split_string(string,couriers):
         if result[i] == "" or default_value in result[i]:
             continue
         
-        numbers = re.findall('\d', result[i])
+        numbers = re.findall('\d+', result[i])
         numbers_list = [int(n) for n in numbers]
         dict_courier[numbers_list[0]][numbers_list[1]] = numbers_list[2]
-        
     final_result += dict_courier
-    return final_result
+    return int(result[0]),final_result
 
 
 
