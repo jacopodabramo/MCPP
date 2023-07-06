@@ -8,16 +8,16 @@ from constants import *
 
 class SMTLIBsolver(SMTsolver):
 
-    def __init__(self, data, output_dir, timeout=300,symmetry=1):
+    def __init__(self, data, output_dir, timeout=300):
 
-        super().__init__(data, output_dir, timeout,model=0,symmetry=symmetry)
+        super().__init__(data, output_dir, timeout,model=0)
         self.set_optimizer()
         self.instances_dir = "smt/src/instances_smtlib/"
         os.makedirs(self.instances_dir, exist_ok=True) # creating the dir of smtlib file if exists
         self.output_dir = output_dir
         self.timeout = timeout
         self.set_optimizer()
-        self.symmetry = symmetry
+        self.symmetry = None
         self.file = None
 
     
@@ -67,49 +67,54 @@ class SMTLIBsolver(SMTsolver):
             filename = key.split('.')[0][-2:] + '.json'
             for solver_type in SMTLIB_SOLVER: 
                 for search in SEARCH_STRATEGIES:
-                    data, corr_dict = self.prepare_data(instance)
-                    type_search = SEARCH_STRATEGIES[search]
-                    key_dict = solver_type + '_' + type_search
-                    bash_file = 'smt/src/' + type_search + '.sh'
-                    print("File = ", key)
-                    print("Solver used = ", solver_type)
-                    print("Type search = ",type_search)
-                    
-                    self.file = self.instances_dir + str(key).removesuffix('.dat') + ".smt2"
-                    self.create_file(data) # creating smtlib file 
-                    
-                    # Creating path to save the result
-                    
-                    # extracting the number of couriers and items to return the correct format of the file
-                    command = self.set_command(instance,bash_file,solver_type)
-                    print("Starting Execution")
-                    start_time = t.time()
-                    try:
-                        result = subprocess.run(command, shell=True, capture_output=True, text=True,check=True)
-                        total_time = t.time() - start_time
-                        output = result.stdout # to have the output in a string format
-                        if output == 'unsat':
-                            print("Unsatisfiable")
-                            out_dict = {'satisfiable':False}
-                        elif output == "" or output == 'unknown':
-                            print("Unknown") # we have unknown also when we have timeout
-                            out_dict = {'unknown_solution':True}
-                        else:
-                            num_items = instance[1]
-                            #print("Output ",output)
-                            couriers = instance[0]
-                            obj,output = split_string(output,couriers)
-                            final_output = sorting_correspondence(output, corr_dict)
-                            # Prepocess the result in order to have correct format for output
-                            res = [obj] + final_output
-                            print("Output = ",res)
+                    for symmetry in SIM_LIST:
+                        self.symmetry = symmetry
+                        data, corr_dict = self.prepare_data(instance)
+                        type_search = SEARCH_STRATEGIES[search]
+                        key_dict = solver_type
+                        if self.symmetry == SYMMETRY_BREAKING:
+                            key_dict += SIMMETRY_BREAK_STRING
+                        key_dict += type_search
+                        bash_file = 'smt/src/' + type_search + '.sh'
+                        print("File = ", key)
+                        print("Solver used = ", solver_type)
+                        print("Type search = ",type_search)
 
-                            out_dict = format_output_smtlib(res,num_items, total_time,True)
-                    except Exception as e:
-                        print("The bash file cannot be executed")
-                        out_dict = {'unknown_solution': True}
+                        self.file = self.instances_dir + str(key).removesuffix('.dat') + ".smt2"
+                        self.create_file(data) # creating smtlib file
 
-                    dict_to_save[key_dict] = out_dict
+                        # Creating path to save the result
+
+                        # extracting the number of couriers and items to return the correct format of the file
+                        command = self.set_command(instance,bash_file,solver_type)
+                        print("Starting Execution")
+                        start_time = t.time()
+                        try:
+                            result = subprocess.run(command, shell=True, capture_output=True, text=True,check=True)
+                            total_time = t.time() - start_time
+                            output = result.stdout # to have the output in a string format
+                            if output == 'unsat':
+                                print("Unsatisfiable")
+                                out_dict = {'satisfiable':False}
+                            elif output == "" or output == 'unknown':
+                                print("Unknown") # we have unknown also when we have timeout
+                                out_dict = {'unknown_solution':True}
+                            else:
+                                num_items = instance[1]
+                                #print("Output ",output)
+                                couriers = instance[0]
+                                obj,output = split_string(output,couriers)
+                                final_output = sorting_correspondence(output, corr_dict)
+                                # Prepocess the result in order to have correct format for output
+                                res = [obj] + final_output
+                                print("Output = ",res)
+
+                                out_dict = format_output_smtlib(res,num_items, total_time,True)
+                        except Exception as e:
+                            print("The bash file cannot be executed")
+                            out_dict = {'unknown_solution': True}
+
+                        dict_to_save[key_dict] = out_dict
             saving_file(dict_to_save,saving_path,filename)
             
                 

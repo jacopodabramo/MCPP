@@ -7,13 +7,13 @@ from z3.z3 import *
 
 class SATsolver:
 
-    def __init__(self, data, output_dir, timeout=300, model=0,symmetry = 1):
+    def __init__(self, data, output_dir, timeout=300, model=0):
         self.data = data
         self.output_dir = output_dir
         self.timeout = timeout
         self.solver = Solver()
         self.model = model
-        self.symmetry = symmetry
+        self.symmetry = None
 
     # Solving part
     def solve(self):
@@ -31,24 +31,29 @@ class SATsolver:
         for key, instance in self.data.items():
             dict_to_save = {}
             for search in SEARCH_STRATEGIES:
-                self.set_solver()
-                key_dict = f"z3_{SEARCH_STRATEGIES[search]}"
-                print('File =', key)
-                filename = key.split('.')[0][-2:] + '.json'
-                try:
-                    solution = self.optimizer(instance, search)
-                    dict_to_save[key_dict] = solution
-                    # Create a new solver for the next instance
-                    
-                except TimeoutError:
-                    print("No solution found in the time given")
-                    dict_to_save[key_dict] = {'unknown_solution':True} 
-                except Z3Exception as e:
-                    print("Exception:", e)
-                    dict_to_save[key_dict] = {'out_of_memory':True}
-                except Exception:
-                    print("Unsatisfiable")
-                    dict_to_save[key_dict] = {'satisfiable':False}
+                for symmetry in SIM_LIST:
+                    self.set_solver()
+                    self.symmetry = symmetry
+                    if symmetry == SYMMETRY_BREAKING:
+                        key_dict = f"z3_symbreak_{SEARCH_STRATEGIES[search]}"
+                    else:
+                        key_dict = f"z3_{SEARCH_STRATEGIES[search]}"
+                    print('File =', key)
+                    filename = key.split('.')[0][-2:] + '.json'
+                    try:
+                        solution = self.optimizer(instance, search)
+                        dict_to_save[key_dict] = solution
+                        # Create a new solver for the next instance
+
+                    except TimeoutError:
+                        print("No solution found in the time given")
+                        dict_to_save[key_dict] = {'unknown_solution':True}
+                    except Z3Exception as e:
+                        print("Exception:", e)
+                        dict_to_save[key_dict] = {'out_of_memory':True}
+                    except Exception:
+                        print("Unsatisfiable")
+                        dict_to_save[key_dict] = {'satisfiable':False}
             
             saving_file(dict_to_save, path, filename)
 

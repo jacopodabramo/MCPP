@@ -14,6 +14,11 @@ class MIPsolver:
         self.mip_model = model
         self.symmetry = symmetry
 
+    def name_solver(self,solver):
+        name = solver
+        if self.symmetry == SYMMETRY_BREAKING:
+            name += SIMMETRY_BREAK_STRING
+        return name
     def solve(self):
         """
         solve an LP problem for a set of instances
@@ -30,34 +35,34 @@ class MIPsolver:
 
             for solver in MIP_SOLVERS:
                 print('File =', key, ' wtih solver:', solver)
+                for symmetry in SIM_LIST:
+                    self.symmetry = symmetry
+                    key_dict = self.name_solver(solver)
+                    try:
+                        result = self.solve_instance(value, solver)
+                        opt = True
 
-                try:
-                    result = self.solve_instance(value, solver)
-                    opt = True
+                        if result[1] >= self.timeout:
+                            opt = False
 
-                    if result[1] >= self.timeout:
-                        opt = False
+                        if self.mip_model == SINGLE_MATRIX_MIP:
+                            json_dict = format_output_mip_model1(result, opt)
+                        else:
+                            json_dict = format_output_mip_model0(result, opt)
+                        dict_to_save[key_dict] = json_dict
 
-                    if self.mip_model == SINGLE_MATRIX_MIP:
-                        json_dict = format_output_mip_model1(result, opt)
-                    else:
-                        json_dict = format_output_mip_model0(result, opt)
+                    except TimeoutError:
+                        print("No solution found in the time given")
+                        json_dict = {'unknown_solution': True}
+                        dict_to_save[key_dict] = json_dict
+                    except ValueError:
+                        print("unsatisfiable")
+                        json_dict = {'satisfiable': False}
+                        dict_to_save[key_dict] = json_dict
+                    except Exception as e:
+                        json_dict = {'unknown_solution': True}
+                        dict_to_save[key_dict] = json_dict
 
-                    dict_to_save[solver] = json_dict
-
-                except TimeoutError:
-                    print("No solution found in the time given")
-                    json_dict = {'unknown_solution': True}
-                    dict_to_save[solver] = json_dict
-                except ValueError:
-                    print("unsatisfiable")
-                    json_dict = {'satisfiable': False}
-                    dict_to_save[solver] = json_dict
-                except Exception as e:
-                    json_dict = {'unknown_solution': True}
-                    dict_to_save[solver] = json_dict
-
-                #print('-------------------------------------------------------------')
             saving_file(dict_to_save, path, filename)
 
     def check_solution_CBC(self, result, corr_dict):

@@ -30,8 +30,7 @@ def main():
 
     parser.add_argument("-t", "--timeout", help="Timeout in seconds", default=300)
 
-    parser.add_argument("-s", "--symmetry", help="Decide to select symmetry breaking or not, 1 symmetry breakink, 0 no symmetry breaking",
-                        default=1, type=int)
+
     args = parser.parse_args()
     print(args)
 
@@ -43,8 +42,7 @@ def main():
             data=data, 
             output_dir=args.output_dir, 
             timeout=int(args.timeout), 
-            model=args.model,
-            symmetry = args.symmetry
+            model=args.model
         )
     
     elif args.approach == "sat":
@@ -52,8 +50,7 @@ def main():
             data=data, 
             output_dir=args.output_dir,
             timeout=int(args.timeout),
-            model=args.model,
-            symmetry = args.symmetry
+            model=args.model
         )
 
     elif args.approach == "smt":
@@ -61,16 +58,14 @@ def main():
             data=data,
             output_dir=args.output_dir,
             timeout=int(args.timeout),
-            model=args.model,
-            symmetry=args.symmetry
+            model=args.model
         )
     
     elif args.approach == "smtlib":
         solver = SMTLIBsolver(
             data=data,
             output_dir=args.output_dir,
-            timeout=int(args.timeout),
-            symmetry=args.symmetry
+            timeout=int(args.timeout)
             )
 
     elif args.approach == "lp":
@@ -78,8 +73,7 @@ def main():
             data=data,
             output_dir=args.output_dir,
             timeout=int(args.timeout),
-            model=args.model,
-            symmetry=args.symmetry)
+            model=args.model)
         
     else:
         raise argparse.ArgumentError(None, "Please select a solver between cp, sat, smt lp and smtlib")

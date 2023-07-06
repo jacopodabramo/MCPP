@@ -8,39 +8,49 @@ from z3.z3 import *
 
 class SMTsolver:
 
-    def __init__(self, data, output_dir, timeout=300, model=0,symmetry=1):
+    def __init__(self, data, output_dir, timeout=300, model=0):
         self.data = data
         self.output_dir = output_dir
         self.timeout = timeout
         self.model = model
         self.set_optimizer() # setting the Optimize
-        self.symmetry = symmetry
+        self.symmetry = None
 
+    def get_solver_name(self,solver_name):
+        name = solver_name
+        if self.symmetry == SYMMETRY_BREAKING:
+            name += SIMMETRY_BREAK_STRING
+        return name
     def solve(self):
         if self.model == 1:
             path = self.output_dir + "/smt_1/"
         elif self.model == 0:
             path = self.output_dir + "/smt_0/"
-        
+        dict_to_save = {}
+        solver_name = Z3_SOLVER_STRING
         for key, value in self.data.items():
             print('File =', key)
             filename = key.split('.')[0][-2:] + '.json'
-            try:
+            for symmetry in SIM_LIST:
+                key_dict = self.get_solver_name(solver_name)
+                try:
+                    self.symmetry = symmetry
+                    solution = self.solve_instance(value)
+                    opt = True
+                    if solution[1] == self.timeout:
+                        opt = False
 
-                solution = self.solve_instance(value)
-                opt = True
-                if solution[1] == self.timeout:
-                    opt = False
-                json_dict = {'z3-solver':self.format_output(solution,opt)}
-                saving_file(json_dict, path, filename)
-                self.set_optimizer()
-            except TimeoutError:
-                print("TimeoutError")
-                saving_file({'unknown_solution': True}, path, filename)
-            
-            except Exception as e:
-                print("Unsatisfiable",e)
-                saving_file({'satisfiable': False}, path, filename)
+                    dict_to_save[key_dict] = self.format_output(solution, opt)
+                    self.set_optimizer()
+                except TimeoutError:
+                    print("TimeoutError")
+                    dict_to_save[key_dict] = {'unknown_solution': True}
+
+                except Exception as e:
+                    print("Unsatisfiable",e)
+                    dict_to_save[key_dict] = {'satisfiable': False}
+
+            saving_file(dict_to_save, path, filename)
            
     def format_output(self, solution, opt):
         if self.model == 0:
