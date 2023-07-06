@@ -101,17 +101,17 @@ def print_solutions_model1(solutions, seconds):
     '''
     start, ending, load, d, _, couriers = solutions
 
-    if not isinstance(start[0][0][0], IntNumRef):
+    if not isinstance(start[0][0], IntNumRef):
         print('No solution found in the time given')
-    else:
-        for k in range(couriers):
-            print("Courier = ", k)
-            print("Starting = ", start[k])
-            print("Ending = ", ending[k])
-            print("Load = ", load[k])
-            print(f"Final distance for courier {k} = {d[k]}")
+    #else:
+    for k in range(couriers):
+        print("Courier = ", k)
+        print("Starting = ", start[k])
+        print("Ending = ", ending[k])
+        print("Load = ", load[k])
+        print(f"Final distance for courier {k} = {d[k]}")
 
-        print('total time', seconds)
+    print('total time', seconds)
 
 
 def format_output_smt_model0(result, opt):
@@ -154,8 +154,8 @@ def format_output_smt_model1(result, opt):
     """
     start, _, _, d, items, couriers = result[0]
 
-    if isinstance(start[0][0][0], IntNumRef):
-        return {'unknown':True}
+    if not isinstance(start[0][0], IntNumRef):
+        return {'unknown_solution':True}
 
     time = result[1].__floor__()
     d = [d[k].as_long() for k in range(len(d))]

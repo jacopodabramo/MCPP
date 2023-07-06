@@ -127,7 +127,7 @@ class SMTsolver:
         all_travel = (True if max(item_size) <= min(courier_size) else False)
 
         up_bound = set_upper_bound(distances, all_travel, couriers)
-        low_bound = set_lower_bound(distances)
+        low_bound, dist_lb = set_lower_bound(distances, all_travel)
 
         couriers_loads = [Int(f'loads{i}') for i in range(couriers)]
 
@@ -172,7 +172,7 @@ class SMTsolver:
 
         for k in range(couriers):
             self.optimizer.add(
-                final_distances[k] >= 0
+                final_distances[k] >= dist_lb
             )
             self.optimizer.add(
                 final_distances[k] <= up_bound
@@ -190,7 +190,9 @@ class SMTsolver:
         # more than one in some rows)
         for k in range(couriers):
             for j in range(items + 1):
-                self.optimizer.add(at_most_one_bw([asg[k][i] == j for i in range(items + 1)], f"A{j}{k}"))
+                self.optimizer.add(
+                    at_most_one_bw([asg[k][i] == j for i in range(items + 1)], 
+                                   f"A{j}_{k}"))
 
         for i in range(items+1):
             self.optimizer.add(
@@ -210,13 +212,13 @@ class SMTsolver:
             self.optimizer.add(exactly_one_bw(
                 [asg[k][j] == i for k in range(couriers) for j in range(items + 1)], f'{i}')
             )
-        
+        '''
         # Symmetry breaking
         for k in range(couriers - 1):
             self.optimizer.add(
                 couriers_loads[k] >= couriers_loads[k + 1]
             )
-
+        '''
         # Sub tour elimination
         self.optimizer.add(
             Implies(
@@ -250,10 +252,15 @@ class SMTsolver:
         couriers, items, courier_size, item_size, distances = data
 
         couriers_loads = [Int(f'loads{i}') for i in range(couriers)]
-        starting_point = [[Int(f'x{k}{j}') for j in range(items+1)] for k in range(couriers)]
-        ending_point = [[Int(f'y{k}{j}') for j in range(items+1)] for k in range(couriers)]
+
+        starting_point = [[Int(f'x{k}_{j}') for j in range(items+1)] for k in range(couriers)]
+
+        ending_point = [[Int(f'y{k}_{j}') for j in range(items+1)] for k in range(couriers)]
+
         array_of_distances = Array(f'distances', IntSort(), IntSort())
+
         final_distances = [Int(f"dist{i}") for i in range(couriers)]
+        
         array_item_size = Array('item_size', IntSort(), IntSort())
 
         # The value of the arry must be in the interval -1 (no delivery) item: Origin point
@@ -276,22 +283,38 @@ class SMTsolver:
         # Each arrival point must be the next starting one if different from the origin
         for k in range(couriers):
             for i in range(items): 
-                self.optimizer.add(Implies(ending_point[k][i] != items, starting_point[k][i + 1] == ending_point[k][i]))
-                self.optimizer.add(Implies(ending_point[k][i] == items, starting_point[k][i + 1] == -1))  
+                self.optimizer.add(
+                                    Implies(
+                                        ending_point[k][i] != items, 
+                                        starting_point[k][i + 1] == ending_point[k][i]
+                                    )
+                                )
+                self.optimizer.add(
+                                    Implies(
+                                        ending_point[k][i] == items, 
+                                        starting_point[k][i + 1] == -1
+                                    )
+                                )  
 
         for k in range(couriers):
             for i in range(items+1):
-                self.optimizer.add(Implies(starting_point[k][i] == -1, ending_point[k][i] == -1))
+                self.optimizer.add(
+                                Implies(
+                                    starting_point[k][i] == -1, 
+                                    ending_point[k][i] == -1
+                                )
+                            )
 
         
         # Each item must be delivered exaclty one
         for j in range(items):
             self.optimizer.add(exactly_one_bw(
                 [starting_point[k][i] == j for i in range(items+1) for k in range(couriers)],
-                f"B{k}{j}{i}")
+                f"B{k}_{j}_{i}")
             )
             self.optimizer.add(exactly_one_bw(
-                [ending_point[k][i] == j for i in range(items+1) for k in range(couriers)], f"C{k}{j}{i}")
+                [ending_point[k][i] == j for i in range(items+1) for k in range(couriers)], 
+                f"C{k}_{j}_{i}")
             )
 
         # ------------------------
@@ -319,8 +342,8 @@ class SMTsolver:
         for k in range(couriers):
             self.optimizer.add(final_distances[k] == Sum(
                 [If(starting_point[k][i] != -1,
-                    array_of_distances[starting_point[k][i] * (items + 1) + ending_point[k][i]], 0) for i in
-                 range(items+1)]))
+                    array_of_distances[starting_point[k][i] * (items + 1) + ending_point[k][i]], 0)
+                                        for i in range(items+1)]))
         # Searching the max
         maximum = Int(f"max")
         self.optimizer.add(maximum == smt_max([final_distances[k] for k in range(couriers)]))

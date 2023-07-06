@@ -212,9 +212,9 @@ class MIPsolver:
 
         courier_size = sorted(courier_size)[::-1]
 
-        lower_bound = set_lower_bound(distances) + 1
-
         all_travel = (True if max(item_size) <= courier_size[-1] else False)
+        
+        lower_bound, dist_lb = set_lower_bound(distances, all_travel)
 
         upper_bound = set_upper_bound(distances, all_travel, couriers)  # Sum all the maximum values from each row
 
@@ -239,15 +239,19 @@ class MIPsolver:
                          for i in range(couriers)]
 
         # 5. Array of distances
-        couriers_distances = [LpVariable(name=f'obj_dist{i}', cat=LpInteger, lowBound=0, upBound=upper_bound)
+        couriers_distances = [
+                            LpVariable(name=f'obj_dist{i}', 
+                                       cat=LpInteger, 
+                                       lowBound=0,
+                                       upBound=upper_bound
+                                    )
                               for i in range(couriers)]
 
         # structures to make unique the order vector
         ord_matrix = [[LpVariable(name=f'ord{i}-{j}', cat=LpBinary) for i in range(items + 2)] for j in
                       range(items + 2)]
 
-        # diff = [[LpVariable(name=f'test_{i}_{j}', cat = LpBinary) for i in range(items+2)] for j in range(items+2)]
-
+    
         maximum = LpVariable(name=f'_maximum', lowBound=lower_bound, upBound=upper_bound, cat=LpInteger)
 
         # Set the objective
@@ -301,8 +305,8 @@ class MIPsolver:
         self.model += orderings[-2] == items + 1
 
         for i in range(items + 1):
-            for j in range(items + 1):
-                if j != items and i != j:
+            for j in range(items):
+                if i != j:
                     self.model += self.linear_prod(couples[i][j],
                                                    self.If(
                                                             orderings[j], 
@@ -325,12 +329,6 @@ class MIPsolver:
             self.model += couriers_distances[k] == lpSum([
                 self.linear_prod(
                     self.And(asg[k][j], asg[k][i], f'and_dist_{i}_{j}_{k}'),
-                    #self.linear_prod(
-                    #        couples[i][j],
-                    #        distances[i][j],
-                    #        ub = distances[i][j],
-                    #        name = f'lin_prod1{k}_{i}_{j}'
-                    #),
                     distances[i][j] * couples[i][j],
                     distances[i][j],
                     f'prod_2{k}_{i}_{j}'
@@ -339,12 +337,13 @@ class MIPsolver:
             )
         
         # Sub tour elimination
-        self.model += (couriers - lpSum(asg[k][-1] for k in range(couriers))) * all_travel == 0
-        """
+        self.model += (couriers - lpSum(asg[k][-1] for k in range(couriers))) * all_travel <= 0
+        
+        '''
         # Symmetry breaking 
         for k in range(couriers-1):
             self.model += courier_loads[k]  >= courier_loads[k+1]
-        """
+        '''
 
         # Compute the maximum
         for el in couriers_distances:
@@ -374,7 +373,7 @@ class MIPsolver:
 
         courier_size = np.sort(courier_size)[::-1]
 
-        lower_bound = set_lower_bound(distances) + 1
+        lower_bound, _ = set_lower_bound(distances) 
 
         row_sums = []  # List to store the sums of maximum values in each row
 

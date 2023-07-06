@@ -227,7 +227,7 @@ def model_input(instance):
                                                 for j in range(items+1)]
                                                 for i in range(items+1)]
     
-    sub_tour = (True if min(courier_size) > max(item_size) else False)
+    sub_tour = (True if min(courier_size) >= max(item_size) else False)
     prepared_instance = (
         couriers,
         items,

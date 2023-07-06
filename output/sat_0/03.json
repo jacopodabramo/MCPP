@@ -1,1 +1,1 @@
-{"z3_binary_search": {"time": 2, "optimal": true, "obj": 12, "sol": [[3, 6, 5], [2, 4], [7, 1]]}, "z3_linear_search": {"time": 1, "optimal": true, "obj": 12, "sol": [[3, 6, 5], [2, 4], [7, 1]]}}
+{"z3_binary_search": {"satisfiable": false}, "z3_linear_search": {"satisfiable": false}}

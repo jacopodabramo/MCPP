@@ -1,1 +1,1 @@
-{"z3_binary_search": {"unknown_solution": true}, "z3_linear_search": {"time": 10, "optimal": false, "obj": 447, "sol": [[3], [7], [1, 12, 13, 9], [4], [10], [5], [8], [11], [2], [6]]}}
+{"z3_binary_search": {"satisfiable": false}, "z3_linear_search": {"satisfiable": false}}

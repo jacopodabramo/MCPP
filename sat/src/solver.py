@@ -127,7 +127,7 @@ class SATsolver:
         while satisfiable:
             conv_upper_bound = to_binary(upper_bound, distance_bits)  # converting
             
-            lower_bound = to_binary(set_lower_bound(instance[4]), distance_bits)
+            lower_bound = to_binary(set_lower_bound(instance[4], input_data[-1])[0], distance_bits)
             # Max
             max_val = [[Bool(f"max_{j}_{i}_{iter}") for i in range(distance_bits)] 
                                                     for j in range(couriers)]
@@ -202,10 +202,10 @@ class SATsolver:
         couriers = input_data[0]
         distance_bits = input_data[6]
         # Set bounds
-        lower_bound = set_lower_bound(instance[4]) + 1
+        lower_bound, _ = set_lower_bound(instance[4], input_data[-1]) 
         upper_bound = set_upper_bound(instance[4], instance[-1], couriers)
 
-        bin_lower_bound = to_binary(set_lower_bound(instance[4]), distance_bits)
+        bin_lower_bound = to_binary(set_lower_bound(instance[4], input_data[-1])[0], distance_bits)
             
 
         bound_distance = (upper_bound - lower_bound) // 2

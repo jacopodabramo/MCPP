@@ -146,18 +146,28 @@ def sorting_correspondence(res, corresponding_dict):
         final_res[courier] = res[i]
     return final_res
 
-def set_lower_bound(distances):
+def set_lower_bound(distances, all_travel):
     """
-    This function is used by binary search to set lower bound, it takes the sum of the maximum of
-    last row and loast column - 1
+    :param distances: matrix of distances
+    :result lb: the lower bound for the objective funciton
+    :result dist_lb: the lower bound for the array of courier distances
     """
     last_row = distances[-1]
     last_column = [distances[i][-1] for i in range(len(distances[0]))]
     value1 = last_column[np.argmax(last_row)] + max(last_row)
     value2 = last_row[np.argmax(last_column)] + max(last_column)
-    value = max(value1, value2) - 1
+    lb = max(value1, value2)
 
-    return value
+    if not all_travel:
+        dist_lb = 0
+    else:
+        value1 = last_column[np.argmin(last_row)] + min(last_row)
+        value2 = last_row[np.argmin(last_column)] + min(last_column)
+        dist_lb = min(value1, value2) 
+
+        
+
+    return (lb, dist_lb)
 
 def set_upper_bound(distances, all_travel, couriers):
     '''
@@ -170,6 +180,7 @@ def set_upper_bound(distances, all_travel, couriers):
     if not all_travel:
         return sum([max(distances[i]) for i in range(items+1)])
     else:
+
         last_row = distances[-1][couriers-1:]
         last_col = [distances[k][-1] for k in range(couriers-1, items+1)]
 

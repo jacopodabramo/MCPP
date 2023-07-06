@@ -1,1 +1,1 @@
-{"z3-solver": {"unknown": true}}
+{"z3-solver": {"time": 0, "optimal": true, "obj": 186, "sol": [[2], [6], [3, 5], [9, 7], [4], [10], [1], [8]]}}

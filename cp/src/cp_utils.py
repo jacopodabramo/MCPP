@@ -85,7 +85,7 @@ def preprocessing_graph(instance):
      objects_size, 
      distances) = instance
 
-    low_bound = set_lower_bound(distances)
+    low_bound, _ = set_lower_bound(distances)
     up_bound = sum([max(distances[i]) for i in range(n_items)])
 
     starting_nd = []
