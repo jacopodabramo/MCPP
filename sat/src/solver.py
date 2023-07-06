@@ -7,12 +7,13 @@ from z3.z3 import *
 
 class SATsolver:
 
-    def __init__(self, data, output_dir, timeout=300, model=0):
+    def __init__(self, data, output_dir, timeout=300, model=0,symmetry = 1):
         self.data = data
         self.output_dir = output_dir
         self.timeout = timeout
         self.solver = Solver()
         self.model = model
+        self.symmetry = symmetry
 
     # Solving part
     def solve(self):
@@ -431,33 +432,34 @@ class SATsolver:
                 self.solver.add(at_most_one_bw(start[k][j], f"E{k}_{j}"))
                 self.solver.add(at_most_one_bw(end[k][j], f"F{k}_{j}"))
 
-        # Symmetry breaking constraint
-        for k in range(couriers - 1):
+        if self.symmetry == SYMMETRY_BREAKING:
+            # Symmetry breaking constraint
+            for k in range(couriers - 1):
+                self.solver.add(
+                    greater_eq(couriers_load[k][-1], couriers_load[k + 1][-1], f'symmetry_{k}')
+                )
+
+            # Symmetry breaking constraint
             self.solver.add(
-                greater_eq(couriers_load[k][-1], couriers_load[k + 1][-1], f'symmetry_{k}')
-            )
-        
-        # Symmetry breaking constraint
-        self.solver.add(
-            Implies(
-                sub_tour,
-                And(
-                    And([start[k][0][-1] for k in range(couriers)]),
+                Implies(
+                    sub_tour,
                     And(
-                        Not(Or(
-                            [start[k][i][j] for k in range(couriers)
-                             for i in range(items + 2 - couriers, items+1)
-                             for j in range(items + 1)]
-                        )),
-                        Not(Or(
-                            [end[k][i][j] for k in range(couriers)
-                             for i in range(items + 2 - couriers, items+1)
-                             for j in range(items + 1)]
-                        ))
+                        And([start[k][0][-1] for k in range(couriers)]),
+                        And(
+                            Not(Or(
+                                [start[k][i][j] for k in range(couriers)
+                                 for i in range(items + 2 - couriers, items+1)
+                                 for j in range(items + 1)]
+                            )),
+                            Not(Or(
+                                [end[k][i][j] for k in range(couriers)
+                                 for i in range(items + 2 - couriers, items+1)
+                                 for j in range(items + 1)]
+                            ))
+                        )
                     )
                 )
             )
-        )
         
         # Accumulation of the load for each courier
         t = 1
@@ -706,13 +708,14 @@ class SATsolver:
                 )
             )
 
-        # Symmetry breaking 
-        for k in range(couriers - 1):
-            self.solver.add(
-                greater_eq(
-                        courier_loads[k][-1], courier_loads[k+1][-1], f'sym_br_{k}'
+        if self.symmetry == SYMMETRY_BREAKING:
+            # Symmetry breaking
+            for k in range(couriers - 1):
+                self.solver.add(
+                    greater_eq(
+                            courier_loads[k][-1], courier_loads[k+1][-1], f'sym_br_{k}'
+                    )
                 )
-            )
         
         # 10) subtour elimination, if the last courier can carry all the 
         #     packages then all of them must start

@@ -4,20 +4,26 @@ from minizinc import Model, Solver, Status, Instance
 from cp.src.cp_utils import *
 
 class CPsolver:
-    def __init__(self, data, output_dir, timeout=300, model=1):
+    def __init__(self, data, output_dir, timeout=300, model=1,symmetry=1):
         self.output_dir = output_dir
         self.timeout = timeout
-
+        self.symmetry = symmetry
         if model == CIRCUIT_MODEL_CP:
             self.data = data
-            self.solver_path = "./cp/src/models/model.mzn"
+            if self.symmetry == SYMMETRY_BREAKING:
+                self.solver_path = "./cp/src/models/model.mzn" # symmetry
+            elif self.symmetry == NO_SYMMETRY_BREAKING:
+                self.solver_path =  "./cp/src/models/model_no_symmetry.mzn" # da no symmetry
         elif model == GRAPH_MODEL_CP:
             self.data = loop_preprocessing_graph(data)
-            self.solver_path = "./cp/src/models/graph_model.mzn"
-
+            if self.symmetry == SYMMETRY_BREAKING:
+                self.solver_path = "./cp/src/models/graph_model.mzn"
+            elif self.symmetry == NO_SYMMETRY_BREAKING:
+                self.solver_path = "./cp/src/models/graph_model_no_symmetry.mzn" # da no symmetry
+        print("Path",self.solver_path)
     def solve(self):
         model = Model(self.solver_path)
-        if self.solver_path == "./cp/src/models/model.mzn":
+        if self.solver_path == "./cp/src/models/model.mzn" or self.solver_path ==  "./cp/src/models/model_no_symmetry.mzn":
             self.circuit_model_solve(model)
         else:
             self.graph_model_solve(model)

@@ -1,4 +1,5 @@
 import time as t
+from constants import *
 from smt.src.smt_functions import *
 from utils import saving_file
 from sat.src.sat_functions import at_most_one_bw, exactly_one_bw
@@ -7,12 +8,13 @@ from z3.z3 import *
 
 class SMTsolver:
 
-    def __init__(self, data, output_dir, timeout=300, model=0):
+    def __init__(self, data, output_dir, timeout=300, model=0,symmetry=1):
         self.data = data
         self.output_dir = output_dir
         self.timeout = timeout
         self.model = model
         self.set_optimizer() # setting the Optimize
+        self.symmetry = symmetry
 
     def solve(self):
         if self.model == 1:
@@ -212,13 +214,13 @@ class SMTsolver:
             self.optimizer.add(exactly_one_bw(
                 [asg[k][j] == i for k in range(couriers) for j in range(items + 1)], f'{i}')
             )
-        '''
-        # Symmetry breaking
-        for k in range(couriers - 1):
-            self.optimizer.add(
-                couriers_loads[k] >= couriers_loads[k + 1]
-            )
-        '''
+        if self.symmetry == SYMMETRY_BREAKING:
+            # Symmetry breaking
+            for k in range(couriers - 1):
+                self.optimizer.add(
+                    couriers_loads[k] >= couriers_loads[k + 1]
+                )
+
         # Sub tour elimination
         self.optimizer.add(
             Implies(
@@ -264,6 +266,13 @@ class SMTsolver:
         array_item_size = Array('item_size', IntSort(), IntSort())
 
         # The value of the arry must be in the interval -1 (no delivery) item: Origin point
+        if self.symmetry == SYMMETRY_BREAKING:
+            # Symmetry breaking
+            for k in range(couriers - 1):
+                self.optimizer.add(
+                    couriers_loads[k] >= couriers_loads[k + 1]
+                )
+
         for k in range(couriers):
             self.optimizer.add([starting_point[k][i] > -2 for i in range(items+1)])
             self.optimizer.add([starting_point[k][i] < items + 1 for i in range(items+1)])

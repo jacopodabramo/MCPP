@@ -8,15 +8,18 @@ from constants import *
 
 class SMTLIBsolver(SMTsolver):
 
-    def __init__(self, data, output_dir, timeout=300):
-        super().__init__(data, output_dir, timeout)
+    def __init__(self, data, output_dir, timeout=300,symmetry=1):
+
+        super().__init__(data, output_dir, timeout,model=0,symmetry=symmetry)
         self.set_optimizer()
         self.instances_dir = "smt/src/instances_smtlib/"
         os.makedirs(self.instances_dir, exist_ok=True) # creating the dir of smtlib file if exists
         self.output_dir = output_dir
         self.timeout = timeout
         self.set_optimizer()
+        self.symmetry = symmetry
         self.file = None
+
     
     def set_optimizer(self):
         """
@@ -50,8 +53,8 @@ class SMTLIBsolver(SMTsolver):
         upper_bound = set_upper_bound(distances, sub_tour, couriers)
         # execution of the bash file
         path = os.path.join(os.getcwd(),bash_file) # path to execute the bash file
-        lower_bound = set_lower_bound(distances) -1# this value will be used only by binary search
-        command = f"timeout {self.timeout} bash {path} '{self.file}' 'max' '{upper_bound}' '{lower_bound}' '{solver}' '{couriers}' '{num_items + 1}'"
+        lower_bound,dist_lb = set_lower_bound(distances,sub_tour)  # this value will be used only by binary search
+        command = f"timeout {self.timeout} bash {path} '{self.file}' 'max' '{upper_bound}' '{lower_bound -1}' '{solver}' '{couriers}' '{num_items + 1}'"
         return command
         
         
@@ -81,28 +84,31 @@ class SMTLIBsolver(SMTsolver):
                     command = self.set_command(instance,bash_file,solver_type)
                     print("Starting Execution")
                     start_time = t.time()
-                
-                    result = subprocess.run(command, shell=True, capture_output=True, text=True)
-                    total_time = t.time() - start_time
-                    output = result.stdout # to have the output in a string format
-                    if output == 'unsat':
-                        print("Unsatisfiable")
-                        out_dict = {'satisfiable':False}
-                    elif output == "" or output == 'unknown':
-                        print("Unknown") # we have unknown also when we have timeout
-                        out_dict = {'unknown_solution':True}
-                    else:
-                        num_items = instance[1]
-                        #print("Output ",output)
-                        couriers = instance[0]
-                        obj,output = split_string(output,couriers) 
-                        final_output = sorting_correspondence(output, corr_dict)
-                        # Prepocess the result in order to have correct format for output
-                        res = [obj] + final_output
-                        print("Output = ",res)
-                        
-                        out_dict = format_output_smtlib(res,num_items, total_time,True)
-                       
+                    try:
+                        result = subprocess.run(command, shell=True, capture_output=True, text=True,check=True)
+                        total_time = t.time() - start_time
+                        output = result.stdout # to have the output in a string format
+                        if output == 'unsat':
+                            print("Unsatisfiable")
+                            out_dict = {'satisfiable':False}
+                        elif output == "" or output == 'unknown':
+                            print("Unknown") # we have unknown also when we have timeout
+                            out_dict = {'unknown_solution':True}
+                        else:
+                            num_items = instance[1]
+                            #print("Output ",output)
+                            couriers = instance[0]
+                            obj,output = split_string(output,couriers)
+                            final_output = sorting_correspondence(output, corr_dict)
+                            # Prepocess the result in order to have correct format for output
+                            res = [obj] + final_output
+                            print("Output = ",res)
+
+                            out_dict = format_output_smtlib(res,num_items, total_time,True)
+                    except Exception as e:
+                        print("The bash file cannot be executed")
+                        out_dict = {'unknown_solution': True}
+
                     dict_to_save[key_dict] = out_dict
             saving_file(dict_to_save,saving_path,filename)
             

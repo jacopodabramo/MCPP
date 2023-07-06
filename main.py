@@ -11,7 +11,7 @@ from utils import load_data
 def main():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-a", "--approach", help="Select a modelling appraoch between cp sat, smt and lp",
+    parser.add_argument("-a", "--approach", help="Select a modelling appraoch between cp sat, smt lp and smtlib",
                         default="cp", type=str)
 
     parser.add_argument("-m", "--model", help="Select a model for the solver choosen, look for additional information in the cp folder ",
@@ -29,7 +29,9 @@ def main():
                         help="Directory where the output will be saved", default="./output")
 
     parser.add_argument("-t", "--timeout", help="Timeout in seconds", default=300)
-    
+
+    parser.add_argument("-s", "--symmetry", help="Decide to select symmetry breaking or not, 1 symmetry breakink, 0 no symmetry breaking",
+                        default=1, type=int)
     args = parser.parse_args()
     print(args)
 
@@ -42,6 +44,7 @@ def main():
             output_dir=args.output_dir, 
             timeout=int(args.timeout), 
             model=args.model,
+            symmetry = args.symmetry
         )
     
     elif args.approach == "sat":
@@ -49,7 +52,8 @@ def main():
             data=data, 
             output_dir=args.output_dir,
             timeout=int(args.timeout),
-            model=args.model
+            model=args.model,
+            symmetry = args.symmetry
         )
 
     elif args.approach == "smt":
@@ -57,13 +61,16 @@ def main():
             data=data,
             output_dir=args.output_dir,
             timeout=int(args.timeout),
-            model=args.model)
+            model=args.model,
+            symmetry=args.symmetry
+        )
     
     elif args.approach == "smtlib":
         solver = SMTLIBsolver(
             data=data,
             output_dir=args.output_dir,
             timeout=int(args.timeout),
+            symmetry=args.symmetry
             )
 
     elif args.approach == "lp":
@@ -71,10 +78,11 @@ def main():
             data=data,
             output_dir=args.output_dir,
             timeout=int(args.timeout),
-            model=args.model)
+            model=args.model,
+            symmetry=args.symmetry)
         
     else:
-        raise argparse.ArgumentError(None, "Please select a solver between cp, sat, smt and lp.")
+        raise argparse.ArgumentError(None, "Please select a solver between cp, sat, smt lp and smtlib")
 
     print("Solving with", args.approach)
     solver.solve()

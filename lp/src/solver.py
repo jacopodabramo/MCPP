@@ -6,12 +6,13 @@ import time
 from constants import *
 
 class MIPsolver:
-    def __init__(self, data, output_dir, timeout=300, model=SINGLE_MATRIX_MIP):
+    def __init__(self, data, output_dir, timeout=300, model=SINGLE_MATRIX_MIP,symmetry=1):
         self.model = None
         self.data = data
         self.output_dir = output_dir
         self.timeout = timeout
         self.mip_model = model
+        self.symmetry = symmetry
 
     def solve(self):
         """
@@ -339,11 +340,11 @@ class MIPsolver:
         # Sub tour elimination
         self.model += (couriers - lpSum(asg[k][-1] for k in range(couriers))) * all_travel <= 0
         
-        '''
-        # Symmetry breaking 
-        for k in range(couriers-1):
-            self.model += courier_loads[k]  >= courier_loads[k+1]
-        '''
+        if self.symmetry == SYMMETRY_BREAKING:
+            # Symmetry breaking
+            for k in range(couriers-1):
+                self.model += courier_loads[k] >= courier_loads[k+1]
+
 
         # Compute the maximum
         for el in couriers_distances:
