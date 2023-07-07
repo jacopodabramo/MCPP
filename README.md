@@ -43,7 +43,7 @@ If you want to install cvc4-solver: <br>
 ## Execution on Docker
 First of all is needed to install docker: https://www.docker.com/products/docker-desktop/ <br>
 **Important**: <br>
-On docker there are the execution of models with the best performance for each approach.<br>
+On docker there are the execution of model with the best performance for each approach.<br>
 
 To run with docker, is needed to build the docker image: <br>
 <code>docker build. -t name_image</code> <br>
