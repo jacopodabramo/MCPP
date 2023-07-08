@@ -191,6 +191,9 @@ class CPsolver:
         couriers, items, courier_size, item_size, distances = d
 
         all_travel = (True if min(courier_size) >= max(item_size) else False)
+
+        
+        low_bound, d_low_bound = set_lower_bound(distances, all_travel)
         upper_bound = set_upper_bound(distances, all_travel, couriers)
         instance["courier"] = couriers
         instance["items"] = items
@@ -198,6 +201,8 @@ class CPsolver:
         instance["item_size"] = item_size
         instance["distances"] = distances
         instance["up_bound"] = upper_bound
+        instance["low_bound"] = low_bound
+        instance["d_low_bound"] = d_low_bound
         return instance.solve(timeout=datetime.timedelta(seconds=self.timeout), processes=10, random_seed=42,
                               free_search=True)
 

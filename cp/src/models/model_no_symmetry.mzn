@@ -13,6 +13,8 @@ include "globals.mzn";
 int: courier;
 int: items;
 int: up_bound;
+int :low_bound;
+int :d_low_bound;
 
 % useful sets
 set of int: COURIERS = 1..courier;
@@ -24,12 +26,11 @@ array[ITEMS] of int: item_size;
 array[NODES, NODES] of int: distances;
 
 % Model variables
-array[COURIERS] of var 0..up_bound: obj_dist;
+array[COURIERS] of var d_low_bound..up_bound: obj_dist;
 array[COURIERS, NODES] of var NODES: asg;
 
 % objective function
 
-int :low_bound = max([distances[items+1, j] | j in NODES]) + max([distances[i, items+1] | i in NODES]);
 
 var low_bound..up_bound: maximum;
 
