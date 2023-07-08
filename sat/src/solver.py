@@ -210,11 +210,10 @@ class SATsolver:
         # Set bounds
         lower_bound, _ = set_lower_bound(instance[4], input_data[-1]) 
         upper_bound = set_upper_bound(instance[4], instance[-1], couriers)
-
         bin_lower_bound = to_binary(set_lower_bound(instance[4], input_data[-1])[0], distance_bits)
             
 
-        bound_distance = (upper_bound - lower_bound) // 2
+        bound_distance = round((upper_bound - lower_bound + 0.01) // 2)
         middle = upper_bound - bound_distance
         satisfiable = True
         previous = True
@@ -224,6 +223,13 @@ class SATsolver:
 
         start_time = t.time()
         iter = 0
+
+
+        print('middle=',middle)
+        print('ub', upper_bound)
+        print('lb', lower_bound)
+        print('bd', bound_distance)
+
 
         # Setting lower bound
         # Check satisfiability and get a solution
@@ -258,7 +264,7 @@ class SATsolver:
             if status == unsat:  # Found unsat in the lower region
                 if iter == 0:
                     raise Exception
-                lower_bound = middle  # Move the search in the upper one
+                lower_bound = middle # Move the search in the upper one
                 previous = True
                 self.solver.pop()
 
@@ -281,9 +287,17 @@ class SATsolver:
                 else:
                     return output_dict
 
-            bound_distance = (upper_bound - lower_bound) // 2
-            middle = upper_bound - bound_distance
+            if upper_bound - lower_bound % 2 == 0:
+                bound_distance = (upper_bound - 1 - lower_bound) // 2
+            else: 
+                bound_distance = (upper_bound - lower_bound) // 2
+            middle = upper_bound - bound_distance 
             iter += 1
+
+            print('middle=',middle)
+            print('ub', upper_bound)
+            print('lb', lower_bound)
+            print('bd', bound_distance)
 
         evaluation = self.get_solution(model, results)
         final_evaluation = [sorting_correspondence(res, correspondence_dict)
