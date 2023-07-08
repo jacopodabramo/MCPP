@@ -212,9 +212,6 @@ class SATsolver:
         upper_bound = set_upper_bound(instance[4], instance[-1], couriers)
         bin_lower_bound = to_binary(set_lower_bound(instance[4], input_data[-1])[0], distance_bits)
             
-
-        bound_distance = round((upper_bound - lower_bound + 0.01) // 2)
-        middle = upper_bound - bound_distance
         satisfiable = True
         previous = True
         # Build the model
@@ -225,16 +222,16 @@ class SATsolver:
         iter = 0
 
 
-        print('middle=',middle)
-        print('ub', upper_bound)
-        print('lb', lower_bound)
-        print('bd', bound_distance)
-
-
         # Setting lower bound
         # Check satisfiability and get a solution
 
         while satisfiable:
+            
+            bound_distance = (upper_bound - lower_bound) // 2
+            if upper_bound - lower_bound == 1:
+                middle = 1
+            else:
+                middle = upper_bound - bound_distance
             # Get bound
             conv_middle_bound = to_binary(middle, distance_bits)  # converting
             # Update the maximum
@@ -286,18 +283,10 @@ class SATsolver:
                     raise TimeoutError
                 else:
                     return output_dict
-
-            if upper_bound - lower_bound % 2 == 0:
-                bound_distance = (upper_bound - 1 - lower_bound) // 2
-            else: 
-                bound_distance = (upper_bound - lower_bound) // 2
-            middle = upper_bound - bound_distance 
+                
+            
+             
             iter += 1
-
-            print('middle=',middle)
-            print('ub', upper_bound)
-            print('lb', lower_bound)
-            print('bd', bound_distance)
 
         evaluation = self.get_solution(model, results)
         final_evaluation = [sorting_correspondence(res, correspondence_dict)
