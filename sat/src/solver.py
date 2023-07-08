@@ -226,12 +226,14 @@ class SATsolver:
         # Check satisfiability and get a solution
 
         while satisfiable:
-            
             bound_distance = (upper_bound - lower_bound) // 2
             if upper_bound - lower_bound == 1:
-                middle = 1
+                middle = lower_bound
             else:
                 middle = upper_bound - bound_distance
+
+
+
             # Get bound
             conv_middle_bound = to_binary(middle, distance_bits)  # converting
             # Update the maximum
