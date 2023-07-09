@@ -21,11 +21,12 @@ esac
 couriers=$6
 items=$7
 # Minimization problem.
-rel='<'
+rel='<='
 next=-1
-
+rel1='>='
 SOL=0
 # Inserting first constraints to check if the problem is sat or not
+echo "(assert ($rel1 $obj_var $lower_bound))" >> $in_file
 echo "(assert ($rel $obj_var $obj_val))" >> $in_file
 echo "(check-sat)" >> $in_file
 echo "(get-value ($obj_var))" >> $in_file
@@ -46,7 +47,15 @@ do
     out=1
     break;
   fi
-  if [ "$bound_distance" = 0 ];then # complete the binary searcj
+  
+  if [ $sub_tr = 1 ];then
+      middle=$lower_bound
+  else
+      middle=$((upper_bound - bound_distance))
+  fi
+  
+ 
+ if [ "$bound_distance" -lt 1 ];then # complete the binary searcj
     out=1
     #break;
   fi
@@ -57,7 +66,6 @@ do
   if [ "$line" == "unsat" ]; then  # the actual solution is sat, so use the previus results
     update=0
   fi
-  
   SOL=1
   if [ $step = 0 ];then # the line read is sat or unsat
    step=1
@@ -68,29 +76,28 @@ do
    # deleting useless asser to insert the new assert
    sed -i '$ d' $in_file
    sed -i '$ d' $in_file
-   echo "(assert ($rel $obj_var $middle))" >> $in_file
-   echo "(check-sat)" >> $in_file
-   echo "(get-value ($obj_var))" >> $in_file
   else
-    # updating of the variables
-    if [ $update = 1 ];then
+  
+   if [ $update = 1 ];then
       val=$(echo "$line" | sed 's/[^0-9]*//g') # line to take the actual results given by the model
-      if [ $obj_val -gt $val ]; then  # update the obj value only if the new results is less than actual result
-       obj_val=$val
-      fi
+      obj_val=$val
       upper_bound=$obj_val
       sub_tr=$((upper_bound - lower_bound))
       bound_distance=$((sub_tr / 2))
       middle=$((upper_bound - bound_distance))
-    else
+  else
       lower_bound=$middle
       sub_tr=$((upper_bound - lower_bound))
       bound_distance=$((sub_tr / 2))
       middle=$((upper_bound - bound_distance))
-    fi
     
-  fi 
+  fi
+  echo "(assert ($rel $obj_var $middle))" >> $in_file
+  echo "(check-sat)" >> $in_file
+  echo "(get-value ($obj_var))" >> $in_file
+  fi
 done < <("${solver_cmd[@]}" <"$in_file")
+# updating of the variables
 if [ $out = 1 ]; then
     break;
 fi

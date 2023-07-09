@@ -61,24 +61,27 @@ class SMTLIBsolver(SMTsolver):
         
     def solve(self):
         saving_path = self.output_dir + "/smtlib/"
-        
+        type_search = 'binary_search'
         for key, instance in self.data.items(): 
             dict_to_save = {}
             filename = key.split('.')[0][-2:] + '.json'
             for solver_type in SMTLIB_SOLVER: 
-                for search in SEARCH_STRATEGIES:
+                    print("File = ", key)
+                    print("Solver used = ", solver_type)
+                    print("Type search = ",type_search)
                     for symmetry in SIM_LIST:
+                         
                         self.symmetry = symmetry
                         data, corr_dict = self.prepare_data(instance)
-                        type_search = SEARCH_STRATEGIES[search]
                         key_dict = solver_type
                         if self.symmetry == SYMMETRY_BREAKING:
+                            print("Type symmetry = symmetry breaking")
                             key_dict += SIMMETRY_BREAK_STRING
+                        else:
+                            print("Type symmetry = no symmetry breaking")
                         key_dict += type_search
                         bash_file = 'smt/src/' + type_search + '.sh'
-                        print("File = ", key)
-                        print("Solver used = ", solver_type)
-                        print("Type search = ",type_search)
+                        
 
                         self.file = self.instances_dir + str(key).removesuffix('.dat') + ".smt2"
                         self.create_file(data) # creating smtlib file
@@ -90,13 +93,14 @@ class SMTLIBsolver(SMTsolver):
                         print("Starting Execution")
                         start_time = t.time()
                         try:
-                            result = subprocess.run(command, shell=True, capture_output=True, text=True,check=True)
+                            result = subprocess.run(command, shell=True, capture_output=True, text=True)
                             total_time = t.time() - start_time
                             output = result.stdout # to have the output in a string format
                             if output == 'unsat':
                                 print("Unsatisfiable")
                                 out_dict = {'satisfiable':False}
                             elif output == "" or output == 'unknown':
+                                #print("Output = ",output)
                                 print("Unknown") # we have unknown also when we have timeout
                                 out_dict = {'unknown_solution':True}
                             else:

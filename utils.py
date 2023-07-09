@@ -180,17 +180,8 @@ def set_upper_bound(distances, all_travel, couriers):
     if not all_travel:
         return sum([max(distances[i]) for i in range(items+1)])
     else:
+        dist_np = np.array(distances)
+        dist_sorted = dist_np[np.max(dist_np, axis=0).argsort()]
+        max_long_path = sum([max(dist_sorted[i]) for i in range(couriers-1, items+1)])
 
-        last_row = distances[-1][couriers-1:]
-        last_col = [distances[k][-1] for k in range(couriers-1, items+1)]
-
-        max_single_path = max(
-                            last_col[np.argmax(last_row)] + max(last_row),
-                            last_row[np.argmax(last_col)] + max(last_col)
-                        )
-        max_long_path = sum([max(distances[i]) for i in range(couriers-1, items+1)])
-
-        return max(
-            max_single_path,
-            max_long_path
-        )
+        return max_long_path
