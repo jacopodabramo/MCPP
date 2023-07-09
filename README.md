@@ -63,9 +63,14 @@ To make the execution of docker linear, each approach use the instance which do 
 Obviusly for the instance which are not taken in account during the execution of the model, the solution is _UNKNOWN_.<br>
 If you run the project in local(using for i.e Windows System), the problem of memory exceeding is handle without killed the process, the solution will be written but it still _UNKNOWN_.
 
-
+## Best Models
+In the following there are the best models for each approach:
+<li> CP: *Circuit Model*, it can be run with the option <code> -a cp -m 1</code>
+<li> SAT: *Single Matrix*, it can be run with the option <code> -a sat -m 1</code>
+<li> SMT: *Asg Array Theory*, it can be run with the option <code> -a smt -m 0</code>
+<li> MIP: *Single Matrix Mip*, it can be run with the option <code> -a lp -m 1</code>
 
 ## Authors
 <li> Lorenzo Cassano
-<li> Kilian Tiziano Le Creuer
+<li> Kilian Tiziano Le Creurer
 <li> Jacopo D'Abramo
