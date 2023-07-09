@@ -65,10 +65,10 @@ If you run the project in local(using for i.e Windows System), the problem of me
 
 ## Best Models
 In the following there are the best models for each approach:
-<li> CP: *Circuit Model*, it can be run with the option <code> -a cp -m 1</code>
-<li> SAT: *Single Matrix*, it can be run with the option <code> -a sat -m 1</code>
-<li> SMT: *Asg Array Theory*, it can be run with the option <code> -a smt -m 0</code>
-<li> MIP: *Single Matrix Mip*, it can be run with the option <code> -a lp -m 1</code>
+<li> CP: _Circuit Model_, it can be run with the option <code> -a cp -m 1</code>
+<li> SAT: _Single Matrix_, it can be run with the option <code> -a sat -m 1</code>
+<li> SMT: _Asg Array Theory_, it can be run with the option <code> -a smt -m 0</code>
+<li> MIP: _Single Matrix Mip_, it can be run with the option <code> -a lp -m 1</code>
 
 ## Authors
 <li> Lorenzo Cassano
