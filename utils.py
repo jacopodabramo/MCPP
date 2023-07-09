@@ -184,4 +184,4 @@ def set_upper_bound(distances, all_travel, couriers):
         dist_sorted = dist_np[np.max(dist_np, axis=0).argsort()]
         max_long_path = sum([max(dist_sorted[i]) for i in range(couriers-1, items+1)])
 
-        return max_long_path
+        return int(max_long_path)

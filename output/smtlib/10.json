@@ -1,0 +1,1 @@
+{"z3_symbreakbinary_search": {"unknown_solution": true}, "z3binary_search": {"time": 85, "optimal": true, "obj": 244, "sol": [[5], [8], [10], [3], [12], [9], [2], [11, 6], [4], [13, 1, 7]]}, "cvc4_symbreakbinary_search": {"unknown_solution": true}, "cvc4binary_search": {"unknown_solution": true}}

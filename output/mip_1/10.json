@@ -1,1 +1,1 @@
-{"PULP_CBC_CMD": {"time": 4, "optimal": true, "obj": 244, "sol": [[9, 6], [1], [12], [3, 11], [4], [7], [10], [13], [2, 8], [5]]}, "GLPK_CMD": {"unknown_solution": true}}
+{"PULP_CBC_CMD_symbreak": {"unknown_solution": true}, "PULP_CBC_CMD": {"time": 300, "optimal": false, "obj": 246, "sol": [[11], [5], [3], [7, 8], [10], [13], [9], [4, 1], [6, 2], [12]]}, "GLPK_CMD_symbreak": {"unknown_solution": true}, "GLPK_CMD": {"unknown_solution": true}}

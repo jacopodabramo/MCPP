@@ -1,1 +1,1 @@
-{"z3-solver_symbreak": {"time": 14, "optimal": true, "obj": 220, "sol": [[7, 2], [10], [4], [8], [3], [5, 1], [6], [9]]}, "z3-solver": {"time": 0, "optimal": true, "obj": 220, "sol": [[6], [2], [9], [1], [10, 8], [3], [7], [4, 5]]}}
+{"z3-solver": {"time": 9, "optimal": true, "obj": 220, "sol": [[3, 2], [8], [6], [9], [4], [1, 10], [5], [7]]}, "z3-solver_symbreak": {"time": 0, "optimal": true, "obj": 220, "sol": [[7], [6], [10], [3], [9], [2, 1], [4, 5], [8]]}}
