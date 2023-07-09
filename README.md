@@ -69,7 +69,7 @@ In the following there are the best models for each approach:
 <li> SAT: <i>Single Matrix</i>, it can be run with the option: <code> -a sat -m 1</code>
 <li> SMT: <i>Asg Array Theory</i>, it can be run with the option: <code> -a smt -m 0</code>
 <li> MIP: <i>Single Matrix Mip</i>, it can be run with the option: <code> -a lp -m 1</code>
-
+<li> SMTLIB: it runs always the best SMT model, this approach is used only to compare different solvers on SMT 
 ## Authors
 <li> Lorenzo Cassano
 <li> Kilian Tiziano Le Creurer
