@@ -36,7 +36,6 @@ def main():
 
     print("Loading instances")
     data = load_data(args.input_dir, args.num_instance)
-    
     if args.approach == "cp":
         solver = CPsolver(
             data=data, 

@@ -34,16 +34,15 @@ def load_data(path, instance):
     """
     data = {}
     files = sorted(os.listdir(path))
-
     if instance == 0:
         for file in files:
             data[file] = (read_instance(path + "/" + file))
     else:
-        i = 1
-        print(files)
+        i = 0
         for file in files:
             if i == instance:
-                return [read_instance(path + "/" + file)]
+                break
+            data[file] = (read_instance(path + "/" + file))
             i += 1
     return data
 

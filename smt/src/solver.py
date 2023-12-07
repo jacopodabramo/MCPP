@@ -44,7 +44,12 @@ class SMTsolver:
                     self.set_optimizer()
                 except TimeoutError:
                     print("TimeoutError")
-                    dict_to_save[key_dict] = {'unknown_solution': True}
+                    dict_to_save[key_dict] = {
+                                    'time': self.timeout,
+                                    'optimal': False,
+                                    'obj': "n/a",
+                                    'sol': []
+                            }
 
                 except Exception as e:
                     print("Unsatisfiable",e)

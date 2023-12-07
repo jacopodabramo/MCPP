@@ -1,1 +1,1 @@
-{"z3-solver": {"unknown": true}, "z3-solver_symbreak": {"unknown": true}}
+{"z3-solver": {"time": 300, "optimal": false, "obj": "n/a", "sol": []}, "z3-solver_symbreak": {"time": 300, "optimal": false, "obj": "n/a", "sol": []}}

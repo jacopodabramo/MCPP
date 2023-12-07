@@ -47,10 +47,20 @@ class SATsolver:
 
                     except TimeoutError:
                         print("No solution found in the time given")
-                        dict_to_save[key_dict] = {'unknown_solution':True}
+                        dict_to_save[key_dict] = {
+                                    'time': self.timeout,
+                                    'optimal': False,
+                                    'obj': "n/a",
+                                    'sol': []
+                                    }
                     except Z3Exception as e:
                         print("Exception:", e)
-                        dict_to_save[key_dict] = {'out_of_memory':True}
+                        dict_to_save[key_dict] = {
+                                    'time': self.timeout,
+                                    'optimal': False,
+                                    'obj': "n/a",
+                                    'sol': []
+                                }
                     except Exception:
                         print("Unsatisfiable")
                         dict_to_save[key_dict] = {'satisfiable':False}

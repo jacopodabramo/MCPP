@@ -1,6 +1,6 @@
 FROM minizinc/minizinc:latest
 
-WORKDIR ./project
+WORKDIR ./MCPP
 
 COPY . .
 
@@ -18,5 +18,5 @@ RUN apt-get update \
     && chmod +x smt/src/linear_search.sh \
     && apt-get install -y bash coreutils
 
-CMD     python3 main.py -a smt -m 0 -i "./input2" && python3 main.py -a cp  && python3 main.py -a sat -i "./input3" && python3 main.py -a lp -i "./input3" && python3 main.py -a smtlib -i "./input3"
+CMD python3 main.py -a smt -m 0 -n 13 && python3 main.py -a cp  && python3 main.py -a sat -n 10  && python3 main.py -a lp -n 10  && python3 main.py -a smtlib -n 10
 

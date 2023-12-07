@@ -98,11 +98,16 @@ class SMTLIBsolver(SMTsolver):
                             output = result.stdout # to have the output in a string format
                             if output == 'unsat':
                                 print("Unsatisfiable")
-                                out_dict = {'satisfiable':False}
+                                out_dict = {'satisfiable': False}
                             elif output == "" or output == 'unknown':
                                 #print("Output = ",output)
                                 print("Unknown") # we have unknown also when we have timeout
-                                out_dict = {'unknown_solution':True}
+                                out_dict = {
+                                    'time': self.timeout,
+                                    'optimal': False,
+                                    'obj': "n/a",
+                                    'sol': []
+                                }
                             else:
                                 num_items = instance[1]
                                 #print("Output ",output)
@@ -116,7 +121,12 @@ class SMTLIBsolver(SMTsolver):
                                 out_dict = format_output_smtlib(res,num_items, total_time,True)
                         except Exception as e:
                             print("The bash file cannot be executed")
-                            out_dict = {'unknown_solution': True}
+                            out_dict = {
+                                'time': self.timeout,
+                                'optimal': False,
+                                'obj': "n/a",
+                                'sol': []
+                            }
 
                         dict_to_save[key_dict] = out_dict
             saving_file(dict_to_save,saving_path,filename)

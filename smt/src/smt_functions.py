@@ -125,7 +125,11 @@ def format_output_smt_model0(result, opt):
     optimal = opt  # get status
 
     if not isinstance(asg[0][0], IntNumRef):
-        return {'unknown':True}
+        return {'time': time,
+                'optimal': False,
+                'obj': "n/a",
+                'sol': []
+                }
         
     obj = max([distances[k].as_long() for k in range(len(distances))])  # get objective value
 
@@ -153,14 +157,18 @@ def format_output_smt_model1(result, opt):
     :result: a dictionary {time: optimal: obj: sol:}
     """
     start, _, _, d, items, couriers = result[0]
-
+    time = result[1].__floor__()  # get time
     if not isinstance(start[0][0], IntNumRef):
-        return {'unknown_solution':True}
+        return {'time': time,
+                'optimal': False,
+                'obj': "n/a",
+                'sol': []
+                }
 
     time = result[1].__floor__()
     d = [d[k].as_long() for k in range(len(d))]
     # Adding one because the solutions goes from o to items +1
-    start = [[start[k][j].as_long() + 1 for j in range(items + 2 - couriers) if
+    start = [[start[k][j].as_long() + 1 for j in range(items + 3 - couriers) if
               start[k][j].as_long() != -1 and start[k][j].as_long() != items] for k in range(couriers)]
     obj = max(d)
     optimal = opt

@@ -53,14 +53,24 @@ class MIPsolver:
 
                     except TimeoutError:
                         print("No solution found in the time given")
-                        json_dict = {'unknown_solution': True}
+                        json_dict = {
+                                    'time': self.timeout,
+                                    'optimal': False,
+                                    'obj': "n/a",
+                                    'sol': []
+                                }
                         dict_to_save[key_dict] = json_dict
                     except ValueError:
                         print("unsatisfiable")
                         json_dict = {'satisfiable': False}
                         dict_to_save[key_dict] = json_dict
                     except Exception as e:
-                        json_dict = {'unknown_solution': True}
+                        json_dict = {
+                                    'time': self.timeout,
+                                    'optimal': False,
+                                    'obj': "n/a",
+                                    'sol': []
+                                }
                         dict_to_save[key_dict] = json_dict
 
             saving_file(dict_to_save, path, filename)
@@ -379,7 +389,9 @@ class MIPsolver:
 
         courier_size = np.sort(courier_size)[::-1]
 
-        lower_bound, _ = set_lower_bound(distances) 
+        all_travel = (True if max(item_size) <= courier_size[-1] else False)
+
+        lower_bound, _ = set_lower_bound(distances,all_travel)
 
         row_sums = []  # List to store the sums of maximum values in each row
 

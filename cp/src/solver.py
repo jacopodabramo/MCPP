@@ -83,7 +83,10 @@ class CPsolver:
                         # No solution found in the time given
                         elif result.status is Status.UNKNOWN:
                             output_dict = {
-                                'unknwon solution': True
+                                    'time': self.timeout,
+                                    'optimal': False,
+                                    'obj': "n/a",
+                                    'sol': []
                             }
                         # At least a solution
                         else:
@@ -110,7 +113,12 @@ class CPsolver:
 
                     except Exception as e:
                         print("Exception:", e)
-                        output_dict = {'unknwon solution': True}
+                        output_dict = {
+                                    'time': self.timeout,
+                                    'optimal': False,
+                                    'obj': "n/a",
+                                    'sol': []
+                            }
 
                     results[solver_to_save] = output_dict
 
@@ -146,8 +154,11 @@ class CPsolver:
 
                         # No solution in the time given
                         elif result.status is Status.UNKNOWN:
-                            output_dict = {
-                                'unknwon solution': True
+                            output_dict  = {
+                                    'time': self.timeout,
+                                    'optimal': False,
+                                    'obj': "n/a",
+                                    'sol': []
                             }
 
                         # At least a solution
@@ -181,6 +192,12 @@ class CPsolver:
 
 
                     except Exception as e:
+                        output_dict = {
+                                    'time': self.timeout,
+                                    'optimal': False,
+                                    'obj': "n/a",
+                                    'sol': []
+                            }
                         print("Exception:", e)
 
                     results[solver_to_save] = output_dict
