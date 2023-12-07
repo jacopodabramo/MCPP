@@ -1,6 +1,6 @@
 FROM minizinc/minizinc:latest
 
-WORKDIR ./MCPP
+WORKDIR ./project
 
 COPY . .
 
