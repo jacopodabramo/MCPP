@@ -72,6 +72,6 @@ In the following there are the best models for each approach:
 <li> SMTLIB: it runs always the best SMT model, this approach is used only to compare different solvers on SMT 
   
 ## Authors
-<li> Lorenzo Cassano
-<li> Kilian Tiziano Le Creurer
-<li> Jacopo D'Abramo
+  - [Lorenzo Cassano](https://github.com/LorenzoCassano) 
+  - [Jacopo D'Abramo](https://github.com/jacopodabramo)
+  - [Kilian Tiziano Le Creurer](https://github.com/Kilian36) 
